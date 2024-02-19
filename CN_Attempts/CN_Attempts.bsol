@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Solution Name="CN_Attempts">
+  <StartupProject RelativePath="true">CN_Attempts.bproj</StartupProject>
+  <ProjectItems>
+    <Project RelativePath="true" BuildSequence="2">CN_Attempts.bproj</Project>
+  </ProjectItems>
+</Solution>

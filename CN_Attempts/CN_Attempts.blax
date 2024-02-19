@@ -1,0 +1,305 @@
+﻿DATAMODEL CN_Attempts
+
+//1. Do not change the primary key definition / fields
+//2. Make sure CMA is able to pass information on the command line to the follwoing fields:
+//   AfterInterview, CaseStatus, User, Happenings, InterviewStart, InterviewEnd, CaseStartDatem CaseEndDate and AttemptsRoute
+//3. It is important that the field Happenings always has a value at the end. If not the attempt will not be managed by CMA. 
+//4. Do not change the definition of the fields related to the appointment
+
+LANGUAGES = EN "English", NL "Nederlands"
+
+//Reguired by CMA
+PRIMARY MainSurveyID, ID, SeqNr
+SECONDARY MainSurveyID, ID
+
+TYPE
+   TGeoLocation = STRING[22]
+   TWhen = STRING[24] //format 'yyyyMMdd,HH:mm:sszzz'
+   TContactTime = 
+   (
+      BeforeNoon (1) EN "before 12PM"  NL "voor 12 uur",
+      T12_17     (2) EN "12PM - 5PM"   NL "tss 12-17 uur",
+      T17_19     (3) EN "5PM - 7PM"    NL "tss 17-19 uur",
+      T19_21     (4) EN "7PM - 9PM"    NL "tss 19-21 uur",
+      Late       (5) EN "9PM or later" NL "na 21 uur"
+   )
+
+BLOCK bDT
+FIELDS
+   When: TWhen  
+   User: STRING[20] 
+ENDBLOCK  
+
+INCLUDE "CN_THappenings.incx" //contains the definition of THappenings. Definition may be changed, type name may not be changed.
+
+CONST
+   cInterview = EN "interview" NL "interview"
+   cAttempt = EN "attempt" NL "poging"    
+
+FIELDS 
+   //Fields used by CMA. DO NOT CHANGE!!
+   MainSurveyID: STRING[36]                            //GUID of survey. Could be a WAVE
+   ID: STRING[219]                                     //Field that contains the primary key of the case for the topic instrument. Can be composed of multiple fields but handled as one in Attempts  
+   SeqNr: 1..999                                       //Sequence number to identifiy the different attempts beloning to the case 
+   
+   WhenMade: bDT                                       //To keep track of wh/when made the attempt  
+   GeoLocation: TGeoLocation                           //Will be populate by CMA when required
+   Happenings 
+      EN "Result:"    
+      NL "Resultaat:" 
+      : THappenings                                    //Not to be asked but to be derived based on workflow in instrument
+   HappeningsStr: STRING[80]                           //Can be given a value when different from text of label of Happenings
+   CMA_CaseClosed {was: Final}: (yes),EMPTY            //IMPORTANT: when assigned the value yes it indicated completion for CMA!
+   AttemptsRoute: STRING[5],EMPTY                      //optional; value originates from case in launcher database
+   
+   //Appointment related fields
+   Appointment: (yes),EMPTY                            //IMPORTANT: when assigned the value yes then CMA knows that there is an appointment in AppDate and AppTime!
+   AppDate     
+      EN "Select the date for the appointment"
+      NL "Selecteer de datum van de afspraak"
+      : DATETYPE
+   AppTime    
+      EN "Select the time for the appointment" 
+      NL "Selecteer de tijd van de afspraak"
+      : TIMETYPE
+   //End appointment related fields   
+   
+   Notes       
+      EN "Additional notes"
+      NL "Additionele opmerkingen" 
+      : OPEN,EMPTY
+   ContactDate 
+      NL "Wanneer was de contactpoging (datum)?" 
+      : DATETYPE 
+   ContactTime 
+      EN "When was the contact attempt (date)?" 
+      NL "Wanneer was de contactpoging (dagdeel)?" 
+      : TContactTime
+   
+   CaseStatus: (none (0),Partial (1),Complete (2))     //At start up this is passed to this datamodel by CMA
+   AfterInterview : (No (0), Yes (1))                  //IMPORTANT: to distinguish if Attempts has been activated by exiting .EDIT of topic instrument (complete or break-off) or not
+   InterviewStart: TWhen                               //Passed on the command line
+   InterviewEnd: TWhen                                 //Passed in the command line
+   
+   //Optional fields. Will be handled by CMA when present in the attempts datamodel
+   //CMA_Status: STRING[20],EMPTY                      //OPTIONAL: current status of case in CMA; when changed it will overrule determining the new status in CMA  
+   //PrevHappeningsCod: THappenings,EMPTY              //OPTIONAL: the value of CMA_HappeningsCod as stored in the launcher case
+
+
+AUXFIELDS //no not change! All pre-filled through command-line
+   User: STRING[20]  
+   CaseStartDate: DATETYPE
+   CaseEndDate: DATETYPE
+   IsDonorCase: (yes),EMPTY
+
+LOCALS h: 0..23  // hours
+//END of the definitions of Fields that are used by CMA!!  
+
+//IMPORTANT: Organisations are free to define the next types and arrange their own encoding of outcome code
+//Note that CMA expects the value of the outcome code to be in the enumaration field Happenings
+
+TYPE
+
+   TEndResult = 
+   (
+      End_Refusal           (3001) EN "Refusal" NL "Weigering",
+      End_NoOpportunity     (3002) EN "No opportunity / not capable" NL "Geen gelegenheid / langdurig niet in staat",
+      End_Language          (3003) EN "Language barrier" NL "Taal barrière",
+      End_Moved             (3004) EN "Moved / person admitted to institution" NL "Verhuisd / O.P. in instelling/opgenomen",
+      End_MovedAbroad       (3005) EN "Moved abroad" NL "Verhuisd naar Buitenland",
+      End_AddressIncorrect  (3006) EN "Contact data incorrect/unoccupied/no house/house under construction" NL "Benadergegevens onjuist / leegstand / geen woonhuis / in aanbouw",
+      End_PassedAway        (3007) EN "Passed away" NL "Overleden",
+      End_Other             (3008) EN "Other" NL "Overig / anders",
+      End_Interrupted       (3009) EN "Interview interrupted" NL "Afgebroken interview (afbreuk)",
+      End_NotSafe           (3010) EN "Unsafe situation" NL "Onveilige situatie",
+      End_NoContact         (3011) EN "No response / no contact after sixth attempt" NL "Geen respons / geen contact na zesde poging"
+   )
+
+   TReasonRefusal = 
+   ( 
+      Privacy      (30011) EN "Privacy / anonymity" NL "Privacy / anonimiteit",
+      NoTime       (30012) EN "No time/ don't want/  not interested" NL "Geen tijd / geen zin / geen interesse",
+      Subject      (30013) EN "Subject of the interview" NL "Onderwerp van dit onderzoek",
+      Age          (30014) EN "Too old / Too young" NL "Te oud / te jong",
+      Strategy     (30015) EN "Approach CBS" NL "Benaderstrategie van het CBS",
+      TooOften     (30016) EN "Participated too often" NL "Al te vaak meegedaan / te veel onderzoeken",
+      TooAggresive (30017) EN "Closed door / aggressive" NL "Gooide de deur dicht / werd agressief",
+      NoShow       (30018) EN "Appointment not kept" NL "Afspraak niet nagekomen"
+   )
+
+   // Tussen Resultaat
+   TInterimResultaat = 
+   (
+      Appointment          (01001) EN "Made an appointment" NL "Afspraak gemaakt",
+      BreakOff_NobodyHome  (20011) EN "Nobody at home/Nobody opened door" NL "Niemand thuis / werd niet opengedaan",
+      BreakOff_Contact     (20012) EN "Contact, no interview, no appointment" NL "Contact met huishouden, geen interview, geen afspraak",
+      BreakOff_NoContact   (20013) EN "No contact with with person, but with somebody else" NL "Geen contact met O.P., maar iemand anders",
+      BreakOff_NoShowApp   (20014) EN "No show for appointment" NL "Afspraak niet nagekomen",
+      BreakOff_NoAccess    (20015) EN "Access not possible" NL "Geen toegang mogelijk",
+      BreakOff_Other       (20016) EN "Other reason" NL "Andere reden"
+   )
+
+   TProgress  =   
+   (
+      InterResult EN "Interim result" NL "Tussen resultaat",
+      FinalResult EN "Final result" NL "Eind resultaat"
+   ), NODK, NORF    
+
+FIELDS
+
+   WhatNowInterview 
+      EN "What is the interim result?"
+      NL "Wat is het tussen resultaat?"
+      : TInterimResultaat 
+   
+   Endresult 
+      EN "What is the final result?"
+      NL "Wat is het eind resultaat?" 
+      : TEndResult
+   
+   ReasonRefusal 
+      EN "What was the main reason for refusing?"
+      NL "Wat is de belangrijkste reden voor de weigering" 
+      : TReasonRefusal
+   
+//   BreakOff NL "Wat is de reden voor het afbreken van het interview / geen respons?" : TTussenResultaat
+   
+   Progress 
+      EN "Do you want to register a Final or Interim result?" 
+      NL "Wilt u een Eind of Tussen resultaat registeren?" 
+      : TProgress
+
+
+AUXFIELDS
+   AttemptStr: STRING[40] 
+   AuxContactDateTime : DATETIMETYPE
+   AuxContactDate EN "On what day did the interview take place" NL "Op welke dag is de contactpoging gebeurd?" : DATETYPE
+   AuxContactTime EN "At what time did the interview take place" NL "Hoe laat is de contactpoging gebeurd?" : TIMETYPE  
+   AuxSetDateTime : (Yes)
+   
+CHECKS
+   ckInterviewDateInPast
+      EN "Interview date cannot be in the future" 
+      NL "Interview datum mag niet in de toekomst zijn"
+      = AuxContactDate <= SYSDATE;
+   ckInterviewTimeInPast
+      EN "Interview time cannot be in the future" 
+      NL "Interview tijd mag niet in de toekomst zijn"
+      = TIMETOSTR(AuxContactTime, 'HH:mm:ss') <= TIMETOSTR(SYSTIME, 'HH:mm:ss');
+   ckAppointmentDateInFuture
+      EN "Appointment date cannot be in the past" 
+      NL "Afspraak datum kan niet in het verleden zijn"
+      = AppDate>=AuxContactDate;
+   ckAppointmentTimeInFuture
+      EN "Appointment time cannot be in the past" 
+      NL "Afspraak tijd kan niet in het verleden zijn"
+      = AppTime>AuxContactTime
+
+RULES
+   //Predefined by CMA. DO NOT CHANGE!!!
+   IsDonorCase.KEEP
+   CaseStatus.KEEP
+   MainSurveyID.KEEP
+   ID.KEEP
+   SeqNr.KEEP
+   AttemptsRoute.KEEP
+   AfterInterview.KEEP
+   InterviewStart.KEEP
+   InterviewEnd.KEEP
+   WhenMade.KEEP
+   GeoLocation.KEEP
+   Happenings.KEEP
+   CaseStartDate.KEEP
+   CaseEndDate.KEEP
+   User.KEEP
+   AuxSetDateTime.KEEP
+   AuxContactDateTime.KEEP
+   ContactDate.KEEP
+   ContactTime.KEEP
+   
+   IF AuxSetDateTime <> RESPONSE THEN
+      AuxSetDateTime := Yes
+      AuxContactDate := SYSDATE
+      AuxContactTime := SYSTIME
+   ENDIF
+   AuxContactDate
+   AuxContactTime
+   ckInterviewDateInPast
+   IF AuxContactDate = SYSDATE THEN
+      ckInterviewTimeInPast
+   ENDIF
+   AuxContactDateTime := TODATETIME(AuxContactDate.YEAR, AuxContactDate.MONTH, AuxContactDate.DAY, 
+                                    AuxContactTime.HOUR, AuxContactTime.MINUTE, AuxContactTime.SECOND)
+   WhenMade.When:= DATETOSTR(AuxContactDateTime,'yyyyMMdd,HH:mm:sszzz') 
+   WhenMade.User:= User
+   ContactDate:= AuxContactDate
+   h:= HOUR(AuxContactTime)
+   IF h<12 THEN ContactTime:= BeforeNoon ELSEIF
+      h<17 THEN ContactTime:= T12_17 ELSEIF
+      h<19 THEN ContactTime:= T17_19 ELSEIF
+      h<21 THEN ContactTime:= T19_21 
+   ELSE
+      ContactTime:= Late 
+   ENDIF   
+
+   
+   //END - Predefined by CMA. DO NOT CHANGE!!!
+   Happenings:=empty
+   IF AfterInterview=Yes THEN
+      IF CaseStatus=Complete THEN
+         IF Happenings=EMPTY THEN 
+            Happenings:= Resp_OK 
+         ENDIF  
+      ENDIF
+   ENDIF
+   IF Happenings=empty THEN
+      Progress
+      IF Progress=FinalResult THEN
+         EndResult
+         IF EndResult=End_Refusal THEN
+            ReasonRefusal
+            Happenings:= ord(ReasonRefusal)       
+         ELSE
+            Happenings:= ord(EndResult)       
+         ENDIF
+      ELSE // Interim result
+         WhatNowInterview
+         Happenings := ORD(WhatNowInterview)
+         IF WhatNowInterview=Appointment THEN // appointment
+            AppDate
+            ckAppointmentDateInFuture
+            AppTime
+            IF AppDate=AuxContactDate THEN
+               ckAppointmentTimeInFuture
+            ENDIF  
+            Appointment:= yes
+         ENDIF  
+      ENDIF
+   ENDIF  
+   IF Happenings IN 
+   [ 
+      Resp_OK, 
+      NR_Refusal,
+      NR_NoOpportunity,
+      NR_Language,
+      NR_Moved,
+      NR_MovedAbroad,
+      NR_AddressIncorrect,
+      NR_PassedAway,
+      NR_Other,
+      NR_Interrupted,
+      NR_NotSafe,
+      NR_NoContact,
+      Refusal_Privacy,
+      Refusal_NoTime,
+      Refusal_Subject,
+      Refusal_Age,  
+      Refusal_Strategy,
+      Refusal_TooOften,
+      Refusal_TooAggresive,
+      Refusal_NoShow
+   ] THEN 
+      CMA_CaseClosed := Yes
+   ENDIF
+   Notes
+ENDMODEL

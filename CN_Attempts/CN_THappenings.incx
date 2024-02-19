@@ -1,0 +1,66 @@
+﻿TYPE
+tHappenings = (
+
+Resp_OK              (00001) EN "Response OK" 
+                             NL "Repons OK", 
+Resp_App             (01001) EN "Appointment" 
+                             NL "Afspraak",
+Resp_BreakOff        (02001) EN "Non reponse" 
+                             NL "Geen repons",
+// BreakOffs               
+BreakOff_NobodyHome  (20011) EN "Nobody at home/Nobody opened door" 
+                             NL "Niemand thuis/werd niet opengedaan",
+BreakOff_Contact     (20012) EN "Contact, no interview, no appointment" 
+                             NL "Contact met huishouden, geen interview, geen afspraak",
+BreakOff_NoContact   (20013) EN "No contact with with person, but with somebody else" 
+                             NL "Geen contact met O.P., maar iemand anders",
+BreakOff_NoShowApp   (20014) EN "No show for appointment" 
+                             NL "Afspraak niet nagekomen",
+BreakOff_NoAccess    (20015) EN "Access not possible" 
+                             NL "Geen toegang mogelijk",
+BreakOff_Other       (20016) EN "Other reason" 
+                             NL "Andere reden",
+
+// Nonresponses                       
+NR_Refusal           (03001) EN "Refusal" 
+                             NL "Weigering",
+NR_NoOpportunity     (03002) EN "No opportunity / not capable" 
+                             NL "Geen gelegenheid / langdurig niet in staat",
+NR_Language          (03003) EN "Language barrier" 
+                             NL "Taal barrière",
+NR_Moved             (03004) EN "Moved / person admitted to institution" 
+                             NL "Verhuisd / O.P. in instelling/opgenomen",
+NR_MovedAbroad       (03005) EN "Moved abroad" 
+                             NL "Verhuisd naar Buitenland",
+NR_AddressIncorrect  (03006) EN "Contact data incorrect/unoccupied/no house/house under construction" 
+                             NL "Benadergegevens onjuist / leegstand / geen woonhuis / in aanbouw",
+NR_PassedAway        (03007) EN "Passed away" 
+                             NL "Overleden",
+NR_Other             (03008) EN "Other" 
+                             NL "Overig / anders",
+NR_Interrupted       (03009) EN "Interview interrupted" 
+                             NL "Afgebroken interview (afbreuk)",
+NR_NotSafe           (03010) EN "Unsafe situation" 
+                             NL "Onveilige situatie",
+NR_NoContact         (03011) EN "No response / no contact after sixth attempt" 
+                             NL "Geen respons / geen contact na zesde poging",
+
+// Refusals                          
+Refusal_Privacy      (30011) EN "Privacy / anonymous" 
+                             NL "Privacy / anonimiteit",
+Refusal_NoTime       (30012) EN "No time / don't want / not interested" 
+                             NL "Geen tijd / geen zin / geen interesse",
+Refusal_Subject      (30013) EN "Subject of the interview" 
+                             NL "Onderwerp van dit onderzoek",
+Refusal_Age          (30014) EN "Too old / Too young" 
+                             NL "Te oud / te jong",
+Refusal_Strategy     (30015) EN "Approach CBS" 
+                             NL "Benaderstrategie van het CBS",
+Refusal_TooOften     (30016) EN "Participated too often" 
+                             NL "Al te vaak meegedaan / te veel onderzoeken",
+Refusal_TooAggresive (30017) EN "Closed door / aggressive" 
+                             NL "Gooide de deur dicht / werd agressief",
+Refusal_NoShow       (30018) EN "Appointment not kept" 
+                             NL "Afspraak niet nagekomen"
+)		
+
