@@ -1,0 +1,774 @@
+﻿PROCESS AKO_CustomReports
+
+{$DEFINE Debug}
+
+INCLUDE "../Shared/Shared.incx"
+
+CONST 
+   cOpen = 'Openstaand'
+   cComplete = 'Voltooid'
+   cTotal = 'Totaal'
+   cProgress = 'Voortgang'
+   cEmpty = '<LEEG>'
+   cBuurt = 'Buurtomschrijving'
+   cBewoning = 'MeervoudigeBewoning'
+   cSpawned = 'Meervoudige Bewoning'
+   cOriginal = 'Oorspronkelijke Uitzet'
+   cEindResultaten = 'Eindresultaten'
+
+{
+   Questions:
+      Hoe weet je op welke eiland een case is?
+      Voltooid case: Nonrespons of respons?
+      Vragenlijstduur: CMA waardes of vragenlijst tijdmeting?
+}
+
+USES
+   DATAMODEL mTable1
+   PRIMARY 
+      Interviewer, Island, Neighborhood
+   SECONDARY 
+      secInterviewer = Interviewer
+      secIsland = Island
+      secNeighborhood = Neighborhood
+   FIELDS
+      Interviewer : STRING
+      Island : (Bonaire, Saba, Statia)
+      Neighborhood : STRING
+      Complete : INTEGER
+      Noncomplete : INTEGER
+      CompleteSpawned : INTEGER
+      NoncompleteSpawned : INTEGER
+   ENDMODEL
+   
+//   DATAMODEL mTable2
+//   PRIMARY Interviewer, Island, Neighborhood, HappeningsCod
+//   SECONDARY
+//      secCode = HappeningsCod
+//      secInterviewerHapCode = Interviewer, HappeningsCod
+//      secIslandHapCode = Island, HappeningsCod
+//      secNeighborhoodHapCode = Neighborhood, HappeningsCod
+//   FIELDS
+//      Interviewer : STRING
+//      Island : (Bonaire, Saba, Statia)
+//      Neighborhood : STRING
+//      HappeningsCod : STRING
+//      Count : INTEGER
+//   ENDMODEL
+   
+   mUserInfo (VAR)
+   
+   DATAMODEL mBasic
+   PRIMARY Id
+   SECONDARY Id
+   FIELDS
+      Id : STRING
+   ENDMODEL
+   
+   DATAMODEL mCodeKey
+   PRIMARY Code, Key
+   SECONDARY Key
+   FIELDS
+      Code : STRING
+      Key : STRING
+      Count : INTEGER
+   ENDMODEL
+   
+   DATAMODEL mOutput
+   FIELDS
+      Text : STRING[10000]
+   ENDMODEL
+   
+   DATAMODEL mCodes
+   PRIMARY Code
+   FIELDS
+      Code : STRING
+      Name : STRING
+      Text : STRING
+      Count : INTEGER
+   ENDMODEL
+   
+TEMPORARYFILE tTable1 : mTable1
+TEMPORARYFILE tCodes : mCodes
+TEMPORARYFILE tIslands : mBasic
+TEMPORARYFILE tNeighborhoods : mBasic
+TEMPORARYFILE tInterviewerCodes : mCodeKey
+TEMPORARYFILE tIslandCodes : mCodeKey
+TEMPORARYFILE tNeighborhoodCodes : mCodeKey
+TEMPORARYFILE tUserInfo : mUserInfo
+
+{$IFDEF Debug}
+   UPDATEFILE sdUserInfo : mUserInfo('C:\Blaise5\Surveys\cma_userinfo\CMA_UserInfo', BDIX)
+{$ELSE}
+   SURVEYDATAFILE sdUserInfo : mUserInfo
+   SETTINGS
+      OPEN=NO
+{$ENDIF}
+
+OUTPUTFILE 
+   oOut : mOutput(ASCII)
+   SETTINGS
+      OPEN=NO
+      TRAILINGSPACES=NO
+      CREATEBDIX=NO
+   
+FUNCTION ConnectToUserInfo : INTEGER
+INSTRUCTIONS
+   RESULT := -1
+   {$IFDEF Debug}
+      RESULT := mUserInfo.LOADDATAMODEL('C:\Blaise5\Surveys\cma_userinfo\CMA_UserInfo.bmix')
+   {$ELSE}
+      srvList.GET(SECONDARY, 'CMA_UserInfo')
+      IF srvList.RESULTOK THEN
+         RESULT := mUserInfo.LOADDATAMODEL(srvList)
+         IF RESULT = 0 THEN
+            sdUserInfo.SETCONNECTIONSTRING(GetConnectionString([[mUserInfo]]))
+            RESULT := sdUserInfo.OPEN
+         ENDIF
+      ENDIF
+   {$ENDIF}
+ENDFUNCTION
+
+PROCEDURE CacheInterviewers
+INSTRUCTIONS
+   AddToLog('Unfiltered Users: ' + STR(sdUserInfo.RECORDCOUNT))
+   sdUserInfo.SETRECORDFILTER('UserType=1')
+   AddToLog('Filtered Users: ' + STR(sdUserInfo.RECORDCOUNT))
+   REPEAT
+      sdUserInfo.READNEXT
+      tUserInfo := sdUserInfo
+      AddToLog('Caching Interviewer: ' + tUserInfo.GETVALUE('UserId'))
+      tUserInfo.WRITE
+   UNTIL sdUserInfo.LASTRECORD
+ENDPROCEDURE
+
+FUNCTION CodeInCategory : STRING
+PARAMETERS 
+   pMeta : METATYPE
+   pFieldName : STRING
+   pCode : STRING
+AUXFIELDS
+   i : INTEGER
+   Categories : STRING
+INSTRUCTIONS
+   RESULT := cFalse
+   Categories := CreateReflectionField([[pMeta.GetField(pFieldName).Type.Categories]])
+   FOR i := 0 TO VAL([[Categories.Count]]) - 1 DO
+      IF pCode = [[Categories[i].Code]] THEN 
+         RESULT := cTrue
+         EXITFOR
+      ENDIF
+   ENDDO
+ENDFUNCTION
+
+FUNCTION IsEndResult : STRING
+PARAMETERS 
+   pMeta : METATYPE
+   pCode : STRING
+AUXFIELDS
+   i : INTEGER
+   Categories : STRING
+INSTRUCTIONS
+   RESULT := CodeInCategory([[pMeta]], 'Endresult', pCode)
+   IF RESULT = cFalse THEN
+      RESULT := CodeInCategory([[pMeta]], 'ReasonRefusal', pCode)
+   ENDIF
+ENDFUNCTION
+
+PROCEDURE HandleRecordFilter
+AUXFIELDS
+   RecordFilter : OPEN
+INSTRUCTIONS
+   AddToLog('Records before filter: ' + STR(sdLauncher.RECORDCOUNT))
+   RecordFilter := '(MainSurveyId <> \'' + cNullGuid + '\')'
+   AddToLog('Record Filter: ' + RecordFilter)
+   sdLauncher.SETRECORDFILTER(RecordFilter)
+   AddToLog('Records after filter: ' + STR(sdLauncher.RECORDCOUNT))
+ENDPROCEDURE
+
+AUXFIELDS
+   ReportTime : STRING
+   aMainSurveyId : STRING
+   aId : STRING
+   aPrefill : OPEN
+   aForWhom : STRING
+   aNeighborhood : STRING
+   aHappeningsCod : STRING
+   aIsland : 1..3
+   aCaseClosed : 0..1
+   CaseCount : INTEGER
+
+PROCEDURE SetVariables
+AUXFIELDS
+   prefill : OPEN
+INSTRUCTIONS
+   aMainSurveyId := sdLauncher.GETVALUE('MainSurveyId')
+   aId := sdLauncher.GETVALUE('Id')
+   prefill := sdLauncher.GETVALUE('CMA_PreLoadForEdit')
+   aPrefill := SUBSTRING(prefill, 2, LEN(prefill)-2)
+   aForWhom := sdLauncher.GETVALUE('CMA_ForWhom')
+   aHappeningsCod := sdLauncher.GETVALUE('CMA_HappeningsCod')
+   IF aForWhom = EMPTY THEN aForWhom := cEmpty ENDIF
+   aNeighborhood := GetPrefill('Main.NAW.Plaatsnaam')
+   aIsland := 1 // ?
+   IF sdLauncher.GETVALUE('CMA_CaseClosed', UF) = '1' THEN aCaseClosed := 1 ELSE aCaseClosed := 0 ENDIF
+   IF aHappeningsCod = EMPTY THEN aHappeningsCod := cEmpty ENDIF
+   INC(CaseCount)
+ENDPROCEDURE
+
+FUNCTION GetPrefill : STRING
+PARAMETERS pFieldName : STRING
+INSTRUCTIONS
+   RESULT := GetEntryOnName(aPrefill, pFieldName, '=', ',')
+ENDFUNCTION
+
+FUNCTION GetIslandName : STRING
+PARAMETERS pCode : STRING
+AUXFIELDS aCode : INTEGER
+INSTRUCTIONS
+   aCode := VAL(pCode) - 1
+   RESULT := [[ mTable1.GetField('Island').Type.Categories[aCode].Name ]]
+ENDFUNCTION
+
+PROCEDURE Inc
+PARAMETERS
+   TRANSIT pVal : INTEGER
+INSTRUCTIONS
+   pVal := pVal + 1
+ENDPROCEDURE
+
+FUNCTION IsSpawnCase : INTEGER
+PARAMETERS p : STRING
+INSTRUCTIONS
+   IF POSITION('-', p) > 0 THEN RESULT := 1 ENDIF
+ENDFUNCTION
+
+PROCEDURE CalcTable1
+AUXFIELDS IsSpawned : 0..1
+INSTRUCTIONS
+   tTable1.GET(aForWhom, aIsland, aNeighborhood)
+   IF NOT tTable1.RESULTOK THEN
+      tTable1.INITRECORD
+      tTable1.Interviewer := aForWhom
+      tTable1.Island := aIsland
+      tTable1.Neighborhood := aNeighborhood
+   ENDIF
+   IsSpawned := IsSpawnCase(aId)
+   IF aCaseClosed = 0 AND IsSpawned = 0 THEN
+      INC(tTable1.Noncomplete)
+   ELSEIF aCaseClosed = 1 AND IsSpawned = 0 THEN
+      INC(tTable1.Complete)
+   ELSEIF aCaseClosed = 0 AND IsSpawned = 1 THEN
+      INC(tTable1.NoncompleteSpawned)
+   ELSEIF aCaseClosed = 1 AND IsSpawned = 1 THEN
+      INC(tTable1.CompleteSpawned)
+   ENDIF
+   tTable1.WRITE
+ENDPROCEDURE
+
+// +=
+PROCEDURE PE
+PARAMETERS
+   TRANSIT pVal : INTEGER
+   IMPORT pNewVal : INTEGER
+INSTRUCTIONS
+   pVal := pVal + pNewVal
+ENDPROCEDURE
+
+FUNCTION Delimit : OPEN
+PARAMETERS p : OPEN
+INSTRUCTIONS
+   RESULT := '"' + p + '"'
+ENDFUNCTION
+
+PROCEDURE AddToOutput
+PARAMETERS 
+   TRANSIT pCur : OPEN
+   IMPORT pNew : STRING
+INSTRUCTIONS
+   IF pCur <> '' THEN pCur := pCur + ';' ENDIF
+   pCur := pCur + Delimit(REPLACE(pNew, '"', '""'))
+ENDPROCEDURE
+
+FUNCTION AddFirstCol : OPEN
+PARAMETERS 
+   Line : OPEN
+   p : STRING
+INSTRUCTIONS
+   RESULT := Delimit(p) + ';' + Line
+ENDFUNCTION
+
+FUNCTION ToPerc : STRING
+PARAMETERS 
+   pNum : INTEGER
+   pTotal : INTEGER
+INSTRUCTIONS
+   RESULT := TOSTRING(pNum / pTotal, 'p', cNL)
+ENDFUNCTION
+
+AUXFIELDS 
+   BaseOutputPath : OPEN
+
+FUNCTION OpenOutputFile : INTEGER
+PARAMETERS
+   pDir : STRING
+   pFileName : STRING
+AUXFIELDS
+   Output : OPEN
+   NewPath : OPEN
+   Pos : INTEGER
+   aFileName : OPEN
+INSTRUCTIONS
+   Output := BaseOutputPath
+   IF pDir <> '' THEN Output := Output + '\\' + pDir ENDIF
+   IF NOT FOLDEREXISTS(Output) THEN
+      AddToLog('Creating folder: ' + Output)
+      RESULT := CREATEFOLDER(Output)
+   ENDIF
+   IF RESULT = 0 THEN
+      IF pDir <> '' THEN
+         aFileName := pDir + '_' + pFileName
+      ELSE
+         aFileName := pFileName
+      ENDIF
+      Output := Output + '\\' + aFileName + '_' + ReportTime + '.csv'
+      AddToLog('Opening File: ' + Output)
+      RESULT := oOut.OPEN(Output)
+   ENDIF
+ENDFUNCTION
+
+AUXFIELDS
+   TotalComplete : INTEGER
+   TotalNoncomplete : INTEGER
+   TotalSpawned : INTEGER
+   TotalOriginal : INTEGER
+   Total : INTEGER
+   CurrentComplete : INTEGER
+   CurrentNoncomplete : INTEGER
+   CurrentSpawned : INTEGER
+   CurrentOriginal : INTEGER
+   CurrentTotal : INTEGER
+   CurrentKey : STRING
+   HeaderLine : OPEN
+   CompleteLine : OPEN
+   NoncompleteLine : OPEN
+   SpawnedLine : OPEN
+   OriginalLine : OPEN
+   TotalLine : OPEN
+   CompletePercLine : OPEN
+   NoncompletePercLine : OPEN
+   SpawnedPercLine : OPEN
+   OriginalPercLine : OPEN
+   TotalPercLine : OPEN
+   
+PROCEDURE ClearCounts
+INSTRUCTIONS 
+   CurrentComplete := 0
+   CurrentNoncomplete := 0
+   CurrentSpawned := 0
+   CurrentOriginal := 0
+   CurrentTotal := 0
+ENDPROCEDURE
+
+PROCEDURE ClearLines
+INSTRUCTIONS
+   HeaderLine := ''
+   CompleteLine := ''
+   NoncompleteLine := ''
+   TotalLine := ''
+   CompletePercLine := ''
+   NoncompletePercLine := ''
+   TotalPercLine := ''
+   SpawnedLine := ''
+   OriginalLine := ''
+   SpawnedPercLine := ''
+   OriginalPercLine := ''
+ENDPROCEDURE
+
+PROCEDURE ClearAll
+INSTRUCTIONS
+   ClearCounts
+   ClearLines
+   CurrentKey := ''
+ENDPROCEDURE
+
+PROCEDURE SetCounts
+INSTRUCTIONS
+   PE(CurrentComplete, tTable1.Complete)
+   PE(CurrentComplete, tTable1.CompleteSpawned)
+   PE(CurrentNoncomplete, tTable1.Noncomplete)
+   PE(CurrentNoncomplete, tTable1.NoncompleteSpawned)
+   
+   PE(CurrentSpawned, tTable1.CompleteSpawned)
+   PE(CurrentSpawned, tTable1.NoncompleteSpawned)
+   PE(CurrentOriginal, tTable1.Complete)
+   PE(CurrentOriginal, tTable1.Noncomplete)
+   
+   CurrentTotal := CurrentTotal + tTable1.Complete + tTable1.Noncomplete + tTable1.CompleteSpawned + tTable1.NoncompleteSpawned
+ENDPROCEDURE
+
+PROCEDURE SetLines
+INSTRUCTIONS
+   AddToOutput(CompleteLine, STR(CurrentComplete))
+   AddToOutput(NoncompleteLine, STR(CurrentNoncomplete))
+   AddToOutput(TotalLine, STR(CurrentTotal))
+   AddToOutput(CompletePercLine, ToPerc(CurrentComplete, CurrentTotal))
+   AddToOutput(NoncompletePercLine, ToPerc(CurrentNoncomplete, CurrentTotal))
+   AddToOutput(TotalPercLine, ToPerc(CurrentTotal, CurrentTotal))
+
+   AddToOutput(SpawnedLine, STR(CurrentSpawned))
+   AddToOutput(OriginalLine, STR(CurrentOriginal))
+   AddToOutput(SpawnedPercLine, ToPerc(CurrentSpawned, CurrentTotal))
+   AddToOutput(OriginalPercLine, ToPerc(CurrentOriginal, CurrentTotal))
+ENDPROCEDURE
+
+PROCEDURE WriteCounts
+INSTRUCTIONS
+   oOut.Text := AddFirstCol(HeaderLine, '')
+   oOut.WRITE
+   oOut.Text := AddFirstCol(NoncompleteLine, cOpen)
+   oOut.WRITE
+   oOut.Text := AddFirstCol(CompleteLine, cComplete)
+   oOut.WRITE
+   oOut.Text := AddFirstCol(TotalLine, cTotal)
+   oOut.WRITE
+   oOut.CLOSE
+ENDPROCEDURE
+
+PROCEDURE WriteSpawnCounts
+INSTRUCTIONS
+   oOut.Text := AddFirstCol(HeaderLine, '')
+   oOut.WRITE
+   oOut.Text := AddFirstCol(SpawnedLine, cSpawned)
+   oOut.WRITE
+   oOut.Text := AddFirstCol(OriginalLine, cOriginal)
+   oOut.WRITE
+   oOut.Text := AddFirstCol(TotalLine, cTotal)
+   oOut.WRITE
+   oOut.CLOSE
+ENDPROCEDURE
+
+PROCEDURE WritePercents
+INSTRUCTIONS
+   oOut.Text := AddFirstCol(Headerline, '')
+   oOut.WRITE
+   oOut.Text := AddFirstCol(NoncompletePercLine, cOpen)
+   oOut.WRITE
+   oOut.Text := AddFirstCol(CompletePercLine, cComplete)
+   oOut.WRITE
+   oOut.Text := AddFirstCol(TotalPercLine, cTotal)
+   oOut.WRITE
+   oOut.CLOSE
+ENDPROCEDURE
+
+PROCEDURE WriteSpawnPercents
+INSTRUCTIONS
+   oOut.Text := AddFirstCol(Headerline, '')
+   oOut.WRITE
+   oOut.Text := AddFirstCol(SpawnedPercLine, cSpawned)
+   oOut.WRITE
+   oOut.Text := AddFirstCol(OriginalPercLine, cOriginal)
+   oOut.WRITE
+   oOut.Text := AddFirstCol(TotalPercLine, cTotal)
+   oOut.WRITE
+   oOut.CLOSE
+ENDPROCEDURE
+
+PROCEDURE ProcessTable1
+INSTRUCTIONS
+   AddToLog('Processing Tables')
+   
+   AddToLog('Processing Interviewer/Total tables')
+   tTable1.SETREADKEY(SECONDARY, secInterviewer)
+   REPEAT
+      tTable1.READNEXT
+      
+      PE(TotalComplete, tTable1.Complete)
+      PE(TotalComplete, tTable1.CompleteSpawned)
+      PE(TotalNoncomplete, tTable1.Noncomplete)
+      PE(TotalNoncomplete, tTable1.NoncompleteSpawned)
+      
+      PE(TotalSpawned, tTable1.CompleteSpawned)
+      PE(TotalSpawned, tTable1.NoncompleteSpawned)
+      PE(TotalOriginal, tTable1.Complete)
+      PE(TotalOriginal, tTable1.Noncomplete)
+      IF ((CurrentKey <> tTable1.Interviewer) AND (CurrentKey <> EMPTY)) OR tTable1.EOF THEN
+         // write the current record and start a new one
+         AddToLog('Finished Processing ' + CurrentKey)
+         AddToOutput(HeaderLine, CurrentKey)
+         SetLines
+         ClearCounts
+      ENDIF
+      // add to the current record
+      CurrentKey := tTable1.Interviewer
+      SetCounts
+   UNTIL tTable1.EOF
+   Total := TotalNoncomplete + TotalComplete
+   IF OpenOutputFile(cBewoning, 'Totaal') = 0 THEN
+      oOut.Text := AddFirstCol(Delimit(STR(TotalSpawned)), cSpawned)
+      oOut.WRITE
+      oOut.Text := AddFirstCol(Delimit(STR(TotalOriginal)), cOriginal)
+      oOut.WRITE
+      oOut.Text := AddFirstCol(Delimit(STR(Total)), cTotal)
+      oOut.WRITE
+      oOut.CLOSE
+   ENDIF
+   IF OpenOutputFile(cBewoning, 'Totaal_Procent') = 0 THEN
+      oOut.Text := AddFirstCol(Delimit(ToPerc(TotalSpawned, Total)), cSpawned)
+      oOut.WRITE
+      oOut.Text := AddFirstCol(Delimit(ToPerc(TotalOriginal, Total)), cOriginal)
+      oOut.WRITE
+      oOut.Text := AddFirstCol(Delimit(ToPerc(Total, Total)), cTotal)
+      oOut.WRITE
+      oOut.CLOSE
+   ENDIF
+   IF OpenOutputFile(cProgress, 'Totaal') = 0 THEN
+      oOut.Text := AddFirstCol(Delimit(STR(TotalNoncomplete)), cOpen)
+      oOut.WRITE
+      oOut.Text := AddFirstCol(Delimit(STR(TotalComplete)), cComplete)
+      oOut.WRITE
+      oOut.Text := AddFirstCol(Delimit(STR(Total)), cTotal)
+      oOut.WRITE
+      oOut.CLOSE
+   ENDIF
+   IF OpenOutputFile(cProgress, 'Totaal_Procent') = 0 THEN
+      oOut.Text := AddFirstCol(Delimit(ToPerc(TotalNoncomplete, Total)), cOpen)
+      oOut.WRITE
+      oOut.Text := AddFirstCol(Delimit(ToPerc(TotalComplete, Total)), cComplete)
+      oOut.WRITE
+      oOut.Text := AddFirstCol(Delimit(ToPerc(Total, Total)), cTotal)
+      oOut.WRITE
+      oOut.CLOSE
+   ENDIF
+   IF OpenOutputFile(cProgress, 'Interviewers') = 0 THEN
+      WriteCounts
+   ENDIF
+   IF OpenOutputFile(cProgress, 'Interviewers_Procent') = 0 THEN
+      WritePercents
+   ENDIF
+   IF OpenOutputFile(cBewoning, 'Interviewers') = 0 THEN
+      WriteSpawnCounts
+   ENDIF
+   IF OpenOutputFile(cBewoning, 'Interviewers_Procent') = 0 THEN
+      WriteSpawnPercents
+   ENDIF
+   ClearAll
+   
+   AddToLog('Starting Island calculations')
+   tTable1.SETREADKEY(SECONDARY, secIsland)
+   REPEAT
+      tTable1.READNEXT
+      IF ((CurrentKey <> STR(tTable1.Island)) AND (CurrentKey <> EMPTY)) OR tTable1.EOF THEN
+         AddToLog('Finished Processing ' + GetIslandName(CurrentKey))
+         AddToOutput(HeaderLine, GetIslandName(CurrentKey))
+         SetLines
+         ClearCounts
+      ENDIF
+      CurrentKey := STR(tTable1.Island)
+      SetCounts
+   UNTIL tTable1.EOF
+   IF OpenOutputFile(cProgress, 'Eiland') = 0 THEN
+      WriteCounts
+   ENDIF
+   IF OpenOutputFile(cProgress, 'Eiland_Procent') = 0 THEN
+      WritePercents
+   ENDIF
+   IF OpenOutputFile(cBewoning, 'Eiland') = 0 THEN
+      WriteSpawnCounts
+   ENDIF
+   IF OpenOutputFile(cBewoning, 'Eiland_Procent') = 0 THEN
+      WriteSpawnPercents
+   ENDIF
+   ClearAll
+   
+   AddToLog('Starting Neighborhood Calculations')
+   tTable1.SETREADKEY(SECONDARY, secNeighborhood)
+   REPEAT
+      tTable1.READNEXT
+      IF (CurrentKey <> tTable1.Neighborhood AND CurrentKey <> EMPTY) OR tTable1.EOF THEN
+         AddToLog('Finished Processing ' + CurrentKey)
+         AddToOutput(Headerline, CurrentKey)
+         SetLines
+         ClearCounts
+      ENDIF 
+      CurrentKey := tTable1.Neighborhood
+      SetCounts
+   UNTIL tTable1.EOF
+   IF OpenOutputFile(cProgress, 'Buurt') = 0 THEN
+      WriteCounts
+   ENDIF
+   IF OpenOutputFile(cProgress, 'Buurt_Procent') = 0 THEN
+      WritePercents
+   ENDIF
+   IF OpenOutputFile(cBewoning, 'Buurt') = 0 THEN
+      WriteSpawnCounts
+   ENDIF
+   IF OpenOutputFile(cBewoning, 'Buurt_Procent') = 0 THEN
+      WriteSpawnPercents
+   ENDIF
+   ClearAll
+ENDPROCEDURE
+
+FUNCTION RemoveEnds : OPEN
+PARAMETERS p : OPEN
+INSTRUCTIONS
+   RESULT := SUBSTRING(p, 2, LEN(p)-2)
+ENDFUNCTION
+
+AUXFIELDS
+   MaxLen : INTEGER
+
+// need to only include end results - get from types in the actual attempts survey
+PROCEDURE PrepareCodes
+PARAMETERS
+   pLang : INTEGER
+AUXFIELDS
+   Categories : STRING
+   i : INTEGER
+INSTRUCTIONS
+   Categories := CREATEREFLECTIONFIELD([[Attempts.GetField('Happenings').Type.Categories]])
+   FOR i := 0 TO VAL([[Categories.Count]]) - 1 DO
+      tCodes.INITRECORD
+      tCodes.Code := [[Categories[i].Code]]
+      tCodes.Name := [[Categories[i].Name]]
+      tCodes.Text := RemoveEnds([[Categories[i].Texts[pLang]]])
+      IF LEN(tCodes.Code) > MaxLen THEN MaxLen := LEN(tCodes.Code) ENDIF
+      tCodes.WRITE
+   ENDDO
+   tCodes.SETREADKEY(PRIMARY)
+ENDPROCEDURE
+
+PROCEDURE CalcTable2
+INSTRUCTIONS
+   tIslands.INITRECORD
+   tIslands.Id := STR(aIsland)
+   tIslands.WRITE
+   tNeighborhoods.INITRECORD
+   tNeighborhoods.Id := aNeighborhood
+   tNeighborhoods.WRITE
+   tCodes.GET(aHappeningsCod)
+   IF tCodes.RESULTOK THEN
+      INC(tCodes.Count)
+      tCodes.WRITE
+   ENDIF
+   
+   // Neighborhoods
+   tNeighborhoodCodes.GET(aHappeningsCod, aNeighborhood)
+   IF NOT tNeighborhoodCodes.RESULTOK THEN
+      tNeighborhoodCodes.INITRECORD
+      tNeighborhoodCodes.Key := aNeighborhood
+      tNeighborhoodCodes.Code := aHappeningsCod
+   ENDIF
+   INC(tNeighborhoodCodes.Count)
+   tNeighborhoodCodes.WRITE
+   
+   // Interviewers
+   tInterviewerCodes.GET(aHappeningsCod, aForWhom)
+   IF NOT tInterviewerCodes.RESULTOK THEN
+      tInterviewerCodes.INITRECORD
+      tInterviewerCodes.Key := aForWhom
+      tInterviewerCodes.Code := aHappeningsCod
+   ENDIF
+   INC(tInterviewerCodes.Count)
+   tInterviewerCodes.WRITE
+   
+   // Islands
+   tIslandCodes.GET(aHappeningsCod, STR(aIsland))
+   IF NOT tIslandCodes.RESULTOK THEN
+      tIslandCodes.INITRECORD
+      tIslandCodes.Key := STR(aIsland)
+      tIslandCodes.Code := aHappeningsCod
+   ENDIF
+   INC(tIslandCodes.Count)
+   tIslandCodes.WRITE
+ENDPROCEDURE
+
+FUNCTION GetEindresHeader : STRING
+PARAMETERS pSecCol : STRING
+INSTRUCTIONS
+   RESULT := Delimit('Code') + ';' + Delimit(pSecCol)
+ENDFUNCTION
+
+PROCEDURE ProcessTable2
+AUXFIELDS
+   Total : INTEGER
+INSTRUCTIONS
+   AddToLog('Processing Table 2')
+   // this isn't 100% correct because it also includes non end results
+   tCodes.RESET
+   IF OpenOutputFile(cEindresultaten, '') = 0 THEN
+      oOut.Text := GetEindresHeader('Aantal')
+      oOut.WRITE
+      REPEAT
+         tCodes.READNEXT
+         oOut.INITRECORD
+         AddToOutput(oOut.Text, '(' + GetDisplayCode(tCodes.Code) + ') ' + tCodes.Text)
+         AddToOutput(oOut.Text, STR(tCodes.Count))
+         PE(Total, tCodes.Count)
+         oOut.WRITE
+      UNTIL tCodes.LASTRECORD
+      oOut.INITRECORD
+      AddToOutput(oOut.Text, cTotal)
+      AddToOutput(oOut.Text, STR(Total))
+      oOut.WRITE
+      oOut.CLOSE
+   ENDIF
+   tCodes.RESET
+   IF OpenOutputFile(cEindresultaten, 'Procent') = 0 THEN
+      oOut.Text := GetEindresHeader('Procent')
+      oOut.WRITE
+      REPEAT
+         tCodes.READNEXT
+         oOut.INITRECORD
+         AddToOutput(oOut.Text, '(' + GetDisplayCode(tCodes.Code) + ') ' + tCodes.Text)
+         AddToOutput(oOut.Text, ToPerc(tCodes.Count, Total))
+         oOut.WRITE
+      UNTIL tCodes.LASTRECORD
+      oOut.INITRECORD
+      AddToOutput(oOut.Text, cTotal)
+      AddToOutput(oOut.Text, ToPerc(Total, Total))
+      oOut.WRITE
+      oOut.CLOSE
+   ENDIF
+   tInterviewerCodes.SETREADKEY(SECONDARY)
+   REPEAT
+      tInterviewerCodes.READNEXT
+      MESSAGE([[tInterviewerCodes.ToJson(FALSE)]])
+   UNTIL tInterviewerCodes.LASTRECORD
+   
+ENDPROCEDURE
+
+FUNCTION GetDisplayCode : STRING
+PARAMETERS pCode : STRING
+INSTRUCTIONS
+   RESULT := TOSTRING(VAL(pCode), FILL('0', MaxLen))
+ENDFUNCTION
+
+PROCEDURE Main
+AUXFIELDS 
+   ProcessedRecords : INTEGER
+INSTRUCTIONS
+   Res := ConnectToUserInfo
+   IF Res = 0 THEN
+      CacheInterviewers
+      ReportTime := DATETOSTR(SYSDATETIME, 'yyyyMMddHHmmss')
+      BaseOutputPath := GETSPECIALFOLDERPATH('MyDocuments') + '\\AKO_Reports\\' + ReportTime
+      HandleRecordFilter
+      PrepareCodes(0)
+      REPEAT
+         sdLauncher.READNEXT
+         PE(ProcessedRecords, 1)
+         IF ProcessedRecords MOD 25 = 0 THEN
+            AddToLog('Proccessing record ' + STR(ProcessedRecords) + '/' + STR(sdLauncher.RECORDCOUNT))
+         ENDIF
+         SetVariables
+         CalcTable1
+         CalcTable2
+      UNTIL sdLauncher.LASTRECORD
+      ProcessTable1
+      ProcessTable2
+      Res := RUN(BaseOutputPath)
+   ENDIF
+ENDPROCEDURE
+
+INCLUDE "../Shared/Main.incx"

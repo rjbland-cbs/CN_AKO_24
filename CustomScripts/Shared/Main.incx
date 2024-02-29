@@ -1,0 +1,10 @@
+﻿MANIPULATE
+   Res := Initialise
+   IF Res = 0 THEN
+      AddToLog('CustomScript ' + SETUPNAME + ' initialisation successful')
+      Main
+      AddToLog('End CustomScript ' + SETUPNAME)
+      tInterchange.Message := 'What the user should see in the dialog'
+   ELSE
+      AddToLog('CustomScript ' + SETUPNAME + ' initilisation failed: sdLauncher=' + STR(sdLauncher.IORESULTCODE) + ' sdAttempts='+ STR(sdAttempts.IORESULTCODE) + ' sdTopic='+ STR(sdTopic.IORESULTCODE))
+   ENDIF

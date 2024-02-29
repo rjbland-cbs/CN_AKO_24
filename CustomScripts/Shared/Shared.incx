@@ -1,0 +1,217 @@
+﻿
+SETTINGS
+   CONNECT=NO
+
+USES
+   // These will be preloaded for you via cmd line
+   Launcher (VAR) // always the launcher datamodel
+   Attempts (VAR) // the attempts in cma_surveysettings for the specified survey or default attempts
+   Topic (VAR) // only preloaded if you select a survey from the dropdown
+   LogMeta (VAR) // admin tool logging meta
+   
+   DATAMODEL mInterchange
+   FIELDS
+      Message : OPEN
+   ENDMODEL
+
+{$IFDEF Debug}
+   UPDATEFILE sdLauncher : LAUNCHER('../../TestData/Launcher', BDIX)
+   
+   UPDATEFILE sdAttempts : Attempts('../../TestData/CN_Attempts', BDIX)
+   
+   UPDATEFILE sdTopic : Topic('../../TestData/AKO22', BDIX)
+{$ELSE}
+   SURVEYDATAFILE sdLauncher : Launcher
+   SETTINGS
+      OPEN=NO
+   
+   SURVEYDATAFILE sdAttempts : Attempts
+   SETTINGS
+      OPEN=NO
+   
+   SURVEYDATAFILE sdTopic : Topic
+   SETTINGS
+      OPEN=NO
+{$ENDIF}
+
+// Survey data files can be opened with the Initialise function
+//SURVEYDATAFILE sdLauncher : Launcher
+//SETTINGS
+//   OPEN=NO
+
+//SURVEYDATAFILE sdAttempts : Attempts
+//SETTINGS
+//   OPEN=NO
+
+//SURVEYDATAFILE sdTopic : Topic
+//SETTINGS
+//   OPEN=NO
+   
+TEMPORARYFILE tInterchange : mInterchange
+SETTINGS
+   INTERCHANGE=TRANSIT
+   
+
+{$IFNDEF Debug}   
+OUTPUTFILE oLog:LogMeta (ASCII) //log file name set on cmd line using file id oLog
+SETTINGS
+  MAKENEWFILE=NO  
+  OPEN=NO
+  SEPARATOR=';'
+  TRAILINGSPACES=NO
+  CREATEBDIX=NO
+{$ENDIF}
+   
+SURVEYLIST srvList
+
+CONST
+   cDateTimeFormat = "yyyyMMdd,HH:mm:sszzz"
+   cNullGuid = '00000000-0000-0000-0000-000000000000'
+   cGetValDateFormat = 'd-M-yyyy'
+   cNL = 'nl-NL'
+   cFalse = 'False'
+   cTrue = 'True'
+
+FUNCTION GetConnectionString : STRING
+PARAMETERS pMeta : METATYPE
+AUXFIELDS GUID : STRING
+INSTRUCTIONS
+   GUID := [[pMeta.InstrumentId]]
+   srvList.GET(GUID)
+   IF srvList.RESULTOK THEN
+      RESULT := 'InstrumentId='+GUID+
+                ';Serverpark='+srvList.ServerPark
+   ENDIF
+ENDFUNCTION
+
+FUNCTION Initialise : INTEGER
+AUXFIELDS
+  res, res1, res2, res3: INTEGER
+  GUID: STRING
+INSTRUCTIONS
+   {$IFDEF Debug}
+      IF RESULT = 0 THEN RESULT := Launcher.LOADDATAMODEL('Launcher.bmix') ENDIF
+      IF RESULT = 0 THEN RESULT := Attempts.LOADDATAMODEL('CN_Attempts.bmix') ENDIF
+      IF RESULT = 0 THEN RESULT := Topic.LOADDATAMODEL('AKO22.bmix') ENDIF
+   {$ELSE}
+      RESULT := -1
+      IF srvList.UserIsAuthenticated THEN
+         res := srvList.GETLISTOFSURVEYS
+         IF res = 0 THEN
+            sdLauncher.SETCONNECTIONSTRING(GetConnectionString([[Launcher]]))
+            res1 := sdLauncher.OPEN
+            sdAttempts.SETCONNECTIONSTRING(GetConnectionString([[Attempts]]))
+            res2 := sdAttempts.OPEN
+            IF pTopicLoaded = yes THEN
+               sdTopic.SETCONNECTIONSTRING(GetConnectionString([[Topic]]))
+               res3 := sdTopic.OPEN
+            ENDIF
+            RESULT := res1 + res2 + res3
+         ENDIF
+      ENDIF
+   {$ENDIF}
+ENDFUNCTION
+
+FUNCTION NowDT: STRING
+INSTRUCTIONS
+  RESULT:= TIMETOSTR(SYSTIME,cDateTimeFormat)
+ENDFUNCTION 
+
+PROCEDURE AddToLog
+PARAMETERS pTextToLog: OPEN
+INSTRUCTIONS
+   {$IFDEF Debug}
+      MESSAGE(NowDt + ';' + pTextToLog)
+   {$ELSE}
+      oLog.OPEN
+      oLog.PUTVALUE('LogWhen',NowDT)
+      oLog.PUTVALUE('LogText',pTextToLog)
+      oLog.WRITE
+      oLog.RELEASE
+   {$ENDIF}
+   
+   ENDPROCEDURE
+
+FUNCTION GetEntry: OPEN
+//retrieves the from string with separator pChar the pIndex-th entry
+PARAMETERS 
+  pText: OPEN
+  pIndex: INTEGER
+  pSepChar: STRING
+AUXFIELDS
+  i, p, next: INTEGER
+INSTRUCTIONS
+  p:= 0
+  RESULT:= ''
+  FOR i:= 1 TO pIndex-1 DO 
+    p:= POSITION(pSepChar,pText,p+1) 
+  ENDDO
+  IF p<>0 OR pIndex=1 THEN
+    next:=  POSITION(pSepChar,pText,p+1) 
+    IF next=0 THEN
+      RESULT:= SUBSTRING(pText,p+1,LEN(pText))
+    ELSE
+      RESULT:= SUBSTRING(pText,p+1,next-p-1)   
+    ENDIF
+  ENDIF
+ENDFUNCTION
+
+FUNCTION GetEntryOnName: OPEN
+PARAMETERS
+  pText: OPEN
+  pName: STRING
+  pSep1: STRING
+  pSep2: STRING
+AUXFIELDS 
+  p, p_sep: INTEGER
+INSTRUCTIONS
+  p:= POSITION(pSep2+UPPERCASE(pName)+pSep1,pSep2+UPPERCASE(pText))
+  IF p>0 THEN
+    IF SUBSTRING(pText,p+LEN(pName)+1,1)='"' THEN
+      p_sep:= p+LEN(pName)+1 //search next not-escaped "...
+      REPEAT
+        p_sep:= POSITION('"',pText,p_sep+1)
+      UNTIL SUBSTRING(pText,p_sep-1,1)<>'\\' OR p_sep=0
+      IF p_sep=0 THEN p_sep:= LEN(pText)+1 ENDIF
+      RESULT:= SUBSTRING(pText,p+LEN(pName)+2,p_sep-(p+LEN(pName))-2)
+    ELSE
+      p_sep:= POSITION(pSep2,pText,p+LEN(pName)+1)
+      IF p_sep=0 THEN p_sep:= LEN(pText)+1 ENDIF
+      RESULT:= SUBSTRING(pText,p+LEN(pName)+1,p_sep-(p+LEN(pName))-1)
+    ENDIF  
+  ELSE
+    RESULT:= ''  
+  ENDIF  
+  RESULT:= REPLACE(RESULT,'\"','"')
+ENDFUNCTION
+
+AUXFIELDS
+   pDebug : (Yes), EMPTY
+   
+PROCEDURE Debug
+PARAMETERS msg : OPEN
+INSTRUCTIONS
+   {$IFDEF Debug}
+      pDebug := Yes
+   {$ENDIF}
+   IF pDebug = Yes THEN
+      AddToLog('Debug: ' + msg)
+   ENDIF
+ENDPROCEDURE
+
+AUXFIELDS
+   Res : INTEGER
+   pTopicLoaded : (yes (1)) // used to conditionally load the surveydatafile, can also be used in your own setup
+
+//MANIPULATE
+//   Res := Initialise
+//   IF Res = 0 THEN
+//      AddToLog('CustomScript ' + SETUPNAME + ' initialisation successful')
+//      Main
+//      AddToLog('End CustomScript ' + SETUPNAME)
+//      tInterchange.Message := 'What the user should see in the dialog'
+//   ELSE
+//      AddToLog('CustomScript ' + SETUPNAME + ' initilisation failed: sdLauncher=' + STR(sdLauncher.IORESULTCODE) + ' sdAttempts='+ STR(sdAttempts.IORESULTCODE) + ' sdTopic='+ STR(sdTopic.IORESULTCODE))
+//   ENDIF
+
+

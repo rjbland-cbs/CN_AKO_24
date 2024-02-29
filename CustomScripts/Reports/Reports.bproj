@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project Name="Reports" Guid="12bab535-9ddf-46cb-9f8d-105869407a27" ProjectType="ManipulaProject">
+  <MainFile RelativePath="true">Reports.manx</MainFile>
+  <FileItems>
+    <File FileType="ManipulaFileType" RelativePath="true">Reports.manx</File>
+  </FileItems>
+  <Properties>
+    <AppSupport />
+    <IsAppMainUserInterface />
+    <ResourceDB />
+    <SurveyRoot />
+    <ConditionalDefines />
+    <DatamodelSearchPath />
+    <ExternalSearchPath />
+    <IncludeSearchPath />
+    <LibrarySearchPath />
+  </Properties>
+</Project>

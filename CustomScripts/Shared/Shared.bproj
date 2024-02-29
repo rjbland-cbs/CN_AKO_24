@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project Name="Shared" Guid="dde44298-bdf1-4521-8841-1c09299c0790" ProjectType="ManipulaProject">
+  <MainFile RelativePath="true">Shared.manx</MainFile>
+  <FileItems>
+    <File FileType="ManipulaFileType" RelativePath="true">Shared.manx</File>
+    <File FileType="IncludeFileType" RelativePath="true">Shared.incx</File>
+    <File FileType="IncludeFileType" RelativePath="true">Main.incx</File>
+  </FileItems>
+  <Properties>
+    <AppSupport />
+    <IsAppMainUserInterface />
+    <ResourceDB />
+    <SurveyRoot />
+    <ConditionalDefines />
+    <DatamodelSearchPath />
+    <ExternalSearchPath />
+    <IncludeSearchPath />
+    <LibrarySearchPath />
+  </Properties>
+</Project>
