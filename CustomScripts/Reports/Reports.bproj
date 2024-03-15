@@ -3,6 +3,8 @@
   <MainFile RelativePath="true">Reports.manx</MainFile>
   <FileItems>
     <File FileType="ManipulaFileType" RelativePath="true">Reports.manx</File>
+    <File FileType="IncludeFileType" RelativePath="true">Functions.incx</File>
+    <File FileType="IncludeFileType" RelativePath="true">TableFunctions.incx</File>
   </FileItems>
   <Properties>
     <AppSupport />
