@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project Name="CMA_ContactInfo" Guid="0ce218dd-3b98-4e15-aaf3-9e130acdbc7b" ProjectType="DatamodelProject">
+  <MainFile RelativePath="true">CMA_ContactInfo.blax</MainFile>
+  <FileItems>
+    <File FileType="DatamodelFileType" RelativePath="true">CMA_ContactInfo.blax</File>
+    <File FileType="PackageSpecificationFileType" RelativePath="true">CMA_ContactInfo.bcps</File>
+  </FileItems>
+  <Properties>
+    <IncludeSearchPath />
+    <LibrarySearchPath />
+    <DatamodelSearchPath />
+    <ResourceDB RelativePath="true">CMA.blrd</ResourceDB>
+    <SupportedModes />
+    <UsedResourceSets />
+    <ConditionalDefines />
+    <ExternalSearchPath />
+    <SurveyRoot />
+    <CatiRole />
+    <IsRunnableSurvey>True</IsRunnableSurvey>
+    <WebDataEntryClient>None</WebDataEntryClient>
+    <AppSupport />
+    <UseCari>False</UseCari>
+    <IgnoreLayoutErrors>False</IgnoreLayoutErrors>
+    <IgnoreRichtextErrors>False</IgnoreRichtextErrors>
+    <AddFieldGroupOrderInformation>False</AddFieldGroupOrderInformation>
+    <StartCondition />
+    <ActionsSetup />
+    <DownloadInterceptorSetup />
+    <WriteInterceptorSetup />
+    <RunWriteInterceptorSetupAsynchronously>False</RunWriteInterceptorSetupAsynchronously>
+  </Properties>
+</Project>

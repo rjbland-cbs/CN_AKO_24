@@ -1,0 +1,682 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TranslationsFile>
+  <Languages>
+    <Language Name="EN">English</Language>
+    <Language Name="EL">Ελληνικά</Language>
+  </Languages>
+  <Roles>
+    <Role Name="TOOLTIP" />
+    <Role Name="DISABLED" />
+  </Roles>
+  <Modes />
+  <Items>
+    <Translation Name="tSurveyName" Parent="locCases" Type="Field">
+      <Texts Lang="EN">Survey</Texts>
+      <Texts Lang="EL">Έρευνα</Texts>
+    </Translation>
+    <Translation Name="tIdentifier" Parent="locCases" Type="Field">
+      <Texts Lang="EN">Key</Texts>
+      <Texts Lang="EL">Κλειδί</Texts>
+    </Translation>
+    <Translation Name="tStatus" Parent="locCases" Type="Field">
+      <Texts Lang="EN">Interview status</Texts>
+      <Texts Lang="EL">Κατάσταση Συνέντευξης</Texts>
+    </Translation>
+    <Translation Name="tLastResult" Parent="locCases" Type="Field">
+      <Texts Lang="EN">Result</Texts>
+      <Texts Lang="EL">Αποτέλεσμα</Texts>
+    </Translation>
+    <Translation Name="tAppointment" Parent="locCases" Type="Field">
+      <Texts Lang="EN">Appointment</Texts>
+      <Texts Lang="EL">Ραντεβού</Texts>
+    </Translation>
+    <Translation Name="tStartDate" Parent="locCases" Type="Field">
+      <Texts Lang="EN">Start date</Texts>
+      <Texts Lang="EL">Ημερομηνία έναρξης</Texts>
+    </Translation>
+    <Translation Name="tEndDate" Parent="locCases" Type="Field">
+      <Texts Lang="EN">End date</Texts>
+      <Texts Lang="EL">Ημερομηνία ολοκλήρωσης</Texts>
+    </Translation>
+    <Translation Name="tContactInfoShort" Parent="locCases" Type="Field">
+      <Texts Lang="EN">Contact info</Texts>
+      <Texts Lang="EL">Στοιχεία Επικοινωνίας</Texts>
+    </Translation>
+    <Translation Name="tLastAttempt" Parent="locCases" Type="Field">
+      <Texts Lang="EN">Last attempt</Texts>
+      <Texts Lang="EL">Τελευταία Προσπάθεια</Texts>
+    </Translation>
+    <Translation Name="tCaseNote" Parent="locCases" Type="Field">
+      <Texts Lang="EN">Case note</Texts>
+      <Texts Lang="EL">Σημείωση Υπόθεσης</Texts>
+    </Translation>
+    <Translation Name="tSpawnCount" Parent="locCases" Type="Field">
+      <Texts Lang="EN">#Created</Texts>
+      <Texts Lang="EL">#Δημιουργήθηκε</Texts>
+    </Translation>
+    <Translation Name="tStatus" Parent="locCases" Type="Field">
+      <Texts Lang="EN">Status</Texts>
+    </Translation>
+    <Translation Name="tCaseStatus" Parent="locCases" Type="Field">
+      <Texts Lang="EN">Interview status</Texts>
+      <Texts Lang="EL">Κατάσταση Συνέντευξης</Texts>
+    </Translation>
+    <Translation Name="tGroupStatus" Parent="locCases" Type="Field">
+      <Texts Lang="EN">Group status</Texts>
+      <Texts Lang="EL">Κατάσταση ομάδας</Texts>
+    </Translation>
+    <Translation Name="tGroupID" Parent="locCases" Type="Field">
+      <Texts Lang="EN">Group ID</Texts>
+      <Texts Lang="EL">ID ομάδας</Texts>
+    </Translation>
+    <Translation Name="tAttemptsCount" Parent="locCases" Type="Field">
+      <Texts Lang="EN">#Attempts</Texts>
+      <Texts Lang="EL">#Προσπαθειών</Texts>
+    </Translation>
+    <Translation Name="tGeoLocation" Parent="locCases" Type="Field">
+      <Texts Lang="EN">Geo Position</Texts>
+    </Translation>
+    <Translation Name="tCustomCol1" Parent="locCases" Type="Field">
+      <Texts Lang="EN">CustomCol1</Texts>
+      <Texts Lang="EL">CustomCol1</Texts>
+    </Translation>
+    <Translation Name="tCustomCol2" Parent="locCases" Type="Field">
+      <Texts Lang="EN">CustomCol2</Texts>
+      <Texts Lang="EL">CustomCol2</Texts>
+    </Translation>
+    <Translation Name="tCustomCol3" Parent="locCases" Type="Field">
+      <Texts Lang="EN">CustomCol3</Texts>
+      <Texts Lang="EL">CustomCol3</Texts>
+    </Translation>
+    <Translation Name="tCustomCol4" Parent="locCases" Type="Field">
+      <Texts Lang="EN">CustomCol4</Texts>
+      <Texts Lang="EL">CustomCol4</Texts>
+    </Translation>
+    <Translation Name="tCustomCol5" Parent="locCases" Type="Field">
+      <Texts Lang="EN">CustomCol5</Texts>
+      <Texts Lang="EL">CustomCol5</Texts>
+    </Translation>
+    <Translation Name="tCustomCol6" Parent="locCases" Type="Field">
+      <Texts Lang="EN">CustomCol6</Texts>
+      <Texts Lang="EL">CustomCol6</Texts>
+    </Translation>
+    <Translation Name="tCustomCol7" Parent="locCases" Type="Field">
+      <Texts Lang="EN">CustomCol7</Texts>
+      <Texts Lang="EL">CustomCol7</Texts>
+    </Translation>
+    <Translation Name="tCustomCol8" Parent="locCases" Type="Field">
+      <Texts Lang="EN">CustomCol8</Texts>
+      <Texts Lang="EL">CustomCol8</Texts>
+    </Translation>
+    <Translation Name="tCustomCol9" Parent="locCases" Type="Field">
+      <Texts Lang="EN">CustomCol9</Texts>
+      <Texts Lang="EL">CustomCol9</Texts>
+    </Translation>
+    <Translation Name="tCustomCol10" Parent="locCases" Type="Field">
+      <Texts Lang="EN">CustomCol10</Texts>
+      <Texts Lang="EL">CustomCol10</Texts>
+    </Translation>
+    <Translation Name="atID" Parent="locAttempts" Type="Field">
+      <Texts Lang="EN">Key</Texts>
+      <Texts Lang="EL">Κλειδί</Texts>
+    </Translation>
+    <Translation Name="SeqNr" Parent="locAttempts" Type="Field">
+      <Texts Lang="EN">#</Texts>
+      <Texts Lang="EL">#</Texts>
+    </Translation>
+    <Translation Name="When" Parent="locAttempts" Type="Field">
+      <Texts Lang="EN">When</Texts>
+      <Texts Lang="EL">Πότε</Texts>
+    </Translation>
+    <Translation Name="HappeningsStr" Parent="locAttempts" Type="Field">
+      <Texts Lang="EN">Result</Texts>
+      <Texts Lang="EL">Αποτέλεσμα</Texts>
+    </Translation>
+    <Translation Name="cNotStarted" Type="Constant">
+      <Texts Lang="EN">Not started</Texts>
+      <Texts Lang="EL">Δεν ξεκίνησε</Texts>
+    </Translation>
+    <Translation Name="cAdded" Type="Constant">
+      <Texts Lang="EN">Added</Texts>
+      <Texts Lang="EL">Προστέθηκε</Texts>
+    </Translation>
+    <Translation Name="cCompleted" Type="Constant">
+      <Texts Lang="EN">Completed</Texts>
+      <Texts Lang="EL">Ολοκληρώθηκε</Texts>
+    </Translation>
+    <Translation Name="cInterrupted" Type="Constant">
+      <Texts Lang="EN">Interrupted</Texts>
+      <Texts Lang="EL">Διακόπηκε</Texts>
+    </Translation>
+    <Translation Name="cInterruptedDone" Type="Constant">
+      <Texts Lang="EN">Stopped</Texts>
+    </Translation>
+    <Translation Name="cFinalized" Type="Constant">
+      <Texts Lang="EN">Finalized</Texts>
+      <Texts Lang="EL">Ολοκληρώθηκε</Texts>
+    </Translation>
+    <Translation Name="cStarted" Type="Constant">
+      <Texts Lang="EN">Started</Texts>
+      <Texts Lang="EL">Ξεκίνησε</Texts>
+    </Translation>
+    <Translation Name="cUploaded" Type="Constant">
+      <Texts Lang="EN">Uploaded</Texts>
+      <Texts Lang="EL">Φορτώθηκε</Texts>
+    </Translation>
+    <Translation Name="cReopened" Type="Constant">
+      <Texts Lang="EN">Reopened</Texts>
+      <Texts Lang="EL">Επανεξέταση</Texts>
+    </Translation>
+    <Translation Name="cDone" Type="Constant">
+      <Texts Lang="EN">Done</Texts>
+      <Texts Lang="EL">Έγινε</Texts>
+    </Translation>
+    <Translation Name="cClosed" Type="Constant">
+      <Texts Lang="EN">Closed</Texts>
+    </Translation>
+    <Translation Name="cShowImage" Type="Constant">
+      <Texts Lang="EN">Click to show image...</Texts>
+      <Texts Lang="EL">Επιλέξτε για να δείτε την εικόνα...</Texts>
+    </Translation>
+    <Translation Name="msgSaveChangedNote" Type="Constant">
+      <Texts Lang="EN">Save changed note?</Texts>
+      <Texts Lang="EL">Θέλετε να αποθηκεύσετε τις αλλαγές στο σημείωμα?</Texts>
+    </Translation>
+    <Translation Name="msgNoCases" Type="Constant">
+      <Texts Lang="EN">No cases available! Press Sync to Synchronize</Texts>
+      <Texts Lang="EL">Δεν υπάρχουν διαθέσιμες περιπτώσεις! Πατήστε Sync για συγχρονισμό</Texts>
+    </Translation>
+    <Translation Name="msgAfterEndDate" Type="Constant">
+      <Texts Lang="EN">Action not possible because after end date of case</Texts>
+      <Texts Lang="EL">Η ενέργεια δεν είναι εφικτή γιατί έγινε μετά την ημερομηνία ολοκλήρωσης της υπόθεσης</Texts>
+    </Translation>
+    <Translation Name="msgBeforeStartDate" Type="Constant">
+      <Texts Lang="EN">Action not possible because before start date of case</Texts>
+      <Texts Lang="EL">Η ενέργεια δεν είναι εφικτή γιατί έγινε πριν την ημερομηνία έναρξης της υπόθεσης</Texts>
+    </Translation>
+    <Translation Name="msgNothingToUpload" Type="Constant">
+      <Texts Lang="EN">Nothing to upload!</Texts>
+      <Texts Lang="EL">Δεν υπάρχει τίποτα για ανέβασμα!</Texts>
+    </Translation>
+    <Translation Name="msgNothingToDownload" Type="Constant">
+      <Texts Lang="EN">Nothing to download!</Texts>
+      <Texts Lang="EL">Δεν υπάρχει τίποτα για λήψη!</Texts>
+    </Translation>
+    <Translation Name="msgCompletedCases" Type="Constant">
+      <Texts Lang="EN"># Completed cases uploaded: </Texts>
+      <Texts Lang="EL"># Ολοκληρωμένων υποθέσεων που έχουν φορτωθεί στον διακομιστή: </Texts>
+    </Translation>
+    <Translation Name="msgBackupCases" Type="Constant">
+      <Texts Lang="EN"># Non-Completed cases uploaded: </Texts>
+      <Texts Lang="EL"># Μη Ολοκληρωμένων υποθέσεων που στάληκαν στον διακομιστή: </Texts>
+    </Translation>
+    <Translation Name="msgSurvey" Type="Constant">
+      <Texts Lang="EN">Survey</Texts>
+      <Texts Lang="EL">Έρευνα</Texts>
+    </Translation>
+    <Translation Name="msgRemoved" Type="Constant">
+      <Texts Lang="EN">removed from device</Texts>
+      <Texts Lang="EL">αφαιρέθηκε από την συσκευή</Texts>
+    </Translation>
+    <Translation Name="msgInstallOfSurvey" Type="Constant">
+      <Texts Lang="EN">Install of survey</Texts>
+      <Texts Lang="EL">Εγκατάσταση της έρευνας</Texts>
+    </Translation>
+    <Translation Name="msgUpdateOfSurvey" Type="Constant">
+      <Texts Lang="EN">Update of survey</Texts>
+      <Texts Lang="EL">Ενημέρωση της έρευνας</Texts>
+    </Translation>
+    <Translation Name="msgFailed" Type="Constant">
+      <Texts Lang="EN">failed. Error: </Texts>
+      <Texts Lang="EL">απέτυχε. Σφάλμα: </Texts>
+    </Translation>
+    <Translation Name="msgSucceeded" Type="Constant">
+      <Texts Lang="EN">Succeeded!</Texts>
+      <Texts Lang="EL">Έγινε με επιτυχία!</Texts>
+    </Translation>
+    <Translation Name="msgNotPresent" Type="Constant">
+      <Texts Lang="EN">needed but not available for download on server</Texts>
+      <Texts Lang="EL">απαιτείται αλλά δεν είναι διαθέσιμο για λήψη στον διακομιστή</Texts>
+    </Translation>
+    <Translation Name="msgNewCases" Type="Constant">
+      <Texts Lang="EN"># New cases downloaded: </Texts>
+      <Texts Lang="EL">Έχει γίνει λήψη νέων υποθέσεων: </Texts>
+    </Translation>
+    <Translation Name="msgRestoredCases" Type="Constant">
+      <Texts Lang="EN"># Restored cases: </Texts>
+      <Texts Lang="EL"># Υποθέσεων που έχουν ανακτηθεί: </Texts>
+    </Translation>
+    <Translation Name="msgCasesTransferred" Type="Constant">
+      <Texts Lang="EN"># Cases transferred: </Texts>
+      <Texts Lang="EL"># Υποθέσεων που έχουν μεταφερθεί: </Texts>
+    </Translation>
+    <Translation Name="msgReleasedCases" Type="Constant">
+      <Texts Lang="EN"># Cases released: </Texts>
+      <Texts Lang="EL"># Διαθέσιμων Υποθέσεων: </Texts>
+    </Translation>
+    <Translation Name="msgReopenedCases" Type="Constant">
+      <Texts Lang="EN"># Cases reopened: </Texts>
+      <Texts Lang="EL"># Υποθέσεων για επανεξέταση: </Texts>
+    </Translation>
+    <Translation Name="msgClosedCases" Type="Constant">
+      <Texts Lang="EN"># Cases closed: </Texts>
+    </Translation>
+    <Translation Name="msgSyncNotPossible" Type="Constant">
+      <Texts Lang="EN">Synchronize was not possible. Error=</Texts>
+      <Texts Lang="EL">Ο συγχρονισμός δεν είναι δυνατός. Σφάλμα=</Texts>
+    </Translation>
+    <Translation Name="msgStartFailed" Type="Constant">
+      <Texts Lang="EN">CMA failed to initialize. Please contact the help desk.</Texts>
+      <Texts Lang="EL">Αποτυχία εκκίνησης CMA. Παρακαλώ επικοινωνήστε με την ομάδα υποστήριξης.</Texts>
+    </Translation>
+    <Translation Name="msgSurveyNotPresent" Type="Constant">
+      <Texts Lang="EN">Survey not present on the device</Texts>
+      <Texts Lang="EL">Η έρευνα δεν έχει εγκατασταθεί στην συσκευή</Texts>
+    </Translation>
+    <Translation Name="msgNotConnected" Type="Constant">
+      <Texts Lang="EN">Synchronize not possible because you are not connected to the Internet.</Texts>
+      <Texts Lang="EL">Ο συγχρονισμός δεν είναι εφικτός γιατί δεν είστε συνδεδεμένος στο διαδίκτυο.</Texts>
+    </Translation>
+    <Translation Name="msgSynchronize" Type="Constant">
+      <Texts Lang="EN">Synchronize?</Texts>
+      <Texts Lang="EL">Να γίνει συγχρονισμός?</Texts>
+    </Translation>
+    <Translation Name="msgSyncing" Type="Constant">
+      <Texts Lang="EN">Syncing...</Texts>
+      <Texts Lang="EL">Γίνεται συγχρονισμός...</Texts>
+    </Translation>
+    <Translation Name="msgInitializing" Type="Constant">
+      <Texts Lang="EN">Initializing...</Texts>
+      <Texts Lang="EL">Εκκίνηση...</Texts>
+    </Translation>
+    <Translation Name="msgSpawnNotPossible" Type="Constant">
+      <Texts Lang="EN">Adding a case is not possible</Texts>
+      <Texts Lang="EL">Η προσθήκη νέας υπόθεσης δεν είναι εφικτή</Texts>
+    </Translation>
+    <Translation Name="msgConfirmSpawn" Type="Constant">
+      <Texts Lang="EN">Are you sure you want to add a case?</Texts>
+      <Texts Lang="EL">Είστε βέβαιοι ότι θέλετε να προσθέσετε μια νέα υπόθεση?</Texts>
+    </Translation>
+    <Translation Name="msgCreateAndInterview" Type="Constant">
+      <Texts Lang="EN">Are you sure you want to add case for "$contactinfoshort" and start an interview?</Texts>
+    </Translation>
+    <Translation Name="msgConfirmGeoLocCollect" Type="Constant">
+      <Texts Lang="EN">Are you sure you want to collect the geo position?</Texts>
+      <Texts Lang="EL">Είστε βέβαιοι ότι θέλετε να συλλέξετε τις γεωγραφικές συντεταγμένες?</Texts>
+    </Translation>
+    <Translation Name="msgAllCasesHandled" Type="Constant">
+      <Texts Lang="EN">All cases have been handled of survey</Texts>
+      <Texts Lang="EL">Όλες οι υποθέσεις έχουν διευθετηθεί για την έρευνα</Texts>
+    </Translation>
+    <Translation Name="msgStartInterview" Type="Constant">
+      <Texts Lang="EN">Are you sure you want to start an interview for</Texts>
+      <Texts Lang="EL">Είστε βέβαιοι ότι θέλετε να ξεκινήσετε μια συνέντευξη για</Texts>
+    </Translation>
+    <Translation Name="mgStartAttempt" Type="Constant">
+      <Texts Lang="EN">Are you sure you want to add an attempt?</Texts>
+      <Texts Lang="EL">Είστε βέβαιοι ότι θέλετε να προσθέσετε μια προσπάθεια?</Texts>
+    </Translation>
+    <Translation Name="msgContinueInterview" Type="Constant">
+      <Texts Lang="EN">Are you sure you want to continue the interview for</Texts>
+      <Texts Lang="EL">Είστε βέβαιοι ότι θέλετε να συνεχίσετε την συνέντευξη για</Texts>
+    </Translation>
+    <Translation Name="msgAttemptsForCase" Type="Constant">
+      <Texts Lang="EN">Attempts for case </Texts>
+      <Texts Lang="EL">Προσπάθειες για υπόθεση </Texts>
+    </Translation>
+    <Translation Name="msgUnableToStartInterview" Type="Constant">
+      <Texts Lang="EN">Unable to start interview. Please contact the help desk</Texts>
+      <Texts Lang="EL">Η εκκίνηση της συνέντευξης δεν είναι εφικτή. Παρακαλώ επικοινωνήστε με την ομάδα υποστήριξης.</Texts>
+    </Translation>
+    <Translation Name="msgNotAuthenticatedUser" Type="Constant">
+      <Texts Lang="EN">You are currently working in disconnected mode without authentication</Texts>
+      <Texts Lang="EL">Αυτήν τη στιγμή εργάζεστε σε αποσυνδεδεμένη λειτουργία χωρίς πιστοποίηση ταυτότητας</Texts>
+    </Translation>
+    <Translation Name="msgCaseNotPresent" Type="Constant">
+      <Texts Lang="EN">Interview cannot start because preload is missing</Texts>
+    </Translation>
+    <Translation Name="msgError1001" Type="Constant">
+      <Texts Lang="EN">Error 1001: Install of LAUNCHER-survey failed! Code:</Texts>
+      <Texts Lang="EL">Error 1001: Αποτυχία εγκατάστασης της έρευνας LAUNCHER-survey! Code:</Texts>
+    </Translation>
+    <Translation Name="msgError1002" Type="Constant">
+      <Texts Lang="EN">Error 1002: Install of LAUNCHER-survey not complete!</Texts>
+      <Texts Lang="EL">Error 1002: Η εγκατάσταση της έρευνας LAUNCHER-survey δεν έχει ολοκληρωθεί!</Texts>
+    </Translation>
+    <Translation Name="msgError1003" Type="Constant">
+      <Texts Lang="EN">Error 1003: Install of ATTEMPTS-survey failed! Code:</Texts>
+      <Texts Lang="EL">Error 1003: Αποτυχία εγκατάστασης της έρευνας ATTEMPTS-survey! Code:</Texts>
+    </Translation>
+    <Translation Name="msgError1004" Type="Constant">
+      <Texts Lang="EN">Error 1004: Install of ATTEMPTS-survey not complete!</Texts>
+      <Texts Lang="EL">Error 1004: Η εγκατάσταση της έρευνας ATTEMPTS-survey δεν έχει ολοκληρωθεί!</Texts>
+    </Translation>
+    <Translation Name="msgError1005" Type="Constant">
+      <Texts Lang="EN">Error 1005: CMA will be halted. Launcher survey needs to be updated on the server</Texts>
+      <Texts Lang="EL">Error 1005: Το CMA θα διακοπεί. Η έρευνα εκκίνησης πρέπει να ενημερωθεί στον διακομιστή</Texts>
+    </Translation>
+    <Translation Name="msgError1006" Type="Constant">
+      <Texts Lang="EN">Error 1006: Install of CONTACTINFO-survey failed! Code:</Texts>
+      <Texts Lang="EL">Error 1006: Αποτυχία εγκατάστασης της έρευνας CONTACTINFO-survey! Code:</Texts>
+    </Translation>
+    <Translation Name="msgError1007" Type="Constant">
+      <Texts Lang="EN">Error 1007: Install of CONTACTINFO-survey not complete!</Texts>
+      <Texts Lang="EL">Error 1007: Η εγκατάσταση της έρευνας CONTACTINFO-survey δεν έχει ολοκληρωθεί!</Texts>
+    </Translation>
+    <Translation Name="msgError1008" Type="Constant">
+      <Texts Lang="EN">Error 1008: CMA needs to be installed in server park with 'Sync surveys when connected' set to TRUE</Texts>
+      <Texts Lang="EL">Error 1008: CMA πρέπει να εγκατασταθεί στο διακομιστή με την επιλογή 'Sync surveys when connected' να είναι TRUE</Texts>
+    </Translation>
+    <Translation Name="msgError1009" Type="Constant">
+      <Texts Lang="EN">Error 1009: Error initializing CMA. Try restarting the Blaise program</Texts>
+    </Translation>
+    <Translation Name="msgGeoLocationFailed" Type="Constant">
+      <Texts Lang="EN">Geo position could not be determined</Texts>
+      <Texts Lang="EL">Δεν είναι εφικτός ο προσδιορισμός των γεωγραφικών συντεταγμένων</Texts>
+    </Translation>
+    <Translation Name="msgGeoLocationDetermined" Type="Constant">
+      <Texts Lang="EN">Geo position has been determined. Accuracy is $accuracy m</Texts>
+    </Translation>
+    <Translation Name="msgDownloadCase" Type="Constant">
+      <Texts Lang="EN">Case not present. Download case now?</Texts>
+    </Translation>
+	<Translation Name="msgUnexpectedSyncError" Type="Constant">
+      <Texts Lang="EN">An unexpected error occurred while preparing to sync. If this issue persists, try restarting the application.</Texts>
+    </Translation>
+    <Translation Name="msgSyncErrorMinus10" Type="Constant">
+      <Texts Lang="EN">No network access</Texts>
+    </Translation>
+    <Translation Name="msgSyncErrorMinus2" Type="Constant">
+      <Texts Lang="EN">Downloading failed</Texts>
+    </Translation>
+    <Translation Name="msgSyncErrorMinus4" Type="Constant">
+      <Texts Lang="EN">The user is not authorized to perform the requested action</Texts>
+    </Translation>
+    <Translation Name="msgConfirmSetGroupToDone" Type="Constant">
+      <Texts Lang="EN">Are you sure the group needs to be set to Done?</Texts>
+    </Translation>
+    <Translation Name="msgReopenedHandled" Type="Constant">
+      <Texts Lang="EN">Has this reopened case been handled completely?</Texts>
+      <Texts Lang="EL">Έχετε ολοκληρώσει όλες τις απαιτούμενες διορθώσεις αυτής της υπόθεσης που χρήζει επανεξέτασης?</Texts>
+    </Translation>
+    <Translation Name="msgLogUploadOKay" Type="Constant">
+      <Texts Lang="EN">The log has been uploaded</Texts>
+      <Texts Lang="EL">Το log έχει φορτωθεί στο διακομιστή</Texts>
+    </Translation>
+    <Translation Name="msgLogUploadFailed" Type="Constant">
+      <Texts Lang="EN">The upload of the log failed</Texts>
+      <Texts Lang="EL">Το ανέβασμα του log απέτυχε</Texts>
+    </Translation>
+    <Translation Name="msgDownloadFailed" Type="Constant">
+      <Texts Lang="EN">Download of case failed</Texts>
+      <Texts Lang="EL">Η λήψη υποθέσεων απέτυχε</Texts>
+    </Translation>
+    <Translation Name="msgDownloadCase" Type="Constant">
+      <Texts Lang="EN">Case not present. Download case now?</Texts>
+      <Texts Lang="EL">Η υπόθεση δεν υπάρχει. Θέλετε να κατεβάσετε την υπόθεση τώρα?</Texts>
+    </Translation>
+    <Translation Name="cAttemptsTemplate" Type="Constant">
+      <Texts Lang="EN">&lt;table borderwidth=1 bordercolor=black grid=both gridwidth=1&gt;&lt;column width=auto&gt;&lt;column width=*&gt;&lt;row&gt;&lt;cell margin="4,2,4,2"&gt;&lt;left&gt;When made:&lt;/left&gt;&lt;/cell&gt;&lt;cell margin="4,2,4,2" background=lightgray&gt;&lt;left&gt;$Att_When&lt;/left&gt;&lt;/cell&gt;&lt;/row&gt;&lt;row&gt;&lt;cell margin="4,2,4,2"&gt;&lt;left&gt;Result:&lt;/left&gt;&lt;/cell&gt;&lt;cell margin="4,2,4,2" background=lightgray&gt;&lt;left&gt;$Att_Result&lt;/left&gt;&lt;/cell&gt;&lt;/row&gt;&lt;row&gt;&lt;cell margin="4,2,4,2"&gt;&lt;left&gt;Appointment:&lt;/left&gt;&lt;/cell&gt;&lt;cell margin="4,2,4,2" background=lightgray&gt;&lt;left&gt;$Att_Appointment&lt;/left&gt;&lt;/cell&gt;&lt;/row&gt;&lt;row&gt;&lt;cell margin="4,2,4,2"&gt;&lt;left&gt;Note:&lt;/left&gt;&lt;/cell&gt;&lt;cell margin="4,2,4,2" background=lightgray&gt;&lt;left&gt;$Att_Note&lt;/left&gt;&lt;/cell&gt;&lt;/row&gt;&lt;/table&gt;</Texts>
+      <Texts Lang="EL">&lt;table borderwidth=1 bordercolor=black grid=both gridwidth=1&gt;&lt;column width=auto&gt;&lt;column width=*&gt;&lt;row&gt;&lt;cell margin="4,2,4,2"&gt;&lt;left&gt;When made:&lt;/left&gt;&lt;/cell&gt;&lt;cell margin="4,2,4,2" background=lightgray&gt;&lt;left&gt;$Att_When&lt;/left&gt;&lt;/cell&gt;&lt;/row&gt;&lt;row&gt;&lt;cell margin="4,2,4,2"&gt;&lt;left&gt;Result:&lt;/left&gt;&lt;/cell&gt;&lt;cell margin="4,2,4,2" background=lightgray&gt;&lt;left&gt;$Att_Result&lt;/left&gt;&lt;/cell&gt;&lt;/row&gt;&lt;row&gt;&lt;cell margin="4,2,4,2"&gt;&lt;left&gt;Appointment:&lt;/left&gt;&lt;/cell&gt;&lt;cell margin="4,2,4,2" background=lightgray&gt;&lt;left&gt;$Att_Appointment&lt;/left&gt;&lt;/cell&gt;&lt;/row&gt;&lt;row&gt;&lt;cell margin="4,2,4,2"&gt;&lt;left&gt;Note:&lt;/left&gt;&lt;/cell&gt;&lt;cell margin="4,2,4,2" background=lightgray&gt;&lt;left&gt;$Att_Note&lt;/left&gt;&lt;/cell&gt;&lt;/row&gt;&lt;/table&gt;</Texts>
+    </Translation>
+    <Translation Name="ShowGroup" Parent="btnCases" Type="Category">
+      <Texts Lang="EN">&lt;img src=ShowGroup&gt;</Texts>
+      <Texts Lang="EN" Role="DISABLED">&lt;img src=ShowGroupDisabled&gt;</Texts>
+      <Texts Lang="EN" Role="TOOLTIP">Show case group</Texts>
+      <Texts Lang="EL" Role="TOOLTIP">Ομάδα υποθέσεων</Texts>
+    </Translation>
+    <Translation Name="Spawn" Parent="btnCases" Type="Category">
+      <Texts Lang="EN">&lt;img src=SpawnCasePlus&gt;</Texts>
+      <Texts Lang="EN" Role="DISABLED">&lt;img src=SpawncasePlusDisabled&gt;</Texts>
+      <Texts Lang="EN" Role="TOOLTIP">Add case</Texts>
+      <Texts Lang="EL" Role="TOOLTIP">Προσθήκη υπόθεσης</Texts>
+    </Translation>
+    <Translation Name="IW" Parent="btnCases" Type="Category">
+      <Texts Lang="EN">&lt;img src=Interview&gt;</Texts>
+      <Texts Lang="EN" Role="DISABLED">&lt;img src=InterviewDisabled&gt;</Texts>
+      <Texts Lang="EN" Role="TOOLTIP">Start interview</Texts>
+      <Texts Lang="EL" Role="TOOLTIP">Εκκίνηση Συνέντευξης</Texts>
+    </Translation>
+    <Translation Name="Attempt" Parent="btnCases" Type="Category">
+      <Texts Lang="EN">&lt;img src=Account&gt;</Texts>
+      <Texts Lang="EN" Role="DISABLED">&lt;img src=AccountDisabled&gt;</Texts>
+      <Texts Lang="EN" Role="TOOLTIP">Show attempts</Texts>
+      <Texts Lang="EL" Role="TOOLTIP">Εμφάνιση προσπαθειών</Texts>
+    </Translation>
+    <Translation Name="Update" Parent="btnCases" Type="Category">
+      <Texts Lang="EN">&lt;img src=Update&gt;</Texts>
+      <Texts Lang="EN" Role="DISABLED">&lt;img src=UpdateDisabled&gt;</Texts>
+      <Texts Lang="EN" Role="TOOLTIP">Edit case</Texts>
+      <Texts Lang="EL" Role="TOOLTIP">Τροποποίηση υπόθεσης</Texts>
+    </Translation>
+    <Translation Name="CollectGeoLoc" Parent="btnCases" Type="Category">
+      <Texts Lang="EN">&lt;img src=DetermineGeoPos&gt;</Texts>
+      <Texts Lang="EN" Role="DISABLED">&lt;img src=DetermineGeoPosDisabled&gt;</Texts>
+      <Texts Lang="EN" Role="TOOLTIP">Determine geo position</Texts>
+      <Texts Lang="EL" Role="TOOLTIP">Προσδιορίστε τις γεωγραφικές συντεταγμένες</Texts>
+    </Translation>
+    <Translation Name="Synchronize" Parent="btnCases" Type="Category">
+      <Texts Lang="EN">&lt;img src=Synchronize&gt;</Texts>
+      <Texts Lang="EN" Role="DISABLED">&lt;img src=SynchronizeDisabled&gt;</Texts>
+      <Texts Lang="EN" Role="TOOLTIP">Synchronize data</Texts>
+      <Texts Lang="EL" Role="TOOLTIP">Συγχρονισμός δεδομένων</Texts>
+    </Translation>
+    <Translation Name="Quit" Parent="btnCases" Type="Category">
+      <Texts Lang="EN">&lt;img src=Quit&gt;</Texts>
+      <Texts Lang="EN" Role="DISABLED">&lt;img src=QuitDisabled&gt;</Texts>
+      <Texts Lang="EN" Role="TOOLTIP">Quit application</Texts>
+      <Texts Lang="EL" Role="TOOLTIP">Έξοδος από την εφαρμογή</Texts>
+    </Translation>
+    <Translation Name="Spawn" Parent="btnGroup" Type="Category">
+      <Texts Lang="EN">&lt;img src=SpawnCasePlus&gt;</Texts>
+      <Texts Lang="EN" Role="DISABLED">&lt;img src=SpawncasePlusDisabled&gt;</Texts>
+      <Texts Lang="EN" Role="TOOLTIP">Add case</Texts>
+      <Texts Lang="EL" Role="TOOLTIP">Προσθήκη υπόθεσης</Texts>
+    </Translation>
+    <Translation Name="IW" Parent="btnGroup" Type="Category">
+      <Texts Lang="EN">&lt;img src=Interview&gt;</Texts>
+      <Texts Lang="EN" Role="DISABLED">&lt;img src=InterviewDisabled&gt;</Texts>
+      <Texts Lang="EN" Role="TOOLTIP">Start interview</Texts>
+      <Texts Lang="EL" Role="TOOLTIP">Εκκίνηση συνέντευξης</Texts>
+    </Translation>
+    <Translation Name="Add" Parent="btnGroup" Type="Category">
+      <Texts Lang="EN">&lt;img src=AttemptAdd&gt;</Texts>
+      <Texts Lang="EN" Role="DISABLED">&lt;img src=AttemptAddDisabled&gt;</Texts>
+      <Texts Lang="EN" Role="TOOLTIP">Add a new attempt</Texts>
+    </Translation>
+    <Translation Name="Attempt" Parent="btnGroup" Type="Category">
+      <Texts Lang="EN">&lt;img src=Account&gt;</Texts>
+      <Texts Lang="EN" Role="DISABLED">&lt;img src=AccountDisabled&gt;</Texts>
+      <Texts Lang="EN" Role="TOOLTIP">Show attempts</Texts>
+      <Texts Lang="EL" Role="TOOLTIP">Εμφάνιση προσπαθειών</Texts>
+    </Translation>
+    <Translation Name="Update" Parent="btnGroup" Type="Category">
+      <Texts Lang="EN">&lt;img src=Update&gt;</Texts>
+      <Texts Lang="EN" Role="DISABLED">&lt;img src=UpdateDisabled&gt;</Texts>
+      <Texts Lang="EN" Role="TOOLTIP">Edit case</Texts>
+      <Texts Lang="EL" Role="TOOLTIP">Τροποποίηση Υπόθεσης</Texts>
+    </Translation>
+    <Translation Name="CollectGeoLoc" Parent="btnGroup" Type="Category">
+      <Texts Lang="EN">&lt;img src=DetermineGeoPos&gt;</Texts>
+      <Texts Lang="EN" Role="DISABLED">&lt;img src=DetermineGeoPosDisabled&gt;</Texts>
+      <Texts Lang="EN" Role="TOOLTIP">Determine geo position</Texts>
+      <Texts Lang="EL" Role="TOOLTIP">Προσδιορίστε τις γεωγραφικές συντεταγμένες</Texts>
+    </Translation>
+    <Translation Name="Done" Parent="btnGroup" Type="Category">
+      <Texts Lang="EN">&lt;img src=Done&gt;</Texts>
+      <Texts Lang="EN" Role="DISABLED">&lt;img src=DoneDisabled&gt;</Texts>
+      <Texts Lang="EN" Role="TOOLTIP">Set case to Done</Texts>
+    </Translation>
+    <Translation Name="Synchronize" Parent="btnGroup" Type="Category">
+      <Texts Lang="EN">&lt;img src=Synchronize&gt;</Texts>
+      <Texts Lang="EN" Role="TOOLTIP">Synchronize data</Texts>
+      <Texts Lang="EL" Role="TOOLTIP">Συγχρονισμός δεδομένων</Texts>
+    </Translation>
+    <Translation Name="Back" Parent="btnGroup" Type="Category">
+      <Texts Lang="EN">&lt;img src=BackButton2&gt;</Texts>
+      <Texts Lang="EN" Role="TOOLTIP">Back to main screen</Texts>
+      <Texts Lang="EL" Role="TOOLTIP">Επιστροφή στην κύρια οθόνη</Texts>
+    </Translation>
+    <Translation Name="Change" Parent="btnStyle" Type="Category">
+      <Texts Lang="EN">&lt;img src=ChangeFont&gt;</Texts>	
+      <Texts Lang="EN" Role="TOOLTIP">Change style</Texts>
+      <Texts Lang="EL" Role="TOOLTIP">Αλλαγή εμφάνισης</Texts>
+    </Translation>
+    <Translation Name="All" Parent="auxWhatCasesToShow" Type="Category">
+      <Texts Lang="EN" Role="TOOLTIP">Show all cases</Texts>
+      <Texts Lang="EL" Role="TOOLTIP">Εμφάνιση όλων των υποθέσεων</Texts>
+    </Translation>
+    <Translation Name="Noncompleted" Parent="auxWhatCasesToShow" Type="Category">
+      <Texts Lang="EN" Role="TOOLTIP">Show only non-completed cases</Texts>
+      <Texts Lang="EL" Role="TOOLTIP">Εμφάνιση μη ολοκληρωμένων υποθέσεων</Texts>
+    </Translation>
+    <Translation Name="Completed" Parent="auxWhatCasesToShow" Type="Category">
+      <Texts Lang="EN" Role="TOOLTIP">Show only completed cases</Texts>
+      <Texts Lang="EL" Role="TOOLTIP">Εμφάνιση μόνο ολοκληρωμένων υποθέσεων</Texts>
+    </Translation>
+    <Translation Name="srvAll" Parent="auxWhatSurveyToShow" Type="Category">
+      <Texts Lang="EN">\&lt;All\&gt;</Texts>
+      <Texts Lang="EL">\&lt;Όλα\&gt;</Texts>
+    </Translation>
+    <Translation Name="cfvAll" Parent="auxCustomFilter" Type="Category">
+      <Texts Lang="EN">\&lt;All\&gt;</Texts>
+      <Texts Lang="EL">\&lt;Όλα\&gt;</Texts>
+    </Translation>
+    <Translation Name="OK" Parent="auxIDone" Type="Category">
+      <Texts Lang="EN">Ok</Texts>
+      <Texts Lang="EL">Εντάξει</Texts>
+    </Translation>
+    <Translation Name="Add" Parent="btnAttempts" Type="Category">
+      <Texts Lang="EN">&lt;img src=AttemptAdd&gt;</Texts>
+      <Texts Lang="EN" Role="DISABLED">&lt;img src=AttemptAddDisabled&gt;</Texts>
+      <Texts Lang="EN" Role="TOOLTIP">Add a new attempt</Texts>
+      <Texts Lang="EL" Role="TOOLTIP">Προσθήκη νέας προσπάθειας</Texts>
+    </Translation>
+    <Translation Name="Modify" Parent="btnAttempts" Type="Category">
+      <Texts Lang="EN">&lt;img src=Update&gt;</Texts>
+      <Texts Lang="EN" Role="DISABLED">&lt;img src=UpdateDisabled&gt;</Texts>
+      <Texts Lang="EN" Role="TOOLTIP">Edit note</Texts>
+      <Texts Lang="EL" Role="TOOLTIP">Επεξεργασία σημείωσης</Texts>
+    </Translation>
+    <Translation Name="Quit" Parent="btnAttempts" Type="Category">
+      <Texts Lang="EN">&lt;img src=BackButton2&gt;</Texts>
+      <Texts Lang="EN" Role="TOOLTIP">Back to cases screen</Texts>
+      <Texts Lang="EL" Role="TOOLTIP">Επιστροφή στην οθόνη με τις υποθέσεις</Texts>
+    </Translation>
+    <Translation Name="View" Parent="btnAttempts" Type="Category">
+      <Texts Lang="EN">&lt;img src=ReadOnlyEdit&gt;</Texts>
+      <Texts Lang="EN" Role="DISABLED">&lt;img src=ReadOnlyEditDisabled&gt;</Texts>
+      <Texts Lang="EN" Role="TOOLTIP">View interview</Texts>
+      <Texts Lang="EL" Role="TOOLTIP">Προβολή συνέντευξης</Texts>
+    </Translation>
+    <Translation Name="Save" Parent="btnEditNote" Type="Category">
+      <Texts Lang="EN">&lt;img src=OK&gt;</Texts>
+      <Texts Lang="EN" Role="DISABLED">&lt;img src=OKDisabled&gt;</Texts>
+      <Texts Lang="EN" Role="TOOLTIP">Save note</Texts>
+      <Texts Lang="EL" Role="TOOLTIP">Αποθήκευση σημείωσης</Texts>
+    </Translation>
+    <Translation Name="Cancel" Parent="btnEditNote" Type="Category">
+      <Texts Lang="EN">&lt;img src=Cancel&gt;</Texts>
+      <Texts Lang="EN" Role="DISABLED">&lt;img src=CancelDisabled&gt;</Texts>
+      <Texts Lang="EN" Role="TOOLTIP">Cancel</Texts>
+      <Texts Lang="EL" Role="TOOLTIP">Ακύρωση</Texts>
+    </Translation>
+    <Translation Name="dShowTheLogging" Type="Dialog">
+      <Texts Lang="EN">CMA logging</Texts>
+      <Texts Lang="EL">CMA logging</Texts>
+    </Translation>
+    <Translation Name="dCases" Type="Dialog">
+      <Texts Lang="EN">CMA - Available cases</Texts>
+      <Texts Lang="EL">CMA - Διαθέσιμες υποθέσεις</Texts>
+    </Translation>
+    <Translation Name="dShowImage" Type="Dialog">
+      <Texts Lang="EN">Show image</Texts>
+      <Texts Lang="EL">Εμφάνιση εικόνας</Texts>
+    </Translation>
+    <Translation Name="auxDataGridHeaderAll" Parent="dCases" Type="Field">
+      <Texts Lang="EN">List of all cases:</Texts>
+      <Texts Lang="EL">Λιστα με όλες τις υποθέσεις:</Texts>
+    </Translation>
+    <Translation Name="auxDataGridHeaderCompleted" Parent="dCases" Type="Field">
+      <Texts Lang="EN">List of all completed cases:</Texts>
+      <Texts Lang="EL">Λιστα με ολοκληρωμένες υποθέσεις:</Texts>
+    </Translation>
+    <Translation Name="auxDataGridHeaderNonCompleted" Parent="dCases" Type="Field">
+      <Texts Lang="EN">List of all non-completed cases:</Texts>
+      <Texts Lang="EL">Λιστα με μη ολοκληρωμένες υποθέσεις:</Texts>
+    </Translation>
+    <Translation Name="auxWhatCasesToShow" Parent="dCases" Type="Field">
+      <Texts Lang="EN">Cases to show: </Texts>
+      <Texts Lang="EL">Σύνολ. Υποθέσεων: </Texts>
+    </Translation>
+    <Translation Name="auxWhatSurveyToShow" Parent="dCases" Type="Field">
+      <Texts Lang="EN">Survey to show: </Texts>
+      <Texts Lang="EL">Εμφάνιση έρευνας: </Texts>
+    </Translation>
+    <Translation Name="auxSortOn" Parent="dCases" Type="Field">
+      <Texts Lang="EN">Select display order: </Texts>
+      <Texts Lang="EL">Επιλέξτε σειρά εμφάνισης: </Texts>
+    </Translation>
+    <Translation Name="auxFilter" Parent="dCases" Type="Field">
+      <Texts Lang="EN">Filter:</Texts>
+      <Texts Lang="EL">Φίλτρο:</Texts>
+    </Translation>
+    <Translation Name="dGroup" Type="Dialog">
+      <Texts Lang="EN">Case Group</Texts>
+      <Texts Lang="EL">Υπόθεση ομάδας</Texts>
+    </Translation>
+    <Translation Name="auxSortGrpOn" Parent="dGroup" Type="Field">
+      <Texts Lang="EN">Select display order: </Texts>
+      <Texts Lang="EL">Επιλέξτε σειρά εμφάνισης: </Texts>
+    </Translation>
+    <Translation Name="dAttempts" Type="Dialog">
+      <Texts Lang="EN">Attempts</Texts>
+      <Texts Lang="EL">Προσπάθειες</Texts>
+    </Translation>
+    <Translation Name="dEditNote" Type="Dialog">
+      <Texts Lang="EN">Edit note</Texts>
+      <Texts Lang="EL">Επεξεργασία σημείωσης</Texts>
+    </Translation>
+    <Translation Name="auxNote" Parent="dEditNote" Type="Field">
+      <Texts Lang="EN">Note:</Texts>
+      <Texts Lang="EL">Σημείωση:</Texts>
+    </Translation>
+    <Translation Name="ShowTheLogging" Type="Dialog">
+      <Texts Lang="EN">CMA logging</Texts>
+      <Texts Lang="EL">CMA logging</Texts>
+    </Translation>
+    <Translation Name="Synchronize" Parent="QuitLogging" Type="Category">
+      <Texts Lang="EN">&lt;img src=Synchronize&gt;</Texts>
+    </Translation>
+    <Translation Name="OK" Parent="QuitLogging" Type="Category">
+      <Texts Lang="EN">&lt;img src=BackButton2&gt;</Texts>
+    </Translation>
+    <Translation Name="msgServerMaintenance" Type="Constant">
+      <Texts Lang="EN">Server maintenance. Synchronizing currently not possible!</Texts>
+      <Texts Lang="EL">Συντήρηση του διακομιστή. Ο συγχρονισμός δεν είναι δυνατός αυτήν τη στιγμή</Texts>
+    </Translation>
+    <Translation Name="txtAll" Type="Constant">
+      <Texts Lang="EN">&lt;All surveys&gt;</Texts>
+      <Texts Lang="EL">&lt;All surveys&gt;</Texts>
+    </Translation>
+    <Translation Name="txtNonCompleted" Type="Constant">
+      <Texts Lang="EN">Non-completed</Texts>
+      <Texts Lang="EL">Non-completed</Texts>
+    </Translation>
+    <Translation Name="txtCompleted" Type="Constant">
+      <Texts Lang="EN">Completed</Texts>
+      <Texts Lang="EL">Completed</Texts>
+    </Translation>	
+    <Translation Name="CurLan" Type="Field">
+      <Texts Lang="EN">Select language</Texts>
+      <Texts Lang="EL">Select language</Texts>
+    </Translation>	
+	<Translation Name="atAppointment" Parent="locAttempts" Type="Field">
+      <Texts Lang="EN">Appointment</Texts>
+      <Texts Lang="EL">Appointment</Texts>
+    </Translation>  </Items>
+  <AllLanguagesUsed>
+    <Language Name="EN">English</Language>
+    <Language Name="EL">Ελληνικά</Language>
+  </AllLanguagesUsed>
+</TranslationsFile>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project Name="Survey_DialogApplication.manx" Guid="7860ab40-10af-403b-ba1f-375112fef0b9" ProjectType="ManipulaProject">
+  <MainFile RelativePath="true">Survey_DialogApplication.manx</MainFile>
+  <FileItems>
+    <File FileType="ManipulaFileType" RelativePath="true">Survey_DialogApplication.manx</File>
+  </FileItems>
+  <Properties>
+    <AppSupport>On</AppSupport>
+    <IsAppMainUserInterface />
+    <ResourceDB />
+    <SurveyRoot />
+    <ConditionalDefines />
+    <DatamodelSearchPath />
+    <ExternalSearchPath />
+    <IncludeSearchPath />
+    <LibrarySearchPath />
+  </Properties>
+</Project>

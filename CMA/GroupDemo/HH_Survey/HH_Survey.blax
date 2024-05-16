@@ -1,0 +1,38 @@
+﻿DATAMODEL HH_Survey "House hold survey"
+
+PRIMARY Identifier
+
+BLOCK bPerson
+PARAMETERS Index: INTEGER
+FIELDS
+  FirstName "What is the person ^Index first name?": STRING[15]
+  Age "What is the age of ^FirstName": 0..120
+  Gender "What is the gender of ^FirstName?": (Male,Female,Other)
+  Work "Does ^FirstName have a paid job?" : (yes,no),DK
+  Permission "Is ^FirstName willing to participate in one or more additional surveys?" : (yes,no) 
+RULES
+  Firstname
+  IF FirstName=RESPONSE THEN
+    Age
+    Gender
+    IF Age>=18 AND Age<=70 THEN
+      Work
+      Permission
+    ENDIF   
+  ENDIF
+ENDBLOCK
+FIELDS
+  Identifier : STRING[5]
+  HH_Size "How many people live in this household?": 1..10
+  Persons: ARRAY[1..10] of bPerson
+AUXFIELDS
+  TheEnd "This concludes this interview. Press next page to exit": STRING[1], EMPTY  
+LOCALS Index: INTEGER
+RULES
+  HH_Size
+  FOR Index:= 1 TO HH_Size DO
+    Persons[Index](Index)
+  ENDDO
+  TheEnd  
+ENDMODEL    
+

@@ -1,0 +1,11 @@
+﻿DATAMODEL LogMeta
+//CMA - Case Management Application for use by interviewers
+//
+//version:  2.0. For Blaise 5.10
+//date:     December-2021 
+//author:   Lon Hofman, Team Blaise, Statistics Netherlands
+FIELDS
+  LogWhen: STRING[24]
+  LogText: STRING[1000]
+ENDMODEL 
+  

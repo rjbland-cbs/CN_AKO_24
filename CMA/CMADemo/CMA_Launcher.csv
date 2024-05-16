@@ -1,0 +1,51 @@
+﻿MainSurveyID;SurveyDisplayName;ID;CMA_ForWhom;CMA_AllowSpawning;PII.Name;PII.Address;PII.PostalCode;PII.Town;PII.Phone1;CaseNote;Image;GeoLocation
+a764d1a1-5277-4b1c-94ad-cf356dd2fba3;ICT survey;27;CMA_Ann;;Courtney Whitmore;Einstein Way 314;83527;Blue Valley;7086547221;"This person is also known as ""Stargirl""";
+fe94aa68-e405-4ce4-84ab-e4a6a0139f45;Health survey;16,1;CMA_Ann;1;;Elmstreet 666;14937;Central City;;"This is the address of ""The Flash"". You need to interview everyone present at this address";TheFlash_Elmstreet666.PNG;40.9043831,-74.0589828
+a764d1a1-5277-4b1c-94ad-cf356dd2fba3;ICT survey;21;CMA_Ann;;Brian Braddock;Oxford Road 25;14142;Chicago;7456365429;"This person is also known as ""Captain Britain""";
+2cbb4701-93fd-4217-8d56-02c769d2da11;Labour survey;29;CMA_Ben;;Steve Austin;Bumblebee Road 432 #2;86492;Chicago;5346672817;"This person is also known as ""6 Million Dollar Man""";
+fe94aa68-e405-4ce4-84ab-e4a6a0139f45;Health survey;40,1;CMA_Ann;1;;Kingsway 991;73416;Chicago;;"This is the address of ""Rogue"". You need to interview everyone present at this address";
+a764d1a1-5277-4b1c-94ad-cf356dd2fba3;ICT survey;33;CMA_Ann;;Donna Troy;Upper Downside 712;32273;Chicago;7635655143;"This person is also known as ""Wonder Girl""";
+a764d1a1-5277-4b1c-94ad-cf356dd2fba3;ICT survey;45;CMA_Ann;;Rita Farr;Blueberry Road 83;62415;Chicago;3142936092;"This person is also known as ""Elasti-Girl""";ElastiGirl_BlueBerryRd83.PNG;43.6540473,-70.3347002
+2cbb4701-93fd-4217-8d56-02c769d2da11;Labour survey;47;CMA_Ben;;Jackson King;My Way 97;88769;Chicago;6451837452;"This person is also known as ""Battalion""";
+a764d1a1-5277-4b1c-94ad-cf356dd2fba3;ICT survey;18;CMA_Ann;;Hal Jordan;Upper Downside 69;32433;Coast City;7683545143;"This person is also known as ""Green Lantern""";
+a764d1a1-5277-4b1c-94ad-cf356dd2fba3;ICT survey;15;CMA_Ann;;Virgil Ovid Hawkins;Road to Avonlea 42;61534;Dakota City;2237459112;"This person is also known as ""Static""";
+fe94aa68-e405-4ce4-84ab-e4a6a0139f45;Health survey;1,1;CMA_Ann;1;;Main Street 4522;82634;Gotham City;;"This is the address of ""Batman"". You need to interview everyone present at this address";
+fe94aa68-e405-4ce4-84ab-e4a6a0139f45;Health survey;19,1;CMA_Ann;1;;Metropolis Diagon Alley;23;Guardian;;"This is the address of ""Hudson"". You need to interview everyone present at this address";
+2cbb4701-93fd-4217-8d56-02c769d2da11;Labour survey;17;CMA_Ben;;Jay Garrick;Lower Upside 5;32433;Keystone City;7687763992;"This person is also known as ""The Flash""";
+fe94aa68-e405-4ce4-84ab-e4a6a0139f45;Health survey;37,1;CMA_Ann;1;;Clinton Avenue 344;73543;Metropolis;;"This is the address of ""Amazonian queen"". You need to interview everyone present at this address";
+fe94aa68-e405-4ce4-84ab-e4a6a0139f45;Health survey;46,1;CMA_Ann;1;;Oxford Parkway 92;92745;Metropolis;;"This is the address of ""Cyclops"". You need to interview everyone present at this address";Cyclops_OxfordParkway92.PNG;51.803558,-1.2771582
+2cbb4701-93fd-4217-8d56-02c769d2da11;Labour survey;41;CMA_Ben;;Kurt Wagner;Tottenham Court Lane 324;25253;Metropolis;7355628189;"This person is also known as ""Night Crawler""";
+2cbb4701-93fd-4217-8d56-02c769d2da11;Labour survey;2;CMA_Ben;;Clark Kent;Farm Road 1;45261;Metropolis;6352534152;"This person is also known as ""Superman""";Superman_FarmRoad1.PNG;51.685532,-1.2881553
+fe94aa68-e405-4ce4-84ab-e4a6a0139f45;Health survey;22,1;CMA_Ann;1;;Upper Downside 69;32433;Metropolis;;"This is the address of ""Mon-El"". You need to interview everyone present at this address";
+fe94aa68-e405-4ce4-84ab-e4a6a0139f45;Health survey;31,1;CMA_Ann;1;;Stratford Ave. 98;94632;Metropolis;;"This is the address of ""Seline Kyle"". You need to interview everyone present at this address";
+2cbb4701-93fd-4217-8d56-02c769d2da11;Labour survey;20;CMA_Ben;;Jean-Paul Beaubier;Main Street 4123;83762;Montreal;9878872231;"This person is also known as ""Northstar""";
+2cbb4701-93fd-4217-8d56-02c769d2da11;Labour survey;23;CMA_Ben;;Linda Danvers;Floodway 1;43251;National City;5345552413;"This person is also known as ""Supergirl""";
+a764d1a1-5277-4b1c-94ad-cf356dd2fba3;ICT survey;39;CMA_Ann;;Paul Cannon;Fifth Avenue 9843 #768;63415;New York;9742639576;"This person is also known as ""The Avenger""";
+a764d1a1-5277-4b1c-94ad-cf356dd2fba3;ICT survey;48;CMA_Ann;;Adam Mann;No Way 8;65468;New York;9803571525;"This person is also known as ""Atomic Man""";
+a764d1a1-5277-4b1c-94ad-cf356dd2fba3;ICT survey;42;CMA_Ann;;Reed Richards;Central Park 4;73418;New York;9422759976;"This person is also known as ""Mr. Fantastic""";
+2cbb4701-93fd-4217-8d56-02c769d2da11;Labour survey;32;CMA_Ben;;Matthew Michael Murdock;Elmstreet 664;14973;New York;8276153289;"This person is also known as ""Daredevil""";
+a764d1a1-5277-4b1c-94ad-cf356dd2fba3;ICT survey;36;CMA_Ann;;Diana Amazon Princess;Away Way 90;63425;New York;7456679287;"This person is also known as ""Wonder Woman""";
+2cbb4701-93fd-4217-8d56-02c769d2da11;Labour survey;44;CMA_Ben;;Bette Kane;Underwood 644;65241;New York;9890598652;"This person is also known as ""Flamebird""";
+2cbb4701-93fd-4217-8d56-02c769d2da11;Labour survey;50;CMA_Ben;;Wally West;Road to Paradise 7;87352;New York;8253367251;"This person is also known as ""Kid Flash""";
+2cbb4701-93fd-4217-8d56-02c769d2da11;Labour survey;11;CMA_Ben;;Jennifer Walters;Parker Lane 19;63152;New York;2317458875;"This person is also known as ""She-Hulk""";
+a764d1a1-5277-4b1c-94ad-cf356dd2fba3;ICT survey;3;CMA_Ann;;Peter Parker;2nd Avenue 7365 #132;62715;New York;3365245969;"This person is also known as ""Spiderman""";
+fe94aa68-e405-4ce4-84ab-e4a6a0139f45;Health survey;4,1;CMA_Ann;1;;Brooklyn Road 24;91832;New York;;"This is the address of ""Iron Man"". You need to interview everyone present at this address";
+a764d1a1-5277-4b1c-94ad-cf356dd2fba3;ICT survey;6;CMA_Ann;;Natasha Romanoff;Prof.Marmer Ave. 726 #654;72514;New York;5326938767;"This person is also known as ""Black Widow""";
+fe94aa68-e405-4ce4-84ab-e4a6a0139f45;Health survey;7,1;CMA_Ann;1;;Towerway 63;72541;New York;;"This is the address of ""Doctor Strange"". You need to interview everyone present at this address";DoctorStrange_Towerway63.PNG;50.8551244,-3.2257861,17
+2cbb4701-93fd-4217-8d56-02c769d2da11;Labour survey;8;CMA_Ben;;Wanda Maximoff;Lake way 761;57381;New York;8768745423;"This person is also known as ""Scarlet Witch""";
+a764d1a1-5277-4b1c-94ad-cf356dd2fba3;ICT survey;9;CMA_Ann;;Pietro Maximoff;Main Street 5633;20763;New York;8343334251;"This person is also known as ""Quicksilver""";
+fe94aa68-e405-4ce4-84ab-e4a6a0139f45;Health survey;10,1;CMA_Ann;1;;School Street 26;72654;New York;;"This is the address of ""Thor"". You need to interview everyone present at this address";
+a764d1a1-5277-4b1c-94ad-cf356dd2fba3;ICT survey;12;CMA_Ann;;Susan Storm;Norman Bates Way 22;73562;New York;7356465524;"This person is also known as ""Invisible Woman""";
+fe94aa68-e405-4ce4-84ab-e4a6a0139f45;Health survey;28,1;CMA_Ann;1;;Upper Downside 34;33563;New York;;"This is the address of ""Zatanna"". You need to interview everyone present at this address";
+2cbb4701-93fd-4217-8d56-02c769d2da11;Labour survey;26;CMA_Ben;;Jack Knight;Road to Nowhere 8;14235;Opal City;6456657365;"This person is also known as ""Starman""";
+fe94aa68-e405-4ce4-84ab-e4a6a0139f45;Health survey;25,1;CMA_Ann;1;;Road to Nowhere 8;14235;Opal City;;"This is the address of ""Starman"". You need to interview everyone present at this address";
+fe94aa68-e405-4ce4-84ab-e4a6a0139f45;Health survey;13,1;CMA_Ann;1;;Opal Road 15 #312;87252;Star City;;"This is the address of ""Green Arrow"". You need to interview everyone present at this address";GreenArrow_OpalRoad15.PNG;51.6098985,-1.7994438
+fe94aa68-e405-4ce4-84ab-e4a6a0139f45;Health survey;34,1;CMA_Ann;1;;Landslide 1;83654;Star City;;"This is the address of ""Green Arrow"". You need to interview everyone present at this address";
+2cbb4701-93fd-4217-8d56-02c769d2da11;Labour survey;14;CMA_Ben;;Dinah Lance;Main Street 66;72514;Star City;9473625549;"This person is also known as ""Black Canary""";
+a764d1a1-5277-4b1c-94ad-cf356dd2fba3;ICT survey;24;CMA_Ann;;T'Challa ;Piper Road 2;84621;Wakanda;8,72518E+11;"This person is also known as ""Black Panther""";
+2cbb4701-93fd-4217-8d56-02c769d2da11;Labour survey;35;CMA_Ben;;Cassie Sandsmark;Molton Road 63;76352;Washington DC;7860897654;"This person is also known as ""Wonder Girl""";
+fe94aa68-e405-4ce4-84ab-e4a6a0139f45;Health survey;43,1;CMA_Ann;1;;The Mall ;63416;Washington DC;;"This is the address of ""Hawkman"". You need to interview everyone present at this address";
+2cbb4701-93fd-4217-8d56-02c769d2da11;Labour survey;5;CMA_Ben;;Bruce Banner;Pennsylvania Avenue 1420;52413;Washington DC;9587765837;"This person is also known as ""Inrcedible Hulk""";
+fe94aa68-e405-4ce4-84ab-e4a6a0139f45;Health survey;49,1;CMA_Ann;1;;Arlington Road 33;76752;Washington DC;;"This is the address of ""Captain America"". You need to interview everyone present at this address";
+a764d1a1-5277-4b1c-94ad-cf356dd2fba3;ICT survey;30;CMA_Ann;;Lorena (Tula) Marquez;Capitol Hill 3;65234;Washington DC;84652098763;"This person is also known as ""Aquagirl""";
+2cbb4701-93fd-4217-8d56-02c769d2da11;Labour survey;38;CMA_Ben;;Richard Henry Benson;Pennywise Avenue 1405;94532;Washington DC;5243158753;"This person is also known as ""The Avenger""";

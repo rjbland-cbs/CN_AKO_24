@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Solution Name="CMADemo">
+  <StartupProject RelativePath="true">CMA.bproj</StartupProject>
+  <ProjectItems>
+    <Project RelativePath="true" BuildSequence="34">CMA.bproj</Project>
+    <Project RelativePath="true" BuildSequence="4">..\CMA_Launcher.bproj</Project>
+    <Project RelativePath="true" BuildSequence="30">..\DownloadInterceptor\DownloadInterceptor.bproj</Project>
+    <Project RelativePath="true" BuildSequence="16">..\CMA_ContactInfo.bproj</Project>
+    <Project RelativePath="true" BuildSequence="2">..\CMA_Attempts.bproj</Project>
+    <Project RelativePath="true" BuildSequence="6">..\CMA_Logging.bproj</Project>
+    <Project RelativePath="true" BuildSequence="8">..\CMA_SettingsMeta.bproj</Project>
+    <Project RelativePath="true" BuildSequence="10">..\CMA_SurveySettings.bproj</Project>
+    <Project RelativePath="true" BuildSequence="12">..\LogMeta.bproj</Project>
+    <Project RelativePath="true" BuildSequence="14">..\Surveys.bproj</Project>
+    <Project RelativePath="true" BuildSequence="14">..\SyncTrace.bproj</Project>
+    <Project RelativePath="true" BuildSequence="32">..\CMA_ClientInfo.bproj</Project>
+    <Project RelativePath="true" BuildSequence="20">MakeSettingsXML.bproj</Project>
+    <Project RelativePath="true" BuildSequence="22">Loadcases.bproj</Project>
+    <Project RelativePath="true" BuildSequence="24">ReleaseCases.bproj</Project>
+    <Project RelativePath="true" BuildSequence="26">RestoreCases.bproj</Project>
+    <Project RelativePath="true" BuildSequence="28">TransferCases.bproj</Project>
+  </ProjectItems>
+</Solution>

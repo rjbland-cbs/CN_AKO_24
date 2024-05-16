@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Solution Name="CMA_CustomScripts_Demo">
+  <StartupProject RelativePath="true">ClearSpecialInstructions\CMA_Backup.bproj</StartupProject>
+  <ProjectItems>
+    <Project RelativePath="true" BuildSequence="4">ClearSpecialInstructions\ClearSpecialInstructions.bproj</Project>
+    <Project RelativePath="true" BuildSequence="6">GetUnassignedCases\GetUnassignedCases.bproj</Project>
+    <Project RelativePath="true" BuildSequence="8">AssignUnassignedCases\AssignUnassignedCases.bproj</Project>
+    <Project RelativePath="true" BuildSequence="10">NonresponseReport\NonresponseReport.bproj</Project>
+    <Project RelativePath="true" BuildSequence="12">FutureAppointmentsReport\FutureAppointmentsReport.bproj</Project>
+    <Project RelativePath="true" BuildSequence="2">ClearSpecialInstructions\CMA_Backup.bproj</Project>
+  </ProjectItems>
+</Solution>

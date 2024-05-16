@@ -1,0 +1,193 @@
+﻿PROCESS RunAtEnd
+
+SETTINGS CONNECT=NO 
+
+USES topicmeta (VAR)
+     launcher (VAR)
+     attempts (VAR) 
+     logmeta (VAR) //from CMA appliction
+     
+INPUTFILE topic:topicmeta (BDIX) //name given on cmd line using inp as file id  
+    
+UPDATEFILE ufLocalCases:launcher (BDIX) //loc launcher name given on cmd line using upd as file id
+
+UPDATEFILE ufLocalAttempts:attempts (BDIX) //loc launcher name given on cmd line using upd as file id
+
+TEMPORARYFILE tmp:launcher
+
+OUTPUTFILE oLog:logMeta (ASCII) //log file name set on cmd line using file id oLog
+SETTINGS
+  MAKENEWFILE=NO  
+  OPEN=NO
+  SEPARATOR=';'
+  TRAILINGSPACES=NO
+  CREATEBDIX=NO
+  
+CONST
+  cAdded = "Added"
+  cDateTimeFormat = "yyyyMMdd,HH:mm:sszzz"
+   
+
+FUNCTION NowDT: STRING
+INSTRUCTIONS
+  RESULT:= TIMETOSTR(SYSTIME,cDateTimeFormat)
+ENDFUNCTION 
+
+AUXFIELDS
+  cmdID: STRING //id of just closed case set through cmd line
+  cmdGUID: STRING
+  cmdAfterInterview: INTEGER //1=yes, 0=no
+  cmdPrevStatus: STRING //
+
+PROCEDURE AddToLog
+PARAMETERS pTextToLog: STRING
+INSTRUCTIONS
+  oLog.OPEN
+  oLog.PUTVALUE('LogWhen',NowDT)
+  oLog.PUTVALUE('LogText',pTextToLog)
+  oLog.WRITE
+  oLog.RELEASE
+ENDPROCEDURE
+
+FUNCTION GetEntry: OPEN
+//retrieves the from string with separator pChar the pIndex-th entry
+PARAMETERS 
+  pText: OPEN
+  pIndex: INTEGER
+  pSepChar: STRING
+AUXFIELDS
+  i, p, next: INTEGER
+INSTRUCTIONS
+  p:= 0
+  RESULT:= ''
+  FOR i:= 1 TO pIndex-1 DO 
+    p:= POSITION(pSepChar,pText,p+1) 
+  ENDDO
+  IF p<>0 OR pIndex=1 THEN
+    next:=  POSITION(pSepChar,pText,p+1) 
+    IF next=0 THEN
+      RESULT:= SUBSTRING(pText,p+1,LEN(pText))
+    ELSE
+      RESULT:= SUBSTRING(pText,p+1,next-p-1)   
+    ENDIF
+  ENDIF
+ENDFUNCTION
+
+FUNCTION GetEntryOnName: OPEN
+//retrieves the value from string with separator pChar for the entry the pName
+PARAMETERS 
+  pText: OPEN
+  pName: STRING
+  pSepChar: STRING
+TRANSIT
+  pRes: INTEGER  
+AUXFIELDS
+  i, p, next: INTEGER
+  aStr: STRING
+  stop: integer
+INSTRUCTIONS
+  REPEAT
+    p:= POSITION(UPPERCASE(pName)+pSepChar,UPPERCASE(pText),p+1) 
+    IF p=0 or p=1 THEN stop:= 1 ELSEIF SUBSTRING(pText,p-1,1)=pSepChar THEN stop:=1 ENDIF
+  UNTIL stop=1  
+  IF p>0 THEN
+    p:= p+LEN(pName)+1
+    next:= POSITION(pSepChar,pText,p) 
+    IF next=0 THEN
+      aStr:= SUBSTRING(pText,p,LEN(pText))
+    ELSE
+      aStr:= SUBSTRING(pText,p,next-p)   
+    ENDIF
+    pRes:= 1
+  ENDIF
+  RESULT:= aStr
+ENDFUNCTION
+
+
+FUNCTION AdaptContactData: OPEN
+PARAMETERS
+  pContactData: OPEN
+  pNewValues: OPEN
+AUXFIELDS 
+  i: INTEGER
+  ap: STRING
+  av: OPEN
+  nav: OPEN
+  aStr: OPEN
+  res: INTEGER
+INSTRUCTIONS
+  REPEAT
+    i:= i+1
+    ap:= GetEntry(pContactData,i,CHAR(9))
+    i:= i+1
+    av:= GetEntry(pContactData,i,CHAR(9))
+    IF ap<>EMPTY THEN
+      aStr:= aStr+ap+CHAR(9)
+      //Adapt fields
+      //Search for ap in pNewValues and replace av by value found in pNewValues
+      res:= 0
+      nav:= GetEntryOnName(pNewValues,ap,CHAR(9),res)
+      IF res=1 THEN av:= nav ENDIF
+      aStr:= aStr+av+CHAR(9)
+    ENDIF
+  UNTIL ap=EMPTY //
+  RESULT:= aStr
+ENDFUNCTION
+
+PROCEDURE CreateChild
+PARAMETERS
+  pKey: STRING
+  pGUID: STRING
+  pSurveyname: STRING
+  pSortOrder: STRING
+  pName: STRING
+AUXFIELDS
+  NewValues: OPEN  
+INSTRUCTIONS
+  ufLocalCases.GETFORM('PRIMARY',cmdGuid+','+cmdID)       
+  ufLocalCases.PUTVALUE('CMA_SpawnCount',STR(VAL(ufLocalCases.GETVALUE('CMA_SpawnCount'))+1))
+  ufLocalCases.PUTVALUE('CMA_Process.LastChangedDT',NowDT)
+  ufLocalCases.WRITE //update of original
+
+  tmp.INITRECORD
+  tmp.PUTVALUE('ID',pKey)
+  tmp.PUTVALUE('MainSurveyID',pGUID) 
+  tmp.PUTVALUE('SurveyDisplayName',pSurveyName) 
+  tmp.PUTVALUE('CMA_SpawnCount',ufLocalCases.GETVALUE('CMA_SpawnCount'))
+  tmp.PUTVALUE('CMA_ForWhom',ufLocalCases.GETVALUE('CMA_ForWhom'))
+  tmp.PUTVALUE('CMA_InPossession',ufLocalCases.GETVALUE('CMA_InPossession'))
+  tmp.PUTVALUE('CMA_Location',ufLocalCases.GETVALUE('CMA_Location'))
+  tmp.PUTVALUE('CMA_GroupType','2') //child
+  tmp.PUTVALUE('CMA_GroupID',ufLocalCases.GETVALUE('CMA_GroupID'))
+  tmp.PUTVALUE('CMA_GroupSort',pSortOrder)
+  tmp.PUTVALUE('CMA_Process.CreatedDT',NowDT)
+  tmp.PUTVALUE('CMA_Status',cAdded) 
+  tmp.PUTVALUE('CMA_Process.LastChangedDT',NowDT)
+  NewValues:= 'id'+CHAR(9)+pKey+CHAR(9)+'mainsurveyid'+CHAR(9)+pGuid+CHAR(9)+'casenote'+CHAR(9)+CHAR(9)+'pii.name'+CHAR(9)+pName+CHAR(9)
+  tmp.PUTVALUE('CMA_ContactData',AdaptContactData(ufLocalCases.GETVALUE('CMA_ContactData'),NewValues))
+  tmp.PUTVALUE('ContactInfoShort',pName)
+  ufLocalCases:= tmp
+  ufLocalCases.WRITE //add the new case to the local launcher file
+  AddToLog('Child case created for '+cmdID+' / '+pSurveyName+' with key '+pKey)
+ENDPROCEDURE
+ 
+AUXFIELDS 
+  Index: INTEGER
+  HHSize: INTEGER 
+
+MANIPULATE
+  AddToLog('Start AtEnd setup '+SETUPNAME+': GUID='+cmdGuid+',ID='+cmdID+',AfterInterview='+STR(cmdAfterInterview))
+  IF cmdAfterInterview=1 THEN
+    topic.GETFORM(PRIMARY,cmdID)
+    HHSize:= VAL(topic.GetValue('HH_Size'))
+    //now loop over array with persons in parent topic 
+    FOR Index:= 1 TO HHSize DO
+      IF topic.GetValue('Persons['+STR(Index)+'].Permission',UF)='1' THEN
+        CreateChild(cmdID+'-W'+STR(Index),'05bf7a76-5266-4ff3-9b8c-32593ced7260','','1',topic.GetValue('Persons['+STR(Index)+'].FirstName'))
+        IF topic.GetValue('Persons['+STR(Index)+'].Work',UF)='1' THEN
+          CreateChild(cmdID+'-L'+STR(Index),'8695f85c-5543-4f31-bd98-67b33050e362','','1',topic.GetValue('Persons['+STR(Index)+'].FirstName'))
+        ENDIF  
+      ENDIF  
+    ENDDO
+  ENDIF  
+  AddToLog('End AtEnd setup')

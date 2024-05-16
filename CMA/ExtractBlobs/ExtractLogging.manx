@@ -1,0 +1,63 @@
+﻿//Setup process all cases in the CMA logging database or all cases of one specific user named in auxfield cmdUserId
+//The log file of user <user> will we written to file logging\<user>_cma_logging.txt
+
+SETTINGS
+  AUTOREAD=NO
+
+USES logging //CMA logging datamodel
+  DATAMODEL txt
+  FIELDS
+    line: STRING[2000]
+  ENDMODEL  
+
+INPUTFILE log:logging('logging',BLAISE)
+
+INPUTFILE logtxt: txt (ASCII)
+SETTINGS
+  OPEN=NO
+  
+OUTPUTFILE logapp: txt (ASCII)
+SETTINGS
+  OPEN=NO
+  TRAILINGSPACES=NO
+    
+CONST
+  cLogFolder = "logging"   //name of sub-folder where all logs will be written 
+
+AUXFIELDS
+  res: INTEGER
+  cmdUserId: STRING
+  aLogFolder: STRING
+  curUser: STRING
+    
+MANIPULATE
+  aLogFolder:= WORKINGFOLDER+'\\'+cLogFolder
+  IF NOT FOLDEREXISTS(aLogFolder) THEN 
+    res:= RUN('MKDIR "'+WORKINGFOLDER+'\\'+cLogFolder+'"',WAIT,HIDE) 
+  ENDIF
+  IF cmdUserId<>'' THEN
+    log.SETRECORDFILTER('UserID=\''+cmdUserID+'\'')
+  ENDIF
+  IF log.FORMCOUNT>0 THEN
+    REPEAT
+      log.READNEXT
+      IF curUser<>LOWERCASE(log.UserID) THEN 
+        logapp.RELEASE
+        curUser:= LOWERCASE(log.UserID) 
+        logapp.OPEN(aLogFolder+'\\'+curUser+'_cma_logging.txt')
+      ENDIF
+      res:= log.logging.SAVETODISK(aLogFolder+'\cma_logging.txt') //extract blob
+      IF res=0 THEN
+        logtxt.OPEN(aLogFolder+'\\cma_logging.txt')
+        REPEAT
+          logtxt.READNEXT
+          logapp.WRITE
+        UNTIL logtxt.LASTRECORD
+        logtxt.RELEASE
+        res:= DELETEFILE(aLogFolder+'\\cma_logging.txt') //delete extracted file
+      ENDIF  
+    UNTIL log.LASTRECORD
+  ENDIF    
+    
+  
+  

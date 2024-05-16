@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project Name="CMA_AdminSettingsMeta" Guid="de39aa70-b4b9-4a17-8376-581922d997d9" ProjectType="DatamodelProject">
+  <MainFile RelativePath="true">CMA_AdminSettingsMeta.blax</MainFile>
+  <FileItems>
+    <File FileType="DatamodelFileType" RelativePath="true">CMA_AdminSettingsMeta.blax</File>
+  </FileItems>
+  <Properties>
+    <SurveyRoot />
+    <ConditionalDefines />
+    <DatamodelSearchPath />
+    <ExternalSearchPath />
+    <IncludeSearchPath />
+    <LibrarySearchPath />
+    <ResourceDB RelativePath="true">CMA.blrd</ResourceDB>
+    <SupportedModes />
+    <UsedResourceSets />
+    <AppSupport />
+    <IsRunnableSurvey>False</IsRunnableSurvey>
+    <CatiRole />
+    <UseCari>False</UseCari>
+    <WebDataEntryClient>None</WebDataEntryClient>
+    <AddFieldGroupOrderInformation>False</AddFieldGroupOrderInformation>
+    <IgnoreLayoutErrors>False</IgnoreLayoutErrors>
+    <IgnoreRichtextErrors>False</IgnoreRichtextErrors>
+    <StartCondition />
+    <ActionsSetup />
+    <DataConversionSetup />
+    <DownloadInterceptorSetup />
+    <WriteInterceptorSetup />
+    <RunWriteInterceptorSetupAsynchronously>False</RunWriteInterceptorSetupAsynchronously>
+  </Properties>
+</Project>

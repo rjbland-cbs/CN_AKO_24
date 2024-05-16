@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Solution Name="Surveys">
+  <StartupProject RelativePath="true">CMA_HealthSurvey\HealthSurvey.bproj</StartupProject>
+  <ProjectItems>
+    <Project RelativePath="true" BuildSequence="6">CMA_HealthSurvey\HealthSurvey.bproj</Project>
+    <Project RelativePath="true" BuildSequence="2">CMA_ICTSurvey\ICTSurvey.bproj</Project>
+    <Project RelativePath="true" BuildSequence="4">CMA_LabourSurvey\LabourSurvey.bproj</Project>
+  </ProjectItems>
+</Solution>

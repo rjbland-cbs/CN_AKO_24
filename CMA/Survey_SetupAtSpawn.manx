@@ -1,0 +1,64 @@
+﻿PROCESS Survey_SetupAtSpawn 
+//CMA 2.6. Framework of AtSpawn setup
+SETTINGS CONNECT=NO 
+
+{.$DEFINE NoTopic}
+
+USES {$IFNDEF NoTopic} topicmeta (VAR) {$ENDIF}
+     launcher (VAR)
+     logmeta (VAR) //from CMA application
+  
+  DATAMODEL mId
+  FIELDS
+    NewID: STRING
+  ENDMODEL
+     
+{$IFNDEF NoTopic}    
+UPDATEFILE topic:topicmeta (BDIX) //name given on cmd line using inp as file id  
+{$ENDIF}
+    
+UPDATEFILE ufLocalCases:launcher (BDIX) //loc launcher name given on cmd line
+
+TEMPORARYFILE tSpawnID:mId 
+SETTINGS
+   INTERCHANGE=EXPORT //to return ID of created case
+
+OUTPUTFILE oLog:logMeta (ASCII) //log file name set on cmd line 
+SETTINGS
+  MAKENEWFILE=NO  
+  OPEN=NO
+  SEPARATOR=';'
+  TRAILINGSPACES=NO
+  CREATEBDIX=NO
+  
+CONST
+  cDateTimeFormat = "yyyyMMdd,HH:mm:sszzz"
+   
+FUNCTION NowDT: STRING
+INSTRUCTIONS
+  RESULT:= TIMETOSTR(SYSTIME,cDateTimeFormat)
+ENDFUNCTION 
+
+AUXFIELDS
+  cmdID: STRING //id of the selected case in CMA through cmd line
+  cmdGUID: STRING //GUID of the selected case set through cmd line
+
+PROCEDURE AddToLog
+PARAMETERS pTextToLog: STRING
+INSTRUCTIONS
+  oLog.OPEN
+  oLog.PUTVALUE('LogWhen',NowDT)
+  oLog.PUTVALUE('LogText',pTextToLog)
+  oLog.WRITE
+  oLog.RELEASE
+ENDPROCEDURE
+
+MANIPULATE
+  AddToLog('Start AtSpawn setup '+SETUPNAME+':  GUID='+cmdGuid+',ID='+cmdID)
+  //
+  //Here you create an additional case in the launcher  
+  //and if needed create a new case in the topic database. 
+  //The id of the created case needs to be returned to CMA 
+  //through tSpanwnID.NewID:= <id-of-new-case> 
+  //
+  AddToLog('End AtSpwan setup')

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project Name="LabourSurvey" Guid="2cbb4701-93fd-4217-8d56-02c769d2da11" ProjectType="DatamodelProject">
+  <MainFile RelativePath="true">LabourSurvey.blax</MainFile>
+  <FileItems>
+    <File FileType="DatamodelFileType" RelativePath="true">LabourSurvey.blax</File>
+  </FileItems>
+  <Properties>
+    <IncludeSearchPath />
+    <LibrarySearchPath />
+    <DatamodelSearchPath />
+    <ResourceDB RelativePath="true">..\..\CMA.blrd</ResourceDB>
+    <SupportedModes />
+    <UsedResourceSets />
+    <ConditionalDefines />
+    <ExternalSearchPath />
+    <SurveyRoot>CMA_LabourSurvey</SurveyRoot>
+    <CatiRole />
+    <IsRunnableSurvey>True</IsRunnableSurvey>
+    <WebDataEntryClient>None</WebDataEntryClient>
+    <AppSupport />
+    <UseCari>False</UseCari>
+    <IgnoreLayoutErrors>False</IgnoreLayoutErrors>
+    <IgnoreRichtextErrors>False</IgnoreRichtextErrors>
+    <AddFieldGroupOrderInformation>False</AddFieldGroupOrderInformation>
+    <StartCondition />
+    <ActionsSetup />
+    <DownloadInterceptorSetup />
+    <WriteInterceptorSetup />
+    <RunWriteInterceptorSetupAsynchronously>False</RunWriteInterceptorSetupAsynchronously>
+  </Properties>
+</Project>

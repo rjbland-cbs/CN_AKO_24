@@ -1,0 +1,100 @@
+﻿{*************************************************}
+{                                                 }
+{  Blaise 5. A Survey Processing System           }
+{  Copyright (c) 2020 Statistics Netherlands      }
+{                                                 }
+{*************************************************}
+
+//CMA Demo survey 
+//It can be used to demo spwaning and to demo how a Happings code can be passed on the the Attempts survey
+
+DATAMODEL CMA_HealthSurvey "Health Survey"
+  LANGUAGES = ENG //, NED          
+ 
+  ROLES = Help "The Help role provides a help button that the user can click to display question help text." ,
+          Template "Apply layout templates automatically"
+          
+  PRIMARY TheKey,Nr 
+
+  TYPE
+    TYesNo = (Yes, No)
+    TContinue = (Yes), EMPTY
+    
+THappenings =
+  (
+Case_QuickExit (00020) ENG "Case is quick exited",
+Case_Review (00030) ENG "Case is reviewed",
+Case_Attempted (00035) ENG "Case is atttempted",
+Case_REngaged (00040) ENG "R is engaged in case",
+Case_Intro (00043) ENG "R reads or is read Intro",
+
+Case_Ridentified (00045) ENG "R is identified",
+Case_RWilling (00050) ENG "R is willing",
+   //Response
+Scr_Started (00070) ENG "Screener is started",
+Scr_Finished (00075) ENG "Screener is finished",
+Scr_Eligible (00080) ENG "Respondent is eligible",
+Scr_Ineligible (00090) ENG "Respondent is ineligible",
+Scr_IneligibleAge (00091) ENG "Respondent is ineligible becaues of age",
+
+Quex_Started (00150) "Questionnaire is started",
+Quex_Incomplete (00160) "Questionnaire is incomplete",
+Quex_Partial (00120) "Questionnaire is partially/usefully complete",
+Quex_Key (00121) "Questionnaire is key field complete",
+Quex_Complete (00100) "Questionnaire is complete"    
+)
+    
+  BLOCK BHealth
+    PARAMETERS 
+      IMPORT Name: STRING
+    TYPE
+      TFrequency = (Always, Usually, Sometimes, Never)
+      
+    FIELDS
+      Intro "Please ^Name answer the following questions:": TContinue
+    GROUP Questions  Template "Optionlist"
+      FIELDS
+        Water "Do you drink a liter of water each day": TFrequency 
+        Vegetables "Do you eat two helpings of vegetables a day": TFrequency 
+        Fruit "Do you eat fruit every day": TFrequency 
+        Bed "Do you go to bed early" : TFrequency 
+        Walk "Do you regularly take a walk" : TFrequency 
+        Smoke "Do you smoke": TFrequency 
+        Alcohol "Do you drink alcohol": TFrequency 
+    ENDGROUP  
+  ENDBLOCK
+
+  BLOCK BPerson
+    FIELDS
+      FirstName "What is your first name?" 
+        Template "Horizontal": STRING[20]
+      Age "What is your age?" Template "Horizontal": 1..120  
+    RULES   
+      FirstName 
+      Age
+  ENDBLOCK
+  
+
+  FIELDS
+    TheKey: 1..999999, NOEMPTY
+    Nr: 1..10,NOEMPTY
+    Happenings: THappenings
+    Person: BPerson
+    Health: BHealth
+  AUXFIELDS    
+    NotEligible "You are not eligible for this survey": string[1],EMPTY
+  RULES
+    Person
+    IF Person.Age=RESPONSE THEN
+      IF Person.Age>=18 THEN
+        Health(Person.FirstName)  
+        IF Health = RESPONSE THEN
+          Happenings:= Quex_Complete
+        ENDIF  
+      ELSE
+        NotEligible
+        Happenings:= Scr_IneligibleAge
+      ENDIF  
+    ENDIF  
+ENDMODEL
+

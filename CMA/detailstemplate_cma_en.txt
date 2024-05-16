@@ -1,0 +1,111 @@
+<table borderwidth=1 bordercolor=black grid=both gridwidth=1>
+<column width=auto>
+<column width=*>
+<column width=auto>
+<column width=*>
+<column width=auto>
+<column width=*>
+<row>
+<cell margin="4,2,4,2"><left>ID:</left></cell>
+<cell margin="4,2,4,2" background=lightgray><left>$ID</left></cell>
+<cell margin="4,2,4,2"><left>Status:</left></cell>
+<cell margin="4,2,4,2" background=lightgray><left>$CMA_Status</left></cell>
+<cell margin="4,2,4,2"><left>Appointment:</left></cell>
+<cell margin="4,2,4,2" background=lightgray><left>$CMA_Appointment</left></cell>
+</row>
+<row>
+<cell margin="4,2,4,2"><left>Last result:</left></cell>
+<cell margin="4,2,4,2" background=lightgray><left>$CMA_LastResult</left></cell>
+<cell margin="4,2,4,2"><left>Last attempt:</left></cell>
+<cell margin="4,2,4,2" background=lightgray><left>$CMA_LastAttempt</left></cell>
+<cell margin="4,2,4,2"><left># attempts:</left></cell>
+<cell margin="4,2,4,2" background=lightgray><left>$CMA_AttemptsCount</left></cell>
+</row>
+<row>
+<cell margin="4,2,4,2"><left>Town:</left></cell>
+<cell margin="4,2,4,2" background=lightgray><left>$PII.Town</left></cell>
+<cell margin="4,2,4,2"><left>Postal code:</left></cell>
+<cell margin="4,2,4,2" background=lightgray><left>$PII.PostalCode</left></cell>
+<cell margin="4,2,4,2"><left>Address:</left></cell>
+<cell margin="4,2,4,2" background=lightgray><left>$PII.Address</left></cell>
+</row>
+<row>
+<cell margin="4,2,4,2"><left>Image:</left></cell>
+<cell margin="4,2,4,2" background=lightgray><left>$CMA_ContactImage</left></cell>
+<cell margin="4,2,4,2"></cell>
+<cell margin="4,2,4,2" colspan=3 background=lightgray></cell>
+</row>
+<row>
+<cell margin="4,2,4,2"><left>Name:</left></cell>
+<cell margin="4,2,4,2" background=lightgray><left>$PII.Name</left></cell>
+<cell margin="4,2,4,2"><left>Phone-1:</left></cell>
+<cell margin="4,2,4,2" background=lightgray><left>$PII.Phone1</left></cell>
+<cell margin="4,2,4,2"><left>Phone-2:</left></cell>
+<cell margin="4,2,4,2" background=lightgray><left>$PII.Phone2</left></cell>
+</row>
+<row>
+<cell margin="4,2,4,2"><left>Case note:</left></cell>
+<cell margin="4,2,4,2" colspan=5 background=lightgray><left>$CaseNote</left></cell>
+</row>
+</table>
+<!--Portrait-->
+<table borderwidth=1 bordercolor=black grid=both gridwidth=1>
+<column width=auto>
+<column width=*>
+<row>
+<cell margin="1,1,1,1"><left>ID:</left></cell>
+<cell margin="1,1,1,1" background=lightgray><left>$ID</left></cell>
+</row>
+<row>
+<cell margin="1,1,1,1"><left>Status:</left></cell>
+<cell margin="1,1,1,1" background=lightgray><left>$CMA_Status</left></cell>
+</row>
+<row>
+<cell margin="1,1,1,1"><left>Appointment:</left></cell>
+<cell margin="1,1,1,1" background=lightgray><left>$CMA_Appointment</left></cell>
+</row>
+<row>
+<cell margin="1,1,1,1"><left>Last result:</left></cell>
+<cell margin="1,1,1,1" background=lightgray><left>$CMA_LastResult</left></cell>
+</row>
+<row>
+<cell margin="1,1,1,1"><left>Last attempt:</left></cell>
+<cell margin="1,1,1,1" background=lightgray><left>$CMA_LastAttempt</left></cell>
+</row>
+<row>
+<cell margin="1,1,1,1"><left># attempts:</left></cell>
+<cell margin="1,1,1,1" background=lightgray><left>$CMA_AttemptsCount</left></cell>
+</row>
+<row>
+<cell margin="1,1,1,1"><left>Town:</left></cell>
+<cell margin="1,1,1,1" background=lightgray><left>$PII.Town</left></cell>
+</row>
+<row>
+<cell margin="1,1,1,1"><left>Postal code:</left></cell>
+<cell margin="1,1,1,1" background=lightgray><left>$PII.PostalCode</left></cell>
+</row>
+<row>
+<cell margin="1,1,1,1"><left>Address:</left></cell>
+<cell margin="1,1,1,1" background=lightgray><left>$PII.Address</left></cell>
+</row>
+<row>
+<cell margin="1,1,1,1"><left>Image:</left></cell>
+<cell margin="1,1,1,1" background=lightgray><left>$CMA_ContactImage</left></cell>
+</row>
+<row>
+<cell margin="1,1,1,1"><left>Name:</left></cell>
+<cell margin="1,1,1,1" background=lightgray><left>$PII.Name</left></cell>
+</row>
+<row>
+<cell margin="1,1,1,1"><left>Phone-1:</left></cell>
+<cell margin="1,1,1,1" background=lightgray><left>$PII.Phone1</left></cell>
+</row>
+<row>
+<cell margin="1,1,1,1"><left>Phone-2:</left></cell>
+<cell margin="1,1,1,1" background=lightgray><left>$PII.Phone2</left></cell>
+</row>
+<row>
+<cell margin="1,1,1,1"><left>Case note:</left></cell>
+<cell margin="1,1,1,1" background=lightgray><left>$CaseNote</left></cell>
+</row>
+</table>

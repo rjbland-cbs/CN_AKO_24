@@ -1,0 +1,184 @@
+﻿PROCESS NonresponseReport
+
+SETTINGS
+   CONNECT=NO
+   
+USES
+   // These will be preloaded for you via cmd line
+   Launcher (VAR) // always the launcher datamodel
+   Attempts (VAR) // the attempts in cma_surveysettings for the specified survey or default attempts
+   Topic (VAR) // only preloaded if you select a survey from the dropdown
+   LogMeta (VAR) // admin tool logging meta
+   
+   DATAMODEL mInterchange
+   FIELDS
+      Message : OPEN
+   ENDMODEL
+   
+   DATAMODEL mResults
+   PRIMARY Happenings
+   SECONDARY HappeningsStr (ALPHA)
+   FIELDS
+      Happenings : STRING
+      HappeningsStr : STRING
+      Count : INTEGER
+   ENDMODEL
+   
+   DATAMODEL mOutput 
+   FIELDS
+      Text : STRING[1000]
+   ENDMODEL
+       
+TEMPORARYFILE tInterchange : mInterchange
+SETTINGS
+   INTERCHANGE=TRANSIT
+  
+// Survey data files can be opened with the Initialise function
+SURVEYDATAFILE sdLauncher : Launcher
+SETTINGS
+   OPEN=NO
+
+SURVEYDATAFILE sdAttempts : Attempts
+SETTINGS
+   OPEN=NO
+
+SURVEYDATAFILE sdTopic : Topic
+SETTINGS
+   OPEN=NO
+   
+TEMPORARYFILE tResults : mResults
+
+OUTPUTFILE Out : mOutput(ASCII)
+SETTINGS
+   OPEN=NO
+   HEADERLINE=NO
+   CREATEBDIX=NO
+   TRAILINGSPACES=NO
+   
+OUTPUTFILE oLog:LogMeta (ASCII) //log file name set on cmd line using file id oLog
+SETTINGS
+  MAKENEWFILE=NO  
+  OPEN=NO
+  SEPARATOR=';'
+  TRAILINGSPACES=NO
+  CREATEBDIX=NO
+   
+SURVEYLIST srvList
+
+CONST
+  cDateTimeFormat = "yyyyMMdd,HH:mm:sszzz"
+
+FUNCTION GetConnectionString : STRING
+PARAMETERS pMeta : METATYPE
+AUXFIELDS GUID : STRING
+INSTRUCTIONS
+   GUID := [[pMeta.InstrumentId]]
+   srvList.GET(GUID)
+   IF srvList.RESULTOK THEN
+      RESULT := 'InstrumentId='+GUID+
+                ';Serverpark='+srvList.ServerPark
+   ENDIF
+ENDFUNCTION
+
+FUNCTION Initialise : INTEGER
+AUXFIELDS
+  res, res1, res2, res3: INTEGER
+  GUID: STRING
+INSTRUCTIONS
+   RESULT := -1
+   IF srvList.UserIsAuthenticated THEN
+      res := srvList.GETLISTOFSURVEYS
+      IF res = 0 THEN
+         sdLauncher.SETCONNECTIONSTRING(GetConnectionString([[Launcher]]))
+         res1 := sdLauncher.OPEN
+         sdAttempts.SETCONNECTIONSTRING(GetConnectionString([[Attempts]]))
+         res2 := sdAttempts.OPEN
+         IF pTopicLoaded = yes THEN
+            sdTopic.SETCONNECTIONSTRING(GetConnectionString([[Topic]]))
+            res3 := sdTopic.OPEN
+         ENDIF
+         RESULT := res1 + res2 + res3
+      ENDIF
+   ENDIF
+ENDFUNCTION
+
+FUNCTION NowDT: STRING
+INSTRUCTIONS
+  RESULT:= TIMETOSTR(SYSTIME,cDateTimeFormat)
+ENDFUNCTION 
+
+PROCEDURE AddToLog
+PARAMETERS pTextToLog: STRING
+INSTRUCTIONS
+  oLog.OPEN
+  oLog.PUTVALUE('LogWhen',NowDT)
+  oLog.PUTVALUE('LogText',pTextToLog)
+  oLog.WRITE
+  oLog.RELEASE
+ENDPROCEDURE
+
+PROCEDURE AddToRecordFilter
+PARAMETERS pFilter : OPEN
+INSTRUCTIONS
+   IF pFilter <> '' THEN
+      IF aRecordFilter <> '' THEN aRecordFilter := aRecordFilter + ' AND ' ENDIF
+      aRecordFilter := aRecordFilter + pFilter
+   ENDIF
+ENDPROCEDURE
+
+PROCEDURE DeterminePath 
+INSTRUCTIONS
+   IF pFilePath = '' THEN 
+      pFilePath := GETSPECIALFOLDERPATH('MyDocuments') 
+      AddToLog('No FilePath detected, using \'' + pFilePath + '\'')
+   ENDIF
+ENDPROCEDURE
+
+AUXFIELDS
+   Res : INTEGER
+   pTopicLoaded : (yes (1)) // used to conditionally load the surveydatafile, can also be used in your own setup
+   aRecordFilter : OPEN
+   aHappenings : STRING
+   pFilePath : OPEN
+   aOutputFile : OPEN
+
+MANIPULATE
+   Res := Initialise
+   IF Res = 0 THEN
+      AddToLog('CustomScript ' + SETUPNAME + ' initialisation successful')
+      DeterminePath
+      IF pTopicLoaded = yes THEN 
+         AddToRecordFilter('MainSurveyId=\'' + [[Topic.InstrumentId]] + '\'') 
+      ENDIF
+      AddToRecordFilter('EndResult is not null')
+      sdAttempts.SETRECORDFILTER(aRecordFilter)
+      IF sdAttempts.RECORDCOUNT < 1 THEN AddToLog('No attempts found with record filter: ' + aRecordFilter) ELSE
+         REPEAT
+            sdAttempts.READNEXT
+            aHappenings := sdAttempts.GETVALUE('Happenings')
+            tResults.GET(aHappenings)
+            IF NOT tResults.RESULTOK THEN
+               tResults.Happenings := aHappenings
+               tResults.HappeningsStr := sdAttempts.GETVALUE('HappeningsStr')
+            ENDIF
+            tResults.Count := tResults.Count + 1
+            tResults.WRITE
+         UNTIL sdAttempts.LASTRECORD
+         tResults.SETREADKEY(SECONDARY)
+         aOutputFile := pFilePath + '\\NonResponseReport' + DATETOSTR(SYSDATETIME, 'yyyyMMddHHmmss') + '.csv'
+         Res := Out.OPEN(aOutputFile)
+         Out.Text := 'Result;#;%'
+         Out.WRITE
+         REPEAT
+            tResults.READNEXT
+            Out.Text := tResults.HappeningsStr + ';' + STR(tResults.Count) + ';' + STR(tResults.Count / tResults.RECORDCOUNT, 2, 2) + '%'
+            Out.WRITE
+         UNTIL tResults.LASTRECORD
+         tInterchange.Message := 'Report written to ' + aOutputFile
+      ENDIF
+      AddToLog('End CustomScript ' + SETUPNAME)
+   ELSE
+      AddToLog('CustomScript ' + SETUPNAME + ' initilisation failed: sdLauncher=' + STR(sdLauncher.IORESULTCODE) + ' sdAttempts='+ STR(sdAttempts.IORESULTCODE) + ' sdTopic='+ STR(sdTopic.IORESULTCODE))
+   ENDIF
+
+

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project Name="CMA" Guid="e8e80ede-2cc8-4516-a8e9-07a5a8c22379" ProjectType="ManipulaProject">
+  <MainFile RelativePath="true">CMA.manx</MainFile>
+  <FileItems>
+    <File FileType="ManipulaFileType" RelativePath="true">CMA.manx</File>
+    <File FileType="PackageSpecificationFileType" RelativePath="true">settings.bcps</File>
+    <File FileType="ResourceDatabaseFileType" RelativePath="true">CMA.blrd</File>
+  </FileItems>
+  <Properties>
+    <IncludeSearchPath />
+    <LibrarySearchPath />
+    <DatamodelSearchPath />
+    <ExternalSearchPath />
+    <ConditionalDefines />
+    <ResourceDB RelativePath="true">CMA.blrd</ResourceDB>
+    <SurveyRoot />
+    <AppSupport>On</AppSupport>
+    <IsAppMainUserInterface>True</IsAppMainUserInterface>
+  </Properties>
+</Project>

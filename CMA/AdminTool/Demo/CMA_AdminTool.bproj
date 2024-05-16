@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project Name="CMA_AdminTool" Guid="9e48c587-61a6-4813-b8f1-ae685d4c1ac7" ProjectType="ManipulaProject">
+  <MainFile />
+  <FileItems>
+    <File FileType="ManipulaFileType" RelativePath="true">..\CMA_AdminTool.manx</File>
+    <File FileType="TranslationsFileType" RelativePath="true">..\Bitt\CMA_AdminTool _EN_NL.bitt</File>
+    <File FileType="PackageSpecificationFileType" RelativePath="true">CMA_AdminDemo.bcps</File>
+  </FileItems>
+  <Properties>
+    <AppSupport>On</AppSupport>
+    <IsAppMainUserInterface>True</IsAppMainUserInterface>
+    <ResourceDB RelativePath="true">..\..\CMA.blrd</ResourceDB>
+    <SurveyRoot />
+    <ConditionalDefines />
+    <DatamodelSearchPath>..\;..\..\</DatamodelSearchPath>
+    <ExternalSearchPath />
+    <IncludeSearchPath />
+    <LibrarySearchPath />
+  </Properties>
+</Project>

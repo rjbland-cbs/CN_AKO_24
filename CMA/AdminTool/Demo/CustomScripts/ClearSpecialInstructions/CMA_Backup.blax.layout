@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LayoutSpecification xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Version="10" GenerateAllSections="true" GenerateClientRules="true" UseGenericPages="true">
+  <Languages />
+  <LayoutSets>
+    <LayoutSet Name="Interviewing1" RequiredStyle="false" DesignHeight="0" DesignWidth="0" ResizeMode="Auto" RouteItemsPerPage="4" RowsPerTable="999" ReceiptPageName="" IntroPageName="" ResumePageName="" AbortPageName="">
+      <Parallels />
+    </LayoutSet>
+  </LayoutSets>
+  <LayoutSetGroups>
+    <LayoutSetGroup Name="Interviewing">
+      <LayoutSetNames>
+        <string>Interviewing1</string>
+      </LayoutSetNames>
+    </LayoutSetGroup>
+  </LayoutSetGroups>
+</LayoutSpecification>

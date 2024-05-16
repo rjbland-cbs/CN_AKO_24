@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project Name="CMA_CustomScript_Framework" Guid="060eb16b-2d28-40df-aef7-604233282dc1" ProjectType="ManipulaProject">
+  <MainFile RelativePath="true">CMA_CustomScript_Framework.manx</MainFile>
+  <FileItems>
+    <File FileType="ManipulaFileType" RelativePath="true">CMA_CustomScript_Framework.manx</File>
+  </FileItems>
+  <Properties>
+    <AppSupport />
+    <IsAppMainUserInterface />
+    <ResourceDB />
+    <SurveyRoot />
+    <ConditionalDefines />
+    <DatamodelSearchPath />
+    <ExternalSearchPath />
+    <IncludeSearchPath />
+    <LibrarySearchPath />
+  </Properties>
+</Project>

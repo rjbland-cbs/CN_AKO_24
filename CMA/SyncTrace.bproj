@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project Name="SyncTrace" Guid="09958659-b866-439c-bc7d-f1b02eda0fb4" ProjectType="DatamodelProject">
+  <MainFile RelativePath="true">SyncTrace.blax</MainFile>
+  <FileItems>
+    <File FileType="DatamodelFileType" RelativePath="true">SyncTrace.blax</File>
+    <File FileType="ResourceDatabaseFileType" RelativePath="true">SyncTrace.blrd</File>
+  </FileItems>
+  <Properties>
+    <SurveyRoot />
+    <ConditionalDefines />
+    <DatamodelSearchPath />
+    <ExternalSearchPath />
+    <IncludeSearchPath />
+    <LibrarySearchPath />
+    <ResourceDB RelativePath="true">SyncTrace.blrd</ResourceDB>
+    <SupportedModes />
+    <UsedResourceSets />
+    <AppSupport>Off</AppSupport>
+    <IsRunnableSurvey>False</IsRunnableSurvey>
+    <CatiRole />
+    <UseCari>False</UseCari>
+    <WebDataEntryClient>None</WebDataEntryClient>
+    <AddFieldGroupOrderInformation>False</AddFieldGroupOrderInformation>
+    <IgnoreLayoutErrors>False</IgnoreLayoutErrors>
+    <IgnoreRichtextErrors>False</IgnoreRichtextErrors>
+    <StartCondition />
+    <ActionsSetup />
+    <DataConversionSetup />
+    <DownloadInterceptorSetup />
+    <WriteInterceptorSetup />
+    <RunWriteInterceptorSetupAsynchronously>False</RunWriteInterceptorSetupAsynchronously>
+  </Properties>
+</Project>

@@ -1,0 +1,15 @@
+﻿//To release all closed cases
+USES
+  Launcher '..\launcher'
+
+UPDATEFILE upd:launcher ('C:\Blaise5\Surveys\CMA_launcher\launcher',bdix)
+
+AUXFIELDS
+  i: INTEGER
+
+MANIPULATE
+  IF (upd.CMA_CaseClosed=yes) THEN
+    upd.CMA_Location:='RELEASE_REQ'
+    upd.WRITE
+  ENDIF  
+ 

@@ -1,0 +1,12 @@
+﻿DATAMODEL Surveys
+//CMA - Case Management Application for use by interviewers
+//
+//version:  2.0. For Blaise 5.10
+//date:     December-2021 
+//author:   Lon Hofman, Team Blaise, Statistics Netherlands
+
+PRIMARY SurveyGUID
+FIELDS 
+  SurveyGUID: STRING[36]
+  InstallDate: STRING[24]
+ENDMODEL  

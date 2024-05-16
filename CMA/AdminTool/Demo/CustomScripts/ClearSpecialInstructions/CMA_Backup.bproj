@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project Name="CMA_Backup" Guid="148e1529-2937-476f-adb2-2da90833ab70" ProjectType="DatamodelProject">
+  <MainFile RelativePath="true">CMA_Backup.blax</MainFile>
+  <FileItems>
+    <File FileType="DatamodelFileType" RelativePath="true">CMA_Backup.blax</File>
+    <File FileType="ResourceDatabaseFileType" RelativePath="true">CMA_Backup.blrd</File>
+  </FileItems>
+  <Properties>
+    <SurveyRoot />
+    <ConditionalDefines />
+    <DatamodelSearchPath />
+    <ExternalSearchPath />
+    <IncludeSearchPath />
+    <LibrarySearchPath />
+    <ResourceDB RelativePath="true">CMA_Backup.blrd</ResourceDB>
+    <SupportedModes />
+    <UsedResourceSets />
+    <AppSupport />
+    <IsRunnableSurvey>True</IsRunnableSurvey>
+    <CatiRole />
+    <UseCari>False</UseCari>
+    <WebDataEntryClient>MvcDebug</WebDataEntryClient>
+    <ContentSecurityPolicyFileName />
+    <AddFieldGroupOrderInformation>False</AddFieldGroupOrderInformation>
+    <IgnoreLayoutErrors>False</IgnoreLayoutErrors>
+    <IgnoreRichtextErrors>False</IgnoreRichtextErrors>
+    <StartCondition />
+    <ActionsSetup />
+    <DataConversionSetup />
+    <DownloadInterceptorSetup />
+    <WriteInterceptorSetup />
+    <RunWriteInterceptorSetupAsynchronously>False</RunWriteInterceptorSetupAsynchronously>
+  </Properties>
+</Project>

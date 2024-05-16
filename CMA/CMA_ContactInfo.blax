@@ -1,0 +1,107 @@
+﻿DATAMODEL CMA_ContactInfo "Contact information"
+//CMA - Case Management Application for use by interviewers
+//
+//version:  1.5. For Blaise 5.9
+//date:     June 2021 
+//author:   Lon Hofman, Team Blaise, Statistics Netherlands
+
+//This datamodel is used to provide contact information about a case to CMA.
+//The fields of this model need to map the field names used in table template definition that defined the 
+//the details part of the cases screen.
+//The field ContactInfoShort need to be calculated in this model.
+
+PRIMARY MainSurveyID, ID
+
+LANGUAGES = EN "English"
+
+TYPE
+  TWhen = STRING[24] //format 'yyyyMMdd,HH:mm:sszzz'
+
+BLOCK bDT
+FIELDS
+  When: TWhen  
+  User: STRING[20]
+ENDBLOCK
+
+BLOCK bPII "Contact information" 
+FIELDS
+  Name "Name:" : STRING[50],EMPTY
+  Address "Address:" : STRING[50]
+  PostalCode "Postcal code:" : STRING[20],EMPTY
+  Town "Town:" : STRING[50]
+  Phone1 "Phone-1:" : STRING[20],EMPTY
+  Phone2 "Phone-2:" : STRING[20],EMPTY
+  EMail "E-Mail:" : STRING[30],EMPTY
+RULES
+  Name Address PostalCode Town Phone1 Phone2 EMail  
+ENDBLOCK    
+
+AUXFIELDS
+  CopyOfPIIMade: (Yes),EMPTY
+  HeaderText: STRING
+  CopyOfPII "Edit contact information": bPII
+  CopyOfNoteMade: (Yes),EMPTY
+  CopyOfNote "Edit case note": OPEN, EMPTY
+  ConfirmPII "Save changes in contact information?" : (Yes, No)
+  ConfirmNote "Save changes in case note?" : (Yes, No)
+  User: STRING[20] //passed on commandline when executed as .EDIT
+
+FIELDS
+//required fields. Needed to be able to update launcher case
+  MainSurveyID: STRING[36]  //GUID of survey. Could be a WAVE
+  ID: STRING[219] //primary key in topic instrument
+  ContactInfoShort: STRING  //computed based on content PII. Displayed in CMA, cases screen, datagrid
+  CaseNote: OPEN,EMPTY
+  LastChangedCI: bDT //to keep track when the last change was made to contact informattion
+  LastChangedNote: bDT   //to keep track when the last change was made to the case note
+
+//free fields
+  PII: bPII
+
+RULES
+  MainSurveyID.KEEP
+  ID.KEEP
+  User.KEEP 
+  PII.KEEP
+  CaseNote.KEEP
+  CopyOfPIIMade.KEEP
+  CopyOfPII.KEEP
+  IF CopyOfPIIMade=EMPTY THEN 
+    CopyOfPII:= PII 
+    CopyOfPIIMade:= Yes 
+  ENDIF
+  CopyOfPII.ASK
+  IF CopyOfPII<>PII THEN
+    ConfirmPII
+    IF ConfirmPII=Yes THEN
+      PII:= CopyOfPII
+      LastChangedCI.When:= TIMETOSTR(SYSTIME,'yyyyMMdd,HH:mm:sszzz') 
+      LastChangedCI.User:= User 
+    ENDIF  
+  ENDIF  
+  ContactInfoShort:= ''
+  //show town or zip code
+  IF NOT PII.Town=EMPTY THEN ContactInfoShort:= ContactInfoShort+PII.Town 
+  ELSEIF NOT PII.PostalCode=EMPTY THEN ContactInfoShort:= ContactInfoShort+PII.PostalCode ENDIF
+  //then the address...
+  IF NOT PII.Address=EMPTY THEN ContactInfoShort:= ContactInfoShort+','+PII.Address ENDIF
+  //then the name...
+  IF NOT PII.Name=EMPTY THEN ContactInfoShort:= ContactInfoShort+','+PII.Name ENDIF
+
+  //Interviewer note handling
+  CopyOfNote.KEEP
+  CopyOfNoteMade.KEEP
+  IF CopyOfNoteMade=EMPTY THEN 
+    CopyOfNote:= CaseNote 
+    CopyOfNoteMade:= Yes
+  ENDIF
+  CopyOfNote.ASK
+  IF CopyOfNote<>CaseNote THEN
+    ConfirmNote
+    IF ConfirmNote=Yes THEN
+      CaseNote:= CopyOfNote
+      LastChangedNote.When:= TIMETOSTR(SYSTIME,'yyyyMMdd,HH:mm:sszzz') 
+      LastChangedNote.User:= User 
+    ENDIF  
+  ENDIF
+ENDMODEL

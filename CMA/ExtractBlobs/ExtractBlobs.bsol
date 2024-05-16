@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Solution Name="ExtractBlobs Solution">
+  <StartupProject RelativePath="true">ExtractLogging.bproj</StartupProject>
+  <ProjectItems>
+    <Project RelativePath="true" BuildSequence="2">ExtractLogging.bproj</Project>
+    <Project RelativePath="true" BuildSequence="3">ExtractAttempts.bproj</Project>
+  </ProjectItems>
+</Solution>

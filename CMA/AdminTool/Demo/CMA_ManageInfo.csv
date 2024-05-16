@@ -1,0 +1,9 @@
+﻿userid;instrumentid;surveyname
+cma_sup;2cbb4701-93fd-4217-8d56-02c769d2da11;EN=Labour survey,NL=Arbeidkrachtenonderzoek
+cma_sup;a764d1a1-5277-4b1c-94ad-cf356dd2fba3;EN=ICT survey,NL=Automatiseringonderzoek
+cma_sup;fe94aa68-e405-4ce4-84ab-e4a6a0139f45;EN=Health survey,NL=Gezondheidonderzoek
+cma_sup;20cde0a2-67c2-4e6a-b02f-322065deb3e7;EN=Household survey,NL=Huishoudenonderzoek
+cma_jen;fe94aa68-e405-4ce4-84ab-e4a6a0139f45;EN=Health survey,NL=Gezondheidonderzoek
+cma_jen;20cde0a2-67c2-4e6a-b02f-322065deb3e7;EN=Household survey,NL=Huishoudenonderzoek
+cma_man;2cbb4701-93fd-4217-8d56-02c769d2da11;EN=Labour survey,NL=Arbeidkrachtenonderzoek
+cma_man;a764d1a1-5277-4b1c-94ad-cf356dd2fba3;EN=ICT survey,NL=Automatiseringonderzoek

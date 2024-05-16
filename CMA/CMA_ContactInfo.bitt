@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TranslationsFile>
+  <Languages>
+    <Language Name="EN" />
+    <Language Name="NL" />
+  </Languages>
+  <Roles />
+  <Modes />
+  <Items>
+    <Translation Name="bPII" Type="Block">
+      <Texts Lang="EN">Personal Identifiable Information</Texts>
+    </Translation>
+    <Translation Name="Name" Parent="bPII" Type="Field">
+      <Texts Lang="EN">Name:</Texts>
+      <Texts Lang="NL">Naam:</Texts>
+    </Translation>
+    <Translation Name="Address" Parent="bPII" Type="Field">
+      <Texts Lang="EN">Address:</Texts>
+      <Texts Lang="NL">Adres:</Texts>
+    </Translation>
+    <Translation Name="PostalCode" Parent="bPII" Type="Field">
+      <Texts Lang="EN">Postcal code:</Texts>
+      <Texts Lang="NL">Postcode:</Texts>
+    </Translation>
+    <Translation Name="Town" Parent="bPII" Type="Field">
+      <Texts Lang="EN">Town:</Texts>
+      <Texts Lang="NL">Plaats:</Texts>
+    </Translation>
+    <Translation Name="Phone1" Parent="bPII" Type="Field">
+      <Texts Lang="EN">Phone-1:</Texts>
+      <Texts Lang="NL">Telefoon-1:</Texts>
+    </Translation>
+    <Translation Name="Phone2" Parent="bPII" Type="Field">
+      <Texts Lang="EN">Phone-2:</Texts>
+      <Texts Lang="NL">Telefoon-2:</Texts>
+    </Translation>
+    <Translation Name="EMail" Parent="bPII" Type="Field">
+      <Texts Lang="EN">E-Mail:</Texts>
+      <Texts Lang="NL">E-Mail:</Texts>
+    </Translation>
+    <Translation Name="ConfirmPII" Type="Field">
+      <Texts Lang="EN">Save changes in PII?</Texts>
+      <Texts Lang="NL">Bewaar wijzigingen in PII?</Texts>
+    </Translation>
+    <Translation Name="ConfirmNote" Type="Field">
+      <Texts Lang="EN">Save changes in case note?</Texts>
+      <Texts Lang="NL">Bewaar wijziging in notitie?</Texts>
+    </Translation>
+  </Items>
+</TranslationsFile>

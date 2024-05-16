@@ -1,0 +1,73 @@
+﻿  DATAMODEL LauncherExport
+  TYPE
+    TCMA_Location = STRING[20] //
+    TCMA_Status = STRING[20] // holds the last known DataEntryStatus:  <EMPTY>=NotStarted, Started, Interrupted (=Survey started but interrupted), Finalized 
+    THappeningsStr = STRING[80] //holds the last known Operational code description of the case
+    THappeningsLbl = STRING[40]  //holds the last known Operational code label
+    THappeningsCod = STRING[5]  //holds the last known Operational code numeric value. This is what some love to see..
+    TGuid = STRING[36]
+    TWhen = STRING[24] //format 'yyyyMMdd,HH:mm:sszzz'
+    TGeoLocation = STRING[22] //GPS coordinates using GETGEOLOCATION function
+  
+  BLOCK bDT
+  FIELDS
+    When: TWhen  
+    User: STRING[20]
+  ENDBLOCK  
+    
+  BLOCK bCMA_Process
+  FIELDS
+    LastChangedDT: TWhen
+    GeoLocation: TGeoLocation     //last registered location = location of last attempt
+    FirstDownloaded: bDT
+    FirstUploaded: bDT
+    LastDownloaded: bDT
+    LastUploaded: bDT
+    LastAttempt: bDT //last known attempt result
+    FirstInterviewTime: bDT //first time (if ever) the interview was started
+    LastInterviewTime: bDT //last time (if ever) the interview was started
+    LastInterviewEndTime: TWhen //last time (if ever) the interview was ended
+    TotalInterviewTimeUsed: INTEGER[8] //in seconds. Keeps track of total interview time for easy monitoring
+  ENDBLOCK
+  
+  BLOCK bCMA_Data
+  FIELDS
+    AttemptsCount: INTEGER[3],EMPTY
+  ENDBLOCK  
+     
+  BLOCK bCMA_Appointment //holds the last know appointment made by the interviewer
+  FIELDS
+    AppDate: DATETYPE
+    AppTime: TIMETYPE
+    WhenMade: bDT
+  ENDBLOCK
+  
+  FIELDS 
+    SurveyDisplayName: string[200],EMPTY //to display in CMA. When empty it will be filled by system with project/wave name.
+                                         //allowed: <languageID>=text,<languageID=text,... to allow for translation on screen
+    ID: STRING[219] //primary key in topic instrument
+    CMA_Supervisor: STRING[20], EMPTY {*}//The supervisor who is responsible for the case (optional)
+    CMA_ForWhom: STRING[20] //The interviewer to whom the case currently has been assigned
+    CMA_InPossession: STRING[20] //The interviewer that picked up the case and has it currently in possesion
+    CMA_Location: TCMA_Location   //EMPTY,CLIENT,SERVER,ONHOLD, 
+                                  //TRANSFER_REQ,DOWNLOAD_REQ,RESTORE_REQ,RELEASE_REQ,REOPEN_REQ,RERESHCASE_REQ,REFRESHDATA_REQ,REFRESHBOTH_REQ,
+                                  //TRANSFER_OK,RELEASED,RELEASE_FAILED
+    CMA_Status: TCMA_Status   //EMPTY, Started (=attempt,no interview), Interrupted (=interview interrupted), Completed (=interview ready), Ready (=finalized), Uploaded
+    CMA_CaseClosed: (no (0), yes), EMPTY //ready or not. Crusial variable for CMA. Upload is decided on this
+    CMA_HappeningsStr: THappeningsStr //string registered in last attempt
+    CMA_HappeningsLbl: THappeningsLbl //label of the Happenings in last attempt
+    CMA_HappeningsCod: THappeningsCod //numerical value as string of last attempt
+    
+    CMA_GroupType: (gParent,gChild), EMPTY  //Used to identify Parent/Child relations
+    CMA_GroupStatus: TCMA_Status //Summary of the status of the individual group entries
+    CMA_GroupSummary: STRING[100] //Information on the group per available status 
+  
+    CMA_SpawnCount: 1..999, EMPTY  //keeps track of how many cases have been spawned / how many case are in the group when CMA_GroupInfo=gParent
+    CMA_StartDate: DATETYPE {*}//start date of case
+    CMA_EndDate: DATETYPE {*}//end date of case
+    CMA_Process: bCMA_Process 
+    CMA_Appointment: bCMA_Appointment
+    CMA_GeoLocation: TGeoLocation //for preload or to be determined in CMA by pressing button
+    ContactInfoShort: STRING  {*}//computed based on content PII. Displayed in CMA, cases screen, datagrid
+    CaseNote: STRING[1000],EMPTY {*}
+  ENDMODEL

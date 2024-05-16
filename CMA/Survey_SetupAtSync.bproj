@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project Name="Survey_SetupAtSync" Guid="2567690e-b26a-4e37-8136-14347324f1f2" ProjectType="ManipulaProject">
+  <MainFile />
+  <FileItems>
+    <File FileType="ManipulaFileType" RelativePath="true">Survey_SetupAtSync.manx</File>
+  </FileItems>
+  <Properties>
+    <AppSupport />
+    <IsAppMainUserInterface />
+    <ResourceDB />
+    <SurveyRoot />
+    <ConditionalDefines />
+    <DatamodelSearchPath />
+    <ExternalSearchPath />
+    <IncludeSearchPath />
+    <LibrarySearchPath />
+  </Properties>
+</Project>

@@ -1,0 +1,14 @@
+﻿//To retore all cases from CMA_Ann
+USES
+  Launcher '..\launcher'
+
+UPDATEFILE upd:Launcher ('C:\Blaise5\Surveys\CMA_launcher\launcher',bdix)
+
+AUXFIELDS
+  i: INTEGER
+MANIPULATE
+  IF upd.CMA_ForWhom ='CMA_Ann' THEN 
+     upd.CMA_Location:='RESTORE'
+     upd.WRITE
+  ENDIF
+ 

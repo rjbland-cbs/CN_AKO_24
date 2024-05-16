@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project Name="Surveys" Guid="0a09243d-c365-4660-a2fb-8678a4829b3b" ProjectType="DatamodelProject">
+  <MainFile RelativePath="true">Surveys.blax</MainFile>
+  <FileItems>
+    <File FileType="DatamodelFileType" RelativePath="true">Surveys.blax</File>
+  </FileItems>
+  <Properties>
+    <IncludeSearchPath />
+    <LibrarySearchPath />
+    <DatamodelSearchPath />
+    <ResourceDB />
+    <SupportedModes />
+    <UsedResourceSets />
+    <ConditionalDefines />
+    <ExternalSearchPath />
+    <SurveyRoot />
+    <CatiRole />
+    <IsRunnableSurvey>False</IsRunnableSurvey>
+    <WebDataEntryClient>None</WebDataEntryClient>
+    <AppSupport />
+    <UseCari>False</UseCari>
+    <IgnoreLayoutErrors>False</IgnoreLayoutErrors>
+    <IgnoreRichtextErrors>False</IgnoreRichtextErrors>
+    <AddFieldGroupOrderInformation>False</AddFieldGroupOrderInformation>
+    <StartCondition />
+    <ActionsSetup />
+    <DownloadInterceptorSetup />
+    <WriteInterceptorSetup />
+    <RunWriteInterceptorSetupAsynchronously>False</RunWriteInterceptorSetupAsynchronously>
+  </Properties>
+</Project>

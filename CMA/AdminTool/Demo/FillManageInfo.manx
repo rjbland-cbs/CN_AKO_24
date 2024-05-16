@@ -1,0 +1,9 @@
+﻿USES cma_manageinfo
+
+INPUTFILE inp:cma_manageinfo ('cma_manageinfo.csv',ASCII)
+SETTINGS
+  HEADERLINE=YES
+  SEPARATOR=';'
+
+OUTPUTFILE outp:cma_manageinfo('c:\blaise5\surveys\cma_manageinfo\cma_manageinfo',BLAISE)
+ 

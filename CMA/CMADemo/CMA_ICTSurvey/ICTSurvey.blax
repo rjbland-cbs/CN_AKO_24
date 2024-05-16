@@ -1,0 +1,57 @@
+﻿{*************************************************}
+{                                                 }
+{  Blaise 5. A Survey Processing System           }
+{  Copyright (c) 2020 Statistics Netherlands      }
+{                                                 }
+{*************************************************}
+
+//CMA Demo survey 
+
+DATAMODEL CMA_ICTSurvey "ICT" 
+  
+  LANGUAGES = ENG
+  ROLES = Help "The Help role provides a help button that the user can click to display question help text.",
+          Template "Apply layout templates automatically"
+ 
+  PRIMARY TheKey
+
+
+  TYPE
+    TYesNo = (Yes, No)
+    TContinue = (Yes), EMPTY
+    TDevice = (PC, Tablet, SmartPhone "Smartphone (Android)", iPhone, iPad, iPod, Fitbit)
+    
+  BLOCK BICT
+    FIELDS
+      Devices "Which of the following devices do you have?": 
+         SET OF TDevice
+      LikeMost "Which device do you like the most?": TDevice
+      Hours "How many hours per week do you use your PC?": INTEGER
+    RULES
+      Devices
+      IF Devices.Cardinal>1 THEN
+        LikeMost
+        LikeMost IN Devices "You have to select a device that you have"
+      ENDIF  
+      IF PC in Devices THEN Hours ENDIF
+  ENDBLOCK
+
+  BLOCK BPerson
+    FIELDS
+      FirstName "What is your first name?"
+        Template "Horizontal": STRING[20]
+      Age "What is your age?"  Template "Horizontal": 1..120  
+    RULES   
+      FirstName 
+      Age
+  ENDBLOCK
+
+  FIELDS
+    TheKey: 1..999999, NOEMPTY
+    Person: BPerson
+    ICT: BICT
+  RULES
+    Person
+    ICT
+ENDMODEL
+

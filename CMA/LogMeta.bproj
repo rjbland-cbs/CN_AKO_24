@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project Name="LogMeta" Guid="d2c4d4ca-c4e1-49f5-bf64-1a91a2d7c560" ProjectType="DatamodelProject">
+  <MainFile RelativePath="true">LogMeta.blax</MainFile>
+  <FileItems>
+    <File FileType="DatamodelFileType" RelativePath="true">LogMeta.blax</File>
+  </FileItems>
+  <Properties>
+    <IncludeSearchPath />
+    <LibrarySearchPath />
+    <DatamodelSearchPath />
+    <ResourceDB />
+    <SupportedModes />
+    <UsedResourceSets />
+    <ConditionalDefines />
+    <ExternalSearchPath />
+    <SurveyRoot />
+    <CatiRole />
+    <IsRunnableSurvey>False</IsRunnableSurvey>
+    <WebDataEntryClient>None</WebDataEntryClient>
+    <AppSupport>Off</AppSupport>
+    <UseCari>False</UseCari>
+    <IgnoreLayoutErrors>False</IgnoreLayoutErrors>
+    <IgnoreRichtextErrors>False</IgnoreRichtextErrors>
+    <AddFieldGroupOrderInformation>False</AddFieldGroupOrderInformation>
+    <StartCondition />
+    <ActionsSetup />
+    <DownloadInterceptorSetup />
+    <WriteInterceptorSetup />
+    <RunWriteInterceptorSetupAsynchronously>False</RunWriteInterceptorSetupAsynchronously>
+  </Properties>
+</Project>

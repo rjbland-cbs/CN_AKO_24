@@ -1,0 +1,860 @@
+﻿datamodel CMA ""
+ fieldproperties onclick:string visibility:(hidden (0),visible (1)) tag:string 
+
+languages = 
+	EN "English",
+	NL "Nederlands"
+roles =  TOOLTIP, DISABLED
+
+
+const  cCFVUpper= 40
+  cMaxSurveys = 40            
+            
+
+PARALLEL
+dShowTheLogging
+dCases
+dGroup
+dShowImage
+dAttempts
+dEditNote
+Confirm
+Display
+Process
+
+BLOCK BdShowTheLogging
+FIELDS
+auxAutoSizeBtns  : 
+		(yes), Empty
+CurrentVersion  : string
+VersionInfo  EN  "^{CurrentVersion}"  : string
+QuitLogging (Result)   : 
+		(Cancel_Synchronize (1) Category  EN  "<img src=Synchronize>" ,
+		OK (2) Category  EN  "<img src=BackButton2>" ), Empty
+DS_mLogging  EN  ""  : string[24], Empty
+DialogTitle_EN : string[200]
+DialogTitle_NL : string[200]
+RULES
+DialogTitle_EN.KEEP
+IF DialogTitle_EN = EMPTY THEN 
+    DialogTitle_EN := 'CMA logging'
+ENDIF
+DialogTitle_NL.KEEP
+IF DialogTitle_NL = EMPTY THEN 
+    DialogTitle_NL := 'CMA logging'
+ENDIF
+CurrentVersion.Keep
+
+DS_mLogging.ASK
+auxAutoSizeBtns.KEEP
+    VersionInfo.SHOW  
+
+//start case assignment dialog related definitions
+
+QuitLogging.ASK
+endblock
+
+
+BLOCK BdCases
+FIELDS
+CurrentLanguage  : string
+CurLan  EN  "Select language"  : TLanguage
+auxDataGridHeaderAll  EN  "List of all cases:"  NL  "Lijst met alle opdrachten:"  : string
+auxDataGridHeaderCompleted  EN  "List of all completed cases:"  NL  "Lijst met alle afgehandelde opdrachten:"  : string
+auxDataGridHeaderNonCompleted  EN  "List of all non-completed cases:"  NL  "Lijst met alle niet afgehandelde opdrachten:"  : string
+auxDataGridHeaderPortrait  EN  "^<auxDataGridHeaderPortrait>"  : string
+auxDoNotAllowEditCase  : 
+		(yes,
+		no), Empty
+auxDoNotAllowShowingAttempts  : 
+		(yes), Empty
+auxShowGeoPositionBtn  : 
+		(yes), Empty
+auxShowLanguageDropDown  : 
+		(yes), Empty
+auxFinal  : 
+		(no (0),
+		yes), Empty
+auxCurrentSurvey  : string
+auxStatus  : string
+auxGroupStatus  : string
+auxGroupSummary  : string
+auxContactData  : open
+auxLastAttempt  : string[30]
+auxCaseNote  : open
+auxSpawnAllowed  : 
+		(no (0),
+		yes), Empty
+auxIsDonorCase  : 
+		(yes), Empty
+auxIsNonWindows  : 
+		(yes)
+auxDeviceInfo  : string
+auxInPortraitMode  : 
+		(yes), Empty
+auxCount  : integer
+auxLayoutSetName  : string
+auxHasCustomFilter  : 
+		(yes), Empty
+auxCustomFilterValue  : string
+auxCustomFilterTxt  : string
+auxCustomFilterCount  : integer
+CustomFV_1_  : string
+CustomFV_2_  : string
+CustomFV_3_  : string
+CustomFV_4_  : string
+CustomFV_5_  : string
+CustomFV_6_  : string
+CustomFV_7_  : string
+CustomFV_8_  : string
+CustomFV_9_  : string
+CustomFV_10_  : string
+CustomFV_11_  : string
+CustomFV_12_  : string
+CustomFV_13_  : string
+CustomFV_14_  : string
+CustomFV_15_  : string
+CustomFV_16_  : string
+CustomFV_17_  : string
+CustomFV_18_  : string
+CustomFV_19_  : string
+CustomFV_20_  : string
+CustomFV_21_  : string
+CustomFV_22_  : string
+CustomFV_23_  : string
+CustomFV_24_  : string
+CustomFV_25_  : string
+CustomFV_26_  : string
+CustomFV_27_  : string
+CustomFV_28_  : string
+CustomFV_29_  : string
+CustomFV_30_  : string
+CustomFV_31_  : string
+CustomFV_32_  : string
+CustomFV_33_  : string
+CustomFV_34_  : string
+CustomFV_35_  : string
+CustomFV_36_  : string
+CustomFV_37_  : string
+CustomFV_38_  : string
+CustomFV_39_  : string
+CustomFV_40_  : string
+auxCustomFilter  EN  "^<auxCustomFilterTxt>: "  : 
+		(cfvAll (0) Category  EN  "\<All\>"  NL  "\<Alle\>" ,
+		cfv1 Category  EN  "^<CustomFV_1_>" ,
+		cfv2 Category  EN  "^<CustomFV_2_>" ,
+		cfv3 Category  EN  "^<CustomFV_3_>" ,
+		cfv4 Category  EN  "^<CustomFV_4_>" ,
+		cfv5 Category  EN  "^<CustomFV_5_>" ,
+		cfv6 Category  EN  "^<CustomFV_6_>" ,
+		cfv7 Category  EN  "^<CustomFV_7_>" ,
+		cfv8 Category  EN  "^<CustomFV_8_>" ,
+		cfv9 Category  EN  "^<CustomFV_9_>" ,
+		cfv10 Category  EN  "^<CustomFV_10_>" ,
+		cfv11 Category  EN  "^<CustomFV_11_>" ,
+		cfv12 Category  EN  "^<CustomFV_12_>" ,
+		cfv13 Category  EN  "^<CustomFV_13_>" ,
+		cfv14 Category  EN  "^<CustomFV_14_>" ,
+		cfv15 Category  EN  "^<CustomFV_15_>" ,
+		cfv16 Category  EN  "^<CustomFV_16_>" ,
+		cfv17 Category  EN  "^<CustomFV_17_>" ,
+		cfv18 Category  EN  "^<CustomFV_18_>" ,
+		cfv19 Category  EN  "^<CustomFV_19_>" ,
+		cfv20 Category  EN  "^<CustomFV_20_>" ,
+		cfv21 Category  EN  "^<CustomFV_21_>" ,
+		cfv22 Category  EN  "^<CustomFV_22_>" ,
+		cfv23 Category  EN  "^<CustomFV_23_>" ,
+		cfv24 Category  EN  "^<CustomFV_24_>" ,
+		cfv25 Category  EN  "^<CustomFV_25_>" ,
+		cfv26 Category  EN  "^<CustomFV_26_>" ,
+		cfv27 Category  EN  "^<CustomFV_27_>" ,
+		cfv28 Category  EN  "^<CustomFV_28_>" ,
+		cfv29 Category  EN  "^<CustomFV_29_>" ,
+		cfv30 Category  EN  "^<CustomFV_30_>" ,
+		cfv31 Category  EN  "^<CustomFV_31_>" ,
+		cfv32 Category  EN  "^<CustomFV_32_>" ,
+		cfv33 Category  EN  "^<CustomFV_33_>" ,
+		cfv34 Category  EN  "^<CustomFV_34_>" ,
+		cfv35 Category  EN  "^<CustomFV_35_>" ,
+		cfv36 Category  EN  "^<CustomFV_36_>" ,
+		cfv37 Category  EN  "^<CustomFV_37_>" ,
+		cfv38 Category  EN  "^<CustomFV_38_>" ,
+		cfv39 Category  EN  "^<CustomFV_39_>" ,
+		cfv40 Category  EN  "^<CustomFV_40_>" ), Empty
+auxUseSearchButton  : 
+		(yes), Empty
+auxTextFontSize  : integer
+auxWhatCasesToShow  EN  "Cases to show: "  NL  "Te tonen opdrachten: "  : 
+		(All (0) Category  EN  "<img src=AllCases>" DISABLED  EN  "<img src=AllCasesDisabled>" TOOLTIP  EN  "Show all cases"  NL  "Alle opdrachten tonen" ,
+		Noncompleted (1) Category  EN  "<img src=InCompleteCases>" DISABLED  EN  "<img src=InCompleteCasesDisabled>" TOOLTIP  EN  "Show only non-completed cases"  NL  "Alleen nog niet afgehandelde opdrachten tonen" ,
+		Completed (2) Category  EN  "<img src=CompletedCases>" DISABLED  EN  "<img src=CompletedCasesDisabled>" TOOLTIP  EN  "Show only completed cases"  NL  "Alleen afgehandelde opdrachten tonen" ), Empty
+srvNames_1_  : string
+srvNames_2_  : string
+srvNames_3_  : string
+srvNames_4_  : string
+srvNames_5_  : string
+srvNames_6_  : string
+srvNames_7_  : string
+srvNames_8_  : string
+srvNames_9_  : string
+srvNames_10_  : string
+srvNames_11_  : string
+srvNames_12_  : string
+srvNames_13_  : string
+srvNames_14_  : string
+srvNames_15_  : string
+srvNames_16_  : string
+srvNames_17_  : string
+srvNames_18_  : string
+srvNames_19_  : string
+srvNames_20_  : string
+srvNames_21_  : string
+srvNames_22_  : string
+srvNames_23_  : string
+srvNames_24_  : string
+srvNames_25_  : string
+srvNames_26_  : string
+srvNames_27_  : string
+srvNames_28_  : string
+srvNames_29_  : string
+srvNames_30_  : string
+srvNames_31_  : string
+srvNames_32_  : string
+srvNames_33_  : string
+srvNames_34_  : string
+srvNames_35_  : string
+srvNames_36_  : string
+srvNames_37_  : string
+srvNames_38_  : string
+srvNames_39_  : string
+srvNames_40_  : string
+auxWhatSurveyToShow  EN  "Survey to show: "  NL  "Te tonen onderzoek: "  : 
+		(srvAll (0) Category  EN  "\<All\>"  NL  "\<Alle\>" ,
+		srv1 Category  EN  "^<srvNames_1_>" ,
+		srv2 Category  EN  "^<srvNames_2_>" ,
+		srv3 Category  EN  "^<srvNames_3_>" ,
+		srv4 Category  EN  "^<srvNames_4_>" ,
+		srv5 Category  EN  "^<srvNames_5_>" ,
+		srv6 Category  EN  "^<srvNames_6_>" ,
+		srv7 Category  EN  "^<srvNames_7_>" ,
+		srv8 Category  EN  "^<srvNames_8_>" ,
+		srv9 Category  EN  "^<srvNames_9_>" ,
+		srv10 Category  EN  "^<srvNames_10_>" ,
+		srv11 Category  EN  "^<srvNames_11_>" ,
+		srv12 Category  EN  "^<srvNames_12_>" ,
+		srv13 Category  EN  "^<srvNames_13_>" ,
+		srv14 Category  EN  "^<srvNames_14_>" ,
+		srv15 Category  EN  "^<srvNames_15_>" ,
+		srv16 Category  EN  "^<srvNames_16_>" ,
+		srv17 Category  EN  "^<srvNames_17_>" ,
+		srv18 Category  EN  "^<srvNames_18_>" ,
+		srv19 Category  EN  "^<srvNames_19_>" ,
+		srv20 Category  EN  "^<srvNames_20_>" ,
+		srv21 Category  EN  "^<srvNames_21_>" ,
+		srv22 Category  EN  "^<srvNames_22_>" ,
+		srv23 Category  EN  "^<srvNames_23_>" ,
+		srv24 Category  EN  "^<srvNames_24_>" ,
+		srv25 Category  EN  "^<srvNames_25_>" ,
+		srv26 Category  EN  "^<srvNames_26_>" ,
+		srv27 Category  EN  "^<srvNames_27_>" ,
+		srv28 Category  EN  "^<srvNames_28_>" ,
+		srv29 Category  EN  "^<srvNames_29_>" ,
+		srv30 Category  EN  "^<srvNames_30_>" ,
+		srv31 Category  EN  "^<srvNames_31_>" ,
+		srv32 Category  EN  "^<srvNames_32_>" ,
+		srv33 Category  EN  "^<srvNames_33_>" ,
+		srv34 Category  EN  "^<srvNames_34_>" ,
+		srv35 Category  EN  "^<srvNames_35_>" ,
+		srv36 Category  EN  "^<srvNames_36_>" ,
+		srv37 Category  EN  "^<srvNames_37_>" ,
+		srv38 Category  EN  "^<srvNames_38_>" ,
+		srv39 Category  EN  "^<srvNames_39_>" ,
+		srv40 Category  EN  "^<srvNames_40_>" ), Empty
+auxWhatSurveyToShowGUID  : string, Empty
+auxDetails  EN  "^{auxCustomDetailsTable}"  : string[1]
+auxCustomTemplate  : string[10], Empty
+auxCustomDetailsTable  : open
+auxGeoLocation  : string[20]
+auxHasImage  : 
+		(yes), Empty
+auxGroupType  : 
+		(parent,
+		child), Empty
+auxParentChildView  : 
+		(yes), Empty
+auxFieldFilter  : open
+auxFieldFilterTitles  : open
+auxFieldFilterWidths  : open
+auxStyleCount  : integer
+auxStyleNr  : integer
+auxStyle  : string
+auxAutoSizeBtns  : 
+		(yes), Empty
+LanguageImage_1_  : string
+LanguageImage_2_  : string
+LanguageImage_3_  : string
+LanguageEnum  : 
+		(flag1 Category  EN  "<img src=^<LanguageImage_1_>>" ,
+		flag2 Category  EN  "<img src=^<LanguageImage_2_>>" ,
+		flag3 Category  EN  "<img src=^<LanguageImage_3_>>" )
+LanguageCount  : 0 .. 3
+auxSortText_1_  : string
+auxSortText_2_  : string
+auxSortText_3_  : string
+auxSortText_4_  : string
+auxSortText_5_  : string
+auxSortText_6_  : string
+auxSortText_7_  : string
+auxSortText_8_  : string
+auxSortText_9_  : string
+auxSortText_10_  : string
+auxSortOn  EN  "Select display order: "  NL  "Selecteer volgorde: "  : 
+		(sec1 (1) Category  EN  "^<auxSortText_1_>" ,
+		sec2 (2) Category  EN  "^<auxSortText_2_>" ,
+		sec3 (3) Category  EN  "^<auxSortText_3_>" ,
+		sec4 (4) Category  EN  "^<auxSortText_4_>" ,
+		sec5 (5) Category  EN  "^<auxSortText_5_>" ,
+		sec6 (6) Category  EN  "^<auxSortText_6_>" ,
+		sec7 (7) Category  EN  "^<auxSortText_7_>" ,
+		sec8 (8) Category  EN  "^<auxSortText_8_>" ,
+		sec9 (9) Category  EN  "^<auxSortText_9_>" ,
+		sec10 (10) Category  EN  "^<auxSortText_10_>" ), Empty
+auxAllowSort  : 
+		(yes), Empty
+auxConfirmedFilter  : string
+auxCollapseDetails  : 
+		(yes), Empty
+LanguageID1  : string[10]
+LanguageID2  : string[10]
+LanguageID3  : string[10]
+auxFilter  EN  "Filter:"  NL  "Filter:"  : string, Empty
+btnStyle  : 
+		(Change Category  EN  "<img src=ChangeFont>" DISABLED  EN  "<img src=ChangeFontDisabled>" TOOLTIP  EN  "Change style"  NL  "Wijzig stijl" ), Empty
+btnCases (Result)   : 
+		(Cancel_ShowGroup (1) Category  EN  "<img src=ShowGroup>" DISABLED  EN  "<img src=ShowGroupDisabled>" TOOLTIP  EN  "Show case group"  NL  "Toon groep" ,
+		Cancel_Spawn (2) Category  EN  "<img src=SpawnCasePlus>" DISABLED  EN  "<img src=SpawncasePlusDisabled>" TOOLTIP  EN  "Add case"  NL  "Maak case" ,
+		Cancel_IW (3) Category  EN  "<img src=Interview>" DISABLED  EN  "<img src=InterviewDisabled>" TOOLTIP  EN  "Start interview"  NL  "Start interview" ,
+		Cancel_Attempt (4) Category  EN  "<img src=Account>" DISABLED  EN  "<img src=AccountDisabled>" TOOLTIP  EN  "Show attempts"  NL  "Toon contactpogingen" ,
+		Cancel_Update (5) Category  EN  "<img src=Update>" DISABLED  EN  "<img src=UpdateDisabled>" TOOLTIP  EN  "Edit case"  NL  "Bewerk opdracht" ,
+		Cancel_CollectGeoLoc (6) Category  EN  "<img src=DetermineGeoPos>" DISABLED  EN  "<img src=DetermineGeoPosDisabled>" TOOLTIP  EN  "Determine geo position"  NL  "Bepaal huidige locatie" ,
+		Cancel_Synchronize (7) Category  EN  "<img src=Synchronize>" DISABLED  EN  "<img src=SynchronizeDisabled>" TOOLTIP  EN  "Synchronize data"  NL  "Synchronizeer data" ,
+		Quit (10) Category  EN  "<img src=Quit>" DISABLED  EN  "<img src=QuitDisabled>" TOOLTIP  EN  "Quit application"  NL  "Stop applicatie" ), Empty
+DS_mCases  EN  ""  : string[255], Empty
+DialogTitle_EN : string[200]
+DialogTitle_NL : string[200]
+RULES
+DialogTitle_EN.KEEP
+IF DialogTitle_EN = EMPTY THEN 
+    DialogTitle_EN := 'CMA - Available cases'
+ENDIF
+DialogTitle_NL.KEEP
+IF DialogTitle_NL = EMPTY THEN 
+    DialogTitle_NL := 'CMA - Overzicht opdrachten'
+ENDIF
+CustomFV_1_.Keep
+CustomFV_2_.Keep
+CustomFV_3_.Keep
+CustomFV_4_.Keep
+CustomFV_5_.Keep
+CustomFV_6_.Keep
+CustomFV_7_.Keep
+CustomFV_8_.Keep
+CustomFV_9_.Keep
+CustomFV_10_.Keep
+CustomFV_11_.Keep
+CustomFV_12_.Keep
+CustomFV_13_.Keep
+CustomFV_14_.Keep
+CustomFV_15_.Keep
+CustomFV_16_.Keep
+CustomFV_17_.Keep
+CustomFV_18_.Keep
+CustomFV_19_.Keep
+CustomFV_20_.Keep
+CustomFV_21_.Keep
+CustomFV_22_.Keep
+CustomFV_23_.Keep
+CustomFV_24_.Keep
+CustomFV_25_.Keep
+CustomFV_26_.Keep
+CustomFV_27_.Keep
+CustomFV_28_.Keep
+CustomFV_29_.Keep
+CustomFV_30_.Keep
+CustomFV_31_.Keep
+CustomFV_32_.Keep
+CustomFV_33_.Keep
+CustomFV_34_.Keep
+CustomFV_35_.Keep
+CustomFV_36_.Keep
+CustomFV_37_.Keep
+CustomFV_38_.Keep
+CustomFV_39_.Keep
+CustomFV_40_.Keep
+srvNames_1_.Keep
+srvNames_2_.Keep
+srvNames_3_.Keep
+srvNames_4_.Keep
+srvNames_5_.Keep
+srvNames_6_.Keep
+srvNames_7_.Keep
+srvNames_8_.Keep
+srvNames_9_.Keep
+srvNames_10_.Keep
+srvNames_11_.Keep
+srvNames_12_.Keep
+srvNames_13_.Keep
+srvNames_14_.Keep
+srvNames_15_.Keep
+srvNames_16_.Keep
+srvNames_17_.Keep
+srvNames_18_.Keep
+srvNames_19_.Keep
+srvNames_20_.Keep
+srvNames_21_.Keep
+srvNames_22_.Keep
+srvNames_23_.Keep
+srvNames_24_.Keep
+srvNames_25_.Keep
+srvNames_26_.Keep
+srvNames_27_.Keep
+srvNames_28_.Keep
+srvNames_29_.Keep
+srvNames_30_.Keep
+srvNames_31_.Keep
+srvNames_32_.Keep
+srvNames_33_.Keep
+srvNames_34_.Keep
+srvNames_35_.Keep
+srvNames_36_.Keep
+srvNames_37_.Keep
+srvNames_38_.Keep
+srvNames_39_.Keep
+srvNames_40_.Keep
+LanguageImage_1_.Keep
+LanguageImage_2_.Keep
+LanguageImage_3_.Keep
+auxSortText_1_.Keep
+auxSortText_2_.Keep
+auxSortText_3_.Keep
+auxSortText_4_.Keep
+auxSortText_5_.Keep
+auxSortText_6_.Keep
+auxSortText_7_.Keep
+auxSortText_8_.Keep
+auxSortText_9_.Keep
+auxSortText_10_.Keep
+
+DS_mCases.ASK
+CurrentLanguage.KEEP
+    CurLan.KEEP
+    auxCurrentSurvey.KEEP
+    auxWhatSurveyToShowGUID.KEEP
+    auxFinal.KEEP
+    auxSpawnAllowed.KEEP
+    auxIsDonorCase.KEEP
+    auxIsNonWindows.KEEP
+    auxDeviceInfo.KEEP
+    auxCustomTemplate.KEEP
+    auxCustomDetailsTable.KEEP
+    auxLastAttempt.KEEP
+    auxStatus.KEEP
+    auxGroupStatus.KEEP
+    auxGroupSummary.KEEP
+    auxGeoLocation.KEEP
+    auxHasImage.KEEP
+    auxParentChildView.KEEP
+    auxGroupType.KEEP
+    auxContactData.KEEP
+    auxFieldFilter.KEEP
+    auxConfirmedFilter.KEEP
+    auxFieldFilterTitles.KEEP
+    auxFieldFilterWidths.KEEP
+    auxAutoSizeBtns.KEEP
+    auxStyle.KEEP
+    auxStyleCount.KEEP
+    auxStyleNr.KEEP
+    auxDoNotAllowEditCase.KEEP
+    auxDoNotAllowShowingAttempts.KEEP
+    auxShowGeoPositionBtn.KEEP
+    auxHasCustomFilter.KEEP
+    auxUseSearchButton.KEEP
+    auxTextFontSize.KEEP
+    auxCustomFilterValue.KEEP
+    auxCustomFilterTxt.KEEP
+    auxCustomFilterCount.KEEP
+    auxShowLanguageDropDown.KEEP
+    LanguageCount.KEEP
+    auxInPortraitMode.KEEP auxCount.KEEP
+    auxCollapseDetails.KEEP
+    auxLayoutSetName.KEEP
+    IF LanguageCount>1 THEN
+      LanguageEnum.ASK
+      LanguageID1.KEEP
+      LanguageID2.KEEP
+      LanguageID3.KEEP
+    ENDIF   
+    auxDetails.SHOW 
+    auxWhatCasesToShow.ASK
+    IF auxParentChildView=EMPTY AND auxInPortraitMode=EMPTY THEN
+      IF auxWhatCasesToShow=All THEN
+        auxDataGridHeaderAll.SHOW
+      ENDIF  
+      IF auxWhatCasesToShow=NonCompleted THEN
+        auxDataGridHeaderNonCompleted.SHOW
+      ENDIF  
+      IF auxWhatCasesToShow=Completed THEN
+        auxDataGridHeaderCompleted.SHOW
+      ENDIF
+    ENDIF    
+    IF auxInPortraitMode=yes THEN
+      auxDataGridHeaderPortrait.SHOW
+    ENDIF    
+    auxWhatSurveyToShow.ASK
+    auxConfirmedFilter.KEEP
+    auxFilter.ASK
+    IF auxStyleCount>1 THEN btnStyle.ASK ENDIF
+    auxAllowSort.KEEP
+    IF auxAllowSort=yes THEN
+      auxSortOn.ASK
+    ENDIF  
+    IF auxHasCustomFilter=yes THEN
+      auxCustomFilter.ASK
+    ENDIF
+
+   
+
+btnCases.ASK
+endblock
+
+
+BLOCK BdGroup
+FIELDS
+CurrentLanguage  : string
+auxFinal  : 
+		(no (0),
+		yes), Empty
+auxCurrentSurvey  : string
+auxStatus  : string
+auxGroupStatus  : string
+auxGroupSummary  : string
+auxContactData  : open
+auxLastAttempt  : string[30]
+auxCaseNote  : open
+auxSpawnAllowed  : 
+		(no (0),
+		yes), Empty
+auxIsDonorCase  : 
+		(yes), Empty
+auxIsNonWindows  : 
+		(yes)
+auxDeviceInfo  : string
+auxInPortraitMode  : 
+		(yes), Empty
+auxLayoutSetName  : string
+auxCount  : integer
+auxDoNotAllowEditCase  : 
+		(yes,
+		no), Empty
+auxShowGeoPositionBtn  : 
+		(yes), Empty
+auxDetails  EN  "^{auxCustomDetailsTable}"  : string[1]
+auxCustomTemplate  : string[10], Empty
+auxCustomDetailsTable  : open
+auxGeoLocation  : string[20]
+auxHasImage  : 
+		(yes), Empty
+auxGroupType  : 
+		(parent,
+		child), Empty
+auxParentChildView  : 
+		(yes), Empty
+auxSortGrpText_1_  : string
+auxSortGrpText_2_  : string
+auxSortGrpText_3_  : string
+auxSortGrpText_4_  : string
+auxSortGrpText_5_  : string
+auxSortGrpText_6_  : string
+auxSortGrpText_7_  : string
+auxSortGrpText_8_  : string
+auxSortGrpText_9_  : string
+auxSortGrpText_10_  : string
+auxSortGrpOn  EN  "Select display order: "  NL  "Selecteer volgorde: "  : 
+		(sec1 (1) Category  EN  "^<auxSortGrpText_1_>" ,
+		sec2 (2) Category  EN  "^<auxSortGrpText_2_>" ,
+		sec3 (3) Category  EN  "^<auxSortGrpText_3_>" ,
+		sec4 (4) Category  EN  "^<auxSortGrpText_4_>" ,
+		sec5 (5) Category  EN  "^<auxSortGrpText_5_>" ,
+		sec6 (6) Category  EN  "^<auxSortGrpText_6_>" ,
+		sec7 (7) Category  EN  "^<auxSortGrpText_7_>" ,
+		sec8 (8) Category  EN  "^<auxSortGrpText_8_>" ,
+		sec9 (9) Category  EN  "^<auxSortGrpText_9_>" ,
+		sec10 (10) Category  EN  "^<auxSortGrpText_10_>" ), Empty
+auxAllowGrpSort  : 
+		(yes), Empty
+auxHasInterview  : 
+		(yes), Empty
+auxAutoSizeBtns  : 
+		(yes), Empty
+auxFieldFilter  : open
+auxFieldFilterTitles  : open
+auxFieldFilterWidths  : open
+auxShowGroupDoneBtn  : 
+		(yes), Empty
+auxEnableGroupDoneBtn  : 
+		(yes), Empty
+auxCurrentDoneStatus  : string
+auxShowGroupAddAttemptBtn  : 
+		(yes), Empty
+auxManualAttemptWhenIntStarted  : 
+		(yes), Empty
+auxDoNotAllowShowingAttempts  : 
+		(yes), Empty
+auxParentDoneValues  : string
+auxCollapseDetails  : 
+		(yes), Empty
+auxStyleCount  : integer
+auxStyleNr  : integer
+auxStyle  : string
+btnStyle  : 
+		(Change Category  EN  "<img src=ChangeFont>" DISABLED  EN  "<img src=ChangeFontDisabled>" TOOLTIP  EN  "Change style"  NL  "Wijzig stijl" ), Empty
+btnGroup (Result)   : 
+		(Cancel_Spawn (1) Category  EN  "<img src=SpawnCasePlus>" DISABLED  EN  "<img src=SpawncasePlusDisabled>" TOOLTIP  EN  "Add case"  NL  "Extra opdracht toevoegen" ,
+		Cancel_IW (2) Category  EN  "<img src=Interview>" DISABLED  EN  "<img src=InterviewDisabled>" TOOLTIP  EN  "Start interview"  NL  "Start interview" ,
+		Cancel_Add (3) Category  EN  "<img src=AttemptAdd>" DISABLED  EN  "<img src=AttemptAddDisabled>" TOOLTIP  EN  "Add a new attempt"  NL  "Nieuwe poging toevoegen" ,
+		Cancel_Attempt (4) Category  EN  "<img src=Account>" DISABLED  EN  "<img src=AccountDisabled>" TOOLTIP  EN  "Show attempts"  NL  "Toon contactpogingen" ,
+		Cancel_Update (5) Category  EN  "<img src=Update>" DISABLED  EN  "<img src=UpdateDisabled>" TOOLTIP  EN  "Edit case"  NL  "Bewerk opdracht" ,
+		Cancel_CollectGeoLoc (6) Category  EN  "<img src=DetermineGeoPos>" DISABLED  EN  "<img src=DetermineGeoPosDisabled>" TOOLTIP  EN  "Determine geo position"  NL  "Bepaal huidige locatie" ,
+		Cancel_Done (7) Category  EN  "<img src=Done>" DISABLED  EN  "<img src=DoneDisabled>" TOOLTIP  EN  "Set case to Done"  NL  "Zet groep op Klaar" ,
+		Cancel_Synchronize (8) Category  EN  "<img src=Synchronize>" DISABLED  EN  "<img src=SynchronizeDisabled>" TOOLTIP  EN  "Synchronize data"  NL  "Synchronizeer data" ,
+		Back (9) Category  EN  "<img src=BackButton2>" TOOLTIP  EN  "Back to main screen"  NL  "Terug naar hoofdscherm" ), Empty
+DS_gCases  EN  ""  : string[255], Empty
+DialogTitle_EN : string[200]
+DialogTitle_NL : string[200]
+RULES
+DialogTitle_EN.KEEP
+IF DialogTitle_EN = EMPTY THEN 
+    DialogTitle_EN := 'Case Group'
+ENDIF
+DialogTitle_NL.KEEP
+IF DialogTitle_NL = EMPTY THEN 
+    DialogTitle_NL := 'Opdrachtengroep'
+ENDIF
+auxSortGrpText_1_.Keep
+auxSortGrpText_2_.Keep
+auxSortGrpText_3_.Keep
+auxSortGrpText_4_.Keep
+auxSortGrpText_5_.Keep
+auxSortGrpText_6_.Keep
+auxSortGrpText_7_.Keep
+auxSortGrpText_8_.Keep
+auxSortGrpText_9_.Keep
+auxSortGrpText_10_.Keep
+
+DS_gCases.ASK
+CurrentLanguage.KEEP
+    auxCurrentSurvey.KEEP
+    auxFinal.KEEP
+    auxSpawnAllowed.KEEP
+    auxIsDonorCase.KEEP
+    auxIsNonWindows.KEEP
+    auxDeviceInfo.KEEP
+    auxCustomTemplate.KEEP
+    auxCustomDetailsTable.KEEP
+    auxLastAttempt.KEEP
+    auxStatus.KEEP
+    auxGroupStatus.KEEP
+    auxGroupSummary.KEEP
+    auxGeoLocation.KEEP
+    auxHasImage.KEEP
+    auxParentChildView.KEEP
+    auxGroupType.KEEP
+    auxContactData.KEEP
+    auxFieldFilter.KEEP
+    auxFieldFilterTitles.KEEP
+    auxFieldFilterWidths.KEEP
+    auxDoNotAllowEditCase.KEEP
+    auxShowGeoPositionBtn.KEEP
+    auxParentDoneValues.KEEP
+    auxDetails.SHOW
+    auxAllowGrpSort.KEEP
+    auxShowGroupDoneBtn.KEEP
+    auxCurrentDoneStatus.KEEP
+    auxEnableGroupDoneBtn.KEEP
+    auxShowGroupAddAttemptBtn.KEEP
+    auxManualAttemptWhenIntStarted.KEEP
+    auxHasInterview.KEEP
+    auxAutoSizeBtns.KEEP
+    auxDoNotAllowShowingAttempts.KEEP
+    auxStyleCount.KEEP
+    auxStyle.KEEP
+    auxStyleNr.KEEP
+    auxInPortraitMode.KEEP auxCount.KEEP
+    auxLayoutSetName.KEEP
+    auxCollapseDetails.KEEP
+    IF auxStyleCount>1 THEN btnStyle.ASK ENDIF
+    IF auxAllowGrpSort=yes THEN
+      auxSortGrpOn.ASK
+    ENDIF 
+
+
+btnGroup.ASK
+endblock
+
+
+BLOCK BdShowImage
+FIELDS
+auxAutoSizeBtns  : 
+		(yes), Empty
+auxImageName  : string
+auxIDone (Result)   : 
+		(OK Category  EN  "Ok"  NL  "OK" ), Empty
+DialogTitle_EN : string[200]
+DialogTitle_NL : string[200]
+RULES
+DialogTitle_EN.KEEP
+IF DialogTitle_EN = EMPTY THEN 
+    DialogTitle_EN := 'Show image'
+ENDIF
+DialogTitle_NL.KEEP
+IF DialogTitle_NL = EMPTY THEN 
+    DialogTitle_NL := 'Toon afbeelding'
+ENDIF
+
+auxAutoSizeBtns.KEEP
+    auxImageName.KEEP
+    
+
+auxIDone.ASK
+endblock
+
+
+BLOCK BdAttempts
+FIELDS
+auxLast  : integer
+auxWhen  EN  "When made:"  : string[24]
+auxHappeningsStr  EN  "Result:"  : string[80]
+auxApptDate  EN  "Appt date:"  : string[20]
+auxApptTime  EN  "Appt time:"  : string[20]
+auxNote  EN  "Note:"  : open, Empty
+auxLocked  : 0 .. 1
+auxHasInterview  : 
+		(yes), Empty
+auxAllowView  : 
+		(yes), Empty
+auxReadOnlySettingsName  : string
+auxDoNotAllowManualAttempt  : 
+		(yes), Empty
+auxDoNotAllowUpdateAttemptNote  : 
+		(yes), Empty
+auxAutoSizeBtns  : 
+		(yes), Empty
+auxAttemptsDetailsTable  : open
+auxAttemptsDetails  EN  "^{auxAttemptsDetailsTable}"  : string[1]
+auxCustomDetailsTable  : open
+btnAttempts (Result)   : 
+		(Cancel_Add (1) Category  EN  "<img src=AttemptAdd>" DISABLED  EN  "<img src=AttemptAddDisabled>" TOOLTIP  EN  "Add a new attempt"  NL  "Voeg een contactpoging toe" ,
+		Cancel_Modify (2) Category  EN  "<img src=Update>" DISABLED  EN  "<img src=UpdateDisabled>" TOOLTIP  EN  "Edit note"  NL  "Bewerk notitie" ,
+		Cancel_View (3) Category  EN  "<img src=ReadOnlyEdit>" DISABLED  EN  "<img src=ReadOnlyEditDisabled>" TOOLTIP  EN  "View interview"  NL  "Toon interview" ,
+		Quit (4) Category  EN  "<img src=BackButton2>" DISABLED  EN  "<img src=BackButton2Disabled>" TOOLTIP  EN  "Back to cases screen"  NL  "Terug naar opdrachten scherm" ), Empty
+DS_mAttempts  EN  ""  : string[36], Empty
+DialogTitle_EN : string[200]
+DialogTitle_NL : string[200]
+RULES
+DialogTitle_EN.KEEP
+IF DialogTitle_EN = EMPTY THEN 
+    DialogTitle_EN := 'Attempts'
+ENDIF
+DialogTitle_NL.KEEP
+IF DialogTitle_NL = EMPTY THEN 
+    DialogTitle_NL := 'Contactpogingen'
+ENDIF
+auxAttemptsDetailsTable.Keep
+
+DS_mAttempts.ASK
+auxLocked.KEEP
+    auxWhen.KEEP
+    auxHappeningsStr.KEEP
+    auxApptDate.KEEP
+    auxLast.KEEP
+    auxDoNotAllowManualAttempt.KEEP
+    auxDoNotAllowUpdateAttemptNote.KEEP
+    auxHasInterview.KEEP
+    auxAllowView.KEEP
+    auxReadOnlySettingsName.KEEP
+    auxCustomDetailsTable.KEEP
+    auxApptDate.KEEP
+    auxApptTime.KEEP
+    auxNote.KEEP
+    auxAutoSizeBtns.KEEP
+    auxAttemptsDetails.SHOW
+
+
+btnAttempts.ASK
+endblock
+
+
+BLOCK BdEditNote
+FIELDS
+auxAutoSizeBtns  : 
+		(yes), Empty
+auxNote  EN  "Note:"  NL  "Notitie:"  : open, Empty
+btnEditNote (Result)   : 
+		(Save Category  EN  "<img src=OK>" DISABLED  EN  "<img src=OKDisabled>" TOOLTIP  EN  "Save note"  NL  "Bewaar notitie" ,
+		Cancel Category  EN  "<img src=Cancel>" DISABLED  EN  "<img src=CancelDisabled>" TOOLTIP  EN  "Cancel"  NL  "Annuleren" ), Empty
+DialogTitle_EN : string[200]
+DialogTitle_NL : string[200]
+RULES
+DialogTitle_EN.KEEP
+IF DialogTitle_EN = EMPTY THEN 
+    DialogTitle_EN := 'Edit note'
+ENDIF
+DialogTitle_NL.KEEP
+IF DialogTitle_NL = EMPTY THEN 
+    DialogTitle_NL := 'Bewerk notitie'
+ENDIF
+
+auxAutoSizeBtns.KEEP
+  auxNote.ASK  
+
+
+btnEditNote.ASK
+endblock
+
+BLOCK BDisplay
+  FIELDS
+     Message : STRING
+     T : STRING
+     Result "^{Message}" : (Ok, Cancel "^{T}")
+  RULES
+     Message.KEEP
+     T.KEEP
+     Result
+ENDBLOCK
+
+BLOCK BConfirm
+  FIELDS
+     Question : STRING
+     Result "^{Question}" : (Yes, No)
+  RULES
+     Question.KEEP
+     Result
+ENDBLOCK
+
+BLOCK BProcess
+  FIELDS
+     Display  "^{Display} ": STRING, EMPTY
+ENDBLOCK
+
+fields
+dShowTheLogging /  EN "^dShowTheLogging.DialogTitle_EN"  NL "^dShowTheLogging.DialogTitle_NL"  : BdShowTheLogging
+dCases /  EN "^dCases.DialogTitle_EN"  NL "^dCases.DialogTitle_NL"  : BdCases
+dGroup /  EN "^dGroup.DialogTitle_EN"  NL "^dGroup.DialogTitle_NL"  : BdGroup
+dShowImage /  EN "^dShowImage.DialogTitle_EN"  NL "^dShowImage.DialogTitle_NL"  : BdShowImage
+dAttempts /  EN "^dAttempts.DialogTitle_EN"  NL "^dAttempts.DialogTitle_NL"  : BdAttempts
+dEditNote /  EN "^dEditNote.DialogTitle_EN"  NL "^dEditNote.DialogTitle_NL"  : BdEditNote
+Display : BDisplay
+Confirm : BConfirm
+Process : BProcess
+endmodel
+

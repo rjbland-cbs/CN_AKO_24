@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project Name="RunAtEnd" Guid="35424f5d-ad45-41eb-8f8b-a59f0ba92d53" ProjectType="ManipulaProject">
+  <MainFile />
+  <FileItems>
+    <File FileType="ManipulaFileType" RelativePath="true">RunAtEnd.manx</File>
+  </FileItems>
+  <Properties>
+    <IncludeSearchPath />
+    <LibrarySearchPath />
+    <DatamodelSearchPath />
+    <ExternalSearchPath />
+    <ConditionalDefines />
+    <ResourceDB />
+    <SurveyRoot />
+    <AppSupport />
+    <IsAppMainUserInterface />
+  </Properties>
+</Project>

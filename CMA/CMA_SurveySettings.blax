@@ -1,0 +1,89 @@
+﻿//CMA - Case Management Application for use by interviewers
+//
+//version:  1.8. For Blaise 5.11
+//date:     April 2022 
+//author:   Lon Hofman, Team Blaise, Statistics Netherlands
+
+DATAMODEL CMA_SurveySettings
+//Name of file is cma_surveysettings[_waveID].xml
+//One file per survey and/or survey-wave. Optional
+//Needs to be added to the survey package by using a .bcps file
+
+BLOCK bMapping
+FIELDS
+  Origin: (oContactData,oCustomData,oLauncher)
+  Target: (tTopic,tAttempt)
+  OriginFieldName: STRING 
+  TargetFieldName: STRING 
+  Direction: (dPut,dGet,dBoth)
+ENDBLOCK 
+
+BLOCK bColumnInfo
+FIELDS
+  FieldName: STRING
+  Title: STRING
+  Width: INTEGER
+  Origin: (oContactData,oCustomData)
+ENDBLOCK 
+
+BLOCK bSortInfo
+FIELDS
+  Title: STRING //multilingual
+  FieldCount: INTEGER
+  FieldName: ARRAY[1..10] OF STRING //list of fields of the tCase definition
+ENDBLOCK
+
+FIELDS
+  //Only non-empty field values are used
+  Survey_ContactInfoGUID:              STRING[36],EMPTY  //GUID of survey. Can be overruled by value of CMA_ContactInfoGUID in launcher case
+  Survey_AttemptsGUID:                 STRING[36],EMPTY  //GUID of survey. Can be overruled by value of CMA_AttemptsGUID in launcher case 
+  Survey_CmdLineForEdit:               STRING[100],EMPTY //Can be overruled by value of CMA_CmdLineForEdit in launcher case 
+  Survey_DetailsTemplate:              STRING[10],EMPTY  //Can be overruled by value of CMA_DetailsTemplate in launcher case
+  Survey_AttemptsRoute:                STRING[5],EMPTY   //Can be overruled by value of CMA_AttemptsRoute in launcher case 
+  Survey_TrackLocation:                (yes,no),EMPTY    //Overrules value of sTrackLocation in CMA settings file
+  Survey_TrackTimeUsed:                (yes,no),EMPTY    //Overrules value of sTrackTimeUsed in CMA settings file
+  Survey_ShowGeoPositionBtn:           (yes,no),EMPTY    //Overrules value of sShowGeoPositionBtn in CMA settings file
+  Survey_Orientation:                  (portrait,landscape,both),EMPTY //Overrules value of sSurveyOrientation in CMA settings file
+  Survey_ChildrenCount:                1..10,EMPTY
+  Survey_Children:                     ARRAY[1..10] OF STRING[36] //GUIDs pf additional surveys that need to be instaled and managed by CMA
+  Survey_SetupAtEnd:                   STRING[40] //Name of setup to run at end of a survey.
+  Survey_SetupAtSpawn:                 STRING[40] //Name of setup to run when spawning a case.
+  Survey_SetupAtSync:                  STRING[40] //Name of setup to run during sync
+  Survey_RemoveSurveyWhenNoCasesLeft:  (yes,no),EMPTY
+  Survey_FieldFilter:                  STRING,EMPTY
+  Survey_FieldFilterGroup:             STRING,EMPTY
+  Survey_DisplayName:                  STRING[200]
+  Survey_AllowReadOnlyAccess:          (yes,no),EMPTY
+  Survey_RequireCasePresent:           (yes,no),EMPTY
+  Survey_CheckServerForCase:           (yes,no),EMPTY
+  Survey_RefreshCaseDuringSync:        (yes,no),EMPTY
+  Survey_AskDownloadWhenNeeded:        (yes,no),EMPTY
+  Survey_DefaultMode:                  STRING[25],EMPTY
+  Survey_DefaultLayoutSet:             STRING[25],EMPTY
+  Survey_DefaultDataEntrySettings:     STRING[25],EMPTY
+  Survey_GroupTitle:                   STRING[100],EMPTY
+  Survey_DoNotAllowEditCase:           (yes,no),EMPTY 
+  Survey_DoNotAllowManualAttempt:      (yes,no),EMPTY
+  Survey_DoNotAllowShowingAttempts:    (yes,no),EMPTY 
+  Survey_DoNotAllowUpdateAttemptNote:  (yes,no),EMPTY
+  Survey_StartInterviewAtSpawn:        (yes,no),EMPTY
+  Survey_ManualAttemptWhenIntStarted:  (yes),EMPTY
+  Survey_AddAttemptBtnOnGroupScr:      (yes),EMPTY
+  Survey_GroupDoneBtn:                 (yes),EMPTY
+  Survey_DoneValues:                   STRING 
+  Survey_InheritMappings:              (yes,no),EMPTY
+  Survey_MappingCount:                 1..50
+  Survey_Mapping:                      ARRAY[1..50] OF bMapping
+  Survey_CustomColCount:               0..10,EMPTY
+  Survey_CustomCol:                    ARRAY[1..10] OF bColumnInfo
+  Survey_DefSortCount:                 0..10,EMPTY
+  Survey_DefSort:                      ARRAY[1..10] OF bSortInfo
+  Survey_DefSortGrpCount:              0..10,EMPTY
+  Survey_DefSortGrp:                   ARRAY[1..10] OF bSortInfo
+  Survey_CustomDataSep:                ARRAY[1..2] OF STRING[1],EMPTY 
+  Survey_ContactDataSep:               ARRAY[1..2] OF STRING[1],EMPTY 
+  Survey_HasCustomFilter:              (yes,no),EMPTY
+  Survey_CustomFilterTxt:              STRING
+  Survey_CustomFilter:                 bColumnInfo 
+  Survey_CustomUse:                    OPEN 
+ENDMODEL

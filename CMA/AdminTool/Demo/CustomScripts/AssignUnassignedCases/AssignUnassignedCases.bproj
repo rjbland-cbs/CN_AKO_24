@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project Name="AssignUnassignedCases" Guid="00e68671-b002-44f4-a710-84f7d88760ab" ProjectType="ManipulaProject">
+  <MainFile RelativePath="true">AssignUnassignedCases.manx</MainFile>
+  <FileItems>
+    <File FileType="ManipulaFileType" RelativePath="true">AssignUnassignedCases.manx</File>
+  </FileItems>
+  <Properties>
+    <AppSupport />
+    <IsAppMainUserInterface />
+    <ResourceDB />
+    <SurveyRoot />
+    <ConditionalDefines />
+    <DatamodelSearchPath />
+    <ExternalSearchPath />
+    <IncludeSearchPath />
+    <LibrarySearchPath />
+  </Properties>
+</Project>

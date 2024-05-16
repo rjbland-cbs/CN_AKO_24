@@ -1,0 +1,30 @@
+﻿DATAMODEL UserInfo
+//Datamodel to keep track of who manages who
+
+LANGUAGES = EN "English"
+
+PRIMARY UserID
+SECONDARY
+  sUserName = UserName
+  sManager = ManagerID
+  sRole = UserRole
+  sLocation = Location
+  
+  GROUP Properties
+  FIELDS 
+  UserID "Blaise user ID":  STRING[30]
+  UserType "User type": (interviewer "Interviewer",supervisor "Supervisor",manager "Field manager",administrator (9)"Administrator") 
+  ManagerID "Blaise User id of the manager of the user": STRING[30],EMPTY //interviewer --> supervisor --> manager
+  UserName "Name": STRING[50],EMPTY
+  UserRole "Text that describes the role of this user": STRING[50],EMPTY
+  AddressInfo "Adress info": STRING[100],EMPTY
+  Location "Location": STRING[30],EMPTY
+  MobileNr "Mobile number": STRING[15],EMPTY 
+  DeviceInfo "Device info": STRING[30],EMPTY
+  SettingsFile "Settings file for App": BLOBTYPE,EMPTY //for possible future use
+  ENDGROUP
+  
+RULES
+  Properties  
+ENDMODEL
+

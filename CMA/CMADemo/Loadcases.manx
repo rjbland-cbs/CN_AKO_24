@@ -1,0 +1,60 @@
+﻿USES
+  DATAMODEL CMA_Loader
+  BLOCK bPII 
+  FIELDS
+    Name: STRING[50],EMPTY
+    Address: STRING[50]
+    PostalCode: STRING[20],EMPTY
+    Town: STRING[50]
+    Phone1: STRING[20],EMPTY
+  ENDBLOCK
+  FIELDS
+    MainSurveyID: STRING[36]  
+    SurveyDisplayName: STRING[30] 
+    ID: STRING[219] 
+    CMA_ForWhom: STRING[20] 
+    CMA_AllowSpawning: (no (0), yes),EMPTY 
+    PII: bPII
+    CaseNote: STRING
+    Image: STRING[30]
+    GeoLocation: STRING[30]
+  ENDMODEL
+  
+  Launcher '..\launcher'
+
+INPUTFILE inp:CMA_Loader ('CMA_Launcher.csv',ASCII)
+SETTINGS
+  SEPARATOR=';'
+  DELIMITER='"'
+  HEADERLINE=YES
+  
+OUTPUTFILE outp:Launcher ('C:\Blaise5\Surveys\CMA_launcher\launcher',BLAISE)
+
+AUXFIELDS
+  Res: INTEGER
+MANIPULATE
+  CMA_Process.CreatedDT:= TIMETOSTR(SYSTIME,'yyyyMMdd,HH:mm:sszzz')
+  CMA_ContactData:= ''
+  CMA_ContactData:= CMA_ContactData+'pii.name'+char(9)+pii.name+char(9)
+  CMA_ContactData:= CMA_ContactData+'pii.address'+char(9)+pii.address+char(9)
+  CMA_ContactData:= CMA_ContactData+'pii.postalcode'+char(9)+pii.postalcode+char(9)
+  CMA_ContactData:= CMA_ContactData+'pii.town'+char(9)+pii.town+char(9)
+  CMA_ContactData:= CMA_ContactData+'pii.phone1'+char(9)+pii.phone1+char(9)
+  CMA_ContactData:= CMA_ContactData+'pii.phone2'+char(9)+char(9)
+  CMA_ContactData:= CMA_ContactData+'casenote'+char(9)+casenote+char(9)
+  CMA_ContactData:= CMA_ContactData+'mainsurveyid'+char(9)+MainSurveyID+char(9)
+  CMA_ContactData:= CMA_ContactData+'id'+char(9)+id+char(9)
+  IF Image<>'' THEN
+    Res:= CMA_ContactImage.LOADFROMDISK('Images\\'+Image)
+  ENDIF
+  CMA_GeoLocation:= GeoLocation
+  ContactInfoShort:= '' 
+  //show town or zip code
+  IF NOT PII.Town=EMPTY THEN ContactInfoShort:= ContactInfoShort+PII.Town 
+  ELSEIF NOT PII.PostalCode=EMPTY THEN ContactInfoShort:= ContactInfoShort+PII.PostalCode ENDIF
+  //then the address...
+  IF NOT PII.Address=EMPTY THEN ContactInfoShort:= ContactInfoShort+','+PII.Address ENDIF
+  //then the name...
+  IF NOT PII.Name=EMPTY THEN ContactInfoShort:= ContactInfoShort+','+PII.Name ENDIF
+  outp.CHECKRULES
+  outp.WRITE

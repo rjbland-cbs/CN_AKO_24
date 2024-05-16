@@ -1,0 +1,10 @@
+﻿DATAMODEL CMA_Backup
+
+
+FIELDS
+   UserId : STRING[20]
+   When : STRING[24]
+   Description : STRING
+   Backup : BLOBTYPE MAXSIZE=10MB
+
+ENDMODEL

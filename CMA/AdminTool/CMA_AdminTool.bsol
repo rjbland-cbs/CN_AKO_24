@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Solution Name="CMA_Admintool">
+  <ResourceDB RelativePath="true">..\CMA.blrd</ResourceDB>
+  <StartupProject RelativePath="true">CMA_ManageInfo.bproj</StartupProject>
+  <ProjectItems>
+    <Project RelativePath="true" BuildSequence="10">CMA_AdminTool.bproj</Project>
+    <Project RelativePath="true" BuildSequence="2">CMA_AdminSettingsMeta.bproj</Project>
+    <Project RelativePath="true" BuildSequence="6">CMA_ManageInfo.bproj</Project>
+    <Project RelativePath="true" BuildSequence="4">CMA_UserInfo.bproj</Project>
+    <Project RelativePath="true" BuildSequence="8">CMA_CustomScript.bproj</Project>
+  </ProjectItems>
+</Solution>

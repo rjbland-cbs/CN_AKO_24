@@ -1,0 +1,21 @@
+﻿DATAMODEL mSyncTrace
+PRIMARY MainSurveyID,ID
+FIELDS
+  TimeStamp: STRING[21]
+  MainSurveyID: STRING[36]
+  ID: STRING[219]
+  SurveyDisplayName: string[200],EMPTY
+  CMA_GroupType: (gParent,gChild),EMPTY
+  //download info
+  CMA_ForWhomD: STRING[20]
+  CMA_InPossessionD: STRING[20]
+  CMA_LocationD: STRINg[20]
+  TopicDownloaded: (yes),EMPTY 
+  //upload info
+  CMA_ForWhomU: STRING[20]
+  CMA_InPossessionU: STRING[20]
+  CMA_LocationU: STRINg[20]
+  ReasonU: STRING[15] //one of the cTrace constst
+  TopicUploaded: (yes,no),EMPTY
+  CaseUploadFailed: (yes),EMPTY 
+ENDMODEL

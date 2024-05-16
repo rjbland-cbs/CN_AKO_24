@@ -1,0 +1,56 @@
+﻿PROCESS Survey_DialogApplication
+
+SETTINGS 
+  CONNECT=NO
+
+LANGUAGES = EN "English"
+
+USES 
+  launcher (VAR)
+  attempts (VAR) 
+  logmeta (VAR) //from CMA appliction
+  
+UPDATEFILE ufLocalCases:launcher (BDIX) //loc launcher name set on cmd line
+
+UPDATEFILE ufLocalAttempts:attempts (BDIX) //loc launcher name set on cmd line
+
+OUTPUTFILE oLog:logMeta (ASCII) //log file name set on cmd line
+SETTINGS
+  MAKENEWFILE=NO  
+  OPEN=NO
+  SEPARATOR=';'
+  TRAILINGSPACES=NO
+  CREATEBDIX=NO
+
+CONST
+  cDateTimeFormat = "yyyyMMdd,HH:mm:sszzz"
+
+FUNCTION NowDT: STRING
+INSTRUCTIONS
+  RESULT:= TIMETOSTR(SYSTIME,cDateTimeFormat)
+ENDFUNCTION 
+
+PROCEDURE AddToLog
+PARAMETERS pTextToLog: STRING
+INSTRUCTIONS
+  oLog.OPEN
+  oLog.PUTVALUE('LogWhen',NowDT)
+  oLog.PUTVALUE('LogText',pTextToLog)
+  oLog.WRITE
+  oLog.RELEASE
+ENDPROCEDURE
+
+AUXFIELDS
+  cmdID: STRING 
+  cmdGUID: STRING
+  cmdStyle: STRING
+  
+//Define your dialogs and procedures here...  
+    
+MANIPULATE
+  AddToLog('Start of '+SETUPNAME)
+  //
+  //Your application...
+  // 
+  AddToLog('End of '+SETUPNAME)
+  

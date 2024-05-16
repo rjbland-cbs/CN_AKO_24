@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project Name="CMA_Logging" Guid="3ca49e6c-9483-4283-8b2d-d9a810ad7075" ProjectType="DatamodelProject">
+  <MainFile />
+  <FileItems>
+    <File FileType="DatamodelFileType" RelativePath="true">Logging.blax</File>
+  </FileItems>
+  <Properties>
+    <IncludeSearchPath />
+    <LibrarySearchPath />
+    <DatamodelSearchPath />
+    <ResourceDB RelativePath="true">CMA.blrd</ResourceDB>
+    <SupportedModes />
+    <UsedResourceSets />
+    <ConditionalDefines />
+    <ExternalSearchPath />
+    <SurveyRoot>CMA_Logging</SurveyRoot>
+    <CatiRole />
+    <IsRunnableSurvey>True</IsRunnableSurvey>
+    <WebDataEntryClient>None</WebDataEntryClient>
+    <AppSupport />
+    <UseCari>False</UseCari>
+    <IgnoreLayoutErrors>False</IgnoreLayoutErrors>
+    <IgnoreRichtextErrors>False</IgnoreRichtextErrors>
+    <AddFieldGroupOrderInformation>False</AddFieldGroupOrderInformation>
+    <StartCondition />
+    <ActionsSetup />
+    <DownloadInterceptorSetup />
+    <WriteInterceptorSetup />
+    <RunWriteInterceptorSetupAsynchronously>False</RunWriteInterceptorSetupAsynchronously>
+  </Properties>
+</Project>

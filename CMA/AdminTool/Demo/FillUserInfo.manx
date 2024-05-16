@@ -1,0 +1,9 @@
+﻿USES cma_userinfo
+
+INPUTFILE inp:cma_userinfo ('cma_userinfo.csv',ASCII)
+SETTINGS
+  HEADERLINE=YES
+  SEPARATOR=';'
+
+OUTPUTFILE outp:cma_userinfo('c:\blaise5\surveys\cma_userinfo\cma_userinfo',BLAISE)
+

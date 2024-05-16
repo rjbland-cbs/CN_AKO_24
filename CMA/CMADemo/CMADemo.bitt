@@ -1,0 +1,691 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TranslationsFile>
+  <Languages>
+    <Language Name="EN">English</Language>
+    <Language Name="NL">Nederlands</Language>
+  </Languages>
+  <Roles>
+    <Role Name="TOOLTIP" />
+    <Role Name="DISABLED" />
+  </Roles>
+  <Modes />
+  <Items>
+    <Translation Name="tSurveyName" Parent="locCases" Type="Field">
+      <Texts Lang="EN">Survey</Texts>
+      <Texts Lang="NL">Onderzoek</Texts>
+    </Translation>
+    <Translation Name="tIdentifier" Parent="locCases" Type="Field">
+      <Texts Lang="EN">Key</Texts>
+      <Texts Lang="NL">Sleutel</Texts>
+    </Translation>
+    <Translation Name="tStatus" Parent="locCases" Type="Field">
+      <Texts Lang="EN">Interview status</Texts>
+      <Texts Lang="NL">Interviewstatus</Texts>
+    </Translation>
+    <Translation Name="tLastResult" Parent="locCases" Type="Field">
+      <Texts Lang="EN">Result</Texts>
+      <Texts Lang="NL">Resultaat</Texts>
+    </Translation>
+    <Translation Name="tAppointment" Parent="locCases" Type="Field">
+      <Texts Lang="EN">Appointment</Texts>
+      <Texts Lang="NL">Afspraak</Texts>
+    </Translation>
+    <Translation Name="tStartDate" Parent="locCases" Type="Field">
+      <Texts Lang="EN">Start date</Texts>
+      <Texts Lang="NL">Startdatum</Texts>
+    </Translation>
+    <Translation Name="tEndDate" Parent="locCases" Type="Field">
+      <Texts Lang="EN">End date</Texts>
+      <Texts Lang="NL">Einddatum</Texts>
+    </Translation>
+    <Translation Name="tContactInfoShort" Parent="locCases" Type="Field">
+      <Texts Lang="EN">Contact info</Texts>
+      <Texts Lang="NL">Contactinformatie</Texts>
+    </Translation>
+    <Translation Name="tLastAttempt" Parent="locCases" Type="Field">
+      <Texts Lang="EN">Last attempt</Texts>
+      <Texts Lang="NL">Laatste poging</Texts>
+    </Translation>
+    <Translation Name="tCaseNote" Parent="locCases" Type="Field">
+      <Texts Lang="EN">Case note</Texts>
+      <Texts Lang="NL">Notitie</Texts>
+    </Translation>
+    <Translation Name="tSpawnCount" Parent="locCases" Type="Field">
+      <Texts Lang="EN">#Created</Texts>
+      <Texts Lang="NL">#Gemaakt</Texts>
+    </Translation>
+    <Translation Name="tStatus" Parent="locCases" Type="Field">
+      <Texts Lang="EN">Status</Texts>
+      <Texts Lang="NL">Status</Texts>
+    </Translation>
+    <Translation Name="tCaseStatus" Parent="locCases" Type="Field">
+      <Texts Lang="EN">Interview status</Texts>
+      <Texts Lang="NL">Interviewstatus</Texts>
+    </Translation>
+    <Translation Name="tGroupStatus" Parent="locCases" Type="Field">
+      <Texts Lang="EN">Group status</Texts>
+      <Texts Lang="NL">Groepstatus</Texts>
+    </Translation>
+    <Translation Name="tGroupID" Parent="locCases" Type="Field">
+      <Texts Lang="EN">Group ID</Texts>
+      <Texts Lang="NL">Groep ID</Texts>
+    </Translation>
+    <Translation Name="tAttemptsCount" Parent="locCases" Type="Field">
+      <Texts Lang="EN">#Attempts</Texts>
+      <Texts Lang="NL">#Pogingen</Texts>
+    </Translation>
+    <Translation Name="tGeoLocation" Parent="locCases" Type="Field">
+      <Texts Lang="EN">Geo Position</Texts>
+      <Texts Lang="NL">Geo positie</Texts>
+    </Translation>
+    <Translation Name="tCustomCol1" Parent="locCases" Type="Field">
+      <Texts Lang="EN">CustomCol1</Texts>
+      <Texts Lang="NL">CustomCol1</Texts>
+    </Translation>
+    <Translation Name="tCustomCol2" Parent="locCases" Type="Field">
+      <Texts Lang="EN">CustomCol2</Texts>
+      <Texts Lang="NL">CustomCol2</Texts>
+    </Translation>
+    <Translation Name="tCustomCol3" Parent="locCases" Type="Field">
+      <Texts Lang="EN">CustomCol3</Texts>
+      <Texts Lang="NL">CustomCol3</Texts>
+    </Translation>
+    <Translation Name="tCustomCol4" Parent="locCases" Type="Field">
+      <Texts Lang="EN">CustomCol4</Texts>
+      <Texts Lang="NL">CustomCol4</Texts>
+    </Translation>
+    <Translation Name="tCustomCol5" Parent="locCases" Type="Field">
+      <Texts Lang="EN">CustomCol5</Texts>
+      <Texts Lang="NL">CustomCol5</Texts>
+    </Translation>
+    <Translation Name="tCustomCol6" Parent="locCases" Type="Field">
+      <Texts Lang="EN">CustomCol6</Texts>
+      <Texts Lang="NL">CustomCol6</Texts>
+    </Translation>
+    <Translation Name="tCustomCol7" Parent="locCases" Type="Field">
+      <Texts Lang="EN">CustomCol7</Texts>
+      <Texts Lang="NL">CustomCol7</Texts>
+    </Translation>
+    <Translation Name="tCustomCol8" Parent="locCases" Type="Field">
+      <Texts Lang="EN">CustomCol8</Texts>
+      <Texts Lang="NL">CustomCol8</Texts>
+    </Translation>
+    <Translation Name="tCustomCol9" Parent="locCases" Type="Field">
+      <Texts Lang="EN">CustomCol9</Texts>
+      <Texts Lang="NL">CustomCol9</Texts>
+    </Translation>
+    <Translation Name="tCustomCol10" Parent="locCases" Type="Field">
+      <Texts Lang="EN">CustomCol10</Texts>
+      <Texts Lang="NL">CustomCol10</Texts>
+    </Translation>
+    <Translation Name="atID" Parent="locAttempts" Type="Field">
+      <Texts Lang="EN">Key</Texts>
+      <Texts Lang="NL">Sleutel</Texts>
+    </Translation>
+    <Translation Name="SeqNr" Parent="locAttempts" Type="Field">
+      <Texts Lang="EN">#</Texts>
+      <Texts Lang="NL">#</Texts>
+    </Translation>
+    <Translation Name="When" Parent="locAttempts" Type="Field">
+      <Texts Lang="EN">When</Texts>
+      <Texts Lang="NL">Wanneer</Texts>
+    </Translation>
+    <Translation Name="HappeningsStr" Parent="locAttempts" Type="Field">
+      <Texts Lang="EN">Result</Texts>
+      <Texts Lang="NL">Resultaat</Texts>
+    </Translation>
+    <Translation Name="cNotStarted" Type="Constant">
+      <Texts Lang="EN">Not started</Texts>
+      <Texts Lang="NL">Niet gestart</Texts>
+    </Translation>
+    <Translation Name="cAdded" Type="Constant">
+      <Texts Lang="EN">Added</Texts>
+      <Texts Lang="NL">Toegevoegd</Texts>
+    </Translation>
+    <Translation Name="cCompleted" Type="Constant">
+      <Texts Lang="EN">Completed</Texts>
+      <Texts Lang="NL">Interview</Texts>
+    </Translation>
+    <Translation Name="cInterrupted" Type="Constant">
+      <Texts Lang="EN">Interrupted</Texts>
+      <Texts Lang="NL">Onderbroken</Texts>
+    </Translation>
+    <Translation Name="cInterruptedDone" Type="Constant">
+      <Texts Lang="EN">Stopped</Texts>
+      <Texts Lang="NL">Gestopt</Texts>
+    </Translation>
+    <Translation Name="cFinalized" Type="Constant">
+      <Texts Lang="EN">Finalized</Texts>
+      <Texts Lang="NL">Afgehandeld</Texts>
+    </Translation>
+    <Translation Name="cStarted" Type="Constant">
+      <Texts Lang="EN">Started</Texts>
+      <Texts Lang="NL">Gestart</Texts>
+    </Translation>
+    <Translation Name="cUploaded" Type="Constant">
+      <Texts Lang="EN">Uploaded</Texts>
+      <Texts Lang="NL">Verstuurd</Texts>
+    </Translation>
+    <Translation Name="cReopened" Type="Constant">
+      <Texts Lang="EN">Reopened</Texts>
+      <Texts Lang="NL">Heropend</Texts>
+    </Translation>
+    <Translation Name="cDone" Type="Constant">
+      <Texts Lang="EN">Done</Texts>
+      <Texts Lang="NL">Klaar</Texts>
+    </Translation>
+    <Translation Name="cClosed" Type="Constant">
+      <Texts Lang="EN">Closed</Texts>
+      <Texts Lang="NL">Gesloten</Texts>
+    </Translation>
+    <Translation Name="cShowImage" Type="Constant">
+      <Texts Lang="EN">Click to show image...</Texts>
+      <Texts Lang="NL">Klik hier voor afbeelding...</Texts>
+    </Translation>
+    <Translation Name="msgSaveChangedNote" Type="Constant">
+      <Texts Lang="EN">Save changed note?</Texts>
+      <Texts Lang="NL">Bewaar gewijzigde notitie?</Texts>
+    </Translation>
+    <Translation Name="msgNoCases" Type="Constant">
+      <Texts Lang="EN">No cases available! Press Sync to Synchronize</Texts>
+      <Texts Lang="NL">Geen opdrachten aanwezig! Druk Sync om te Synchronizeren</Texts>
+    </Translation>
+    <Translation Name="msgAfterEndDate" Type="Constant">
+      <Texts Lang="EN">Action not possible because after end date of case</Texts>
+      <Texts Lang="NL">Actie is niet mogelijk omdat einddatum van opdracht gepasseerd is</Texts>
+    </Translation>
+    <Translation Name="msgBeforeStartDate" Type="Constant">
+      <Texts Lang="EN">Action not possible because before start date of case</Texts>
+      <Texts Lang="NL">Actie is niet mogelijk omdat startdatum van opdracht nog niet bereikt is</Texts>
+    </Translation>
+    <Translation Name="msgNothingToUpload" Type="Constant">
+      <Texts Lang="EN">Nothing to upload!</Texts>
+      <Texts Lang="NL">Niets om op te sturen!</Texts>
+    </Translation>
+    <Translation Name="msgNothingToDownload" Type="Constant">
+      <Texts Lang="EN">Nothing to download!</Texts>
+      <Texts Lang="NL">Niets om op te halen!</Texts>
+    </Translation>
+    <Translation Name="msgCompletedCases" Type="Constant">
+      <Texts Lang="EN"># Completed cases uploaded: </Texts>
+      <Texts Lang="NL"># Afgehandelde opdrachten opgestuurd: </Texts>
+    </Translation>
+    <Translation Name="msgBackupCases" Type="Constant">
+      <Texts Lang="EN"># Non-Completed cases uploaded: </Texts>
+      <Texts Lang="NL"># Nog niet afgehandelde opdrachten opgestuurd: </Texts>
+    </Translation>
+    <Translation Name="msgSurvey" Type="Constant">
+      <Texts Lang="EN">Survey</Texts>
+      <Texts Lang="NL">Onderzoek</Texts>
+    </Translation>
+    <Translation Name="msgRemoved" Type="Constant">
+      <Texts Lang="EN">removed from device</Texts>
+      <Texts Lang="NL">verwijderd van apparaat</Texts>
+    </Translation>
+    <Translation Name="msgInstallOfSurvey" Type="Constant">
+      <Texts Lang="EN">Install of survey</Texts>
+      <Texts Lang="NL">Installeren van onderzoek</Texts>
+    </Translation>
+    <Translation Name="msgUpdateOfSurvey" Type="Constant">
+      <Texts Lang="EN">Update of survey</Texts>
+      <Texts Lang="NL">Verversen van onderzoek</Texts>
+    </Translation>
+    <Translation Name="msgFailed" Type="Constant">
+      <Texts Lang="EN">failed. Error: </Texts>
+      <Texts Lang="NL">niet geslaagd. Fout: </Texts>
+    </Translation>
+    <Translation Name="msgSucceeded" Type="Constant">
+      <Texts Lang="EN">Succeeded!</Texts>
+      <Texts Lang="NL">Geslaagd!</Texts>
+    </Translation>
+    <Translation Name="msgNotPresent" Type="Constant">
+      <Texts Lang="EN">needed but not available for download on server</Texts>
+      <Texts Lang="NL">nodig maar niet beschikbaar voor installatie op de server</Texts>
+    </Translation>
+    <Translation Name="msgNewCases" Type="Constant">
+      <Texts Lang="EN"># New cases downloaded: </Texts>
+      <Texts Lang="NL"># Nieuwe opdrachten:</Texts>
+    </Translation>
+    <Translation Name="msgRestoredCases" Type="Constant">
+      <Texts Lang="EN"># Restored cases: </Texts>
+      <Texts Lang="NL"># Herstelde opdrachten:</Texts>
+    </Translation>
+    <Translation Name="msgCasesTransferred" Type="Constant">
+      <Texts Lang="EN"># Cases transferred: </Texts>
+      <Texts Lang="NL"># Overgehevelde opdrachten:</Texts>
+    </Translation>
+    <Translation Name="msgReleasedCases" Type="Constant">
+      <Texts Lang="EN"># Cases released: </Texts>
+      <Texts Lang="NL"># Vrijgegeven opdrachten: </Texts>
+    </Translation>
+    <Translation Name="msgReopenedCases" Type="Constant">
+      <Texts Lang="EN"># Cases reopened: </Texts>
+      <Texts Lang="NL"># Heropende opdrachten:</Texts>
+    </Translation>
+    <Translation Name="msgClosedCases" Type="Constant">
+      <Texts Lang="EN"># Cases closed: </Texts>
+      <Texts Lang="NL"># Gesloten opdrachten:</Texts>
+    </Translation>
+    <Translation Name="msgSyncNotPossible" Type="Constant">
+      <Texts Lang="EN">Synchronize was not possible. Error=</Texts>
+      <Texts Lang="NL">Synchronisatie kon niet worden uitgevoerd. Fout=</Texts>
+    </Translation>
+    <Translation Name="msgStartFailed" Type="Constant">
+      <Texts Lang="EN">CMA failed to initialize. Please contact the help desk.</Texts>
+      <Texts Lang="NL">CMA kon niet worden geïnitialiseerd. Neem contact op met de help desk.</Texts>
+    </Translation>
+    <Translation Name="msgSurveyNotPresent" Type="Constant">
+      <Texts Lang="EN">Survey not present on the device</Texts>
+      <Texts Lang="NL">Onderzoek niet aanwezig op apparaat</Texts>
+    </Translation>
+    <Translation Name="msgNotConnected" Type="Constant">
+      <Texts Lang="EN">Synchronize not possible because you are not connected to the Internet.</Texts>
+      <Texts Lang="NL">Synchronisatie niet mogelijk omdat er geen Internet toegang is.</Texts>
+    </Translation>
+    <Translation Name="msgSynchronize" Type="Constant">
+      <Texts Lang="EN">Synchronize?</Texts>
+      <Texts Lang="NL">Synchronisatie uitvoeren?</Texts>
+    </Translation>
+    <Translation Name="msgSyncing" Type="Constant">
+      <Texts Lang="EN">Syncing...</Texts>
+      <Texts Lang="NL">Synchronizeren...</Texts>
+    </Translation>
+    <Translation Name="msgInitializing" Type="Constant">
+      <Texts Lang="EN">Initializing...</Texts>
+      <Texts Lang="NL">Initializeren...</Texts>
+    </Translation>
+    <Translation Name="msgSpawnNotPossible" Type="Constant">
+      <Texts Lang="EN">Adding a case is not possible</Texts>
+      <Texts Lang="NL">Aanmaken van extra opdracht is niet mogelijk</Texts>
+    </Translation>
+    <Translation Name="msgConfirmSpawn" Type="Constant">
+      <Texts Lang="EN">Are you sure you want to add a case?</Texts>
+      <Texts Lang="NL">Weet u zeker dat er een extra opdracht gemaakt moet worden?</Texts>
+    </Translation>
+    <Translation Name="msgCreateAndInterview" Type="Constant">
+      <Texts Lang="EN">Are you sure you want to add case for "$contactinfoshort" and start an interview?</Texts>
+      <Texts Lang="NL">Weet u zeker dat een opdracht voor "$contactinfoshort" moet worden toegevoegd en vervolgens een interview moe worden gestart?</Texts>
+    </Translation>
+    <Translation Name="msgConfirmGeoLocCollect" Type="Constant">
+      <Texts Lang="EN">Are you sure you want to collect the geo position?</Texts>
+      <Texts Lang="NL">Weet u zeker dat de locatie moet worden bepaald?</Texts>
+    </Translation>
+    <Translation Name="msgAllCasesHandled" Type="Constant">
+      <Texts Lang="EN">All cases have been handled of survey</Texts>
+      <Texts Lang="NL">All opdrachten afgehandeld van onderzoek</Texts>
+    </Translation>
+    <Translation Name="msgStartInterview" Type="Constant">
+      <Texts Lang="EN">Are you sure you want to start an interview for</Texts>
+      <Texts Lang="NL">Weet u zeker dat u een interview wilt starten voor</Texts>
+    </Translation>
+    <Translation Name="mgStartAttempt" Type="Constant">
+      <Texts Lang="EN">Are you sure you want to add an attempt?</Texts>
+      <Texts Lang="NL">Weet u zeker dat u een contactpoging wilt toevoegen?</Texts>
+    </Translation>
+    <Translation Name="msgContinueInterview" Type="Constant">
+      <Texts Lang="EN">Are you sure you want to continue the interview for</Texts>
+      <Texts Lang="NL">Weet u zeker dat u het interview wilt voortzetten voor</Texts>
+    </Translation>
+    <Translation Name="msgAttemptsForCase" Type="Constant">
+      <Texts Lang="EN">Attempts for case </Texts>
+      <Texts Lang="NL">Contactpogingen voor </Texts>
+    </Translation>
+    <Translation Name="msgUnableToStartInterview" Type="Constant">
+      <Texts Lang="EN">Unable to start interview. Please contact the help desk</Texts>
+      <Texts Lang="NL">Kan interview niet starten. Neem contact op met de help desk</Texts>
+    </Translation>
+    <Translation Name="msgNotAuthenticatedUser" Type="Constant">
+      <Texts Lang="EN">You are currently working in disconnected mode without authentication</Texts>
+      <Texts Lang="NL">U werkt momenteel in disconnected mode zonder authenticatie</Texts>
+    </Translation>
+    <Translation Name="msgCaseNotPresent" Type="Constant">
+      <Texts Lang="EN">Interview cannot start because preload is missing</Texts>
+      <Texts Lang="NL">Interview kan niet worden gestart want de het voorgeladen formulier is afwezig</Texts>
+    </Translation>
+    <Translation Name="msgError1001" Type="Constant">
+      <Texts Lang="EN">Error 1001: Install of LAUNCHER-survey failed! Code:</Texts>
+    </Translation>
+    <Translation Name="msgError1002" Type="Constant">
+      <Texts Lang="EN">Error 1002: Install of LAUNCHER-survey not complete!</Texts>
+    </Translation>
+    <Translation Name="msgError1003" Type="Constant">
+      <Texts Lang="EN">Error 1003: Install of ATTEMPTS-survey failed! Code:</Texts>
+    </Translation>
+    <Translation Name="msgError1004" Type="Constant">
+      <Texts Lang="EN">Error 1004: Install of ATTEMPTS-survey not complete!</Texts>
+    </Translation>
+    <Translation Name="msgError1005" Type="Constant">
+      <Texts Lang="EN">Error 1005: CMA will be halted. Launcher survey needs to be updated on the server</Texts>
+    </Translation>
+    <Translation Name="msgError1006" Type="Constant">
+      <Texts Lang="EN">Error 1006: Install of CONTACTINFO-survey failed! Code:</Texts>
+    </Translation>
+    <Translation Name="msgError1007" Type="Constant">
+      <Texts Lang="EN">Error 1007: Install of CONTACTINFO-survey not complete!</Texts>
+    </Translation>
+    <Translation Name="msgError1008" Type="Constant">
+      <Texts Lang="EN">Error 1008: CMA needs to be installed in server park with 'Sync surveys when connected' set to TRUE</Texts>
+    </Translation>
+    <Translation Name="msgError1009" Type="Constant">
+      <Texts Lang="EN">Error 1009: Error initializing CMA. Try restarting the Blaise program</Texts>
+    </Translation>
+    <Translation Name="msgGeoLocationFailed" Type="Constant">
+      <Texts Lang="EN">Geo position could not be determined</Texts>
+      <Texts Lang="NL">De locatie kon niet worden bepaald</Texts>
+    </Translation>
+    <Translation Name="msgGeoLocationDetermined" Type="Constant">
+      <Texts Lang="EN">Geo position has been determined. Accuracy is $accuracy m</Texts>
+      <Texts Lang="NL">Geo positie is bepaald. De nauwkeurigheid is $accuracy meter</Texts>
+    </Translation>
+    <Translation Name="msgDownloadCase" Type="Constant">
+      <Texts Lang="EN">Case not present. Download case now?</Texts>
+      <Texts Lang="NL">Het formulier is niet aanwezig. Nu ophalen? </Texts>
+    </Translation>
+	<Translation Name="msgUnexpectedSyncError" Type="Constant">
+      <Texts Lang="EN">An unexpected error occurred while preparing to sync. If this issue persists, try restarting the application.</Texts>
+	  <Texts Lang="NL">Er is een onverwachte fout opgetreden tijdens het voorbereiden van de synchronisatie. Als dit probleem zich blijft voordoen, probeer de applicatie opnieuw te starten.</Texts>
+    </Translation>
+    <Translation Name="msgSyncErrorMinus10" Type="Constant">
+      <Texts Lang="EN">No network access</Texts>
+      <Texts Lang="NL">Geen netwerk toegang</Texts>
+    </Translation>
+    <Translation Name="msgSyncErrorMinus2" Type="Constant">
+      <Texts Lang="EN">Downloading failed</Texts>
+      <Texts Lang="NL">Ophalen mislukt</Texts>
+    </Translation>
+    <Translation Name="msgSyncErrorMinus4" Type="Constant">
+      <Texts Lang="EN">The user is not authorized to perform the requested action</Texts>
+      <Texts Lang="NL">De gebruik heeft onvoldoende rechten om deze actie uit te voeren</Texts>
+    </Translation>
+    <Translation Name="msgConfirmSetGroupToDone" Type="Constant">
+      <Texts Lang="EN">Are you sure the group needs to be set to Done?</Texts>
+      <Texts Lang="NL">Weet u zeker dat de groepstatus op 'Klaar' gezet moet worden?</Texts>
+    </Translation>
+    <Translation Name="msgReopenedHandled" Type="Constant">
+      <Texts Lang="EN">Has this reopened case been handled completely?</Texts>
+      <Texts Lang="NL">Is de heropende opdracht helemaal afgehandeld?</Texts>
+    </Translation>
+    <Translation Name="msgLogUploadOKay" Type="Constant">
+      <Texts Lang="EN">The log has been uploaded</Texts>
+      <Texts Lang="NL">De logging is verstuurd</Texts>
+    </Translation>
+    <Translation Name="msgLogUploadFailed" Type="Constant">
+      <Texts Lang="EN">The upload of the log failed</Texts>
+      <Texts Lang="NL">Versturen van de logging is mislukt</Texts>
+    </Translation>
+    <Translation Name="msgDownloadFailed" Type="Constant">
+      <Texts Lang="EN">Download of case failed</Texts>
+      <Texts Lang="NL">Ophalen van de vragenlijst mislukt</Texts>
+    </Translation>
+    <Translation Name="msgDownloadCase" Type="Constant">
+      <Texts Lang="EN">Case not present. Download case now?</Texts>
+      <Texts Lang="NL">Vragenlijst niet aanwezig. Nu ophalen?</Texts>
+    </Translation>
+    <Translation Name="cAttemptsTemplate" Type="Constant">
+      <Texts Lang="EN">&lt;table borderwidth=1 bordercolor=black grid=both gridwidth=1&gt;&lt;column width=auto&gt;&lt;column width=*&gt;&lt;row&gt;&lt;cell margin="4,2,4,2"&gt;&lt;left&gt;When made:&lt;/left&gt;&lt;/cell&gt;&lt;cell margin="4,2,4,2" background=lightgray&gt;&lt;left&gt;$Att_When&lt;/left&gt;&lt;/cell&gt;&lt;/row&gt;&lt;row&gt;&lt;cell margin="4,2,4,2"&gt;&lt;left&gt;Result:&lt;/left&gt;&lt;/cell&gt;&lt;cell margin="4,2,4,2" background=lightgray&gt;&lt;left&gt;$Att_Result&lt;/left&gt;&lt;/cell&gt;&lt;/row&gt;&lt;row&gt;&lt;cell margin="4,2,4,2"&gt;&lt;left&gt;Appointment:&lt;/left&gt;&lt;/cell&gt;&lt;cell margin="4,2,4,2" background=lightgray&gt;&lt;left&gt;$Att_Appointment&lt;/left&gt;&lt;/cell&gt;&lt;/row&gt;&lt;row&gt;&lt;cell margin="4,2,4,2"&gt;&lt;left&gt;Note:&lt;/left&gt;&lt;/cell&gt;&lt;cell margin="4,2,4,2" background=lightgray&gt;&lt;left&gt;$Att_Note&lt;/left&gt;&lt;/cell&gt;&lt;/row&gt;&lt;/table&gt;</Texts>
+      <Texts Lang="NL">&lt;table borderwidth=1 bordercolor=black grid=both gridwidth=1&gt;&lt;column width=auto&gt;&lt;column width=*&gt;&lt;row&gt;&lt;cell margin="4,2,4,2"&gt;&lt;left&gt;Wanneer gemaakt:&lt;/left&gt;&lt;/cell&gt;&lt;cell margin="4,2,4,2" background=lightgray&gt;&lt;left&gt;$Att_When&lt;/left&gt;&lt;/cell&gt;&lt;/row&gt;&lt;row&gt;&lt;cell margin="4,2,4,2"&gt;&lt;left&gt;Resultaat:&lt;/left&gt;&lt;/cell&gt;&lt;cell margin="4,2,4,2" background=lightgray&gt;&lt;left&gt;$Att_Result&lt;/left&gt;&lt;/cell&gt;&lt;/row&gt;&lt;row&gt;&lt;cell margin="4,2,4,2"&gt;&lt;left&gt;Afspraak:&lt;/left&gt;&lt;/cell&gt;&lt;cell margin="4,2,4,2" background=lightgray&gt;&lt;left&gt;$Att_Appointment&lt;/left&gt;&lt;/cell&gt;&lt;/row&gt;&lt;row&gt;&lt;cell margin="4,2,4,2"&gt;&lt;left&gt;Notitie:&lt;/left&gt;&lt;/cell&gt;&lt;cell margin="4,2,4,2" background=lightgray&gt;&lt;left&gt;$Att_Note&lt;/left&gt;&lt;/cell&gt;&lt;/row&gt;&lt;/table&gt;</Texts>
+    </Translation>
+    <Translation Name="ShowGroup" Parent="btnCases" Type="Category">
+      <Texts Lang="EN">&lt;img src=ShowGroup&gt;</Texts>
+      <Texts Lang="EN" Role="DISABLED">&lt;img src=ShowGroupDisabled&gt;</Texts>
+      <Texts Lang="EN" Role="TOOLTIP">Show case group</Texts>
+      <Texts Lang="NL" Role="TOOLTIP">Toon groep</Texts>
+    </Translation>
+    <Translation Name="Spawn" Parent="btnCases" Type="Category">
+      <Texts Lang="EN">&lt;img src=SpawnCasePlus&gt;</Texts>
+      <Texts Lang="EN" Role="DISABLED">&lt;img src=SpawncasePlusDisabled&gt;</Texts>
+      <Texts Lang="EN" Role="TOOLTIP">Add case</Texts>
+      <Texts Lang="NL" Role="TOOLTIP">Maak case</Texts>
+    </Translation>
+    <Translation Name="IW" Parent="btnCases" Type="Category">
+      <Texts Lang="EN">&lt;img src=Interview&gt;</Texts>
+      <Texts Lang="EN" Role="DISABLED">&lt;img src=InterviewDisabled&gt;</Texts>
+      <Texts Lang="EN" Role="TOOLTIP">Start interview</Texts>
+      <Texts Lang="NL" Role="TOOLTIP">Start interview</Texts>
+    </Translation>
+    <Translation Name="Attempt" Parent="btnCases" Type="Category">
+      <Texts Lang="EN">&lt;img src=Account&gt;</Texts>
+      <Texts Lang="EN" Role="DISABLED">&lt;img src=AccountDisabled&gt;</Texts>
+      <Texts Lang="EN" Role="TOOLTIP">Show attempts</Texts>
+      <Texts Lang="NL" Role="TOOLTIP">Toon contactpogingen</Texts>
+    </Translation>
+    <Translation Name="Update" Parent="btnCases" Type="Category">
+      <Texts Lang="EN">&lt;img src=Update&gt;</Texts>
+      <Texts Lang="EN" Role="DISABLED">&lt;img src=UpdateDisabled&gt;</Texts>
+      <Texts Lang="EN" Role="TOOLTIP">Edit case</Texts>
+      <Texts Lang="NL" Role="TOOLTIP">Bewerk opdracht</Texts>
+    </Translation>
+    <Translation Name="CollectGeoLoc" Parent="btnCases" Type="Category">
+      <Texts Lang="EN">&lt;img src=DetermineGeoPos&gt;</Texts>
+      <Texts Lang="EN" Role="DISABLED">&lt;img src=DetermineGeoPosDisabled&gt;</Texts>
+      <Texts Lang="EN" Role="TOOLTIP">Determine geo position</Texts>
+      <Texts Lang="NL" Role="TOOLTIP">Bepaal huidige locatie</Texts>
+    </Translation>
+    <Translation Name="Synchronize" Parent="btnCases" Type="Category">
+      <Texts Lang="EN">&lt;img src=Synchronize&gt;</Texts>
+      <Texts Lang="EN" Role="DISABLED">&lt;img src=SynchronizeDisabled&gt;</Texts>
+      <Texts Lang="EN" Role="TOOLTIP">Synchronize data</Texts>
+      <Texts Lang="NL" Role="TOOLTIP">Synchronizeer data</Texts>
+    </Translation>
+    <Translation Name="Quit" Parent="btnCases" Type="Category">
+      <Texts Lang="EN">&lt;img src=Quit&gt;</Texts>
+      <Texts Lang="EN" Role="DISABLED">&lt;img src=QuitDisabled&gt;</Texts>
+      <Texts Lang="EN" Role="TOOLTIP">Quit application</Texts>
+      <Texts Lang="NL" Role="TOOLTIP">Stop applicatie</Texts>
+    </Translation>
+    <Translation Name="Spawn" Parent="btnGroup" Type="Category">
+      <Texts Lang="EN">&lt;img src=SpawnCasePlus&gt;</Texts>
+      <Texts Lang="EN" Role="DISABLED">&lt;img src=SpawncasePlusDisabled&gt;</Texts>
+      <Texts Lang="EN" Role="TOOLTIP">Add case</Texts>
+      <Texts Lang="NL" Role="TOOLTIP">Extra opdracht toevoegen</Texts>
+    </Translation>
+    <Translation Name="IW" Parent="btnGroup" Type="Category">
+      <Texts Lang="EN">&lt;img src=Interview&gt;</Texts>
+      <Texts Lang="EN" Role="DISABLED">&lt;img src=InterviewDisabled&gt;</Texts>
+      <Texts Lang="EN" Role="TOOLTIP">Start interview</Texts>
+      <Texts Lang="NL" Role="TOOLTIP">Start interview</Texts>
+    </Translation>
+    <Translation Name="Add" Parent="btnGroup" Type="Category">
+      <Texts Lang="EN">&lt;img src=AttemptAdd&gt;</Texts>
+      <Texts Lang="EN" Role="DISABLED">&lt;img src=AttemptAddDisabled&gt;</Texts>
+      <Texts Lang="EN" Role="TOOLTIP">Add a new attempt</Texts>
+      <Texts Lang="NL" Role="TOOLTIP">Nieuwe poging toevoegen</Texts>
+    </Translation>
+    <Translation Name="Attempt" Parent="btnGroup" Type="Category">
+      <Texts Lang="EN">&lt;img src=Account&gt;</Texts>
+      <Texts Lang="EN" Role="DISABLED">&lt;img src=AccountDisabled&gt;</Texts>
+      <Texts Lang="EN" Role="TOOLTIP">Show attempts</Texts>
+      <Texts Lang="NL" Role="TOOLTIP">Toon contactpogingen</Texts>
+    </Translation>
+    <Translation Name="Update" Parent="btnGroup" Type="Category">
+      <Texts Lang="EN">&lt;img src=Update&gt;</Texts>
+      <Texts Lang="EN" Role="DISABLED">&lt;img src=UpdateDisabled&gt;</Texts>
+      <Texts Lang="EN" Role="TOOLTIP">Edit case</Texts>
+      <Texts Lang="NL" Role="TOOLTIP">Bewerk opdracht</Texts>
+    </Translation>
+    <Translation Name="CollectGeoLoc" Parent="btnGroup" Type="Category">
+      <Texts Lang="EN">&lt;img src=DetermineGeoPos&gt;</Texts>
+      <Texts Lang="EN" Role="DISABLED">&lt;img src=DetermineGeoPosDisabled&gt;</Texts>
+      <Texts Lang="EN" Role="TOOLTIP">Determine geo position</Texts>
+      <Texts Lang="NL" Role="TOOLTIP">Bepaal huidige locatie</Texts>
+    </Translation>
+    <Translation Name="Done" Parent="btnGroup" Type="Category">
+      <Texts Lang="EN">&lt;img src=Done&gt;</Texts>
+      <Texts Lang="EN" Role="DISABLED">&lt;img src=DoneDisabled&gt;</Texts>
+      <Texts Lang="EN" Role="TOOLTIP">Set case to Done</Texts>
+      <Texts Lang="NL" Role="TOOLTIP">Zet groep op Klaar</Texts>
+    </Translation>
+    <Translation Name="Synchronize" Parent="btnGroup" Type="Category">
+      <Texts Lang="EN">&lt;img src=Synchronize&gt;</Texts>
+      <Texts Lang="EN" Role="TOOLTIP">Synchronize data</Texts>
+      <Texts Lang="NL" Role="TOOLTIP">Synchronizeer data</Texts>
+    </Translation>
+    <Translation Name="Back" Parent="btnGroup" Type="Category">
+      <Texts Lang="EN">&lt;img src=BackButton2&gt;</Texts>
+      <Texts Lang="EN" Role="TOOLTIP">Back to main screen</Texts>
+      <Texts Lang="NL" Role="TOOLTIP">Terug naar hoofdscherm</Texts>
+    </Translation>
+    <Translation Name="Change" Parent="btnStyle" Type="Category">
+      <Texts Lang="EN">&lt;img src=ChangeFont&gt;</Texts>
+      <Texts Lang="EN" Role="TOOLTIP">Change style</Texts>
+      <Texts Lang="NL" Role="TOOLTIP">Wijzig stijl</Texts>
+    </Translation>
+    <Translation Name="All" Parent="auxWhatCasesToShow" Type="Category">
+      <Texts Lang="EN" Role="TOOLTIP">Show all cases</Texts>
+      <Texts Lang="NL" Role="TOOLTIP">Alle opdrachten tonen</Texts>
+    </Translation>
+    <Translation Name="Noncompleted" Parent="auxWhatCasesToShow" Type="Category">
+      <Texts Lang="EN" Role="TOOLTIP">Show only non-completed cases</Texts>
+      <Texts Lang="NL" Role="TOOLTIP">Alleen nog niet afgehandelde opdrachten tonen</Texts>
+    </Translation>
+    <Translation Name="Completed" Parent="auxWhatCasesToShow" Type="Category">
+      <Texts Lang="EN" Role="TOOLTIP">Show only completed cases</Texts>
+      <Texts Lang="NL" Role="TOOLTIP">Alleen afgehandelde opdrachten tonen</Texts>
+    </Translation>
+    <Translation Name="srvAll" Parent="auxWhatSurveyToShow" Type="Category">
+      <Texts Lang="EN">\&lt;All\&gt;</Texts>
+      <Texts Lang="NL">\&lt;Alle\&gt;</Texts>
+    </Translation>
+    <Translation Name="cfvAll" Parent="auxCustomFilter" Type="Category">
+      <Texts Lang="EN">\&lt;All\&gt;</Texts>
+      <Texts Lang="NL">\&lt;Alle\&gt;</Texts>
+    </Translation>
+    <Translation Name="OK" Parent="auxIDone" Type="Category">
+      <Texts Lang="EN">Ok</Texts>
+      <Texts Lang="NL">OK</Texts>
+    </Translation>
+    <Translation Name="Add" Parent="btnAttempts" Type="Category">
+      <Texts Lang="EN">&lt;img src=AttemptAdd&gt;</Texts>
+      <Texts Lang="EN" Role="DISABLED">&lt;img src=AttemptAddDisabled&gt;</Texts>
+      <Texts Lang="EN" Role="TOOLTIP">Add a new attempt</Texts>
+      <Texts Lang="NL" Role="TOOLTIP">Voeg een contactpoging toe</Texts>
+    </Translation>
+    <Translation Name="Modify" Parent="btnAttempts" Type="Category">
+      <Texts Lang="EN">&lt;img src=Update&gt;</Texts>
+      <Texts Lang="EN" Role="DISABLED">&lt;img src=UpdateDisabled&gt;</Texts>
+      <Texts Lang="EN" Role="TOOLTIP">Edit note</Texts>
+      <Texts Lang="NL" Role="TOOLTIP">Bewerk notitie</Texts>
+    </Translation>
+    <Translation Name="Quit" Parent="btnAttempts" Type="Category">
+      <Texts Lang="EN">&lt;img src=BackButton2&gt;</Texts>
+      <Texts Lang="EN" Role="TOOLTIP">Back to cases screen</Texts>
+      <Texts Lang="NL" Role="TOOLTIP">Terug naar opdrachten scherm</Texts>
+    </Translation>
+    <Translation Name="View" Parent="btnAttempts" Type="Category">
+      <Texts Lang="EN">&lt;img src=ReadOnlyEdit&gt;</Texts>
+      <Texts Lang="EN" Role="DISABLED">&lt;img src=ReadOnlyEditDisabled&gt;</Texts>
+      <Texts Lang="EN" Role="TOOLTIP">View interview</Texts>
+      <Texts Lang="NL" Role="TOOLTIP">Toon interview</Texts>
+    </Translation>
+    <Translation Name="Save" Parent="btnEditNote" Type="Category">
+      <Texts Lang="EN">&lt;img src=OK&gt;</Texts>
+      <Texts Lang="EN" Role="DISABLED">&lt;img src=OKDisabled&gt;</Texts>
+      <Texts Lang="EN" Role="TOOLTIP">Save note</Texts>
+      <Texts Lang="NL" Role="TOOLTIP">Bewaar notitie</Texts>
+    </Translation>
+    <Translation Name="Cancel" Parent="btnEditNote" Type="Category">
+      <Texts Lang="EN">&lt;img src=Cancel&gt;</Texts>
+      <Texts Lang="EN" Role="DISABLED">&lt;img src=CancelDisabled&gt;</Texts>
+      <Texts Lang="EN" Role="TOOLTIP">Cancel</Texts>
+      <Texts Lang="NL" Role="TOOLTIP">Annuleren</Texts>
+    </Translation>
+    <Translation Name="dShowTheLogging" Type="Dialog">
+      <Texts Lang="EN">CMA logging</Texts>
+      <Texts Lang="NL">CMA logging</Texts>
+    </Translation>
+    <Translation Name="dCases" Type="Dialog">
+      <Texts Lang="EN">CMA - Available cases</Texts>
+      <Texts Lang="NL">CMA - Overzicht opdrachten</Texts>
+    </Translation>
+    <Translation Name="dShowImage" Type="Dialog">
+      <Texts Lang="EN">Show image</Texts>
+      <Texts Lang="NL">Toon afbeelding</Texts>
+    </Translation>
+    <Translation Name="auxDataGridHeaderAll" Parent="dCases" Type="Field">
+      <Texts Lang="EN">List of all cases:</Texts>
+      <Texts Lang="NL">Lijst met alle opdrachten:</Texts>
+    </Translation>
+    <Translation Name="auxDataGridHeaderCompleted" Parent="dCases" Type="Field">
+      <Texts Lang="EN">List of all completed cases:</Texts>
+      <Texts Lang="NL">Lijst met alle afgehandelde opdrachten:</Texts>
+    </Translation>
+    <Translation Name="auxDataGridHeaderNonCompleted" Parent="dCases" Type="Field">
+      <Texts Lang="EN">List of all non-completed cases:</Texts>
+      <Texts Lang="NL">Lijst met alle niet afgehandelde opdrachten:</Texts>
+    </Translation>
+    <Translation Name="auxWhatCasesToShow" Parent="dCases" Type="Field">
+      <Texts Lang="EN">Cases to show: </Texts>
+      <Texts Lang="NL">Te tonen opdrachten: </Texts>
+    </Translation>
+    <Translation Name="auxWhatSurveyToShow" Parent="dCases" Type="Field">
+      <Texts Lang="EN">Survey to show: </Texts>
+      <Texts Lang="NL">Te tonen onderzoek: </Texts>
+    </Translation>
+    <Translation Name="auxSortOn" Parent="dCases" Type="Field">
+      <Texts Lang="EN">Select display order: </Texts>
+      <Texts Lang="NL">Selecteer volgorde: </Texts>
+    </Translation>
+    <Translation Name="auxFilter" Parent="dCases" Type="Field">
+      <Texts Lang="EN">Filter:</Texts>
+      <Texts Lang="NL">Filter:</Texts>
+    </Translation>
+    <Translation Name="dGroup" Type="Dialog">
+      <Texts Lang="EN">Case Group</Texts>
+      <Texts Lang="NL">Opdrachtengroep</Texts>
+    </Translation>
+    <Translation Name="auxSortGrpOn" Parent="dGroup" Type="Field">
+      <Texts Lang="EN">Select display order: </Texts>
+      <Texts Lang="NL">Selecteer volgorde: </Texts>
+    </Translation>
+    <Translation Name="dAttempts" Type="Dialog">
+      <Texts Lang="EN">Attempts</Texts>
+      <Texts Lang="NL">Contactpogingen</Texts>
+    </Translation>
+    <Translation Name="dEditNote" Type="Dialog">
+      <Texts Lang="EN">Edit note</Texts>
+      <Texts Lang="NL">Bewerk notitie</Texts>
+    </Translation>
+    <Translation Name="auxNote" Parent="dEditNote" Type="Field">
+      <Texts Lang="EN">Note:</Texts>
+      <Texts Lang="NL">Notitie:</Texts>
+    </Translation>
+    <Translation Name="ShowTheLogging" Type="Dialog">
+      <Texts Lang="EN">CMA logging</Texts>
+      <Texts Lang="NL">CMA logging</Texts>
+    </Translation>
+    <Translation Name="Synchronize" Parent="QuitLogging" Type="Category">
+      <Texts Lang="EN">&lt;img src=Synchronize&gt;</Texts>
+    </Translation>
+    <Translation Name="OK" Parent="QuitLogging" Type="Category">
+      <Texts Lang="EN">&lt;img src=BackButton2&gt;</Texts>
+    </Translation>
+    <Translation Name="msgServerMaintenance" Type="Constant">
+      <Texts Lang="EN">Server maintenance. Synchronizing currently not possible!</Texts>
+      <Texts Lang="NL">Server onderhoud. Synchronizatie momenteel niet mogelijk!</Texts>
+    </Translation>
+    <Translation Name="txtAll" Type="Constant">
+      <Texts Lang="EN">&lt;All surveys&gt;</Texts>
+      <Texts Lang="NL">&lt;Alle onderzoeken&gt;</Texts>
+    </Translation>
+    <Translation Name="txtNonCompleted" Type="Constant">
+      <Texts Lang="EN">Non-completed</Texts>
+      <Texts Lang="NL">Niet-compleet</Texts>
+    </Translation>
+    <Translation Name="txtCompleted" Type="Constant">
+      <Texts Lang="EN">Completed</Texts>
+      <Texts Lang="NL">Compleet</Texts>
+    </Translation>	
+    <Translation Name="CurLan" Type="Field">
+      <Texts Lang="EN">Select language</Texts>
+      <Texts Lang="NL">Selecteer taal</Texts>
+    </Translation>	
+	<Translation Name="atAppointment" Parent="locAttempts" Type="Field">
+      <Texts Lang="EN">Appointment</Texts>
+      <Texts Lang="NL">Afspraak</Texts>
+    </Translation>
+  </Items>
+  <AllLanguagesUsed>
+    <Language Name="EN">English</Language>
+    <Language Name="NL">Nederlands</Language>
+  </AllLanguagesUsed>
+</TranslationsFile>

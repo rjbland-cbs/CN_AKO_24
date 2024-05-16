@@ -1,0 +1,22 @@
+﻿DATAMODEL CMA_CustomScript
+
+//Datamodel to store custom reports to be executed
+
+LANGUAGES = EN "English"
+
+PRIMARY ScriptID
+  
+   GROUP Properties
+   FIELDS 
+   ScriptID "Report ID": STRING[36]
+   ScriptName "Report name": STRING
+   ScriptFile "Report script": OPEN
+   ScriptParameters "Report parameters": OPEN
+   ScriptMsux "Report MSUX": BLOBTYPE MAXSIZE=100MB
+   ScriptMdix "Report MDIX": BLOBTYPE MAXSIZE=100MB
+   ScriptDatamodels "Report Datamodels" : BLOBTYPE MAXSIZE=100MB
+   ENDGROUP
+   
+RULES
+  Properties  
+ENDMODEL

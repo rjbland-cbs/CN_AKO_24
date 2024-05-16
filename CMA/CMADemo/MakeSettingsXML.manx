@@ -1,0 +1,110 @@
+﻿SETTINGS AUTOREAD=NO
+
+USES CMA_SettingsMeta '..\CMA_SettingsMeta' 
+  
+OUTPUTFILE Outp:CMA_SettingsMeta('CMA_settings.xml',XML)
+SETTINGS
+  CREATEBDIX=NO
+
+MANIPULATE  
+  sSelectedLanguage:= 'EN'
+  sUploadChanges:= yes
+  sTrackTimeUsed:= yes
+  sSyncWhenConnected:= yes
+  sAskSync:= yes
+  sRemoveSurveyWhenNoCasesLeft:= yes
+  sCasesToShow:= all
+  sConfirmReopenedHandled:= yes
+  sShowGeoPositionBtn:= yes
+  sShowNotStartedTxt:= yes
+  sAllowReadonlyAccess:= yes
+  sSearchButton:= yes
+  sWriteSyncTraceFile:= yes
+  sPreserveSyncTracefileOnClient:= yes
+  sPreserveLogfileOnClient:= yes
+
+  //field filters to be used:
+  sFieldFilterAll:=   'tSurveyName,tCustomCol1,tCustomCol2,tCustomCol3,'+
+                      'tIdentifier,tStatus,tLastResult,tAppointment'
+  sFieldFilterTopic:= 'tIdentifier,tCustomCol1,tCustomCol2,tCustomCol3,tStatus,tAttemptsCount,'+
+                      'tLastResult,tAppointment,tLastAttempt'
+  sFieldFilterGroup:= 'tSurveyName,tIdentifier,tStatus,tLastResult,tAppointment'
+  
+  //definition of different styles:
+  sStyleCount:= 3
+  sStyle[1]:= 'Dialogs' //refers to an existing style in the resource database
+  sStyle[2]:= 'DialogsMedium' //refers to an existing style in the resource database
+  sStyle[3]:= 'DialogsLarge' //refers to an existing style in the resource database
+  sTextFontSize[1]:= 16 //used in display/confirm for style 1
+  sTextFontSize[2]:= 20 //used in display/confirm for style 2
+  sTextFontSize[3]:= 25 //used in display/confirm for style 3
+  sSelectedStyle:= 2
+  
+  //defintion of language to be displayed on the screen as button:
+  sLanguageCount:= 2
+  sLanguages[1]:= 1 //The first language in the CMA.bitt file: EN = English
+  sLanguages[2]:= 2 //The second language in the CMA.bitt file: NL = Dutch
+  
+  //Definition of field width
+  sFieldWidths:= 'tIdentifier=20,tStatus=20'
+  
+  //definition of custom columns:
+  sCustomColCount:= 3
+  sCustomCol[1].FieldName:= 'PII.Town' //in tCustomCol1
+  sCustomCol[1].Origin:= oContactData
+  sCustomCol[1].Title:= 'EN=Town,NL=Plaats'
+  sCustomCol[1].Width:= 30
+  sCustomCol[2].FieldName:= 'PII.Address' //in tCustomCol2
+  sCustomCol[2].Origin:= oContactData
+  sCustomCol[2].Title:= 'EN=Address,NL=Adres'
+  sCustomCol[2].Width:= 40
+  sCustomCol[3].FieldName:= 'PII.Name' //in tCustomCol3
+  sCustomCol[3].Origin:= oContactData
+  sCustomCol[3].Title:= 'EN=Name,NL=Naam'
+  sCustomCol[3].Width:= 25
+  
+  //definition of sort orders for the cases screen:
+  sDefSortCount:= 4
+  sDefSort[1].Title:= 'EN=Identifier,NL=Sleutel'
+  sDefSort[1].FieldCount:= 1
+  sDefSort[1].FieldName[1]:= 'tIdentifier'
+  sDefSort[2].Title:= 'EN=Town&Address,NL=Woonplaats&Adres'
+  sDefSort[2].FieldCount:= 2
+  sDefSort[2].FieldName[1]:= 'tCustomCol1'
+  sDefSort[2].FieldName[2]:= 'tCustomCol2'
+  sDefSort[3].Title:= 'EN=Name,NL=Naam'
+  sDefSort[3].FieldCount:= 1
+  sDefSort[3].FieldName[1]:= 'tCustomCol3'
+  sDefSort[4].Title:= 'Status'
+  sDefSort[4].FieldCount:= 2
+  sDefSort[4].FieldName[1]:= 'tStatus'
+  sDefSort[4].FieldName[2]:= 'tIdentifier'
+  
+  //definition of sort orders for the group screen:
+  sDefSortGrpCount:= 3
+  sDefSortGrp[1].Title:= 'EN=Identifier,NL=Sleutel'
+  sDefSortGrp[1].FieldCount:= 1
+  sDefSortGrp[1].FieldName[1]:= 'tIdentifier'
+  sDefSortGrp[2].Title:= 'Status'
+  sDefSortGrp[2].FieldCount:= 2
+  sDefSortGrp[2].FieldName[1]:= 'tStatus'
+  sDefSortGrp[2].FieldName[2]:= 'tIdentifier'
+  sDefSortGrp[3].Title:= 'EN=Name,NL=Naam'
+  sDefSortGrp[3].FieldCount:= 1
+  sDefSortGrp[3].FieldName[1]:= 'tCustomCol3'
+  
+  //search
+  sSearchCount:= 3
+  sSearchName[1]:= 'CMA_CustomUse'
+  sSearchName[2]:= 'CMA_ContactData'
+  sSearchName[3]:= 'ID'
+  sSearchName[4]:= 'CMA_CaseNote'
+  
+  //custom filter
+  sCustomFilterTxt:= 'EN=Town,NL=Plaats'
+  sCustomFilter.FieldName:= 'PII.Town' //also defined in tCustomCol1
+  sCustomFilter.Origin:= oContactData
+  
+  Outp.WRITE
+
+  

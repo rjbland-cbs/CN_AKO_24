@@ -1,0 +1,11 @@
+﻿UserID;UserType;ManagerID;UserName
+CMA_Ann;1;cma_sup;Ann Blaise
+CMA_Ben;1;cma_sup;Ben Pascal
+CMA_Joe;1;cma_jen;Joe Surfs
+CMA_Rob;1;cma_jen;Rob Jones
+CMA_Dan;1;cma_jen;Dan Man
+CMA_Eli;1;cma_jen;Eli Jones
+CMA_Sup;2;;Claire Super
+CMA_Jen;2;cma_sup;Jen Best
+CMA_Min;2;cma_sup;Min Sue
+CMA_Man;3;;Anny Many

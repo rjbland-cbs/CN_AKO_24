@@ -1,0 +1,150 @@
+﻿DATAMODEL Launcher "Case Information"
+//CMA - Case Management Application for use by interviewers
+//
+//version:  2.2. For Blaise 5.11
+//date:     14-November-2023 
+//autor:    Lon Hofman, Team Blaise, Statistics Netherlands
+
+//WARNING. No changes are allowed to this datamodel!
+
+LANGUAGES = EN "English"
+{.$DEFINE Device}
+{.$DEFINE UseDateTimeType}
+{.$DEFINE MultiMode}
+PRIMARY
+  MainSurveyID, ID
+SECONDARY
+  secCaseClosed   = CMA_CaseClosed
+  secCMA_Location = CMA_Location
+  secCMA_Status   = CMA_Status  
+  secCMA_ForWhom  = CMA_ForWhom
+  secContactInfo  = ContactInfoShort
+  secInPossesion  = CMA_InPossession
+  secStartDate    = CMA_StartDate
+  secEndDate      = CMA_EndDate
+  secContactGUID  = CMA_ContactInfoGUID
+  secAttemptsGUID = CMA_AttemptsGUID
+  {$IFDEF Device}
+  secDevice       = CMA_Device
+  {$ENDIF}
+  {$IFDEF MultiMode}
+  secHappeningsCod       = CMA_HappeningsCod
+  {$ENDIF}
+
+//  secGroupType    = CMA_GroupType   //added for 1.5 --> renders datamodel not suited for harmless update...
+//  secGroupStatus  = CMA_GroupStatus //added for 1.5 --> renders datamodel not suited for harmless update...
+//  secGroupID      = CMA_GroupID     //added for 1.5 --> renders datamodel not suited for harmless update...
+
+TYPE
+  TCMA_Location = STRING[20] //
+  TCMA_Status = STRING[20] // holds the last known DataEntryStatus:  <EMPTY>=NotStarted, Started, Interrupted (=Survey started but interrupted), Finalized 
+  THappeningsStr = STRING[80] //holds the last known Operational code description of the case
+  THappeningsLbl = STRING[40]  //holds the last known Operational code label
+  THappeningsCod = STRING[5]  //holds the last known Operational code numeric value. This is what some love to see..
+  TGuid = STRING[36]
+  {$IFDEF UseDateTimeType}
+  TWhen = DATETIMETYPE
+  {$ELSE}
+  TWhen = STRING[24] //format 'yyyyMMdd,HH:mm:sszzz'
+  {$ENDIF}
+  TGeoLocation = STRING[22] //GPS coordinates using GETGEOLOCATION function
+
+BLOCK bDT
+FIELDS
+  When: TWhen  
+  User: STRING[20]
+ENDBLOCK  
+  
+BLOCK bCMA_Process
+FIELDS
+  CreatedDT: TWhen
+  LastChangedDT: TWhen
+  GeoLocation: TGeoLocation     //last registered location = location of last attempt
+  FirstDownloaded: bDT
+  FirstUploaded: bDT
+  LastDownloaded: bDT
+  LastUploaded: bDT
+  LastAttempt: bDT //last known attempt result
+  FirstInterviewTime: bDT //first time (if ever) the interview was started
+  LastInterviewTime: bDT //last time (if ever) the interview was started
+  LastInterviewEndTime: TWhen //last time (if ever) the interview was ended
+  TotalInterviewTimeUsed: INTEGER[8] //in seconds. Keeps track of total interview time for easy monitoring
+ENDBLOCK
+
+BLOCK bCMA_Data
+FIELDS
+  SurveyUploadFailed: (yes),EMPTY
+  Survey: BLOBTYPE MAXSIZE=10MB //XML or ZIP file with survey data
+  AttemptsCount: INTEGER[3],EMPTY
+  Attempts: BLOBTYPE //XML file with attempts
+ENDBLOCK  
+   
+BLOCK bCMA_Appointment //holds the last know appointment made by the interviewer
+FIELDS
+  AppDate: DATETYPE
+  AppTime: TIMETYPE
+  WhenMade: bDT
+ENDBLOCK
+
+FIELDS 
+  MainSurveyID: TGuid  //GUID of survey. Could be a WAVE
+  SurveyDisplayName: string[200],EMPTY //to display in CMA. When empty it will be filled by system with project/wave name.
+                                       //allowed: <languageID>=text,<languageID=text,... to allow for translation on screen
+  ID: STRING[219] //primary key in topic instrument
+  CMA_Supervisor: STRING[20], EMPTY {*}//The supervisor who is responsible for the case (optional)
+  //the next 3 fields are used for distributing cases to the named interviewer
+  CMA_ForWhom: STRING[20] //The interviewer to whom the case currently has been assigned
+  {$IFDEF Device}
+  CMA_Device: STRING[20] //The device the case is intended for
+  {$ENDIF}
+  CMA_InPossession: STRING[20] //The interviewer that picked up the case and has it currently in possesion
+  CMA_Location: TCMA_Location   //EMPTY,CLIENT,SERVER,ONHOLD, 
+                                //TRANSFER_REQ,DOWNLOAD_REQ,RESTORE_REQ,RELEASE_REQ,REOPEN_REQ,RERESHCASE_REQ,REFRESHDATA_REQ,REFRESHBOTH_REQ,
+                                //TRANSFER_OK,RELEASED,RELEASE_FAILED
+  CMA_Status: TCMA_Status   //EMPTY, Started (=attempt,no interview), Interrupted (=interview interrupted), Completed (=interview ready), Ready (=finalized), Uploaded
+  CMA_CaseClosed: (no (0), yes), EMPTY //ready or not. Crusial variable for CMA. Upload is decided on this
+  CMA_HappeningsStr: THappeningsStr //string registered in last attempt
+  CMA_HappeningsLbl: THappeningsLbl //label of the Happenings in last attempt
+  CMA_HappeningsCod: THappeningsCod //numerical value as string of last attempt
+  
+  CMA_AllowSpawning: (no (0), yes),EMPTY //To tigger spanwning of cases in CMA on client device. Only allowed if key of topic survey is composed of multiple fields AND last field is INTEGER-type
+  CMA_IsDonorCase: (yes), EMPTY  //When donor --> this is a case that does not allow interview, attempt, edit. Extra button to indicate finish spawning?
+
+  CMA_GroupType: (gParent,gChild), EMPTY  //Used to identify Parent/Child relations
+  CMA_GroupID: STRING //if empty CMA will uses MainSurveyID;ID
+  CMA_GroupSort: STRING[5], EMPTY //To order cases in the group. 
+  CMA_GroupStatus: TCMA_Status //Summary of the status of the individual group entries
+  CMA_GroupSummary: STRING[100] //Information on the group per available status 
+
+  CMA_SpawnCount: 1..999, EMPTY  //keeps track of how many cases have been spawned / how many case are in the group when CMA_GroupInfo=gParent
+  CMA_StartDate: DATETYPE {*}//start date of case
+  CMA_EndDate: DATETYPE {*}//end date of case
+  CMA_CmdLineForEdit: STRING[100] {*}//additional command-line options for edit of survey
+  CMA_PreLoadForEdit: OPEN {*}//additional fields to be passed to topic instrument when starting. Must be formatted as required in -Field: option for data entry client
+  CMA_Process: bCMA_Process 
+  CMA_Appointment: bCMA_Appointment
+  CMA_TimeZone: STRING[5] {*}//Timezone of the respondent
+  CMA_Data: bCMA_Data
+
+//Attempt related fields
+  CMA_AttemptsRoute: STRING[5] {*}// to be passed for routing purposes to attempts datamodel. 5 character string
+  CMA_AttemptsGUID: TGuid,EMPTY // GUID when EMPTY attempt handled by attempts datamodel else through external model; NYI 
+
+//Contact info related fields  
+  CMA_ContactImage: BLOBTYPE MAXSIZE=5MB, EMPTY {*}//contains image related to case. optional
+  CMA_GeoLocation: TGeoLocation //for preload or to be determined in CMA by pressing button
+  CMA_ContactInfoGUID: TGuid, EMPTY  //GUID when EMPTY contact data handled by CMA_ContactInfo else external model 
+  CMA_ContactData: OPEN, EMPTY {*}//Contains field-value pairs with TAB as separator
+  CMA_DetailsTemplate: STRING[10], EMPTY {*}//when not empty: ID of curstom 'template' for displaying on detail part of cases screen
+
+  CMA_CustomUse: OPEN, EMPTY {*}//for custom use  
+  
+//Fields for CMA cases screen 
+  ContactInfoShort: STRING  {*}//computed based on content PII. Displayed in CMA, cases screen, datagrid
+  LastChangedCI: bDT
+
+//Case note related field  
+  CaseNote: OPEN,EMPTY {*}
+  LastChangedNote: bDT
+  
+ENDMODEL

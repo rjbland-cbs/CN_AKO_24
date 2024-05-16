@@ -1,0 +1,14 @@
+﻿DATAMODEL WB_Survey
+
+PRIMARY ID
+
+FIELDS
+
+  ID : STRING[5]
+  HowAreU "How are you doing?": (OK, NotOk "Not OK")
+  
+RULES
+  HowAreU  
+  
+
+ENDMODEL

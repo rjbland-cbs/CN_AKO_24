@@ -1,0 +1,20 @@
+﻿//To transfer all of the ICT survey from CMA_Ann to CMA_Ben
+USES
+  Launcher '..\launcher'
+
+UPDATEFILE upd:launcher ('C:\Blaise5\Surveys\CMA_launcher\launcher',bdix)
+
+AUXFIELDS
+  i: INTEGER
+
+MANIPULATE
+  IF upd.MainSurveyID='a764d1a1-5277-4b1c-94ad-cf356dd2fba3' THEN //ICT survey
+    IF (upd.CMA_CaseClosed<>yes) THEN
+      upd.CMA_ForWhom:= 'CMA_Ben' 
+    ELSE 
+      upd.CMA_ForWhom:= ''  //Handled cases are removed and are no longer on computer of CMA_Ann
+    ENDIF 
+    upd.CMA_Location:='TRANSFER_REQ'
+    upd.WRITE
+  ENDIF   
+ 

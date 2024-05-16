@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project Name="FutureAppointmentsReport" Guid="637fd0f6-4f03-4834-9fe7-81857d64c002" ProjectType="ManipulaProject">
+  <MainFile RelativePath="true">FutureAppointmentsReport.manx</MainFile>
+  <FileItems>
+    <File FileType="ManipulaFileType" RelativePath="true">FutureAppointmentsReport.manx</File>
+  </FileItems>
+  <Properties>
+    <AppSupport />
+    <IsAppMainUserInterface />
+    <ResourceDB />
+    <SurveyRoot />
+    <ConditionalDefines />
+    <DatamodelSearchPath />
+    <ExternalSearchPath />
+    <IncludeSearchPath />
+    <LibrarySearchPath />
+  </Properties>
+</Project>

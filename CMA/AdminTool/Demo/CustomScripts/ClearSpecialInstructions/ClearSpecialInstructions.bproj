@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project Name="ClearSpecialInstructions" Guid="2129733a-0409-4a79-998a-16ccaec6ff84" ProjectType="ManipulaProject">
+  <MainFile RelativePath="true">ClearSpecialInstructions.manx</MainFile>
+  <FileItems>
+    <File FileType="ManipulaFileType" RelativePath="true">ClearSpecialInstructions.manx</File>
+  </FileItems>
+  <Properties>
+    <AppSupport />
+    <IsAppMainUserInterface />
+    <ResourceDB />
+    <SurveyRoot />
+    <ConditionalDefines />
+    <DatamodelSearchPath />
+    <ExternalSearchPath />
+    <IncludeSearchPath />
+    <LibrarySearchPath />
+  </Properties>
+</Project>

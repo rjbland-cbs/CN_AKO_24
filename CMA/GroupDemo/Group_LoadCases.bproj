@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project Name="Group_LoadCases" Guid="71ee203c-9fb9-4e59-aabd-274e034426ac" ProjectType="ManipulaProject">
+  <MainFile />
+  <FileItems>
+    <File FileType="ManipulaFileType" RelativePath="true">Group_LoadCases.manx</File>
+  </FileItems>
+  <Properties>
+    <IncludeSearchPath />
+    <LibrarySearchPath />
+    <DatamodelSearchPath />
+    <ExternalSearchPath />
+    <ConditionalDefines />
+    <ResourceDB />
+    <SurveyRoot />
+    <AppSupport />
+    <IsAppMainUserInterface />
+  </Properties>
+</Project>

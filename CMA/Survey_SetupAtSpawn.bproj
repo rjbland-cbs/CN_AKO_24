@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project Name="Survey_SetupAtSpawn" Guid="33c9db6e-2985-49cb-816f-a3b5d32bfbd1" ProjectType="ManipulaProject">
+  <MainFile RelativePath="true">Survey_SetupAtSpawn.manx</MainFile>
+  <FileItems>
+    <File FileType="ManipulaFileType" RelativePath="true">Survey_SetupAtSpawn.manx</File>
+  </FileItems>
+  <Properties>
+    <AppSupport />
+    <IsAppMainUserInterface />
+    <ResourceDB />
+    <SurveyRoot />
+    <ConditionalDefines />
+    <DatamodelSearchPath />
+    <ExternalSearchPath />
+    <IncludeSearchPath />
+    <LibrarySearchPath />
+  </Properties>
+</Project>

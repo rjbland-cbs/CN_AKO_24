@@ -1,0 +1,20 @@
+﻿DATAMODEL Logging
+//CMA - Case Management Application for use by interviewers
+//
+//version:  2.5. For Blaise 5.11
+//date:     August-2022
+//author:   Lon Hofman, Team Blaise, Statistics Netherlands
+
+
+LANGUAGES = EN "English"
+
+PRIMARY UserID, LogWhen
+
+FIELDS
+
+  UserID:  STRING[20]
+  LogWhen: STRING[24]
+  Logging: BLOBTYPE MAXSIZE = 10MB
+  Extra:   BLOBTYPE MAXSIZE = 10MB
+
+ENDMODEL

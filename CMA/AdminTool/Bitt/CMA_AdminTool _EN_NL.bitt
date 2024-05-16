@@ -1,0 +1,1260 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TranslationsFile>
+  <Languages>
+    <Language Name="EN">English</Language>
+    <Language Name="NL">Nederlands</Language>
+  </Languages>
+  <Roles>
+    <Role Name="TOOLTIP" />
+    <Role Name="DISABLED" />
+  </Roles>
+  <Modes />
+  <Items>
+    <Translation Name="sUserID" Parent="mUser" Type="Field">
+      <Texts Lang="EN">User ID</Texts>
+      <Texts Lang="NL">Gebruiker ID</Texts>
+    </Translation>
+    <Translation Name="sUserFullName" Parent="mUser" Type="Field">
+      <Texts Lang="EN">User name</Texts>
+      <Texts Lang="NL">Gebruikersnaam</Texts>
+    </Translation>
+    <Translation Name="InstrumentID" Parent="mConsistency" Type="Field">
+      <Texts Lang="EN">Instrument GUID</Texts>
+      <Texts Lang="NL">Instrument GUID</Texts>
+    </Translation>
+    <Translation Name="ID" Parent="mConsistency" Type="Field">
+      <Texts Lang="EN">ID</Texts>
+      <Texts Lang="NL">ID</Texts>
+    </Translation>
+    <Translation Name="SurveyName" Parent="mConsistency" Type="Field">
+      <Texts Lang="EN">Survey name</Texts>
+      <Texts Lang="NL">Onderzoek</Texts>
+    </Translation>
+    <Translation Name="LauncherSurveyDataFoundStr" Parent="mConsistency" Type="Field">
+      <Texts Lang="EN">Survey data in case</Texts>
+      <Texts Lang="NL">Onderzoeksdata in opdracht</Texts>
+    </Translation>
+    <Translation Name="LauncherAttemptsNo" Parent="mConsistency" Type="Field">
+      <Texts Lang="EN">#Attempts in case</Texts>
+      <Texts Lang="NL">#Contactpogingen in opdracht</Texts>
+    </Translation>
+    <Translation Name="SurveyDataFoundStr" Parent="mConsistency" Type="Field">
+      <Texts Lang="EN">Survey data in database</Texts>
+      <Texts Lang="NL">Onderzoeksdata in database</Texts>
+    </Translation>
+    <Translation Name="AttemptsDataNo" Parent="mConsistency" Type="Field">
+      <Texts Lang="EN">#Attempts in database</Texts>
+      <Texts Lang="NL">#Contactpogingen in database</Texts>
+    </Translation>
+    <Translation Name="LastAttempt" Parent="mConsistency" Type="Field">
+      <Texts Lang="EN">Last attempt in case</Texts>
+      <Texts Lang="NL">Laatste contactpoging in opdracht</Texts>
+    </Translation>
+    <Translation Name="LastAttemptInData" Parent="mConsistency" Type="Field">
+      <Texts Lang="EN">Last attempt in database</Texts>
+      <Texts Lang="NL">Laatste contactpoging in database</Texts>
+    </Translation>
+    <Translation Name="CMA_ForWhom" Parent="mProgress" Type="Field">
+      <Texts Lang="EN">For whom</Texts>
+      <Texts Lang="NL">Voor wie</Texts>
+    </Translation>
+    <Translation Name="CMA_InPossession" Parent="mProgress" Type="Field">
+      <Texts Lang="EN">In possession</Texts>
+      <Texts Lang="NL">In bezit</Texts>
+    </Translation>
+    <Translation Name="CMA_Location" Parent="mProgress" Type="Field">
+      <Texts Lang="EN">Location</Texts>
+      <Texts Lang="NL">Locatie</Texts>
+    </Translation>
+    <Translation Name="CMA_Status" Parent="mProgress" Type="Field">
+      <Texts Lang="EN">Status</Texts>
+      <Texts Lang="NL">Status</Texts>
+    </Translation>
+    <Translation Name="CMA_CaseClosed" Parent="mProgress" Type="Field">
+      <Texts Lang="EN">Closed</Texts>
+      <Texts Lang="NL">Gesloten</Texts>
+    </Translation>
+    <Translation Name="LastModification" Parent="mProgress" Type="Field">
+      <Texts Lang="EN">Last modification</Texts>
+      <Texts Lang="NL">Laatste wijziging</Texts>
+    </Translation>
+    <Translation Name="Counter" Parent="mProgress" Type="Field">
+      <Texts Lang="EN">Total</Texts>
+      <Texts Lang="NL">Totaal</Texts>
+    </Translation>
+    <Translation Name="sInstrumentID" Parent="mManageInfo" Type="Field">
+      <Texts Lang="EN">Instrument GUID</Texts>
+      <Texts Lang="NL">Instrument GUID</Texts>
+    </Translation>
+    <Translation Name="sSurveyName" Parent="mManageInfo" Type="Field">
+      <Texts Lang="EN">Survey name</Texts>
+      <Texts Lang="NL">Onderzoeksnaam</Texts>
+    </Translation>
+	<Translation Name="sUserId" Parent="mManagementInfo" Type="Field">
+      <Texts Lang="EN">User ID</Texts>
+      <Texts Lang="NL">Gebruikers ID</Texts>
+    </Translation>
+	<Translation Name="sInstrumentID" Parent="mManagementInfo" Type="Field">
+      <Texts Lang="EN">Instrument GUID</Texts>
+      <Texts Lang="NL">Instrument GUID</Texts>
+    </Translation>
+	<Translation Name="sSurveyName" Parent="mManagementInfo" Type="Field">
+      <Texts Lang="EN">Survey name</Texts>
+      <Texts Lang="NL">Onderzoeksnaam</Texts>
+    </Translation>
+    <Translation Name="tSurveyName" Parent="locCases" Type="Field">
+      <Texts Lang="EN">Survey</Texts>
+      <Texts Lang="NL">Onderzoek</Texts>
+    </Translation>
+    <Translation Name="tIdentifier" Parent="locCases" Type="Field">
+      <Texts Lang="EN">Key</Texts>
+      <Texts Lang="NL">Sleutel</Texts>
+    </Translation>
+    <Translation Name="tLastResult" Parent="locCases" Type="Field">
+      <Texts Lang="EN">Result</Texts>
+      <Texts Lang="NL">Resultaat</Texts>
+    </Translation>
+    <Translation Name="tAppointment" Parent="locCases" Type="Field">
+      <Texts Lang="EN">Appointment</Texts>
+      <Texts Lang="NL">Afspraak</Texts>
+    </Translation>
+    <Translation Name="tSupervisor" Parent="locCases" Type="Field">
+      <Texts Lang="EN">Supervisor</Texts>
+      <Texts Lang="NL">Supervisor</Texts>
+    </Translation>
+    <Translation Name="tStartDate" Parent="locCases" Type="Field">
+      <Texts Lang="EN">Start date</Texts>
+      <Texts Lang="NL">Startdatum</Texts>
+    </Translation>
+    <Translation Name="tEndDate" Parent="locCases" Type="Field">
+      <Texts Lang="EN">End date</Texts>
+      <Texts Lang="NL">Einddatum</Texts>
+    </Translation>
+    <Translation Name="tForWhom" Parent="locCases" Type="Field">
+      <Texts Lang="EN">For whom</Texts>
+      <Texts Lang="NL">Voor wie</Texts>
+    </Translation>
+    <Translation Name="tInpossession" Parent="locCases" Type="Field">
+      <Texts Lang="EN">Current owner</Texts>
+      <Texts Lang="NL">Eigenaar</Texts>
+    </Translation>
+    <Translation Name="tLocation" Parent="locCases" Type="Field">
+      <Texts Lang="EN">Location</Texts>
+      <Texts Lang="NL">Locatie</Texts>
+    </Translation>
+    <Translation Name="tContactInfoShort" Parent="locCases" Type="Field">
+      <Texts Lang="EN">Contact info</Texts>
+      <Texts Lang="NL">Contact info</Texts>
+    </Translation>
+    <Translation Name="tLastAttempt" Parent="locCases" Type="Field">
+      <Texts Lang="EN">Last attempt</Texts>
+      <Texts Lang="NL">Laatste poging</Texts>
+    </Translation>
+    <Translation Name="tCaseNote" Parent="locCases" Type="Field">
+      <Texts Lang="EN">Case note</Texts>
+      <Texts Lang="NL">Notitie</Texts>
+    </Translation>
+    <Translation Name="tSpawnCount" Parent="locCases" Type="Field">
+      <Texts Lang="EN">#Created</Texts>
+      <Texts Lang="NL">#Gemaakt</Texts>
+    </Translation>
+    <Translation Name="tStatus" Parent="locCases" Type="Field">
+      <Texts Lang="EN">Status</Texts>
+      <Texts Lang="NL">Status</Texts>
+    </Translation>
+    <Translation Name="tCaseStatus" Parent="locCases" Type="Field">
+      <Texts Lang="EN">Interview status</Texts>
+      <Texts Lang="NL">Interview status</Texts>
+    </Translation>
+    <Translation Name="tGroupStatus" Parent="locCases" Type="Field">
+      <Texts Lang="EN">Group status</Texts>
+      <Texts Lang="NL">Groep status</Texts>
+    </Translation>
+    <Translation Name="tGroupID" Parent="locCases" Type="Field">
+      <Texts Lang="EN">Group ID</Texts>
+      <Texts Lang="NL">Groep ID</Texts>
+    </Translation>
+    <Translation Name="tAttemptsCount" Parent="locCases" Type="Field">
+      <Texts Lang="EN">#Attempts</Texts>
+      <Texts Lang="NL">#Pogingen</Texts>
+    </Translation>
+    <Translation Name="tGeoLocation" Parent="locCases" Type="Field">
+      <Texts Lang="EN">Geo position</Texts>
+      <Texts Lang="NL">Geo locatie</Texts>
+    </Translation>
+    <Translation Name="tCustomCol1" Parent="locCases" Type="Field">
+      <Texts Lang="EN">CustumCol1</Texts>
+      <Texts Lang="NL">CustumCol1</Texts>
+    </Translation>
+    <Translation Name="tCustomCol2" Parent="locCases" Type="Field">
+      <Texts Lang="EN">CustumCol2</Texts>
+      <Texts Lang="NL">CustumCol2</Texts>
+    </Translation>
+    <Translation Name="tCustomCol3" Parent="locCases" Type="Field">
+      <Texts Lang="EN">CustumCol3</Texts>
+      <Texts Lang="NL">CustumCol3</Texts>
+    </Translation>
+    <Translation Name="tCustomCol4" Parent="locCases" Type="Field">
+      <Texts Lang="EN">CustumCol4</Texts>
+      <Texts Lang="NL">CustumCol4</Texts>
+    </Translation>
+    <Translation Name="tCustomCol5" Parent="locCases" Type="Field">
+      <Texts Lang="EN">CustumCol5</Texts>
+      <Texts Lang="NL">CustumCol5</Texts>
+    </Translation>
+    <Translation Name="tCustomCol6" Parent="locCases" Type="Field">
+      <Texts Lang="EN">CustumCol6</Texts>
+      <Texts Lang="NL">CustumCol6</Texts>
+    </Translation>
+    <Translation Name="tCustomCol7" Parent="locCases" Type="Field">
+      <Texts Lang="EN">CustumCol7</Texts>
+      <Texts Lang="NL">CustumCol7</Texts>
+    </Translation>
+    <Translation Name="tCustomCol8" Parent="locCases" Type="Field">
+      <Texts Lang="EN">CustumCol8</Texts>
+      <Texts Lang="NL">CustumCol8</Texts>
+    </Translation>
+    <Translation Name="tCustomCol9" Parent="locCases" Type="Field">
+      <Texts Lang="EN">CustumCol9</Texts>
+      <Texts Lang="NL">CustumCol9</Texts>
+    </Translation>
+    <Translation Name="tCustomCol10" Parent="locCases" Type="Field">
+      <Texts Lang="EN">CustumCol10</Texts>
+      <Texts Lang="NL">CustumCol10</Texts>
+    </Translation>
+    <Translation Name="atID" Parent="locAttempts" Type="Field">
+      <Texts Lang="EN">Key</Texts>
+      <Texts Lang="NL">Sleutel</Texts>
+    </Translation>
+    <Translation Name="SeqNr" Parent="locAttempts" Type="Field">
+      <Texts Lang="EN">#</Texts>
+      <Texts Lang="NL">#</Texts>
+    </Translation>
+    <Translation Name="When" Parent="locAttempts" Type="Field">
+      <Texts Lang="EN">When</Texts>
+      <Texts Lang="NL">Wanneer</Texts>
+    </Translation>
+    <Translation Name="HappeningsStr" Parent="locAttempts" Type="Field">
+      <Texts Lang="EN">Result</Texts>
+      <Texts Lang="NL">Resultaat</Texts>
+    </Translation>
+    <Translation Name="strYes" Type="Constant">
+      <Texts Lang="EN">Yes</Texts>
+      <Texts Lang="NL">Ja</Texts>
+    </Translation>
+    <Translation Name="strNo" Type="Constant">
+      <Texts Lang="EN">No</Texts>
+      <Texts Lang="NL">Nee</Texts>
+    </Translation>
+    <Translation Name="strWrongUser" Type="Constant">
+      <Texts Lang="EN">This user has no supervisor or project manager access to manage interviewers/supervisors</Texts>
+      <Texts Lang="NL">Deze gebruiker heeft geen supervisor/management toegang om interviewers/supervisors te managen</Texts>
+    </Translation>
+    <Translation Name="strNoSurveysToManage" Type="Constant">
+      <Texts Lang="EN">There are no surveys to manage</Texts>
+      <Texts Lang="NL">Er zijn geen onderzoeken om te managen</Texts>
+    </Translation>
+    <Translation Name="strConnectionFailed" Type="Constant">
+      <Texts Lang="EN">Connection failed!</Texts>
+      <Texts Lang="NL">Connectie mislukt!</Texts>
+    </Translation>
+    <Translation Name="strSupervisorTool" Type="Constant">
+      <Texts Lang="EN">CMA - Supervisor tool</Texts>
+      <Texts Lang="NL">CMA - Supervisor tool</Texts>
+    </Translation>
+    <Translation Name="strAdministratorTool" Type="Constant">
+      <Texts Lang="EN">CMA - Administrator tool</Texts>
+      <Texts Lang="NL">CMA - Administrator tool</Texts>
+    </Translation>
+    <Translation Name="strManagerTool" Type="Constant">
+      <Texts Lang="EN">CMA - Manager tool</Texts>
+      <Texts Lang="NL">CMA - Manager tool</Texts>
+    </Translation>
+    <Translation Name="msgLogUploadOKay" Type="Constant">
+      <Texts Lang="EN">The log has been uploaded</Texts>
+      <Texts Lang="NL">De logging is ge-upload</Texts>
+    </Translation>
+    <Translation Name="msgLogUploadFailed" Type="Constant">
+      <Texts Lang="EN">The upload of the log failed</Texts>
+      <Texts Lang="NL">De upload van de logging is mislukt</Texts>
+    </Translation>
+    <Translation Name="msgNotConnected" Type="Constant">
+      <Texts Lang="EN">Synchronize not possible because you are not connected to the Internet.</Texts>
+      <Texts Lang="NL">Synchronizeren niet mogelijk want er is geen Internet toegang.</Texts>
+    </Translation>
+    <Translation Name="cNotStarted" Type="Constant">
+      <Texts Lang="EN">Not started</Texts>
+      <Texts Lang="NL">Niet gestart</Texts>
+    </Translation>
+    <Translation Name="cAdded" Type="Constant">
+      <Texts Lang="EN">Added</Texts>
+      <Texts Lang="NL">Toegevoegd</Texts>
+    </Translation>
+    <Translation Name="cCompleted" Type="Constant">
+      <Texts Lang="EN">Completed</Texts>
+      <Texts Lang="NL">Interview</Texts>
+    </Translation>
+    <Translation Name="cInterrupted" Type="Constant">
+      <Texts Lang="EN">Interrupted</Texts>
+      <Texts Lang="NL">Afgebroken</Texts>
+    </Translation>
+    <Translation Name="cStarted" Type="Constant">
+      <Texts Lang="EN">Started</Texts>
+      <Texts Lang="NL">Gestart</Texts>
+    </Translation>
+    <Translation Name="cFinalized" Type="Constant">
+      <Texts Lang="EN">Finalized</Texts>
+      <Texts Lang="NL">Afgehandeld</Texts>
+    </Translation>
+    <Translation Name="cReopened" Type="Constant">
+      <Texts Lang="EN">Reopened</Texts>
+      <Texts Lang="NL">Heropend</Texts>
+    </Translation>
+    <Translation Name="cDone" Type="Constant">
+      <Texts Lang="EN">Done</Texts>
+      <Texts Lang="NL">Klaar</Texts>
+    </Translation>
+    <Translation Name="cClosed" Type="Constant">
+      <Texts Lang="EN">Closed</Texts>
+      <Texts Lang="NL">Gesloten</Texts>
+    </Translation>
+    <Translation Name="cAccepted" Type="Constant">
+      <Texts Lang="EN">Accepted</Texts>
+      <Texts Lang="NL">Geaccepteerd</Texts>
+    </Translation>
+    <Translation Name="cNotAssigned" Type="Constant">
+      <Texts Lang="EN">Not assigned</Texts>
+      <Texts Lang="NL">Niet toegekend</Texts>
+    </Translation>
+    <Translation Name="cNotDownloaded" Type="Constant">
+      <Texts Lang="EN">Not downloaded</Texts>
+      <Texts Lang="NL">Niet opgehaald</Texts>
+    </Translation>
+    <Translation Name="cNoUser" Type="Constant">
+      <Texts Lang="EN">&lt;none&gt;</Texts>
+      <Texts Lang="NL">&lt;geen&gt;</Texts>
+    </Translation>
+    <Translation Name="cAllItems" Type="Constant">
+      <Texts Lang="EN">&lt;All&gt;</Texts>
+      <Texts Lang="NL">&lt;Alle&gt;</Texts>
+    </Translation>
+    <Translation Name="cCheckingConsistency" Type="Constant">
+      <Texts Lang="EN">One moment please. Checking consistency...</Texts>
+      <Texts Lang="NL">Even geduld aub. Controleren consistentie...</Texts>
+    </Translation>
+    <Translation Name="cRepairingInconsistentCases" Type="Constant">
+      <Texts Lang="EN">One moment please. Repairing inconsistent cases</Texts>
+      <Texts Lang="NL">Even geduld aub. Repareren inconsistenties...</Texts>
+    </Translation>
+    <Translation Name="cCalculatingProgress" Type="Constant">
+      <Texts Lang="EN">One moment please. Calculating progress overview...</Texts>
+      <Texts Lang="NL">Even geduld aub. Bepalen voortgang...</Texts>
+    </Translation>
+    <Translation Name="cNoInconsistenciesFound" Type="Constant">
+      <Texts Lang="EN">Consistency check finished. No inconsistencies found.</Texts>
+      <Texts Lang="NL">Consistentie controle afgerond. Geen inconsistenties gevonden.</Texts>
+    </Translation>
+    <Translation Name="cProgressReportNoData" Type="Constant">
+      <Texts Lang="EN">Progress report. No data found.</Texts>
+      <Texts Lang="NL">Voortgangsrapportage. Geen data gevonden.</Texts>
+    </Translation>
+    <Translation Name="cProgressReportSurvey" Type="Constant">
+      <Texts Lang="EN">Progress report: </Texts>
+      <Texts Lang="NL">Voortgangsrapportage onderzoek: </Texts>
+    </Translation>
+    <Translation Name="cConsistencyCheckSurvey" Type="Constant">
+      <Texts Lang="EN">Consistency check: </Texts>
+      <Texts Lang="NL">Consistentie controle: </Texts>
+    </Translation>
+    <Translation Name="cLoggingForUser" Type="Constant">
+      <Texts Lang="EN">Logging for user: </Texts>
+      <Texts Lang="NL">Logging voor gebruiker: </Texts>
+    </Translation>
+    <Translation Name="cNoLoggingFoundForUser" Type="Constant">
+      <Texts Lang="EN">No logging found for user: </Texts>
+      <Texts Lang="NL">Geen logging gevonden voor gebruiker: </Texts>
+    </Translation>
+    <Translation Name="cRetrievingLoggingForUser" Type="Constant">
+      <Texts Lang="EN">Retrieving logging for user: </Texts>
+      <Texts Lang="NL">Ophalen logging voor gebruiker: </Texts>
+    </Translation>
+    <Translation Name="msgInstallOfSurvey" Type="Constant">
+      <Texts Lang="EN">Install of survey</Texts>
+      <Texts Lang="NL">Installeren van onderzoek</Texts>
+    </Translation>
+    <Translation Name="msgUpdateOfSurvey" Type="Constant">
+      <Texts Lang="EN">Update of survey</Texts>
+      <Texts Lang="NL">Bijwerken van onderzoek</Texts>
+    </Translation>
+    <Translation Name="msgFailed" Type="Constant">
+      <Texts Lang="EN">failed. Error: </Texts>
+      <Texts Lang="NL">mislukt. Fout: </Texts>
+    </Translation>
+    <Translation Name="msgSucceeded" Type="Constant">
+      <Texts Lang="EN">Succeeded!</Texts>
+      <Texts Lang="NL">Geslaagd!</Texts>
+    </Translation>
+    <Translation Name="msgNotPresent" Type="Constant">
+      <Texts Lang="EN">needed but not available for download on server</Texts>
+      <Texts Lang="NL">nodig maar niet beschikbaar voor download van server</Texts>
+    </Translation>
+    <Translation Name="msgAttemptsForCase" Type="Constant">
+      <Texts Lang="EN">Attempts for case</Texts>
+      <Texts Lang="NL">Contactpogingen for case</Texts>
+    </Translation>
+    <Translation Name="strCasesForUser" Type="Constant">
+      <Texts Lang="EN">List of cases for</Texts>
+      <Texts Lang="NL">Lijst van opdrachten voor</Texts>
+    </Translation>
+    <Translation Name="strCasesForSupervisor" Type="Constant">
+      <Texts Lang="EN">List of cases of supervisor</Texts>
+      <Texts Lang="NL">Lijst van opdrachten van supervisor</Texts>
+    </Translation>
+    <Translation Name="strCasesForSurvey" Type="Constant">
+      <Texts Lang="EN">List of cases for survey</Texts>
+      <Texts Lang="NL">Lijst van opdrachten voor onderzoek</Texts>
+    </Translation>
+    <Translation Name="strSurvey" Type="Constant">
+      <Texts Lang="EN">Survey</Texts>
+      <Texts Lang="NL">Onderzoek</Texts>
+    </Translation>
+    <Translation Name="strListOfUnassignedCases" Type="Constant">
+      <Texts Lang="EN">List of unassigned cases</Texts>
+      <Texts Lang="NL">Lijst van niet toegewezen opdrachten</Texts>
+    </Translation>
+    <Translation Name="strConfirmAccepted" Type="Constant">
+      <Texts Lang="EN">Are you sure this case is accepted?</Texts>
+      <Texts Lang="NL">Weet u zeker dat deze opdracht akkoord is?</Texts>
+    </Translation>
+    <Translation Name="strConfirmAcceptedSel" Type="Constant">
+      <Texts Lang="EN">Are you sure all selected cases are accepted?</Texts>
+      <Texts Lang="NL">Weet u zeker dat alle geselecteerde opdrachten akkoord zijn?</Texts>
+    </Translation>
+    <Translation Name="strCasesAccepted" Type="Constant">
+      <Texts Lang="EN">Number of cases accepted:</Texts>
+      <Texts Lang="NL">Aantal akkoord bevonden opdrachten:</Texts>
+    </Translation>
+    <Translation Name="strAcceptedFailed" Type="Constant">
+      <Texts Lang="EN">Accept failed!</Texts>
+      <Texts Lang="NL">Akkoord zetten mislukt!</Texts>
+    </Translation>
+    <Translation Name="strConfirmReopen" Type="Constant">
+      <Texts Lang="EN">Are you sure this case needs to be reopened?</Texts>
+      <Texts Lang="NL">Weet u zeker dat deze opdracjt geopend moet worden?</Texts>
+    </Translation>
+    <Translation Name="strConfirmReopenSel" Type="Constant">
+      <Texts Lang="EN">Are you sure all selected cases must be reopened?</Texts>
+      <Texts Lang="NL">Weet u zeker dat alle geselecteerd opdrachten heropend moeten worden?</Texts>
+    </Translation>
+    <Translation Name="strCasesReopened" Type="Constant">
+      <Texts Lang="EN">Number of reopened cases:</Texts>
+      <Texts Lang="NL">Aantal heropende opdrachten:</Texts>
+    </Translation>
+    <Translation Name="strConfirmClose" Type="Constant">
+      <Texts Lang="EN">Are you sure this case needs to be closed?</Texts>
+      <Texts Lang="NL">Weet u zeker dat deze opdracht gesloten moet worden?</Texts>
+    </Translation>
+    <Translation Name="strConfirmCloseSel" Type="Constant">
+      <Texts Lang="EN">Are you sure all selected cases must be closed?</Texts>
+      <Texts Lang="NL">Weet u zeker dat alle geselecteerd opdrachten gesloten moeten worden?</Texts>
+    </Translation>
+    <Translation Name="strCasesClosed" Type="Constant">
+      <Texts Lang="EN">Number of closed cases:</Texts>
+      <Texts Lang="NL">Aantal gesloten opdrachten:</Texts>
+    </Translation>
+    <Translation Name="strConfirmRestoreUser" Type="Constant">
+      <Texts Lang="EN">Are you sure all cases of user $UserID need to be restored?</Texts>
+      <Texts Lang="NL">Weet u zeker dat alle opdrachten van gebruiker $UserID hersteld moeten worden?</Texts>
+    </Translation>
+    <Translation Name="strConfirmRestoreSel" Type="Constant">
+      <Texts Lang="EN">Are you sure all selected cases must be restored?</Texts>
+      <Texts Lang="NL">Weet u zeker dat alle geselecteerde opdrachten hersteld moeten worden?</Texts>
+    </Translation>
+    <Translation Name="strConfirmRestore" Type="Constant">
+      <Texts Lang="EN">Are you sure this case needs to be restored?</Texts>
+      <Texts Lang="NL">Weet u zeker dat deze opdracht hersteld moet worden?</Texts>
+    </Translation>
+    <Translation Name="strCasesRestored" Type="Constant">
+      <Texts Lang="EN">Number of restored cases:</Texts>
+      <Texts Lang="NL">Aantal herstelde opdrachten :</Texts>
+    </Translation>
+    <Translation Name="strConfirmTransfer" Type="Constant">
+      <Texts Lang="EN">Are you sure case $Identifier needs to be transferred to $UserID?</Texts>
+      <Texts Lang="NL">Weet u zeker dat opdracht "$Identifier" overgeheveld moet worden naar $UserID?</Texts>
+    </Translation>
+    <Translation Name="strConfirmTransferSel" Type="Constant">
+      <Texts Lang="EN">Are you sure all selected cases need to be transferred to user $UserID?</Texts>
+      <Texts Lang="NL">Weet u zeker dat all geselecteerd opdrachten overgeheveld moeten worden naar $UserID?</Texts>
+    </Translation>
+    <Translation Name="strConfirmAssign" Type="Constant">
+      <Texts Lang="EN">Are you sure case $Identifier needs to be assigned to $UserID?</Texts>
+      <Texts Lang="NL">Weet u zeker dat opdracht "$Identifier" toegewezen moet worden aan $UserID?</Texts>
+    </Translation>
+    <Translation Name="strConfirmAssignSel" Type="Constant">
+      <Texts Lang="EN">Are you sure all selected case need to be assigned to user $UserID?</Texts>
+      <Texts Lang="NL">Weet u zeker dat alle geslecteerde opdrachten toegewezen moeten worden aan $UserID?</Texts>
+    </Translation>
+    <Translation Name="strConfirmRelease" Type="Constant">
+      <Texts Lang="EN">Are you sure this case needs to be released for the interviewer?</Texts>
+      <Texts Lang="NL">Weet u zeker dat deze opdracht vrijgegeven moet worden?</Texts>
+    </Translation>
+    <Translation Name="strConfirmReleaseSel" Type="Constant">
+      <Texts Lang="EN">Are you sure all selected cases must be released?</Texts>
+      <Texts Lang="NL">Weet u zeker dat alle geselecteerd opdrachten vrijgegeven moeten worden?</Texts>
+    </Translation>
+    <Translation Name="strCasesReleased" Type="Constant">
+      <Texts Lang="EN">Number of released cases:</Texts>
+      <Texts Lang="NL">Aantal vrijgegeven opdrachten:</Texts>
+    </Translation>
+    <Translation Name="strCasesAssigned" Type="Constant">
+      <Texts Lang="EN">Number of assigned cases:</Texts>
+      <Texts Lang="NL">Aantal toegewezen opdrachten:</Texts>
+    </Translation>
+    <Translation Name="strCasesTransfered" Type="Constant">
+      <Texts Lang="EN">Number of transfered cases:</Texts>
+      <Texts Lang="NL">Aantal overgehevelde opdrachten:</Texts>
+    </Translation>
+    <Translation Name="strConfirmExcel" Type="Constant">
+      <Texts Lang="EN">Export done. Result can be found in file "$eName". Start Excel?</Texts>
+      <Texts Lang="NL">Export voltooid. Resultaat te vinden in bestand "$eName". Excel opstarten?</Texts>
+    </Translation>
+    <Translation Name="strUserNotAuthenticated" Type="Constant">
+      <Texts Lang="EN">User is not authenticated! Admintool will be halted.</Texts>
+      <Texts Lang="NL">Gebruiker kon niet gevalideerd worden! Admintool wordt gestopt.</Texts>
+    </Translation>
+    <Translation Name="strConnectionNotOkay" Type="Constant">
+      <Texts Lang="EN">Connection failed</Texts>
+      <Texts Lang="NL">Verbinden mislukt</Texts>
+    </Translation>
+    <Translation Name="cInstructionReleaseAll" Type="Constant">
+      <Texts Lang="EN">Release all cases from client device</Texts>
+      <Texts Lang="NL">Vrijgeven alle opdrachten op interviewer device</Texts>
+    </Translation>
+    <Translation Name="cCreatedInstructions" Type="Constant">
+      <Texts Lang="EN">Number of instructions created:</Texts>
+      <Texts Lang="NL">Aantal aangemaakte instructies:</Texts>
+    </Translation>
+    <Translation Name="cCreateInstruction" Type="Constant">
+      <Texts Lang="EN">Create Instruction</Texts>
+      <Texts Lang="NL">Aanmaken instructie</Texts>
+    </Translation>
+    <Translation Name="cReleaseCasesOneOrTwoStep" Type="Constant">
+      <Texts Lang="EN">Do you want to wait for a release acknowledgement from the current interviewer before the actual release of cases takes place?</Texts>
+      <Texts Lang="NL">Moet er gewacht worden op bevestiging door huidige eigenaar voor de echte release wordt uitgevoerd?</Texts>
+    </Translation>
+    <Translation Name="cNoCasesSelectedForAction" Type="Constant">
+      <Texts Lang="EN">Please select one or more cases first</Texts>
+      <Texts Lang="NL">U moet een of meerdere opdrachten selecteren</Texts>
+    </Translation>
+    <Translation Name="cTransferCasesOneOrTwoStep" Type="Constant">
+      <Texts Lang="EN">Do you want to wait for a transfer acknowledgement from the current interviewer before the actual transfer of cases takes place?</Texts>
+      <Texts Lang="NL">Moet gewacht worden op een transfer bevestiging door de huidige interviewer voor de feitelijke transfer uitgevoerd wordt?</Texts>
+    </Translation>
+    <Translation Name="cAssignSupervisorSkippedCases" Type="Constant">
+      <Texts Lang="EN">The following cases could not be assigned to the supervisor because these caes were already downloaded by an interviewer: </Texts>
+      <Texts Lang="NL">De volgende opdrachten konden niet worden toegekend omdat ze al in bezit zijn van een interviewer: </Texts>
+    </Translation>
+    <Translation Name="cConfirmAssignSupervisor" Type="Constant">
+      <Texts Lang="EN">Are you sure you want to assign the selected case(s) to supervisor:</Texts>
+      <Texts Lang="NL">Weet u zeker dat de volgende opdrachten zijn voor supervisor:</Texts>
+    </Translation>
+    <Translation Name="cCasesAssignedSuppervisor" Type="Constant">
+      <Texts Lang="EN">Number of assigned cases to supervisor:</Texts>
+      <Texts Lang="NL">Aantal toegekende opdrachten aan supervisor:</Texts>
+    </Translation>
+    <Translation Name="cNoSupervisorsFoundToAssignTo" Type="Constant">
+      <Texts Lang="EN">Could no find any supervisors to assign the case(s) to</Texts>
+      <Texts Lang="NL">Kon geen supervisor vinden om opdrachten aan toe te kennen</Texts>
+    </Translation>
+    <Translation Name="cInstructionReleaseSurvey" Type="Constant">
+      <Texts Lang="EN">Release all cases from selected survey from client device</Texts>
+      <Texts Lang="NL">Vrijgeven van alle opdrachten van geselecteer onderzoek op interviewer device</Texts>
+    </Translation>
+    <Translation Name="cInstructionReleaseOrphans" Type="Constant">
+      <Texts Lang="EN">Release orphan cases from client device</Texts>
+      <Texts Lang="NL">Vrijgeven wees opdrachten van interviewer device</Texts>
+    </Translation>
+    <Translation Name="strNoSurveySelectedForInstruction" Type="Constant">
+      <Texts Lang="EN">You have to select a survey in order to be able to create this kind of instruction.</Texts>
+      <Texts Lang="NL">U moet een onderzoek selecteren om een dergelijke instructie te kunnen aanmaken</Texts>
+    </Translation>
+    <Translation Name="strConfirmReleaseSurveyCases" Type="Constant">
+      <Texts Lang="EN">Are you sure you want to create an instruction to release all cases of survey/user: </Texts>
+      <Texts Lang="NL">Weet u zeker dat alles moet worden vrijgegeven voor onderzoek/gebruiker: </Texts>
+    </Translation>
+    <Translation Name="strConfirmReleaseAll" Type="Constant">
+      <Texts Lang="EN">Are you sure you want to create an instruction to release all cases of user: </Texts>
+      <Texts Lang="NL">Weet u zeker dat alle moet worden vrijgegeven voor gebruiker: </Texts>
+    </Translation>
+    <Translation Name="strConfirmOrphans" Type="Constant">
+      <Texts Lang="EN">Are you sure you want to create an instruction to release all orphan cases of user: </Texts>
+      <Texts Lang="NL">Weet u zeker dat alle orphan cases moeten worden vrijgeven voor gebruiker: </Texts>
+    </Translation>
+    <Translation Name="cNrOfCases" Type="Constant">
+      <Texts Lang="EN">#Cases:</Texts>
+      <Texts Lang="NL">#Opdrachten:</Texts>
+    </Translation>
+    <Translation Name="cFirstLastDownloaded" Type="Constant">
+      <Texts Lang="EN">First/Last download:</Texts>
+      <Texts Lang="NL">Eerste/Laatste download:</Texts>
+    </Translation>
+    <Translation Name="cFirstLastUploaded" Type="Constant">
+      <Texts Lang="EN">First/Last upload:</Texts>
+      <Texts Lang="NL">Eerste/Laatste upload:</Texts>
+    </Translation>
+    <Translation Name="cLastAttempt" Type="Constant">
+      <Texts Lang="EN">Last attempt:</Texts>
+      <Texts Lang="NL">Laatste poging:</Texts>
+    </Translation>
+    <Translation Name="cFirstLastInterviewTime" Type="Constant">
+      <Texts Lang="EN">First/Last interview time:</Texts>
+      <Texts Lang="NL">Eerste/Laatste interviewtijd:</Texts>
+    </Translation>
+    <Translation Name="cLastInterviewEndTime" Type="Constant">
+      <Texts Lang="EN">Last interview end time:</Texts>
+      <Texts Lang="NL">Laatste interview eindtijd:</Texts>
+    </Translation>
+    <Translation Name="cNumberOfAttempts" Type="Constant">
+      <Texts Lang="EN">#Attempts:</Texts>
+      <Texts Lang="NL">#Pogingen:</Texts>
+    </Translation>
+    <Translation Name="cTotalInterviewTimeUsed" Type="Constant">
+      <Texts Lang="EN">Interview time used:</Texts>
+      <Texts Lang="NL">Interviewtijd gebruikt:</Texts>
+    </Translation>
+    <Translation Name="strFieldNotInTopic" Type="Constant">
+      <Texts Lang="EN">Field "$field" does not exist in Topic</Texts>
+      <Texts Lang="NL">Veld $field bestaat niet in Topic</Texts>
+    </Translation>
+    <Translation Name="strFieldNotInLauncher" Type="Constant">
+      <Texts Lang="EN">Field "$field" does not exist in Launcher</Texts>
+      <Texts Lang="NL">Veld "$field" bestaat niet in Launcher</Texts>
+    </Translation>
+    <Translation Name="strFieldNotInContact" Type="Constant">
+      <Texts Lang="EN">Field "$field" does not exist in Contact definition</Texts>
+      <Texts Lang="NL">Veld "$field" bestaat niet in Contact definitie</Texts>
+    </Translation>
+    <Translation Name="strFieldError" Type="Constant">
+      <Texts Lang="EN">Field "$field" does not exist in import definition</Texts>
+      <Texts Lang="NL">Veld "$field" bestaat niet in import definitie</Texts>
+    </Translation>
+    <Translation Name="strIDMissing" Type="Constant">
+      <Texts Lang="EN">Field "ID" is missing in file</Texts>
+      <Texts Lang="NL">Veld "ID" is niet aanwezig in de import</Texts>
+    </Translation>
+    <Translation Name="strSureToImport" Type="Constant">
+      <Texts Lang="EN">Are you sure you want to import the file&lt;newline&gt;"$file"&lt;newline&gt;for survey&lt;newline&gt;"$survey"?</Texts>
+      <Texts Lang="NL">Weet u zeker dat u het bestand&lt;newline&gt;"$file"&lt;newline&gt;wilt importeren voor onderzoek&lt;newline&gt;"$survey"?</Texts>
+    </Translation>
+    <Translation Name="strSureToImportFile" Type="Constant">
+      <Texts Lang="EN">Are you sure you want to import the file&lt;newline&gt;"$file"?</Texts>
+      <Texts Lang="NL">Weet u zeker dat u het bestand&lt;newline&gt;"$file"&lt;newline&gt;wilt importeren?</Texts>
+    </Translation>
+    <Translation Name="strImportLauncherCases" Type="Constant">
+      <Texts Lang="EN">Import cases</Texts>
+      <Texts Lang="NL">Importeren opdrachten</Texts>
+    </Translation>
+    <Translation Name="strImportFileOpenError" Type="Constant">
+      <Texts Lang="EN">Import file not selected or could not be openened</Texts>
+      <Texts Lang="NL">U heeft geen file geselecteerd of de file kon niet geopend worden</Texts>
+    </Translation>
+    <Translation Name="strImportUserInfo" Type="Constant">
+      <Texts Lang="EN">Import user info</Texts>
+      <Texts Lang="NL">Importeren gebruikers info</Texts>
+    </Translation>
+    <Translation Name="strImportManageInfo" Type="Constant">
+      <Texts Lang="EN">Import manage info</Texts>
+      <Texts Lang="NL">Importeren manage info</Texts>
+    </Translation>
+    <Translation Name="strNeedsRefresh" Type="Constant">
+      <Texts Lang="EN">Request could not be executed because cases were changed in database. Please press the Refresh button and try again</Texts>
+      <Texts Lang="NL">Verzoek kon niet worden uitgevoerd. Klik op de Ververs knop en probeer het nog eens</Texts>
+    </Translation>
+    <Translation Name="strRequestNotAllowed" Type="Constant">
+      <Texts Lang="EN">None of the cases could be processed. Request not allowed:</Texts>
+      <Texts Lang="NL">Geen van de cases kon verwerkt worden omdat het verzoek momenteel niet toegestaan is</Texts>
+    </Translation>
+    <Translation Name="strEndRecovery" Type="Constant">
+      <Texts Lang="EN">End recovery. Recovered $1 survey data records and $2 attempts data records</Texts>
+      <Texts Lang="NL">Einde herstel. Hersteld $1 onderzoeks datarecords en $2 contactpoging datarecords</Texts>
+    </Translation>
+    <Translation Name="strReadOnlyNotSupported" Type="Constant">
+      <Texts Lang="EN">Read-only access not supported by current survey questionnaire...</Texts>
+      <Texts Lang="NL">Alleen-lezen toegang niet ondersteund door huidige vragenlijst...</Texts>
+    </Translation>
+    <Translation Name="strExtractFailed" Type="Constant">
+      <Texts Lang="EN">Extract of survey data failed.</Texts>
+      <Texts Lang="NL">Uitpakken onderzoeks data mislukt.</Texts>
+    </Translation>
+    <Translation Name="strErrorInKey" Type="Constant">
+      <Texts Lang="EN">Error in key: </Texts>
+      <Texts Lang="NL">Fout in sleutel: </Texts>
+    </Translation>
+    <Translation Name="strErrorInGUID" Type="Constant">
+      <Texts Lang="EN">Wrong GUID used in import</Texts>
+      <Texts Lang="NL">Foute GUID gebruikt in import</Texts>
+    </Translation>
+    <Translation Name="strNrImported" Type="Constant">
+      <Texts Lang="EN">Import finished!&lt;newline&gt;Number of cases imported:</Texts>
+      <Texts Lang="NL">Import afgerond!&lt;newline&gt;Aantal geimporteerde opdrachten:</Texts>
+    </Translation>
+    <Translation Name="strProcessing" Type="Constant">
+      <Texts Lang="EN">Processing...</Texts>
+      <Texts Lang="NL">Bezig...</Texts>
+    </Translation>
+    <Translation Name="ShowSurveyData" Parent="btnGroupCases" Type="Category">
+      <Texts Lang="EN">Show interview</Texts>
+      <Texts Lang="NL">Toon interview</Texts>
+    </Translation>
+    <Translation Name="ShowAttempts" Parent="btnGroupCases" Type="Category">
+      <Texts Lang="EN">Show attempts</Texts>
+      <Texts Lang="NL">Toon pogingen</Texts>
+    </Translation>
+    <Translation Name="Cancel" Parent="btnGroupCases" Type="Category">
+      <Texts Lang="EN">Back</Texts>
+      <Texts Lang="NL">Terug</Texts>
+    </Translation>
+    <Translation Name="RepairData" Parent="btnConsistencyCheck" Type="Category">
+      <Texts Lang="EN">Repair data</Texts>
+      <Texts Lang="NL">Repareer data</Texts>
+    </Translation>
+    <Translation Name="Cancel" Parent="btnConsistencyCheck" Type="Category">
+      <Texts Lang="EN">Back</Texts>
+      <Texts Lang="NL">Terug</Texts>
+    </Translation>
+    <Translation Name="ShowCases" Parent="btnProgressOverview" Type="Category">
+      <Texts Lang="EN">Show cases</Texts>
+      <Texts Lang="NL">Toon opdrachten</Texts>
+    </Translation>
+    <Translation Name="Cancel" Parent="btnProgressOverview" Type="Category">
+      <Texts Lang="EN">Back</Texts>
+      <Texts Lang="NL">Terug</Texts>
+    </Translation>
+    <Translation Name="AssignCase" Parent="btnLauncherCases" Type="Category">
+      <Texts Lang="EN">Assign</Texts>
+      <Texts Lang="NL">Toewijzen</Texts>
+      <Texts Lang="EN" Role="TOOLTIP">Assign case to an interviewer</Texts>
+      <Texts Lang="NL" Role="TOOLTIP">Wijs opdracht toe aan een interviewer</Texts>
+    </Translation>
+    <Translation Name="AssignSupervisor" Parent="btnLauncherCases" Type="Category">
+      <Texts Lang="EN">Assign supervisor</Texts>
+      <Texts Lang="NL">Toewijzen supervisor</Texts>
+      <Texts Lang="EN" Role="TOOLTIP">Assign case to a supervisor</Texts>
+      <Texts Lang="NL" Role="TOOLTIP">Toewijzen opdracht aan een supervisor</Texts>
+    </Translation>
+    <Translation Name="ShowGroup" Parent="btnLauncherCases" Type="Category">
+      <Texts Lang="EN">Show group</Texts>
+      <Texts Lang="NL">Toon groep</Texts>
+    </Translation>
+    <Translation Name="ShowSurveyData" Parent="btnLauncherCases" Type="Category">
+      <Texts Lang="EN">Show interview</Texts>
+      <Texts Lang="NL">Toon interview</Texts>
+    </Translation>
+    <Translation Name="ShowAttempts" Parent="btnLauncherCases" Type="Category">
+      <Texts Lang="EN">Show attempts</Texts>
+      <Texts Lang="NL">Toon pogingen</Texts>
+    </Translation>
+    <Translation Name="ExportData" Parent="btnLauncherCases" Type="Category">
+      <Texts Lang="EN">Export survey data</Texts>
+      <Texts Lang="NL">Exporteer gegevens</Texts>
+    </Translation>
+    <Translation Name="Refresh" Parent="btnLauncherCases" Type="Category">
+      <Texts Lang="EN">Refresh</Texts>
+      <Texts Lang="NL">Ververs</Texts>
+    </Translation>
+    <Translation Name="Cancel" Parent="btnLauncherCases" Type="Category">
+      <Texts Lang="EN">Back</Texts>
+      <Texts Lang="NL">Terug</Texts>
+    </Translation>
+    <Translation Name="SetAccepted" Parent="btnLauncherActions" Type="Category">
+      <Texts Lang="EN">Accept</Texts>
+      <Texts Lang="NL">Accepteer</Texts>
+      <Texts Lang="EN" Role="TOOLTIP">Accept the result of the case</Texts>
+      <Texts Lang="NL" Role="TOOLTIP">Accepteer het resultaat van de opdracht</Texts>
+    </Translation>
+    <Translation Name="SetReopen" Parent="btnLauncherActions" Type="Category">
+      <Texts Lang="EN">Reopen</Texts>
+      <Texts Lang="NL">Heropen</Texts>
+      <Texts Lang="EN" Role="TOOLTIP">Reopen the case for the interviewer</Texts>
+      <Texts Lang="NL" Role="TOOLTIP">Heropen de opdracht voor de interviewer</Texts>
+    </Translation>
+    <Translation Name="CloseCase" Parent="btnLauncherActions" Type="Category">
+      <Texts Lang="EN">Close</Texts>
+      <Texts Lang="NL">Sluit</Texts>
+      <Texts Lang="EN" Role="TOOLTIP">Close the case on the device</Texts>
+      <Texts Lang="NL" Role="TOOLTIP">Sluit de opdracht op het device</Texts>
+    </Translation>
+    <Translation Name="TransferCase" Parent="btnLauncherActions" Type="Category">
+      <Texts Lang="EN">Transfer</Texts>
+      <Texts Lang="NL">Ken toe</Texts>
+      <Texts Lang="EN" Role="TOOLTIP">Transfer the case to another interviewer / retrieve</Texts>
+      <Texts Lang="NL" Role="TOOLTIP">Ken de opdracht aan andere interviewer toe / trek terug</Texts>
+    </Translation>
+    <Translation Name="RestoreCase" Parent="btnLauncherActions" Type="Category">
+      <Texts Lang="EN">Restore</Texts>
+      <Texts Lang="NL">Herstel</Texts>
+      <Texts Lang="EN" Role="TOOLTIP">Make case available again on interview device</Texts>
+      <Texts Lang="NL" Role="TOOLTIP">Maak opdracht weer beschikbaar op interview device</Texts>
+    </Translation>
+    <Translation Name="ReleaseCase" Parent="btnLauncherActions" Type="Category">
+      <Texts Lang="EN">Release</Texts>
+      <Texts Lang="NL">Geef vrij</Texts>
+      <Texts Lang="EN" Role="TOOLTIP">Release case from interview device</Texts>
+      <Texts Lang="NL" Role="TOOLTIP">Verwijder opdracht van interview device</Texts>
+    </Translation>
+    <Translation Name="aShowing" Type="Field">
+      <Texts Lang="EN">Cases to show: </Texts>
+      <Texts Lang="NL">Te tonen opdrachten: </Texts>
+    </Translation>
+    <Translation Name="shCompleted" Parent="aShowing" Type="Category">
+      <Texts Lang="EN">Completed</Texts>
+      <Texts Lang="NL">Interview</Texts>
+    </Translation>
+    <Translation Name="shFinalized" Parent="aShowing" Type="Category">
+      <Texts Lang="EN">Finalized</Texts>
+      <Texts Lang="NL">Afgehandeld</Texts>
+    </Translation>
+    <Translation Name="shCompletedFinalized" Parent="aShowing" Type="Category">
+      <Texts Lang="EN">Completed / Finalized</Texts>
+      <Texts Lang="NL">Interview / Afgehandeld</Texts>
+    </Translation>
+    <Translation Name="shReopened" Parent="aShowing" Type="Category">
+      <Texts Lang="EN">Reopened</Texts>
+      <Texts Lang="NL">Heropend</Texts>
+    </Translation>
+    <Translation Name="shAccepted" Parent="aShowing" Type="Category">
+      <Texts Lang="EN">Accepted</Texts>
+      <Texts Lang="NL">Goedgekeurd</Texts>
+    </Translation>
+    <Translation Name="shStarted" Parent="aShowing" Type="Category">
+      <Texts Lang="EN">Started / Interrupted</Texts>
+      <Texts Lang="NL">Gestart / Afgebroken</Texts>
+    </Translation>
+    <Translation Name="shClosed" Parent="aShowing" Type="Category">
+      <Texts Lang="EN">Closed</Texts>
+      <Texts Lang="NL">Gesloten</Texts>
+    </Translation>
+    <Translation Name="shAll" Parent="aShowing" Type="Category">
+      <Texts Lang="EN">All</Texts>
+      <Texts Lang="NL">Alle</Texts>
+    </Translation>
+    <Translation Name="Select" Parent="btnSelect" Type="Category">
+      <Texts Lang="EN" Role="TOOLTIP">Select case</Texts>
+      <Texts Lang="NL" Role="TOOLTIP">Selecteer opdracht</Texts>
+    </Translation>
+    <Translation Name="SelectAll" Parent="btnSelect" Type="Category">
+      <Texts Lang="EN" Role="TOOLTIP">Select all cases</Texts>
+      <Texts Lang="NL" Role="TOOLTIP">Selecteer alle opdrachten</Texts>
+    </Translation>
+    <Translation Name="UnSelect" Parent="btnSelect" Type="Category">
+      <Texts Lang="EN" Role="TOOLTIP">Unselect case</Texts>
+      <Texts Lang="NL" Role="TOOLTIP">Deselecteer opdracht</Texts>
+    </Translation>
+    <Translation Name="UnSelectAll" Parent="btnSelect" Type="Category">
+      <Texts Lang="EN" Role="TOOLTIP">Unselect all cases</Texts>
+      <Texts Lang="NL" Role="TOOLTIP">Deselecteer alle opdrachten</Texts>
+    </Translation>
+    <Translation Name="CreateInstruction" Parent="btnCreateInstruction" Type="Category">
+      <Texts Lang="EN">Create instruction</Texts>
+      <Texts Lang="NL">Maak instructie</Texts>
+    </Translation>
+    <Translation Name="Cancel" Parent="btnCreateInstruction" Type="Category">
+      <Texts Lang="EN">Back</Texts>
+      <Texts Lang="NL">Terug</Texts>
+    </Translation>
+    <Translation Name="select" Parent="aUserBtnRow1" Type="Category">
+      <Texts Lang="EN">Show cases</Texts>
+      <Texts Lang="NL">Toon opdrachten</Texts>
+    </Translation>
+    <Translation Name="instruction" Parent="aUserBtnRow1" Type="Category">
+      <Texts Lang="EN">Instruction</Texts>
+      <Texts Lang="NL">Instructie</Texts>
+    </Translation>
+    <Translation Name="ExportData" Parent="aUserBtnRow1" Type="Category">
+      <Texts Lang="EN">Export cases</Texts>
+      <Texts Lang="NL">Exporteer opdrachten</Texts>
+    </Translation>
+    <Translation Name="ImportCases" Parent="aUserBtnRow1" Type="Category">
+      <Texts Lang="EN">Import cases</Texts>
+      <Texts Lang="NL">Importeer opdrachten</Texts>
+    </Translation>
+    <Translation Name="CheckConsistency" Parent="aUserBtnRow2" Type="Category">
+      <Texts Lang="EN">Check</Texts>
+      <Texts Lang="NL">Controleer</Texts>
+    </Translation>
+    <Translation Name="ImportUI" Parent="aUserBtnRow2" Type="Category">
+      <Texts Lang="EN">Import user info</Texts>
+      <Texts Lang="NL">Importeer gebruikers</Texts>
+    </Translation>
+    <Translation Name="ImportMI" Parent="aUserBtnRow2" Type="Category">
+      <Texts Lang="EN">Import manage info</Texts>
+      <Texts Lang="NL">Importeer manage info</Texts>
+    </Translation>
+    <Translation Name="Manage" Parent="aUserBtnRow2" Type="Category">
+      <Texts Lang="EN">Manage</Texts>
+      <Texts Lang="NL">Manage</Texts>
+    </Translation>
+    <Translation Name="Admin" Parent="aUserBtnRow2" Type="Category">
+      <Texts Lang="EN">Admin</Texts>
+      <Texts Lang="NL">Admin</Texts>
+    </Translation>
+    <Translation Name="Progress" Parent="aUserBtnRow2" Type="Category">
+      <Texts Lang="EN">Progress</Texts>
+      <Texts Lang="NL">Voortgang</Texts>
+    </Translation>
+    <Translation Name="Logging" Parent="aUserBtnRow2" Type="Category">
+      <Texts Lang="EN">Logging</Texts>
+      <Texts Lang="NL">Logging</Texts>
+    </Translation>
+    <Translation Name="RetoreCases" Parent="aUserBtnRow1" Type="Category">
+      <Texts Lang="EN">Restore user</Texts>
+      <Texts Lang="NL">Herstel gebruiker</Texts>
+    </Translation>
+    <Translation Name="Switch" Parent="aUserBtnRow2" Type="Category">
+      <Texts Lang="EN">Switch Role</Texts>
+      <Texts Lang="NL">Wijzig Rol</Texts>
+    </Translation>
+    <Translation Name="cancel" Parent="aUserBtnRow2" Type="Category">
+      <Texts Lang="EN">Exit</Texts>
+      <Texts Lang="NL">Stop</Texts>
+    </Translation>
+	<Translation Name="Add" Parent="btnCustomScripts" Type="Category">
+      <Texts Lang="EN">Add</Texts>
+	  <Texts Lang="EN" Role="TOOLTIP">Add a script</Texts>
+      <Texts Lang="NL">Toevoegen</Texts>
+	  <Texts Lang="NL" Role="TOOLTIP">Script toevoegen</Texts>
+    </Translation>
+	<Translation Name="Edit" Parent="btnCustomScripts" Type="Category">
+      <Texts Lang="EN">Edit</Texts>
+	  <Texts Lang="EN" Role="TOOLTIP">Edit the selected script</Texts>
+      <Texts Lang="NL">Editen</Texts>
+	  <Texts Lang="NL" Role="TOOLTIP">Pas het geselecteerde script aan</Texts>
+    </Translation>
+	<Translation Name="Delete" Parent="btnCustomScripts" Type="Category">
+      <Texts Lang="EN">Delete</Texts>
+	  <Texts Lang="EN" Role="TOOLTIP">Delete the selected script</Texts>
+      <Texts Lang="NL">Verwijderen</Texts>
+	  <Texts Lang="NL" Role="TOOLTIP">Verwijder het geselecteerde script</Texts>
+    </Translation>
+	<Translation Name="Start" Parent="btnCustomScripts" Type="Category">
+      <Texts Lang="EN">Start</Texts>
+	  <Texts Lang="EN" Role="TOOLTIP">Start the selected script</Texts>
+      <Texts Lang="NL">Starten</Texts>
+	  <Texts Lang="NL" Role="TOOLTIP">Start het geselecteerde script</Texts>
+    </Translation>
+	<Translation Name="Cancel" Parent="btnCustomScripts" Type="Category">
+      <Texts Lang="EN">Back</Texts>
+      <Texts Lang="NL">Terug</Texts>
+    </Translation>
+	<Translation Name="Cancel" Parent="btnCustomScriptsActions" Type="Category">
+      <Texts Lang="EN">Cancel</Texts>
+	  <Texts Lang="NL">Terug</Texts>
+    </Translation>
+	<Translation Name="OK" Parent="btnCustomScriptsActions" Type="Category">
+      <Texts Lang="EN">OK</Texts>
+	  <Texts Lang="NL">OK</Texts>
+    </Translation>
+	<Translation Name="AddUI" Parent="aBtnUserInfoMaintenanceRow" Type="Category">
+      <Texts Lang="EN">Add user info</Texts>
+      <Texts Lang="NL">User info toevoegen</Texts>
+    </Translation>
+	<Translation Name="EditUI" Parent="aBtnUserInfoMaintenanceRow" Type="Category">
+      <Texts Lang="EN">Edit user info</Texts>
+      <Texts Lang="NL">User info editen</Texts>
+    </Translation>
+	<Translation Name="DeleteUI" Parent="aBtnUserInfoMaintenanceRow" Type="Category">
+      <Texts Lang="EN">Delete user info</Texts>
+      <Texts Lang="NL">User info verwijderen</Texts>
+    </Translation>
+	<Translation Name="Cancel" Parent="aBtnUserInfoMaintenanceRow" Type="Category">
+      <Texts Lang="EN">Back</Texts>
+      <Texts Lang="NL">Terug</Texts>
+    </Translation>
+	<Translation Name="AddMI" Parent="aBtnManageInfoMaintenanceRow" Type="Category">
+      <Texts Lang="EN">Add manage info</Texts>
+      <Texts Lang="NL">Manage info toevoegen</Texts>
+    </Translation>
+	<Translation Name="EditMI" Parent="aBtnManageInfoMaintenanceRow" Type="Category">
+      <Texts Lang="EN">Edit manage info</Texts>
+      <Texts Lang="NL">Manage info editen</Texts>
+    </Translation>
+	<Translation Name="DeleteMI" Parent="aBtnManageInfoMaintenanceRow" Type="Category">
+      <Texts Lang="EN">Delete manage info</Texts>
+      <Texts Lang="NL">Manage info verwijderen</Texts>
+    </Translation>
+	<Translation Name="Cancel" Parent="aBtnManageInfoMaintenanceRow" Type="Category">
+      <Texts Lang="EN">Back</Texts>
+      <Texts Lang="NL">Terug</Texts>
+    </Translation>
+    <Translation Name="currentUserID" Type="Field">
+      <Texts Lang="EN">User ID</Texts>
+      <Texts Lang="NL">Gebruikers ID</Texts>
+    </Translation>
+    <Translation Name="auxDefaultNrOfDaysLoggingHistory" Type="Field">
+      <Texts Lang="EN">Nr of days logging history: </Texts>
+      <Texts Lang="NL">Aantal dagen logging geschiedenis: </Texts>
+    </Translation>
+    <Translation Name="auxWhatSurveyToShow" Type="Field">
+      <Texts Lang="EN">Surveys: </Texts>
+      <Texts Lang="NL">Onderzoeken: </Texts>
+    </Translation>
+    <Translation Name="auxFilter" Type="Field">
+      <Texts Lang="EN">Filter:</Texts>
+      <Texts Lang="NL">Filter:</Texts>
+    </Translation>
+    <Translation Name="auxSortOn" Type="Field">
+      <Texts Lang="EN">Select display order: </Texts>
+      <Texts Lang="NL">Selecteer volgorde: </Texts>
+    </Translation>
+    <Translation Name="Quit" Parent="btnAttempts" Type="Category">
+      <Texts Lang="EN">Back</Texts>
+      <Texts Lang="NL">Terug</Texts>
+    </Translation>
+    <Translation Name="select" Parent="aSelUserBtn" Type="Category">
+      <Texts Lang="EN">Select</Texts>
+      <Texts Lang="NL">Selecteer</Texts>
+    </Translation>
+    <Translation Name="cancel" Parent="aSelUserBtn" Type="Category">
+      <Texts Lang="EN">Cancel</Texts>
+      <Texts Lang="NL">Afbreken</Texts>
+    </Translation>
+    <Translation Name="dAttempts" Type="Dialog">
+      <Texts Lang="EN">Attempts</Texts>
+      <Texts Lang="NL">Contactpogingen</Texts>
+    </Translation>
+    <Translation Name="SelectTransferUser" Type="Dialog">
+      <Texts Lang="EN">Select user</Texts>
+      <Texts Lang="NL">Selecteer gebruiker</Texts>
+    </Translation>
+    <Translation Name="dShowTheLogging" Type="Dialog">
+      <Texts Lang="EN">CMA logging</Texts>
+      <Texts Lang="NL">CMA logging</Texts>
+    </Translation>
+    <Translation Name="auxDefaultNrOfDaysLoggingHistory" Parent="dShowTheLogging" Type="Field">
+      <Texts Lang="EN">Nr of days logging history: </Texts>
+      <Texts Lang="NL">Aantal dagen logging geschiedenis: </Texts>
+    </Translation>
+    <Translation Name="ShowGroupCases" Type="Dialog">
+      <Texts Lang="EN">Group cases</Texts>
+      <Texts Lang="NL">Groep inhoud</Texts>
+    </Translation>
+    <Translation Name="currentUserID" Parent="ShowGroupCases" Type="Field">
+      <Texts Lang="EN">User ID</Texts>
+      <Texts Lang="NL">Gebruiker</Texts>
+    </Translation>
+    <Translation Name="ShowConsistencyCheckResults" Type="Dialog">
+      <Texts Lang="EN">Consistency check results</Texts>
+      <Texts Lang="NL">Consistentie controle resultaat</Texts>
+    </Translation>
+    <Translation Name="ProgressOverview" Type="Dialog">
+      <Texts Lang="EN">Progress overview</Texts>
+      <Texts Lang="NL">Voortgangsoverzicht</Texts>
+    </Translation>
+    <Translation Name="currentUserID" Parent="ShowLauncherCases" Type="Field">
+      <Texts Lang="EN">User ID</Texts>
+      <Texts Lang="NL">Gebruikers ID</Texts>
+    </Translation>
+    <Translation Name="aShowing" Parent="ShowLauncherCases" Type="Field">
+      <Texts Lang="EN">Cases to show: </Texts>
+      <Texts Lang="NL">Te tonen opdrachten: </Texts>
+    </Translation>
+    <Translation Name="auxSortOn" Parent="ShowLauncherCases" Type="Field">
+      <Texts Lang="EN">Select display order: </Texts>
+      <Texts Lang="NL">Selecteer volgorde: </Texts>
+    </Translation>
+    <Translation Name="auxFilter" Parent="ShowLauncherCases" Type="Field">
+      <Texts Lang="EN">Filter:</Texts>
+      <Texts Lang="NL">Filter:</Texts>
+    </Translation>
+    <Translation Name="currentUserID" Parent="ShowUsers" Type="Field">
+      <Texts Lang="EN">User ID</Texts>
+      <Texts Lang="NL">Gebruikers ID</Texts>
+    </Translation>
+	<Translation Name="auxScriptName" Parent="dScriptActions" Type="Field">
+      <Texts Lang="EN">Script name</Texts>
+      <Texts Lang="NL">Script naam</Texts>
+    </Translation>
+	<Translation Name="auxScriptSetup" Parent="dScriptActions" Type="Field">
+      <Texts Lang="EN">Script setup</Texts>
+      <Texts Lang="NL">Script setup</Texts>
+    </Translation>
+	<Translation Name="auxScriptParameters" Parent="dScriptActions" Type="Field">
+      <Texts Lang="EN">Parameters</Texts>
+      <Texts Lang="NL">Parameters</Texts>
+    </Translation>
+    <Translation Name="auxWhatSurveyToShow" Parent="ShowUsers" Type="Field">
+      <Texts Lang="EN">Surveys: </Texts>
+      <Texts Lang="NL">Onderzoeken: </Texts>
+    </Translation>
+    <Translation Name="auxCMA_StartDate" Parent="dEditLauncherCases" Type="Field">
+      <Texts Lang="EN">Start date</Texts>
+      <Texts Lang="NL">Start datum</Texts>
+    </Translation>
+    <Translation Name="auxCMA_EndDate" Parent="dEditLauncherCases" Type="Field">
+      <Texts Lang="EN">End date</Texts>
+      <Texts Lang="NL">Eind datum</Texts>
+    </Translation>
+    <Translation Name="auxCMA_Supervisor" Parent="dEditLauncherCases" Type="Field">
+      <Texts Lang="EN">Supervisor</Texts>
+      <Texts Lang="NL">Supervisor </Texts>
+    </Translation>
+    <Translation Name="auxCMA_CmdLineForEdit" Parent="dEditLauncherCases" Type="Field">
+      <Texts Lang="EN">Command line for edit</Texts>
+      <Texts Lang="NL">Command line for edit</Texts>
+    </Translation>
+    <Translation Name="auxCMA_PreLoadForEdit" Parent="dEditLauncherCases" Type="Field">
+      <Texts Lang="EN">Preload for edit</Texts>
+      <Texts Lang="NL">Preload for edit</Texts>
+    </Translation>
+    <Translation Name="auxCMA_AttemptsRoute" Parent="dEditLauncherCases" Type="Field">
+      <Texts Lang="EN">Attempts route</Texts>
+      <Texts Lang="NL">Attempts route</Texts>
+    </Translation>
+    <Translation Name="auxCMA_DetailsTemplate" Parent="dEditLauncherCases" Type="Field">
+      <Texts Lang="EN">Details template</Texts>
+      <Texts Lang="NL">Details sjabloon</Texts>
+    </Translation>
+    <Translation Name="EditCases" Parent="btnEditCases" Type="Category">
+      <Texts Lang="EN">Update cases</Texts>
+      <Texts Lang="NL">Wijzigen opdrachten</Texts>
+    </Translation>
+    <Translation Name="Cancel" Parent="btnEditCases" Type="Category">
+      <Texts Lang="EN">Back</Texts>
+      <Texts Lang="NL">Terug</Texts>
+    </Translation>
+    <Translation Name="EditCase" Parent="btnLauncherActions" Type="Category">
+      <Texts Lang="EN">Change</Texts>
+      <Texts Lang="EN" Role="TOOLTIP">Change selected fields in the case</Texts>
+      <Texts Lang="NL">Wijzig</Texts>
+      <Texts Lang="NL" Role="TOOLTIP">Wijzig geselecteerd velden in de opdracht</Texts>
+    </Translation>
+    <Translation Name="strConfirmEditSel" Type="Constant">
+      <Texts Lang="EN">Are you sure you want to update the selected cases with the information you entered?</Texts>
+      <Texts Lang="NL">Weet u zeker dat u de geselecteerde opdrachten wilt wijzigen met de data die u opgegeven heeft?</Texts>
+    </Translation>
+    <Translation Name="cNumberOfCasesUpdated" Type="Constant">
+      <Texts Lang="EN">Number of cases updated:</Texts>
+      <Texts Lang="NL">Aantal gewijzigde opdrachten:</Texts>
+    </Translation>
+    <Translation Name="cNumberOfCasesSelectedForEdit" Type="Constant">
+      <Texts Lang="EN">Number of cases to edit:</Texts>
+      <Texts Lang="NL">Aantal te wijzigen opdrachten:</Texts>
+    </Translation>
+    <Translation Name="cNoFieldsSelectedForUpdate" Type="Constant">
+      <Texts Lang="EN">Please select one or more fields to update!</Texts>
+      <Texts Lang="NL">Selecteer a.u.b. 1 of meerdere velden om te wijzigen</Texts>
+    </Translation>
+    <Translation Name="cValidateUpdate" Type="Constant">
+      <Texts Lang="EN">Aborting update:</Texts>
+      <Texts Lang="NL">Wijzigen geannuleerd:</Texts>
+    </Translation>
+    <Translation Name="cDeleteScript" Type="Constant">
+      <Texts Lang="EN">Delete script</Texts>
+      <Texts Lang="NL">Verwijderen script</Texts>
+    </Translation>
+    <Translation Name="cEditScript" Type="Constant">
+      <Texts Lang="EN">Edit script</Texts>
+      <Texts Lang="NL">Wijzigen script</Texts>
+    </Translation>
+    <Translation Name="cStartScript" Type="Constant">
+      <Texts Lang="EN">Start script</Texts>
+      <Texts Lang="NL">Start script</Texts>
+    </Translation>
+    <Translation Name="cNewScript" Type="Constant">
+      <Texts Lang="EN">Add script</Texts>
+      <Texts Lang="NL">Toevoegen script</Texts>
+    </Translation>
+    <Translation Name="cScriptCannotSave" Type="Constant">
+      <Texts Lang="EN">Cannot save script: </Texts>
+      <Texts Lang="NL">Kan script niet opslaan: </Texts>
+    </Translation>
+    <Translation Name="cScriptExecutedSuccess" Type="Constant">
+      <Texts Lang="EN">Script successfully executed: </Texts>
+      <Texts Lang="NL">Script succesvol uitgevoerd: </Texts>
+    </Translation>
+    <Translation Name="cScriptExecutionError" Type="Constant">
+      <Texts Lang="EN">Manipula script failed to execute. Error code: </Texts>
+      <Texts Lang="NL">Er is een fout opgetreden tijdens het uitvoeren van het script. Fout code : </Texts>
+    </Translation>
+    <Translation Name="cScriptFileNotFound" Type="Constant">
+      <Texts Lang="EN">Cannot execute script. Script file not found: </Texts>
+      <Texts Lang="NL">Kan script niet uitvoeren. Script bestand niet gevonden: </Texts>
+    </Translation>
+    <Translation Name="cCannotSaveScript" Type="Constant">
+      <Texts Lang="EN">Cannot save script: </Texts>
+      <Texts Lang="NL">Kan script niet opslaan: </Texts>
+    </Translation>
+    <Translation Name="cScriptFileCannotbeEmpty" Type="Constant">
+      <Texts Lang="EN">Script file cannot be empty</Texts>
+      <Texts Lang="NL">Script bestand kan niet leeg zijn</Texts>
+    </Translation>
+    <Translation Name="cScriptIsnotAManipulaScript" Type="Constant">
+      <Texts Lang="EN">Selected script is not a Manipula script</Texts>
+      <Texts Lang="NL">Het geselecteerde script is geen Manipula script</Texts>
+    </Translation>
+    <Translation Name="cPleaseProvideAScriptName" Type="Constant">
+      <Texts Lang="EN">Please provide a script name</Texts>
+      <Texts Lang="NL">U dient een naam aan het script te geven</Texts>
+    </Translation>
+    <Translation Name="cScriptDoesntExists" Type="Constant">
+      <Texts Lang="EN">Selected script does not exists</Texts>
+      <Texts Lang="NL">Het geselecteerde script bestaat niet</Texts>
+    </Translation>
+	<Translation Name="cNoDatmodelsFound" Type="Constant">
+      <Texts Lang="EN">No datmodels found in setup path</Texts>
+      <Texts Lang="NL">Geen datamodellen gevonden in setup pad</Texts>
+    </Translation>
+    <Translation Name="cCustomScripts" Type="Constant">
+      <Texts Lang="EN">Custom Scripts</Texts>
+      <Texts Lang="NL">Scripts</Texts>
+    </Translation>
+    <Translation Name="CustomScripts" Parent="aUserBtnRow2" Type="Category">
+      <Texts Lang="EN">Custom Scripts</Texts>
+      <Texts Lang="NL">Scripts</Texts>
+    </Translation>
+	<Translation Name="MaintainUI" Parent="aUserBtnRow2" Type="Category">
+      <Texts Lang="EN">Maintain user info</Texts>
+      <Texts Lang="NL">User info beheren</Texts>
+    </Translation>
+	<Translation Name="MaintainMI" Parent="aUserBtnRow2" Type="Category">
+      <Texts Lang="EN">Maintain manage info</Texts>
+      <Texts Lang="NL">Manage info beheren</Texts>
+    </Translation>
+    <Translation Name="cDeleteUserInfo" Type="Constant">
+      <Texts Lang="EN">Delete user info</Texts>
+      <Texts Lang="NL">Verwijderen gebruikers info</Texts>
+    </Translation>
+    <Translation Name="cEditUserInfo" Type="Constant">
+      <Texts Lang="EN">Edit user info</Texts>
+      <Texts Lang="NL">Wijzigen gebruikers info</Texts>
+    </Translation>
+    <Translation Name="cAddUserInfo" Type="Constant">
+      <Texts Lang="EN">Add user info</Texts>
+      <Texts Lang="NL">Toevoegen gebruikers info</Texts>
+    </Translation>
+	<Translation Name="cMaintainUserInfo" Type="Constant">
+      <Texts Lang="EN">Maintain User Info</Texts>
+      <Texts Lang="NL">User Info Beheren</Texts>
+    </Translation>
+    <Translation Name="cDeleteManInfo" Type="Constant">
+      <Texts Lang="EN">Delete manage info</Texts>
+      <Texts Lang="NL">Verwijderen management info</Texts>
+    </Translation>
+    <Translation Name="cEditManInfo" Type="Constant">
+      <Texts Lang="EN">Edit manage info</Texts>
+      <Texts Lang="NL">Wijzigen management info</Texts>
+    </Translation>
+    <Translation Name="cAddManInfo" Type="Constant">
+      <Texts Lang="EN">Add manage info</Texts>
+      <Texts Lang="NL">Toevoegen management info</Texts>
+    </Translation>
+	<Translation Name="cMaintainManageInfo" Type="Constant">
+      <Texts Lang="EN">Maintain Manage Info</Texts>
+      <Texts Lang="NL">Manage Info Beheren</Texts>
+    </Translation>
+  </Items>
+  <AllLanguagesUsed>
+    <Language Name="EN">English</Language>
+    <Language Name="NL">Nederlands</Language>
+  </AllLanguagesUsed>
+</TranslationsFile>

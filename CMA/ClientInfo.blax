@@ -1,0 +1,9 @@
+﻿DATAMODEL ClientInfo
+
+PRIMARY MainSurveyID,ForWhichClient
+
+FIELDS
+  MainSurveyID: STRING[36]
+  ForWhichClient: STRING[20] //supported: WindowsPC,IPad,IPhone,AndroidTablet,AndroidPhone,WindowsTablet
+  Info: STRING[50],EMPTY
+ENDMODEL

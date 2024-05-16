@@ -1,0 +1,56 @@
+﻿{*************************************************}
+{                                                 }
+{  Blaise 5. A Survey Processing System           }
+{  Copyright (c) 2020 Statistics Netherlands      }
+{                                                 }
+{*************************************************}
+
+//CMA Demo survey 
+
+DATAMODEL CMA_LabourForce "Labour Force Survey" 
+
+  LANGUAGES = ENG
+  ROLES = Help "The Help role provides a help button that the user can click to display question help text.",
+          Template "Apply layout templates automatically"
+ 
+  PRIMARY TheKey
+  
+
+  TYPE
+    TYesNo = (Yes, No)
+    TContinue = (Yes), EMPTY
+    
+  BLOCK BLabourForce
+    FIELDS
+      Work "Do you have work?": (Yes, No)
+      WorkHours "How many hours per week do you work?": INTEGER
+      WhyNot "Why do you not have work?": (Unemployed "Unemployed", Pension "Pension", DoNotNeed "Do not need to work")
+  RULES
+    Work
+    IF Work=Yes THEN
+      WorkHours
+    ELSE
+      WhyNot
+    ENDIF          
+  ENDBLOCK
+
+  BLOCK BPerson
+    FIELDS
+      FirstName "What is your first name?"
+        Template "Horizontal": STRING[20]
+      Age "What is your age?" Template "Horizontal": 1..120  
+    RULES   
+      FirstName 
+      Age
+  ENDBLOCK
+
+
+  FIELDS
+    TheKey: STRING[20], NOEMPTY
+    Person: BPerson
+    LabourForce: BLabourForce
+  RULES
+    Person
+    LabourForce
+ENDMODEL
+

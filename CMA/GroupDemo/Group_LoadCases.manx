@@ -1,0 +1,136 @@
+﻿USES
+  DATAMODEL Group_Sample
+  BLOCK bPII
+  FIELDS
+    Name: STRING[50]
+    Address: STRING[50]
+    Town: STRING[50]
+    City: STRING[50]
+    Phone_1: STRING[20]
+    PostalCode: STRING[5]
+  ENDBLOCK
+  FIELDS
+    PII: bPII  
+  ENDMODEL
+  
+  Launcher '..\Launcher' 
+  ContactInfo 'ContactInfo\Parent_ContactInfo'
+  
+
+INPUTFILE inp:Group_Sample ('sample.csv',ASCII)
+SETTINGS
+  SEPARATOR=';'
+  DELIMITER='"'
+  
+TEMPORARYFILE tmp:ContactInfo
+  
+UPDATEFILE outp:Launcher ('c:\blaise5\surveys\cma_launcher\launcher',BLAISE)
+
+AUXFIELDS
+  i,j,iRes: INTEGER
+  aName: STRING
+  
+AUXFIELDS
+  aOutput: OPEN
+  
+FUNCTION GetBaseFieldTypeName: STRING
+PARAMETERS
+  pFieldName: STRING
+AUXFIELDS 
+  s: STRING
+INSTRUCTIONS
+  s:= UPPERCASE([[ContactInfo.GetField(pFieldName).Type.Structure]])
+  CASE s OF
+  'DATE': s:= 'DATETYPE'
+  'TIME': s:= 'TIMETYPE'
+  'BLOCKNAME': s:= 'BLOCK' 
+  'STRING': IF [[ContactInfo.GetField(pFieldName).Type.MaxLength]]='' THEN s:= 'OPEN' ENDIF
+  ENDCASE
+  Result:= s
+ENDFUNCTION    
+
+PROCEDURE WriteField
+PARAMETERS
+   pFieldName: OPEN
+INSTRUCTIONS
+  aOutput:= aOutput+pFieldName+char(9)+tmp.GETVALUE(pFieldName)+char(9)
+ENDPROCEDURE
+
+PROCEDURE ProcessOneDatafield
+PARAMETERS pFieldName: STRING
+AUXFIELDS
+  aFieldName     : STRING
+  aBaseFieldType : STRING
+  min_a, max_a   : INTEGER
+  FNA            : STRING
+  MyType         : STRING
+  aIndex         : INTEGER
+INSTRUCTIONS
+  aBaseFieldType:= GetBaseFieldTypeName(pFieldName)
+  IF aBaseFieldType = 'BLOCK' THEN {Recursively get field names of the current block }
+    LoopDataFieldsDefinitionOrder(pFieldName) 
+  ELSEIF aBaseFieldType = 'ARRAY' THEN
+    min_a:= VAL([[ContactInfo.GetField(pFieldName).Type.IndexType.MinIndex]])
+    max_a:= VAL([[ContactInfo.GetField(pFieldName).Type.IndexType.MaxIndex]])
+    FNA:= pFieldName+'['+STR(min_a)+']'
+    MyType:= [[ContactInfo.GetField(FNA).Type.Structure]]
+    IF MyType = 'BlockName' THEN 
+      FOR aIndex:= min_a TO max_a DO
+        FNA:= pFieldName+'['+STR(aIndex)+']'
+        LoopDataFieldsDefinitionOrder(FNA)
+      ENDDO  
+    ELSE
+      FOR aIndex:= min_a TO max_a DO
+        FNA:= pFieldName+'['+STR(aIndex)+']'     
+        WriteField(FNA)
+      ENDDO    
+    ENDIF 
+  ELSE 
+    WriteField(pFieldName)
+  ENDIF
+ENDPROCEDURE
+
+PROCEDURE LoopDataFieldsDefinitionOrder
+PARAMETERS
+  pFieldName     : STRING
+AUXFIELDS
+  aFieldName     : STRING
+  aIndex         : INTEGER
+  FN             : STRING
+INSTRUCTIONS
+  aFieldName:= pFieldName  
+  FOR aIndex:= 0 TO VAL([[tmp.getfields(pFieldName).Count]])-1 DO
+    IF pFieldName<>'' THEN
+      FN:= pFieldName+'.'+[[tmp.Getfields(pFieldName)[aIndex].LocalName]]
+    ELSE
+      FN:= [[tmp.Getfields(pFieldName)[aIndex].LocalName]]
+    ENDIF  
+    IF [[ContactInfo.GetField(FN).FieldKind]]='DataField' THEN
+      ProcessOneDataField(FN)
+    ENDIF
+  ENDDO
+ENDPROCEDURE
+
+FUNCTION ExtractData: OPEN
+INSTRUCTIONS
+  aOutput:= ''
+  LoopDataFieldsDefinitionOrder('')
+  RESULT:= aOutput
+ENDFUNCTION
+
+AUXFIELDS (GLOBAL)
+  c: INTEGER 
+  
+MANIPULATE
+  c:= c+1
+  MainSurveyID:=  '20cde0a2-67c2-4e6a-b02f-322065deb3e7' 
+  Id:= FORMAT(STR(10000+c),5,RIGHT,'0') 
+  IF c mod 2 = 0 then CMA_ForWhom:= 'CMA_Ann' ELSE CMA_ForWhom:= 'CMA_Ben' ENDIF 
+  outp.CMA_GroupType:= 1 //parent
+  outp.CMA_GroupID:= MainSurveyID+ID
+  tmp.CHECKRULES
+  outp.CMA_ContactData:= ExtractData
+  outp.ContactInfoShort:= tmp.ContactInfoShort
+  outp.CHECKRULES
+  outp.WRITE
+  

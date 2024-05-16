@@ -1,0 +1,462 @@
+﻿DATAMODEL Attempts
+//CMA - Case Management Application for use by interviewers
+//
+//version:  2.0. For Blaise 5.10
+//date:     December 2021 
+//author:   Lon Hofman, Team Blaise, Statistics Netherlands
+
+//This is the default attempts datamodel shipped with CMA
+//You can adapt this datamodel as long as you honor certain rules
+//that allow CMA to interface with this model:
+
+//1. Do not change the primary key definition / fields
+//2. Make sure CMA is able to pass information on the command line to the follwoing fields:
+//   AfterInterview, CaseStatus, User, Happenings, InterviewStart, InterviewEnd, CaseStartDatem CaseEndDate and AttemptsRoute
+//3. It is important that the field Happenings always has a value at the end. If not the attempt will not be managed by CMA. 
+//4. Do not change the definition of the fields related to the appointment
+
+
+LANGUAGES = EN "English"
+
+//Reguired by CMA
+PRIMARY
+  MainSurveyID, ID, SeqNr
+SECONDARY  
+  MainSurveyID, ID
+  
+TYPE
+  TGeoLocation = STRING[22]
+  TWhen = STRING[24] //format 'yyyyMMdd,HH:mm:sszzz'
+
+BLOCK bDT
+FIELDS
+  When: TWhen  
+  User: STRING[20] 
+ENDBLOCK  
+
+INCLUDE "THappenings.incx" //contains the definition of THappenings. Definition may be changed, type name may not be changed.
+                
+TContactTime = 
+   (BeforeNoon (1) EN "before 12PM",
+    T12_17     (2) EN "12PM - 5PM",
+    T17_19     (3) EN "5PM - 7PM",
+    T19_21     (4) EN "7PM - 9PM",
+    Late       (5) EN "9PM or later")
+
+CONST
+  cInterview = EN "interview"
+  cAttempt = EN "attempt"     
+
+FIELDS 
+//Fields used by CMA. DO NOT CHANGE!!
+  MainSurveyID: STRING[36]  //GUID of survey. Could be a WAVE
+  ID: STRING[219]           //field that contains the primary key of the case for the topic instrument. Can be composed of multiple fields but handled as one in Attempts  
+  SeqNr: 1..999             //Sequence number to identifiy the different attempts beloning to the case 
+  
+  WhenMade: bDT             //to keep track of wh/when made the attempt  
+  GeoLocation: TGeoLocation //will be populate by CMA when required
+  Happenings     
+     EN "Result:" 
+     : THappenings          //not to be asked but to be derived based on workflow in instrument
+  HappeningsStr: STRING[80]                           //can be given a value when different from text of label of Happenings
+  CMA_CaseClosed {was: Final}: (yes),EMPTY            //IMPORTANT: when assigned the value yes it indicated completion for CMA!
+  AttemptsRoute: STRING[5],EMPTY                      //optional; value originates from case in launcher database
+  //appointment related fields
+  Appointment: (yes),EMPTY                            //IMPORTANT: when assigned the value yes then CMA knows that there is an appointment in AppDate and AppTime!
+  AppDate     
+     EN "Select the date for the appointment" 
+     : DATETYPE
+  AppTime     
+     EN "Select the time for the appointment" 
+     : TIMETYPE
+  //end appointment related fields   
+  
+  Notes       
+     EN "Additional notes for ^AttemptStr:" 
+     : OPEN,EMPTY
+  ContactDate 
+     EN "When was the contact attempt (date)?" 
+     : DATETYPE 
+  ContactTime 
+     EN "When was the contact attempt (day part)?" 
+     : TContactTime
+  
+  CaseStatus: (none (0),Partial (1),Complete (2)) //At start up this is passed to this catamodel
+  AfterInterview : (No (0), Yes (1))              //IMPORTANT: to distinguish if Attempts has been activated by exiting .EDIT of topic instrument (complete or break-off) or not
+  InterviewStart: TWhen //passed on the command line
+  InterviewEnd: TWhen   //passed in the command line
+  
+  //Optional fields. Will be handled by CMA when present in the attempts datamodel
+  //CMA_Status: STRING[20],EMPTY                      //OPTIONAL: current status of case in CMA; when changed it will overrule determining the new status in CMA  
+  //PrevHappeningsCod: THappenings,EMPTY              //OPTIONAL: the value of CMA_HappeningsCod as stored in the launcher case
+
+  
+AUXFIELDS //no not change! All pre-filled through command-line
+  User: STRING[20]  
+  CaseStartDate: DATETYPE
+  CaseEndDate: DATETYPE
+  IsDonorCase: (yes),EMPTY
+  aRefDate: DATETYPE
+  aRefTime: TIMETYPE
+  
+LOCALS h: 0..23  
+//END of the definitions of Fields that are used by CMA!!  
+
+//IMPORTANT: Organisations are free to define the next types and arrange their own encoding of outcome code
+//Note that CMA expects the value of the outcome code to be in the enumaration field Happenings
+
+TYPE
+TEndResult = 
+  (Refuse       EN "Refusal",
+   NotAvail     EN "Not available during survey period",
+   LangProb     EN "Language barrier",
+   RespSick     EN "Cannot be interviewed (too sick, weak, deaf or psychological problems)",
+   Mode         EN "Already participated through different mode (or tried)",
+   PassedAway   EN "Passed away",
+   DataWrong    EN "Data incorrect or moved inside country",
+   MovedAbroad  EN "Moved abroad",
+   Institution  EN "Moved to an institution (care home, etc.)",
+   NoContact    EN "No contact",
+   NoResAddr    EN "No residential address / vacancy / under construction)",
+   Unsafe       EN "Unsafe situation",
+   Other        EN "Other")
+   
+TReasonRefusal = 
+  (Ref_Direct    (002100) EN "Direct or outright refusal",
+   Ref_Privacy   (002104) EN "Refused for privacy reasons",
+   Ref_NoTime    (002103) EN "No time for the survey",
+   Ref_Implicit  (002107) EN "Implicit refusal - multiple missed appointments",
+   Ref_UnkReason (002105) EN "Refusal for unknown reason",
+   Ref_OthReason (002106) EN "Refusal for other reason - specify")
+
+TReasonNotAvailable = 
+  (
+NAV_NotAvailable (00300) EN "Not available during survey period",
+NAV_Trip (00301) EN "Not available due to holiday, work abroad, business trip etc.", 
+NAV_Incarcerated (00302) EN "Respondent is in detention", 
+NAV_Institution (00303) EN "Respondent has been temporarily admitted to a hospital, care home or other institution" , 
+NAV_NoTime (00304) EN "Field work period almost over: no time to make another appointment", 
+NAV_OtherReason (03005) EN "Not available for another reason")
+
+TReasonMode = 
+   (Yes	  EN "Yes",
+    Techn  EN "No, there were technical problems",
+    Other  EN "No, other reason"
+   ) 
+    
+TReasonDataWrong = 
+  (
+NonI_BadData (00315) EN "Data incorrect or moved within the c",
+NonI_Moved (00316) EN "Respondent / household has moved",
+NonI_RUnknown (00317) EN "Respondent / household has never lived / unknown at this address",
+NonI_OtherReason (00318) EN "Data incorrect - other reason"
+  )      
+
+TReason_NoContact = 
+(
+ NonC_NotHome   (00322) EN "No one at home / was not opened",
+ NonC_NoAccess  (00323) EN "Each time access not possible",
+ NonC_HHUnknown (00324) EN "OP / household unknown or not found",
+ NonC_Other     (00335) EN "No contact, other reason"
+ )
+  
+TReason_Address =
+(
+  NonC_NoSuchAddress  (00325) EN "No residential address / vacancy / under construction)",
+  NonC_CannotFind     (00326) EN "Address cannot be found / does not exist",
+  NonC_NoHouse        (00327) EN "House under construction, demolished, demolition house",
+  NonC_NotResidential (00328) EN "No home address (factory, school, office, etc.)",
+  NonC_Vacant         (00329) EN "Probably residential address, but vacant / temporarily uninhabited"
+ )
+
+TBreakOff = 
+(
+ Quex_BreakLang      (002122) EN "Language skills of respondent not sufficient",
+ Quex_BreakCannot    (002123) EN "Respondent cannot be interviewed",
+ Quex_ResistDifficult (00501) EN "Respondent found it too difficult",
+ Quex_ResistLong      (00502) EN "Respondent thought it was too long",
+ Quex_ResistPersonal  (00503) EN "Respondent found it too personal / intimate",
+ Quex_ResistSecurity  (00504) EN "Security reasons",
+ Quex_ResistOther     (00506) EN "Other reason"
+ )
+
+TProgress  =   (InterResult EN "Interim result",
+                FinalResult EN "Final result"), NODK, NORF    
+                
+TInterimResult = 
+      (ContNoIntNoApp   (1) EN "Contact with Respondent/household, no interview, no appointment",
+       ContApp          (2) EN "Contact with Respondent/household, appointment made",
+       ContSomeoneElse  (3) EN "Contact with someone else (eg neighbors, new residents)",
+       NoContact        (4) EN "NO contact" )
+
+TReasonNoContactV = (NonC_NotHome   (00322) EN "No one at home / was not opened", 
+                     Res_ApptNotMet (00510) EN "One appointment not met",
+                     Ref_Implicit  (002107) EN "Implicit refusal - multiple missed appointments",
+                     NonC_NoAccess  (00323) EN "Each time access not possible",
+                     NonC_Other     (00335) EN "No contact, other reason"
+					 )   
+              
+TReasonNoContactC = (Res_NoAnswerPhone  (11512) EN "No answer",  
+                     NonC_Busy          (00336) EN "Busy",   
+                     Chn_LeftVMVisit    (12810) EN "Voicemail",    
+                     NonC_Other         (00335) EN "No contact, other reason")      
+
+FIELDS
+  WhatNowInterview "Please select how to continue": 
+  (Appointment EN "Make an appointment to continue with questionnaire", 
+   BreakOff    EN "Register a break-off / Non-response") 
+
+  WhatNowNoneInterview "Please select how to continue": 
+  (Appointment    EN "Make an appointment administer questionnaire", 
+   RegisterResult EN "Register a result") 
+
+  Endresult
+    EN "What is the end result?" 
+    : TEndResult
+  
+  ReasonRefusal
+    EN "What was the main reason for refusing?"
+    : TReasonRefusal
+  
+  ReasonNotAvailable
+    EN "Why is the OP / household absent during the field work period?"
+    : TReasonNotAvailable
+  
+  ReasonLanguage 
+    EN "Would the Respont / household have been able to participate if the questionnaire had been in a different language, and if so, which?"
+    : STRING[100]
+  
+  ReasonMode 
+    EN "Did the respondent succeed in participating in the other mode?"
+    : TReasonMode
+
+  ReasonDataWrong 
+    EN "Why is the data incorrect?" 
+    : TReasonDataWrong 
+
+  Reason_NoContact
+    EN "What was he reason for 'no contact'?"
+    : TReason_NoContact
+
+  Reason_Address
+    EN "What is the problem with the address?"
+    : TReason_Address
+
+  Other
+    EN "Explanation: other"
+    : STRING[100]
+
+  BreakOff
+    EN "Why can't the interview be completed"
+    : TBreakOff
+
+  BreakOff_Other
+    EN "Explanation 'Other reason break-off interview'"
+    : STRING[100]
+  
+ Progress
+   EN "You want to register a visit or a telephone contact (attempt).
+        <newline>Is it a final result or an interim result?"
+   : TProgress  
+      
+ RegisterVisitOrCall
+   EN "Do you want to register a visit or a telephone contact (attempt)?" 
+   : (Visit     EN "Visit",
+      Phone EN "Telephone contact"), NODK, NORF     
+       
+ InterResult 
+   EN "What is the interim result?"
+   : TInterimResult
+ 
+ ReasonNoContactV
+   EN "What was the reason for 'no contact'?"
+   : TReasonNoContactV
+ 
+ ReasonNoContactC
+   EN "What was the reason for 'no contact'?"
+   : TReasonNoContactC
+
+AUXFIELDS
+   AttemptStr: STRING[40]                     
+
+RULES
+//Predefined by CMA. DO NOT CHANGE!!!
+  IsDonorCase.KEEP
+  CaseStatus.KEEP
+  MainSurveyID.KEEP
+  ID.KEEP
+  SeqNr.KEEP
+  AttemptsRoute.KEEP
+  AfterInterview.KEEP
+  InterviewStart.KEEP
+  InterviewEnd.KEEP
+  WhenMade.KEEP
+  GeoLocation.KEEP
+  Happenings.KEEP
+  CaseStartDate.KEEP
+  CaseEndDate.KEEP
+  User.KEEP
+//END predefined
+  
+  IF WhenMade=EMPTY THEN 
+    WhenMade.When:= TIMETOSTR(SYSTIME,'yyyyMMdd,HH:mm:sszzz') 
+    WhenMade.User:= User
+    ContactDate:= SYSDATE
+    h:= HOUR(SYSTIME)
+    IF h<12 THEN ContactTime:= BeforeNoon ELSEIF
+       h<17 THEN ContactTime:= T12_17 ELSEIF
+       h<19 THEN ContactTime:= T17_19 ELSEIF
+       h<21 THEN ContactTime:= T19_21 
+    ELSE
+      ContactTime:= Late 
+    ENDIF   
+  ENDIF
+//END - Predefined by CMA. DO NOT CHANGE!!!
+  
+  IF AfterInterview=Yes THEN
+    AttemptStr:= cInterview
+    IF CaseStatus=Complete THEN
+      IF Happenings=EMPTY THEN 
+        Happenings:= Quex_Complete 
+      ENDIF  
+    ELSE
+      WhatNowInterview
+      IF WhatNowInterview=Appointment THEN
+        aRefDate:= STRTODATE(WhenMade.When,'yyyyMMdd,HH:mm:sszzz')
+        aRefTime:= STRTOTIME(WhenMade.When,'yyyyMMdd,HH:mm:sszzz')
+        AppDate
+        AppDate>=aRefDate "Appointment date cannot be in the past"
+        AppTime
+        IF AppDate=aRefDate THEN
+          AppTime>aRefTime "Appointment time cannot be in the past"
+        ENDIF  
+        Appointment:= yes
+        Happenings:= Con_Appt 
+      ELSE
+        BreakOff
+        Happenings:= ord(BreakOff) 
+        IF BreakOff = Quex_ResistOther THEN
+          BreakOff_Other
+        ENDIF  
+      ENDIF  
+    ENDIF
+  ELSE //AfterInterview=No
+    AttemptStr:= cAttempt
+    Progress 
+    IF Progress=FinalResult THEN
+      EndResult
+      IF EndResult=Refuse THEN
+        ReasonRefusal
+        Happenings:= ord(ReasonRefusal) 
+      ELSEIF EndResult=NotAvail THEN
+        ReasonNotAvailable
+        Happenings:= ord(ReasonNotAvailable) 
+      ELSEIF EndResult=LangProb THEN
+        ReasonLanguage
+        Happenings:= Quex_BreakLang 
+      ELSEIF EndResult=RespSick THEN
+        Happenings:= NonI_Health 
+      ELSEIF EndResult=Mode THEN
+        ReasonMode 
+        Happenings:= NonI_Redundant 
+      ELSEIF EndResult=PassedAway THEN
+        Happenings:= NonI_Deceased 
+      ELSEIF EndResult=DataWrong THEN
+        ReasonDataWrong
+        Happenings:= ord(ReasonDataWrong) 
+      ELSEIF EndResult=MovedAbroad THEN
+        Happenings:= NonI_Abroad 
+      ELSEIF EndResult=Institution THEN
+        Happenings:= NonI_Institution 
+      ELSEIF EndResult=NoContact THEN  
+        Happenings:= NonC_NoContact 
+      ELSEIF EndResult=NoResAddr THEN  
+        Reason_Address
+        Happenings:= ord(Reason_Address) 
+      ELSEIF EndResult=Unsafe THEN  
+        Happenings:= NonC_Unsafe
+      ELSEIF EndResult=Other THEN
+        Other
+        Happenings:= NonC_AddrOther   
+      ENDIF   
+    ELSE
+      RegisterVisitOrCall
+      ContactDate
+      ContactTime
+      InterResult
+      IF InterResult=ContApp THEN  
+        aRefDate:= STRTODATE(WhenMade.When,'yyyyMMdd,HH:mm:sszzz')
+        aRefTime:= STRTOTIME(WhenMade.When,'yyyyMMdd,HH:mm:sszzz')
+        AppDate
+        AppDate>=aRefDate "Appointment date cannot be in the past"
+        AppTime
+        IF AppDate=aRefDate THEN
+          AppTime>aRefTime "Appointment time cannot be in the past"
+        ENDIF  
+        Appointment:= yes
+        Happenings:= Con_Appt 
+      ELSEIF InterResult=NoContact THEN
+        IF RegisterVisitOrCall=Visit THEN
+          ReasonNoContactV
+          Happenings:= ord(ReasonNoContactV) 
+        ELSEIF RegisterVisitOrCall=Phone THEN  
+          ReasonNoContactC
+          Happenings:= ord(ReasonNoContactC)
+        ENDIF 
+      ELSEIF InterResult=ContSomeoneElse THEN
+        Happenings:= NonC_SOElse 
+      ELSEIF InterResult=ContNoIntNoApp THEN
+        Happenings:= NonI_NoInterview 
+      ENDIF
+    ENDIF  
+  ENDIF
+  IF Happenings IN 
+    [ 
+     Quex_Complete,
+     Quex_BreakLang,
+     Quex_BreakCannot,
+     Quex_ResistDifficult,
+     Quex_ResistLong,
+     Quex_ResistPersonal,
+     Quex_ResistSecurity,
+     Quex_ResistOther,
+     Scr_Ineligible,
+     Scr_IneligibleAge,
+     Ref_Direct,
+     Ref_Privacy,
+     Ref_NoTime,
+     Ref_Implicit,
+     Ref_UnkReason,
+     Ref_OthReason,
+     NAV_NotAvailable,
+     NAV_Trip, 
+     NAV_Incarcerated, 
+     NAV_Institution, 
+     NAV_NoTime, 
+     NAV_OtherReason,
+     NonC_NoContact,
+     NonC_Unsafe,
+     NonC_AddrOther, 
+     NonC_NoSuchAddress,
+     NonC_CannotFind,
+     NonC_NoHouse,
+     NonC_NotResidential,
+     NonC_Vacant,
+     NonI_Health,
+     NonI_Redundant, 
+     NonI_Deceased, 
+     NonI_Abroad, 
+     NonI_Institution, 
+     NonI_BadData,
+     NonI_Moved,
+     NonI_RUnknown,
+     NonI_OtherReason
+    ] THEN 
+    CMA_CaseClosed := Yes
+    //can also be established based on:
+    //completed interview OR
+    //break off during interview and no appointment OR
+    //Progress=FinalResult
+  ENDIF
+  Notes
+ENDMODEL

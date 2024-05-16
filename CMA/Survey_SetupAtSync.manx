@@ -1,0 +1,61 @@
+﻿PROCESS Survey_SetupAtSync 
+//CMA 2.6. Framework of AtSync setup
+
+SETTINGS CONNECT=NO 
+{.$DEFINE NoTopic}
+
+USES {$IFNDEF NoTopic} topicmeta (VAR) {$ENDIF}
+     launcher (VAR)   
+     logmeta (VAR)   //from CMA appliction
+     synctrace (VAR) //from CMA appliction
+
+INPUTFILE iSyncTrace:synctrace (ASCII) //sync trace file name set on cmd line
+SETTINGS
+  SEPARATOR=';'
+  DELIMITER='"'
+  OPEN=NO
+
+{$IFNDEF NoTopic}    
+UPDATEFILE topic:topicmeta (BDIX) //name given on cmd line  
+{$ENDIF}
+
+UPDATEFILE ufLocalCases:launcher (BDIX) //loc launcher name given on cmd line
+
+TEMPORARYFILE tmp:launcher
+
+OUTPUTFILE oLog:logMeta (ASCII) //log file name set on cmd line
+SETTINGS
+  MAKENEWFILE=NO  
+  OPEN=NO
+  SEPARATOR=';'
+  TRAILINGSPACES=NO
+  CREATEBDIX=NO
+  
+CONST
+  cDateTimeFormat = "yyyyMMdd,HH:mm:sszzz"
+   
+FUNCTION NowDT: STRING
+INSTRUCTIONS
+  RESULT:= TIMETOSTR(SYSTIME,cDateTimeFormat)
+ENDFUNCTION 
+
+AUXFIELDS
+  cmdGUID: STRING
+
+PROCEDURE AddToLog
+PARAMETERS pTextToLog: STRING
+INSTRUCTIONS
+  oLog.OPEN
+  oLog.PUTVALUE('LogWhen',NowDT)
+  oLog.PUTVALUE('LogText',pTextToLog)
+  oLog.WRITE
+  oLog.RELEASE
+ENDPROCEDURE
+
+
+MANIPULATE
+  AddToLog('Start AtSync setup '+SETUPNAME+': GUID='+cmdGuid)
+  //
+  //Here you do what you want to do... 
+  //
+  AddToLog('End AtSync setup')

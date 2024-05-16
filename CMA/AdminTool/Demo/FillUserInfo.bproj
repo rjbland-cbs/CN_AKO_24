@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project Name="FillUserInfo" Guid="151347ae-82ce-452b-8d8f-636a759b9bd9" ProjectType="ManipulaProject">
+  <MainFile RelativePath="true">FillUserInfo.manx</MainFile>
+  <FileItems>
+    <File FileType="ManipulaFileType" RelativePath="true">FillUserInfo.manx</File>
+  </FileItems>
+  <Properties>
+    <AppSupport />
+    <IsAppMainUserInterface />
+    <ResourceDB />
+    <SurveyRoot />
+    <ConditionalDefines />
+    <DatamodelSearchPath>..\</DatamodelSearchPath>
+    <ExternalSearchPath />
+    <IncludeSearchPath />
+    <LibrarySearchPath />
+  </Properties>
+</Project>

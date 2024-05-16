@@ -1,0 +1,100 @@
+﻿//CMA - Case Management Application for use by interviewers
+//
+//version:  2.5. For Blaise 5.12
+//date:     JUne 2022 
+//author:   Lon Hofman, Team Blaise, Statistics Netherlands
+
+DATAMODEL AdminSettingsMeta 
+  BLOCK bColumnInfo
+  FIELDS
+    FieldName: STRING
+    Title: STRING
+    Width: INTEGER
+    Origin: (oContactData,oCustomData)
+  ENDBLOCK 
+  
+  BLOCK bSortInfo
+  FIELDS
+    Title: STRING //multilingual
+    FieldCount: INTEGER
+    FieldName: ARRAY[1..10] OF STRING //list of fields of the tCase definition
+  ENDBLOCK
+    
+  FIELDS
+    sLanguageCount: 0..3, EMPTY
+    sLanguages: ARRAY[1..3] OF 1..25,EMPTY //languages accessible in CMA, max 3
+    
+    sDefaultMode: STRING[25],EMPTY
+    sDefaultLayoutSet: STRING[25],EMPTY
+    sDefaultDataEntrySettings: STRING[25],EMPTY
+    
+    sCustomDataSep: STRING[4],EMPTY 
+    sContactDataSep: STRING[4],EMPTY 
+    sDataImportSep: STRING[3],EMPTY
+    sDataExportSep: STRING[3],EMPTY
+    
+    sExportDataBtn: (yes),EMPTY //launcher cases
+    sRestoreUserBtn: (yes),EMPTY
+    sShowInterviewBtn: (yes),EMPTY
+    sAssignBtn: (yes),EMPTY
+    sAssignSupervisorBtn: (yes),EMPTY
+    sAcceptBtn: (yes),EMPTY
+    sTransferBtn: (yes),EMPTY
+    sRestoreBtn: (yes),EMPTY
+    sReopenBtn: (yes),EMPTY
+    sReleaseBtn: (yes),EMPTY
+    sCloseBtn: (yes),EMPTY
+    sEditBtn: (yes), EMPTY
+    sEditParts: SET OF (seStartDate (1),seEndDate (2),seSupervisor (3),seCmdlineForEdit (4),sePreloadForEdit (5),seAttemptsRoute (6),
+                        seDetailsTemplate (7),seCustomUse (8))    
+    sExportCSVBtn: (yes),EMPTY
+    sImportCasesBtn: (yes),EMPTY
+    sCheckBtn: (yes),EMPTY
+    sLoggingBtn: (yes),EMPTY
+    sProgressBtn: (yes),EMPTY
+    sInstructionBtn: (yes),EMPTY
+    sCustomReportsBtn: (yes), EMPTY
+    sMaintainUserInfoBtn: (yes), EMPTY
+    sMaintainManagementInfoBtn: (yes), EMPTY
+    sAllowAdminTasksForManager: (yes),EMPTY
+    
+    sMultiSelect: (yes),EMPTY
+    sShowResult: (rCodeOnly,rStrOnly,rBoth, rLabOnly, rCodeLab), EMPTY 
+    sShowNotStartedTxt: (yes), EMPTY
+    sHideResultOfParent: (yes),EMPTY
+    sTodayAppointmentPreFix: STRING //put in front of appointment for today in the data grid
+    sTodayAppointmentDetail: STRING //rich text tag for appointment for today in details grid
+    sShowDateFormat: STRING //format to be used to display a date on CMA screen
+    sPreserveLogfileOnClient: (yes),EMPTY
+    sShowSummary: (yes),EMPTY
+    sShowUDinSummary: (yes),EMPTY
+    sDefaultNrOfDaysLoggingHistory: INTEGER  // number of days of logging history to retrieve/display by default in the user logging screen 
+    sAddStartDateToFieldFilter: (yes),EMPTY
+    sAddEndDateToFieldFilter: (yes),EMPTY
+    
+    sFieldFilterAll: STRING   //filter to be used when listing cases of all surveys
+    sFieldFilterTopic: STRING //filter to be used when listing cases of one topic
+    sFieldFilterGroup: STRING //filter to be used when listing cases of one group
+    
+    sFieldWidths: STRING       //name=width,name=width,...
+   
+    sCustomColCount: 1..10,EMPTY
+    sCustomCol: ARRAY[1..10] OF bColumnInfo
+    
+    sDefSortCount: 1..10,EMPTY
+    sDefSort: ARRAY[1..10] OF bSortInfo
+    
+    sSearchCount: 1..10,EMPTY
+    sSearchName: ARRAY[1..10] OF STRING
+
+    sLastLogUpload: DATETYPE
+    sSelectedLanguage: STRING[10],EMPTY //start language of UI.
+    sSelectedSurvey: STRING[36],EMPTY //GUID of the survey selected in the Survey dropdown box
+    sSelectedUser: STRING[20],EMPTY
+    sLastImportFolder: STRING,EMPTY
+    sNrOfDaysLoggingHistory: 1..365,EMPTY
+
+    sExcelExePath: STRING
+    sExcelOutputPath: STRING
+    
+  ENDMODEL

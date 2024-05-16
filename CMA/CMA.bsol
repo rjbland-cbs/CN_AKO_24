@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Solution Name="CMA">
+  <StartupProject RelativePath="true">CMA.bproj</StartupProject>
+  <ProjectItems>
+    <Project RelativePath="true" BuildSequence="24">CMA.bproj</Project>
+    <Project RelativePath="true" BuildSequence="6">CMA_Logging.bproj</Project>
+    <Project RelativePath="true" BuildSequence="8">CMA_Attempts.bproj</Project>
+    <Project RelativePath="true" BuildSequence="10">CMA_Launcher.bproj</Project>
+    <Project RelativePath="true" BuildSequence="20">DownloadInterceptor\DownloadInterceptor.bproj</Project>
+    <Project RelativePath="true" BuildSequence="18">CMA_ClientInfo.bproj</Project>
+    <Project RelativePath="true" BuildSequence="12">CMA_SettingsMeta.bproj</Project>
+    <Project RelativePath="true" BuildSequence="14">CMA_ContactInfo.bproj</Project>
+    <Project RelativePath="true" BuildSequence="16">CMA_SurveySettings.bproj</Project>
+    <Project RelativePath="true" BuildSequence="2">Surveys.bproj</Project>
+    <Project RelativePath="true" BuildSequence="4">LogMeta.bproj</Project>
+    <Project RelativePath="true" BuildSequence="22">SyncTrace.bproj</Project>
+  </ProjectItems>
+</Solution>

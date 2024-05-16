@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Solution Name="CMA_AdminDemo">
+  <StartupProject RelativePath="true">CMA_AdminTool.bproj</StartupProject>
+  <ProjectItems>
+    <Project RelativePath="true" BuildSequence="18">CMA_AdminTool.bproj</Project>
+    <Project RelativePath="true" BuildSequence="2">..\CMA_AdminSettingsMeta.bproj</Project>
+    <Project RelativePath="true" BuildSequence="8">..\CMA_ManageInfo.bproj</Project>
+    <Project RelativePath="true" BuildSequence="6">..\CMA_UserInfo.bproj</Project>
+    <Project RelativePath="true" BuildSequence="16">MakeAdminSettingsXML.bproj</Project>
+    <Project RelativePath="true" BuildSequence="4">LauncherExport.bproj</Project>
+    <Project RelativePath="true" BuildSequence="12">FillManageInfo.bproj</Project>
+    <Project RelativePath="true" BuildSequence="14">FillUserInfo.bproj</Project>
+    <Project RelativePath="true" BuildSequence="10">..\CMA_CustomScript.bproj</Project>
+  </ProjectItems>
+</Solution>

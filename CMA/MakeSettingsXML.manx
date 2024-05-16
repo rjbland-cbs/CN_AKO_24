@@ -1,0 +1,39 @@
+﻿SETTINGS AUTOREAD=NO
+
+USES CMA_SettingsMeta 
+  
+OUTPUTFILE Outp:CMA_SettingsMeta('CMA_settings.xml',XML)
+
+MANIPULATE  
+  sSelectedLanguage:= 'EN'
+  sUploadChanges:= yes
+  sTrackTimeUsed:= yes
+  sSyncWhenConnected:= yes
+  sAskSync:= yes
+  sRemoveSurveyWhenNoCasesLeft:= yes
+  sCasesToShow:= all
+  sConfirmReopenedHandled:= yes
+  sAllowReadonlyAccess:= yes
+
+  //field filters to be used (system defaults):
+  sFieldFilterAll:=   'tContactInfoShort,tSurveyName,tStatus,tAttemptsCount,tLastResult,tAppointment,tIdentifier,tLastAttempt'
+  sFieldFilterTopic:= 'tContactInfoShort,tStatus,tAttemptsCount,tLastResult,tAppointment,tIdentifier,tLastAttempt'
+  sFieldFilterGroup:= 'tSurveyName,tStatus,tAttemptsCount,tLastResult,tAppointment,tIdentifier,tSpawnCount,tLastAttempt'
+  
+  //definition of different styles:
+  sStyleCount:= 3
+  sStyle[1]:= 'Dialogs' //refers to an existing style in the resource database
+  sStyle[2]:= 'DialogsMedium' //refers to an existing style in the resource database
+  sStyle[3]:= 'DialogsLarge' //refers to an existing style in the resource database
+  sSelectedStyle:= 2
+
+  //search
+  sSearchCount:= 3
+  sSearchName[1]:= 'CMA_CustomUse'
+  sSearchName[2]:= 'CMA_ContactData'
+  sSearchName[3]:= 'ID'
+  sSearchName[4]:= 'CMA_CaseNote'
+  
+  Outp.WRITE
+
+  

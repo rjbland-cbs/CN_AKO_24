@@ -1,0 +1,13 @@
+﻿DATAMODEL LF_Survey
+
+PRIMARY ID
+
+FIELDS
+
+  ID : STRING[5]
+  Work "Do you have a paid job?": (yes,no)
+  
+RULES
+  Work  
+
+ENDMODEL

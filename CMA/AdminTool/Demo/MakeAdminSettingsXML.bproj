@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project Name="MakeAdminSettingsXML" Guid="3e656427-e264-40a9-b805-cb989aeb5c9e" ProjectType="ManipulaProject">
+  <MainFile RelativePath="true">MakeAdminSettingsXML.manx</MainFile>
+  <FileItems>
+    <File FileType="ManipulaFileType" RelativePath="true">MakeAdminSettingsXML.manx</File>
+  </FileItems>
+  <Properties>
+    <AppSupport />
+    <IsAppMainUserInterface />
+    <ResourceDB />
+    <SurveyRoot />
+    <ConditionalDefines />
+    <DatamodelSearchPath>..\</DatamodelSearchPath>
+    <ExternalSearchPath />
+    <IncludeSearchPath />
+    <LibrarySearchPath />
+  </Properties>
+</Project>

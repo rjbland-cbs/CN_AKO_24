@@ -1,0 +1,20 @@
+﻿DATAMODEL CMA_ManageInfo
+
+//Datamodel to keep track of who has access to what
+
+LANGUAGES = EN "English"
+
+PRIMARY UserID,InstrumentID
+  
+  GROUP Properties
+  FIELDS 
+  UserID "User id": STRING[30] 
+  InstrumentID "GUID of survey": STRING[36]
+  SurveyName "Name of survey": STRING,EMPTY //multi-lingual 
+  ENDGROUP
+  
+RULES
+  Properties  
+ENDMODEL
+
+

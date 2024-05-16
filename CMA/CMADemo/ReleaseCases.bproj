@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project Name="ReleaseCases" Guid="79c021cd-7d42-4c4e-9202-0e06c3d66858" ProjectType="ManipulaProject">
+  <MainFile />
+  <FileItems>
+    <File FileType="ManipulaFileType" RelativePath="true">ReleaseCases.manx</File>
+  </FileItems>
+  <Properties>
+    <IncludeSearchPath />
+    <LibrarySearchPath />
+    <DatamodelSearchPath />
+    <ExternalSearchPath />
+    <ConditionalDefines />
+    <ResourceDB />
+    <SurveyRoot />
+    <AppSupport />
+    <IsAppMainUserInterface />
+  </Properties>
+</Project>

@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Dataset xmlns:blaise="http://namespaces.cbs.nl/Blaise/BlaiseTypes"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://www.w3.org/2001/XMLSchema-instance SettingsMeta.xsd">
+	<Datarecord validationStatus="NotChecked">
+		<sUploadChanges>yes</sUploadChanges>
+		<sTrackTimeUsed>yes</sTrackTimeUsed>
+		<sSyncWhenConnected>yes</sSyncWhenConnected>
+		<sRemoveSurveyWhenNoCasesLeft>yes</sRemoveSurveyWhenNoCasesLeft>
+		<sAskSync>yes</sAskSync>
+		<sAllowReadOnlyAccess>yes</sAllowReadOnlyAccess>
+		<sCasesToShow>All</sCasesToShow>
+		<sFieldFilterAll>tContactInfoShort,tSurveyName,tStatus,tAttemptsCount,tLastResult,tAppointment,tIdentifier,tLastAttempt</sFieldFilterAll>
+		<sFieldFilterTopic>tContactInfoShort,tStatus,tAttemptsCount,tLastResult,tAppointment,tIdentifier,tLastAttempt</sFieldFilterTopic>
+		<sFieldFilterGroup>tSurveyName,tStatus,tAttemptsCount,tLastResult,tAppointment,tIdentifier,tSpawnCount,tLastAttempt</sFieldFilterGroup>
+		<sStyleCount>3</sStyleCount>
+		<sStyle blaiseContainerType="array">
+			<sStyleItem blaiseIndex="1">Dialogs</sStyleItem>
+			<sStyleItem blaiseIndex="2">DialogsMedium</sStyleItem>
+			<sStyleItem blaiseIndex="3">DialogsLarge</sStyleItem>
+		</sStyle>
+		<sConfirmReopenedHandled>yes</sConfirmReopenedHandled>
+		<sSearchCount>3</sSearchCount>
+		<sSearchName blaiseContainerType="array">
+			<sSearchNameItem blaiseIndex="1">CMA_CustomUse</sSearchNameItem>
+			<sSearchNameItem blaiseIndex="2">CMA_ContactData</sSearchNameItem>
+			<sSearchNameItem blaiseIndex="3">ID</sSearchNameItem>
+			<sSearchNameItem blaiseIndex="4">CaseNote</sSearchNameItem>
+		</sSearchName>
+		<sSelectedLanguage>EN</sSelectedLanguage>
+		<sSelectedStyle>2</sSelectedStyle>
+	</Datarecord>
+</Dataset>

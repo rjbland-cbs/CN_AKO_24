@@ -1,0 +1,74 @@
+﻿//CMA - Case Management Application for use by interviewers
+//
+//version:  2.2. For Blaise 5.11
+//date:     September-2022 
+//autor:    Lon Hofman, Team Blaise, Statistics Netherlands
+
+SETUP DownloadInterceptor 
+
+// This setup downloads only those records of which the field User equals the 
+// user who operates the calling App
+
+{$DEFINE MultiDevice} //change this to {.$DEFINE MultiDevice} for 5.10.6 or earlier.
+
+
+SETTINGS
+  AUTOREAD= NO
+  ISDOWNLOADINTERCEPTOR= YES
+  DAYFILE='cases_dayfile.txt'
+  
+CONST
+  cVersion = '2.2'  
+
+USES
+  SurveyMeta (VAR)
+  
+SURVEYDATAFILE
+  SurveyData: SurveyMeta
+  
+TEMPORARYFILE
+  AppData: SurveyMeta
+  SETTINGS
+    INTERCHANGE= EXPORT
+
+AUXFIELDS
+  i: INTEGER
+  Now: STRING
+  FilterStr: OPEN
+  
+MANIPULATE 
+  DAYFILE('Interceptor (version: '+cVersion+') executed for user: '+UserName)
+  FilterStr:= '(CMA_ForWhom=\''+UserName+'\' OR CMA_InPossession=\''+UserName+'\') AND '+
+              '(CMA_Location is NULL OR CMA_Location NOT IN (\'ONHOLD\',\'RELEASE_DONE\',\'RELEASED\')) AND '+ //not put on temporary hold or not relevant
+              '((CMA_InPossession is NULL) OR '+                                    //not yet downloaded   
+               '(CMA_ForWhom is NULL OR CMA_ForWhom<>\''+UserName+'\') OR '+        //in possesion but transfer to other user needed
+               '(CMA_Location is NULL OR CMA_Location IN '+                         //special action needed
+                 '(\'RESTORE\',\'RESTORE_REQ\',\'RELEASE_REQ\',\'REOPEN_REQ\','+
+                  '\'CLOSE_REQ\',\'REFRESHCASE_REQ\',\'REFRESHDATA_REQ\',\'REFRESHBOTH_REQ\')))'
+{$IFDEF MultiDevice}
+  SurveyData.SETRECORDFILTER(FilterStr,APPEND) 
+{$ELSE}  
+  SurveyData.SETRECORDFILTER(FilterStr) 
+{$ENDIF}
+  Now:= TIMETOSTR(SYSTIME,'yyyyMMdd,HH:mm:sszzz') //yyyyMMdd,HH:mm:sszzz //yyyyMMdd HH:mm:ss
+  FOR i:= 1 TO SurveyData.RECORDCOUNT DO
+    SurveyData.READNEXT
+    AppData:= SurveyData
+    IF SurveyData.GETVALUE('CMA_Location')='' THEN
+      SurveyData.PUTVALUE('CMA_Location','DOWNLOAD_REQ')
+    ENDIF  
+    IF SurveyData.GETVALUE('CMA_Process.FirstDownloaded.When')='' THEN
+      SurveyData.PUTVALUE('CMA_Process.FirstDownloaded.When',Now)
+      SurveyData.PUTVALUE('CMA_Process.FirstDownloaded.User',UserName)
+      AppData.PUTVALUE('CMA_Process.FirstDownloaded.When',Now)
+      AppData.PUTVALUE('CMA_Process.FirstDownloaded.User',UserName)
+    ENDIF  
+    SurveyData.PUTVALUE('CMA_Process.LastDownloaded.When',Now)
+    SurveyData.PUTVALUE('CMA_Process.LastDownloaded.User',UserName)
+    AppData.PUTVALUE('CMA_Process.LastDownloaded.When',Now)
+    AppData.PUTVALUE('CMA_Process.LastDownloaded.User',UserName)
+    SurveyData.WRITE
+    AppData.WRITE                 
+  ENDDO
+  SurveyData.RELEASE
+

@@ -1,0 +1,169 @@
+﻿PROCESS GetUnassignedCases
+
+SETTINGS
+   CONNECT=NO
+
+USES
+   // These will be preloaded for you via cmd line
+   Launcher (VAR) // always the launcher datamodel
+   Attempts (VAR) // the attempts in cma_surveysettings for the specified survey or default attempts
+   Topic (VAR) // only preloaded if you select a survey from the dropdown
+   LogMeta (VAR) // admin tool logging meta
+   
+   DATAMODEL mInterchange
+   FIELDS
+      Message : OPEN
+   ENDMODEL
+   
+   DATAMODEL mContactInfo
+   PRIMARY MainSurveyId, Id
+   FIELDS
+      MainSurveyId : STRING[36]
+      Id : STRING[219]
+      SurveyDisplayName : STRING[200]
+      ContactInfoShort : STRING[255]
+      Interviewer : STRING[20]
+   ENDMODEL
+   
+// Survey data files can be opened with the Initialise function
+SURVEYDATAFILE sdLauncher : Launcher
+SETTINGS
+   OPEN=NO
+
+SURVEYDATAFILE sdAttempts : Attempts
+SETTINGS
+   OPEN=NO
+
+SURVEYDATAFILE sdTopic : Topic
+SETTINGS
+   OPEN=NO
+    
+TEMPORARYFILE tInterchange : mInterchange
+SETTINGS
+   INTERCHANGE=TRANSIT
+     
+OUTPUTFILE oLog:LogMeta (ASCII) //log file name set on cmd line using file id oLog
+SETTINGS
+  MAKENEWFILE=NO  
+  OPEN=NO
+  SEPARATOR=';'
+  TRAILINGSPACES=NO
+  CREATEBDIX=NO
+  
+OUTPUTFILE oContactInfo : mContactInfo(ASCII)
+SETTINGS
+   OPEN = NO
+   CREATEBDIX = NO
+   SEPARATOR = ';'
+   HEADERLINE = YES
+   
+SURVEYLIST srvList
+
+CONST
+  cDateTimeFormat = "yyyyMMdd,HH:mm:sszzz"
+
+FUNCTION GetConnectionString : STRING
+PARAMETERS pMeta : METATYPE
+AUXFIELDS GUID : STRING
+INSTRUCTIONS
+   GUID := [[pMeta.InstrumentId]]
+   srvList.GET(GUID)
+   IF srvList.RESULTOK THEN
+      RESULT := 'InstrumentId='+GUID+
+                ';Serverpark='+srvList.ServerPark
+   ENDIF
+ENDFUNCTION
+
+FUNCTION Initialise : INTEGER
+AUXFIELDS
+  res, res1, res2, res3: INTEGER
+  GUID: STRING
+INSTRUCTIONS
+   RESULT := -1
+   IF srvList.UserIsAuthenticated THEN
+      res := srvList.GETLISTOFSURVEYS
+      IF res = 0 THEN
+         sdLauncher.SETCONNECTIONSTRING(GetConnectionString([[Launcher]]))
+         res1 := sdLauncher.OPEN
+         sdAttempts.SETCONNECTIONSTRING(GetConnectionString([[Attempts]]))
+         res2 := sdAttempts.OPEN
+         IF pTopicLoaded = yes THEN
+            sdTopic.SETCONNECTIONSTRING(GetConnectionString([[Topic]]))
+            res3 := sdTopic.OPEN
+         ENDIF
+         RESULT := res1 + res2 + res3
+      ENDIF
+   ENDIF
+ENDFUNCTION
+
+FUNCTION NowDT: STRING
+INSTRUCTIONS
+  RESULT:= TIMETOSTR(SYSTIME,cDateTimeFormat)
+ENDFUNCTION 
+
+PROCEDURE AddToLog
+PARAMETERS pTextToLog: STRING
+INSTRUCTIONS
+  oLog.OPEN
+  oLog.PUTVALUE('LogWhen',NowDT)
+  oLog.PUTVALUE('LogText',pTextToLog)
+  oLog.WRITE
+  oLog.RELEASE
+ENDPROCEDURE
+
+PROCEDURE AddToRecordFilter
+PARAMETERS pFilter : OPEN
+INSTRUCTIONS
+   IF pFilter <> '' THEN
+      IF aRecordFilter <> '' THEN aRecordFilter := aRecordFilter + ' AND' ENDIF
+      aRecordFilter := aRecordFilter + pFilter
+   ENDIF
+ENDPROCEDURE
+
+PROCEDURE DeterminePath 
+INSTRUCTIONS
+   IF pFilePath = '' THEN 
+      pFilePath := GETSPECIALFOLDERPATH('MyDocuments') 
+      AddToLog('No FilePath detected, using \'' + pFilePath + '\'')
+   ENDIF
+ENDPROCEDURE
+
+AUXFIELDS
+   Res : INTEGER
+   pTopicLoaded : (yes (1)) // used to conditionally load the surveydatafile, can also be used in your own setup
+   pFilePath : OPEN
+   aRecordFilter : OPEN
+   aOutputFile : OPEN
+
+MANIPULATE
+   Res := Initialise
+   IF Res = 0 THEN
+      AddToLog('CustomScript ' + SETUPNAME + ' initialisation successful')
+      DeterminePath
+      IF pTopicLoaded = yes THEN
+         AddToRecordFilter('MainSurveyId=\'' + [[Topic.InstrumentId]] + '\'') 
+      ENDIF
+      AddToRecordFilter('CMA_ForWhom IS NULL')
+      sdLauncher.SETRECORDFILTER(aRecordFilter)
+      IF sdLauncher.RECORDCOUNT < 1 THEN 
+         tInterchange.Message := 'No unassigned cased found'
+         IF pTopicLoaded = yes THEN tInterchange.Message := tInterchange.Message + ' for topic ' + [[Topic.InstrumentId]] ENDIF
+         AddToLog('No unassigned records found') 
+      ELSE
+         aOutputFile := pFilePath + '\\UnassignedCases.csv'
+         oContactInfo.OPEN(aOutputFile)
+         REPEAT
+            sdLauncher.READNEXT
+            oContactInfo.MainSurveyId := sdLauncher.GETVALUE('MainSurveyId')
+            oContactInfo.Id := sdLauncher.GETVALUE('Id')
+            oContactInfo.SurveyDisplayName := sdLauncher.GETVALUE('SurveyDisplayName')
+            oContactInfo.ContactInfoShort := sdLauncher.GETVALUE('ContactInfoShort')
+            oContactInfo.WRITE
+         UNTIL sdLauncher.LASTRECORD
+         tInterchange.Message := STR(sdLauncher.RECORDCOUNT) + ' unassigned cased written to ' + aOutputFile
+      ENDIF
+      AddToLog('End CustomScript ' + SETUPNAME)
+   ELSE
+      AddToLog('CustomScript ' + SETUPNAME + ' initilisation failed: sdLauncher=' + STR(sdLauncher.IORESULTCODE) + ' sdAttempts='+ STR(sdAttempts.IORESULTCODE) + ' sdTopic='+ STR(sdTopic.IORESULTCODE))
+   ENDIF
+

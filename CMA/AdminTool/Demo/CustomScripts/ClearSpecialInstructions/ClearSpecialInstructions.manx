@@ -1,0 +1,157 @@
+﻿PROCESS ClearSpecialInstructions
+
+SETTINGS
+   CONNECT=NO
+
+USES
+   // These will be preloaded for you via cmd line
+   Launcher (VAR) // always the launcher datamodel
+   Attempts (VAR) // the attempts in cma_surveysettings for the specified survey or default attempts
+   Topic (VAR) // only preloaded if you select a survey from the dropdown
+   LogMeta (VAR) 
+   CMA_Backup // keep any external datamodels in the same path as the msux
+   
+   DATAMODEL mInterchange
+   FIELDS
+      Message : OPEN
+   ENDMODEL
+   
+// Survey data files can be opened with the Initialise function
+SURVEYDATAFILE sdLauncher : Launcher
+SETTINGS
+   OPEN=NO
+
+SURVEYDATAFILE sdAttempts : Attempts
+SETTINGS
+   OPEN=NO
+
+SURVEYDATAFILE sdTopic : Topic
+SETTINGS
+   OPEN=NO
+   
+SURVEYDATAFILE sdBackup : CMA_Backup
+SETTINGS
+   OPEN=NO
+       
+TEMPORARYFILE tInterchange : mInterchange
+SETTINGS
+   INTERCHANGE=TRANSIT
+  
+OUTPUTFILE oLog:LogMeta (ASCII) //log file name set on cmd line using file id oLog
+SETTINGS
+  MAKENEWFILE=NO  
+  OPEN=NO
+  SEPARATOR=';'
+  TRAILINGSPACES=NO
+  CREATEBDIX=NO
+  
+OUTPUTFILE oBackup : Launcher('./CustomScript/backup', BLAISE) // opening the file in the CustomScript folder to avoid clutter
+
+   
+SURVEYLIST srvList
+
+CONST
+  cDateTimeFormat = "yyyyMMdd,HH:mm:sszzz"
+
+FUNCTION GetConnectionString : STRING
+PARAMETERS pMeta : METATYPE
+AUXFIELDS GUID : STRING
+INSTRUCTIONS
+   GUID := [[pMeta.InstrumentId]]
+   srvList.GET(GUID)
+   IF srvList.RESULTOK THEN
+      RESULT := 'InstrumentId='+GUID+
+                ';Serverpark='+srvList.ServerPark
+   ENDIF
+ENDFUNCTION
+
+FUNCTION Initialise : INTEGER
+AUXFIELDS
+  res, res1, res2, res3: INTEGER
+  GUID: STRING
+INSTRUCTIONS
+   RESULT := -1
+   IF srvList.UserIsAuthenticated THEN
+      res := srvList.GETLISTOFSURVEYS
+      IF res = 0 THEN
+         sdLauncher.SETCONNECTIONSTRING(GetConnectionString([[Launcher]]))
+         res1 := sdLauncher.OPEN
+         sdAttempts.SETCONNECTIONSTRING(GetConnectionString([[Attempts]]))
+         res2 := sdAttempts.OPEN
+         IF pTopicLoaded = yes THEN
+            sdTopic.SETCONNECTIONSTRING(GetConnectionString([[Topic]]))
+            res3 := sdTopic.OPEN
+         ENDIF
+         RESULT := res1 + res2 + res3
+      ENDIF
+   ENDIF
+ENDFUNCTION
+
+FUNCTION NowDT: STRING
+INSTRUCTIONS
+  RESULT:= TIMETOSTR(SYSTIME,cDateTimeFormat)
+ENDFUNCTION 
+
+PROCEDURE AddToLog
+PARAMETERS pTextToLog: STRING
+INSTRUCTIONS
+  oLog.OPEN
+  oLog.PUTVALUE('LogWhen',NowDT)
+  oLog.PUTVALUE('LogText',pTextToLog)
+  oLog.WRITE
+  oLog.RELEASE
+ENDPROCEDURE
+
+PROCEDURE AddToRecordFilter
+PARAMETERS pFilter : OPEN
+INSTRUCTIONS
+   IF pFilter <> '' THEN
+      IF aRecordFilter <> '' THEN aRecordFilter := aRecordFilter + ' AND ' ENDIF
+      aRecordFilter := aRecordFilter + pFilter
+   ENDIF
+ENDPROCEDURE
+
+AUXFIELDS
+   Res : INTEGER
+   pTopicLoaded : (yes (1))
+   aRecordFilter : OPEN
+   NumRecords : INTEGER
+
+MANIPULATE
+   Res := Initialise
+   IF Res = 0 THEN
+      AddToLog('CustomScript initialisation successful')
+      sdBackup.SETCONNECTIONSTRING(GetConnectionString([[CMA_Backup]]))
+      Res := sdBackup.OPEN
+      IF Res = 0 THEN
+         sdLauncher.SETRECORDFILTER('MainSurveyID=\'00000000-0000-0000-0000-000000000000\' AND (CMA_Location=\'RELEASE_DONE\' OR CMA_Location=\'HANDLED\')')
+         NumRecords := sdLauncher.RECORDCOUNT
+         IF NumRecords > 0 THEN
+            REPEAT
+               sdLauncher.READNEXT
+               oBackup := sdLauncher
+               sdLauncher.DELETE
+               oBackup.WRITE
+            UNTIL sdLauncher.LASTRECORD
+            oBackup.RELEASE
+            sdBackup.INITRECORD
+            sdBackup.UserId := USERNAME
+            sdBackup.When := NowDT
+            sdBackup.Description := 'Completed special instructions'
+            Res := sdBackup.Backup.LoadFromDisk('./CustomScript/backup.bdbx')
+            sdBackup.WRITE
+            AddToLog('Completed special instructions removed: ' + STR(NumRecords))
+            tInterchange.Message := STR(NumRecords) + ' removed from launcher'
+         ELSE
+            tInterchange.Message := 'No completed special instructions found in the launcher database'
+            AddToLog('No completed special instructions found in the launcher database')
+         ENDIF
+      ELSE
+         tInterchange.Message := 'Failed to open CMA_Backup'
+         AddToLog('Failed to open CMA_Backup')
+      ENDIF
+      AddToLog('End CustomScript' )
+   ELSE
+      AddToLog('CustomScript initilisation failed: sdLauncher=' + STR(sdLauncher.IORESULTCODE) + ' sdAttempts='+ STR(sdAttempts.IORESULTCODE) + ' sdTopic='+ STR(sdTopic.IORESULTCODE))
+   ENDIF
+

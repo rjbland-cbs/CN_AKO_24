@@ -1,0 +1,52 @@
+﻿//Setup process all cases in the CMA attempts database and extract the attempts into one CSV file
+//Note that this setup assumes that all stored attempts use the same attempts datamodel
+
+SETTINGS
+  AUTOREAD=NO
+
+USES 
+  launcher //CMA launcher datamodel
+  attempts //CMA attempts datamodel
+
+INPUTFILE inp1:launcher ('launcher',BLAISE)
+
+INPUTFILE inp2:attempts (XML)
+SETTINGS
+  OPEN=no
+  
+OUTPUTFILE out1:attempts('attempts.csv',ASCII)  
+SETTINGS
+  SEPARATOR=';'
+  DELIMITER='"'
+  HEADERLINE=YES
+
+AUXFIELDS
+  res: INTEGER
+  aFolder: STRING
+    
+MANIPULATE
+  aFolder:= WORKINGFOLDER
+  IF inp1.FORMCOUNT>0 THEN
+    REPEAT
+      inp1.READNEXT
+      IF inp1.cma_data.attempts<>empty then
+        res:= inp1.cma_data.attempts.SAVETODISK(aFolder+'\\'+[[inp1.GetField('cma_data.attempts').DataValue.BlobValue.FileName]]) //extract blob
+        IF res=0 THEN
+          res:= inp2.OPEN(aFolder+'\\'+[[inp1.GetField('cma_data.attempts').DataValue.BlobValue.FileName]])
+          IF res=0 THEN
+            REPEAT
+              inp2.READNEXT
+              IF inp2.RESULTOK THEN
+                out1.WRITE
+              ENDIF  
+            UNTIL inp2.LASTRECORD or NOT inp2.RESULTOK 
+          ENDIF
+          inp2.RELEASE
+          res:= DELETEFILE(aFolder+'\\'+[[inp1.GetField('cma_data.attempts').DataValue.BlobValue.FileName]])
+        ENDIF  
+      ENDIF  
+    UNTIL inp1.LASTRECORD
+  ENDIF    
+    
+  
+  

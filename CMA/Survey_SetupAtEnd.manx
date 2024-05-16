@@ -1,0 +1,60 @@
+﻿PROCESS Survey_SetupAtEnd 
+//CMA 2.6. Framework of AtEnd setup
+SETTINGS CONNECT=NO 
+
+{.$DEFINE NoTopic}
+
+USES {$IFNDEF NoTopic} topicmeta (VAR) {$ENDIF}
+     launcher (VAR)
+     attempts (VAR) 
+     logmeta (VAR) //from CMA appliction
+
+{$IFNDEF NoTopic}    
+UPDATEFILE topic:topicmeta (BDIX) //name given on cmd line using inp as file id  
+{$ENDIF}
+    
+UPDATEFILE ufLocalCases:launcher (BDIX) //loc launcher name given on cmd line using upd as file id
+
+UPDATEFILE ufLocalAttempts:attempts (BDIX) //loc launcher name given on cmd line using upd as file id
+
+TEMPORARYFILE tmp:launcher
+
+OUTPUTFILE oLog:logMeta (ASCII) //log file name set on cmd line using file id oLog
+SETTINGS
+  MAKENEWFILE=NO  
+  OPEN=NO
+  SEPARATOR=';'
+  TRAILINGSPACES=NO
+  CREATEBDIX=NO
+  
+CONST
+  cDateTimeFormat = "yyyyMMdd,HH:mm:sszzz"
+   
+FUNCTION NowDT: STRING
+INSTRUCTIONS
+  RESULT:= TIMETOSTR(SYSTIME,cDateTimeFormat)
+ENDFUNCTION 
+
+AUXFIELDS
+  cmdID: STRING //id of just closed case set through cmd line
+  cmdGUID: STRING
+  cmdAfterInterview: INTEGER //1=yes, 0=no
+  cmdPrevStatus: STRING 
+
+PROCEDURE AddToLog
+PARAMETERS pTextToLog: STRING
+INSTRUCTIONS
+  oLog.OPEN
+  oLog.PUTVALUE('LogWhen',NowDT)
+  oLog.PUTVALUE('LogText',pTextToLog)
+  oLog.WRITE
+  oLog.RELEASE
+ENDPROCEDURE
+
+
+MANIPULATE
+  AddToLog('Start AtEnd setup '+SETUPNAME+': GUID='+cmdGuid+',ID='+cmdID+',AfterInterview='+STR(cmdAfterInterview))
+  //
+  //Here you do what you want to do... 
+  //
+  AddToLog('End AtEnd setup')

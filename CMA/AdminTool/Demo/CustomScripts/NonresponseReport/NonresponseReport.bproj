@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project Name="NonresponseReport" Guid="7b9869df-36ad-4737-aaf4-c16bd3a0bb66" ProjectType="ManipulaProject">
+  <MainFile RelativePath="true">NonresponseReport.manx</MainFile>
+  <FileItems>
+    <File FileType="ManipulaFileType" RelativePath="true">NonresponseReport.manx</File>
+  </FileItems>
+  <Properties>
+    <AppSupport />
+    <IsAppMainUserInterface />
+    <ResourceDB />
+    <SurveyRoot />
+    <ConditionalDefines />
+    <DatamodelSearchPath />
+    <ExternalSearchPath />
+    <IncludeSearchPath />
+    <LibrarySearchPath />
+  </Properties>
+</Project>

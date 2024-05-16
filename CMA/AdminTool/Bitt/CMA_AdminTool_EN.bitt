@@ -1,0 +1,946 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TranslationsFile>
+  <Languages>
+    <Language Name="EN">English</Language>
+  </Languages>
+  <Roles>
+    <Role Name="TOOLTIP" />
+    <Role Name="DISABLED" />
+  </Roles>
+  <Modes />
+  <Items>
+    <Translation Name="sUserID" Parent="mUser" Type="Field">
+      <Texts Lang="EN">User ID</Texts>
+    </Translation>
+    <Translation Name="sUserFullName" Parent="mUser" Type="Field">
+      <Texts Lang="EN">User name</Texts>
+    </Translation>
+    <Translation Name="InstrumentID" Parent="mConsistency" Type="Field">
+      <Texts Lang="EN">Instrument GUID</Texts>
+    </Translation>
+    <Translation Name="ID" Parent="mConsistency" Type="Field">
+      <Texts Lang="EN">ID</Texts>
+    </Translation>
+    <Translation Name="SurveyName" Parent="mConsistency" Type="Field">
+      <Texts Lang="EN">Survey name</Texts>
+    </Translation>
+    <Translation Name="LauncherSurveyDataFoundStr" Parent="mConsistency" Type="Field">
+      <Texts Lang="EN">Survey data in case</Texts>
+    </Translation>
+    <Translation Name="LauncherAttemptsNo" Parent="mConsistency" Type="Field">
+      <Texts Lang="EN">#Attempts in case</Texts>
+    </Translation>
+    <Translation Name="SurveyDataFoundStr" Parent="mConsistency" Type="Field">
+      <Texts Lang="EN">Survey data in database</Texts>
+    </Translation>
+    <Translation Name="AttemptsDataNo" Parent="mConsistency" Type="Field">
+      <Texts Lang="EN">#Attempts in database</Texts>
+    </Translation>
+    <Translation Name="LastAttempt" Parent="mConsistency" Type="Field">
+      <Texts Lang="EN">Last attempt in case</Texts>
+    </Translation>
+    <Translation Name="LastAttemptInData" Parent="mConsistency" Type="Field">
+      <Texts Lang="EN">Last attempt in database</Texts>
+    </Translation>
+    <Translation Name="CMA_ForWhom" Parent="mProgress" Type="Field">
+      <Texts Lang="EN">For whom</Texts>
+    </Translation>
+    <Translation Name="CMA_InPossession" Parent="mProgress" Type="Field">
+      <Texts Lang="EN">In possession</Texts>
+    </Translation>
+    <Translation Name="CMA_Location" Parent="mProgress" Type="Field">
+      <Texts Lang="EN">Location</Texts>
+    </Translation>
+    <Translation Name="CMA_Status" Parent="mProgress" Type="Field">
+      <Texts Lang="EN">Status</Texts>
+    </Translation>
+    <Translation Name="CMA_CaseClosed" Parent="mProgress" Type="Field">
+      <Texts Lang="EN">Closed</Texts>
+    </Translation>
+    <Translation Name="LastModification" Parent="mProgress" Type="Field">
+      <Texts Lang="EN">Last modification</Texts>
+    </Translation>
+    <Translation Name="Counter" Parent="mProgress" Type="Field">
+      <Texts Lang="EN">Total</Texts>
+    </Translation>
+    <Translation Name="sInstrumentID" Parent="mManageInfo" Type="Field">
+      <Texts Lang="EN">Instrument GUID</Texts>
+    </Translation>
+    <Translation Name="sSurveyName" Parent="mManageInfo" Type="Field">
+      <Texts Lang="EN">Survey name</Texts>
+    </Translation>
+    <Translation Name="sUserId" Parent="mManagementInfo" Type="Field">
+      <Texts Lang="EN">User ID</Texts>
+    </Translation>
+    <Translation Name="sInstrumentID" Parent="mManagementInfo" Type="Field">
+      <Texts Lang="EN">Instrument GUID</Texts>
+    </Translation>
+    <Translation Name="sSurveyName" Parent="mManagementInfo" Type="Field">
+      <Texts Lang="EN">Survey name</Texts>
+    </Translation>
+    <Translation Name="tSurveyName" Parent="locCases" Type="Field">
+      <Texts Lang="EN">Survey</Texts>
+    </Translation>
+    <Translation Name="tIdentifier" Parent="locCases" Type="Field">
+      <Texts Lang="EN">Key</Texts>
+    </Translation>
+    <Translation Name="tLastResult" Parent="locCases" Type="Field">
+      <Texts Lang="EN">Result</Texts>
+    </Translation>
+    <Translation Name="tAppointment" Parent="locCases" Type="Field">
+      <Texts Lang="EN">Appointment</Texts>
+    </Translation>
+    <Translation Name="tSupervisor" Parent="locCases" Type="Field">
+      <Texts Lang="EN">Supervisor</Texts>
+    </Translation>
+    <Translation Name="tStartDate" Parent="locCases" Type="Field">
+      <Texts Lang="EN">Start date</Texts>
+    </Translation>
+    <Translation Name="tEndDate" Parent="locCases" Type="Field">
+      <Texts Lang="EN">End date</Texts>
+    </Translation>
+    <Translation Name="tForWhom" Parent="locCases" Type="Field">
+      <Texts Lang="EN">For whom</Texts>
+    </Translation>
+    <Translation Name="tInpossession" Parent="locCases" Type="Field">
+      <Texts Lang="EN">Current owner</Texts>
+    </Translation>
+    <Translation Name="tLocation" Parent="locCases" Type="Field">
+      <Texts Lang="EN">Location</Texts>
+    </Translation>
+    <Translation Name="tContactInfoShort" Parent="locCases" Type="Field">
+      <Texts Lang="EN">Contact info</Texts>
+    </Translation>
+    <Translation Name="tLastAttempt" Parent="locCases" Type="Field">
+      <Texts Lang="EN">Last attempt</Texts>
+    </Translation>
+    <Translation Name="tCaseNote" Parent="locCases" Type="Field">
+      <Texts Lang="EN">Case note</Texts>
+    </Translation>
+    <Translation Name="tSpawnCount" Parent="locCases" Type="Field">
+      <Texts Lang="EN">#Created</Texts>
+    </Translation>
+    <Translation Name="tStatus" Parent="locCases" Type="Field">
+      <Texts Lang="EN">Status</Texts>
+    </Translation>
+    <Translation Name="tCaseStatus" Parent="locCases" Type="Field">
+      <Texts Lang="EN">Interview status</Texts>
+    </Translation>
+    <Translation Name="tGroupStatus" Parent="locCases" Type="Field">
+      <Texts Lang="EN">Group status</Texts>
+    </Translation>
+    <Translation Name="tGroupID" Parent="locCases" Type="Field">
+      <Texts Lang="EN">Group ID</Texts>
+    </Translation>
+    <Translation Name="tAttemptsCount" Parent="locCases" Type="Field">
+      <Texts Lang="EN">#Attempts</Texts>
+    </Translation>
+    <Translation Name="tGeoLocation" Parent="locCases" Type="Field">
+      <Texts Lang="EN">Geo position</Texts>
+    </Translation>
+    <Translation Name="tCustomCol1" Parent="locCases" Type="Field">
+      <Texts Lang="EN">CustumCol1</Texts>
+    </Translation>
+    <Translation Name="tCustomCol2" Parent="locCases" Type="Field">
+      <Texts Lang="EN">CustumCol2</Texts>
+    </Translation>
+    <Translation Name="tCustomCol3" Parent="locCases" Type="Field">
+      <Texts Lang="EN">CustumCol3</Texts>
+    </Translation>
+    <Translation Name="tCustomCol4" Parent="locCases" Type="Field">
+      <Texts Lang="EN">CustumCol4</Texts>
+    </Translation>
+    <Translation Name="tCustomCol5" Parent="locCases" Type="Field">
+      <Texts Lang="EN">CustumCol5</Texts>
+    </Translation>
+    <Translation Name="tCustomCol6" Parent="locCases" Type="Field">
+      <Texts Lang="EN">CustumCol6</Texts>
+    </Translation>
+    <Translation Name="tCustomCol7" Parent="locCases" Type="Field">
+      <Texts Lang="EN">CustumCol7</Texts>
+    </Translation>
+    <Translation Name="tCustomCol8" Parent="locCases" Type="Field">
+      <Texts Lang="EN">CustumCol8</Texts>
+    </Translation>
+    <Translation Name="tCustomCol9" Parent="locCases" Type="Field">
+      <Texts Lang="EN">CustumCol9</Texts>
+    </Translation>
+    <Translation Name="tCustomCol10" Parent="locCases" Type="Field">
+      <Texts Lang="EN">CustumCol10</Texts>
+    </Translation>
+    <Translation Name="atID" Parent="locAttempts" Type="Field">
+      <Texts Lang="EN">Key</Texts>
+    </Translation>
+    <Translation Name="SeqNr" Parent="locAttempts" Type="Field">
+      <Texts Lang="EN">#</Texts>
+    </Translation>
+    <Translation Name="When" Parent="locAttempts" Type="Field">
+      <Texts Lang="EN">When</Texts>
+    </Translation>
+    <Translation Name="HappeningsStr" Parent="locAttempts" Type="Field">
+      <Texts Lang="EN">Result</Texts>
+    </Translation>
+    <Translation Name="strYes" Type="Constant">
+      <Texts Lang="EN">Yes</Texts>
+    </Translation>
+    <Translation Name="strNo" Type="Constant">
+      <Texts Lang="EN">No</Texts>
+    </Translation>
+    <Translation Name="strWrongUser" Type="Constant">
+      <Texts Lang="EN">This user has no supervisor or project manager access to manage interviewers/supervisors</Texts>
+    </Translation>
+    <Translation Name="strNoSurveysToManage" Type="Constant">
+      <Texts Lang="EN">There are no surveys to manage</Texts>
+    </Translation>
+    <Translation Name="strConnectionFailed" Type="Constant">
+      <Texts Lang="EN">Connection failed!</Texts>
+    </Translation>
+    <Translation Name="strSupervisorTool" Type="Constant">
+      <Texts Lang="EN">CMA - Supervisor tool</Texts>
+    </Translation>
+    <Translation Name="strAdministratorTool" Type="Constant">
+      <Texts Lang="EN">CMA - Administrator tool</Texts>
+    </Translation>
+    <Translation Name="strManagerTool" Type="Constant">
+      <Texts Lang="EN">CMA - Manager tool</Texts>
+    </Translation>
+    <Translation Name="msgLogUploadOKay" Type="Constant">
+      <Texts Lang="EN">The log has been uploaded</Texts>
+    </Translation>
+    <Translation Name="msgLogUploadFailed" Type="Constant">
+      <Texts Lang="EN">The upload of the log failed</Texts>
+    </Translation>
+    <Translation Name="msgNotConnected" Type="Constant">
+      <Texts Lang="EN">Synchronize not possible because you are not connected to the Internet.</Texts>
+    </Translation>
+    <Translation Name="cNotStarted" Type="Constant">
+      <Texts Lang="EN">Not started</Texts>
+    </Translation>
+    <Translation Name="cAdded" Type="Constant">
+      <Texts Lang="EN">Added</Texts>
+    </Translation>
+    <Translation Name="cCompleted" Type="Constant">
+      <Texts Lang="EN">Completed</Texts>
+    </Translation>
+    <Translation Name="cInterrupted" Type="Constant">
+      <Texts Lang="EN">Interrupted</Texts>
+    </Translation>
+    <Translation Name="cStarted" Type="Constant">
+      <Texts Lang="EN">Started</Texts>
+    </Translation>
+    <Translation Name="cFinalized" Type="Constant">
+      <Texts Lang="EN">Finalized</Texts>
+    </Translation>
+    <Translation Name="cReopened" Type="Constant">
+      <Texts Lang="EN">Reopened</Texts>
+    </Translation>
+    <Translation Name="cDone" Type="Constant">
+      <Texts Lang="EN">Done</Texts>
+    </Translation>
+    <Translation Name="cClosed" Type="Constant">
+      <Texts Lang="EN">Closed</Texts>
+    </Translation>
+    <Translation Name="cAccepted" Type="Constant">
+      <Texts Lang="EN">Accepted</Texts>
+    </Translation>
+    <Translation Name="cNotAssigned" Type="Constant">
+      <Texts Lang="EN">Not assigned</Texts>
+    </Translation>
+    <Translation Name="cNotDownloaded" Type="Constant">
+      <Texts Lang="EN">Not downloaded</Texts>
+    </Translation>
+    <Translation Name="cNoUser" Type="Constant">
+      <Texts Lang="EN">&lt;none&gt;</Texts>
+    </Translation>
+    <Translation Name="cAllItems" Type="Constant">
+      <Texts Lang="EN">&lt;All&gt;</Texts>
+    </Translation>
+    <Translation Name="cCheckingConsistency" Type="Constant">
+      <Texts Lang="EN">One moment please. Checking consistency...</Texts>
+    </Translation>
+    <Translation Name="cRepairingInconsistentCases" Type="Constant">
+      <Texts Lang="EN">One moment please. Repairing inconsistent cases</Texts>
+    </Translation>
+    <Translation Name="cCalculatingProgress" Type="Constant">
+      <Texts Lang="EN">One moment please. Calculating progress overview...</Texts>
+    </Translation>
+    <Translation Name="cNoInconsistenciesFound" Type="Constant">
+      <Texts Lang="EN">Consistency check finished. No inconsistencies found.</Texts>
+    </Translation>
+    <Translation Name="cProgressReportNoData" Type="Constant">
+      <Texts Lang="EN">Progress report. No data found.</Texts>
+    </Translation>
+    <Translation Name="cProgressReportSurvey" Type="Constant">
+      <Texts Lang="EN">Progress report: </Texts>
+    </Translation>
+    <Translation Name="cConsistencyCheckSurvey" Type="Constant">
+      <Texts Lang="EN">Consistency check: </Texts>
+    </Translation>
+    <Translation Name="cLoggingForUser" Type="Constant">
+      <Texts Lang="EN">Logging for user: </Texts>
+    </Translation>
+    <Translation Name="cNoLoggingFoundForUser" Type="Constant">
+      <Texts Lang="EN">No logging found for user: </Texts>
+    </Translation>
+    <Translation Name="cRetrievingLoggingForUser" Type="Constant">
+      <Texts Lang="EN">Retrieving logging for user: </Texts>
+    </Translation>
+    <Translation Name="msgInstallOfSurvey" Type="Constant">
+      <Texts Lang="EN">Install of survey</Texts>
+    </Translation>
+    <Translation Name="msgUpdateOfSurvey" Type="Constant">
+      <Texts Lang="EN">Update of survey</Texts>
+    </Translation>
+    <Translation Name="msgFailed" Type="Constant">
+      <Texts Lang="EN">failed. Error: </Texts>
+    </Translation>
+    <Translation Name="msgSucceeded" Type="Constant">
+      <Texts Lang="EN">Succeeded!</Texts>
+    </Translation>
+    <Translation Name="msgNotPresent" Type="Constant">
+      <Texts Lang="EN">needed but not available for download on server</Texts>
+    </Translation>
+    <Translation Name="msgAttemptsForCase" Type="Constant">
+      <Texts Lang="EN">Attempts for case</Texts>
+    </Translation>
+    <Translation Name="strCasesForUser" Type="Constant">
+      <Texts Lang="EN">List of cases for</Texts>
+    </Translation>
+    <Translation Name="strCasesForSupervisor" Type="Constant">
+      <Texts Lang="EN">List of cases of supervisor</Texts>
+    </Translation>
+    <Translation Name="strCasesForSurvey" Type="Constant">
+      <Texts Lang="EN">List of cases for survey</Texts>
+    </Translation>
+    <Translation Name="strSurvey" Type="Constant">
+      <Texts Lang="EN">Survey</Texts>
+    </Translation>
+    <Translation Name="strListOfUnassignedCases" Type="Constant">
+      <Texts Lang="EN">List of unassigned cases</Texts>
+    </Translation>
+    <Translation Name="strConfirmAccepted" Type="Constant">
+      <Texts Lang="EN">Are you sure this case is accepted?</Texts>
+    </Translation>
+    <Translation Name="strConfirmAcceptedSel" Type="Constant">
+      <Texts Lang="EN">Are you sure all selected cases are accepted?</Texts>
+    </Translation>
+    <Translation Name="strCasesAccepted" Type="Constant">
+      <Texts Lang="EN">Number of cases accepted:</Texts>
+    </Translation>
+    <Translation Name="strAcceptedFailed" Type="Constant">
+      <Texts Lang="EN">Accept failed!</Texts>
+    </Translation>
+    <Translation Name="strConfirmReopen" Type="Constant">
+      <Texts Lang="EN">Are you sure this case needs to be reopened?</Texts>
+    </Translation>
+    <Translation Name="strConfirmReopenSel" Type="Constant">
+      <Texts Lang="EN">Are you sure all selected cases must be reopened?</Texts>
+    </Translation>
+    <Translation Name="strCasesReopened" Type="Constant">
+      <Texts Lang="EN">Number of reopened cases:</Texts>
+    </Translation>
+    <Translation Name="strConfirmClose" Type="Constant">
+      <Texts Lang="EN">Are you sure this case needs to be closed?</Texts>
+    </Translation>
+    <Translation Name="strConfirmCloseSel" Type="Constant">
+      <Texts Lang="EN">Are you sure all selected cases must be closed?</Texts>
+    </Translation>
+    <Translation Name="strCasesClosed" Type="Constant">
+      <Texts Lang="EN">Number of closed cases:</Texts>
+    </Translation>
+    <Translation Name="strConfirmRestoreUser" Type="Constant">
+      <Texts Lang="EN">Are you sure all cases of user $UserID need to be restored?</Texts>
+    </Translation>
+    <Translation Name="strConfirmRestoreSel" Type="Constant">
+      <Texts Lang="EN">Are you sure all selected cases must be restored?</Texts>
+    </Translation>
+    <Translation Name="strConfirmRestore" Type="Constant">
+      <Texts Lang="EN">Are you sure this case needs to be restored?</Texts>
+    </Translation>
+    <Translation Name="strCasesRestored" Type="Constant">
+      <Texts Lang="EN">Number of restored cases:</Texts>
+    </Translation>
+    <Translation Name="strConfirmTransfer" Type="Constant">
+      <Texts Lang="EN">Are you sure case $Identifier needs to be transferred to $UserID?</Texts>
+    </Translation>
+    <Translation Name="strConfirmTransferSel" Type="Constant">
+      <Texts Lang="EN">Are you sure all selected cases need to be transferred to user $UserID?</Texts>
+    </Translation>
+    <Translation Name="strConfirmAssign" Type="Constant">
+      <Texts Lang="EN">Are you sure case $Identifier needs to be assigned to $UserID?</Texts>
+    </Translation>
+    <Translation Name="strConfirmAssignSel" Type="Constant">
+      <Texts Lang="EN">Are you sure all selected case need to be assigned to user $UserID?</Texts>
+    </Translation>
+    <Translation Name="strConfirmRelease" Type="Constant">
+      <Texts Lang="EN">Are you sure this case needs to be released for the interviewer?</Texts>
+    </Translation>
+    <Translation Name="strConfirmReleaseSel" Type="Constant">
+      <Texts Lang="EN">Are you sure all selected cases must be released?</Texts>
+    </Translation>
+    <Translation Name="strCasesReleased" Type="Constant">
+      <Texts Lang="EN">Number of released cases:</Texts>
+    </Translation>
+    <Translation Name="strCasesAssigned" Type="Constant">
+      <Texts Lang="EN">Number of assigned cases:</Texts>
+    </Translation>
+    <Translation Name="strCasesTransfered" Type="Constant">
+      <Texts Lang="EN">Number of transfered cases:</Texts>
+    </Translation>
+    <Translation Name="strConfirmExcel" Type="Constant">
+      <Texts Lang="EN">Export done. Result can be found in file "$eName". Start Excel?</Texts>
+    </Translation>
+    <Translation Name="strUserNotAuthenticated" Type="Constant">
+      <Texts Lang="EN">User is not authenticated! Admintool will be halted.</Texts>
+    </Translation>
+    <Translation Name="strConnectionNotOkay" Type="Constant">
+      <Texts Lang="EN">Connection failed</Texts>
+    </Translation>
+    <Translation Name="cInstructionReleaseAll" Type="Constant">
+      <Texts Lang="EN">Release all cases from client device</Texts>
+    </Translation>
+    <Translation Name="cCreatedInstructions" Type="Constant">
+      <Texts Lang="EN">Number of instructions created:</Texts>
+    </Translation>
+    <Translation Name="cCreateInstruction" Type="Constant">
+      <Texts Lang="EN">Create Instruction</Texts>
+    </Translation>
+    <Translation Name="cReleaseCasesOneOrTwoStep" Type="Constant">
+      <Texts Lang="EN">Do you want to wait for a release acknowledgement from the current interviewer before the actual release of cases takes place?</Texts>
+    </Translation>
+    <Translation Name="cNoCasesSelectedForAction" Type="Constant">
+      <Texts Lang="EN">Please select one or more cases first</Texts>
+    </Translation>
+    <Translation Name="cTransferCasesOneOrTwoStep" Type="Constant">
+      <Texts Lang="EN">Do you want to wait for a transfer acknowledgement from the current interviewer before the actual transfer of cases takes place?</Texts>
+    </Translation>
+    <Translation Name="cAssignSupervisorSkippedCases" Type="Constant">
+      <Texts Lang="EN">The following cases could not be assigned to the supervisor because these caes were already downloaded by an interviewer: </Texts>
+    </Translation>
+    <Translation Name="cConfirmAssignSupervisor" Type="Constant">
+      <Texts Lang="EN">Are you sure you want to assign the selected case(s) to supervisor:</Texts>
+    </Translation>
+    <Translation Name="cCasesAssignedSuppervisor" Type="Constant">
+      <Texts Lang="EN">Number of assigned cases to supervisor:</Texts>
+    </Translation>
+    <Translation Name="cNoSupervisorsFoundToAssignTo" Type="Constant">
+      <Texts Lang="EN">Could no find any supervisors to assign the case(s) to</Texts>
+    </Translation>
+    <Translation Name="cInstructionReleaseSurvey" Type="Constant">
+      <Texts Lang="EN">Release all cases from selected survey from client device</Texts>
+    </Translation>
+    <Translation Name="cInstructionReleaseOrphans" Type="Constant">
+      <Texts Lang="EN">Release orphan cases from client device</Texts>
+    </Translation>
+    <Translation Name="strNoSurveySelectedForInstruction" Type="Constant">
+      <Texts Lang="EN">You have to select a survey in order to be able to create this kind of instruction.</Texts>
+    </Translation>
+    <Translation Name="strConfirmReleaseSurveyCases" Type="Constant">
+      <Texts Lang="EN">Are you sure you want to create an instruction to release all cases of survey/user: </Texts>
+    </Translation>
+    <Translation Name="strConfirmReleaseAll" Type="Constant">
+      <Texts Lang="EN">Are you sure you want to create an instruction to release all cases of user: </Texts>
+    </Translation>
+    <Translation Name="strConfirmOrphans" Type="Constant">
+      <Texts Lang="EN">Are you sure you want to create an instruction to release all orphan cases of user: </Texts>
+    </Translation>
+    <Translation Name="cNrOfCases" Type="Constant">
+      <Texts Lang="EN">#Cases:</Texts>
+    </Translation>
+    <Translation Name="cFirstLastDownloaded" Type="Constant">
+      <Texts Lang="EN">First/Last download:</Texts>
+    </Translation>
+    <Translation Name="cFirstLastUploaded" Type="Constant">
+      <Texts Lang="EN">First/Last upload:</Texts>
+    </Translation>
+    <Translation Name="cLastAttempt" Type="Constant">
+      <Texts Lang="EN">Last attempt:</Texts>
+    </Translation>
+    <Translation Name="cFirstLastInterviewTime" Type="Constant">
+      <Texts Lang="EN">First/Last interview time:</Texts>
+    </Translation>
+    <Translation Name="cLastInterviewEndTime" Type="Constant">
+      <Texts Lang="EN">Last interview end time:</Texts>
+    </Translation>
+    <Translation Name="cNumberOfAttempts" Type="Constant">
+      <Texts Lang="EN">#Attempts:</Texts>
+    </Translation>
+    <Translation Name="cTotalInterviewTimeUsed" Type="Constant">
+      <Texts Lang="EN">Interview time used:</Texts>
+    </Translation>
+    <Translation Name="strFieldNotInTopic" Type="Constant">
+      <Texts Lang="EN">Field "$field" does not exist in Topic</Texts>
+    </Translation>
+    <Translation Name="strFieldNotInLauncher" Type="Constant">
+      <Texts Lang="EN">Field "$field" does not exist in Launcher</Texts>
+    </Translation>
+    <Translation Name="strFieldNotInContact" Type="Constant">
+      <Texts Lang="EN">Field "$field" does not exist in Contact definition</Texts>
+    </Translation>
+    <Translation Name="strFieldError" Type="Constant">
+      <Texts Lang="EN">Field "$field" does not exist in import definition</Texts>
+    </Translation>
+    <Translation Name="strIDMissing" Type="Constant">
+      <Texts Lang="EN">Field "ID" is missing in file</Texts>
+    </Translation>
+    <Translation Name="strSureToImport" Type="Constant">
+      <Texts Lang="EN">Are you sure you want to import the file&lt;newline&gt;"$file"&lt;newline&gt;for survey&lt;newline&gt;"$survey"?</Texts>
+    </Translation>
+    <Translation Name="strSureToImportFile" Type="Constant">
+      <Texts Lang="EN">Are you sure you want to import the file&lt;newline&gt;"$file"?</Texts>
+    </Translation>
+    <Translation Name="strImportLauncherCases" Type="Constant">
+      <Texts Lang="EN">Import cases</Texts>
+    </Translation>
+    <Translation Name="strImportFileOpenError" Type="Constant">
+      <Texts Lang="EN">Import file not selected or could not be openened</Texts>
+    </Translation>
+    <Translation Name="strImportUserInfo" Type="Constant">
+      <Texts Lang="EN">Import user info</Texts>
+    </Translation>
+    <Translation Name="strImportManageInfo" Type="Constant">
+      <Texts Lang="EN">Import manage info</Texts>
+    </Translation>
+    <Translation Name="strNeedsRefresh" Type="Constant">
+      <Texts Lang="EN">Request could not be executed because cases were changed in database. Please press the Refresh button and try again</Texts>
+    </Translation>
+    <Translation Name="strRequestNotAllowed" Type="Constant">
+      <Texts Lang="EN">None of the cases could be processed. Request not allowed:</Texts>
+    </Translation>
+    <Translation Name="strEndRecovery" Type="Constant">
+      <Texts Lang="EN">End recovery. Recovered $1 survey data records and $2 attempts data records</Texts>
+    </Translation>
+    <Translation Name="strReadOnlyNotSupported" Type="Constant">
+      <Texts Lang="EN">Read-only access not supported by current survey questionnaire...</Texts>
+    </Translation>
+    <Translation Name="strExtractFailed" Type="Constant">
+      <Texts Lang="EN">Extract of survey data failed.</Texts>
+    </Translation>
+    <Translation Name="strErrorInKey" Type="Constant">
+      <Texts Lang="EN">Error in key: </Texts>
+    </Translation>
+    <Translation Name="strErrorInGUID" Type="Constant">
+      <Texts Lang="EN">Wrong GUID used in import</Texts>
+    </Translation>
+    <Translation Name="strNrImported" Type="Constant">
+      <Texts Lang="EN">Import finished!&lt;newline&gt;Number of cases imported:</Texts>
+    </Translation>
+    <Translation Name="strProcessing" Type="Constant">
+      <Texts Lang="EN">Processing...</Texts>
+    </Translation>
+    <Translation Name="ShowSurveyData" Parent="btnGroupCases" Type="Category">
+      <Texts Lang="EN">Show interview</Texts>
+    </Translation>
+    <Translation Name="ShowAttempts" Parent="btnGroupCases" Type="Category">
+      <Texts Lang="EN">Show attempts</Texts>
+    </Translation>
+    <Translation Name="Cancel" Parent="btnGroupCases" Type="Category">
+      <Texts Lang="EN">Back</Texts>
+    </Translation>
+    <Translation Name="RepairData" Parent="btnConsistencyCheck" Type="Category">
+      <Texts Lang="EN">Repair data</Texts>
+    </Translation>
+    <Translation Name="Cancel" Parent="btnConsistencyCheck" Type="Category">
+      <Texts Lang="EN">Back</Texts>
+    </Translation>
+    <Translation Name="ShowCases" Parent="btnProgressOverview" Type="Category">
+      <Texts Lang="EN">Show cases</Texts>
+    </Translation>
+    <Translation Name="Cancel" Parent="btnProgressOverview" Type="Category">
+      <Texts Lang="EN">Back</Texts>
+    </Translation>
+    <Translation Name="AssignCase" Parent="btnLauncherCases" Type="Category">
+      <Texts Lang="EN">Assign</Texts>
+      <Texts Lang="EN" Role="TOOLTIP">Assign case to an interviewer</Texts>
+    </Translation>
+    <Translation Name="AssignSupervisor" Parent="btnLauncherCases" Type="Category">
+      <Texts Lang="EN">Assign supervisor</Texts>
+      <Texts Lang="EN" Role="TOOLTIP">Assign case to a supervisor</Texts>
+    </Translation>
+    <Translation Name="ShowGroup" Parent="btnLauncherCases" Type="Category">
+      <Texts Lang="EN">Show group</Texts>
+    </Translation>
+    <Translation Name="ShowSurveyData" Parent="btnLauncherCases" Type="Category">
+      <Texts Lang="EN">Show interview</Texts>
+    </Translation>
+    <Translation Name="ShowAttempts" Parent="btnLauncherCases" Type="Category">
+      <Texts Lang="EN">Show attempts</Texts>
+    </Translation>
+    <Translation Name="ExportData" Parent="btnLauncherCases" Type="Category">
+      <Texts Lang="EN">Export survey data</Texts>
+    </Translation>
+    <Translation Name="Refresh" Parent="btnLauncherCases" Type="Category">
+      <Texts Lang="EN">Refresh</Texts>
+    </Translation>
+    <Translation Name="Cancel" Parent="btnLauncherCases" Type="Category">
+      <Texts Lang="EN">Back</Texts>
+    </Translation>
+    <Translation Name="SetAccepted" Parent="btnLauncherActions" Type="Category">
+      <Texts Lang="EN">Accept</Texts>
+      <Texts Lang="EN" Role="TOOLTIP">Accept the result of the case</Texts>
+    </Translation>
+    <Translation Name="SetReopen" Parent="btnLauncherActions" Type="Category">
+      <Texts Lang="EN">Reopen</Texts>
+      <Texts Lang="EN" Role="TOOLTIP">Reopen the case for the interviewer</Texts>
+    </Translation>
+    <Translation Name="CloseCase" Parent="btnLauncherActions" Type="Category">
+      <Texts Lang="EN">Close</Texts>
+      <Texts Lang="EN" Role="TOOLTIP">Close the case on the device</Texts>
+    </Translation>
+    <Translation Name="TransferCase" Parent="btnLauncherActions" Type="Category">
+      <Texts Lang="EN">Transfer</Texts>
+      <Texts Lang="EN" Role="TOOLTIP">Transfer the case to another interviewer / retrieve</Texts>
+    </Translation>
+    <Translation Name="RestoreCase" Parent="btnLauncherActions" Type="Category">
+      <Texts Lang="EN">Restore</Texts>
+      <Texts Lang="EN" Role="TOOLTIP">Make case available again on interview device</Texts>
+    </Translation>
+    <Translation Name="ReleaseCase" Parent="btnLauncherActions" Type="Category">
+      <Texts Lang="EN">Release</Texts>
+      <Texts Lang="EN" Role="TOOLTIP">Release case from interview device</Texts>
+    </Translation>
+    <Translation Name="aShowing" Type="Field">
+      <Texts Lang="EN">Cases to show: </Texts>
+    </Translation>
+    <Translation Name="shCompleted" Parent="aShowing" Type="Category">
+      <Texts Lang="EN">Completed</Texts>
+    </Translation>
+    <Translation Name="shFinalized" Parent="aShowing" Type="Category">
+      <Texts Lang="EN">Finalized</Texts>
+    </Translation>
+    <Translation Name="shCompletedFinalized" Parent="aShowing" Type="Category">
+      <Texts Lang="EN">Completed / Finalized</Texts>
+    </Translation>
+    <Translation Name="shReopened" Parent="aShowing" Type="Category">
+      <Texts Lang="EN">Reopened</Texts>
+    </Translation>
+    <Translation Name="shAccepted" Parent="aShowing" Type="Category">
+      <Texts Lang="EN">Accepted</Texts>
+    </Translation>
+    <Translation Name="shStarted" Parent="aShowing" Type="Category">
+      <Texts Lang="EN">Started / Interrupted</Texts>
+    </Translation>
+    <Translation Name="shClosed" Parent="aShowing" Type="Category">
+      <Texts Lang="EN">Closed</Texts>
+    </Translation>
+    <Translation Name="shAll" Parent="aShowing" Type="Category">
+      <Texts Lang="EN">All</Texts>
+    </Translation>
+    <Translation Name="Select" Parent="btnSelect" Type="Category">
+      <Texts Lang="EN" Role="TOOLTIP">Select case</Texts>
+    </Translation>
+    <Translation Name="SelectAll" Parent="btnSelect" Type="Category">
+      <Texts Lang="EN" Role="TOOLTIP">Select all cases</Texts>
+    </Translation>
+    <Translation Name="UnSelect" Parent="btnSelect" Type="Category">
+      <Texts Lang="EN" Role="TOOLTIP">Unselect case</Texts>
+    </Translation>
+    <Translation Name="UnSelectAll" Parent="btnSelect" Type="Category">
+      <Texts Lang="EN" Role="TOOLTIP">Unselect all cases</Texts>
+    </Translation>
+    <Translation Name="CreateInstruction" Parent="btnCreateInstruction" Type="Category">
+      <Texts Lang="EN">Create instruction</Texts>
+    </Translation>
+    <Translation Name="Cancel" Parent="btnCreateInstruction" Type="Category">
+      <Texts Lang="EN">Back</Texts>
+    </Translation>
+    <Translation Name="select" Parent="aUserBtnRow1" Type="Category">
+      <Texts Lang="EN">Show cases</Texts>
+    </Translation>
+    <Translation Name="instruction" Parent="aUserBtnRow1" Type="Category">
+      <Texts Lang="EN">Instruction</Texts>
+    </Translation>
+    <Translation Name="ExportData" Parent="aUserBtnRow1" Type="Category">
+      <Texts Lang="EN">Export cases</Texts>
+    </Translation>
+    <Translation Name="ImportCases" Parent="aUserBtnRow1" Type="Category">
+      <Texts Lang="EN">Import cases</Texts>
+    </Translation>
+    <Translation Name="CheckConsistency" Parent="aUserBtnRow2" Type="Category">
+      <Texts Lang="EN">Check</Texts>
+    </Translation>
+    <Translation Name="ImportUI" Parent="aUserBtnRow2" Type="Category">
+      <Texts Lang="EN">Import user info</Texts>
+    </Translation>
+    <Translation Name="ImportMI" Parent="aUserBtnRow2" Type="Category">
+      <Texts Lang="EN">Import manage info</Texts>
+    </Translation>
+    <Translation Name="Manage" Parent="aUserBtnRow2" Type="Category">
+      <Texts Lang="EN">Manage</Texts>
+    </Translation>
+    <Translation Name="Admin" Parent="aUserBtnRow2" Type="Category">
+      <Texts Lang="EN">Admin</Texts>
+    </Translation>
+    <Translation Name="Progress" Parent="aUserBtnRow2" Type="Category">
+      <Texts Lang="EN">Progress</Texts>
+    </Translation>
+    <Translation Name="Logging" Parent="aUserBtnRow2" Type="Category">
+      <Texts Lang="EN">Logging</Texts>
+    </Translation>
+    <Translation Name="RetoreCases" Parent="aUserBtnRow1" Type="Category">
+      <Texts Lang="EN">Restore user</Texts>
+    </Translation>
+    <Translation Name="Switch" Parent="aUserBtnRow2" Type="Category">
+      <Texts Lang="EN">Switch Role</Texts>
+    </Translation>
+    <Translation Name="cancel" Parent="aUserBtnRow2" Type="Category">
+      <Texts Lang="EN">Exit</Texts>
+    </Translation>
+    <Translation Name="Add" Parent="btnCustomScripts" Type="Category">
+      <Texts Lang="EN">Add</Texts>
+      <Texts Lang="EN" Role="TOOLTIP">Add a script</Texts>
+      <Texts Lang="EN" Role="TOOLTIP">Script toevoegen</Texts>
+    </Translation>
+    <Translation Name="Edit" Parent="btnCustomScripts" Type="Category">
+      <Texts Lang="EN">Edit</Texts>
+      <Texts Lang="EN" Role="TOOLTIP">Edit the selected script</Texts>
+      <Texts Lang="EN" Role="TOOLTIP">Pas het geselecteerde script aan</Texts>
+    </Translation>
+    <Translation Name="Delete" Parent="btnCustomScripts" Type="Category">
+      <Texts Lang="EN">Delete</Texts>
+      <Texts Lang="EN" Role="TOOLTIP">Delete the selected script</Texts>
+      <Texts Lang="EN" Role="TOOLTIP">Verwijder het geselecteerde script</Texts>
+    </Translation>
+    <Translation Name="Start" Parent="btnCustomScripts" Type="Category">
+      <Texts Lang="EN">Start</Texts>
+      <Texts Lang="EN" Role="TOOLTIP">Start the selected script</Texts>
+      <Texts Lang="EN" Role="TOOLTIP">Start het geselecteerde script</Texts>
+    </Translation>
+    <Translation Name="Cancel" Parent="btnCustomScripts" Type="Category">
+      <Texts Lang="EN">Back</Texts>
+    </Translation>
+    <Translation Name="Cancel" Parent="btnCustomScriptsActions" Type="Category">
+      <Texts Lang="EN">Cancel</Texts>
+    </Translation>
+    <Translation Name="OK" Parent="btnCustomScriptsActions" Type="Category">
+      <Texts Lang="EN">OK</Texts>
+    </Translation>
+    <Translation Name="AddUI" Parent="aBtnUserInfoMaintenanceRow" Type="Category">
+      <Texts Lang="EN">Add user info</Texts>
+    </Translation>
+    <Translation Name="EditUI" Parent="aBtnUserInfoMaintenanceRow" Type="Category">
+      <Texts Lang="EN">Edit user info</Texts>
+    </Translation>
+    <Translation Name="DeleteUI" Parent="aBtnUserInfoMaintenanceRow" Type="Category">
+      <Texts Lang="EN">Delete user info</Texts>
+    </Translation>
+    <Translation Name="Cancel" Parent="aBtnUserInfoMaintenanceRow" Type="Category">
+      <Texts Lang="EN">Back</Texts>
+    </Translation>
+    <Translation Name="AddMI" Parent="aBtnManageInfoMaintenanceRow" Type="Category">
+      <Texts Lang="EN">Add manage info</Texts>
+    </Translation>
+    <Translation Name="EditMI" Parent="aBtnManageInfoMaintenanceRow" Type="Category">
+      <Texts Lang="EN">Edit manage info</Texts>
+    </Translation>
+    <Translation Name="DeleteMI" Parent="aBtnManageInfoMaintenanceRow" Type="Category">
+      <Texts Lang="EN">Delete manage info</Texts>
+    </Translation>
+    <Translation Name="Cancel" Parent="aBtnManageInfoMaintenanceRow" Type="Category">
+      <Texts Lang="EN">Back</Texts>
+    </Translation>
+    <Translation Name="currentUserID" Type="Field">
+      <Texts Lang="EN">User ID</Texts>
+    </Translation>
+    <Translation Name="auxDefaultNrOfDaysLoggingHistory" Type="Field">
+      <Texts Lang="EN">Nr of days logging history: </Texts>
+    </Translation>
+    <Translation Name="auxWhatSurveyToShow" Type="Field">
+      <Texts Lang="EN">Surveys: </Texts>
+    </Translation>
+    <Translation Name="auxFilter" Type="Field">
+      <Texts Lang="EN">Filter:</Texts>
+    </Translation>
+    <Translation Name="auxSortOn" Type="Field">
+      <Texts Lang="EN">Select display order: </Texts>
+    </Translation>
+    <Translation Name="Quit" Parent="btnAttempts" Type="Category">
+      <Texts Lang="EN">Back</Texts>
+    </Translation>
+    <Translation Name="select" Parent="aSelUserBtn" Type="Category">
+      <Texts Lang="EN">Select</Texts>
+    </Translation>
+    <Translation Name="cancel" Parent="aSelUserBtn" Type="Category">
+      <Texts Lang="EN">Cancel</Texts>
+    </Translation>
+    <Translation Name="dAttempts" Type="Dialog">
+      <Texts Lang="EN">Attempts</Texts>
+    </Translation>
+    <Translation Name="SelectTransferUser" Type="Dialog">
+      <Texts Lang="EN">Select user</Texts>
+    </Translation>
+    <Translation Name="dShowTheLogging" Type="Dialog">
+      <Texts Lang="EN">CMA logging</Texts>
+    </Translation>
+    <Translation Name="auxDefaultNrOfDaysLoggingHistory" Parent="dShowTheLogging" Type="Field">
+      <Texts Lang="EN">Nr of days logging history: </Texts>
+    </Translation>
+    <Translation Name="ShowGroupCases" Type="Dialog">
+      <Texts Lang="EN">Group cases</Texts>
+    </Translation>
+    <Translation Name="currentUserID" Parent="ShowGroupCases" Type="Field">
+      <Texts Lang="EN">User ID</Texts>
+    </Translation>
+    <Translation Name="ShowConsistencyCheckResults" Type="Dialog">
+      <Texts Lang="EN">Consistency check results</Texts>
+    </Translation>
+    <Translation Name="ProgressOverview" Type="Dialog">
+      <Texts Lang="EN">Progress overview</Texts>
+    </Translation>
+    <Translation Name="currentUserID" Parent="ShowLauncherCases" Type="Field">
+      <Texts Lang="EN">User ID</Texts>
+    </Translation>
+    <Translation Name="aShowing" Parent="ShowLauncherCases" Type="Field">
+      <Texts Lang="EN">Cases to show: </Texts>
+    </Translation>
+    <Translation Name="auxSortOn" Parent="ShowLauncherCases" Type="Field">
+      <Texts Lang="EN">Select display order: </Texts>
+    </Translation>
+    <Translation Name="auxFilter" Parent="ShowLauncherCases" Type="Field">
+      <Texts Lang="EN">Filter:</Texts>
+    </Translation>
+    <Translation Name="currentUserID" Parent="ShowUsers" Type="Field">
+      <Texts Lang="EN">User ID</Texts>
+    </Translation>
+    <Translation Name="auxScriptName" Parent="dScriptActions" Type="Field">
+      <Texts Lang="EN">Script name</Texts>
+    </Translation>
+    <Translation Name="auxScriptSetup" Parent="dScriptActions" Type="Field">
+      <Texts Lang="EN">Script setup</Texts>
+    </Translation>
+    <Translation Name="auxScriptParameters" Parent="dScriptActions" Type="Field">
+      <Texts Lang="EN">Parameters</Texts>
+    </Translation>
+    <Translation Name="auxWhatSurveyToShow" Parent="ShowUsers" Type="Field">
+      <Texts Lang="EN">Surveys: </Texts>
+    </Translation>
+    <Translation Name="auxCMA_StartDate" Parent="dEditLauncherCases" Type="Field">
+      <Texts Lang="EN">Start date</Texts>
+    </Translation>
+    <Translation Name="auxCMA_EndDate" Parent="dEditLauncherCases" Type="Field">
+      <Texts Lang="EN">End date</Texts>
+    </Translation>
+    <Translation Name="auxCMA_Supervisor" Parent="dEditLauncherCases" Type="Field">
+      <Texts Lang="EN">Supervisor</Texts>
+    </Translation>
+    <Translation Name="auxCMA_CmdLineForEdit" Parent="dEditLauncherCases" Type="Field">
+      <Texts Lang="EN">Command line for edit</Texts>
+    </Translation>
+    <Translation Name="auxCMA_PreLoadForEdit" Parent="dEditLauncherCases" Type="Field">
+      <Texts Lang="EN">Preload for edit</Texts>
+    </Translation>
+    <Translation Name="auxCMA_AttemptsRoute" Parent="dEditLauncherCases" Type="Field">
+      <Texts Lang="EN">Attempts route</Texts>
+    </Translation>
+    <Translation Name="auxCMA_DetailsTemplate" Parent="dEditLauncherCases" Type="Field">
+      <Texts Lang="EN">Details template</Texts>
+    </Translation>
+    <Translation Name="EditCases" Parent="btnEditCases" Type="Category">
+      <Texts Lang="EN">Update cases</Texts>
+    </Translation>
+    <Translation Name="Cancel" Parent="btnEditCases" Type="Category">
+      <Texts Lang="EN">Back</Texts>
+    </Translation>
+    <Translation Name="EditCase" Parent="btnLauncherActions" Type="Category">
+      <Texts Lang="EN">Change</Texts>
+      <Texts Lang="EN" Role="TOOLTIP">Change selected fields in the case</Texts>
+    </Translation>
+    <Translation Name="strConfirmEditSel" Type="Constant">
+      <Texts Lang="EN">Are you sure you want to update the selected cases with the information you entered?</Texts>
+    </Translation>
+    <Translation Name="cNumberOfCasesUpdated" Type="Constant">
+      <Texts Lang="EN">Number of cases updated:</Texts>
+    </Translation>
+    <Translation Name="cNumberOfCasesSelectedForEdit" Type="Constant">
+      <Texts Lang="EN">Number of cases to edit:</Texts>
+    </Translation>
+    <Translation Name="cNoFieldsSelectedForUpdate" Type="Constant">
+      <Texts Lang="EN">Please select one or more fields to update!</Texts>
+    </Translation>
+    <Translation Name="cValidateUpdate" Type="Constant">
+      <Texts Lang="EN">Aborting update:</Texts>
+    </Translation>
+    <Translation Name="cDeleteScript" Type="Constant">
+      <Texts Lang="EN">Delete script</Texts>
+    </Translation>
+    <Translation Name="cEditScript" Type="Constant">
+      <Texts Lang="EN">Edit script</Texts>
+    </Translation>
+    <Translation Name="cStartScript" Type="Constant">
+      <Texts Lang="EN">Start script</Texts>
+    </Translation>
+    <Translation Name="cNewScript" Type="Constant">
+      <Texts Lang="EN">Add script</Texts>
+    </Translation>
+    <Translation Name="cScriptCannotSave" Type="Constant">
+      <Texts Lang="EN">Cannot save script: </Texts>
+    </Translation>
+    <Translation Name="cScriptExecutedSuccess" Type="Constant">
+      <Texts Lang="EN">Script successfully executed: </Texts>
+    </Translation>
+    <Translation Name="cScriptExecutionError" Type="Constant">
+      <Texts Lang="EN">Manipula script failed to execute. Error code: </Texts>
+    </Translation>
+    <Translation Name="cScriptFileNotFound" Type="Constant">
+      <Texts Lang="EN">Cannot execute script. Script file not found: </Texts>
+    </Translation>
+    <Translation Name="cCannotSaveScript" Type="Constant">
+      <Texts Lang="EN">Cannot save script: </Texts>
+    </Translation>
+    <Translation Name="cScriptFileCannotbeEmpty" Type="Constant">
+      <Texts Lang="EN">Script file cannot be empty</Texts>
+    </Translation>
+    <Translation Name="cScriptIsnotAManipulaScript" Type="Constant">
+      <Texts Lang="EN">Selected script is not a Manipula script</Texts>
+    </Translation>
+    <Translation Name="cPleaseProvideAScriptName" Type="Constant">
+      <Texts Lang="EN">Please provide a script name</Texts>
+    </Translation>
+    <Translation Name="cScriptDoesntExists" Type="Constant">
+      <Texts Lang="EN">Selected script does not exists</Texts>
+    </Translation>
+    <Translation Name="cNoDatmodelsFound" Type="Constant">
+      <Texts Lang="EN">No datmodels found in setup path</Texts>
+    </Translation>
+    <Translation Name="cCustomScripts" Type="Constant">
+      <Texts Lang="EN">Custom Scripts</Texts>
+    </Translation>
+    <Translation Name="CustomScripts" Parent="aUserBtnRow2" Type="Category">
+      <Texts Lang="EN">Custom Scripts</Texts>
+    </Translation>
+    <Translation Name="MaintainUI" Parent="aUserBtnRow2" Type="Category">
+      <Texts Lang="EN">Maintain user info</Texts>
+    </Translation>
+    <Translation Name="MaintainMI" Parent="aUserBtnRow2" Type="Category">
+      <Texts Lang="EN">Maintain manage info</Texts>
+    </Translation>
+    <Translation Name="cDeleteUserInfo" Type="Constant">
+      <Texts Lang="EN">Delete user info</Texts>
+    </Translation>
+    <Translation Name="cEditUserInfo" Type="Constant">
+      <Texts Lang="EN">Edit user info</Texts>
+    </Translation>
+    <Translation Name="cAddUserInfo" Type="Constant">
+      <Texts Lang="EN">Add user info</Texts>
+    </Translation>
+    <Translation Name="cMaintainUserInfo" Type="Constant">
+      <Texts Lang="EN">Maintain User Info</Texts>
+    </Translation>
+    <Translation Name="cDeleteManInfo" Type="Constant">
+      <Texts Lang="EN">Delete manage info</Texts>
+    </Translation>
+    <Translation Name="cEditManInfo" Type="Constant">
+      <Texts Lang="EN">Edit manage info</Texts>
+    </Translation>
+    <Translation Name="cAddManInfo" Type="Constant">
+      <Texts Lang="EN">Add manage info</Texts>
+    </Translation>
+    <Translation Name="cMaintainManageInfo" Type="Constant">
+      <Texts Lang="EN">Maintain Manage Info</Texts>
+    </Translation>
+  </Items>
+  <ReadErrors />
+  <AllLanguagesUsed>
+    <Language Name="EN">English</Language>
+  </AllLanguagesUsed>
+</TranslationsFile>

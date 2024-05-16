@@ -1,0 +1,3087 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TranslationsFile>
+  <Languages>
+    <Language Name="EN" />
+    <Language Name="NL" />
+  </Languages>
+  <Roles />
+  <Modes />
+  <Items>
+    <Translation Name="Case_Untouched" Parent="tHappeningsMaster" Type="Category">
+      <Texts Lang="EN">Case is untouched by any mode</Texts>
+    </Translation>
+    <Translation Name="Case_Accessed" Parent="tHappeningsMaster" Type="Category">
+      <Texts Lang="EN">Case is accessed by any mode</Texts>
+    </Translation>
+    <Translation Name="Case_QuickExit" Parent="tHappeningsMaster" Type="Category">
+      <Texts Lang="EN">Case is quick exited by any mode</Texts>
+    </Translation>
+    <Translation Name="Case_Review" Parent="tHappeningsMaster" Type="Category">
+      <Texts Lang="EN">Case is reviewed by any mode</Texts>
+    </Translation>
+    <Translation Name="Case_Attempted" Parent="tHappeningsMaster" Type="Category">
+      <Texts Lang="EN">Case is atttempted</Texts>
+    </Translation>
+    <Translation Name="Case_REngaged" Parent="tHappeningsMaster" Type="Category">
+      <Texts Lang="EN">R is engaged in case</Texts>
+    </Translation>
+    <Translation Name="Case_RApproaches" Parent="tHappeningsMaster" Type="Category">
+      <Texts Lang="EN">R approaches the survey</Texts>
+    </Translation>
+    <Translation Name="Case_Intro" Parent="tHappeningsMaster" Type="Category">
+      <Texts Lang="EN">R reads or is read Intro</Texts>
+    </Translation>
+    <Translation Name="Case_Ridentified" Parent="tHappeningsMaster" Type="Category">
+      <Texts Lang="EN">R is identified</Texts>
+    </Translation>
+    <Translation Name="Case_RWilling" Parent="tHappeningsMaster" Type="Category">
+      <Texts Lang="EN">R is willing</Texts>
+    </Translation>
+    <Translation Name="Case_ToScr" Parent="tHappeningsMaster" Type="Category">
+      <Texts Lang="EN">Launcher to topic</Texts>
+    </Translation>
+    <Translation Name="Scr_Started" Parent="tHappeningsMaster" Type="Category">
+      <Texts Lang="EN">Screener is started</Texts>
+    </Translation>
+    <Translation Name="Scr_Finished" Parent="tHappeningsMaster" Type="Category">
+      <Texts Lang="EN">Screener is finished</Texts>
+    </Translation>
+    <Translation Name="Scr_Eligible" Parent="tHappeningsMaster" Type="Category">
+      <Texts Lang="EN">Respondent is eligible</Texts>
+    </Translation>
+    <Translation Name="Scr_Ineligible" Parent="tHappeningsMaster" Type="Category">
+      <Texts Lang="EN">Respondent is ineligible</Texts>
+    </Translation>
+    <Translation Name="Scr_IneligibleAge" Parent="tHappeningsMaster" Type="Category">
+      <Texts Lang="EN">Respondent is ineligible becaues of age</Texts>
+    </Translation>
+    <Translation Name="Quex_Started" Parent="tHappeningsMaster" Type="Category">
+      <Texts Lang="EN">Questionnaire is started</Texts>
+    </Translation>
+    <Translation Name="Quex_Ongoing" Parent="tHappeningsMaster" Type="Category">
+      <Texts Lang="EN">Questionnaire is ongoing</Texts>
+    </Translation>
+    <Translation Name="Quex_Incomplete" Parent="tHappeningsMaster" Type="Category">
+      <Texts Lang="EN">Questionnaire is incomplete</Texts>
+    </Translation>
+    <Translation Name="Quex_Partial" Parent="tHappeningsMaster" Type="Category">
+      <Texts Lang="EN">Questionnaire is partially/usefully complete</Texts>
+    </Translation>
+    <Translation Name="Quex_Key" Parent="tHappeningsMaster" Type="Category">
+      <Texts Lang="EN">Questionnaire is key field complete</Texts>
+    </Translation>
+    <Translation Name="Quex_Complete" Parent="tHappeningsMaster" Type="Category">
+      <Texts Lang="EN">Questionnaire is complete</Texts>
+    </Translation>
+    <Translation Name="Quex_FollowUp" Parent="tHappeningsMaster" Type="Category">
+      <Texts Lang="EN">Incomplete questionnaire is designated for follow up</Texts>
+    </Translation>
+    <Translation Name="Quex_Break" Parent="tHappeningsMaster" Type="Category">
+      <Texts Lang="EN">Break-off</Texts>
+      <Texts Lang="NL">Afgebroken</Texts>
+    </Translation>
+    <Translation Name="Quex_Timeout" Parent="tHappeningsMaster" Type="Category">
+      <Texts Lang="EN">Breakoff due to timeout</Texts>
+    </Translation>
+    <Translation Name="Quex_IntroBreak" Parent="tHappeningsMaster" Type="Category">
+      <Texts Lang="EN">R breaks off at Intro</Texts>
+    </Translation>
+    <Translation Name="Quex_PostIntroBreak" Parent="tHappeningsMaster" Type="Category">
+      <Texts Lang="EN">R breaks off after Intro</Texts>
+    </Translation>
+    <Translation Name="Quex_BreakLang" Parent="tHappeningsMaster" Type="Category">
+      <Texts Lang="EN">Language skills of respondent not sufficient</Texts>
+      <Texts Lang="NL">OP beheerst onvoldoende Nederlands</Texts>
+    </Translation>
+    <Translation Name="Quex_BreakCannot" Parent="tHappeningsMaster" Type="Category">
+      <Texts Lang="EN">Respondent cannot be interviewed</Texts>
+      <Texts Lang="NL">OP kan toch niet geïnterviewd worden</Texts>
+    </Translation>
+    <Translation Name="Quex_BreakOther" Parent="tHappeningsMaster" Type="Category">
+      <Texts Lang="EN">Other breakoff reason</Texts>
+    </Translation>
+    <Translation Name="Quex_ResistDifficult" Parent="tHappeningsMaster" Type="Category">
+      <Texts Lang="EN">Respondent found it too difficult</Texts>
+      <Texts Lang="NL">OP vond het te moeilijk</Texts>
+    </Translation>
+    <Translation Name="Quex_ResistLong" Parent="tHappeningsMaster" Type="Category">
+      <Texts Lang="EN">Respondent thought it was too long</Texts>
+      <Texts Lang="NL">OP vond het te lang</Texts>
+    </Translation>
+    <Translation Name="Quex_ResistPersonal" Parent="tHappeningsMaster" Type="Category">
+      <Texts Lang="EN">Respondent found it too personal / intimate</Texts>
+      <Texts Lang="NL">OP vond het te persoonlijk / intiem</Texts>
+    </Translation>
+    <Translation Name="Quex_ResistSecurity" Parent="tHappeningsMaster" Type="Category">
+      <Texts Lang="EN">Security reasons</Texts>
+      <Texts Lang="NL">Veiligheidsredenen</Texts>
+    </Translation>
+    <Translation Name="Quex_ResistTopic" Parent="tHappeningsMaster" Type="Category">
+      <Texts Lang="EN">Did not like the topic</Texts>
+    </Translation>
+    <Translation Name="Quex_ResistOther" Parent="tHappeningsMaster" Type="Category">
+      <Texts Lang="EN">Other reason</Texts>
+      <Texts Lang="NL">Andere reden</Texts>
+    </Translation>
+    <Translation Name="Quex_ResistDiffMode" Parent="tHappeningsMaster" Type="Category">
+      <Texts Lang="EN">Preference for different mode</Texts>
+      <Texts Lang="NL">Voorkeur andere mode</Texts>
+    </Translation>
+    <Translation Name="Ref_Direct" Parent="tHappeningsMaster" Type="Category">
+      <Texts Lang="EN">Direct or outright refusal</Texts>
+      <Texts Lang="NL">Weigering</Texts>
+    </Translation>
+    <Translation Name="Ref_Adamant" Parent="tHappeningsMaster" Type="Category">
+      <Texts Lang="EN">Adamant refusal</Texts>
+    </Translation>
+    <Translation Name="Ref_Burden" Parent="tHappeningsMaster" Type="Category">
+      <Texts Lang="EN">Too many surveys or too much burden</Texts>
+    </Translation>
+    <Translation Name="Ref_NoTime" Parent="tHappeningsMaster" Type="Category">
+      <Texts Lang="EN">No time for the survey</Texts>
+    </Translation>
+    <Translation Name="Ref_Privacy" Parent="tHappeningsMaster" Type="Category">
+      <Texts Lang="EN">Refused for privacy reasons</Texts>
+    </Translation>
+    <Translation Name="Ref_UnkReason" Parent="tHappeningsMaster" Type="Category">
+      <Texts Lang="EN">Refusal for unknown reason</Texts>
+      <Texts Lang="NL">Reden onbekend</Texts>
+    </Translation>
+    <Translation Name="Ref_OthReason" Parent="tHappeningsMaster" Type="Category">
+      <Texts Lang="EN">Refusal for other reason - specify</Texts>
+      <Texts Lang="NL">Andere reden</Texts>
+    </Translation>
+    <Translation Name="Ref_Implicit" Parent="tHappeningsMaster" Type="Category">
+      <Texts Lang="EN">Implicit refusal - multiple missed appointments</Texts>
+      <Texts Lang="NL">Impliciete weigering - meerdere gemiste afspraken</Texts>
+    </Translation>
+    <Translation Name="Ref_Communication" Parent="tHappeningsMaster" Type="Category">
+      <Texts Lang="EN">Communication refused by Addressee</Texts>
+    </Translation>
+    <Translation Name="Ref_Soft" Parent="tHappeningsMaster" Type="Category">
+      <Texts Lang="EN">Soft refusal</Texts>
+    </Translation>
+    <Translation Name="Ref_Quex" Parent="tHappeningsMaster" Type="Category">
+      <Texts Lang="EN">Refused questionnaire</Texts>
+    </Translation>
+    <Translation Name="Ref_Final" Parent="tHappeningsMaster" Type="Category">
+      <Texts Lang="EN">Final refusal</Texts>
+    </Translation>
+    <Translation Name="Ref_Unit" Parent="tHappeningsMaster" Type="Category">
+      <Texts Lang="EN">Unit refusal</Texts>
+    </Translation>
+    <Translation Name="Ref_Politico" Parent="tHappeningsMaster" Type="Category">
+      <Texts Lang="EN">Politico intervenes</Texts>
+    </Translation>
+    <Translation Name="Res_ApptNotMet" Parent="tHappeningsMaster" Type="Category">
+      <Texts Lang="EN">One appointment not met</Texts>
+      <Texts Lang="NL">Afspraak niet nagekomen</Texts>
+    </Translation>
+    <Translation Name="Res_HomeNoAnswer" Parent="tHappeningsMaster" Type="Category">
+      <Texts Lang="EN">R is home but no answer</Texts>
+    </Translation>
+    <Translation Name="Res_BounceBack" Parent="tHappeningsMaster" Type="Category">
+      <Texts Lang="EN">Communication bounced back</Texts>
+    </Translation>
+    <Translation Name="Res_Promise" Parent="tHappeningsMaster" Type="Category">
+      <Texts Lang="EN">Promised to complete</Texts>
+    </Translation>
+    <Translation Name="Res_WebPromise" Parent="tHappeningsMaster" Type="Category">
+      <Texts Lang="EN">Promised to complete in web</Texts>
+    </Translation>
+    <Translation Name="Res_PhonePromise" Parent="tHappeningsMaster" Type="Category">
+      <Texts Lang="EN">Promised to complete by phone</Texts>
+    </Translation>
+    <Translation Name="Res_VisitPromise" Parent="tHappeningsMaster" Type="Category">
+      <Texts Lang="EN">Promised to complete by visit</Texts>
+    </Translation>
+    <Translation Name="Res_PaperPromise" Parent="tHappeningsMaster" Type="Category">
+      <Texts Lang="EN">Promised to complete by paper</Texts>
+    </Translation>
+    <Translation Name="NAV_NotAvailable" Parent="tHappeningsMaster" Type="Category">
+      <Texts Lang="EN">Not available during survey period</Texts>
+      <Texts Lang="NL">Afwezig tijdens veldwerkperiode</Texts>
+    </Translation>
+    <Translation Name="NAV_Trip" Parent="tHappeningsMaster" Type="Category">
+      <Texts Lang="EN">Not available due to holiday, work abroad, business trip etc.</Texts>
+      <Texts Lang="NL">Vakantie, werk in het buitenland, zakenreis etc.</Texts>
+    </Translation>
+    <Translation Name="NAV_Incarcerated" Parent="tHappeningsMaster" Type="Category">
+      <Texts Lang="EN">Respondent is in detention</Texts>
+      <Texts Lang="NL">OP zit in detentie</Texts>
+    </Translation>
+    <Translation Name="NAV_Institution" Parent="tHappeningsMaster" Type="Category">
+      <Texts Lang="EN">Respondent has been temporarily admitted to a hospital, care home or other institution</Texts>
+      <Texts Lang="NL">OP is tijdelijk opgenomen in het ziekenhuis, verzorgingstehuis of andere instelling</Texts>
+    </Translation>
+    <Translation Name="NAV_NoTime" Parent="tHappeningsMaster" Type="Category">
+      <Texts Lang="EN">Field work period almost over: no time to make another appointment</Texts>
+      <Texts Lang="NL">Veldwerkperiode bijna ten einde: geen tijd om nog een afspraak te maken</Texts>
+    </Translation>
+    <Translation Name="NAV_OtherReason" Parent="tHappeningsMaster" Type="Category">
+      <Texts Lang="EN">Not available for another reason</Texts>
+      <Texts Lang="NL">Andere reden</Texts>
+    </Translation>
+    <Translation Name="NonI_NoInterview" Parent="tHappeningsMaster" Type="Category">
+      <Texts Lang="EN">Contact with Respondent/household, no interview, no appointment</Texts>
+      <Texts Lang="NL">Contact met OP/huishouden, geen interview, geen afspraak</Texts>
+    </Translation>
+    <Translation Name="NonI_Language" Parent="tHappeningsMaster" Type="Category">
+      <Texts Lang="EN">Language barrier</Texts>
+      <Texts Lang="NL">Beheerst onvoldoende Nederlands</Texts>
+    </Translation>
+    <Translation Name="NonI_Health" Parent="tHappeningsMaster" Type="Category">
+      <Texts Lang="EN">Cannot be interviewed (too sick, weak, deaf or psychological problems)</Texts>
+      <Texts Lang="NL">Kan niet geïnterviewd worden (te ziek, zwak, doof of psychische problemen)</Texts>
+    </Translation>
+    <Translation Name="NonI_Redundant" Parent="tHappeningsMaster" Type="Category">
+      <Texts Lang="EN">Already participated through different mode (or tried)</Texts>
+      <Texts Lang="NL">Via een andere mode meegedaan (of geprobeerd)</Texts>
+    </Translation>
+    <Translation Name="NonI_Deceased" Parent="tHappeningsMaster" Type="Category">
+      <Texts Lang="EN">Passed away</Texts>
+      <Texts Lang="NL">OP overleden</Texts>
+    </Translation>
+    <Translation Name="NonI_BadData" Parent="tHappeningsMaster" Type="Category">
+      <Texts Lang="EN">Data incorrect or moved within the Netherlands</Texts>
+      <Texts Lang="NL">Gegevens onjuist of verhuisd binnen Nederland</Texts>
+    </Translation>
+    <Translation Name="NonI_Moved" Parent="tHappeningsMaster" Type="Category">
+      <Texts Lang="EN">Respondent / household has moved</Texts>
+      <Texts Lang="NL">OP / huishouden is verhuisd</Texts>
+    </Translation>
+    <Translation Name="NonI_RUnknown" Parent="tHappeningsMaster" Type="Category">
+      <Texts Lang="EN">Respondent / household has never lived / unknown at this address</Texts>
+      <Texts Lang="NL">OP / huishouden heeft nooit op dit adres gewoond / onbekend</Texts>
+    </Translation>
+    <Translation Name="NonI_OtherReason" Parent="tHappeningsMaster" Type="Category">
+      <Texts Lang="EN">Data incorrect - other reason</Texts>
+      <Texts Lang="NL">Anders</Texts>
+    </Translation>
+    <Translation Name="NonI_Abroad" Parent="tHappeningsMaster" Type="Category">
+      <Texts Lang="EN">Moved abroad</Texts>
+      <Texts Lang="NL">Verhuisd naar het buitenland</Texts>
+    </Translation>
+    <Translation Name="NonI_Institution" Parent="tHappeningsMaster" Type="Category">
+      <Texts Lang="EN">Moved to an institution (care home, etc.)</Texts>
+      <Texts Lang="NL">Verhuisd naar een instelling (verzorgingstehuis, etc.)</Texts>
+    </Translation>
+    <Translation Name="NonC_NoContact" Parent="tHappeningsMaster" Type="Category">
+      <Texts Lang="EN">No contact</Texts>
+      <Texts Lang="NL">Geen contact</Texts>
+    </Translation>
+    <Translation Name="NonC_NotHome" Parent="tHappeningsMaster" Type="Category">
+      <Texts Lang="EN">No one at home / was not opened</Texts>
+      <Texts Lang="NL">Niemand thuis / werd niet open gedaan</Texts>
+    </Translation>
+    <Translation Name="NonC_NoAccess" Parent="tHappeningsMaster" Type="Category">
+      <Texts Lang="EN">Each time access not possible</Texts>
+      <Texts Lang="NL">Geen enkele keer toegang mogelijk</Texts>
+    </Translation>
+    <Translation Name="NonC_HHUnknown" Parent="tHappeningsMaster" Type="Category">
+      <Texts Lang="EN">OP / household unknown or not found</Texts>
+      <Texts Lang="NL">OP / huishouden onbekend of onvindbaar</Texts>
+    </Translation>
+    <Translation Name="NonC_NoSuchAddress" Parent="tHappeningsMaster" Type="Category">
+      <Texts Lang="EN">No residential address / vacancy / under construction)</Texts>
+      <Texts Lang="NL">Geen woonadres / leegstand / in aanbouw)</Texts>
+    </Translation>
+    <Translation Name="NonC_CannotFind" Parent="tHappeningsMaster" Type="Category">
+      <Texts Lang="EN">Address cannot be found / does not exist</Texts>
+      <Texts Lang="NL">Adres is onvindbaar / bestaat niet</Texts>
+    </Translation>
+    <Translation Name="NonC_NoHouse" Parent="tHappeningsMaster" Type="Category">
+      <Texts Lang="EN">House under construction, demolished, demolition house</Texts>
+      <Texts Lang="NL">Woning in aanbouw, afgebroken, sloopwoning</Texts>
+    </Translation>
+    <Translation Name="NonC_NotResidential" Parent="tHappeningsMaster" Type="Category">
+      <Texts Lang="EN">No home address (factory, school, office, etc.)</Texts>
+      <Texts Lang="NL">Geen woonadres (fabriek, school, kantoor e.d.)</Texts>
+    </Translation>
+    <Translation Name="NonC_Vacant" Parent="tHappeningsMaster" Type="Category">
+      <Texts Lang="EN">Probably residential address, but vacant / temporarily uninhabited</Texts>
+      <Texts Lang="NL">Vermoedelijk woonadres, maar leegstaand / tijdelijk onbewoond</Texts>
+    </Translation>
+    <Translation Name="NonC_Unsafe" Parent="tHappeningsMaster" Type="Category">
+      <Texts Lang="EN">Unsafe situation</Texts>
+      <Texts Lang="NL">Onveilige situatie</Texts>
+    </Translation>
+    <Translation Name="NonC_AddrOther" Parent="tHappeningsMaster" Type="Category">
+      <Texts Lang="EN">Other</Texts>
+      <Texts Lang="NL">Anders</Texts>
+    </Translation>
+    <Translation Name="NonC_AddrInsuff" Parent="tHappeningsMaster" Type="Category">
+      <Texts Lang="EN">Insufficient address</Texts>
+    </Translation>
+    <Translation Name="NonC_AddrIllegible" Parent="tHappeningsMaster" Type="Category">
+      <Texts Lang="EN">Illegible address</Texts>
+    </Translation>
+    <Translation Name="NonC_SwitchLang" Parent="tHappeningsMaster" Type="Category">
+      <Texts Lang="EN">Switch language</Texts>
+    </Translation>
+    <Translation Name="NonC_Other" Parent="tHappeningsMaster" Type="Category">
+      <Texts Lang="EN">No contact, other reason</Texts>
+      <Texts Lang="NL">Andere reden</Texts>
+    </Translation>
+    <Translation Name="NonC_NoPostOffice" Parent="tHappeningsMaster" Type="Category">
+      <Texts Lang="EN">No such post office</Texts>
+    </Translation>
+    <Translation Name="NonC_POBClosed" Parent="tHappeningsMaster" Type="Category">
+      <Texts Lang="EN">Postal Box Closed</Texts>
+    </Translation>
+    <Translation Name="NonC_CannotDeliver" Parent="tHappeningsMaster" Type="Category">
+      <Texts Lang="EN">Mail cannot be delivered</Texts>
+    </Translation>
+    <Translation Name="NonC_NoReceptacle" Parent="tHappeningsMaster" Type="Category">
+      <Texts Lang="EN">Mail no receptacle</Texts>
+    </Translation>
+    <Translation Name="NonC_AddPostage" Parent="tHappeningsMaster" Type="Category">
+      <Texts Lang="EN">Mail returned for additional postage</Texts>
+    </Translation>
+    <Translation Name="nonC_RefPostage" Parent="tHappeningsMaster" Type="Category">
+      <Texts Lang="EN">Refused to pay postage</Texts>
+    </Translation>
+    <Translation Name="NonC_ForwardAddr" Parent="tHappeningsMaster" Type="Category">
+      <Texts Lang="EN">R moved - forwarding address provided</Texts>
+    </Translation>
+    <Translation Name="NonC_AddrCorrection" Parent="tHappeningsMaster" Type="Category">
+      <Texts Lang="EN">Address correction provided</Texts>
+    </Translation>
+    <Translation Name="NonC_NoForwardAddr" Parent="tHappeningsMaster" Type="Category">
+      <Texts Lang="EN">R moved - no forwarding address provided</Texts>
+    </Translation>
+    <Translation Name="NonC_BoxFull" Parent="tHappeningsMaster" Type="Category">
+      <Texts Lang="EN">Box is full</Texts>
+    </Translation>
+    <Translation Name="NonC_ProviderRejects" Parent="tHappeningsMaster" Type="Category">
+      <Texts Lang="EN">Provider rejects</Texts>
+    </Translation>
+    <Translation Name="NonC_Busy" Parent="tHappeningsMaster" Type="Category">
+      <Texts Lang="EN">Busy</Texts>
+      <Texts Lang="NL">In gesprek</Texts>
+    </Translation>
+    <Translation Name="NonC_SOElse" Parent="tHappeningsMaster" Type="Category">
+      <Texts Lang="EN">Contact with someone else</Texts>
+    </Translation>
+    <Translation Name="NonC_VMNoIDNoMsg" Parent="tHappeningsMaster" Type="Category">
+      <Texts Lang="EN">Voice mail, SM no ID, no left message</Texts>
+    </Translation>
+    <Translation Name="NonC_VMNoIDLeftMsg" Parent="tHappeningsMaster" Type="Category">
+      <Texts Lang="EN">Voice mail, SM no ID, left message</Texts>
+    </Translation>
+    <Translation Name="NonC_VMIDNoMsg" Parent="tHappeningsMaster" Type="Category">
+      <Texts Lang="EN">Voice mail, SM ID, no left message</Texts>
+    </Translation>
+    <Translation Name="NonC_VMIDLeftMsg" Parent="tHappeningsMaster" Type="Category">
+      <Texts Lang="EN">Voice mail, SM ID, left message</Texts>
+    </Translation>
+    <Translation Name="Con_Appt" Parent="tHappeningsMaster" Type="Category">
+      <Texts Lang="EN">Date/time appointment made</Texts>
+      <Texts Lang="NL">Afspraak gemaakt</Texts>
+    </Translation>
+    <Translation Name="Con_ApptPhonePeriod" Parent="tHappeningsMaster" Type="Category">
+      <Texts Lang="EN">Period appointment made</Texts>
+    </Translation>
+    <Translation Name="Con_ApptPhoneDay" Parent="tHappeningsMaster" Type="Category">
+      <Texts Lang="EN">Day appointment made</Texts>
+    </Translation>
+    <Translation Name="Con_ApptPhoneSoft" Parent="tHappeningsMaster" Type="Category">
+      <Texts Lang="EN">Soft Appointment made</Texts>
+      <Texts Lang="NL">Afspraak gemaakt</Texts>
+    </Translation>
+    <Translation Name="Con_ApptNotPoss" Parent="tHappeningsMaster" Type="Category">
+      <Texts Lang="EN">Appointment not possible within survey period</Texts>
+    </Translation>
+    <Translation Name="Chn_PhoneAttempt" Parent="tHappeningsMaster" Type="Category">
+      <Texts Lang="EN">Phone attempt</Texts>
+    </Translation>
+    <Translation Name="Chn_PhoneSilence" Parent="tHappeningsMaster" Type="Category">
+      <Texts Lang="EN">Phone silence</Texts>
+    </Translation>
+    <Translation Name="Chn_PhoneOperator" Parent="tHappeningsMaster" Type="Category">
+      <Texts Lang="EN">Phone operator answers</Texts>
+    </Translation>
+    <Translation Name="Chn_PhoneDisconnected" Parent="tHappeningsMaster" Type="Category">
+      <Texts Lang="EN">Phone is disconnected</Texts>
+    </Translation>
+    <Translation Name="Chn_PhoneFastBusy" Parent="tHappeningsMaster" Type="Category">
+      <Texts Lang="EN">Phone fast busy</Texts>
+    </Translation>
+    <Translation Name="Chn_PhoneModemFax" Parent="tHappeningsMaster" Type="Category">
+      <Texts Lang="EN">Phone modem or fax</Texts>
+    </Translation>
+    <Translation Name="Chn_PhonePayphone" Parent="tHappeningsMaster" Type="Category">
+      <Texts Lang="EN">Pay phone number</Texts>
+    </Translation>
+    <Translation Name="Chn_PhoneRecordedMessage" Parent="tHappeningsMaster" Type="Category">
+      <Texts Lang="EN">Recorded message</Texts>
+    </Translation>
+    <Translation Name="Chn_PhoneNewNumber" Parent="tHappeningsMaster" Type="Category">
+      <Texts Lang="EN">New phone number collected</Texts>
+    </Translation>
+    <Translation Name="Chn_NewPhysAddress" Parent="tHappeningsMaster" Type="Category">
+      <Texts Lang="EN">New address collected</Texts>
+    </Translation>
+    <Translation Name="Chn_NewEmail" Parent="tHappeningsMaster" Type="Category">
+      <Texts Lang="EN">New email collected</Texts>
+    </Translation>
+    <Translation Name="Chn_NewSmAddress" Parent="tHappeningsMaster" Type="Category">
+      <Texts Lang="EN">New social media address collected</Texts>
+    </Translation>
+    <Translation Name="Chn_EmaiSent" Parent="tHappeningsMaster" Type="Category">
+      <Texts Lang="EN">Email sent</Texts>
+    </Translation>
+    <Translation Name="Chn_TextSent" Parent="tHappeningsMaster" Type="Category">
+      <Texts Lang="EN">Text sent</Texts>
+    </Translation>
+    <Translation Name="Chn_SMediaSent" Parent="tHappeningsMaster" Type="Category">
+      <Texts Lang="EN">Social media message sent</Texts>
+    </Translation>
+    <Translation Name="Chn_LeftVM" Parent="tHappeningsMaster" Type="Category">
+      <Texts Lang="EN">Voicemail</Texts>
+      <Texts Lang="NL">Voicemail</Texts>
+    </Translation>
+    <Translation Name="Case_UntouchedPhone" Parent="tHappeningsPhone" Type="Category">
+      <Texts Lang="EN">Case is untouched by phone</Texts>
+    </Translation>
+    <Translation Name="Case_AccessedPhone" Parent="tHappeningsPhone" Type="Category">
+      <Texts Lang="EN">Case is accessed by phone</Texts>
+    </Translation>
+    <Translation Name="Case_QuickExitPhone" Parent="tHappeningsPhone" Type="Category">
+      <Texts Lang="EN">Quick exit, not an attempt</Texts>
+    </Translation>
+    <Translation Name="Case_ReviewPhone" Parent="tHappeningsPhone" Type="Category">
+      <Texts Lang="EN">Case is reviewed in phone</Texts>
+    </Translation>
+    <Translation Name="Case_AttemptedPhone" Parent="tHappeningsPhone" Type="Category">
+      <Texts Lang="EN">Case is atttempted by phone</Texts>
+    </Translation>
+    <Translation Name="Case_REngagedPhone" Parent="tHappeningsPhone" Type="Category">
+      <Texts Lang="EN">R answers phone</Texts>
+    </Translation>
+    <Translation Name="Case_RApproachesPhone" Parent="tHappeningsPhone" Type="Category">
+      <Texts Lang="EN">R calls in</Texts>
+    </Translation>
+    <Translation Name="Case_RidentifiedPhone" Parent="tHappeningsPhone" Type="Category">
+      <Texts Lang="EN">R is identified by phone</Texts>
+    </Translation>
+    <Translation Name="Case_RWillingPhone" Parent="tHappeningsPhone" Type="Category">
+      <Texts Lang="EN">R is willing by phone</Texts>
+    </Translation>
+    <Translation Name="Case_ToScrPhone" Parent="tHappeningsPhone" Type="Category">
+      <Texts Lang="EN">Launcher to topic on phone</Texts>
+    </Translation>
+    <Translation Name="Scr_StartedPhone" Parent="tHappeningsPhone" Type="Category">
+      <Texts Lang="EN">Screener is started by phone</Texts>
+    </Translation>
+    <Translation Name="Scr_FinishedPhone" Parent="tHappeningsPhone" Type="Category">
+      <Texts Lang="EN">Screener is finished by phone</Texts>
+    </Translation>
+    <Translation Name="Scr_EligiblePhone" Parent="tHappeningsPhone" Type="Category">
+      <Texts Lang="EN">Respondent is eligible on phone</Texts>
+    </Translation>
+    <Translation Name="Scr_IneligiblePhone" Parent="tHappeningsPhone" Type="Category">
+      <Texts Lang="EN">Respondent is ineligible on phone</Texts>
+    </Translation>
+    <Translation Name="Scr_IneligibleAgePhone" Parent="tHappeningsPhone" Type="Category">
+      <Texts Lang="EN">Respondent is ineligible becaues of age on phone</Texts>
+    </Translation>
+    <Translation Name="Quex_StartedPhone" Parent="tHappeningsPhone" Type="Category">
+      <Texts Lang="EN">Questionnaire is started by phone</Texts>
+    </Translation>
+    <Translation Name="Quex_OngoingPhone" Parent="tHappeningsPhone" Type="Category">
+      <Texts Lang="EN">Questionnaire is ongoing on the phone</Texts>
+    </Translation>
+    <Translation Name="Quex_IncompletePhone" Parent="tHappeningsPhone" Type="Category">
+      <Texts Lang="EN">Questionnaire is incomplete by phone or in process</Texts>
+    </Translation>
+    <Translation Name="Quex_PartialPhone" Parent="tHappeningsPhone" Type="Category">
+      <Texts Lang="EN">Questionnaire is partially/usefully complete by phone</Texts>
+    </Translation>
+    <Translation Name="Quex_KeyPhone" Parent="tHappeningsPhone" Type="Category">
+      <Texts Lang="EN">Questionnaire is key field complete by phone</Texts>
+    </Translation>
+    <Translation Name="Quex_CompletePhone" Parent="tHappeningsPhone" Type="Category">
+      <Texts Lang="EN">Questionnaire is complete by phone</Texts>
+    </Translation>
+    <Translation Name="Quex_FollowUpPhone" Parent="tHappeningsPhone" Type="Category">
+      <Texts Lang="EN">Incomplete questionnaire is designated for follow up by phone</Texts>
+    </Translation>
+    <Translation Name="Quex_BreakPhone" Parent="tHappeningsPhone" Type="Category">
+      <Texts Lang="EN">Break-off on phone</Texts>
+      <Texts Lang="NL">Afgebroken</Texts>
+    </Translation>
+    <Translation Name="Case_IntroBreakPhone" Parent="tHappeningsPhone" Type="Category">
+      <Texts Lang="EN">R breaks off at Intro on phone</Texts>
+    </Translation>
+    <Translation Name="Quex_PostIntroBreakPhone" Parent="tHappeningsPhone" Type="Category">
+      <Texts Lang="EN">R breaks off after Intro on phone</Texts>
+    </Translation>
+    <Translation Name="Quex_BreakLangPhone" Parent="tHappeningsPhone" Type="Category">
+      <Texts Lang="EN">Language skills of respondent not sufficient on phone</Texts>
+      <Texts Lang="NL">OP beheerst onvoldoende Nederlands</Texts>
+    </Translation>
+    <Translation Name="Quex_BreakCannotPhone" Parent="tHappeningsPhone" Type="Category">
+      <Texts Lang="EN">Respondent cannot be interviewed on phone</Texts>
+      <Texts Lang="NL">OP kan toch niet geïnterviewd worden</Texts>
+    </Translation>
+    <Translation Name="Quex_ResistDifficultPhone" Parent="tHappeningsPhone" Type="Category">
+      <Texts Lang="EN">Respondent found it too difficult on phone</Texts>
+      <Texts Lang="NL">OP vond het te moeilijk</Texts>
+    </Translation>
+    <Translation Name="Quex_ResistLongPhone" Parent="tHappeningsPhone" Type="Category">
+      <Texts Lang="EN">Respondent thought it was too long on phone</Texts>
+      <Texts Lang="NL">OP vond het te lang</Texts>
+    </Translation>
+    <Translation Name="Quex_ResistPersonalPhone" Parent="tHappeningsPhone" Type="Category">
+      <Texts Lang="EN">Respondent found it too personal / intimate on phone</Texts>
+      <Texts Lang="NL">OP vond het te persoonlijk / intiem</Texts>
+    </Translation>
+    <Translation Name="Quex_ResistSecurityPhone" Parent="tHappeningsPhone" Type="Category">
+      <Texts Lang="EN">Security reasons on phone</Texts>
+      <Texts Lang="NL">Veiligheidsredenen</Texts>
+    </Translation>
+    <Translation Name="Quex_ResistTopicPhone" Parent="tHappeningsPhone" Type="Category">
+      <Texts Lang="EN">Did not like the topic on the phone</Texts>
+    </Translation>
+    <Translation Name="Quex_ResistOtherPhone" Parent="tHappeningsPhone" Type="Category">
+      <Texts Lang="EN">Other reason on phone</Texts>
+      <Texts Lang="NL">Andere reden</Texts>
+    </Translation>
+    <Translation Name="Quex_ResistDiffModePhone" Parent="tHappeningsPhone" Type="Category">
+      <Texts Lang="EN">Preference for different mode than phone</Texts>
+      <Texts Lang="NL">Voorkeur andere mode</Texts>
+    </Translation>
+    <Translation Name="Ref_DirectPhone" Parent="tHappeningsPhone" Type="Category">
+      <Texts Lang="EN">Direct or outright refusal on phone</Texts>
+      <Texts Lang="NL">Weigering</Texts>
+    </Translation>
+    <Translation Name="Ref_AdamantPhone" Parent="tHappeningsPhone" Type="Category">
+      <Texts Lang="EN">Adamant refusal on phone</Texts>
+    </Translation>
+    <Translation Name="Ref_BurdenPhone" Parent="tHappeningsPhone" Type="Category">
+      <Texts Lang="EN">Too many surveys or too much burden</Texts>
+    </Translation>
+    <Translation Name="Ref_NoTimePhone" Parent="tHappeningsPhone" Type="Category">
+      <Texts Lang="EN">No time for the phone survey</Texts>
+    </Translation>
+    <Translation Name="Ref_PrivacyPhone" Parent="tHappeningsPhone" Type="Category">
+      <Texts Lang="EN">Refused for privacy reasons on phone</Texts>
+    </Translation>
+    <Translation Name="Ref_UnkReasonPhone" Parent="tHappeningsPhone" Type="Category">
+      <Texts Lang="EN">Refusal for unknown reason on phone</Texts>
+      <Texts Lang="NL">Reden onbekend</Texts>
+    </Translation>
+    <Translation Name="Ref_OthReasonPhone" Parent="tHappeningsPhone" Type="Category">
+      <Texts Lang="EN">Refusal for other reason on phone - specify</Texts>
+      <Texts Lang="NL">Andere reden</Texts>
+    </Translation>
+    <Translation Name="Ref_ImplicitPhone" Parent="tHappeningsPhone" Type="Category">
+      <Texts Lang="EN">Implicit refusal - multiple missed appointments on phone</Texts>
+    </Translation>
+    <Translation Name="Ref_CommunicationPhone" Parent="tHappeningsPhone" Type="Category">
+      <Texts Lang="EN">Phone refused by Addressee</Texts>
+    </Translation>
+    <Translation Name="Ref_SoftPhone" Parent="tHappeningsPhone" Type="Category">
+      <Texts Lang="EN">Soft refusal by phone</Texts>
+    </Translation>
+    <Translation Name="Ref_FinalPhone" Parent="tHappeningsPhone" Type="Category">
+      <Texts Lang="EN">Final refusal by phone</Texts>
+    </Translation>
+    <Translation Name="Ref_UnitPhone" Parent="tHappeningsPhone" Type="Category">
+      <Texts Lang="EN">Unit refusal by phone</Texts>
+    </Translation>
+    <Translation Name="Res_ApptNotMetPhone" Parent="tHappeningsPhone" Type="Category">
+      <Texts Lang="EN">One appointment not met on phone</Texts>
+      <Texts Lang="NL">Afspraak niet nagekomen</Texts>
+    </Translation>
+    <Translation Name="Res_HomeNoAnswerPhone" Parent="tHappeningsPhone" Type="Category">
+      <Texts Lang="EN">R is home but no answer on phone</Texts>
+    </Translation>
+    <Translation Name="Res_NoAnswerPhone" Parent="tHappeningsPhone" Type="Category">
+      <Texts Lang="EN">Phone no answer by CATI or home</Texts>
+    </Translation>
+    <Translation Name="Res_PromisePhone" Parent="tHappeningsPhone" Type="Category">
+      <Texts Lang="EN">Promised to complete in another mode</Texts>
+    </Translation>
+    <Translation Name="Res_WebPromisePhone" Parent="tHappeningsPhone" Type="Category">
+      <Texts Lang="EN">Promised on phone to complete in web</Texts>
+    </Translation>
+    <Translation Name="Res_VisitPromisePhone" Parent="tHappeningsPhone" Type="Category">
+      <Texts Lang="EN">Promised on phone to complete by visit</Texts>
+    </Translation>
+    <Translation Name="Res_PaperPromisePhone" Parent="tHappeningsPhone" Type="Category">
+      <Texts Lang="EN">Promised on phone to complete by paper</Texts>
+    </Translation>
+    <Translation Name="NAV_NotAvailablePhone" Parent="tHappeningsPhone" Type="Category">
+      <Texts Lang="EN">Not available during survey period on phone</Texts>
+      <Texts Lang="NL">Afwezig tijdens veldwerkperiode</Texts>
+    </Translation>
+    <Translation Name="NAV_TripPhone" Parent="tHappeningsPhone" Type="Category">
+      <Texts Lang="EN">Not available on phone due to holiday, work abroad, business trip etc.</Texts>
+      <Texts Lang="NL">Vakantie, werk in het buitenland, zakenreis etc.</Texts>
+    </Translation>
+    <Translation Name="NonC_SwitchLangPhone" Parent="tHappeningsPhone" Type="Category">
+      <Texts Lang="EN">Switch language for phone</Texts>
+    </Translation>
+    <Translation Name="NonC_ProviderRejectsPhone" Parent="tHappeningsPhone" Type="Category">
+      <Texts Lang="EN">Provider rejects phone attempt</Texts>
+    </Translation>
+    <Translation Name="NonC_BusyPhone" Parent="tHappeningsPhone" Type="Category">
+      <Texts Lang="EN">Busy</Texts>
+      <Texts Lang="NL">In gesprek</Texts>
+    </Translation>
+    <Translation Name="NonC_VMNoIDNoMsgPhone" Parent="tHappeningsPhone" Type="Category">
+      <Texts Lang="EN">Voice mail, SM no ID, no left message</Texts>
+    </Translation>
+    <Translation Name="NonC_VMNoIDLeftMsgPhone" Parent="tHappeningsPhone" Type="Category">
+      <Texts Lang="EN">Voice mail, SM no ID, left message</Texts>
+    </Translation>
+    <Translation Name="NonC_VMIDNoMsgPhone" Parent="tHappeningsPhone" Type="Category">
+      <Texts Lang="EN">Voice mail, SM ID, no left message</Texts>
+    </Translation>
+    <Translation Name="NonC_VMIDLeftMsgPhone" Parent="tHappeningsPhone" Type="Category">
+      <Texts Lang="EN">Voice mail, SM ID, left message</Texts>
+    </Translation>
+    <Translation Name="Con_ApptPhone" Parent="tHappeningsPhone" Type="Category">
+      <Texts Lang="EN">Date/time appointment made</Texts>
+      <Texts Lang="NL">Afspraak gemaakt</Texts>
+    </Translation>
+    <Translation Name="Con_ApptPhonePeriodPhone" Parent="tHappeningsPhone" Type="Category">
+      <Texts Lang="EN">Period appointment made</Texts>
+    </Translation>
+    <Translation Name="Con_ApptPhoneDayPhone" Parent="tHappeningsPhone" Type="Category">
+      <Texts Lang="EN">Day appointment made</Texts>
+    </Translation>
+    <Translation Name="Con_ApptPhoneSoftPhone" Parent="tHappeningsPhone" Type="Category">
+      <Texts Lang="EN">Soft Appointment made</Texts>
+      <Texts Lang="NL">Afspraak gemaakt</Texts>
+    </Translation>
+    <Translation Name="Con_ApptNotPossPhonePhone" Parent="tHappeningsPhone" Type="Category">
+      <Texts Lang="EN">Phone appointment not possible within survey period</Texts>
+    </Translation>
+    <Translation Name="Chn_PhoneAttemptPhone" Parent="tHappeningsPhone" Type="Category">
+      <Texts Lang="EN">Phone attempt</Texts>
+    </Translation>
+    <Translation Name="Chn_PhoneSilencePhone" Parent="tHappeningsPhone" Type="Category">
+      <Texts Lang="EN">Phone silence</Texts>
+    </Translation>
+    <Translation Name="Chn_PhoneOperatorPhone" Parent="tHappeningsPhone" Type="Category">
+      <Texts Lang="EN">Phone operator answers</Texts>
+    </Translation>
+    <Translation Name="Chn_PhoneDisconnectedPhone" Parent="tHappeningsPhone" Type="Category">
+      <Texts Lang="EN">Phone is disconnected</Texts>
+    </Translation>
+    <Translation Name="Chn_PhoneFastBusyPhone" Parent="tHappeningsPhone" Type="Category">
+      <Texts Lang="EN">Phone fast busy</Texts>
+    </Translation>
+    <Translation Name="Chn_PhoneModemFaxPhone" Parent="tHappeningsPhone" Type="Category">
+      <Texts Lang="EN">Phone modem or fax</Texts>
+    </Translation>
+    <Translation Name="Chn_PhonePayphonePhone" Parent="tHappeningsPhone" Type="Category">
+      <Texts Lang="EN">Pay phone number</Texts>
+    </Translation>
+    <Translation Name="Chn_PhoneRecordedMessagePhone" Parent="tHappeningsPhone" Type="Category">
+      <Texts Lang="EN">Recorded message</Texts>
+    </Translation>
+    <Translation Name="Chn_PhoneNewNumberPhone" Parent="tHappeningsPhone" Type="Category">
+      <Texts Lang="EN">New phone number collected by phone</Texts>
+    </Translation>
+    <Translation Name="Chn_NewPhysAddressPhone" Parent="tHappeningsPhone" Type="Category">
+      <Texts Lang="EN">New address collected by phone</Texts>
+    </Translation>
+    <Translation Name="Chn_NewEmailPhone" Parent="tHappeningsPhone" Type="Category">
+      <Texts Lang="EN">New email collected by phone</Texts>
+    </Translation>
+    <Translation Name="Chn_NewSmAddressPhone" Parent="tHappeningsPhone" Type="Category">
+      <Texts Lang="EN">New social media address collected by phone</Texts>
+    </Translation>
+    <Translation Name="Chn_EmaiSentPhone" Parent="tHappeningsPhone" Type="Category">
+      <Texts Lang="EN">Email sent from CATI</Texts>
+    </Translation>
+    <Translation Name="Chn_TextSentPhone" Parent="tHappeningsPhone" Type="Category">
+      <Texts Lang="EN">Text sent by CATI</Texts>
+    </Translation>
+    <Translation Name="Chn_SMediaSentPhone" Parent="tHappeningsPhone" Type="Category">
+      <Texts Lang="EN">Social media message sent by CATI</Texts>
+    </Translation>
+    <Translation Name="Chn_LeftVMPhone" Parent="tHappeningsPhone" Type="Category">
+      <Texts Lang="EN">Voicemail</Texts>
+      <Texts Lang="NL">Voicemail</Texts>
+    </Translation>
+    <Translation Name="Case_RApproachesText" Parent="tHappeningsText" Type="Category">
+      <Texts Lang="EN">R texts survey center</Texts>
+    </Translation>
+    <Translation Name="Ref_CommunicationText" Parent="tHappeningsText" Type="Category">
+      <Texts Lang="EN">Text refused by Addressee</Texts>
+    </Translation>
+    <Translation Name="Ref_UnitText" Parent="tHappeningsText" Type="Category">
+      <Texts Lang="EN">Unit refusal by text</Texts>
+    </Translation>
+    <Translation Name="Res_BounceBackText" Parent="tHappeningsText" Type="Category">
+      <Texts Lang="EN">Text communication bounced back</Texts>
+    </Translation>
+    <Translation Name="Res_WebPromiseText" Parent="tHappeningsText" Type="Category">
+      <Texts Lang="EN">Promised by text to complete in web</Texts>
+    </Translation>
+    <Translation Name="Res_PhonePromiseText" Parent="tHappeningsText" Type="Category">
+      <Texts Lang="EN">Promised by text to complete by phone</Texts>
+    </Translation>
+    <Translation Name="Res_VisitPromiseText" Parent="tHappeningsText" Type="Category">
+      <Texts Lang="EN">Promised by text to complete by visit</Texts>
+    </Translation>
+    <Translation Name="Res_PaperPromiseText" Parent="tHappeningsText" Type="Category">
+      <Texts Lang="EN">Promised by text to complete by paper</Texts>
+    </Translation>
+    <Translation Name="NonC_BoxFullText" Parent="tHappeningsText" Type="Category">
+      <Texts Lang="EN">Text in-box is full</Texts>
+    </Translation>
+    <Translation Name="NonC_ProviderRejectsText" Parent="tHappeningsText" Type="Category">
+      <Texts Lang="EN">Provider rejects text message</Texts>
+    </Translation>
+    <Translation Name="Chn_PhoneNewNumberText" Parent="tHappeningsText" Type="Category">
+      <Texts Lang="EN">New phone number collected by text</Texts>
+    </Translation>
+    <Translation Name="Chn_NewPhysAddressText" Parent="tHappeningsText" Type="Category">
+      <Texts Lang="EN">New address collected by text</Texts>
+    </Translation>
+    <Translation Name="Chn_NewEmailText" Parent="tHappeningsText" Type="Category">
+      <Texts Lang="EN">New email collected by text</Texts>
+    </Translation>
+    <Translation Name="Chn_NewSmAddressText" Parent="tHappeningsText" Type="Category">
+      <Texts Lang="EN">New social media address collected by text</Texts>
+    </Translation>
+    <Translation Name="Case_AccessedMail" Parent="tHappeningsMail" Type="Category">
+      <Texts Lang="EN">Case is mail receipted</Texts>
+    </Translation>
+    <Translation Name="Case_RApproachesMail" Parent="tHappeningsMail" Type="Category">
+      <Texts Lang="EN">R mails survey in</Texts>
+    </Translation>
+    <Translation Name="Quex_StartedMail" Parent="tHappeningsMail" Type="Category">
+      <Texts Lang="EN">Questionnaire is started by Mail</Texts>
+    </Translation>
+    <Translation Name="Quex_IncompleteMail" Parent="tHappeningsMail" Type="Category">
+      <Texts Lang="EN">Questionnaire is incomplete by Mail</Texts>
+    </Translation>
+    <Translation Name="Quex_PartialMail" Parent="tHappeningsMail" Type="Category">
+      <Texts Lang="EN">Questionnaire is partially/usefully complete by Mail</Texts>
+    </Translation>
+    <Translation Name="Quex_KeyMail" Parent="tHappeningsMail" Type="Category">
+      <Texts Lang="EN">Questionnaire is key field complete by Mail</Texts>
+    </Translation>
+    <Translation Name="Quex_CompleteMail" Parent="tHappeningsMail" Type="Category">
+      <Texts Lang="EN">Questionnaire is complete by Mail</Texts>
+    </Translation>
+    <Translation Name="Quex_BreakMail" Parent="tHappeningsMail" Type="Category">
+      <Texts Lang="EN">Break-off on paper</Texts>
+      <Texts Lang="NL">Afgebroken</Texts>
+    </Translation>
+    <Translation Name="Ref_ImplicitMail" Parent="tHappeningsMail" Type="Category">
+      <Texts Lang="EN">Implicit refusal - blank questionnaire returned</Texts>
+    </Translation>
+    <Translation Name="Ref_CommunicationMail" Parent="tHappeningsMail" Type="Category">
+      <Texts Lang="EN">Mail refused by Addressee</Texts>
+    </Translation>
+    <Translation Name="Ref_QuexMail" Parent="tHappeningsMail" Type="Category">
+      <Texts Lang="EN">Returned opened envelope</Texts>
+    </Translation>
+    <Translation Name="Ref_FinalMail" Parent="tHappeningsMail" Type="Category">
+      <Texts Lang="EN">Final refusal by mail</Texts>
+    </Translation>
+    <Translation Name="Ref_UnitMail" Parent="tHappeningsMail" Type="Category">
+      <Texts Lang="EN">Unit refusal by mail</Texts>
+    </Translation>
+    <Translation Name="Res_BounceBackMail" Parent="tHappeningsMail" Type="Category">
+      <Texts Lang="EN">Mail returned unopened</Texts>
+    </Translation>
+    <Translation Name="NAV_NotAvailableMail" Parent="tHappeningsMail" Type="Category">
+      <Texts Lang="EN">Not available during survey period by mail</Texts>
+      <Texts Lang="NL">Afwezig tijdens veldwerkperiode</Texts>
+    </Translation>
+    <Translation Name="NAV_TripMail" Parent="tHappeningsMail" Type="Category">
+      <Texts Lang="EN">Not available by mail due to holiday, work abroad, business trip etc.</Texts>
+      <Texts Lang="NL">Vakantie, werk in het buitenland, zakenreis etc.</Texts>
+    </Translation>
+    <Translation Name="NonC_NotHomeMail" Parent="tHappeningsMail" Type="Category">
+      <Texts Lang="EN">Was not opened</Texts>
+    </Translation>
+    <Translation Name="NonC_HHUnknownMail" Parent="tHappeningsMail" Type="Category">
+      <Texts Lang="EN">OP / household unknown or not found</Texts>
+      <Texts Lang="NL">OP / huishouden onbekend of onvindbaar</Texts>
+    </Translation>
+    <Translation Name="NonC_NoSuchAddressMail" Parent="tHappeningsMail" Type="Category">
+      <Texts Lang="EN">No residential address / vacancy / under construction)</Texts>
+      <Texts Lang="NL">Geen woonadres / leegstand / in aanbouw)</Texts>
+    </Translation>
+    <Translation Name="NonC_CannotFindMail" Parent="tHappeningsMail" Type="Category">
+      <Texts Lang="EN">Address cannot be found / does not exist</Texts>
+      <Texts Lang="NL">Adres is onvindbaar / bestaat niet</Texts>
+    </Translation>
+    <Translation Name="NonC_NoHouseMail" Parent="tHappeningsMail" Type="Category">
+      <Texts Lang="EN">House under construction, demolished, demolition house</Texts>
+      <Texts Lang="NL">Woning in aanbouw, afgebroken, sloopwoning</Texts>
+    </Translation>
+    <Translation Name="NonC_NotResidentialMail" Parent="tHappeningsMail" Type="Category">
+      <Texts Lang="EN">No home address (factory, school, office, etc.)</Texts>
+      <Texts Lang="NL">Geen woonadres (fabriek, school, kantoor e.d.)</Texts>
+    </Translation>
+    <Translation Name="NonC_VacantMail" Parent="tHappeningsMail" Type="Category">
+      <Texts Lang="EN">Probably residential address, but vacant / temporarily uninhabited</Texts>
+      <Texts Lang="NL">Vermoedelijk woonadres, maar leegstaand / tijdelijk onbewoond</Texts>
+    </Translation>
+    <Translation Name="NonC_AddrOtherMail" Parent="tHappeningsMail" Type="Category">
+      <Texts Lang="EN">Other</Texts>
+      <Texts Lang="NL">Anders</Texts>
+    </Translation>
+    <Translation Name="NonC_AddrInsuffMail" Parent="tHappeningsMail" Type="Category">
+      <Texts Lang="EN">Insufficient address for mail</Texts>
+    </Translation>
+    <Translation Name="NonC_AddrIllegibleMail" Parent="tHappeningsMail" Type="Category">
+      <Texts Lang="EN">Illegible address for mail</Texts>
+    </Translation>
+    <Translation Name="NonC_SwitchLangMail" Parent="tHappeningsMail" Type="Category">
+      <Texts Lang="EN">Send alternate language questionnaire</Texts>
+    </Translation>
+    <Translation Name="NonC_NoPostOfficeMail" Parent="tHappeningsMail" Type="Category">
+      <Texts Lang="EN">No such post office</Texts>
+    </Translation>
+    <Translation Name="NonC_POBClosedMail" Parent="tHappeningsMail" Type="Category">
+      <Texts Lang="EN">Postal Box Closed</Texts>
+    </Translation>
+    <Translation Name="NonC_CannotDeliverMail" Parent="tHappeningsMail" Type="Category">
+      <Texts Lang="EN">Mail cannot be delivered</Texts>
+    </Translation>
+    <Translation Name="NonC_NoReceptacleMail" Parent="tHappeningsMail" Type="Category">
+      <Texts Lang="EN">Mail no receptacle</Texts>
+    </Translation>
+    <Translation Name="NonC_AddPostageMail" Parent="tHappeningsMail" Type="Category">
+      <Texts Lang="EN">Mail returned for additional postage</Texts>
+    </Translation>
+    <Translation Name="nonC_RefPostageMail" Parent="tHappeningsMail" Type="Category">
+      <Texts Lang="EN">Refused to pay postage</Texts>
+    </Translation>
+    <Translation Name="NonC_ForwardAddrMail" Parent="tHappeningsMail" Type="Category">
+      <Texts Lang="EN">R moved - forwarding address provided</Texts>
+    </Translation>
+    <Translation Name="NonC_AddrCorrectionMail" Parent="tHappeningsMail" Type="Category">
+      <Texts Lang="EN">Address correction provided</Texts>
+    </Translation>
+    <Translation Name="NonC_NoForwardAddrMail" Parent="tHappeningsMail" Type="Category">
+      <Texts Lang="EN">R moved - no forwarding address provided</Texts>
+    </Translation>
+    <Translation Name="NonC_BoxFullMail" Parent="tHappeningsMail" Type="Category">
+      <Texts Lang="EN">Mail box is full</Texts>
+    </Translation>
+    <Translation Name="Chn_PhoneNewNumberMail" Parent="tHappeningsMail" Type="Category">
+      <Texts Lang="EN">New phone number collected by mail</Texts>
+    </Translation>
+    <Translation Name="Chn_NewPhysAddressMail" Parent="tHappeningsMail" Type="Category">
+      <Texts Lang="EN">New address collected by mail</Texts>
+    </Translation>
+    <Translation Name="Chn_NewEmailMail" Parent="tHappeningsMail" Type="Category">
+      <Texts Lang="EN">New email collected by mail</Texts>
+    </Translation>
+    <Translation Name="Chn_NewSmAddressMail" Parent="tHappeningsMail" Type="Category">
+      <Texts Lang="EN">New social media address collected by mail</Texts>
+    </Translation>
+    <Translation Name="Case_UntouchedWeb" Parent="tHappeningsWeb" Type="Category">
+      <Texts Lang="EN">Case is untouched by web</Texts>
+    </Translation>
+    <Translation Name="Case_AccessedWeb" Parent="tHappeningsWeb" Type="Category">
+      <Texts Lang="EN">Case is accessed by web</Texts>
+    </Translation>
+    <Translation Name="Case_AccessedID" Parent="tHappeningsWeb" Type="Category">
+      <Texts Lang="EN">Case is accessed by web ID</Texts>
+    </Translation>
+    <Translation Name="Case_AccessedPW" Parent="tHappeningsWeb" Type="Category">
+      <Texts Lang="EN">Case is accessed by web password</Texts>
+    </Translation>
+    <Translation Name="Case_QuickExitWeb" Parent="tHappeningsWeb" Type="Category">
+      <Texts Lang="EN">Web quick exit, not an attempt - lurking</Texts>
+    </Translation>
+    <Translation Name="Case_ReviewWeb" Parent="tHappeningsWeb" Type="Category">
+      <Texts Lang="EN">Case is reviewed in web</Texts>
+    </Translation>
+    <Translation Name="Case_REngagedWeb" Parent="tHappeningsWeb" Type="Category">
+      <Texts Lang="EN">R is in case by web</Texts>
+    </Translation>
+    <Translation Name="Case_RApproachesWeb" Parent="tHappeningsWeb" Type="Category">
+      <Texts Lang="EN">R logs into the web survey</Texts>
+    </Translation>
+    <Translation Name="Case_RidentifiedWeb" Parent="tHappeningsWeb" Type="Category">
+      <Texts Lang="EN">R is identified by web</Texts>
+    </Translation>
+    <Translation Name="Case_RWillingWeb" Parent="tHappeningsWeb" Type="Category">
+      <Texts Lang="EN">R is willing by web</Texts>
+    </Translation>
+    <Translation Name="Case_ToScrWeb" Parent="tHappeningsWeb" Type="Category">
+      <Texts Lang="EN">Launcher to topic on web</Texts>
+    </Translation>
+    <Translation Name="Scr_StartedWeb" Parent="tHappeningsWeb" Type="Category">
+      <Texts Lang="EN">Screener is started by web</Texts>
+    </Translation>
+    <Translation Name="Scr_FinishedWeb" Parent="tHappeningsWeb" Type="Category">
+      <Texts Lang="EN">Screener is finished by web</Texts>
+    </Translation>
+    <Translation Name="Scr_EligibleWeb" Parent="tHappeningsWeb" Type="Category">
+      <Texts Lang="EN">Respondent is eligible on web</Texts>
+    </Translation>
+    <Translation Name="Scr_IneligibleWeb" Parent="tHappeningsWeb" Type="Category">
+      <Texts Lang="EN">Respondent is ineligible via web</Texts>
+    </Translation>
+    <Translation Name="Scr_IneligibleAgeWeb" Parent="tHappeningsWeb" Type="Category">
+      <Texts Lang="EN">Respondent is ineligible becaues of age on web</Texts>
+    </Translation>
+    <Translation Name="Quex_StartedWeb" Parent="tHappeningsWeb" Type="Category">
+      <Texts Lang="EN">Questionnaire is started by Web</Texts>
+    </Translation>
+    <Translation Name="Quex_OngoingWeb" Parent="tHappeningsWeb" Type="Category">
+      <Texts Lang="EN">Questionnaire is ongoing on the web</Texts>
+    </Translation>
+    <Translation Name="Quex_IncompleteWeb" Parent="tHappeningsWeb" Type="Category">
+      <Texts Lang="EN">Questionnaire is incomplete by Web or in process</Texts>
+    </Translation>
+    <Translation Name="Quex_PartialWeb" Parent="tHappeningsWeb" Type="Category">
+      <Texts Lang="EN">Questionnaire is partially/usefully complete by Web</Texts>
+    </Translation>
+    <Translation Name="Quex_KeyWeb" Parent="tHappeningsWeb" Type="Category">
+      <Texts Lang="EN">Questionnaire is key field complete by Web</Texts>
+    </Translation>
+    <Translation Name="Quex_CompleteWeb" Parent="tHappeningsWeb" Type="Category">
+      <Texts Lang="EN">Questionnaire is complete by Web</Texts>
+    </Translation>
+    <Translation Name="Quex_BreakWeb" Parent="tHappeningsWeb" Type="Category">
+      <Texts Lang="EN">Break-off on web</Texts>
+      <Texts Lang="NL">Afgebroken</Texts>
+    </Translation>
+    <Translation Name="Quex_TimeoutWeb" Parent="tHappeningsWeb" Type="Category">
+      <Texts Lang="EN">Web breakoff due to timeout</Texts>
+    </Translation>
+    <Translation Name="Quex_PostIntroBreakWeb" Parent="tHappeningsWeb" Type="Category">
+      <Texts Lang="EN">R breaks off after Intro on web</Texts>
+    </Translation>
+    <Translation Name="Chn_PhoneNewNumberWeb" Parent="tHappeningsWeb" Type="Category">
+      <Texts Lang="EN">New phone number collected by web</Texts>
+    </Translation>
+    <Translation Name="Chn_NewPhysAddressWeb" Parent="tHappeningsWeb" Type="Category">
+      <Texts Lang="EN">New address collected by web</Texts>
+    </Translation>
+    <Translation Name="Chn_NewEmailWeb" Parent="tHappeningsWeb" Type="Category">
+      <Texts Lang="EN">New email collected by web</Texts>
+    </Translation>
+    <Translation Name="Chn_NewSmAddressWeb" Parent="tHappeningsWeb" Type="Category">
+      <Texts Lang="EN">New social media address collected by web</Texts>
+    </Translation>
+    <Translation Name="Case_UntouchedVisit" Parent="tHappeningsVisit" Type="Category">
+      <Texts Lang="EN">Case is untouched by field</Texts>
+    </Translation>
+    <Translation Name="Case_QuickExitVisit" Parent="tHappeningsVisit" Type="Category">
+      <Texts Lang="EN">Visit quick exit, not an attempt</Texts>
+    </Translation>
+    <Translation Name="Case_ReviewVisit" Parent="tHappeningsVisit" Type="Category">
+      <Texts Lang="EN">Case is reviewed by field rep</Texts>
+    </Translation>
+    <Translation Name="Case_AttemptedVisit" Parent="tHappeningsVisit" Type="Category">
+      <Texts Lang="EN">Case is atttempted by visit</Texts>
+    </Translation>
+    <Translation Name="Case_REngagedVisit" Parent="tHappeningsVisit" Type="Category">
+      <Texts Lang="EN">R is engaged in case by visit</Texts>
+    </Translation>
+    <Translation Name="Case_RidentifiedVisit" Parent="tHappeningsVisit" Type="Category">
+      <Texts Lang="EN">R is identified by visit</Texts>
+    </Translation>
+    <Translation Name="Case_RWillingVisit" Parent="tHappeningsVisit" Type="Category">
+      <Texts Lang="EN">R is willing by visit</Texts>
+    </Translation>
+    <Translation Name="Case_ToScrVisit" Parent="tHappeningsVisit" Type="Category">
+      <Texts Lang="EN">Launcher to topic by visit</Texts>
+    </Translation>
+    <Translation Name="Scr_StartedVisit" Parent="tHappeningsVisit" Type="Category">
+      <Texts Lang="EN">Screener is started by visit</Texts>
+    </Translation>
+    <Translation Name="Scr_FinishedVisit" Parent="tHappeningsVisit" Type="Category">
+      <Texts Lang="EN">Screener is finished by visit</Texts>
+    </Translation>
+    <Translation Name="Scr_EligibleVisit" Parent="tHappeningsVisit" Type="Category">
+      <Texts Lang="EN">Respondent is eligible during visit</Texts>
+    </Translation>
+    <Translation Name="Scr_IneligibleVisit" Parent="tHappeningsVisit" Type="Category">
+      <Texts Lang="EN">Respondent is ineligible during visit</Texts>
+    </Translation>
+    <Translation Name="Scr_IneligibleAgeVisit" Parent="tHappeningsVisit" Type="Category">
+      <Texts Lang="EN">Respondent is ineligible becaues of age during visit</Texts>
+    </Translation>
+    <Translation Name="Quex_StartedVisit" Parent="tHappeningsVisit" Type="Category">
+      <Texts Lang="EN">Questionnaire is started by Visit</Texts>
+    </Translation>
+    <Translation Name="Quex_OngoingVisit" Parent="tHappeningsVisit" Type="Category">
+      <Texts Lang="EN">Questionnaire is ongoing by visit</Texts>
+    </Translation>
+    <Translation Name="Quex_IncompleteVisit" Parent="tHappeningsVisit" Type="Category">
+      <Texts Lang="EN">Questionnaire is incomplete by Visit or in process</Texts>
+    </Translation>
+    <Translation Name="Quex_PartialVisit" Parent="tHappeningsVisit" Type="Category">
+      <Texts Lang="EN">Questionnaire is partially/usefully complete by Visit</Texts>
+    </Translation>
+    <Translation Name="Quex_KeyVisit" Parent="tHappeningsVisit" Type="Category">
+      <Texts Lang="EN">Questionnaire is key field complete by Visit</Texts>
+    </Translation>
+    <Translation Name="Quex_CompleteVisit" Parent="tHappeningsVisit" Type="Category">
+      <Texts Lang="EN">Questionnaire is complete by Visit</Texts>
+    </Translation>
+    <Translation Name="Quex_FollowUpVisit" Parent="tHappeningsVisit" Type="Category">
+      <Texts Lang="EN">Incomplete questionnaire is designated for follow up by visit</Texts>
+    </Translation>
+    <Translation Name="Quex_BreakVisit" Parent="tHappeningsVisit" Type="Category">
+      <Texts Lang="EN">Break-off during visit</Texts>
+      <Texts Lang="NL">Afgebroken</Texts>
+    </Translation>
+    <Translation Name="Case_IntroBreakSM" Parent="tHappeningsVisit" Type="Category">
+      <Texts Lang="EN">R breaks off at Intro during visit</Texts>
+    </Translation>
+    <Translation Name="Quex_PostIntroBreakVisit" Parent="tHappeningsVisit" Type="Category">
+      <Texts Lang="EN">R breaks off after Intro during visit</Texts>
+    </Translation>
+    <Translation Name="Quex_BreakLangVisit" Parent="tHappeningsVisit" Type="Category">
+      <Texts Lang="EN">Language skills of respondent not sufficient during visit</Texts>
+      <Texts Lang="NL">OP beheerst onvoldoende Nederlands</Texts>
+    </Translation>
+    <Translation Name="Quex_BreakCannotVisit" Parent="tHappeningsVisit" Type="Category">
+      <Texts Lang="EN">Respondent cannot be interviewed during visit</Texts>
+      <Texts Lang="NL">OP kan toch niet geïnterviewd worden</Texts>
+    </Translation>
+    <Translation Name="Quex_ResistDifficultVisit" Parent="tHappeningsVisit" Type="Category">
+      <Texts Lang="EN">Respondent found it too difficult during visit</Texts>
+      <Texts Lang="NL">OP vond het te moeilijk</Texts>
+    </Translation>
+    <Translation Name="Quex_ResistLongVisit" Parent="tHappeningsVisit" Type="Category">
+      <Texts Lang="EN">Respondent thought it was too long during visit</Texts>
+      <Texts Lang="NL">OP vond het te lang</Texts>
+    </Translation>
+    <Translation Name="Quex_ResistPersonalVisit" Parent="tHappeningsVisit" Type="Category">
+      <Texts Lang="EN">Respondent found it too personal / intimate during visit</Texts>
+      <Texts Lang="NL">OP vond het te persoonlijk / intiem</Texts>
+    </Translation>
+    <Translation Name="Quex_ResistSecurityVisit" Parent="tHappeningsVisit" Type="Category">
+      <Texts Lang="EN">Security reasons during visit</Texts>
+      <Texts Lang="NL">Veiligheidsredenen</Texts>
+    </Translation>
+    <Translation Name="Quex_ResistTopicVisit" Parent="tHappeningsVisit" Type="Category">
+      <Texts Lang="EN">Did not like the topic during the visit</Texts>
+    </Translation>
+    <Translation Name="Quex_ResistOtherVisit" Parent="tHappeningsVisit" Type="Category">
+      <Texts Lang="EN">Other reason during visit</Texts>
+      <Texts Lang="NL">Andere reden</Texts>
+    </Translation>
+    <Translation Name="Quex_ResistDiffModeVisit" Parent="tHappeningsVisit" Type="Category">
+      <Texts Lang="EN">Preference for different mode than visit</Texts>
+      <Texts Lang="NL">Voorkeur andere mode</Texts>
+    </Translation>
+    <Translation Name="Ref_DirectVisit" Parent="tHappeningsVisit" Type="Category">
+      <Texts Lang="EN">Direct or outright refusal during visit</Texts>
+      <Texts Lang="NL">Weigering</Texts>
+    </Translation>
+    <Translation Name="Ref_AdamantVisit" Parent="tHappeningsVisit" Type="Category">
+      <Texts Lang="EN">Adamant refusal during visit</Texts>
+    </Translation>
+    <Translation Name="Ref_BurdenVisit" Parent="tHappeningsVisit" Type="Category">
+      <Texts Lang="EN">Too many surveys or too much burden</Texts>
+    </Translation>
+    <Translation Name="Ref_NoTimeVisit" Parent="tHappeningsVisit" Type="Category">
+      <Texts Lang="EN">No time for the phone survey</Texts>
+    </Translation>
+    <Translation Name="Ref_PrivacyVisit" Parent="tHappeningsVisit" Type="Category">
+      <Texts Lang="EN">Refused for privacy reasons during visit</Texts>
+    </Translation>
+    <Translation Name="Ref_UnkReasonVisit" Parent="tHappeningsVisit" Type="Category">
+      <Texts Lang="EN">Refusal for unknown reason during visit</Texts>
+      <Texts Lang="NL">Reden onbekend</Texts>
+    </Translation>
+    <Translation Name="Ref_OthReasonVisit" Parent="tHappeningsVisit" Type="Category">
+      <Texts Lang="EN">Refusal for other reason during visit - specify</Texts>
+      <Texts Lang="NL">Andere reden</Texts>
+    </Translation>
+    <Translation Name="Ref_ImplicitVisit" Parent="tHappeningsVisit" Type="Category">
+      <Texts Lang="EN">Implicit refusal - multiple missed appointments by visit</Texts>
+    </Translation>
+    <Translation Name="Ref_SoftVisit" Parent="tHappeningsVisit" Type="Category">
+      <Texts Lang="EN">Soft refusal by visit</Texts>
+    </Translation>
+    <Translation Name="Ref_FinalVisit" Parent="tHappeningsVisit" Type="Category">
+      <Texts Lang="EN">Final refusal by visit</Texts>
+    </Translation>
+    <Translation Name="Ref_UnitVisit" Parent="tHappeningsVisit" Type="Category">
+      <Texts Lang="EN">Unit refusal by visit</Texts>
+    </Translation>
+    <Translation Name="Res_ApptNotMetVisit" Parent="tHappeningsVisit" Type="Category">
+      <Texts Lang="EN">One appointment not met during visit</Texts>
+      <Texts Lang="NL">Afspraak niet nagekomen</Texts>
+    </Translation>
+    <Translation Name="Res_HomeNoAnswerVisit" Parent="tHappeningsVisit" Type="Category">
+      <Texts Lang="EN">R is home but no answer to door knock</Texts>
+    </Translation>
+    <Translation Name="Res_NoAnswerVisit" Parent="tHappeningsVisit" Type="Category">
+      <Texts Lang="EN">Phone no answer by field</Texts>
+    </Translation>
+    <Translation Name="Res_PromiseVisit" Parent="tHappeningsVisit" Type="Category">
+      <Texts Lang="EN">Promised to complete in another mode</Texts>
+    </Translation>
+    <Translation Name="Res_WebPromiseVisit" Parent="tHappeningsVisit" Type="Category">
+      <Texts Lang="EN">Promised during visit to complete in web</Texts>
+    </Translation>
+    <Translation Name="Res_PhonePromiseVisit" Parent="tHappeningsVisit" Type="Category">
+      <Texts Lang="EN">Promised by visit to complete by phone</Texts>
+    </Translation>
+    <Translation Name="Res_PaperPromiseVisit" Parent="tHappeningsVisit" Type="Category">
+      <Texts Lang="EN">Promised by visit to complete by paper</Texts>
+    </Translation>
+    <Translation Name="NAV_NotAvailableVisit" Parent="tHappeningsVisit" Type="Category">
+      <Texts Lang="EN">Not available during survey period by visit</Texts>
+      <Texts Lang="NL">Afwezig tijdens veldwerkperiode</Texts>
+    </Translation>
+    <Translation Name="NAV_TripVisit" Parent="tHappeningsVisit" Type="Category">
+      <Texts Lang="EN">Not available by visit due to holiday, work abroad, business trip etc.</Texts>
+      <Texts Lang="NL">Vakantie, werk in het buitenland, zakenreis etc.</Texts>
+    </Translation>
+    <Translation Name="NonC_NotHomeVisit" Parent="tHappeningsVisit" Type="Category">
+      <Texts Lang="EN">No one at home</Texts>
+    </Translation>
+    <Translation Name="NonC_NoAccessVisit" Parent="tHappeningsVisit" Type="Category">
+      <Texts Lang="EN">Each time access not possible</Texts>
+      <Texts Lang="NL">Geen enkele keer toegang mogelijk</Texts>
+    </Translation>
+    <Translation Name="NonC_HHUnknownVisit" Parent="tHappeningsVisit" Type="Category">
+      <Texts Lang="EN">OP / household unknown or not found</Texts>
+      <Texts Lang="NL">OP / huishouden onbekend of onvindbaar</Texts>
+    </Translation>
+    <Translation Name="NonC_NoSuchAddressVisit" Parent="tHappeningsVisit" Type="Category">
+      <Texts Lang="EN">No residential address / vacancy / under construction)</Texts>
+      <Texts Lang="NL">Geen woonadres / leegstand / in aanbouw)</Texts>
+    </Translation>
+    <Translation Name="NonC_CannotFindVisit" Parent="tHappeningsVisit" Type="Category">
+      <Texts Lang="EN">Address cannot be found / does not exist</Texts>
+      <Texts Lang="NL">Adres is onvindbaar / bestaat niet</Texts>
+    </Translation>
+    <Translation Name="NonC_NoHouseVisit" Parent="tHappeningsVisit" Type="Category">
+      <Texts Lang="EN">House under construction, demolished, demolition house</Texts>
+      <Texts Lang="NL">Woning in aanbouw, afgebroken, sloopwoning</Texts>
+    </Translation>
+    <Translation Name="NonC_NotResidentialVisit" Parent="tHappeningsVisit" Type="Category">
+      <Texts Lang="EN">No home address (factory, school, office, etc.)</Texts>
+      <Texts Lang="NL">Geen woonadres (fabriek, school, kantoor e.d.)</Texts>
+    </Translation>
+    <Translation Name="NonC_VacantVisit" Parent="tHappeningsVisit" Type="Category">
+      <Texts Lang="EN">Probably residential address, but vacant / temporarily uninhabited</Texts>
+      <Texts Lang="NL">Vermoedelijk woonadres, maar leegstaand / tijdelijk onbewoond</Texts>
+    </Translation>
+    <Translation Name="NonC_UnsafeVisit" Parent="tHappeningsVisit" Type="Category">
+      <Texts Lang="EN">Unsafe situation</Texts>
+      <Texts Lang="NL">Onveilige situatie</Texts>
+    </Translation>
+    <Translation Name="NonC_AddrOtherVisit" Parent="tHappeningsVisit" Type="Category">
+      <Texts Lang="EN">Other</Texts>
+      <Texts Lang="NL">Anders</Texts>
+    </Translation>
+    <Translation Name="NonC_AddrInsuffVisit" Parent="tHappeningsVisit" Type="Category">
+      <Texts Lang="EN">Insufficient address for visit</Texts>
+    </Translation>
+    <Translation Name="NonC_AddrIllegibleVisit" Parent="tHappeningsVisit" Type="Category">
+      <Texts Lang="EN">Illegible address for visit</Texts>
+    </Translation>
+    <Translation Name="NonC_SwitchLangVisit" Parent="tHappeningsVisit" Type="Category">
+      <Texts Lang="EN">Switch language for visit</Texts>
+    </Translation>
+    <Translation Name="NonC_VMNoIDNoMsgVisit" Parent="tHappeningsVisit" Type="Category">
+      <Texts Lang="EN">Voice mail, SM no ID, no left message</Texts>
+    </Translation>
+    <Translation Name="NonC_VMNoIDLeftMsgVisit" Parent="tHappeningsVisit" Type="Category">
+      <Texts Lang="EN">Voice mail, SM no ID, left message</Texts>
+    </Translation>
+    <Translation Name="NonC_VMIDNoMsgVisit" Parent="tHappeningsVisit" Type="Category">
+      <Texts Lang="EN">Voice mail, SM ID, no left message</Texts>
+    </Translation>
+    <Translation Name="NonC_VMIDLeftMsgVisit" Parent="tHappeningsVisit" Type="Category">
+      <Texts Lang="EN">Voice mail, SM ID, left message</Texts>
+    </Translation>
+    <Translation Name="Con_ApptVisit" Parent="tHappeningsVisit" Type="Category">
+      <Texts Lang="EN">Date/time appointment made</Texts>
+      <Texts Lang="NL">Afspraak gemaakt</Texts>
+    </Translation>
+    <Translation Name="Con_ApptPhonePeriodVisit" Parent="tHappeningsVisit" Type="Category">
+      <Texts Lang="EN">Period appointment made</Texts>
+    </Translation>
+    <Translation Name="Con_ApptPhoneDayVisit" Parent="tHappeningsVisit" Type="Category">
+      <Texts Lang="EN">Day appointment made</Texts>
+    </Translation>
+    <Translation Name="Con_ApptPhoneSoftVisit" Parent="tHappeningsVisit" Type="Category">
+      <Texts Lang="EN">Soft Appointment made</Texts>
+      <Texts Lang="NL">Afspraak gemaakt</Texts>
+    </Translation>
+    <Translation Name="Con_ApptNotPossPhoneVisit" Parent="tHappeningsVisit" Type="Category">
+      <Texts Lang="EN">Phone appointment not possible within survey period</Texts>
+    </Translation>
+    <Translation Name="Chn_PhoneNewNumberVisit" Parent="tHappeningsVisit" Type="Category">
+      <Texts Lang="EN">New phone number collected by visit</Texts>
+    </Translation>
+    <Translation Name="Chn_NewPhysAddressVisit" Parent="tHappeningsVisit" Type="Category">
+      <Texts Lang="EN">New address collected by visit</Texts>
+    </Translation>
+    <Translation Name="Chn_NewEmailVisit" Parent="tHappeningsVisit" Type="Category">
+      <Texts Lang="EN">New email collected by visit</Texts>
+    </Translation>
+    <Translation Name="Chn_NewSmAddressVisit" Parent="tHappeningsVisit" Type="Category">
+      <Texts Lang="EN">New social media address collected by visit</Texts>
+    </Translation>
+    <Translation Name="Chn_EmaiSentVisit" Parent="tHappeningsVisit" Type="Category">
+      <Texts Lang="EN">Email sent by field</Texts>
+    </Translation>
+    <Translation Name="Chn_TextSentVisit" Parent="tHappeningsVisit" Type="Category">
+      <Texts Lang="EN">Text sent by field</Texts>
+    </Translation>
+    <Translation Name="Chn_SMediaSentvisit" Parent="tHappeningsVisit" Type="Category">
+      <Texts Lang="EN">Social media message sent by field</Texts>
+    </Translation>
+    <Translation Name="Chn_LeftVMVisit" Parent="tHappeningsVisit" Type="Category">
+      <Texts Lang="EN">Voicemail</Texts>
+      <Texts Lang="NL">Voicemail</Texts>
+    </Translation>
+    <Translation Name="Case_RApproachesEMail" Parent="tHappeningsEmail" Type="Category">
+      <Texts Lang="EN">R emails survey in</Texts>
+    </Translation>
+    <Translation Name="EmailForm" Parent="tHappeningsEmail" Type="Category">
+      <Texts Lang="EN">E.g., email questionnaire form</Texts>
+    </Translation>
+    <Translation Name="Ref_CommunicationEmail" Parent="tHappeningsEmail" Type="Category">
+      <Texts Lang="EN">Email refused by Addressee</Texts>
+    </Translation>
+    <Translation Name="Ref_UnitSMedia" Parent="tHappeningsEmail" Type="Category">
+      <Texts Lang="EN">Unit refusal by social media</Texts>
+    </Translation>
+    <Translation Name="Res_BounceBackEMail" Parent="tHappeningsEmail" Type="Category">
+      <Texts Lang="EN">EMail returned unopened</Texts>
+    </Translation>
+    <Translation Name="Res_WebPromiseEmail" Parent="tHappeningsEmail" Type="Category">
+      <Texts Lang="EN">Promised by email to complete in web</Texts>
+    </Translation>
+    <Translation Name="Res_PhonePromiseEmail" Parent="tHappeningsEmail" Type="Category">
+      <Texts Lang="EN">Promised by email to complete by phone</Texts>
+    </Translation>
+    <Translation Name="Res_VisitPromiseEmail" Parent="tHappeningsEmail" Type="Category">
+      <Texts Lang="EN">Promised by email to complete by visit</Texts>
+    </Translation>
+    <Translation Name="Res_PaperPromiseEmail" Parent="tHappeningsEmail" Type="Category">
+      <Texts Lang="EN">Promised by email to complete by paper</Texts>
+    </Translation>
+    <Translation Name="NonC_BoxFullEMail" Parent="tHappeningsEmail" Type="Category">
+      <Texts Lang="EN">EMail box is full</Texts>
+    </Translation>
+    <Translation Name="NonC_ProviderRejectsEmail" Parent="tHappeningsEmail" Type="Category">
+      <Texts Lang="EN">Provider rejects email</Texts>
+    </Translation>
+    <Translation Name="Chn_PhoneNewNumberEmail" Parent="tHappeningsEmail" Type="Category">
+      <Texts Lang="EN">New phone number collected by email</Texts>
+    </Translation>
+    <Translation Name="Chn_NewPhysAddressEmail" Parent="tHappeningsEmail" Type="Category">
+      <Texts Lang="EN">New address collected by email</Texts>
+    </Translation>
+    <Translation Name="Chn_NewEmailEmail" Parent="tHappeningsEmail" Type="Category">
+      <Texts Lang="EN">New email collected by email</Texts>
+    </Translation>
+    <Translation Name="Chn_NewSmAddressEmail" Parent="tHappeningsEmail" Type="Category">
+      <Texts Lang="EN">New social media address collected by email</Texts>
+    </Translation>
+    <Translation Name="Chn_EmaiSentEmail" Parent="tHappeningsEmail" Type="Category">
+      <Texts Lang="EN">Email sent by email server</Texts>
+    </Translation>
+    <Translation Name="Case_UntouchedSMedia" Parent="tHappeningsSMedia" Type="Category">
+      <Texts Lang="EN">Case is untouched by social media</Texts>
+    </Translation>
+    <Translation Name="Case_AccessedSMedia" Parent="tHappeningsSMedia" Type="Category">
+      <Texts Lang="EN">Case is accessed by social media</Texts>
+    </Translation>
+    <Translation Name="Case_QuickExitSMedia" Parent="tHappeningsSMedia" Type="Category">
+      <Texts Lang="EN">Web quick exit, not an attempt - lurking</Texts>
+    </Translation>
+    <Translation Name="Case_ReviewSMedia" Parent="tHappeningsSMedia" Type="Category">
+      <Texts Lang="EN">Case is reviewed in social media</Texts>
+    </Translation>
+    <Translation Name="Case_REngagedSMedia" Parent="tHappeningsSMedia" Type="Category">
+      <Texts Lang="EN">R is engaged in case by social media</Texts>
+    </Translation>
+    <Translation Name="Case_RidentifiedSMedia" Parent="tHappeningsSMedia" Type="Category">
+      <Texts Lang="EN">R is identified by social media</Texts>
+    </Translation>
+    <Translation Name="Case_RWillingSMedia" Parent="tHappeningsSMedia" Type="Category">
+      <Texts Lang="EN">R is willing by social media</Texts>
+    </Translation>
+    <Translation Name="Scr_StartedSMedia" Parent="tHappeningsSMedia" Type="Category">
+      <Texts Lang="EN">Screener is started by social media</Texts>
+    </Translation>
+    <Translation Name="Scr_FinishedSMedia" Parent="tHappeningsSMedia" Type="Category">
+      <Texts Lang="EN">Screener is finished by social media</Texts>
+    </Translation>
+    <Translation Name="Quex_StartedSMedia" Parent="tHappeningsSMedia" Type="Category">
+      <Texts Lang="EN">Questionnaire is started by Social Media</Texts>
+    </Translation>
+    <Translation Name="Quex_IncompleteSMedia" Parent="tHappeningsSMedia" Type="Category">
+      <Texts Lang="EN">Questionnaire is incomplete by Social Media or in process</Texts>
+    </Translation>
+    <Translation Name="Quex_PartialSMedia" Parent="tHappeningsSMedia" Type="Category">
+      <Texts Lang="EN">Questionnaire is partially/usefully complete by Social Media</Texts>
+    </Translation>
+    <Translation Name="Quex_KeySMedia" Parent="tHappeningsSMedia" Type="Category">
+      <Texts Lang="EN">Questionnaire is key field complete by Social Media</Texts>
+    </Translation>
+    <Translation Name="Quex_CompleteSMedia" Parent="tHappeningsSMedia" Type="Category">
+      <Texts Lang="EN">Questionnaire is complete by Social Media</Texts>
+    </Translation>
+    <Translation Name="Chn_PhoneNewNumberSMedia" Parent="tHappeningsSMedia" Type="Category">
+      <Texts Lang="EN">New phone number collected by social media</Texts>
+    </Translation>
+    <Translation Name="Chn_NewPhysAddressSMedia" Parent="tHappeningsSMedia" Type="Category">
+      <Texts Lang="EN">New address collected by social media</Texts>
+    </Translation>
+    <Translation Name="Chn_NewEmailSMedia" Parent="tHappeningsSMedia" Type="Category">
+      <Texts Lang="EN">New email collected by social media</Texts>
+    </Translation>
+    <Translation Name="Chn_NewSmAddressSMedia" Parent="tHappeningsSMedia" Type="Category">
+      <Texts Lang="EN">New social media address collected by social media</Texts>
+    </Translation>
+    <Translation Name="Case_Untouched" Parent="tHappenings" Type="Category">
+      <Texts Lang="EN">Case is untouched by any mode</Texts>
+    </Translation>
+    <Translation Name="Case_UntouchedPhone" Parent="tHappenings" Type="Category">
+      <Texts Lang="EN">Case is untouched by phone</Texts>
+    </Translation>
+    <Translation Name="Case_UntouchedWeb" Parent="tHappenings" Type="Category">
+      <Texts Lang="EN">Case is untouched by web</Texts>
+    </Translation>
+    <Translation Name="Case_UntouchedVisit" Parent="tHappenings" Type="Category">
+      <Texts Lang="EN">Case is untouched by field</Texts>
+    </Translation>
+    <Translation Name="Case_UntouchedSMedia" Parent="tHappenings" Type="Category">
+      <Texts Lang="EN">Case is untouched by social media</Texts>
+    </Translation>
+    <Translation Name="Case_Accessed" Parent="tHappenings" Type="Category">
+      <Texts Lang="EN">Case is accessed by any mode</Texts>
+    </Translation>
+    <Translation Name="Case_AccessedPhone" Parent="tHappenings" Type="Category">
+      <Texts Lang="EN">Case is accessed by phone</Texts>
+    </Translation>
+    <Translation Name="Case_AccessedMail" Parent="tHappenings" Type="Category">
+      <Texts Lang="EN">Case is mail receipted</Texts>
+    </Translation>
+    <Translation Name="Case_AccessedWeb" Parent="tHappenings" Type="Category">
+      <Texts Lang="EN">Case is accessed by web</Texts>
+    </Translation>
+    <Translation Name="Case_AccessedSMedia" Parent="tHappenings" Type="Category">
+      <Texts Lang="EN">Case is accessed by social media</Texts>
+    </Translation>
+    <Translation Name="Case_AccessedID" Parent="tHappenings" Type="Category">
+      <Texts Lang="EN">Case is accessed by web ID</Texts>
+    </Translation>
+    <Translation Name="Case_AccessedPW" Parent="tHappenings" Type="Category">
+      <Texts Lang="EN">Case is accessed by web password</Texts>
+    </Translation>
+    <Translation Name="Case_QuickExit" Parent="tHappenings" Type="Category">
+      <Texts Lang="EN">Case is quick exited by any mode</Texts>
+    </Translation>
+    <Translation Name="Case_QuickExitPhone" Parent="tHappenings" Type="Category">
+      <Texts Lang="EN">Quick exit, not an attempt</Texts>
+    </Translation>
+    <Translation Name="Case_QuickExitWeb" Parent="tHappenings" Type="Category">
+      <Texts Lang="EN">Web quick exit, not an attempt - lurking</Texts>
+    </Translation>
+    <Translation Name="Case_QuickExitVisit" Parent="tHappenings" Type="Category">
+      <Texts Lang="EN">Visit quick exit, not an attempt</Texts>
+    </Translation>
+    <Translation Name="Case_QuickExitSMedia" Parent="tHappenings" Type="Category">
+      <Texts Lang="EN">Web quick exit, not an attempt - lurking</Texts>
+    </Translation>
+    <Translation Name="Case_Review" Parent="tHappenings" Type="Category">
+      <Texts Lang="EN">Case is reviewed by any mode</Texts>
+    </Translation>
+    <Translation Name="Case_ReviewPhone" Parent="tHappenings" Type="Category">
+      <Texts Lang="EN">Case is reviewed in phone</Texts>
+    </Translation>
+    <Translation Name="Case_ReviewWeb" Parent="tHappenings" Type="Category">
+      <Texts Lang="EN">Case is reviewed in web</Texts>
+    </Translation>
+    <Translation Name="Case_ReviewVisit" Parent="tHappenings" Type="Category">
+      <Texts Lang="EN">Case is reviewed by field rep</Texts>
+    </Translation>
+    <Translation Name="Case_ReviewSMedia" Parent="tHappenings" Type="Category">
+      <Texts Lang="EN">Case is reviewed in social media</Texts>
+    </Translation>
+    <Translation Name="Case_Attempted" Parent="tHappenings" Type="Category">
+      <Texts Lang="EN">Case is atttempted</Texts>
+    </Translation>
+    <Translation Name="Case_AttemptedPhone" Parent="tHappenings" Type="Category">
+      <Texts Lang="EN">Case is atttempted by phone</Texts>
+    </Translation>
+    <Translation Name="Case_AttemptedVisit" Parent="tHappenings" Type="Category">
+      <Texts Lang="EN">Case is atttempted by visit</Texts>
+    </Translation>
+    <Translation Name="Case_REngaged" Parent="tHappenings" Type="Category">
+      <Texts Lang="EN">R is engaged in case</Texts>
+    </Translation>
+    <Translation Name="Case_REngagedPhone" Parent="tHappenings" Type="Category">
+      <Texts Lang="EN">R answers phone</Texts>
+    </Translation>
+    <Translation Name="Case_REngagedWeb" Parent="tHappenings" Type="Category">
+      <Texts Lang="EN">R is in case by web</Texts>
+    </Translation>
+    <Translation Name="Case_REngagedVisit" Parent="tHappenings" Type="Category">
+      <Texts Lang="EN">R is engaged in case by visit</Texts>
+    </Translation>
+    <Translation Name="Case_REngagedSMedia" Parent="tHappenings" Type="Category">
+      <Texts Lang="EN">R is engaged in case by social media</Texts>
+    </Translation>
+    <Translation Name="Case_RApproaches" Parent="tHappenings" Type="Category">
+      <Texts Lang="EN">R approaches the survey</Texts>
+    </Translation>
+    <Translation Name="Case_RApproachesPhone" Parent="tHappenings" Type="Category">
+      <Texts Lang="EN">R calls in</Texts>
+    </Translation>
+    <Translation Name="Case_RApproachesText" Parent="tHappenings" Type="Category">
+      <Texts Lang="EN">R texts survey center</Texts>
+    </Translation>
+    <Translation Name="Case_RApproachesMail" Parent="tHappenings" Type="Category">
+      <Texts Lang="EN">R mails survey in</Texts>
+    </Translation>
+    <Translation Name="Case_RApproachesWeb" Parent="tHappenings" Type="Category">
+      <Texts Lang="EN">R logs into the web survey</Texts>
+    </Translation>
+    <Translation Name="Case_RApproachesEMail" Parent="tHappenings" Type="Category">
+      <Texts Lang="EN">R emails survey in</Texts>
+    </Translation>
+    <Translation Name="Case_Intro" Parent="tHappenings" Type="Category">
+      <Texts Lang="EN">R reads or is read Intro</Texts>
+    </Translation>
+    <Translation Name="Case_Ridentified" Parent="tHappenings" Type="Category">
+      <Texts Lang="EN">R is identified</Texts>
+    </Translation>
+    <Translation Name="Case_RidentifiedPhone" Parent="tHappenings" Type="Category">
+      <Texts Lang="EN">R is identified by phone</Texts>
+    </Translation>
+    <Translation Name="Case_RidentifiedWeb" Parent="tHappenings" Type="Category">
+      <Texts Lang="EN">R is identified by web</Texts>
+    </Translation>
+    <Translation Name="Case_RidentifiedVisit" Parent="tHappenings" Type="Category">
+      <Texts Lang="EN">R is identified by visit</Texts>
+    </Translation>
+    <Translation Name="Case_RidentifiedSMedia" Parent="tHappenings" Type="Category">
+      <Texts Lang="EN">R is identified by social media</Texts>
+    </Translation>
+    <Translation Name="Case_RWilling" Parent="tHappenings" Type="Category">
+      <Texts Lang="EN">R is willing</Texts>
+    </Translation>
+    <Translation Name="Case_RWillingPhone" Parent="tHappenings" Type="Category">
+      <Texts Lang="EN">R is willing by phone</Texts>
+    </Translation>
+    <Translation Name="Case_RWillingWeb" Parent="tHappenings" Type="Category">
+      <Texts Lang="EN">R is willing by web</Texts>
+    </Translation>
+    <Translation Name="Case_RWillingVisit" Parent="tHappenings" Type="Category">
+      <Texts Lang="EN">R is willing by visit</Texts>
+    </Translation>
+    <Translation Name="Case_RWillingSMedia" Parent="tHappenings" Type="Category">
+      <Texts Lang="EN">R is willing by social media</Texts>
+    </Translation>
+    <Translation Name="Case_ToScr" Parent="tHappenings" Type="Category">
+      <Texts Lang="EN">Launcher to topic</Texts>
+    </Translation>
+    <Translation Name="Case_ToScrPhone" Parent="tHappenings" Type="Category">
+      <Texts Lang="EN">Launcher to topic on phone</Texts>
+    </Translation>
+    <Translation Name="Case_ToScrWeb" Parent="tHappenings" Type="Category">
+      <Texts Lang="EN">Launcher to topic on web</Texts>
+    </Translation>
+    <Translation Name="Case_ToScrVisit" Parent="tHappenings" Type="Category">
+      <Texts Lang="EN">Launcher to topic by visit</Texts>
+    </Translation>
+    <Translation Name="Scr_Started" Parent="tHappenings" Type="Category">
+      <Texts Lang="EN">Screener is started</Texts>
+    </Translation>
+    <Translation Name="Scr_StartedPhone" Parent="tHappenings" Type="Category">
+      <Texts Lang="EN">Screener is started by phone</Texts>
+    </Translation>
+    <Translation Name="Scr_StartedWeb" Parent="tHappenings" Type="Category">
+      <Texts Lang="EN">Screener is started by web</Texts>
+    </Translation>
+    <Translation Name="Scr_StartedVisit" Parent="tHappenings" Type="Category">
+      <Texts Lang="EN">Screener is started by visit</Texts>
+    </Translation>
+    <Translation Name="Scr_StartedSMedia" Parent="tHappenings" Type="Category">
+      <Texts Lang="EN">Screener is started by social media</Texts>
+    </Translation>
+    <Translation Name="Scr_Finished" Parent="tHappenings" Type="Category">
+      <Texts Lang="EN">Screener is finished</Texts>
+    </Translation>
+    <Translation Name="Scr_FinishedPhone" Parent="tHappenings" Type="Category">
+      <Texts Lang="EN">Screener is finished by phone</Texts>
+    </Translation>
+    <Translation Name="Scr_FinishedWeb" Parent="tHappenings" Type="Category">
+      <Texts Lang="EN">Screener is finished by web</Texts>
+    </Translation>
+    <Translation Name="Scr_FinishedVisit" Parent="tHappenings" Type="Category">
+      <Texts Lang="EN">Screener is finished by visit</Texts>
+    </Translation>
+    <Translation Name="Scr_FinishedSMedia" Parent="tHappenings" Type="Category">
+      <Texts Lang="EN">Screener is finished by social media</Texts>
+    </Translation>
+    <Translation Name="Scr_Eligible" Parent="tHappenings" Type="Category">
+      <Texts Lang="EN">Respondent is eligible</Texts>
+    </Translation>
+    <Translation Name="Scr_EligiblePhone" Parent="tHappenings" Type="Category">
+      <Texts Lang="EN">Respondent is eligible on phone</Texts>
+    </Translation>
+    <Translation Name="Scr_EligibleWeb" Parent="tHappenings" Type="Category">
+      <Texts Lang="EN">Respondent is eligible on web</Texts>
+    </Translation>
+    <Translation Name="Scr_EligibleVisit" Parent="tHappenings" Type="Category">
+      <Texts Lang="EN">Respondent is eligible during visit</Texts>
+    </Translation>
+    <Translation Name="Scr_Ineligible" Parent="tHappenings" Type="Category">
+      <Texts Lang="EN">Respondent is ineligible</Texts>
+    </Translation>
+    <Translation Name="Scr_IneligiblePhone" Parent="tHappenings" Type="Category">
+      <Texts Lang="EN">Respondent is ineligible on phone</Texts>
+    </Translation>
+    <Translation Name="Scr_IneligibleWeb" Parent="tHappenings" Type="Category">
+      <Texts Lang="EN">Respondent is ineligible via web</Texts>
+    </Translation>
+    <Translation Name="Scr_IneligibleVisit" Parent="tHappenings" Type="Category">
+      <Texts Lang="EN">Respondent is ineligible during visit</Texts>
+    </Translation>
+    <Translation Name="Scr_IneligibleAge" Parent="tHappenings" Type="Category">
+      <Texts Lang="EN">Respondent is ineligible becaues of age</Texts>
+      <Texts Lang="NL">Respondent is te jong</Texts>
+    </Translation>
+    <Translation Name="Scr_IneligibleAgePhone" Parent="tHappenings" Type="Category">
+      <Texts Lang="EN">Respondent is ineligible becaues of age on phone</Texts>
+    </Translation>
+    <Translation Name="Scr_IneligibleAgeWeb" Parent="tHappenings" Type="Category">
+      <Texts Lang="EN">Respondent is ineligible becaues of age on web</Texts>
+    </Translation>
+    <Translation Name="Scr_IneligibleAgeVisit" Parent="tHappenings" Type="Category">
+      <Texts Lang="EN">Respondent is ineligible becaues of age during visit</Texts>
+    </Translation>
+    <Translation Name="Quex_Started" Parent="tHappenings" Type="Category">
+      <Texts Lang="EN">Questionnaire is started</Texts>
+    </Translation>
+    <Translation Name="Quex_StartedPhone" Parent="tHappenings" Type="Category">
+      <Texts Lang="EN">Questionnaire is started by phone</Texts>
+    </Translation>
+    <Translation Name="Quex_StartedMail" Parent="tHappenings" Type="Category">
+      <Texts Lang="EN">Questionnaire is started by Mail</Texts>
+    </Translation>
+    <Translation Name="Quex_StartedWeb" Parent="tHappenings" Type="Category">
+      <Texts Lang="EN">Questionnaire is started by Web</Texts>
+    </Translation>
+    <Translation Name="Quex_StartedVisit" Parent="tHappenings" Type="Category">
+      <Texts Lang="EN">Questionnaire is started by Visit</Texts>
+    </Translation>
+    <Translation Name="Quex_StartedSMedia" Parent="tHappenings" Type="Category">
+      <Texts Lang="EN">Questionnaire is started by Social Media</Texts>
+    </Translation>
+    <Translation Name="Quex_Ongoing" Parent="tHappenings" Type="Category">
+      <Texts Lang="EN">Questionnaire is ongoing</Texts>
+    </Translation>
+    <Translation Name="Quex_OngoingPhone" Parent="tHappenings" Type="Category">
+      <Texts Lang="EN">Questionnaire is ongoing on the phone</Texts>
+    </Translation>
+    <Translation Name="Quex_OngoingWeb" Parent="tHappenings" Type="Category">
+      <Texts Lang="EN">Questionnaire is ongoing on the web</Texts>
+    </Translation>
+    <Translation Name="Quex_OngoingVisit" Parent="tHappenings" Type="Category">
+      <Texts Lang="EN">Questionnaire is ongoing by visit</Texts>
+    </Translation>
+    <Translation Name="Quex_Incomplete" Parent="tHappenings" Type="Category">
+      <Texts Lang="EN">Questionnaire is incomplete</Texts>
+    </Translation>
+    <Translation Name="Quex_IncompletePhone" Parent="tHappenings" Type="Category">
+      <Texts Lang="EN">Questionnaire is incomplete by phone or in process</Texts>
+    </Translation>
+    <Translation Name="Quex_IncompleteMail" Parent="tHappenings" Type="Category">
+      <Texts Lang="EN">Questionnaire is incomplete by Mail</Texts>
+    </Translation>
+    <Translation Name="Quex_IncompleteWeb" Parent="tHappenings" Type="Category">
+      <Texts Lang="EN">Questionnaire is incomplete by Web or in process</Texts>
+    </Translation>
+    <Translation Name="Quex_IncompleteVisit" Parent="tHappenings" Type="Category">
+      <Texts Lang="EN">Questionnaire is incomplete by Visit or in process</Texts>
+    </Translation>
+    <Translation Name="Quex_IncompleteSMedia" Parent="tHappenings" Type="Category">
+      <Texts Lang="EN">Questionnaire is incomplete by Social Media or in process</Texts>
+    </Translation>
+    <Translation Name="Quex_Partial" Parent="tHappenings" Type="Category">
+      <Texts Lang="EN">Questionnaire is partially/usefully complete</Texts>
+    </Translation>
+    <Translation Name="Quex_PartialPhone" Parent="tHappenings" Type="Category">
+      <Texts Lang="EN">Questionnaire is partially/usefully complete by phone</Texts>
+    </Translation>
+    <Translation Name="Quex_PartialMail" Parent="tHappenings" Type="Category">
+      <Texts Lang="EN">Questionnaire is partially/usefully complete by Mail</Texts>
+    </Translation>
+    <Translation Name="Quex_PartialWeb" Parent="tHappenings" Type="Category">
+      <Texts Lang="EN">Questionnaire is partially/usefully complete by Web</Texts>
+    </Translation>
+    <Translation Name="Quex_PartialVisit" Parent="tHappenings" Type="Category">
+      <Texts Lang="EN">Questionnaire is partially/usefully complete by Visit</Texts>
+    </Translation>
+    <Translation Name="Quex_PartialSMedia" Parent="tHappenings" Type="Category">
+      <Texts Lang="EN">Questionnaire is partially/usefully complete by Social Media</Texts>
+    </Translation>
+    <Translation Name="Quex_Key" Parent="tHappenings" Type="Category">
+      <Texts Lang="EN">Questionnaire is key field complete</Texts>
+    </Translation>
+    <Translation Name="Quex_KeyPhone" Parent="tHappenings" Type="Category">
+      <Texts Lang="EN">Questionnaire is key field complete by phone</Texts>
+    </Translation>
+    <Translation Name="Quex_KeyMail" Parent="tHappenings" Type="Category">
+      <Texts Lang="EN">Questionnaire is key field complete by Mail</Texts>
+    </Translation>
+    <Translation Name="Quex_KeyWeb" Parent="tHappenings" Type="Category">
+      <Texts Lang="EN">Questionnaire is key field complete by Web</Texts>
+    </Translation>
+    <Translation Name="Quex_KeyVisit" Parent="tHappenings" Type="Category">
+      <Texts Lang="EN">Questionnaire is key field complete by Visit</Texts>
+    </Translation>
+    <Translation Name="Quex_KeySMedia" Parent="tHappenings" Type="Category">
+      <Texts Lang="EN">Questionnaire is key field complete by Social Media</Texts>
+    </Translation>
+    <Translation Name="Quex_Complete" Parent="tHappenings" Type="Category">
+      <Texts Lang="EN">Questionnaire is complete</Texts>
+    </Translation>
+    <Translation Name="Quex_CompletePhone" Parent="tHappenings" Type="Category">
+      <Texts Lang="EN">Questionnaire is complete by phone</Texts>
+    </Translation>
+    <Translation Name="Quex_CompleteMail" Parent="tHappenings" Type="Category">
+      <Texts Lang="EN">Questionnaire is complete by Mail</Texts>
+    </Translation>
+    <Translation Name="Quex_CompleteWeb" Parent="tHappenings" Type="Category">
+      <Texts Lang="EN">Questionnaire is complete by Web</Texts>
+    </Translation>
+    <Translation Name="Quex_CompleteVisit" Parent="tHappenings" Type="Category">
+      <Texts Lang="EN">Questionnaire is complete by Visit</Texts>
+    </Translation>
+    <Translation Name="Quex_CompleteSMedia" Parent="tHappenings" Type="Category">
+      <Texts Lang="EN">Questionnaire is complete by Social Media</Texts>
+    </Translation>
+    <Translation Name="Quex_FollowUp" Parent="tHappenings" Type="Category">
+      <Texts Lang="EN">Incomplete questionnaire is designated for follow up</Texts>
+    </Translation>
+    <Translation Name="Quex_FollowUpPhone" Parent="tHappenings" Type="Category">
+      <Texts Lang="EN">Incomplete questionnaire is designated for follow up by phone</Texts>
+    </Translation>
+    <Translation Name="Quex_FollowUpVisit" Parent="tHappenings" Type="Category">
+      <Texts Lang="EN">Incomplete questionnaire is designated for follow up by visit</Texts>
+    </Translation>
+    <Translation Name="EmailForm" Parent="tHappenings" Type="Category">
+      <Texts Lang="EN">E.g., email questionnaire form</Texts>
+    </Translation>
+    <Translation Name="Quex_Break" Parent="tHappenings" Type="Category">
+      <Texts Lang="EN">Break-off</Texts>
+      <Texts Lang="NL">Afgebroken</Texts>
+    </Translation>
+    <Translation Name="Quex_BreakPhone" Parent="tHappenings" Type="Category">
+      <Texts Lang="EN">Break-off on phone</Texts>
+      <Texts Lang="NL">Afgebroken</Texts>
+    </Translation>
+    <Translation Name="Quex_BreakMail" Parent="tHappenings" Type="Category">
+      <Texts Lang="EN">Break-off on paper</Texts>
+      <Texts Lang="NL">Afgebroken</Texts>
+    </Translation>
+    <Translation Name="Quex_BreakWeb" Parent="tHappenings" Type="Category">
+      <Texts Lang="EN">Break-off on web</Texts>
+      <Texts Lang="NL">Afgebroken</Texts>
+    </Translation>
+    <Translation Name="Quex_BreakVisit" Parent="tHappenings" Type="Category">
+      <Texts Lang="EN">Break-off during visit</Texts>
+      <Texts Lang="NL">Afgebroken</Texts>
+    </Translation>
+    <Translation Name="Quex_Timeout" Parent="tHappenings" Type="Category">
+      <Texts Lang="EN">Breakoff due to timeout</Texts>
+    </Translation>
+    <Translation Name="Quex_TimeoutWeb" Parent="tHappenings" Type="Category">
+      <Texts Lang="EN">Web breakoff due to timeout</Texts>
+    </Translation>
+    <Translation Name="Quex_IntroBreak" Parent="tHappenings" Type="Category">
+      <Texts Lang="EN">R breaks off at Intro</Texts>
+    </Translation>
+    <Translation Name="Case_IntroBreakPhone" Parent="tHappenings" Type="Category">
+      <Texts Lang="EN">R breaks off at Intro on phone</Texts>
+    </Translation>
+    <Translation Name="Case_IntroBreakSM" Parent="tHappenings" Type="Category">
+      <Texts Lang="EN">R breaks off at Intro during visit</Texts>
+    </Translation>
+    <Translation Name="Quex_PostIntroBreak" Parent="tHappenings" Type="Category">
+      <Texts Lang="EN">R breaks off after Intro</Texts>
+    </Translation>
+    <Translation Name="Quex_PostIntroBreakPhone" Parent="tHappenings" Type="Category">
+      <Texts Lang="EN">R breaks off after Intro on phone</Texts>
+    </Translation>
+    <Translation Name="Quex_PostIntroBreakWeb" Parent="tHappenings" Type="Category">
+      <Texts Lang="EN">R breaks off after Intro on web</Texts>
+    </Translation>
+    <Translation Name="Quex_PostIntroBreakVisit" Parent="tHappenings" Type="Category">
+      <Texts Lang="EN">R breaks off after Intro during visit</Texts>
+    </Translation>
+    <Translation Name="Quex_BreakLang" Parent="tHappenings" Type="Category">
+      <Texts Lang="EN">Language skills of respondent not sufficient</Texts>
+      <Texts Lang="NL">OP beheerst onvoldoende Nederlands</Texts>
+    </Translation>
+    <Translation Name="Quex_BreakLangPhone" Parent="tHappenings" Type="Category">
+      <Texts Lang="EN">Language skills of respondent not sufficient on phone</Texts>
+      <Texts Lang="NL">OP beheerst onvoldoende Nederlands</Texts>
+    </Translation>
+    <Translation Name="Quex_BreakLangVisit" Parent="tHappenings" Type="Category">
+      <Texts Lang="EN">Language skills of respondent not sufficient during visit</Texts>
+      <Texts Lang="NL">OP beheerst onvoldoende Nederlands</Texts>
+    </Translation>
+    <Translation Name="Quex_BreakCannot" Parent="tHappenings" Type="Category">
+      <Texts Lang="EN">Respondent cannot be interviewed</Texts>
+      <Texts Lang="NL">OP kan toch niet geïnterviewd worden</Texts>
+    </Translation>
+    <Translation Name="Quex_BreakCannotPhone" Parent="tHappenings" Type="Category">
+      <Texts Lang="EN">Respondent cannot be interviewed on phone</Texts>
+      <Texts Lang="NL">OP kan toch niet geïnterviewd worden</Texts>
+    </Translation>
+    <Translation Name="Quex_BreakCannotVisit" Parent="tHappenings" Type="Category">
+      <Texts Lang="EN">Respondent cannot be interviewed during visit</Texts>
+      <Texts Lang="NL">OP kan toch niet geïnterviewd worden</Texts>
+    </Translation>
+    <Translation Name="Quex_BreakOther" Parent="tHappenings" Type="Category">
+      <Texts Lang="EN">Other breakoff reason</Texts>
+    </Translation>
+    <Translation Name="Quex_ResistDifficult" Parent="tHappenings" Type="Category">
+      <Texts Lang="EN">Respondent found it too difficult</Texts>
+      <Texts Lang="NL">OP vond het te moeilijk</Texts>
+    </Translation>
+    <Translation Name="Quex_ResistDifficultPhone" Parent="tHappenings" Type="Category">
+      <Texts Lang="EN">Respondent found it too difficult on phone</Texts>
+      <Texts Lang="NL">OP vond het te moeilijk</Texts>
+    </Translation>
+    <Translation Name="Quex_ResistDifficultVisit" Parent="tHappenings" Type="Category">
+      <Texts Lang="EN">Respondent found it too difficult during visit</Texts>
+      <Texts Lang="NL">OP vond het te moeilijk</Texts>
+    </Translation>
+    <Translation Name="Quex_ResistLong" Parent="tHappenings" Type="Category">
+      <Texts Lang="EN">Respondent thought it was too long</Texts>
+      <Texts Lang="NL">OP vond het te lang</Texts>
+    </Translation>
+    <Translation Name="Quex_ResistLongPhone" Parent="tHappenings" Type="Category">
+      <Texts Lang="EN">Respondent thought it was too long on phone</Texts>
+      <Texts Lang="NL">OP vond het te lang</Texts>
+    </Translation>
+    <Translation Name="Quex_ResistLongVisit" Parent="tHappenings" Type="Category">
+      <Texts Lang="EN">Respondent thought it was too long during visit</Texts>
+      <Texts Lang="NL">OP vond het te lang</Texts>
+    </Translation>
+    <Translation Name="Quex_ResistPersonal" Parent="tHappenings" Type="Category">
+      <Texts Lang="EN">Respondent found it too personal / intimate</Texts>
+      <Texts Lang="NL">OP vond het te persoonlijk / intiem</Texts>
+    </Translation>
+    <Translation Name="Quex_ResistPersonalPhone" Parent="tHappenings" Type="Category">
+      <Texts Lang="EN">Respondent found it too personal / intimate on phone</Texts>
+      <Texts Lang="NL">OP vond het te persoonlijk / intiem</Texts>
+    </Translation>
+    <Translation Name="Quex_ResistPersonalVisit" Parent="tHappenings" Type="Category">
+      <Texts Lang="EN">Respondent found it too personal / intimate during visit</Texts>
+      <Texts Lang="NL">OP vond het te persoonlijk / intiem</Texts>
+    </Translation>
+    <Translation Name="Quex_ResistSecurity" Parent="tHappenings" Type="Category">
+      <Texts Lang="EN">Security reasons</Texts>
+      <Texts Lang="NL">Veiligheidsredenen</Texts>
+    </Translation>
+    <Translation Name="Quex_ResistSecurityPhone" Parent="tHappenings" Type="Category">
+      <Texts Lang="EN">Security reasons on phone</Texts>
+      <Texts Lang="NL">Veiligheidsredenen</Texts>
+    </Translation>
+    <Translation Name="Quex_ResistSecurityVisit" Parent="tHappenings" Type="Category">
+      <Texts Lang="EN">Security reasons during visit</Texts>
+      <Texts Lang="NL">Veiligheidsredenen</Texts>
+    </Translation>
+    <Translation Name="Quex_ResistTopic" Parent="tHappenings" Type="Category">
+      <Texts Lang="EN">Did not like the topic</Texts>
+    </Translation>
+    <Translation Name="Quex_ResistTopicPhone" Parent="tHappenings" Type="Category">
+      <Texts Lang="EN">Did not like the topic on the phone</Texts>
+    </Translation>
+    <Translation Name="Quex_ResistTopicVisit" Parent="tHappenings" Type="Category">
+      <Texts Lang="EN">Did not like the topic during the visit</Texts>
+    </Translation>
+    <Translation Name="Quex_ResistOther" Parent="tHappenings" Type="Category">
+      <Texts Lang="EN">Other reason</Texts>
+      <Texts Lang="NL">Andere reden</Texts>
+    </Translation>
+    <Translation Name="Quex_ResistOtherPhone" Parent="tHappenings" Type="Category">
+      <Texts Lang="EN">Other reason on phone</Texts>
+      <Texts Lang="NL">Andere reden</Texts>
+    </Translation>
+    <Translation Name="Quex_ResistOtherVisit" Parent="tHappenings" Type="Category">
+      <Texts Lang="EN">Other reason during visit</Texts>
+      <Texts Lang="NL">Andere reden</Texts>
+    </Translation>
+    <Translation Name="Quex_ResistDiffMode" Parent="tHappenings" Type="Category">
+      <Texts Lang="EN">Preference for different mode</Texts>
+      <Texts Lang="NL">Voorkeur andere mode</Texts>
+    </Translation>
+    <Translation Name="Quex_ResistDiffModePhone" Parent="tHappenings" Type="Category">
+      <Texts Lang="EN">Preference for different mode than phone</Texts>
+      <Texts Lang="NL">Voorkeur andere mode</Texts>
+    </Translation>
+    <Translation Name="Quex_ResistDiffModeVisit" Parent="tHappenings" Type="Category">
+      <Texts Lang="EN">Preference for different mode than visit</Texts>
+      <Texts Lang="NL">Voorkeur andere mode</Texts>
+    </Translation>
+    <Translation Name="Ref_Direct" Parent="tHappenings" Type="Category">
+      <Texts Lang="EN">Direct or outright refusal</Texts>
+      <Texts Lang="NL">Weigering</Texts>
+    </Translation>
+    <Translation Name="Ref_DirectPhone" Parent="tHappenings" Type="Category">
+      <Texts Lang="EN">Direct or outright refusal on phone</Texts>
+      <Texts Lang="NL">Weigering</Texts>
+    </Translation>
+    <Translation Name="Ref_DirectVisit" Parent="tHappenings" Type="Category">
+      <Texts Lang="EN">Direct or outright refusal during visit</Texts>
+      <Texts Lang="NL">Weigering</Texts>
+    </Translation>
+    <Translation Name="Ref_Adamant" Parent="tHappenings" Type="Category">
+      <Texts Lang="EN">Adamant refusal</Texts>
+    </Translation>
+    <Translation Name="Ref_AdamantPhone" Parent="tHappenings" Type="Category">
+      <Texts Lang="EN">Adamant refusal on phone</Texts>
+    </Translation>
+    <Translation Name="Ref_AdamantVisit" Parent="tHappenings" Type="Category">
+      <Texts Lang="EN">Adamant refusal during visit</Texts>
+    </Translation>
+    <Translation Name="Ref_Burden" Parent="tHappenings" Type="Category">
+      <Texts Lang="EN">Too many surveys or too much burden</Texts>
+    </Translation>
+    <Translation Name="Ref_BurdenPhone" Parent="tHappenings" Type="Category">
+      <Texts Lang="EN">Too many surveys or too much burden</Texts>
+    </Translation>
+    <Translation Name="Ref_BurdenVisit" Parent="tHappenings" Type="Category">
+      <Texts Lang="EN">Too many surveys or too much burden</Texts>
+    </Translation>
+    <Translation Name="Ref_NoTime" Parent="tHappenings" Type="Category">
+      <Texts Lang="EN">No time for the survey</Texts>
+    </Translation>
+    <Translation Name="Ref_NoTimePhone" Parent="tHappenings" Type="Category">
+      <Texts Lang="EN">No time for the phone survey</Texts>
+    </Translation>
+    <Translation Name="Ref_NoTimeVisit" Parent="tHappenings" Type="Category">
+      <Texts Lang="EN">No time for the phone survey</Texts>
+    </Translation>
+    <Translation Name="Ref_Privacy" Parent="tHappenings" Type="Category">
+      <Texts Lang="EN">Refused for privacy reasons</Texts>
+    </Translation>
+    <Translation Name="Ref_PrivacyPhone" Parent="tHappenings" Type="Category">
+      <Texts Lang="EN">Refused for privacy reasons on phone</Texts>
+    </Translation>
+    <Translation Name="Ref_PrivacyVisit" Parent="tHappenings" Type="Category">
+      <Texts Lang="EN">Refused for privacy reasons during visit</Texts>
+    </Translation>
+    <Translation Name="Ref_UnkReason" Parent="tHappenings" Type="Category">
+      <Texts Lang="EN">Refusal for unknown reason</Texts>
+      <Texts Lang="NL">Reden onbekend</Texts>
+    </Translation>
+    <Translation Name="Ref_UnkReasonPhone" Parent="tHappenings" Type="Category">
+      <Texts Lang="EN">Refusal for unknown reason on phone</Texts>
+      <Texts Lang="NL">Reden onbekend</Texts>
+    </Translation>
+    <Translation Name="Ref_UnkReasonVisit" Parent="tHappenings" Type="Category">
+      <Texts Lang="EN">Refusal for unknown reason during visit</Texts>
+      <Texts Lang="NL">Reden onbekend</Texts>
+    </Translation>
+    <Translation Name="Ref_OthReason" Parent="tHappenings" Type="Category">
+      <Texts Lang="EN">Refusal for other reason - specify</Texts>
+      <Texts Lang="NL">Andere reden</Texts>
+    </Translation>
+    <Translation Name="Ref_OthReasonPhone" Parent="tHappenings" Type="Category">
+      <Texts Lang="EN">Refusal for other reason on phone - specify</Texts>
+      <Texts Lang="NL">Andere reden</Texts>
+    </Translation>
+    <Translation Name="Ref_OthReasonVisit" Parent="tHappenings" Type="Category">
+      <Texts Lang="EN">Refusal for other reason during visit - specify</Texts>
+      <Texts Lang="NL">Andere reden</Texts>
+    </Translation>
+    <Translation Name="Ref_Implicit" Parent="tHappenings" Type="Category">
+      <Texts Lang="EN">Implicit refusal - multiple missed appointments</Texts>
+    </Translation>
+    <Translation Name="Ref_ImplicitPhone" Parent="tHappenings" Type="Category">
+      <Texts Lang="EN">Implicit refusal - multiple missed appointments on phone</Texts>
+    </Translation>
+    <Translation Name="Ref_ImplicitMail" Parent="tHappenings" Type="Category">
+      <Texts Lang="EN">Implicit refusal - blank questionnaire returned</Texts>
+    </Translation>
+    <Translation Name="Ref_ImplicitVisit" Parent="tHappenings" Type="Category">
+      <Texts Lang="EN">Implicit refusal - multiple missed appointments by visit</Texts>
+    </Translation>
+    <Translation Name="Ref_Communication" Parent="tHappenings" Type="Category">
+      <Texts Lang="EN">Communication refused by Addressee</Texts>
+    </Translation>
+    <Translation Name="Ref_CommunicationPhone" Parent="tHappenings" Type="Category">
+      <Texts Lang="EN">Phone refused by Addressee</Texts>
+    </Translation>
+    <Translation Name="Ref_CommunicationText" Parent="tHappenings" Type="Category">
+      <Texts Lang="EN">Text refused by Addressee</Texts>
+    </Translation>
+    <Translation Name="Ref_CommunicationMail" Parent="tHappenings" Type="Category">
+      <Texts Lang="EN">Mail refused by Addressee</Texts>
+    </Translation>
+    <Translation Name="Ref_CommunicationEmail" Parent="tHappenings" Type="Category">
+      <Texts Lang="EN">Email refused by Addressee</Texts>
+    </Translation>
+    <Translation Name="Ref_Soft" Parent="tHappenings" Type="Category">
+      <Texts Lang="EN">Soft refusal</Texts>
+    </Translation>
+    <Translation Name="Ref_SoftPhone" Parent="tHappenings" Type="Category">
+      <Texts Lang="EN">Soft refusal by phone</Texts>
+    </Translation>
+    <Translation Name="Ref_SoftVisit" Parent="tHappenings" Type="Category">
+      <Texts Lang="EN">Soft refusal by visit</Texts>
+    </Translation>
+    <Translation Name="Ref_Quex" Parent="tHappenings" Type="Category">
+      <Texts Lang="EN">Refused questionnaire</Texts>
+    </Translation>
+    <Translation Name="Ref_QuexMail" Parent="tHappenings" Type="Category">
+      <Texts Lang="EN">Returned opened envelope</Texts>
+    </Translation>
+    <Translation Name="Ref_Final" Parent="tHappenings" Type="Category">
+      <Texts Lang="EN">Final refusal</Texts>
+    </Translation>
+    <Translation Name="Ref_FinalPhone" Parent="tHappenings" Type="Category">
+      <Texts Lang="EN">Final refusal by phone</Texts>
+    </Translation>
+    <Translation Name="Ref_FinalMail" Parent="tHappenings" Type="Category">
+      <Texts Lang="EN">Final refusal by mail</Texts>
+    </Translation>
+    <Translation Name="Ref_FinalVisit" Parent="tHappenings" Type="Category">
+      <Texts Lang="EN">Final refusal by visit</Texts>
+    </Translation>
+    <Translation Name="Ref_Unit" Parent="tHappenings" Type="Category">
+      <Texts Lang="EN">Unit refusal</Texts>
+    </Translation>
+    <Translation Name="Ref_UnitPhone" Parent="tHappenings" Type="Category">
+      <Texts Lang="EN">Unit refusal by phone</Texts>
+    </Translation>
+    <Translation Name="Ref_UnitText" Parent="tHappenings" Type="Category">
+      <Texts Lang="EN">Unit refusal by text</Texts>
+    </Translation>
+    <Translation Name="Ref_UnitMail" Parent="tHappenings" Type="Category">
+      <Texts Lang="EN">Unit refusal by mail</Texts>
+    </Translation>
+    <Translation Name="Ref_UnitVisit" Parent="tHappenings" Type="Category">
+      <Texts Lang="EN">Unit refusal by visit</Texts>
+    </Translation>
+    <Translation Name="Ref_UnitSMedia" Parent="tHappenings" Type="Category">
+      <Texts Lang="EN">Unit refusal by social media</Texts>
+    </Translation>
+    <Translation Name="Ref_Politico" Parent="tHappenings" Type="Category">
+      <Texts Lang="EN">Politico intervenes</Texts>
+    </Translation>
+    <Translation Name="Res_ApptNotMet" Parent="tHappenings" Type="Category">
+      <Texts Lang="EN">One appointment not met</Texts>
+      <Texts Lang="NL">Afspraak niet nagekomen</Texts>
+    </Translation>
+    <Translation Name="Res_ApptNotMetPhone" Parent="tHappenings" Type="Category">
+      <Texts Lang="EN">One appointment not met on phone</Texts>
+      <Texts Lang="NL">Afspraak niet nagekomen</Texts>
+    </Translation>
+    <Translation Name="Res_ApptNotMetVisit" Parent="tHappenings" Type="Category">
+      <Texts Lang="EN">One appointment not met during visit</Texts>
+      <Texts Lang="NL">Afspraak niet nagekomen</Texts>
+    </Translation>
+    <Translation Name="Res_HomeNoAnswer" Parent="tHappenings" Type="Category">
+      <Texts Lang="EN">R is home but no answer</Texts>
+    </Translation>
+    <Translation Name="Res_HomeNoAnswerPhone" Parent="tHappenings" Type="Category">
+      <Texts Lang="EN">R is home but no answer on phone</Texts>
+    </Translation>
+    <Translation Name="Res_HomeNoAnswerVisit" Parent="tHappenings" Type="Category">
+      <Texts Lang="EN">R is home but no answer to door knock</Texts>
+    </Translation>
+    <Translation Name="Res_NoAnswerPhone" Parent="tHappenings" Type="Category">
+      <Texts Lang="EN">Phone no answer by CATI or home</Texts>
+    </Translation>
+    <Translation Name="Res_NoAnswerVisit" Parent="tHappenings" Type="Category">
+      <Texts Lang="EN">Phone no answer by field</Texts>
+    </Translation>
+    <Translation Name="Res_BounceBack" Parent="tHappenings" Type="Category">
+      <Texts Lang="EN">Communication bounced back</Texts>
+    </Translation>
+    <Translation Name="Res_BounceBackText" Parent="tHappenings" Type="Category">
+      <Texts Lang="EN">Text communication bounced back</Texts>
+    </Translation>
+    <Translation Name="Res_BounceBackMail" Parent="tHappenings" Type="Category">
+      <Texts Lang="EN">Mail returned unopened</Texts>
+    </Translation>
+    <Translation Name="Res_BounceBackEMail" Parent="tHappenings" Type="Category">
+      <Texts Lang="EN">EMail returned unopened</Texts>
+    </Translation>
+    <Translation Name="Res_Promise" Parent="tHappenings" Type="Category">
+      <Texts Lang="EN">Promised to complete</Texts>
+    </Translation>
+    <Translation Name="Res_PromisePhone" Parent="tHappenings" Type="Category">
+      <Texts Lang="EN">Promised to complete in another mode</Texts>
+    </Translation>
+    <Translation Name="Res_PromiseVisit" Parent="tHappenings" Type="Category">
+      <Texts Lang="EN">Promised to complete in another mode</Texts>
+    </Translation>
+    <Translation Name="Res_WebPromise" Parent="tHappenings" Type="Category">
+      <Texts Lang="EN">Promised to complete in web</Texts>
+    </Translation>
+    <Translation Name="Res_WebPromisePhone" Parent="tHappenings" Type="Category">
+      <Texts Lang="EN">Promised on phone to complete in web</Texts>
+    </Translation>
+    <Translation Name="Res_WebPromiseText" Parent="tHappenings" Type="Category">
+      <Texts Lang="EN">Promised by text to complete in web</Texts>
+    </Translation>
+    <Translation Name="Res_WebPromiseVisit" Parent="tHappenings" Type="Category">
+      <Texts Lang="EN">Promised during visit to complete in web</Texts>
+    </Translation>
+    <Translation Name="Res_WebPromiseEmail" Parent="tHappenings" Type="Category">
+      <Texts Lang="EN">Promised by email to complete in web</Texts>
+    </Translation>
+    <Translation Name="Res_PhonePromise" Parent="tHappenings" Type="Category">
+      <Texts Lang="EN">Promised to complete by phone</Texts>
+    </Translation>
+    <Translation Name="Res_PhonePromiseText" Parent="tHappenings" Type="Category">
+      <Texts Lang="EN">Promised by text to complete by phone</Texts>
+    </Translation>
+    <Translation Name="Res_PhonePromiseVisit" Parent="tHappenings" Type="Category">
+      <Texts Lang="EN">Promised by visit to complete by phone</Texts>
+    </Translation>
+    <Translation Name="Res_PhonePromiseEmail" Parent="tHappenings" Type="Category">
+      <Texts Lang="EN">Promised by email to complete by phone</Texts>
+    </Translation>
+    <Translation Name="Res_VisitPromise" Parent="tHappenings" Type="Category">
+      <Texts Lang="EN">Promised to complete by visit</Texts>
+    </Translation>
+    <Translation Name="Res_VisitPromisePhone" Parent="tHappenings" Type="Category">
+      <Texts Lang="EN">Promised on phone to complete by visit</Texts>
+    </Translation>
+    <Translation Name="Res_VisitPromiseText" Parent="tHappenings" Type="Category">
+      <Texts Lang="EN">Promised by text to complete by visit</Texts>
+    </Translation>
+    <Translation Name="Res_VisitPromiseEmail" Parent="tHappenings" Type="Category">
+      <Texts Lang="EN">Promised by email to complete by visit</Texts>
+    </Translation>
+    <Translation Name="Res_PaperPromise" Parent="tHappenings" Type="Category">
+      <Texts Lang="EN">Promised to complete by paper</Texts>
+    </Translation>
+    <Translation Name="Res_PaperPromisePhone" Parent="tHappenings" Type="Category">
+      <Texts Lang="EN">Promised on phone to complete by paper</Texts>
+    </Translation>
+    <Translation Name="Res_PaperPromiseText" Parent="tHappenings" Type="Category">
+      <Texts Lang="EN">Promised by text to complete by paper</Texts>
+    </Translation>
+    <Translation Name="Res_PaperPromiseVisit" Parent="tHappenings" Type="Category">
+      <Texts Lang="EN">Promised by visit to complete by paper</Texts>
+    </Translation>
+    <Translation Name="Res_PaperPromiseEmail" Parent="tHappenings" Type="Category">
+      <Texts Lang="EN">Promised by email to complete by paper</Texts>
+    </Translation>
+    <Translation Name="NAV_NotAvailable" Parent="tHappenings" Type="Category">
+      <Texts Lang="EN">Not available during survey period</Texts>
+      <Texts Lang="NL">Afwezig tijdens veldwerkperiode</Texts>
+    </Translation>
+    <Translation Name="NAV_NotAvailablePhone" Parent="tHappenings" Type="Category">
+      <Texts Lang="EN">Not available during survey period on phone</Texts>
+      <Texts Lang="NL">Afwezig tijdens veldwerkperiode</Texts>
+    </Translation>
+    <Translation Name="NAV_NotAvailableMail" Parent="tHappenings" Type="Category">
+      <Texts Lang="EN">Not available during survey period by mail</Texts>
+      <Texts Lang="NL">Afwezig tijdens veldwerkperiode</Texts>
+    </Translation>
+    <Translation Name="NAV_NotAvailableVisit" Parent="tHappenings" Type="Category">
+      <Texts Lang="EN">Not available during survey period by visit</Texts>
+      <Texts Lang="NL">Afwezig tijdens veldwerkperiode</Texts>
+    </Translation>
+    <Translation Name="NAV_Trip" Parent="tHappenings" Type="Category">
+      <Texts Lang="EN">Not available due to holiday, work abroad, business trip etc.</Texts>
+      <Texts Lang="NL">Vakantie, werk in het buitenland, zakenreis etc.</Texts>
+    </Translation>
+    <Translation Name="NAV_TripPhone" Parent="tHappenings" Type="Category">
+      <Texts Lang="EN">Not available on phone due to holiday, work abroad, business trip etc.</Texts>
+      <Texts Lang="NL">Vakantie, werk in het buitenland, zakenreis etc.</Texts>
+    </Translation>
+    <Translation Name="NAV_TripMail" Parent="tHappenings" Type="Category">
+      <Texts Lang="EN">Not available by mail due to holiday, work abroad, business trip etc.</Texts>
+      <Texts Lang="NL">Vakantie, werk in het buitenland, zakenreis etc.</Texts>
+    </Translation>
+    <Translation Name="NAV_TripVisit" Parent="tHappenings" Type="Category">
+      <Texts Lang="EN">Not available by visit due to holiday, work abroad, business trip etc.</Texts>
+      <Texts Lang="NL">Vakantie, werk in het buitenland, zakenreis etc.</Texts>
+    </Translation>
+    <Translation Name="NAV_Incarcerated" Parent="tHappenings" Type="Category">
+      <Texts Lang="EN">Respondent is in detention</Texts>
+      <Texts Lang="NL">OP zit in detentie</Texts>
+    </Translation>
+    <Translation Name="NAV_Institution" Parent="tHappenings" Type="Category">
+      <Texts Lang="EN">Respondent has been temporarily admitted to a hospital, care home or other institution</Texts>
+      <Texts Lang="NL">OP is tijdelijk opgenomen in het ziekenhuis, verzorgingstehuis of andere instelling</Texts>
+    </Translation>
+    <Translation Name="NAV_NoTime" Parent="tHappenings" Type="Category">
+      <Texts Lang="EN">Field work period almost over: no time to make another appointment</Texts>
+      <Texts Lang="NL">Veldwerkperiode bijna ten einde: geen tijd om nog een afspraak te maken</Texts>
+    </Translation>
+    <Translation Name="NAV_OtherReason" Parent="tHappenings" Type="Category">
+      <Texts Lang="EN">Not available for another reason</Texts>
+      <Texts Lang="NL">Andere reden</Texts>
+    </Translation>
+    <Translation Name="NonI_NoInterview" Parent="tHappenings" Type="Category">
+      <Texts Lang="EN">Contact with Respondent/household, no interview, no appointment</Texts>
+      <Texts Lang="NL">Contact met OP/huishouden, geen interview, geen afspraak</Texts>
+    </Translation>
+    <Translation Name="NonI_Language" Parent="tHappenings" Type="Category">
+      <Texts Lang="EN">Language barrier</Texts>
+      <Texts Lang="NL">Beheerst onvoldoende Nederlands</Texts>
+    </Translation>
+    <Translation Name="NonI_Health" Parent="tHappenings" Type="Category">
+      <Texts Lang="EN">Cannot be interviewed (too sick, weak, deaf or psychological problems)</Texts>
+      <Texts Lang="NL">Kan niet geïnterviewd worden (te ziek, zwak, doof of psychische problemen)</Texts>
+    </Translation>
+    <Translation Name="NonI_Redundant" Parent="tHappenings" Type="Category">
+      <Texts Lang="EN">Already participated through different mode (or tried)</Texts>
+      <Texts Lang="NL">Via een andere mode meegedaan (of geprobeerd)</Texts>
+    </Translation>
+    <Translation Name="NonI_Deceased" Parent="tHappenings" Type="Category">
+      <Texts Lang="EN">Passed away</Texts>
+      <Texts Lang="NL">OP overleden</Texts>
+    </Translation>
+    <Translation Name="NonI_BadData" Parent="tHappenings" Type="Category">
+      <Texts Lang="EN">Data incorrect or moved within the Netherlands</Texts>
+      <Texts Lang="NL">Gegevens onjuist of verhuisd binnen Nederland</Texts>
+    </Translation>
+    <Translation Name="NonI_Moved" Parent="tHappenings" Type="Category">
+      <Texts Lang="EN">Respondent / household has moved</Texts>
+      <Texts Lang="NL">OP / huishouden is verhuisd</Texts>
+    </Translation>
+    <Translation Name="NonI_RUnknown" Parent="tHappenings" Type="Category">
+      <Texts Lang="EN">Respondent / household has never lived / unknown at this address</Texts>
+      <Texts Lang="NL">OP / huishouden heeft nooit op dit adres gewoond / onbekend</Texts>
+    </Translation>
+    <Translation Name="NonI_OtherReason" Parent="tHappenings" Type="Category">
+      <Texts Lang="EN">Data incorrect - other reason</Texts>
+      <Texts Lang="NL">Anders</Texts>
+    </Translation>
+    <Translation Name="NonI_Abroad" Parent="tHappenings" Type="Category">
+      <Texts Lang="EN">Moved abroad</Texts>
+      <Texts Lang="NL">Verhuisd naar het buitenland</Texts>
+    </Translation>
+    <Translation Name="NonI_Institution" Parent="tHappenings" Type="Category">
+      <Texts Lang="EN">Moved to an institution (care home, etc.)</Texts>
+      <Texts Lang="NL">Verhuisd naar een instelling (verzorgingstehuis, etc.)</Texts>
+    </Translation>
+    <Translation Name="NonC_NoContact" Parent="tHappenings" Type="Category">
+      <Texts Lang="EN">No contact</Texts>
+      <Texts Lang="NL">Geen contact</Texts>
+    </Translation>
+    <Translation Name="NonC_NotHome" Parent="tHappenings" Type="Category">
+      <Texts Lang="EN">No one at home / was not opened</Texts>
+      <Texts Lang="NL">Niemand thuis / werd niet open gedaan</Texts>
+    </Translation>
+    <Translation Name="NonC_NotHomeMail" Parent="tHappenings" Type="Category">
+      <Texts Lang="EN">Was not opened</Texts>
+    </Translation>
+    <Translation Name="NonC_NotHomeVisit" Parent="tHappenings" Type="Category">
+      <Texts Lang="EN">No one at home</Texts>
+    </Translation>
+    <Translation Name="NonC_NoAccess" Parent="tHappenings" Type="Category">
+      <Texts Lang="EN">Each time access not possible</Texts>
+      <Texts Lang="NL">Geen enkele keer toegang mogelijk</Texts>
+    </Translation>
+    <Translation Name="NonC_NoAccessVisit" Parent="tHappenings" Type="Category">
+      <Texts Lang="EN">Each time access not possible</Texts>
+      <Texts Lang="NL">Geen enkele keer toegang mogelijk</Texts>
+    </Translation>
+    <Translation Name="NonC_HHUnknown" Parent="tHappenings" Type="Category">
+      <Texts Lang="EN">OP / household unknown or not found</Texts>
+      <Texts Lang="NL">OP / huishouden onbekend of onvindbaar</Texts>
+    </Translation>
+    <Translation Name="NonC_HHUnknownMail" Parent="tHappenings" Type="Category">
+      <Texts Lang="EN">OP / household unknown or not found</Texts>
+      <Texts Lang="NL">OP / huishouden onbekend of onvindbaar</Texts>
+    </Translation>
+    <Translation Name="NonC_HHUnknownVisit" Parent="tHappenings" Type="Category">
+      <Texts Lang="EN">OP / household unknown or not found</Texts>
+      <Texts Lang="NL">OP / huishouden onbekend of onvindbaar</Texts>
+    </Translation>
+    <Translation Name="NonC_NoSuchAddress" Parent="tHappenings" Type="Category">
+      <Texts Lang="EN">No residential address / vacancy / under construction)</Texts>
+      <Texts Lang="NL">Geen woonadres / leegstand / in aanbouw)</Texts>
+    </Translation>
+    <Translation Name="NonC_NoSuchAddressMail" Parent="tHappenings" Type="Category">
+      <Texts Lang="EN">No residential address / vacancy / under construction)</Texts>
+      <Texts Lang="NL">Geen woonadres / leegstand / in aanbouw)</Texts>
+    </Translation>
+    <Translation Name="NonC_NoSuchAddressVisit" Parent="tHappenings" Type="Category">
+      <Texts Lang="EN">No residential address / vacancy / under construction)</Texts>
+      <Texts Lang="NL">Geen woonadres / leegstand / in aanbouw)</Texts>
+    </Translation>
+    <Translation Name="NonC_CannotFind" Parent="tHappenings" Type="Category">
+      <Texts Lang="EN">Address cannot be found / does not exist</Texts>
+      <Texts Lang="NL">Adres is onvindbaar / bestaat niet</Texts>
+    </Translation>
+    <Translation Name="NonC_CannotFindMail" Parent="tHappenings" Type="Category">
+      <Texts Lang="EN">Address cannot be found / does not exist</Texts>
+      <Texts Lang="NL">Adres is onvindbaar / bestaat niet</Texts>
+    </Translation>
+    <Translation Name="NonC_CannotFindVisit" Parent="tHappenings" Type="Category">
+      <Texts Lang="EN">Address cannot be found / does not exist</Texts>
+      <Texts Lang="NL">Adres is onvindbaar / bestaat niet</Texts>
+    </Translation>
+    <Translation Name="NonC_NoHouse" Parent="tHappenings" Type="Category">
+      <Texts Lang="EN">House under construction, demolished, demolition house</Texts>
+      <Texts Lang="NL">Woning in aanbouw, afgebroken, sloopwoning</Texts>
+    </Translation>
+    <Translation Name="NonC_NoHouseMail" Parent="tHappenings" Type="Category">
+      <Texts Lang="EN">House under construction, demolished, demolition house</Texts>
+      <Texts Lang="NL">Woning in aanbouw, afgebroken, sloopwoning</Texts>
+    </Translation>
+    <Translation Name="NonC_NoHouseVisit" Parent="tHappenings" Type="Category">
+      <Texts Lang="EN">House under construction, demolished, demolition house</Texts>
+      <Texts Lang="NL">Woning in aanbouw, afgebroken, sloopwoning</Texts>
+    </Translation>
+    <Translation Name="NonC_NotResidential" Parent="tHappenings" Type="Category">
+      <Texts Lang="EN">No home address (factory, school, office, etc.)</Texts>
+      <Texts Lang="NL">Geen woonadres (fabriek, school, kantoor e.d.)</Texts>
+    </Translation>
+    <Translation Name="NonC_NotResidentialMail" Parent="tHappenings" Type="Category">
+      <Texts Lang="EN">No home address (factory, school, office, etc.)</Texts>
+      <Texts Lang="NL">Geen woonadres (fabriek, school, kantoor e.d.)</Texts>
+    </Translation>
+    <Translation Name="NonC_NotResidentialVisit" Parent="tHappenings" Type="Category">
+      <Texts Lang="EN">No home address (factory, school, office, etc.)</Texts>
+      <Texts Lang="NL">Geen woonadres (fabriek, school, kantoor e.d.)</Texts>
+    </Translation>
+    <Translation Name="NonC_Vacant" Parent="tHappenings" Type="Category">
+      <Texts Lang="EN">Probably residential address, but vacant / temporarily uninhabited</Texts>
+      <Texts Lang="NL">Vermoedelijk woonadres, maar leegstaand / tijdelijk onbewoond</Texts>
+    </Translation>
+    <Translation Name="NonC_VacantMail" Parent="tHappenings" Type="Category">
+      <Texts Lang="EN">Probably residential address, but vacant / temporarily uninhabited</Texts>
+      <Texts Lang="NL">Vermoedelijk woonadres, maar leegstaand / tijdelijk onbewoond</Texts>
+    </Translation>
+    <Translation Name="NonC_VacantVisit" Parent="tHappenings" Type="Category">
+      <Texts Lang="EN">Probably residential address, but vacant / temporarily uninhabited</Texts>
+      <Texts Lang="NL">Vermoedelijk woonadres, maar leegstaand / tijdelijk onbewoond</Texts>
+    </Translation>
+    <Translation Name="NonC_Unsafe" Parent="tHappenings" Type="Category">
+      <Texts Lang="EN">Unsafe situation</Texts>
+      <Texts Lang="NL">Onveilige situatie</Texts>
+    </Translation>
+    <Translation Name="NonC_UnsafeVisit" Parent="tHappenings" Type="Category">
+      <Texts Lang="EN">Unsafe situation</Texts>
+      <Texts Lang="NL">Onveilige situatie</Texts>
+    </Translation>
+    <Translation Name="NonC_AddrOther" Parent="tHappenings" Type="Category">
+      <Texts Lang="EN">Other</Texts>
+      <Texts Lang="NL">Anders</Texts>
+    </Translation>
+    <Translation Name="NonC_AddrOtherMail" Parent="tHappenings" Type="Category">
+      <Texts Lang="EN">Other</Texts>
+      <Texts Lang="NL">Anders</Texts>
+    </Translation>
+    <Translation Name="NonC_AddrOtherVisit" Parent="tHappenings" Type="Category">
+      <Texts Lang="EN">Other</Texts>
+      <Texts Lang="NL">Anders</Texts>
+    </Translation>
+    <Translation Name="NonC_AddrInsuff" Parent="tHappenings" Type="Category">
+      <Texts Lang="EN">Insufficient address</Texts>
+    </Translation>
+    <Translation Name="NonC_AddrInsuffMail" Parent="tHappenings" Type="Category">
+      <Texts Lang="EN">Insufficient address for mail</Texts>
+    </Translation>
+    <Translation Name="NonC_AddrInsuffVisit" Parent="tHappenings" Type="Category">
+      <Texts Lang="EN">Insufficient address for visit</Texts>
+    </Translation>
+    <Translation Name="NonC_AddrIllegible" Parent="tHappenings" Type="Category">
+      <Texts Lang="EN">Illegible address</Texts>
+    </Translation>
+    <Translation Name="NonC_AddrIllegibleMail" Parent="tHappenings" Type="Category">
+      <Texts Lang="EN">Illegible address for mail</Texts>
+    </Translation>
+    <Translation Name="NonC_AddrIllegibleVisit" Parent="tHappenings" Type="Category">
+      <Texts Lang="EN">Illegible address for visit</Texts>
+    </Translation>
+    <Translation Name="NonC_SwitchLang" Parent="tHappenings" Type="Category">
+      <Texts Lang="EN">Switch language</Texts>
+    </Translation>
+    <Translation Name="NonC_SwitchLangPhone" Parent="tHappenings" Type="Category">
+      <Texts Lang="EN">Switch language for phone</Texts>
+    </Translation>
+    <Translation Name="NonC_SwitchLangMail" Parent="tHappenings" Type="Category">
+      <Texts Lang="EN">Send alternate language questionnaire</Texts>
+    </Translation>
+    <Translation Name="NonC_SwitchLangVisit" Parent="tHappenings" Type="Category">
+      <Texts Lang="EN">Switch language for visit</Texts>
+    </Translation>
+    <Translation Name="NonC_Other" Parent="tHappenings" Type="Category">
+      <Texts Lang="EN">No contact, other reason</Texts>
+      <Texts Lang="NL">Andere reden</Texts>
+    </Translation>
+    <Translation Name="NonC_NoPostOffice" Parent="tHappenings" Type="Category">
+      <Texts Lang="EN">No such post office</Texts>
+    </Translation>
+    <Translation Name="NonC_NoPostOfficeMail" Parent="tHappenings" Type="Category">
+      <Texts Lang="EN">No such post office</Texts>
+    </Translation>
+    <Translation Name="NonC_POBClosed" Parent="tHappenings" Type="Category">
+      <Texts Lang="EN">Postal Box Closed</Texts>
+    </Translation>
+    <Translation Name="NonC_POBClosedMail" Parent="tHappenings" Type="Category">
+      <Texts Lang="EN">Postal Box Closed</Texts>
+    </Translation>
+    <Translation Name="NonC_CannotDeliver" Parent="tHappenings" Type="Category">
+      <Texts Lang="EN">Mail cannot be delivered</Texts>
+    </Translation>
+    <Translation Name="NonC_CannotDeliverMail" Parent="tHappenings" Type="Category">
+      <Texts Lang="EN">Mail cannot be delivered</Texts>
+    </Translation>
+    <Translation Name="NonC_NoReceptacle" Parent="tHappenings" Type="Category">
+      <Texts Lang="EN">Mail no receptacle</Texts>
+    </Translation>
+    <Translation Name="NonC_NoReceptacleMail" Parent="tHappenings" Type="Category">
+      <Texts Lang="EN">Mail no receptacle</Texts>
+    </Translation>
+    <Translation Name="NonC_AddPostage" Parent="tHappenings" Type="Category">
+      <Texts Lang="EN">Mail returned for additional postage</Texts>
+    </Translation>
+    <Translation Name="NonC_AddPostageMail" Parent="tHappenings" Type="Category">
+      <Texts Lang="EN">Mail returned for additional postage</Texts>
+    </Translation>
+    <Translation Name="nonC_RefPostage" Parent="tHappenings" Type="Category">
+      <Texts Lang="EN">Refused to pay postage</Texts>
+    </Translation>
+    <Translation Name="nonC_RefPostageMail" Parent="tHappenings" Type="Category">
+      <Texts Lang="EN">Refused to pay postage</Texts>
+    </Translation>
+    <Translation Name="NonC_ForwardAddr" Parent="tHappenings" Type="Category">
+      <Texts Lang="EN">R moved - forwarding address provided</Texts>
+    </Translation>
+    <Translation Name="NonC_ForwardAddrMail" Parent="tHappenings" Type="Category">
+      <Texts Lang="EN">R moved - forwarding address provided</Texts>
+    </Translation>
+    <Translation Name="NonC_AddrCorrection" Parent="tHappenings" Type="Category">
+      <Texts Lang="EN">Address correction provided</Texts>
+    </Translation>
+    <Translation Name="NonC_AddrCorrectionMail" Parent="tHappenings" Type="Category">
+      <Texts Lang="EN">Address correction provided</Texts>
+    </Translation>
+    <Translation Name="NonC_NoForwardAddr" Parent="tHappenings" Type="Category">
+      <Texts Lang="EN">R moved - no forwarding address provided</Texts>
+    </Translation>
+    <Translation Name="NonC_NoForwardAddrMail" Parent="tHappenings" Type="Category">
+      <Texts Lang="EN">R moved - no forwarding address provided</Texts>
+    </Translation>
+    <Translation Name="NonC_BoxFull" Parent="tHappenings" Type="Category">
+      <Texts Lang="EN">Box is full</Texts>
+    </Translation>
+    <Translation Name="NonC_BoxFullText" Parent="tHappenings" Type="Category">
+      <Texts Lang="EN">Text in-box is full</Texts>
+    </Translation>
+    <Translation Name="NonC_BoxFullMail" Parent="tHappenings" Type="Category">
+      <Texts Lang="EN">Mail box is full</Texts>
+    </Translation>
+    <Translation Name="NonC_BoxFullEMail" Parent="tHappenings" Type="Category">
+      <Texts Lang="EN">EMail box is full</Texts>
+    </Translation>
+    <Translation Name="NonC_ProviderRejects" Parent="tHappenings" Type="Category">
+      <Texts Lang="EN">Provider rejects</Texts>
+    </Translation>
+    <Translation Name="NonC_ProviderRejectsPhone" Parent="tHappenings" Type="Category">
+      <Texts Lang="EN">Provider rejects phone attempt</Texts>
+    </Translation>
+    <Translation Name="NonC_ProviderRejectsText" Parent="tHappenings" Type="Category">
+      <Texts Lang="EN">Provider rejects text message</Texts>
+    </Translation>
+    <Translation Name="NonC_ProviderRejectsEmail" Parent="tHappenings" Type="Category">
+      <Texts Lang="EN">Provider rejects email</Texts>
+    </Translation>
+    <Translation Name="NonC_Busy" Parent="tHappenings" Type="Category">
+      <Texts Lang="EN">Busy</Texts>
+      <Texts Lang="NL">In gesprek</Texts>
+    </Translation>
+    <Translation Name="NonC_BusyPhone" Parent="tHappenings" Type="Category">
+      <Texts Lang="EN">Busy</Texts>
+      <Texts Lang="NL">In gesprek</Texts>
+    </Translation>
+    <Translation Name="NonC_SOElse" Parent="tHappenings" Type="Category">
+      <Texts Lang="EN">Contact with someone else</Texts>
+    </Translation>
+    <Translation Name="NonC_VMNoIDNoMsg" Parent="tHappenings" Type="Category">
+      <Texts Lang="EN">Voice mail, SM no ID, no left message</Texts>
+    </Translation>
+    <Translation Name="NonC_VMNoIDNoMsgPhone" Parent="tHappenings" Type="Category">
+      <Texts Lang="EN">Voice mail, SM no ID, no left message</Texts>
+    </Translation>
+    <Translation Name="NonC_VMNoIDNoMsgVisit" Parent="tHappenings" Type="Category">
+      <Texts Lang="EN">Voice mail, SM no ID, no left message</Texts>
+    </Translation>
+    <Translation Name="NonC_VMNoIDLeftMsg" Parent="tHappenings" Type="Category">
+      <Texts Lang="EN">Voice mail, SM no ID, left message</Texts>
+    </Translation>
+    <Translation Name="NonC_VMNoIDLeftMsgPhone" Parent="tHappenings" Type="Category">
+      <Texts Lang="EN">Voice mail, SM no ID, left message</Texts>
+    </Translation>
+    <Translation Name="NonC_VMNoIDLeftMsgVisit" Parent="tHappenings" Type="Category">
+      <Texts Lang="EN">Voice mail, SM no ID, left message</Texts>
+    </Translation>
+    <Translation Name="NonC_VMIDNoMsg" Parent="tHappenings" Type="Category">
+      <Texts Lang="EN">Voice mail, SM ID, no left message</Texts>
+    </Translation>
+    <Translation Name="NonC_VMIDNoMsgPhone" Parent="tHappenings" Type="Category">
+      <Texts Lang="EN">Voice mail, SM ID, no left message</Texts>
+    </Translation>
+    <Translation Name="NonC_VMIDNoMsgVisit" Parent="tHappenings" Type="Category">
+      <Texts Lang="EN">Voice mail, SM ID, no left message</Texts>
+    </Translation>
+    <Translation Name="NonC_VMIDLeftMsg" Parent="tHappenings" Type="Category">
+      <Texts Lang="EN">Voice mail, SM ID, left message</Texts>
+    </Translation>
+    <Translation Name="NonC_VMIDLeftMsgPhone" Parent="tHappenings" Type="Category">
+      <Texts Lang="EN">Voice mail, SM ID, left message</Texts>
+    </Translation>
+    <Translation Name="NonC_VMIDLeftMsgVisit" Parent="tHappenings" Type="Category">
+      <Texts Lang="EN">Voice mail, SM ID, left message</Texts>
+    </Translation>
+    <Translation Name="Con_Appt" Parent="tHappenings" Type="Category">
+      <Texts Lang="EN">Date/time appointment made</Texts>
+      <Texts Lang="NL">Afspraak gemaakt</Texts>
+    </Translation>
+    <Translation Name="Con_ApptPhone" Parent="tHappenings" Type="Category">
+      <Texts Lang="EN">Date/time appointment made</Texts>
+      <Texts Lang="NL">Afspraak gemaakt</Texts>
+    </Translation>
+    <Translation Name="Con_ApptVisit" Parent="tHappenings" Type="Category">
+      <Texts Lang="EN">Date/time appointment made</Texts>
+      <Texts Lang="NL">Afspraak gemaakt</Texts>
+    </Translation>
+    <Translation Name="Con_ApptPhonePeriod" Parent="tHappenings" Type="Category">
+      <Texts Lang="EN">Period appointment made</Texts>
+    </Translation>
+    <Translation Name="Con_ApptPhonePeriodPhone" Parent="tHappenings" Type="Category">
+      <Texts Lang="EN">Period appointment made</Texts>
+    </Translation>
+    <Translation Name="Con_ApptPhonePeriodVisit" Parent="tHappenings" Type="Category">
+      <Texts Lang="EN">Period appointment made</Texts>
+    </Translation>
+    <Translation Name="Con_ApptPhoneDay" Parent="tHappenings" Type="Category">
+      <Texts Lang="EN">Day appointment made</Texts>
+    </Translation>
+    <Translation Name="Con_ApptPhoneDayPhone" Parent="tHappenings" Type="Category">
+      <Texts Lang="EN">Day appointment made</Texts>
+    </Translation>
+    <Translation Name="Con_ApptPhoneDayVisit" Parent="tHappenings" Type="Category">
+      <Texts Lang="EN">Day appointment made</Texts>
+    </Translation>
+    <Translation Name="Con_ApptPhoneSoft" Parent="tHappenings" Type="Category">
+      <Texts Lang="EN">Soft Appointment made</Texts>
+      <Texts Lang="NL">Afspraak gemaakt</Texts>
+    </Translation>
+    <Translation Name="Con_ApptPhoneSoftPhone" Parent="tHappenings" Type="Category">
+      <Texts Lang="EN">Soft Appointment made</Texts>
+      <Texts Lang="NL">Afspraak gemaakt</Texts>
+    </Translation>
+    <Translation Name="Con_ApptPhoneSoftVisit" Parent="tHappenings" Type="Category">
+      <Texts Lang="EN">Soft Appointment made</Texts>
+      <Texts Lang="NL">Afspraak gemaakt</Texts>
+    </Translation>
+    <Translation Name="Con_ApptNotPoss" Parent="tHappenings" Type="Category">
+      <Texts Lang="EN">Appointment not possible within survey period</Texts>
+    </Translation>
+    <Translation Name="Con_ApptNotPossPhonePhone" Parent="tHappenings" Type="Category">
+      <Texts Lang="EN">Phone appointment not possible within survey period</Texts>
+    </Translation>
+    <Translation Name="Con_ApptNotPossPhoneVisit" Parent="tHappenings" Type="Category">
+      <Texts Lang="EN">Phone appointment not possible within survey period</Texts>
+    </Translation>
+    <Translation Name="Chn_PhoneAttempt" Parent="tHappenings" Type="Category">
+      <Texts Lang="EN">Phone attempt</Texts>
+    </Translation>
+    <Translation Name="Chn_PhoneAttemptPhone" Parent="tHappenings" Type="Category">
+      <Texts Lang="EN">Phone attempt</Texts>
+    </Translation>
+    <Translation Name="Chn_PhoneSilence" Parent="tHappenings" Type="Category">
+      <Texts Lang="EN">Phone silence</Texts>
+    </Translation>
+    <Translation Name="Chn_PhoneSilencePhone" Parent="tHappenings" Type="Category">
+      <Texts Lang="EN">Phone silence</Texts>
+    </Translation>
+    <Translation Name="Chn_PhoneOperator" Parent="tHappenings" Type="Category">
+      <Texts Lang="EN">Phone operator answers</Texts>
+    </Translation>
+    <Translation Name="Chn_PhoneOperatorPhone" Parent="tHappenings" Type="Category">
+      <Texts Lang="EN">Phone operator answers</Texts>
+    </Translation>
+    <Translation Name="Chn_PhoneDisconnected" Parent="tHappenings" Type="Category">
+      <Texts Lang="EN">Phone is disconnected</Texts>
+    </Translation>
+    <Translation Name="Chn_PhoneDisconnectedPhone" Parent="tHappenings" Type="Category">
+      <Texts Lang="EN">Phone is disconnected</Texts>
+    </Translation>
+    <Translation Name="Chn_PhoneFastBusy" Parent="tHappenings" Type="Category">
+      <Texts Lang="EN">Phone fast busy</Texts>
+    </Translation>
+    <Translation Name="Chn_PhoneFastBusyPhone" Parent="tHappenings" Type="Category">
+      <Texts Lang="EN">Phone fast busy</Texts>
+    </Translation>
+    <Translation Name="Chn_PhoneModemFax" Parent="tHappenings" Type="Category">
+      <Texts Lang="EN">Phone modem or fax</Texts>
+    </Translation>
+    <Translation Name="Chn_PhoneModemFaxPhone" Parent="tHappenings" Type="Category">
+      <Texts Lang="EN">Phone modem or fax</Texts>
+    </Translation>
+    <Translation Name="Chn_PhonePayphone" Parent="tHappenings" Type="Category">
+      <Texts Lang="EN">Pay phone number</Texts>
+    </Translation>
+    <Translation Name="Chn_PhonePayphonePhone" Parent="tHappenings" Type="Category">
+      <Texts Lang="EN">Pay phone number</Texts>
+    </Translation>
+    <Translation Name="Chn_PhoneRecordedMessage" Parent="tHappenings" Type="Category">
+      <Texts Lang="EN">Recorded message</Texts>
+    </Translation>
+    <Translation Name="Chn_PhoneRecordedMessagePhone" Parent="tHappenings" Type="Category">
+      <Texts Lang="EN">Recorded message</Texts>
+    </Translation>
+    <Translation Name="Chn_PhoneNewNumber" Parent="tHappenings" Type="Category">
+      <Texts Lang="EN">New phone number collected</Texts>
+    </Translation>
+    <Translation Name="Chn_PhoneNewNumberPhone" Parent="tHappenings" Type="Category">
+      <Texts Lang="EN">New phone number collected by phone</Texts>
+    </Translation>
+    <Translation Name="Chn_PhoneNewNumberText" Parent="tHappenings" Type="Category">
+      <Texts Lang="EN">New phone number collected by text</Texts>
+    </Translation>
+    <Translation Name="Chn_PhoneNewNumberMail" Parent="tHappenings" Type="Category">
+      <Texts Lang="EN">New phone number collected by mail</Texts>
+    </Translation>
+    <Translation Name="Chn_PhoneNewNumberWeb" Parent="tHappenings" Type="Category">
+      <Texts Lang="EN">New phone number collected by web</Texts>
+    </Translation>
+    <Translation Name="Chn_PhoneNewNumberVisit" Parent="tHappenings" Type="Category">
+      <Texts Lang="EN">New phone number collected by visit</Texts>
+    </Translation>
+    <Translation Name="Chn_PhoneNewNumberEmail" Parent="tHappenings" Type="Category">
+      <Texts Lang="EN">New phone number collected by email</Texts>
+    </Translation>
+    <Translation Name="Chn_PhoneNewNumberSMedia" Parent="tHappenings" Type="Category">
+      <Texts Lang="EN">New phone number collected by social media</Texts>
+    </Translation>
+    <Translation Name="Chn_NewPhysAddress" Parent="tHappenings" Type="Category">
+      <Texts Lang="EN">New address collected</Texts>
+    </Translation>
+    <Translation Name="Chn_NewPhysAddressPhone" Parent="tHappenings" Type="Category">
+      <Texts Lang="EN">New address collected by phone</Texts>
+    </Translation>
+    <Translation Name="Chn_NewPhysAddressText" Parent="tHappenings" Type="Category">
+      <Texts Lang="EN">New address collected by text</Texts>
+    </Translation>
+    <Translation Name="Chn_NewPhysAddressMail" Parent="tHappenings" Type="Category">
+      <Texts Lang="EN">New address collected by mail</Texts>
+    </Translation>
+    <Translation Name="Chn_NewPhysAddressWeb" Parent="tHappenings" Type="Category">
+      <Texts Lang="EN">New address collected by web</Texts>
+    </Translation>
+    <Translation Name="Chn_NewPhysAddressVisit" Parent="tHappenings" Type="Category">
+      <Texts Lang="EN">New address collected by visit</Texts>
+    </Translation>
+    <Translation Name="Chn_NewPhysAddressEmail" Parent="tHappenings" Type="Category">
+      <Texts Lang="EN">New address collected by email</Texts>
+    </Translation>
+    <Translation Name="Chn_NewPhysAddressSMedia" Parent="tHappenings" Type="Category">
+      <Texts Lang="EN">New address collected by social media</Texts>
+    </Translation>
+    <Translation Name="Chn_NewEmail" Parent="tHappenings" Type="Category">
+      <Texts Lang="EN">New email collected</Texts>
+    </Translation>
+    <Translation Name="Chn_NewEmailPhone" Parent="tHappenings" Type="Category">
+      <Texts Lang="EN">New email collected by phone</Texts>
+    </Translation>
+    <Translation Name="Chn_NewEmailText" Parent="tHappenings" Type="Category">
+      <Texts Lang="EN">New email collected by text</Texts>
+    </Translation>
+    <Translation Name="Chn_NewEmailMail" Parent="tHappenings" Type="Category">
+      <Texts Lang="EN">New email collected by mail</Texts>
+    </Translation>
+    <Translation Name="Chn_NewEmailWeb" Parent="tHappenings" Type="Category">
+      <Texts Lang="EN">New email collected by web</Texts>
+    </Translation>
+    <Translation Name="Chn_NewEmailVisit" Parent="tHappenings" Type="Category">
+      <Texts Lang="EN">New email collected by visit</Texts>
+    </Translation>
+    <Translation Name="Chn_NewEmailEmail" Parent="tHappenings" Type="Category">
+      <Texts Lang="EN">New email collected by email</Texts>
+    </Translation>
+    <Translation Name="Chn_NewEmailSMedia" Parent="tHappenings" Type="Category">
+      <Texts Lang="EN">New email collected by social media</Texts>
+    </Translation>
+    <Translation Name="Chn_NewSmAddress" Parent="tHappenings" Type="Category">
+      <Texts Lang="EN">New social media address collected</Texts>
+    </Translation>
+    <Translation Name="Chn_NewSmAddressPhone" Parent="tHappenings" Type="Category">
+      <Texts Lang="EN">New social media address collected by phone</Texts>
+    </Translation>
+    <Translation Name="Chn_NewSmAddressText" Parent="tHappenings" Type="Category">
+      <Texts Lang="EN">New social media address collected by text</Texts>
+    </Translation>
+    <Translation Name="Chn_NewSmAddressMail" Parent="tHappenings" Type="Category">
+      <Texts Lang="EN">New social media address collected by mail</Texts>
+    </Translation>
+    <Translation Name="Chn_NewSmAddressWeb" Parent="tHappenings" Type="Category">
+      <Texts Lang="EN">New social media address collected by web</Texts>
+    </Translation>
+    <Translation Name="Chn_NewSmAddressVisit" Parent="tHappenings" Type="Category">
+      <Texts Lang="EN">New social media address collected by visit</Texts>
+    </Translation>
+    <Translation Name="Chn_NewSmAddressEmail" Parent="tHappenings" Type="Category">
+      <Texts Lang="EN">New social media address collected by email</Texts>
+    </Translation>
+    <Translation Name="Chn_NewSmAddressSMedia" Parent="tHappenings" Type="Category">
+      <Texts Lang="EN">New social media address collected by social media</Texts>
+    </Translation>
+    <Translation Name="Chn_EmaiSent" Parent="tHappenings" Type="Category">
+      <Texts Lang="EN">Email sent</Texts>
+    </Translation>
+    <Translation Name="Chn_EmaiSentPhone" Parent="tHappenings" Type="Category">
+      <Texts Lang="EN">Email sent from CATI</Texts>
+    </Translation>
+    <Translation Name="Chn_EmaiSentVisit" Parent="tHappenings" Type="Category">
+      <Texts Lang="EN">Email sent by field</Texts>
+    </Translation>
+    <Translation Name="Chn_EmaiSentEmail" Parent="tHappenings" Type="Category">
+      <Texts Lang="EN">Email sent by email server</Texts>
+    </Translation>
+    <Translation Name="Chn_TextSent" Parent="tHappenings" Type="Category">
+      <Texts Lang="EN">Text sent</Texts>
+    </Translation>
+    <Translation Name="Chn_TextSentPhone" Parent="tHappenings" Type="Category">
+      <Texts Lang="EN">Text sent by CATI</Texts>
+    </Translation>
+    <Translation Name="Chn_TextSentVisit" Parent="tHappenings" Type="Category">
+      <Texts Lang="EN">Text sent by field</Texts>
+    </Translation>
+    <Translation Name="Chn_SMediaSent" Parent="tHappenings" Type="Category">
+      <Texts Lang="EN">Social media message sent</Texts>
+    </Translation>
+    <Translation Name="Chn_SMediaSentPhone" Parent="tHappenings" Type="Category">
+      <Texts Lang="EN">Social media message sent by CATI</Texts>
+    </Translation>
+    <Translation Name="Chn_SMediaSentvisit" Parent="tHappenings" Type="Category">
+      <Texts Lang="EN">Social media message sent by field</Texts>
+    </Translation>
+    <Translation Name="Chn_LeftVM" Parent="tHappenings" Type="Category">
+      <Texts Lang="EN">Voicemail</Texts>
+      <Texts Lang="NL">Voicemail</Texts>
+    </Translation>
+    <Translation Name="Chn_LeftVMPhone" Parent="tHappenings" Type="Category">
+      <Texts Lang="EN">Voicemail</Texts>
+      <Texts Lang="NL">Voicemail</Texts>
+    </Translation>
+    <Translation Name="Chn_LeftVMVisit" Parent="tHappenings" Type="Category">
+      <Texts Lang="EN">Voicemail</Texts>
+      <Texts Lang="NL">Voicemail</Texts>
+    </Translation>
+    <Translation Name="Refuse" Parent="TEndResult" Type="Category">
+      <Texts Lang="EN">Refusal</Texts>
+      <Texts Lang="NL">Weigering</Texts>
+    </Translation>
+    <Translation Name="NotAvail" Parent="TEndResult" Type="Category">
+      <Texts Lang="EN">Not available during survey period</Texts>
+      <Texts Lang="NL">Afwezig tijdens veldwerkperiode</Texts>
+    </Translation>
+    <Translation Name="LangProb" Parent="TEndResult" Type="Category">
+      <Texts Lang="EN">Language barrier</Texts>
+      <Texts Lang="NL">Beheerst onvoldoende Nederlands</Texts>
+    </Translation>
+    <Translation Name="RespSick" Parent="TEndResult" Type="Category">
+      <Texts Lang="EN">Cannot be interviewed (too sick, weak, deaf or psychological problems)</Texts>
+      <Texts Lang="NL">Kan niet geïnterviewd worden (te ziek, zwak, doof of psychische problemen)</Texts>
+    </Translation>
+    <Translation Name="Mode" Parent="TEndResult" Type="Category">
+      <Texts Lang="EN">Already participated through different mode (or tried)</Texts>
+      <Texts Lang="NL">Via een andere mode meegedaan (of geprobeerd)</Texts>
+    </Translation>
+    <Translation Name="PassedAway" Parent="TEndResult" Type="Category">
+      <Texts Lang="EN">Passed away</Texts>
+      <Texts Lang="NL">OP overleden</Texts>
+    </Translation>
+    <Translation Name="DataWrong" Parent="TEndResult" Type="Category">
+      <Texts Lang="EN">Data incorrect or moved inside country</Texts>
+      <Texts Lang="NL">Gegevens onjuist of verhuisd binnen Nederland</Texts>
+    </Translation>
+    <Translation Name="MovedAbroad" Parent="TEndResult" Type="Category">
+      <Texts Lang="EN">Moved abroad</Texts>
+      <Texts Lang="NL">Verhuisd naar het buitenland</Texts>
+    </Translation>
+    <Translation Name="Institution" Parent="TEndResult" Type="Category">
+      <Texts Lang="EN">Moved to an institution (care home, etc.)</Texts>
+      <Texts Lang="NL">Verhuisd naar een instelling (verzorgingstehuis, etc.)</Texts>
+    </Translation>
+    <Translation Name="NoContact" Parent="TEndResult" Type="Category">
+      <Texts Lang="EN">No contact</Texts>
+      <Texts Lang="NL">Geen contact</Texts>
+    </Translation>
+    <Translation Name="NoResAddr" Parent="TEndResult" Type="Category">
+      <Texts Lang="EN">No residential address / vacancy / under construction)</Texts>
+      <Texts Lang="NL">Geen woonadres / leegstand / in aanbouw)</Texts>
+    </Translation>
+    <Translation Name="Unsafe" Parent="TEndResult" Type="Category">
+      <Texts Lang="EN">Unsafe situation</Texts>
+      <Texts Lang="NL">Onveilige situatie</Texts>
+    </Translation>
+    <Translation Name="Other" Parent="TEndResult" Type="Category">
+      <Texts Lang="EN">Other</Texts>
+      <Texts Lang="NL">Anders</Texts>
+    </Translation>
+    <Translation Name="Ref_Direct" Parent="TReasonRefusal" Type="Category">
+      <Texts Lang="EN">Direct or outright refusal</Texts>
+      <Texts Lang="NL">Directe of regelrechte weigering</Texts>
+    </Translation>
+    <Translation Name="Ref_Privacy" Parent="TReasonRefusal" Type="Category">
+      <Texts Lang="EN">Refused for privacy reasons</Texts>
+      <Texts Lang="NL">Privacy / anonimiteit</Texts>
+    </Translation>
+    <Translation Name="Ref_NoTime" Parent="TReasonRefusal" Type="Category">
+      <Texts Lang="EN">No time for the survey</Texts>
+      <Texts Lang="NL">Geen tijd / geen zin</Texts>
+    </Translation>
+    <Translation Name="Ref_Implicit" Parent="TReasonRefusal" Type="Category">
+      <Texts Lang="EN">Implicit refusal - multiple missed appointments</Texts>
+      <Texts Lang="NL">Afspraak niet nagekomen</Texts>
+    </Translation>
+    <Translation Name="Ref_UnkReason" Parent="TReasonRefusal" Type="Category">
+      <Texts Lang="EN">Refusal for unknown reason</Texts>
+      <Texts Lang="NL">Reden onbekend</Texts>
+    </Translation>
+    <Translation Name="Ref_OthReason" Parent="TReasonRefusal" Type="Category">
+      <Texts Lang="EN">Refusal for other reason - specify</Texts>
+      <Texts Lang="NL">Andere reden</Texts>
+    </Translation>
+    <Translation Name="NAV_NotAvailable" Parent="TReasonNotAvailable" Type="Category">
+      <Texts Lang="EN">Not available during survey period</Texts>
+      <Texts Lang="NL">Afwezig tijdens veldwerkperiode</Texts>
+    </Translation>
+    <Translation Name="NAV_Trip" Parent="TReasonNotAvailable" Type="Category">
+      <Texts Lang="EN">Not available due to holiday, work abroad, business trip etc.</Texts>
+      <Texts Lang="NL">Vakantie, werk in het buitenland, zakenreis etc.</Texts>
+    </Translation>
+    <Translation Name="NAV_Incarcerated" Parent="TReasonNotAvailable" Type="Category">
+      <Texts Lang="EN">Respondent is in detention</Texts>
+      <Texts Lang="NL">OP zit in detentie</Texts>
+    </Translation>
+    <Translation Name="NAV_Institution" Parent="TReasonNotAvailable" Type="Category">
+      <Texts Lang="EN">Respondent has been temporarily admitted to a hospital, care home or other institution</Texts>
+      <Texts Lang="NL">OP is tijdelijk opgenomen in het ziekenhuis, verzorgingstehuis of andere instelling</Texts>
+    </Translation>
+    <Translation Name="NAV_NoTime" Parent="TReasonNotAvailable" Type="Category">
+      <Texts Lang="EN">Field work period almost over: no time to make another appointment</Texts>
+      <Texts Lang="NL">Veldwerkperiode bijna ten einde: geen tijd om nog een afspraak te maken</Texts>
+    </Translation>
+    <Translation Name="NAV_OtherReason" Parent="TReasonNotAvailable" Type="Category">
+      <Texts Lang="EN">Not available for another reason</Texts>
+      <Texts Lang="NL">Andere reden</Texts>
+    </Translation>
+    <Translation Name="Yes" Parent="TReasonMode" Type="Category">
+      <Texts Lang="EN">Yes</Texts>
+      <Texts Lang="NL">Ja</Texts>
+    </Translation>
+    <Translation Name="Techn" Parent="TReasonMode" Type="Category">
+      <Texts Lang="EN">No, there were technical problems</Texts>
+      <Texts Lang="NL">Nee, er waren technische problemen</Texts>
+    </Translation>
+    <Translation Name="Other" Parent="TReasonMode" Type="Category">
+      <Texts Lang="EN">No, other reason</Texts>
+      <Texts Lang="NL">Nee, andere reden</Texts>
+    </Translation>
+    <Translation Name="NonI_BadData" Parent="TReasonDataWrong" Type="Category">
+      <Texts Lang="EN">Data incorrect or moved within the c</Texts>
+      <Texts Lang="NL">Gegevens onjuist of verhuisd binnen Nederland</Texts>
+    </Translation>
+    <Translation Name="NonI_Moved" Parent="TReasonDataWrong" Type="Category">
+      <Texts Lang="EN">Respondent / household has moved</Texts>
+      <Texts Lang="NL">OP / huishouden is verhuisd</Texts>
+    </Translation>
+    <Translation Name="NonI_RUnknown" Parent="TReasonDataWrong" Type="Category">
+      <Texts Lang="EN">Respondent / household has never lived / unknown at this address</Texts>
+      <Texts Lang="NL">OP / huishouden heeft nooit op dit adres gewoond / onbekend</Texts>
+    </Translation>
+    <Translation Name="NonI_OtherReason" Parent="TReasonDataWrong" Type="Category">
+      <Texts Lang="EN">Data incorrect - other reason</Texts>
+      <Texts Lang="NL">Anders</Texts>
+    </Translation>
+    <Translation Name="NonC_NotHome" Parent="TReason_NoContact" Type="Category">
+      <Texts Lang="EN">No one at home / was not opened</Texts>
+      <Texts Lang="NL">Niemand thuis / werd niet open gedaan</Texts>
+    </Translation>
+    <Translation Name="NonC_NoAccess" Parent="TReason_NoContact" Type="Category">
+      <Texts Lang="EN">Each time access not possible</Texts>
+      <Texts Lang="NL">Geen enkele keer toegang mogelijk</Texts>
+    </Translation>
+    <Translation Name="NonC_HHUnknown" Parent="TReason_NoContact" Type="Category">
+      <Texts Lang="EN">OP / household unknown or not found</Texts>
+      <Texts Lang="NL">OP / huishouden onbekend of onvindbaar</Texts>
+    </Translation>
+    <Translation Name="NonC_Other" Parent="TReason_NoContact" Type="Category">
+      <Texts Lang="EN">No contact, other reason</Texts>
+      <Texts Lang="NL">Andere reden</Texts>
+    </Translation>
+    <Translation Name="NonC_NoSuchAddress" Parent="TReason_Address" Type="Category">
+      <Texts Lang="EN">No residential address / vacancy / under construction)</Texts>
+      <Texts Lang="NL">Geen woonadres / leegstand / in aanbouw)</Texts>
+    </Translation>
+    <Translation Name="NonC_CannotFind" Parent="TReason_Address" Type="Category">
+      <Texts Lang="EN">Address cannot be found / does not exist</Texts>
+      <Texts Lang="NL">Adres is onvindbaar / bestaat niet</Texts>
+    </Translation>
+    <Translation Name="NonC_NoHouse" Parent="TReason_Address" Type="Category">
+      <Texts Lang="EN">House under construction, demolished, demolition house</Texts>
+      <Texts Lang="NL">Woning in aanbouw, afgebroken, sloopwoning</Texts>
+    </Translation>
+    <Translation Name="NonC_NotResidential" Parent="TReason_Address" Type="Category">
+      <Texts Lang="EN">No home address (factory, school, office, etc.)</Texts>
+      <Texts Lang="NL">Geen woonadres (fabriek, school, kantoor e.d.)</Texts>
+    </Translation>
+    <Translation Name="NonC_Vacant" Parent="TReason_Address" Type="Category">
+      <Texts Lang="EN">Probably residential address, but vacant / temporarily uninhabited</Texts>
+      <Texts Lang="NL">Vermoedelijk woonadres, maar leegstaand / tijdelijk onbewoond</Texts>
+    </Translation>
+    <Translation Name="Quex_BreakLang" Parent="TBreakOff" Type="Category">
+      <Texts Lang="EN">Language skills of respondent not sufficient</Texts>
+      <Texts Lang="NL">OP beheerst onvoldoende Nederlands</Texts>
+    </Translation>
+    <Translation Name="Quex_BreakCannot" Parent="TBreakOff" Type="Category">
+      <Texts Lang="EN">Respondent cannot be interviewed</Texts>
+      <Texts Lang="NL">OP kan toch niet geïnterviewd worden</Texts>
+    </Translation>
+    <Translation Name="Quex_ResistDifficult" Parent="TBreakOff" Type="Category">
+      <Texts Lang="EN">Respondent found it too difficult</Texts>
+      <Texts Lang="NL">OP vond het te moeilijk</Texts>
+    </Translation>
+    <Translation Name="Quex_ResistLong" Parent="TBreakOff" Type="Category">
+      <Texts Lang="EN">Respondent thought it was too long</Texts>
+      <Texts Lang="NL">OP vond het te lang</Texts>
+    </Translation>
+    <Translation Name="Quex_ResistPersonal" Parent="TBreakOff" Type="Category">
+      <Texts Lang="EN">Respondent found it too personal / intimate</Texts>
+      <Texts Lang="NL">OP vond het te persoonlijk / intiem</Texts>
+    </Translation>
+    <Translation Name="Quex_ResistSecurity" Parent="TBreakOff" Type="Category">
+      <Texts Lang="EN">Security reasons</Texts>
+      <Texts Lang="NL">Veiligheidsredenen</Texts>
+    </Translation>
+    <Translation Name="Quex_ResistOther" Parent="TBreakOff" Type="Category">
+      <Texts Lang="EN">Other reason</Texts>
+      <Texts Lang="NL">Andere reden</Texts>
+    </Translation>
+    <Translation Name="InterResult" Parent="TProgress" Type="Category">
+      <Texts Lang="EN">Interim result</Texts>
+      <Texts Lang="NL">Tussenresultaat</Texts>
+    </Translation>
+    <Translation Name="FinalResult" Parent="TProgress" Type="Category">
+      <Texts Lang="EN">Final result</Texts>
+      <Texts Lang="NL">Eindresultaat</Texts>
+    </Translation>
+    <Translation Name="ContNoIntNoApp" Parent="TInterimResult" Type="Category">
+      <Texts Lang="EN">Contact with Respondent/household, no interview, no appointment</Texts>
+      <Texts Lang="NL">Contact met OP/huishouden, geen interview, geen afspraak</Texts>
+    </Translation>
+    <Translation Name="ContApp" Parent="TInterimResult" Type="Category">
+      <Texts Lang="EN">Contact with Respondent/household, appointment made</Texts>
+      <Texts Lang="NL">Contact met OP/huishouden, afspraak gemaakt</Texts>
+    </Translation>
+    <Translation Name="ContSomeoneElse" Parent="TInterimResult" Type="Category">
+      <Texts Lang="EN">Contact with someone else (eg neighbors, new residents)</Texts>
+      <Texts Lang="NL">Contact met iemand anders (bijv. buren, nieuwe bewoners)</Texts>
+    </Translation>
+    <Translation Name="NoContact" Parent="TInterimResult" Type="Category">
+      <Texts Lang="EN">NO contact</Texts>
+      <Texts Lang="NL">GEEN contact</Texts>
+    </Translation>
+    <Translation Name="NonC_NotHome" Parent="TReasonNoContactV" Type="Category">
+      <Texts Lang="EN">No one at home / was not opened</Texts>
+      <Texts Lang="NL">Niemand thuis / werd niet open gedaan</Texts>
+    </Translation>
+    <Translation Name="Res_ApptNotMet" Parent="TReasonNoContactV" Type="Category">
+      <Texts Lang="EN">One appointment not met</Texts>
+      <Texts Lang="NL">Afspraak niet nagekomen</Texts>
+    </Translation>
+    <Translation Name="Ref_Implicit" Parent="TReasonNoContactV" Type="Category">
+      <Texts Lang="EN">Implicit refusal - multiple missed appointments</Texts>
+      <Texts Lang="NL">Impliciete weigering - meerdere gemiste afspraken</Texts>
+    </Translation>
+    <Translation Name="NonC_NoAccess" Parent="TReasonNoContactV" Type="Category">
+      <Texts Lang="EN">Each time access not possible</Texts>
+      <Texts Lang="NL">Geen enkele keer toegang mogelijk</Texts>
+    </Translation>
+    <Translation Name="NonC_Other" Parent="TReasonNoContactV" Type="Category">
+      <Texts Lang="EN">No contact, other reason</Texts>
+      <Texts Lang="NL">Andere reden</Texts>
+    </Translation>
+    <Translation Name="Res_NoAnswerPhone" Parent="TReasonNoContactC" Type="Category">
+      <Texts Lang="EN">No answer</Texts>
+      <Texts Lang="NL">Geen gehoor</Texts>
+    </Translation>
+    <Translation Name="NonC_Busy" Parent="TReasonNoContactC" Type="Category">
+      <Texts Lang="EN">Busy</Texts>
+      <Texts Lang="NL">In gesprek</Texts>
+    </Translation>
+    <Translation Name="Chn_LeftVMVisit" Parent="TReasonNoContactC" Type="Category">
+      <Texts Lang="EN">Voicemail</Texts>
+      <Texts Lang="NL">Voicemail</Texts>
+    </Translation>
+    <Translation Name="NonC_Other" Parent="TReasonNoContactC" Type="Category">
+      <Texts Lang="EN">No contact, other reason</Texts>
+      <Texts Lang="NL">Andere reden</Texts>
+    </Translation>
+    <Translation Name="BeforeNoon" Parent="TContactTime" Type="Category">
+      <Texts Lang="EN">before 12PM</Texts>
+      <Texts Lang="NL">tot 12 uur</Texts>
+    </Translation>
+    <Translation Name="T12_17" Parent="TContactTime" Type="Category">
+      <Texts Lang="EN">12PM - 5PM</Texts>
+      <Texts Lang="NL">12 tot 17 uur</Texts>
+    </Translation>
+    <Translation Name="T17_19" Parent="TContactTime" Type="Category">
+      <Texts Lang="EN">5PM - 7PM</Texts>
+      <Texts Lang="NL">17 tot 19 uur</Texts>
+    </Translation>
+    <Translation Name="T19_21" Parent="TContactTime" Type="Category">
+      <Texts Lang="EN">7PM - 9PM</Texts>
+      <Texts Lang="NL">19 tot 21 uur</Texts>
+    </Translation>
+    <Translation Name="Late" Parent="TContactTime" Type="Category">
+      <Texts Lang="EN">9PM or later</Texts>
+      <Texts Lang="NL">21 uur en later</Texts>
+    </Translation>
+    <Translation Name="Happenings" Type="Field">
+      <Texts Lang="EN">Result:</Texts>
+      <Texts Lang="NL">Resultaat:</Texts>
+    </Translation>
+    <Translation Name="AppDate" Type="Field">
+      <Texts Lang="EN">Select the date for the appointment</Texts>
+      <Texts Lang="NL">Selecteer de datum voor de afspraak</Texts>
+    </Translation>
+    <Translation Name="AppTime" Type="Field">
+      <Texts Lang="EN">Select the time for the appointment</Texts>
+      <Texts Lang="NL">Selecteer de tijd voor de afspraak</Texts>
+    </Translation>
+    <Translation Name="Notes" Type="Field">
+      <Texts Lang="EN">Notes:</Texts>
+      <Texts Lang="NL">Notities:</Texts>
+    </Translation>
+    <Translation Name="ContactDate" Type="Field">
+      <Texts Lang="EN">When was the contact attempt (date)?</Texts>
+      <Texts Lang="NL">Wanneer was het contactpoging (datum)?</Texts>
+    </Translation>
+    <Translation Name="ContactTime" Type="Field">
+      <Texts Lang="EN">When was the contact attempt (day part)?</Texts>
+      <Texts Lang="NL">Wanneer was het contactpoging (dagdeel)?</Texts>
+    </Translation>
+    <Translation Name="WhatNowInterview" Type="Field">
+      <Texts Lang="EN">Please select how to continue</Texts>
+    </Translation>
+    <Translation Name="Appointment" Parent="WhatNowInterview" Type="Category">
+      <Texts Lang="EN">Make an appointment to continue with questionnaire</Texts>
+      <Texts Lang="NL">Afspraak maken om interview voor te zetten</Texts>
+    </Translation>
+    <Translation Name="BreakOff" Parent="WhatNowInterview" Type="Category">
+      <Texts Lang="EN">Register a break-off / Non-response</Texts>
+      <Texts Lang="NL">Registreer afbreken interview / nonrespons</Texts>
+    </Translation>
+    <Translation Name="WhatNowNoneInterview" Type="Field">
+      <Texts Lang="EN">Please select how to continue</Texts>
+    </Translation>
+    <Translation Name="Appointment" Parent="WhatNowNoneInterview" Type="Category">
+      <Texts Lang="EN">Make an appointment administer questionnaire</Texts>
+      <Texts Lang="NL">Afspraak maken om interview te houden</Texts>
+    </Translation>
+    <Translation Name="RegisterResult" Parent="WhatNowNoneInterview" Type="Category">
+      <Texts Lang="EN">Register a result</Texts>
+      <Texts Lang="NL">Registreer resultaat</Texts>
+    </Translation>
+    <Translation Name="Endresult" Type="Field">
+      <Texts Lang="EN">What is the end result?</Texts>
+      <Texts Lang="NL">Wat is het eindresultaat?</Texts>
+    </Translation>
+    <Translation Name="ReasonRefusal" Type="Field">
+      <Texts Lang="EN">What was the main reason for refusing?</Texts>
+      <Texts Lang="NL">Wat was de belangrijkste reden om te weigeren?</Texts>
+    </Translation>
+    <Translation Name="ReasonNotAvailable" Type="Field">
+      <Texts Lang="EN">Why is the OP / household absent during the field work period?</Texts>
+      <Texts Lang="NL">Waarom is de OP / het huishouden afwezig tijdens de veldwerkperiode?</Texts>
+    </Translation>
+    <Translation Name="ReasonLanguage" Type="Field">
+      <Texts Lang="EN">Would the Respont / household have been able to participate if the questionnaire had been in a different language, and if so, which?</Texts>
+      <Texts Lang="NL">Had de OP / het huishouden wel mee kunnen doen wanneer de vragenlijst in een andere taal was geweest, en zo ja, welke?</Texts>
+    </Translation>
+    <Translation Name="ReasonMode" Type="Field">
+      <Texts Lang="EN">Did the respondent succeed in participating in the other mode?</Texts>
+      <Texts Lang="NL">Is het (volgens de OP) gelukt om via de andere mode mee te doen?</Texts>
+    </Translation>
+    <Translation Name="ReasonDataWrong" Type="Field">
+      <Texts Lang="EN">Why is the data incorrect?</Texts>
+      <Texts Lang="NL">Waarom zijn de gegevens onjuist?</Texts>
+    </Translation>
+    <Translation Name="Reason_NoContact" Type="Field">
+      <Texts Lang="EN">What was he reason for 'no contact'?</Texts>
+      <Texts Lang="NL">Wat was de reden voor ‘geen contact’?</Texts>
+    </Translation>
+    <Translation Name="Reason_Address" Type="Field">
+      <Texts Lang="EN">What is the problem with the address?</Texts>
+      <Texts Lang="NL">Wat is het probleem met het adres?</Texts>
+    </Translation>
+    <Translation Name="Other" Type="Field">
+      <Texts Lang="EN">Explanation: other</Texts>
+      <Texts Lang="NL">Toelichting: anders</Texts>
+    </Translation>
+    <Translation Name="BreakOff" Type="Field">
+      <Texts Lang="EN">Why can't the interview be completed</Texts>
+      <Texts Lang="NL">Waarom kan het interview niet afgemaakt worden?</Texts>
+    </Translation>
+    <Translation Name="BreakOff_Other" Type="Field">
+      <Texts Lang="EN">Explanation 'Other reason break-off interview'</Texts>
+      <Texts Lang="NL">Toelichting 'Andere reden afbreken interview'</Texts>
+    </Translation>
+    <Translation Name="Progress" Type="Field">
+      <Texts Lang="EN">You want to register a visit or a telephone contact (attempt).&lt;newline&gt;
+        Is it a final result or an interim result?</Texts>
+      <Texts Lang="NL">U wilt een bezoek of een telefonisch contact(poging) verantwoorden.&lt;newline&gt;
+        Hebt u met dit bezoek of telefonisch contact het adres afgehandeld of gaat het om een tussenresultaat?</Texts>
+    </Translation>
+    <Translation Name="RegisterVisitOrCall" Type="Field">
+      <Texts Lang="EN">Do you want to register a visit or a telephone contact (attempt)?</Texts>
+      <Texts Lang="NL">Wilt u een bezoek of een telefonische contact(poging) verantwoorden ?</Texts>
+    </Translation>
+    <Translation Name="Visit" Parent="RegisterVisitOrCall" Type="Category">
+      <Texts Lang="EN">Visit</Texts>
+      <Texts Lang="NL">Bezoek</Texts>
+    </Translation>
+    <Translation Name="Phone" Parent="RegisterVisitOrCall" Type="Category">
+      <Texts Lang="EN">Telephone contact</Texts>
+      <Texts Lang="NL">Telefonische contactpoging</Texts>
+    </Translation>
+    <Translation Name="InterResult" Type="Field">
+      <Texts Lang="EN">What is the interim result?</Texts>
+      <Texts Lang="NL">Wat is het tussenresultaat?</Texts>
+    </Translation>
+    <Translation Name="ReasonNoContactV" Type="Field">
+      <Texts Lang="EN">What was the reason for 'no contact'?</Texts>
+      <Texts Lang="NL">Wat was de reden voor 'geen contact'?</Texts>
+    </Translation>
+    <Translation Name="ReasonNoContactC" Type="Field">
+      <Texts Lang="EN">What was the reason for 'no contact'?</Texts>
+      <Texts Lang="NL">Wat was de reden voor 'geen contact'?</Texts>
+    </Translation>
+  </Items>
+  <AllLanguagesUsed>
+    <Language Name="EN" />
+    <Language Name="NL" />
+  </AllLanguagesUsed>
+</TranslationsFile>

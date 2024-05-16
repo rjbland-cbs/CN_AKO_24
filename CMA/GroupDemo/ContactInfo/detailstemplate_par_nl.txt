@@ -1,0 +1,93 @@
+<table borderwidth=1 bordercolor=black grid=both gridwidth=1>
+<column width=auto>
+<column width=*>
+<column width=auto>
+<column width=*>
+<column width=auto>
+<column width=*>
+<row>
+<cell margin="4,2,4,2"><left>ID:</left></cell>
+<cell margin="4,2,4,2" background=lightgray><left>$ID</left></cell>
+<cell margin="4,2,4,2"><left>Groepstatus:</left></cell>
+<cell margin="4,2,4,2" background=lightgray><left>$CMA_GroupStatus</left></cell>
+<cell margin="4,2,4,2"><left>Afspraak:</left></cell>
+<cell margin="4,2,4,2" background=lightgray><left>$CMA_Appointment</left></cell>
+</row>
+<row>
+<cell margin="4,2,4,2"><left>Laatste resultaat:</left></cell>
+<cell margin="4,2,4,2" background=lightgray><left>$CMA_LastResult</left></cell>
+<cell margin="4,2,4,2"><left>Laatste poging:</left></cell>
+<cell margin="4,2,4,2" background=lightgray><left>$CMA_LastAttempt</left></cell>
+<cell margin="4,2,4,2"><left># pogingen:</left></cell>
+<cell margin="4,2,4,2" background=lightgray><left>$CMA_AttemptsCount</left></cell>
+</row>
+<row>
+<cell margin="4,2,4,2"><left>Plaats:</left></cell>
+<cell margin="4,2,4,2" background=lightgray><left>$PII.Town</left></cell>
+<cell margin="4,2,4,2"><left>Postcode:</left></cell>
+<cell margin="4,2,4,2" background=lightgray><left>$PII.PostalCode</left></cell>
+<cell margin="4,2,4,2"><left>Adres:</left></cell>
+<cell margin="4,2,4,2" background=lightgray><left>$PII.Address</left></cell>
+</row>
+<row>
+<cell margin="4,2,4,2"><left>Naam:</left></cell>
+<cell margin="4,2,4,2" background=lightgray><left>$PII.Name</left></cell>
+<cell margin="4,2,4,2"><left>Telefoon-1:</left></cell>
+<cell margin="4,2,4,2" background=lightgray><left>$PII.Phone_1</left></cell>
+<cell margin="4,2,4,2"><left>Telefoon-2:</left></cell>
+<cell margin="4,2,4,2" background=lightgray><left>$PII.Phone_2</left></cell>
+</row>
+</table>
+<!--Portrait--> 
+<table borderwidth=1 bordercolor=black grid=both gridwidth=1>
+<column width=auto>
+<column width=*>
+<row>
+<cell margin="4,2,4,2"><left>ID:</left></cell>
+<cell margin="4,2,4,2" background=lightgray><left>$ID</left></cell>
+</row>
+<row>
+<cell margin="4,2,4,2"><left>Groepstatus:</left></cell>
+<cell margin="4,2,4,2" background=lightgray><left>$CMA_GroupStatus</left></cell>
+</row>
+<row>
+<cell margin="4,2,4,2"><left>Afspraak:</left></cell>
+<cell margin="4,2,4,2" background=lightgray><left>$CMA_Appointment</left></cell>
+</row>
+<row>
+<cell margin="4,2,4,2"><left>Laatste resultaat:</left></cell>
+<cell margin="4,2,4,2" background=lightgray><left>$CMA_LastResult</left></cell>
+</row>
+<row>
+<cell margin="4,2,4,2"><left>Laatste poging:</left></cell>
+<cell margin="4,2,4,2" background=lightgray><left>$CMA_LastAttempt</left></cell>
+</row>
+<row>
+<cell margin="4,2,4,2"><left># pogingen:</left></cell>
+<cell margin="4,2,4,2" background=lightgray><left>$CMA_AttemptsCount</left></cell>
+</row>
+<row>
+<cell margin="4,2,4,2"><left>Plaats:</left></cell>
+<cell margin="4,2,4,2" background=lightgray><left>$PII.Town</left></cell>
+</row>
+<row>
+<cell margin="4,2,4,2"><left>Postcode:</left></cell>
+<cell margin="4,2,4,2" background=lightgray><left>$PII.PostalCode</left></cell>
+</row>
+<row>
+<cell margin="4,2,4,2"><left>Adres:</left></cell>
+<cell margin="4,2,4,2" background=lightgray><left>$PII.Address</left></cell>
+</row>
+<row>
+<cell margin="4,2,4,2"><left>Naam:</left></cell>
+<cell margin="4,2,4,2" background=lightgray><left>$PII.Name</left></cell>
+</row>
+<row>
+<cell margin="4,2,4,2"><left>Telefoon-1:</left></cell>
+<cell margin="4,2,4,2" background=lightgray><left>$PII.Phone_1</left></cell>
+</row>
+<row>
+<cell margin="4,2,4,2"><left>Telefoon-2:</left></cell>
+<cell margin="4,2,4,2" background=lightgray><left>$PII.Phone_2</left></cell>
+</row>
+</table>

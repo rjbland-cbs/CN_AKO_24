@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Solution Name="GroupDdemo">
+  <StartupProject RelativePath="true">HH_Survey\HH_Survey.bproj</StartupProject>
+  <ProjectItems>
+    <Project RelativePath="true" BuildSequence="10">Group_LoadCases.bproj</Project>
+    <Project RelativePath="true" BuildSequence="2">HH_Survey\HH_Survey.bproj</Project>
+    <Project RelativePath="true" BuildSequence="6">LF_Survey\LF_Survey.bproj</Project>
+    <Project RelativePath="true" BuildSequence="8">WB_Survey\WB_Survey.bproj</Project>
+    <Project RelativePath="true" BuildSequence="4">ContactInfo\Parent_ContactInfo.bproj</Project>
+    <Project RelativePath="true" BuildSequence="12">MakeSurveySettings.bproj</Project>
+    <Project RelativePath="true" BuildSequence="14">HH_Survey\RunAtEnd.bproj</Project>
+  </ProjectItems>
+</Solution>
