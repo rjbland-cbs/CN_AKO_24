@@ -1,9 +1,8 @@
-﻿datamodel CMA ""
+datamodel CMA ""
  fieldproperties onclick:string visibility:(hidden (0),visible (1)) tag:string 
 
 languages = 
-	EN "English",
-	NL "Nederlands"
+	EN "English"
 roles =  TOOLTIP, DISABLED
 
 
@@ -33,15 +32,10 @@ QuitLogging (Result)   :
 		OK (2) Category  EN  "<img src=BackButton2>" ), Empty
 DS_mLogging  EN  ""  : string[24], Empty
 DialogTitle_EN : string[200]
-DialogTitle_NL : string[200]
 RULES
 DialogTitle_EN.KEEP
 IF DialogTitle_EN = EMPTY THEN 
     DialogTitle_EN := 'CMA logging'
-ENDIF
-DialogTitle_NL.KEEP
-IF DialogTitle_NL = EMPTY THEN 
-    DialogTitle_NL := 'CMA logging'
 ENDIF
 CurrentVersion.Keep
 
@@ -59,9 +53,9 @@ BLOCK BdCases
 FIELDS
 CurrentLanguage  : string
 CurLan  EN  "Select language"  : TLanguage
-auxDataGridHeaderAll  EN  "List of all cases:"  NL  "Lijst met alle opdrachten:"  : string
-auxDataGridHeaderCompleted  EN  "List of all completed cases:"  NL  "Lijst met alle afgehandelde opdrachten:"  : string
-auxDataGridHeaderNonCompleted  EN  "List of all non-completed cases:"  NL  "Lijst met alle niet afgehandelde opdrachten:"  : string
+auxDataGridHeaderAll  EN  "List of all cases:"  : string
+auxDataGridHeaderCompleted  EN  "List of all completed cases:"  : string
+auxDataGridHeaderNonCompleted  EN  "List of all non-completed cases:"  : string
 auxDataGridHeaderPortrait  EN  "^<auxDataGridHeaderPortrait>"  : string
 auxDoNotAllowEditCase  : 
 		(yes,
@@ -140,7 +134,7 @@ CustomFV_38_  : string
 CustomFV_39_  : string
 CustomFV_40_  : string
 auxCustomFilter  EN  "^<auxCustomFilterTxt>: "  : 
-		(cfvAll (0) Category  EN  "\<All\>"  NL  "\<Alle\>" ,
+		(cfvAll (0) Category  EN  "\<All\>" ,
 		cfv1 Category  EN  "^<CustomFV_1_>" ,
 		cfv2 Category  EN  "^<CustomFV_2_>" ,
 		cfv3 Category  EN  "^<CustomFV_3_>" ,
@@ -184,10 +178,10 @@ auxCustomFilter  EN  "^<auxCustomFilterTxt>: "  :
 auxUseSearchButton  : 
 		(yes), Empty
 auxTextFontSize  : integer
-auxWhatCasesToShow  EN  "Cases to show: "  NL  "Te tonen opdrachten: "  : 
-		(All (0) Category  EN  "<img src=AllCases>" DISABLED  EN  "<img src=AllCasesDisabled>" TOOLTIP  EN  "Show all cases"  NL  "Alle opdrachten tonen" ,
-		Noncompleted (1) Category  EN  "<img src=InCompleteCases>" DISABLED  EN  "<img src=InCompleteCasesDisabled>" TOOLTIP  EN  "Show only non-completed cases"  NL  "Alleen nog niet afgehandelde opdrachten tonen" ,
-		Completed (2) Category  EN  "<img src=CompletedCases>" DISABLED  EN  "<img src=CompletedCasesDisabled>" TOOLTIP  EN  "Show only completed cases"  NL  "Alleen afgehandelde opdrachten tonen" ), Empty
+auxWhatCasesToShow  EN  "Cases to show: "  : 
+		(All (0) Category  EN  "<img src=AllCases>" DISABLED  EN  "<img src=AllCasesDisabled>" TOOLTIP  EN  "Show all cases" ,
+		Noncompleted (1) Category  EN  "<img src=InCompleteCases>" DISABLED  EN  "<img src=InCompleteCasesDisabled>" TOOLTIP  EN  "Show only non-completed cases" ,
+		Completed (2) Category  EN  "<img src=CompletedCases>" DISABLED  EN  "<img src=CompletedCasesDisabled>" TOOLTIP  EN  "Show only completed cases" ), Empty
 srvNames_1_  : string
 srvNames_2_  : string
 srvNames_3_  : string
@@ -228,8 +222,8 @@ srvNames_37_  : string
 srvNames_38_  : string
 srvNames_39_  : string
 srvNames_40_  : string
-auxWhatSurveyToShow  EN  "Survey to show: "  NL  "Te tonen onderzoek: "  : 
-		(srvAll (0) Category  EN  "\<All\>"  NL  "\<Alle\>" ,
+auxWhatSurveyToShow  EN  "Survey to show: "  : 
+		(srvAll (0) Category  EN  "\<All\>" ,
 		srv1 Category  EN  "^<srvNames_1_>" ,
 		srv2 Category  EN  "^<srvNames_2_>" ,
 		srv3 Category  EN  "^<srvNames_3_>" ,
@@ -308,7 +302,7 @@ auxSortText_7_  : string
 auxSortText_8_  : string
 auxSortText_9_  : string
 auxSortText_10_  : string
-auxSortOn  EN  "Select display order: "  NL  "Selecteer volgorde: "  : 
+auxSortOn  EN  "Select display order: "  : 
 		(sec1 (1) Category  EN  "^<auxSortText_1_>" ,
 		sec2 (2) Category  EN  "^<auxSortText_2_>" ,
 		sec3 (3) Category  EN  "^<auxSortText_3_>" ,
@@ -327,29 +321,24 @@ auxCollapseDetails  :
 LanguageID1  : string[10]
 LanguageID2  : string[10]
 LanguageID3  : string[10]
-auxFilter  EN  "Filter:"  NL  "Filter:"  : string, Empty
+auxFilter  EN  "Filter:"  : string, Empty
 btnStyle  : 
-		(Change Category  EN  "<img src=ChangeFont>" DISABLED  EN  "<img src=ChangeFontDisabled>" TOOLTIP  EN  "Change style"  NL  "Wijzig stijl" ), Empty
+		(Change Category  EN  "<img src=ChangeFont>" DISABLED  EN  "<img src=ChangeFontDisabled>" TOOLTIP  EN  "Change style" ), Empty
 btnCases (Result)   : 
-		(Cancel_ShowGroup (1) Category  EN  "<img src=ShowGroup>" DISABLED  EN  "<img src=ShowGroupDisabled>" TOOLTIP  EN  "Show case group"  NL  "Toon groep" ,
-		Cancel_Spawn (2) Category  EN  "<img src=SpawnCasePlus>" DISABLED  EN  "<img src=SpawncasePlusDisabled>" TOOLTIP  EN  "Add case"  NL  "Maak case" ,
-		Cancel_IW (3) Category  EN  "<img src=Interview>" DISABLED  EN  "<img src=InterviewDisabled>" TOOLTIP  EN  "Start interview"  NL  "Start interview" ,
-		Cancel_Attempt (4) Category  EN  "<img src=Account>" DISABLED  EN  "<img src=AccountDisabled>" TOOLTIP  EN  "Show attempts"  NL  "Toon contactpogingen" ,
-		Cancel_Update (5) Category  EN  "<img src=Update>" DISABLED  EN  "<img src=UpdateDisabled>" TOOLTIP  EN  "Edit case"  NL  "Bewerk opdracht" ,
-		Cancel_CollectGeoLoc (6) Category  EN  "<img src=DetermineGeoPos>" DISABLED  EN  "<img src=DetermineGeoPosDisabled>" TOOLTIP  EN  "Determine geo position"  NL  "Bepaal huidige locatie" ,
-		Cancel_Synchronize (7) Category  EN  "<img src=Synchronize>" DISABLED  EN  "<img src=SynchronizeDisabled>" TOOLTIP  EN  "Synchronize data"  NL  "Synchronizeer data" ,
-		Quit (10) Category  EN  "<img src=Quit>" DISABLED  EN  "<img src=QuitDisabled>" TOOLTIP  EN  "Quit application"  NL  "Stop applicatie" ), Empty
+		(Cancel_ShowGroup (1) Category  EN  "<img src=ShowGroup>" DISABLED  EN  "<img src=ShowGroupDisabled>" TOOLTIP  EN  "Show case group" ,
+		Cancel_Spawn (2) Category  EN  "<img src=SpawnCasePlus>" DISABLED  EN  "<img src=SpawncasePlusDisabled>" TOOLTIP  EN  "Add case" ,
+		Cancel_IW (3) Category  EN  "<img src=Interview>" DISABLED  EN  "<img src=InterviewDisabled>" TOOLTIP  EN  "Start interview" ,
+		Cancel_Attempt (4) Category  EN  "<img src=Account>" DISABLED  EN  "<img src=AccountDisabled>" TOOLTIP  EN  "Show attempts" ,
+		Cancel_Update (5) Category  EN  "<img src=Update>" DISABLED  EN  "<img src=UpdateDisabled>" TOOLTIP  EN  "Edit case" ,
+		Cancel_CollectGeoLoc (6) Category  EN  "<img src=DetermineGeoPos>" DISABLED  EN  "<img src=DetermineGeoPosDisabled>" TOOLTIP  EN  "Determine geo position" ,
+		Cancel_Synchronize (7) Category  EN  "<img src=Synchronize>" DISABLED  EN  "<img src=SynchronizeDisabled>" TOOLTIP  EN  "Synchronize data" ,
+		Quit (10) Category  EN  "<img src=Quit>" DISABLED  EN  "<img src=QuitDisabled>" TOOLTIP  EN  "Quit application" ), Empty
 DS_mCases  EN  ""  : string[255], Empty
 DialogTitle_EN : string[200]
-DialogTitle_NL : string[200]
 RULES
 DialogTitle_EN.KEEP
 IF DialogTitle_EN = EMPTY THEN 
     DialogTitle_EN := 'CMA - Available cases'
-ENDIF
-DialogTitle_NL.KEEP
-IF DialogTitle_NL = EMPTY THEN 
-    DialogTitle_NL := 'CMA - Overzicht opdrachten'
 ENDIF
 CustomFV_1_.Keep
 CustomFV_2_.Keep
@@ -579,7 +568,7 @@ auxSortGrpText_7_  : string
 auxSortGrpText_8_  : string
 auxSortGrpText_9_  : string
 auxSortGrpText_10_  : string
-auxSortGrpOn  EN  "Select display order: "  NL  "Selecteer volgorde: "  : 
+auxSortGrpOn  EN  "Select display order: "  : 
 		(sec1 (1) Category  EN  "^<auxSortGrpText_1_>" ,
 		sec2 (2) Category  EN  "^<auxSortGrpText_2_>" ,
 		sec3 (3) Category  EN  "^<auxSortGrpText_3_>" ,
@@ -617,28 +606,23 @@ auxStyleCount  : integer
 auxStyleNr  : integer
 auxStyle  : string
 btnStyle  : 
-		(Change Category  EN  "<img src=ChangeFont>" DISABLED  EN  "<img src=ChangeFontDisabled>" TOOLTIP  EN  "Change style"  NL  "Wijzig stijl" ), Empty
+		(Change Category  EN  "<img src=ChangeFont>" DISABLED  EN  "<img src=ChangeFontDisabled>" TOOLTIP  EN  "Change style" ), Empty
 btnGroup (Result)   : 
-		(Cancel_Spawn (1) Category  EN  "<img src=SpawnCasePlus>" DISABLED  EN  "<img src=SpawncasePlusDisabled>" TOOLTIP  EN  "Add case"  NL  "Extra opdracht toevoegen" ,
-		Cancel_IW (2) Category  EN  "<img src=Interview>" DISABLED  EN  "<img src=InterviewDisabled>" TOOLTIP  EN  "Start interview"  NL  "Start interview" ,
-		Cancel_Add (3) Category  EN  "<img src=AttemptAdd>" DISABLED  EN  "<img src=AttemptAddDisabled>" TOOLTIP  EN  "Add a new attempt"  NL  "Nieuwe poging toevoegen" ,
-		Cancel_Attempt (4) Category  EN  "<img src=Account>" DISABLED  EN  "<img src=AccountDisabled>" TOOLTIP  EN  "Show attempts"  NL  "Toon contactpogingen" ,
-		Cancel_Update (5) Category  EN  "<img src=Update>" DISABLED  EN  "<img src=UpdateDisabled>" TOOLTIP  EN  "Edit case"  NL  "Bewerk opdracht" ,
-		Cancel_CollectGeoLoc (6) Category  EN  "<img src=DetermineGeoPos>" DISABLED  EN  "<img src=DetermineGeoPosDisabled>" TOOLTIP  EN  "Determine geo position"  NL  "Bepaal huidige locatie" ,
-		Cancel_Done (7) Category  EN  "<img src=Done>" DISABLED  EN  "<img src=DoneDisabled>" TOOLTIP  EN  "Set case to Done"  NL  "Zet groep op Klaar" ,
-		Cancel_Synchronize (8) Category  EN  "<img src=Synchronize>" DISABLED  EN  "<img src=SynchronizeDisabled>" TOOLTIP  EN  "Synchronize data"  NL  "Synchronizeer data" ,
-		Back (9) Category  EN  "<img src=BackButton2>" TOOLTIP  EN  "Back to main screen"  NL  "Terug naar hoofdscherm" ), Empty
+		(Cancel_Spawn (1) Category  EN  "<img src=SpawnCasePlus>" DISABLED  EN  "<img src=SpawncasePlusDisabled>" TOOLTIP  EN  "Add case" ,
+		Cancel_IW (2) Category  EN  "<img src=Interview>" DISABLED  EN  "<img src=InterviewDisabled>" TOOLTIP  EN  "Start interview" ,
+		Cancel_Add (3) Category  EN  "<img src=AttemptAdd>" DISABLED  EN  "<img src=AttemptAddDisabled>" TOOLTIP  EN  "Add a new attempt" ,
+		Cancel_Attempt (4) Category  EN  "<img src=Account>" DISABLED  EN  "<img src=AccountDisabled>" TOOLTIP  EN  "Show attempts" ,
+		Cancel_Update (5) Category  EN  "<img src=Update>" DISABLED  EN  "<img src=UpdateDisabled>" TOOLTIP  EN  "Edit case" ,
+		Cancel_CollectGeoLoc (6) Category  EN  "<img src=DetermineGeoPos>" DISABLED  EN  "<img src=DetermineGeoPosDisabled>" TOOLTIP  EN  "Determine geo position" ,
+		Cancel_Done (7) Category  EN  "<img src=Done>" DISABLED  EN  "<img src=DoneDisabled>" TOOLTIP  EN  "Set case to Done" ,
+		Cancel_Synchronize (8) Category  EN  "<img src=Synchronize>" DISABLED  EN  "<img src=SynchronizeDisabled>" TOOLTIP  EN  "Synchronize data" ,
+		Back (9) Category  EN  "<img src=BackButton2>" TOOLTIP  EN  "Back to main screen" ), Empty
 DS_gCases  EN  ""  : string[255], Empty
 DialogTitle_EN : string[200]
-DialogTitle_NL : string[200]
 RULES
 DialogTitle_EN.KEEP
 IF DialogTitle_EN = EMPTY THEN 
     DialogTitle_EN := 'Case Group'
-ENDIF
-DialogTitle_NL.KEEP
-IF DialogTitle_NL = EMPTY THEN 
-    DialogTitle_NL := 'Opdrachtengroep'
 ENDIF
 auxSortGrpText_1_.Keep
 auxSortGrpText_2_.Keep
@@ -708,17 +692,12 @@ auxAutoSizeBtns  :
 		(yes), Empty
 auxImageName  : string
 auxIDone (Result)   : 
-		(OK Category  EN  "Ok"  NL  "OK" ), Empty
+		(OK Category  EN  "<img src=BackButton2>" ), Empty
 DialogTitle_EN : string[200]
-DialogTitle_NL : string[200]
 RULES
 DialogTitle_EN.KEEP
 IF DialogTitle_EN = EMPTY THEN 
     DialogTitle_EN := 'Show image'
-ENDIF
-DialogTitle_NL.KEEP
-IF DialogTitle_NL = EMPTY THEN 
-    DialogTitle_NL := 'Toon afbeelding'
 ENDIF
 
 auxAutoSizeBtns.KEEP
@@ -753,21 +732,16 @@ auxAttemptsDetailsTable  : open
 auxAttemptsDetails  EN  "^{auxAttemptsDetailsTable}"  : string[1]
 auxCustomDetailsTable  : open
 btnAttempts (Result)   : 
-		(Cancel_Add (1) Category  EN  "<img src=AttemptAdd>" DISABLED  EN  "<img src=AttemptAddDisabled>" TOOLTIP  EN  "Add a new attempt"  NL  "Voeg een contactpoging toe" ,
-		Cancel_Modify (2) Category  EN  "<img src=Update>" DISABLED  EN  "<img src=UpdateDisabled>" TOOLTIP  EN  "Edit note"  NL  "Bewerk notitie" ,
-		Cancel_View (3) Category  EN  "<img src=ReadOnlyEdit>" DISABLED  EN  "<img src=ReadOnlyEditDisabled>" TOOLTIP  EN  "View interview"  NL  "Toon interview" ,
-		Quit (4) Category  EN  "<img src=BackButton2>" DISABLED  EN  "<img src=BackButton2Disabled>" TOOLTIP  EN  "Back to cases screen"  NL  "Terug naar opdrachten scherm" ), Empty
+		(Cancel_Add (1) Category  EN  "<img src=AttemptAdd>" DISABLED  EN  "<img src=AttemptAddDisabled>" TOOLTIP  EN  "Add a new attempt" ,
+		Cancel_Modify (2) Category  EN  "<img src=Update>" DISABLED  EN  "<img src=UpdateDisabled>" TOOLTIP  EN  "Edit note" ,
+		Cancel_View (3) Category  EN  "<img src=ReadOnlyEdit>" DISABLED  EN  "<img src=ReadOnlyEditDisabled>" TOOLTIP  EN  "View interview" ,
+		Quit (4) Category  EN  "<img src=BackButton2>" DISABLED  EN  "<img src=BackButton2Disabled>" TOOLTIP  EN  "Back to cases screen" ), Empty
 DS_mAttempts  EN  ""  : string[36], Empty
 DialogTitle_EN : string[200]
-DialogTitle_NL : string[200]
 RULES
 DialogTitle_EN.KEEP
 IF DialogTitle_EN = EMPTY THEN 
     DialogTitle_EN := 'Attempts'
-ENDIF
-DialogTitle_NL.KEEP
-IF DialogTitle_NL = EMPTY THEN 
-    DialogTitle_NL := 'Contactpogingen'
 ENDIF
 auxAttemptsDetailsTable.Keep
 
@@ -798,20 +772,15 @@ BLOCK BdEditNote
 FIELDS
 auxAutoSizeBtns  : 
 		(yes), Empty
-auxNote  EN  "Note:"  NL  "Notitie:"  : open, Empty
+auxNote  EN  "Note:"  : open, Empty
 btnEditNote (Result)   : 
-		(Save Category  EN  "<img src=OK>" DISABLED  EN  "<img src=OKDisabled>" TOOLTIP  EN  "Save note"  NL  "Bewaar notitie" ,
-		Cancel Category  EN  "<img src=Cancel>" DISABLED  EN  "<img src=CancelDisabled>" TOOLTIP  EN  "Cancel"  NL  "Annuleren" ), Empty
+		(Save Category  EN  "<img src=OK>" DISABLED  EN  "<img src=OKDisabled>" TOOLTIP  EN  "Save note" ,
+		Cancel Category  EN  "<img src=Cancel>" DISABLED  EN  "<img src=CancelDisabled>" TOOLTIP  EN  "Cancel" ), Empty
 DialogTitle_EN : string[200]
-DialogTitle_NL : string[200]
 RULES
 DialogTitle_EN.KEEP
 IF DialogTitle_EN = EMPTY THEN 
     DialogTitle_EN := 'Edit note'
-ENDIF
-DialogTitle_NL.KEEP
-IF DialogTitle_NL = EMPTY THEN 
-    DialogTitle_NL := 'Bewerk notitie'
 ENDIF
 
 auxAutoSizeBtns.KEEP
@@ -847,12 +816,12 @@ BLOCK BProcess
 ENDBLOCK
 
 fields
-dShowTheLogging /  EN "^dShowTheLogging.DialogTitle_EN"  NL "^dShowTheLogging.DialogTitle_NL"  : BdShowTheLogging
-dCases /  EN "^dCases.DialogTitle_EN"  NL "^dCases.DialogTitle_NL"  : BdCases
-dGroup /  EN "^dGroup.DialogTitle_EN"  NL "^dGroup.DialogTitle_NL"  : BdGroup
-dShowImage /  EN "^dShowImage.DialogTitle_EN"  NL "^dShowImage.DialogTitle_NL"  : BdShowImage
-dAttempts /  EN "^dAttempts.DialogTitle_EN"  NL "^dAttempts.DialogTitle_NL"  : BdAttempts
-dEditNote /  EN "^dEditNote.DialogTitle_EN"  NL "^dEditNote.DialogTitle_NL"  : BdEditNote
+dShowTheLogging /  EN "^dShowTheLogging.DialogTitle_EN"  : BdShowTheLogging
+dCases /  EN "^dCases.DialogTitle_EN"  : BdCases
+dGroup /  EN "^dGroup.DialogTitle_EN"  : BdGroup
+dShowImage /  EN "^dShowImage.DialogTitle_EN"  : BdShowImage
+dAttempts /  EN "^dAttempts.DialogTitle_EN"  : BdAttempts
+dEditNote /  EN "^dEditNote.DialogTitle_EN"  : BdEditNote
 Display : BDisplay
 Confirm : BConfirm
 Process : BProcess
