@@ -5,16 +5,17 @@
     <File FileType="ManipulaFileType" RelativePath="true">CMA.manx</File>
     <File FileType="PackageSpecificationFileType" RelativePath="true">settings.bcps</File>
     <File FileType="ResourceDatabaseFileType" RelativePath="true">CMA.blrd</File>
+    <File FileType="TranslationsFileType" RelativePath="true">Bitt\CMA_EN_NL.bitt</File>
   </FileItems>
   <Properties>
-    <IncludeSearchPath />
-    <LibrarySearchPath />
-    <DatamodelSearchPath />
-    <ExternalSearchPath />
-    <ConditionalDefines />
-    <ResourceDB RelativePath="true">CMA.blrd</ResourceDB>
-    <SurveyRoot />
     <AppSupport>On</AppSupport>
     <IsAppMainUserInterface>True</IsAppMainUserInterface>
+    <ResourceDB RelativePath="true">CMA.blrd</ResourceDB>
+    <SurveyRoot />
+    <ConditionalDefines />
+    <DatamodelSearchPath />
+    <ExternalSearchPath />
+    <IncludeSearchPath />
+    <LibrarySearchPath />
   </Properties>
 </Project>
