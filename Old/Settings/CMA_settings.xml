@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Dataset xmlns:blaise="http://namespaces.cbs.nl/Blaise/BlaiseTypes" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.w3.org/2001/XMLSchema-instance SettingsMeta.xsd">
+	<Datarecord validationStatus="NotChecked">
+		<sLanguageCount>2</sLanguageCount>
+		<sLanguages blaiseContainerType="array">
+			<sLanguagesItem blaiseIndex="1">1</sLanguagesItem>
+			<sLanguagesItem blaiseIndex="2">2</sLanguagesItem>
+		</sLanguages>
+		<sUploadChanges>yes</sUploadChanges>
+		<sTrackTimeUsed>yes</sTrackTimeUsed>
+		<sDefaultMode>CAPI</sDefaultMode>
+		<sSyncWhenConnected>yes</sSyncWhenConnected>
+		<sRemoveSurveyWhenNoCasesLeft>yes</sRemoveSurveyWhenNoCasesLeft>
+		<sAskSync>yes</sAskSync>
+		<sFieldFilterAll>tContactInfoShort,tIdentifier,tStatus,tLastResult,tAppointment,tAttemptsCount</sFieldFilterAll>
+		<sFieldFilterTopic>tContactInfoShort,tIdentifier,tStatus,tLastResult,tAppointment,tAttemptsCount</sFieldFilterTopic>
+		<sFieldWidths>tContactInfoShort=60,tIdentifier=20</sFieldWidths>
+		<sStyleCount>3</sStyleCount>
+		<sStyle blaiseContainerType="array">
+			<sStyleItem blaiseIndex="1">Dialogs</sStyleItem>
+			<sStyleItem blaiseIndex="2">DialogsMedium</sStyleItem>
+			<sStyleItem blaiseIndex="3">DialogsLarge</sStyleItem>
+		</sStyle>
+		<sTextFontSize blaiseContainerType="array">
+			<sTextFontSizeItem blaiseIndex="1">20</sTextFontSizeItem>
+			<sTextFontSizeItem blaiseIndex="2">20</sTextFontSizeItem>
+			<sTextFontSizeItem blaiseIndex="3">20</sTextFontSizeItem>
+		</sTextFontSize>
+		<sDefSortCount>5</sDefSortCount>
+		<sDefSort blaiseContainerType="array">
+			<sDefSortItem blaiseIndex="1">
+				<Title>EN=Contact info,NL=Contactinformatie</Title>
+				<FieldCount>1</FieldCount>
+				<FieldName blaiseContainerType="array">
+					<FieldNameItem blaiseIndex="1">tContactInfoShort</FieldNameItem>
+				</FieldName>
+			</sDefSortItem>
+			<sDefSortItem blaiseIndex="2">
+				<Title>EN=Key,NL=Sleutel</Title>
+				<FieldCount>1</FieldCount>
+				<FieldName blaiseContainerType="array">
+					<FieldNameItem blaiseIndex="1">tIdentifier</FieldNameItem>
+				</FieldName>
+			</sDefSortItem>
+			<sDefSortItem blaiseIndex="3">
+				<Title>EN=Interview status,NL=Interviewstatus</Title>
+				<FieldCount>1</FieldCount>
+				<FieldName blaiseContainerType="array">
+					<FieldNameItem blaiseIndex="1">tCaseStatus</FieldNameItem>
+				</FieldName>
+			</sDefSortItem>
+			<sDefSortItem blaiseIndex="4">
+				<Title>EN=Result,NL=Resultaat</Title>
+				<FieldCount>1</FieldCount>
+				<FieldName blaiseContainerType="array">
+					<FieldNameItem blaiseIndex="1">tLastResult</FieldNameItem>
+				</FieldName>
+			</sDefSortItem>
+			<sDefSortItem blaiseIndex="5">
+				<Title>EN=Appointment,NL=Afspraak</Title>
+				<FieldCount>1</FieldCount>
+				<FieldName blaiseContainerType="array">
+					<FieldNameItem blaiseIndex="1">tAppointment</FieldNameItem>
+				</FieldName>
+			</sDefSortItem>
+		</sDefSort>
+		<sSearchCount>3</sSearchCount>
+		<sSearchName blaiseContainerType="array">
+			<sSearchNameItem blaiseIndex="1">ContactInfoShort</sSearchNameItem>
+			<sSearchNameItem blaiseIndex="2">ID</sSearchNameItem>
+			<sSearchNameItem blaiseIndex="3">CMA_ContactData</sSearchNameItem>
+		</sSearchName>
+		<sSelectedStyle>2</sSelectedStyle>
+	</Datarecord>
+</Dataset>
