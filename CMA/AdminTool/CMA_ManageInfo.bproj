@@ -11,7 +11,7 @@
     <ExternalSearchPath />
     <IncludeSearchPath />
     <LibrarySearchPath />
-    <ResourceDB />
+    <ResourceDB RelativePath="true" IsInherited="true">..\CMA.blrd</ResourceDB>
     <SupportedModes />
     <UsedResourceSets />
     <AppSupport />
@@ -19,6 +19,7 @@
     <CatiRole />
     <UseCari>False</UseCari>
     <WebDataEntryClient>None</WebDataEntryClient>
+    <ContentSecurityPolicyFileName />
     <AddFieldGroupOrderInformation>False</AddFieldGroupOrderInformation>
     <IgnoreLayoutErrors>False</IgnoreLayoutErrors>
     <IgnoreRichtextErrors>False</IgnoreRichtextErrors>

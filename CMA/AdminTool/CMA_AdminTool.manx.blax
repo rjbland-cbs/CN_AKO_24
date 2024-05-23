@@ -1,0 +1,1369 @@
+datamodel CMA_AdminTool ""
+ fieldproperties onclick:string visibility:(hidden (0),visible (1)) tag:string 
+
+languages = 
+	EN "English"
+roles =  TOOLTIP, DISABLED
+
+
+const  
+  cLogName = 'CMA_AdminTool_Logging.txt'
+  cLogBackup = 'CMA_AdminTool_BackupLogging.txt'
+  cMessageName = "CMA_Message.txt"
+  cAdminTool = 'CMA_AdminTool'
+  srvCases = 'cma_launcher'
+  srvClientInfo = 'cma_clientinfo'
+  srvAttempts = 'cma_attempts'
+  srvLogging = 'cma_logging'
+  srvContactInfo = 'cma_contactinfo'
+  srvManageInfo = 'cma_manageinfo'
+  srvUserInfo ='cma_userinfo'
+  cDateTimeFormat = 'yyyyMMdd,HH:mm:sszzz'
+  cDateTimeFormatMS = 'yyyyMMdd,HH:mm:ss.fff'
+  cLocSettings = 'settings.xml'
+  cCMASettings = "CMA_settings.xml"
+  cSettings = "CMA_AdminSettings.xml"
+  cNullGUID = '00000000-0000-0000-0000-000000000000'
+  cNull = 'NULL'
+  cSelected = '✓' 
+  cEqual = '='
+  cNotEqual = '≠'
+  DefaultLanguage='EN'
+  cPortraitSeparator = '<!--$Portrait-->'
+  cLandscapeSeparator = '<!--$Landscape-->'
+  cAttemptsTemplate = EN "<table borderwidth=1 bordercolor=black grid=both gridwidth=1><column width=auto><column width=*><row><cell margin=\"4,2,4,2\"><left>When made:</left></cell><cell margin=\"4,2,4,2\" background=lightgray><left>$Att_When</left></cell></row><row><cell margin=\"4,2,4,2\"><left>Result:</left></cell><cell margin=\"4,2,4,2\" background=lightgray><left>$Att_Result</left></cell></row><row><cell margin=\"4,2,4,2\"><left>Appointment:</left></cell><cell margin=\"4,2,4,2\" background=lightgray><left>$Att_Appointment</left></cell></row><row><cell margin=\"4,2,4,2\"><left>Note:</left></cell><cell margin=\"4,2,4,2\" background=lightgray><left>$Att_Note</left></cell></row></table>"
+
+  cmaDetailsTemplate = 'detailstemplate_'
+  cmaDefaultTemplate = 'detailstemplate_cma_'
+  cmaAttemptsTemplate = 'attemptstemplate_'
+  cmaDefaultAttemptsTemplate = 'attemptstemplate_cma_'
+  
+  cDefaultFieldFilter = 'tSurveyName,tContactInfoShort,tStatus,tAttemptsCount,tLastResult,tAppointment,tLastAttempt'
+  cDefaultFieldFilterTopic = 'tContactInfoShort,tStatus,tAttemptsCount,tLastResult,tAppointment,tLastAttempt'
+  cDefaultFieldFilterGroup = 'tSurveyName,tStatus,tAttemptsCount,tLastResult,tAppointment,tIdentifier,tSpawnCount,tLastAttempt'
+
+  cLogFolder = 'Logs'
+  cScriptFolder = 'CustomScript\\'
+  
+  //texts
+  strYes = EN "Yes"
+  strNo = EN "No"
+  strWrongUser = EN "This user has no supervisor or project manager access to manage interviewers/supervisors"
+  strNoSurveysToManage = EN "There are no surveys to manage"
+  strConnectionFailed = EN "Connection failed!"
+  strSupervisorTool = EN "CMA - Supervisor tool" 
+  strAdministratorTool = EN "CMA - Administrator tool"
+  strManagerTool = EN "CMA - Manager tool"
+  msgLogUploadOKay = EN "The log has been uploaded"
+  msgLogUploadFailed = EN "The upload of the log failed"
+  msgNotConnected = EN "Synchronize not possible because you are not connected to the Internet." 
+  cNotStarted = EN "Not started"
+  cNotAssigned = EN "Not assigned"
+  cNotDownloaded = EN "Not downloaded"
+  cAdded = EN "Added"
+  cCompleted = EN "Completed"
+  cInterrupted = EN "Interrupted"
+  cUploaded = EN "Uploaded"
+  cStarted = EN "Started"
+  cFinalized = EN "Finalized"
+  cReopened = EN "Reopened"
+  cDone = EN "Done"
+  cClosed = EN "Closed"
+  cAccepted = EN "Accepted"
+  cNoUser = EN "<none>"
+  cAllItems = EN "<All>"
+  cCheckingConsistency = EN "One moment please. Checking consistency..."
+  cRepairingInconsistentCases = EN "One moment please. Repairing inconsistent cases"
+  cCalculatingProgress = EN "One moment please. Calculating progress overview..."
+  cNoInconsistenciesFound = EN "Consistency check finished. No inconsistencies found."
+  cProgressReportNoData = EN "Progress report. No data found."
+  cProgressReportSurvey = EN "Progress report: "
+  cConsistencyCheckSurvey = EN "Consistency check: "
+  cLoggingForUser  = EN "Logging for user: "
+  cNoLoggingFoundForUser = EN "No logging found for user: " 
+  cRetrievingLoggingForUser = EN "Retrieving logging for user: "
+  //cShowImage = EN "Click to show image..."
+  msgInstallOfSurvey = EN "Install of survey" 
+  msgUpdateOfSurvey = EN "Update of survey"
+  msgFailed = EN "failed. Error: " 
+  msgSucceeded = EN "Succeeded!" 
+  msgNotPresent = EN "needed but not available for download on server" 
+  msgAttemptsForCase = EN "Attempts for case" 
+  strCasesForUser = EN "List of cases for"
+  strCasesForSupervisor = EN "List of cases of supervisor"
+  strCasesForSurvey = EN "List of cases for survey"
+  strSurvey = EN "Survey"
+  strListOfUnassignedCases = EN "List of unassigned cases"
+
+  strConfirmAccepted = EN "Are you sure this case is accepted?"
+  strConfirmAcceptedSel = EN "Are you sure all selected cases are accepted?"
+  strCasesAccepted = EN "Number of cases accepted:"
+  strAcceptedFailed = EN "Accept failed!"
+  
+  strConfirmReopen = EN "Are you sure this case needs to be reopened?"
+  strConfirmReopenSel = EN "Are you sure all selected cases must be reopened?"
+  strCasesReopened = EN "Number of reopened cases:"
+
+  strConfirmClose = EN "Are you sure this case needs to be closed?"
+  strConfirmCloseSel = EN "Are you sure all selected cases must be closed?"
+  strCasesClosed = EN "Number of closed cases:"
+
+  strConfirmRestoreUser = EN "Are you sure all cases of user $UserID need to be restored?"
+  strConfirmRestoreSel = EN "Are you sure all selected cases must be restored?"
+  strConfirmRestore = EN "Are you sure this case needs to be restored?"
+  strCasesRestored = EN "Number of restored cases:"
+
+  strConfirmTransfer = EN "Are you sure case $Identifier needs to be transferred to $UserID?"  
+  strConfirmTransferSel = EN "Are you sure all selected cases need to be transferred to user $UserID?"  
+
+  strConfirmAssign = EN "Are you sure case $Identifier needs to be assigned to $UserID?"  
+  strConfirmAssignSel = EN "Are you sure all selected case need to be assigned to user $UserID?"  
+
+  strConfirmRelease = EN "Are you sure this case needs to be released for the interviewer?"
+  strConfirmReleaseSel = EN "Are you sure all selected cases must be released?"
+  strCasesReleased = EN "Number of released cases:"
+
+  strCasesAssigned = EN "Number of assigned cases:"
+  strCasesTransfered = EN "Number of transfered cases:"
+  strConfirmExcel = EN "Export done. Result can be found in file \"$eName\". Start Excel?"
+
+  cNoSupervisorsFoundToAssignTo = EN "Could no find any supervisors to assign the case(s) to" 
+  cCasesAssignedSuppervisor = EN "Number of assigned cases to supervisor:"
+  cConfirmAssignSupervisor = EN "Are you sure you want to assign the selected case(s) to supervisor:"
+  cAssignSupervisorSkippedCases = EN "The following cases could not be assigned to the supervisor because they were already downloaded by an interviewer: " 
+  strUserNotAuthenticated = EN "User is not authenticated! Admintool will be halted."
+  strConnectionNotOkay = EN "Connection failed"
+  cTransferCasesOneOrTwoStep = EN "Do you want to wait for a transfer acknowledgement from the current interviewer before the actual transfer of cases takes place?"
+  cNoCasesSelectedForAction = EN "Please select one or more cases first"
+  cReleaseCasesOneOrTwoStep = EN "Do you want to wait for a release acknowledgement from the current interviewer before the actual release of cases takes place?" 
+  cCreateInstruction = EN  "Create Instruction" 
+  cCreatedInstructions = EN "Number of instructions created: :" 
+  cInstructionReleaseAll = EN "Release all cases from client device"
+  cInstructionReleaseSurvey = EN "Release all cases from selected survey from client device"
+  cInstructionReleaseOrphans = EN "Release orphan cases from client device"
+  strConfirmEditSel = EN "Are you sure you want to update the selected cases with the information you entered?" 
+  strNoSurveySelectedForInstruction = EN "You have to select a survey in order to be able to create this kind of instruction."
+  strConfirmReleaseSurveyCases = EN "Are you sure you want to create an instruction to release all cases of survey/user: " 
+  strConfirmReleaseAll = EN "Are you sure you want to create an instruction to release all cases of user:" 
+  strConfirmOrphans = EN "Are you sure you want to create an instruction to release all orphan cases of user: "   
+
+  cNrOfCases = EN "#Cases:" 
+  cFirstLastDownloaded = EN "First/Last download:"
+  cFirstLastUploaded = EN "First/Last upload:"
+  cLastAttempt = EN "Last attempt:"
+  cFirstLastInterviewTime = EN "First/Last interview time:" 
+  cLastInterviewEndTime = EN "Last interview end time:" 
+  cNumberOfAttempts = EN "#Attempts:"
+  cNumberOfCasesUpdated = EN "Number of cases updated :"
+  cNumberOfCasesSelectedForEdit = EN "Number of cases to edit: "
+  cNoFieldsSelectedForUpdate = EN "Please select one or more fields to update"
+  cValidateUpdate = EN "Aborting update: "
+  cTotalInterviewTimeUsed = EN "Interview time used:"
+  
+  strFieldNotInTopic = EN "Field \"$field\" does not exist in Topic"
+  strFieldNotInLauncher = EN "Field \"$field\" does not exist in Launcher"
+  strFieldNotInContact = EN "Field \"$field\" does not exist in Conact definition"
+  strFieldError = EN "Field \"$field\" does not exist in import definition" 
+  strIDMissing = EN "Field \"ID\" is missing in file"
+  strSureToImport = EN "Are you sure you want to import the file<newline>\"$file\"<newline>for survey<newline>\"$survey?\""  
+  strSureToImportFile = EN "Are you sure you want to import the file<newline>\"$file\"?"  
+  strErrorInKey = EN "Error in key: "
+  strErrorGUID = EN "Wrong GUID used in import"
+  strNrImported = EN "Import finished!<newline>Number of cases imported:"
+  strProcessing = EN "Processing..."
+  strImportLauncherCases = EN "Import cases"
+  strImportUserInfo =  EN "Import user info"
+  strImportManageInfo = EN "Import manage info"
+  strImportFileOpenError = EN "Import file not selected or could not be openened"
+  
+  strNeedsRefresh = EN "Request could not be executed because cases were changed in database. Please press the Refresh button and try again"
+  strEndRecovery = EN "End recovery. Recovered $1 survey data records and $2 attempts data records"
+  strReadOnlyNotSupported = EN "Read-only access not supported by current survey questionnaire..."
+  strExtractFailed = EN "Extract of survey data failed."
+  strRequestNotAllowed = EN "None of the cases could be procesed. Request not allowed: "
+  
+  cDeleteScript = EN "Delete script"
+  cEditScript = EN "Edit script"
+  cStartScript = EN "Start script"
+  cNewScript = EN "New script"
+  
+  cDeleteUserInfo = EN "Delete user info"
+  cEditUserInfo = EN "Edit user info"
+  cAddUserInfo = EN "Add user info"
+  cMaintainUserInfo = EN "Manage User Info"
+
+  cDeleteManInfo = EN "Delete manage info"
+  cEditManInfo = EN "Edit manage info"
+  cAddManInfo = EN "Add manage info"
+  cMaintainManageInfo = EN "Maintain Manage Info"
+
+  cScriptCannotSave = EN "Cannot save script: "
+  cScriptExecutedSuccess = EN "Script successfully executed: "
+  cScriptExecutionError = EN "Manipula script failed to execute. Error code: "
+  cScriptFileNotFound = EN "Cannot execute script. Script file not found: "
+  cCannotSaveReport = EN "Cannot save script: "
+  cScriptFileCannotbeEmpty = EN "Script file cannot be empty"
+  cScriptIsnotAManipulaScript = EN "Selected script is not a Manipula script"
+  cPleaseProvideAScriptName = EN "Please provide a script name"
+  cScriptDoesntExists = EN "Selected script does not exists"
+  cNoDatamodelsFound = EN "No datamodels found in setup path"
+  cCustomScripts = EN "Custom Scripts"
+  
+
+PARALLEL
+dAttempts
+dCustomScripts
+dScriptActions
+dMaintainUserInfoAction
+dCreateInstruction
+dEditLauncherCases
+SelectTransferUser
+dShowTheLogging
+ShowGroupCases
+ShowConsistencyCheckResults
+ProgressOverview
+ShowLauncherCases
+ShowUsers
+dMaintainUserInfo
+dMaintainManagementInfo
+dMaintainManageInfoAction
+Confirm
+Display
+Process
+
+BLOCK BdAttempts
+FIELDS
+auxLast  : integer
+auxWhen  : string[24]
+auxHappeningsStr  : string[80]
+auxApptDate  : string[20]
+auxApptTime  : string[20]
+auxNote  : open, Empty
+auxLocked  : 0 .. 1
+auxHasInterview  : 
+		(yes), Empty
+auxAllowView  : 
+		(yes), Empty
+auxReadOnlySettingsName  : string
+auxAttemptsDetailsTable  : open
+auxAttemptsDetails  EN  "^{auxAttemptsDetailsTable}"  : string[1]
+auxCustomDetailsTable  : open
+btnAttempts (Result)   : 
+		(Quit Category  EN  "Back" ), Empty
+DS_mAttempts  EN  ""  : string[36], Empty
+DialogTitle_EN : string[200]
+RULES
+DialogTitle_EN.KEEP
+IF DialogTitle_EN = EMPTY THEN 
+    DialogTitle_EN := 'Attempts'
+ENDIF
+auxAttemptsDetailsTable.Keep
+
+DS_mAttempts.ASK
+auxLocked.KEEP
+    auxWhen.KEEP
+    auxHappeningsStr.KEEP
+    auxApptDate.KEEP
+    auxLast.KEEP
+    auxHasInterview.KEEP
+    auxAllowView.KEEP
+    auxReadOnlySettingsName.KEEP
+    auxCustomDetailsTable.KEEP
+    auxApptDate.KEEP
+    auxApptTime.KEEP
+    auxNote.KEEP 
+    auxAttemptsDetails.SHOW
+
+
+btnAttempts.ASK
+endblock
+
+
+BLOCK BdCustomScripts
+FIELDS
+auxScriptAction  : 
+		(StartScript,
+		EditScript,
+		AddScript,
+		DeleteScript), Empty
+srvNames_0_  : string
+srvNames_1_  : string
+srvNames_2_  : string
+srvNames_3_  : string
+srvNames_4_  : string
+srvNames_5_  : string
+srvNames_6_  : string
+srvNames_7_  : string
+srvNames_8_  : string
+srvNames_9_  : string
+srvNames_10_  : string
+srvNames_11_  : string
+srvNames_12_  : string
+srvNames_13_  : string
+srvNames_14_  : string
+srvNames_15_  : string
+srvNames_16_  : string
+srvNames_17_  : string
+srvNames_18_  : string
+srvNames_19_  : string
+srvNames_20_  : string
+auxWhatSurveyToShow  EN  "Surveys: "  : 
+		(srvAll (0) Category  EN  "^<srvNames_0_>" ,
+		srv1 Category  EN  "^<srvNames_1_>" ,
+		srv2 Category  EN  "^<srvNames_2_>" ,
+		srv3 Category  EN  "^<srvNames_3_>" ,
+		srv4 Category  EN  "^<srvNames_4_>" ,
+		srv5 Category  EN  "^<srvNames_5_>" ,
+		srv6 Category  EN  "^<srvNames_6_>" ,
+		srv7 Category  EN  "^<srvNames_7_>" ,
+		srv8 Category  EN  "^<srvNames_8_>" ,
+		srv9 Category  EN  "^<srvNames_9_>" ,
+		srv10 Category  EN  "^<srvNames_10_>" ,
+		srv11 Category  EN  "^<srvNames_11_>" ,
+		srv12 Category  EN  "^<srvNames_12_>" ,
+		srv13 Category  EN  "^<srvNames_13_>" ,
+		srv14 Category  EN  "^<srvNames_14_>" ,
+		srv15 Category  EN  "^<srvNames_15_>" ,
+		srv16 Category  EN  "^<srvNames_16_>" ,
+		srv17 Category  EN  "^<srvNames_17_>" ,
+		srv18 Category  EN  "^<srvNames_18_>" ,
+		srv19 Category  EN  "^<srvNames_19_>" ,
+		srv20 Category  EN  "^<srvNames_20_>" )
+btnCustomScripts (Result)   : 
+		(Cancel_Add (1) Category  EN  "Add" TOOLTIP  EN  "Add a script" ,
+		Cancel_Edit (2) Category  EN  "Edit" TOOLTIP  EN  "Edit the selected script" ,
+		Cancel_Delete (3) Category  EN  "Delete" TOOLTIP  EN  "Delete the selected script" ,
+		Cancel_Start (4) Category  EN  "Start" TOOLTIP  EN  "Start the selected script" ,
+		Cancel (5) Category  EN  "Back" ), Empty
+DS_mCustomScripts  EN  ""  : string[36], Empty
+DialogTitle_EN : string[200]
+RULES
+DialogTitle_EN.KEEP
+IF DialogTitle_EN = EMPTY THEN 
+    DialogTitle_EN := 'Custom Scripts'
+ENDIF
+srvNames_0_.Keep
+srvNames_1_.Keep
+srvNames_2_.Keep
+srvNames_3_.Keep
+srvNames_4_.Keep
+srvNames_5_.Keep
+srvNames_6_.Keep
+srvNames_7_.Keep
+srvNames_8_.Keep
+srvNames_9_.Keep
+srvNames_10_.Keep
+srvNames_11_.Keep
+srvNames_12_.Keep
+srvNames_13_.Keep
+srvNames_14_.Keep
+srvNames_15_.Keep
+srvNames_16_.Keep
+srvNames_17_.Keep
+srvNames_18_.Keep
+srvNames_19_.Keep
+srvNames_20_.Keep
+
+DS_mCustomScripts.ASK
+auxWhatSurveyToShow.ASK
+   auxScriptAction.KEEP
+      
+
+btnCustomScripts.ASK
+endblock
+
+
+BLOCK BdScriptActions
+FIELDS
+auxScriptID  : string[36], Empty
+auxScriptName  EN  "Script name"  : string, Empty
+auxScriptSetup  EN  "Script file"  : open, Empty
+auxScriptParameters  EN  "Parameters"  : open, Empty
+auxScriptActionResult  : integer, Empty
+auxScriptAction  : 
+		(StartScript,
+		EditScript,
+		AddScript,
+		DeleteScript), Empty
+btnCustomScriptsActions (Result)   : 
+		(Cancel (1) Category  EN  "Back" ,
+		Cancel_OK (2) Category  EN  "OK" ), Empty
+DialogTitle_EN : string[200]
+RULES
+DialogTitle_EN.KEEP
+IF DialogTitle_EN = EMPTY THEN 
+    DialogTitle_EN := 'Script Action'
+ENDIF
+
+auxScriptID.keep
+  auxScriptName.ASK
+  auxScriptSetup.ASK
+  auxScriptParameters.ASK  
+  auxScriptActionResult.KEEP
+  auxScriptAction.KEEP
+  
+
+btnCustomScriptsActions.ASK
+endblock
+
+
+BLOCK BdMaintainUserInfoAction
+FIELDS
+auxUIAction  : 
+		(AddMUI,
+		EditMUI,
+		DeleteMUI), Empty
+auxUIUserID  EN  "User ID"  : string[20]
+auxUIUserFullName  EN  "User name"  : string[40]
+auxUIUserType  EN  "Role"  : 
+		(interviewer Category  EN  "Interviewer" ,
+		supervisor Category  EN  "Supervisor" ,
+		manager Category  EN  "Field manager" )
+auxUIManagerID  EN  "Manager ID"  : string[20], Empty
+btnMaintainUserInfoActions (Result)   : 
+		(Cancel (1) Category  EN  "Back" ,
+		Cancel_OK (2) Category  EN  "OK" ), Empty
+DialogTitle_EN : string[200]
+RULES
+
+auxUIAction.keep
+  auxUIUserID.ASK
+  auxUIUserFullName.ASK
+  auxUIUserType.ASK  
+  auxUIManagerID.ASK
+  
+  
+
+
+btnMaintainUserInfoActions.ASK
+endblock
+
+
+BLOCK BdCreateInstruction
+FIELDS
+auxInstructionText_1_  : string
+auxInstructionText_2_  : string
+auxInstructionText_3_  : string
+auxInstruction  : 
+		(ReleaseAll Category  EN  "^<auxInstructionText_1_>" ,
+		ReleaseSurvey Category  EN  "^<auxInstructionText_2_>" ,
+		ReleaseOrphans Category  EN  "^<auxInstructionText_3_>" ), Empty
+SelectedSurvey  : string[36], Empty
+btnCreateInstruction (Result)   : 
+		(CreateInstruction Category  EN  "Create instruction" ,
+		Cancel Category  EN  "Back" ), Empty
+DialogTitle_EN : string[200]
+RULES
+DialogTitle_EN.KEEP
+IF DialogTitle_EN = EMPTY THEN 
+    DialogTitle_EN := 'Create Instruction'
+ENDIF
+auxInstructionText_1_.Keep
+auxInstructionText_2_.Keep
+auxInstructionText_3_.Keep
+
+auxInstruction.ask   
+  
+
+btnCreateInstruction.ASK
+endblock
+
+
+BLOCK BdEditLauncherCases
+FIELDS
+auxCMA_StartDate  EN  "Start date"  : datetype, Empty
+auxCMA_EndDate  EN  "End date"  : datetype, Empty
+auxCMA_Supervisor  EN  "Supervisor"  : string[20], Empty
+auxCMA_CmdLineForEdit  EN  "Command line for edit"  : string[100], Empty
+auxCMA_PreLoadForEdit  EN  "Preload for edit"  : open, Empty
+auxCMA_AttemptsRoute  EN  "Attempts route"  : string[5], Empty
+auxCMA_DetailsTemplate  EN  "Details template"  : string[10], Empty
+auxCMA_CustomUse  EN  "Custom use"  : open, Empty
+auxCMA_StartDateState  : string[1], Empty
+auxCMA_EndDateState  : string[1], Empty
+auxCMA_SupervisorState  : string[1], Empty
+auxCMA_CmdLineForEditState  : string[1], Empty
+auxCMA_PreLoadForEditState  : string[1], Empty
+auxCMA_AttemptsRouteState  : string[1], Empty
+auxCMA_DetailsTemplateState  : string[1], Empty
+auxCMA_CustomUseState  : string[1], Empty
+auxCMA_StartDateSelect  : 
+		(yes), Empty
+auxCMA_EndDateSelect  : 
+		(yes), Empty
+auxCMA_SupervisorSelect  : 
+		(yes), Empty
+auxCMA_CmdLineForEditSelect  : 
+		(yes), Empty
+auxCMA_PreLoadForEditSelect  : 
+		(yes), Empty
+auxCMA_AttemptsRouteSelect  : 
+		(yes), Empty
+auxCMA_DetailsTemplateSelect  : 
+		(yes), Empty
+auxCMA_CustomUseSelect  : 
+		(yes), Empty
+EditParts  : set of 
+		(seStartDate (1),
+		seEndDate (2),
+		seSupervisor (3),
+		seCmdlineForEdit (4),
+		sePreloadForEdit (5),
+		seAttemptsRoute (6),
+		seDetailsTemplate (7),
+		seCustomUse (8))
+btnEditCases (Result)   : 
+		(Cancel_EditCases (1) Category  EN  "Update cases" ,
+		Cancel (2) Category  EN  "Back" ), Empty
+DialogTitle_EN : string[200]
+RULES
+DialogTitle_EN.KEEP
+IF DialogTitle_EN = EMPTY THEN 
+    DialogTitle_EN := 'Edit launcher cases'
+ENDIF
+
+EditParts.KEEP
+  EditParts.show
+  IF seStartDate IN EditParts THEN
+    auxCMA_StartDateSelect.ASK
+    auxCMA_StartDate.ASK
+    auxCMA_StartDateState.KEEP
+  ENDIF  
+  IF seEndDate IN EditParts THEN
+    auxCMA_EndDateSelect.ASK
+    auxCMA_EndDate.ASK
+    auxCMA_EndDateState.KEEP
+  ENDIF
+  IF seSupervisor IN EditParts THEN
+    auxCMA_SupervisorSelect.ASK
+    auxCMA_Supervisor.ASK
+    auxCMA_SupervisorState.KEEP
+  ENDIF
+  IF seCmdlineForEdit IN EditParts THEN
+    auxCMA_CmdLineForEditSelect.ASK
+    auxCMA_CmdLineForEdit.ASK
+    auxCMA_CmdLineForEditState.KEEP
+  ENDIF
+  IF sePreloadForEdit IN EditParts THEN
+    auxCMA_PreLoadForEditSelect.ASK
+    auxCMA_PreLoadForEdit.ASK
+    auxCMA_PreLoadForEditState.KEEP
+  ENDIF
+  IF seAttemptsRoute IN EditParts THEN
+    auxCMA_AttemptsRouteSelect.ASK
+    auxCMA_AttemptsRoute.ASK
+    auxCMA_AttemptsRouteState.KEEP
+  ENDIF
+  IF seDetailsTemplate in EditParts THEN
+    auxCMA_DetailsTemplateSelect.ASK 
+    auxCMA_DetailsTemplate.ASK
+    auxCMA_DetailsTemplateState.KEEP
+  ENDIF  
+  IF seCustomUse in EditParts THEN
+    auxCMA_CustomUseSelect.ASK 
+    auxCMA_CustomUse.ASK   
+    auxCMA_CustomUseState.KEEP   
+  ENDIF
+
+
+btnEditCases.ASK
+endblock
+
+
+BLOCK BSelectTransferUser
+FIELDS
+aSelUserBtn (Result)   : 
+		(select Category  EN  "Select" ,
+		cancel Category  EN  "Cancel" ), Empty
+DS_mSelUser  EN  ""  : string[20], Empty
+DialogTitle_EN : string[200]
+RULES
+DialogTitle_EN.KEEP
+IF DialogTitle_EN = EMPTY THEN 
+    DialogTitle_EN := 'Select user'
+ENDIF
+
+DS_mSelUser.ASK
+
+aSelUserBtn.ASK
+endblock
+
+
+BLOCK BdShowTheLogging
+FIELDS
+auxIsUserLog  : 
+		(yes,
+		no)
+auxDefaultNrOfDaysLoggingHistory  EN  "Nr of days logging history: "  : 1 .. 365
+CurrentVersion  : string
+VersionInfo  EN  "^{CurrentVersion}"  : string
+QuitLogging (Result)   : 
+		(Cancel_Synchronize (0) Category  EN  "<img src=Synchronize>" ,
+		OK (1) Category  EN  "<img src=BackButton2>" ), Empty
+DS_mLogging  EN  ""  : string[24], Empty
+DialogTitle_EN : string[200]
+RULES
+DialogTitle_EN.KEEP
+IF DialogTitle_EN = EMPTY THEN 
+    DialogTitle_EN := 'CMA logging'
+ENDIF
+CurrentVersion.Keep
+
+DS_mLogging.ASK
+auxIsUserLog.KEEP
+  IF auxIsUserLog=no THEN
+    VersionInfo.SHOW
+  ELSE
+    auxDefaultNrOfDaysLoggingHistory.ASK
+  ENDIF
+
+QuitLogging.ASK
+endblock
+
+
+BLOCK BShowGroupCases
+FIELDS
+auxParentChildView  : 
+		(yes), Empty
+auxFieldFilter  : open
+auxFieldFilterWidths  : open
+auxFieldFilterTitles  : open
+ShowInterviewBtn  : 
+		(yes), Empty
+currentUserID  EN  "User ID"  : string
+auxHasInterview  : 
+		(yes), Empty
+auxCustomDetailsTable  : open
+auxDetails  EN  "^{auxCustomDetailsTable}"  : string[1]
+btnGroupCases (Result)   : 
+		(Cancel_ShowSurveyData (1) Category  EN  "Show interview" ,
+		Cancel_ShowAttempts (2) Category  EN  "Show attempts" ,
+		Cancel (3) Category  EN  "Back" ), Empty
+DS_dgrpCase  EN  ""  : string[1], Empty
+DialogTitle_EN : string[200]
+RULES
+DialogTitle_EN.KEEP
+IF DialogTitle_EN = EMPTY THEN 
+    DialogTitle_EN := 'Group cases'
+ENDIF
+auxParentChildView.Keep
+auxFieldFilter.Keep
+auxFieldFilterWidths.Keep
+auxFieldFilterTitles.Keep
+ShowInterviewBtn.Keep
+currentUserID.Keep
+auxHasInterview.Keep
+auxCustomDetailsTable.Keep
+auxDetails.Show
+
+DS_dgrpCase.ASK
+
+btnGroupCases.ASK
+endblock
+
+
+BLOCK BShowConsistencyCheckResults
+FIELDS
+auxTotalInconsistentCases  : integer
+btnConsistencyCheck (Result)   : 
+		(Cancel_RepairData (1) Category  EN  "Repair data" ,
+		Cancel (2) Category  EN  "Back" ), Empty
+DS_dsourceConsistency  EN  ""  : string[36], Empty
+DialogTitle_EN : string[200]
+RULES
+DialogTitle_EN.KEEP
+IF DialogTitle_EN = EMPTY THEN 
+    DialogTitle_EN := 'Consistency check results'
+ENDIF
+auxTotalInconsistentCases.Keep
+
+DS_dsourceConsistency.ASK
+
+btnConsistencyCheck.ASK
+endblock
+
+
+BLOCK BProgressOverview
+FIELDS
+auxTotalProgressReportRecords  : integer
+btnProgressOverview (Result)   : 
+		(Cancel_ShowCases (1) Category  EN  "Show cases" ,
+		Cancel (2) Category  EN  "Back" ), Empty
+DS_dProgress  EN  ""  : string[20], Empty
+DialogTitle_EN : string[200]
+RULES
+DialogTitle_EN.KEEP
+IF DialogTitle_EN = EMPTY THEN 
+    DialogTitle_EN := 'Progress overview'
+ENDIF
+auxTotalProgressReportRecords.Keep
+
+DS_dProgress.ASK
+
+btnProgressOverview.ASK
+endblock
+
+
+BLOCK BShowLauncherCases
+FIELDS
+ShowInterviewBtn  : 
+		(yes), Empty
+aUserType  : 
+		(interviewer Category  EN  "Interviewer" ,
+		supervisor Category  EN  "Supervisor" ,
+		manager Category  EN  "Field manager" ,
+		administrator (9) Category  EN  "Administrator" )
+AcceptBtn  : 
+		(yes), Empty
+RestoreBtn  : 
+		(yes), Empty
+TransferBtn  : 
+		(yes), Empty
+ReopenBtn  : 
+		(yes), Empty
+ReleaseBtn  : 
+		(yes), Empty
+CloseBtn  : 
+		(yes), Empty
+AssignBtn  : 
+		(yes), Empty
+AssignSupervisorBtn  : 
+		(yes), Empty
+EditBtn  : 
+		(yes), Empty
+ExportCSVBtn  : 
+		(yes), Empty
+MultiSelect  : 
+		(yes), Empty
+auxSelCount  : integer
+auxCasesCount  : integer
+auxCaseIsSelected  : 
+		(yes), Empty
+auxHasInterview  : 
+		(yes), Empty
+auxCurrentStatus  : string
+auxCurrentGrpStatus  : string
+auxCurrentIsClosed  : 
+		(yes), Empty
+auxCurrentAttemptsCount  : string, Empty
+auxCurrentLocation  : string
+currentUserID  EN  "User ID"  : string
+aShowing  EN  "Cases to show: "  : 
+		(shCompleted (1) Category  EN  "Completed" ,
+		shFinalized (2) Category  EN  "Finalized" ,
+		shCompletedFinalized (3) Category  EN  "Completed / Finalized" ,
+		shReopened (4) Category  EN  "Reopened" ,
+		shAccepted (5) Category  EN  "Accepted" ,
+		shStarted (6) Category  EN  "Started / Interrupted" ,
+		shClosed (8) Category  EN  "Closed" ,
+		shAll (7) Category  EN  "All" ), Empty
+CurrentLanguage  : string
+SelectedSurvey  : string[36], Empty
+auxShowSummary  : 
+		(yes), Empty
+auxFinal  : 
+		(yes), Empty
+auxCurrentSurvey  : string
+auxStatus  : string
+auxGroupStatus  : string
+auxGroupSummary  : string
+auxContactData  : open
+auxLastAttempt  : string
+auxCaseNote  : string
+auxSpawnAllowed  : 
+		(no (0),
+		yes), Empty
+auxIsDonorCase  : 
+		(yes), Empty
+auxDetails  EN  "^{auxCustomDetailsTable}"  : string[1]
+auxCustomTemplate  : string
+auxCustomDetailsTable  : open
+auxStatisticsDetails  EN  "^{auxStatisticsDetailsTable}"  : string[1]
+auxStatisticsDetailsTable  : open
+auxCaseDetails  EN  "^{auxCaseDetailsTable}"  : string[1]
+auxCaseDetailsTable  : open
+auxGeoLocation  : string
+auxHasImage  : 
+		(yes), Empty
+auxGroupType  : 
+		(parent,
+		child), Empty
+auxParentChildView  : 
+		(yes), Empty
+auxFieldFilter  : open
+auxFieldFilterWidths  : open
+auxFieldFilterTitles  : open
+btnSelect  : 
+		(Select Category  EN  "<img src=Select>" DISABLED  EN  "<img src=SelectDisabled>" TOOLTIP  EN  "Select case" ,
+		SelectAll Category  EN  "<img src=SelectAll>" DISABLED  EN  "<img src=SelectAllDisabled>" TOOLTIP  EN  "Select all cases" ,
+		UnSelect Category  EN  "<img src=UnSelect>" DISABLED  EN  "<img src=UnSelectDisabled>" TOOLTIP  EN  "Unselect case" ,
+		UnSelectAll Category  EN  "<img src=UnSelectAll>" DISABLED  EN  "<img src=UnSelectAllDisabled>" TOOLTIP  EN  "Unselect all cases" ), Empty
+auxSortText_1_  : string
+auxSortText_2_  : string
+auxSortText_3_  : string
+auxSortText_4_  : string
+auxSortText_5_  : string
+auxSortText_6_  : string
+auxSortText_7_  : string
+auxSortText_8_  : string
+auxSortText_9_  : string
+auxSortText_10_  : string
+auxSortOn  EN  "Select display order: "  : 
+		(sec1 (1) Category  EN  "^<auxSortText_1_>" ,
+		sec2 (2) Category  EN  "^<auxSortText_2_>" ,
+		sec3 (3) Category  EN  "^<auxSortText_3_>" ,
+		sec4 (4) Category  EN  "^<auxSortText_4_>" ,
+		sec5 (5) Category  EN  "^<auxSortText_5_>" ,
+		sec6 (6) Category  EN  "^<auxSortText_6_>" ,
+		sec7 (7) Category  EN  "^<auxSortText_7_>" ,
+		sec8 (8) Category  EN  "^<auxSortText_8_>" ,
+		sec9 (9) Category  EN  "^<auxSortText_9_>" ,
+		sec10 (10) Category  EN  "^<auxSortText_10_>" ), Empty
+auxAllowSort  : 
+		(yes), Empty
+auxFilter  EN  "Filter:"  : string, Empty
+aoAccept  : 
+		(yes), Empty
+aoReopen  : 
+		(yes), Empty
+aoRestore  : 
+		(yes), Empty
+aoClose  : 
+		(yes), Empty
+aoTransfer  : 
+		(yes), Empty
+aoRelease  : 
+		(yes), Empty
+aoEdit  : 
+		(yes), Empty
+btnLauncherActions  : 
+		(EditCase Category  EN  "Change" TOOLTIP  EN  "Change selected cases" ,
+		SetAccepted Category  EN  "Accept" TOOLTIP  EN  "Accept the result of the case" ,
+		SetReopen Category  EN  "Reopen" TOOLTIP  EN  "Reopen the case for the interviewer" ,
+		CloseCase Category  EN  "Close" TOOLTIP  EN  "Close the case on the device" ,
+		TransferCase Category  EN  "Transfer" TOOLTIP  EN  "Transfer the case to another interviewer / retrieve" ,
+		RestoreCase Category  EN  "Restore" TOOLTIP  EN  "Make case available again on interview device" ,
+		ReleaseCase Category  EN  "Release" TOOLTIP  EN  "Release case from interview device" ), Empty
+auxExportSurveyPossible  : 
+		(yes), Empty
+btnLauncherCases (Result)   : 
+		(Cancel_AssignCase (1) Category  EN  "Assign" TOOLTIP  EN  "Assign case to an interviewer" ,
+		Cancel_AssignSupervisor (2) Category  EN  "Assign supervisor" TOOLTIP  EN  "Assign case to a supervisor" ,
+		Cancel_ShowGroup (3) Category  EN  "Show group" ,
+		Cancel_ShowSurveyData (4) Category  EN  "Show interview" ,
+		Cancel_ShowAttempts (5) Category  EN  "Show attempts" ,
+		Cancel_ExportData (6) Category  EN  "Export survey data" ,
+		Cancel_Refresh (7) Category  EN  "Refresh" ,
+		Cancel (8) Category  EN  "Back" ), Empty
+DS_dsourceCase  EN  ""  : string[1], Empty
+DialogTitle_EN : string[200]
+RULES
+auxSortText_1_.Keep
+auxSortText_2_.Keep
+auxSortText_3_.Keep
+auxSortText_4_.Keep
+auxSortText_5_.Keep
+auxSortText_6_.Keep
+auxSortText_7_.Keep
+auxSortText_8_.Keep
+auxSortText_9_.Keep
+auxSortText_10_.Keep
+
+DS_dsourceCase.ASK
+CurrentLanguage.KEEP
+  aUserType.KEEP
+  auxFinal.KEEP 
+  auxCurrentSurvey.KEEP 
+  auxStatus.KEEP 
+  auxGroupStatus.KEEP 
+  auxGroupSummary.KEEP
+  auxContactData.KEEP 
+  auxLastAttempt.KEEP 
+  auxCaseNote.KEEP 
+  auxSpawnAllowed.KEEP 
+  auxIsDonorCase.KEEP
+  auxCustomTemplate.KEEP 
+  auxCustomDetailsTable.KEEP
+  auxGeoLocation.KEEP 
+  auxHasImage.KEEP 
+  auxGroupType.KEEP 
+  auxParentChildView.KEEP 
+  auxFieldFilter.KEEP 
+  auxFieldFilterWidths.KEEP 
+  auxFieldFilterTitles.KEEP
+  auxSelCount.KEEP
+  auxCasesCount.KEEP
+  auxCaseIsSelected.KEEP
+  ShowInterviewBtn.KEEP
+  AcceptBtn.KEEP
+  AssignBtn.KEEP
+  AssignSupervisorBtn.KEEP
+  RestoreBtn.KEEP
+  ReopenBtn.KEEP
+  TransferBtn.KEEP
+  ReleaseBtn.KEEP
+  CloseBtn.KEEP
+  EditBtn.KEEP
+  ExportCSVBtn.KEEP
+  MultiSelect.KEEP
+  auxHasInterview.KEEP
+  auxCurrentStatus.KEEP
+  auxCurrentGrpStatus.KEEP
+  auxCurrentIsClosed.KEEP
+  auxCurrentLocation.KEEP
+  auxCurrentAttemptsCount.KEEP
+  currentUserID.KEEP
+  SelectedSurvey.KEEP
+  auxShowSummary.KEEP
+  auxExportSurveyPossible.KEEP
+  aShowing.ASK
+  IF (MultiSelect=yes AND aUserType<>Manager) OR POSITION('tSupervisor', auxFieldFilter) > 0  THEN
+    btnSelect.ASK
+  ENDIF
+  auxAllowSort.KEEP
+  IF auxAllowSort=yes THEN
+    auxSortOn.ASK  
+  ENDIF 
+  auxFilter.ASK 
+  auxDetails.SHOW
+  auxStatisticsDetailsTable.KEEP
+  auxStatisticsDetails.SHOW
+  auxCaseDetailsTable.KEEP
+  auxCaseDetails.SHOW
+  aoAccept.KEEP 
+  aoReopen.KEEP
+  aoRestore.KEEP
+  aoClose.KEEP
+  aoTransfer.KEEP
+  aoRelease.KEEP
+  IF currentUserID<>EMPTY AND aUserType<>Manager THEN
+    btnLauncherActions.ASK
+  ENDIF
+  
+
+btnLauncherCases.ASK
+endblock
+
+
+BLOCK BShowUsers
+FIELDS
+aUserType  : 
+		(interviewer Category  EN  "Interviewer" ,
+		supervisor Category  EN  "Supervisor" ,
+		manager Category  EN  "Field manager" ,
+		administrator (9) Category  EN  "Administrator" )
+aUserInfoCount  : integer
+currentUserID  EN  "User ID"  : string
+LanguageCount  : 0 .. 3
+LanguageImage_1_  : string
+LanguageImage_2_  : string
+LanguageImage_3_  : string
+LanguageEnum  : 
+		(flag1 Category  EN  "<img src=^<LanguageImage_1_>>" ,
+		flag2 Category  EN  "<img src=^<LanguageImage_2_>>" ,
+		flag3 Category  EN  "<img src=^<LanguageImage_3_>>" )
+CurrentLanguage  : string
+RestoreUserBtn  : 
+		(yes), Empty
+ExportDataBtn  : 
+		(yes), Empty
+ImportCasesBtn  : 
+		(yes), Empty
+CheckBtn  : 
+		(yes), Empty
+LoggingBtn  : 
+		(yes), Empty
+ProgressBtn  : 
+		(yes), Empty
+CustomScriptsBtn  : 
+		(yes), Empty
+MaintainUserInfoBtn  : 
+		(yes), Empty
+MaintainManagementInfoBtn  : 
+		(yes), Empty
+InstructionBtn  : 
+		(yes), Empty
+AllowAdminTasksForManager  : 
+		(yes), Empty
+srvNames_0_  : string
+srvNames_1_  : string
+srvNames_2_  : string
+srvNames_3_  : string
+srvNames_4_  : string
+srvNames_5_  : string
+srvNames_6_  : string
+srvNames_7_  : string
+srvNames_8_  : string
+srvNames_9_  : string
+srvNames_10_  : string
+srvNames_11_  : string
+srvNames_12_  : string
+srvNames_13_  : string
+srvNames_14_  : string
+srvNames_15_  : string
+srvNames_16_  : string
+srvNames_17_  : string
+srvNames_18_  : string
+srvNames_19_  : string
+srvNames_20_  : string
+auxWhatSurveyToShow  EN  "Surveys: "  : 
+		(srvAll (0) Category  EN  "^<srvNames_0_>" ,
+		srv1 Category  EN  "^<srvNames_1_>" ,
+		srv2 Category  EN  "^<srvNames_2_>" ,
+		srv3 Category  EN  "^<srvNames_3_>" ,
+		srv4 Category  EN  "^<srvNames_4_>" ,
+		srv5 Category  EN  "^<srvNames_5_>" ,
+		srv6 Category  EN  "^<srvNames_6_>" ,
+		srv7 Category  EN  "^<srvNames_7_>" ,
+		srv8 Category  EN  "^<srvNames_8_>" ,
+		srv9 Category  EN  "^<srvNames_9_>" ,
+		srv10 Category  EN  "^<srvNames_10_>" ,
+		srv11 Category  EN  "^<srvNames_11_>" ,
+		srv12 Category  EN  "^<srvNames_12_>" ,
+		srv13 Category  EN  "^<srvNames_13_>" ,
+		srv14 Category  EN  "^<srvNames_14_>" ,
+		srv15 Category  EN  "^<srvNames_15_>" ,
+		srv16 Category  EN  "^<srvNames_16_>" ,
+		srv17 Category  EN  "^<srvNames_17_>" ,
+		srv18 Category  EN  "^<srvNames_18_>" ,
+		srv19 Category  EN  "^<srvNames_19_>" ,
+		srv20 Category  EN  "^<srvNames_20_>" )
+SelectedSurvey  : string[36], Empty
+aIsAlsoManager  : 
+		(yes), Empty
+aUserBtnRow1  : 
+		(select Category  EN  "Show cases" ,
+		ExportData Category  EN  "Export cases" ,
+		ImportCases Category  EN  "Import cases" ,
+		RetoreCases Category  EN  "Restore user" ,
+		Instruction Category  EN  "Instruction" )
+aIsALoneManager  : 
+		(yes), Empty
+aIsAlsoAdmin  : 
+		(yes), Empty
+auxUserFieldFilter  : string
+aUserBtnRow2 (Result)   : 
+		(Cancel_ImportUI (1) Category  EN  "Import user info" ,
+		Cancel_ImportMI (2) Category  EN  "Import manage info" ,
+		Cancel_Manage (3) Category  EN  "Manage" ,
+		Cancel_Admin (4) Category  EN  "Admin" ,
+		Cancel_CheckConsistency (5) Category  EN  "Check" ,
+		Cancel_Progress (6) Category  EN  "Progress" ,
+		Cancel_MaintainUI (7) Category  EN  "Maintain user info" ,
+		Cancel_MaintainMI (8) Category  EN  "Maintain manage info" ,
+		Cancel_CustomScripts (9) Category  EN  "Custom Scripts" ,
+		Cancel_Logging (10) Category  EN  "Logging" ,
+		Switch (11) Category  EN  "Switch Role" ,
+		cancel (12) Category  EN  "Exit" ), Empty
+DS_dsUsers  EN  ""  : string[20], Empty
+DialogTitle_EN : string[200]
+RULES
+LanguageImage_1_.Keep
+LanguageImage_2_.Keep
+LanguageImage_3_.Keep
+srvNames_0_.Keep
+srvNames_1_.Keep
+srvNames_2_.Keep
+srvNames_3_.Keep
+srvNames_4_.Keep
+srvNames_5_.Keep
+srvNames_6_.Keep
+srvNames_7_.Keep
+srvNames_8_.Keep
+srvNames_9_.Keep
+srvNames_10_.Keep
+srvNames_11_.Keep
+srvNames_12_.Keep
+srvNames_13_.Keep
+srvNames_14_.Keep
+srvNames_15_.Keep
+srvNames_16_.Keep
+srvNames_17_.Keep
+srvNames_18_.Keep
+srvNames_19_.Keep
+srvNames_20_.Keep
+
+DS_dsUsers.ASK
+aUserType.KEEP
+  aUserInfoCount.KEEP
+  aIsALoneManager.KEEP
+  currentUserID.KEEP
+  LanguageCount.KEEP
+  CurrentLanguage.KEEP
+  RestoreUserBtn.KEEP
+  ExportDataBtn.KEEP
+  ImportCasesBtn.KEEP
+  CheckBtn.KEEP
+  LoggingBtn.KEEP
+  ProgressBtn.KEEP
+  CustomScriptsBtn.KEEP
+  MaintainUserInfoBtn.KEEP
+  MaintainManagementInfoBtn.KEEP    
+  InstructionBtn.KEEP
+  AllowAdminTasksForManager.KEEP
+  SelectedSurvey.KEEP
+  auxUserFieldFilter.KEEP
+  aIsAlsoAdmin.KEEP
+  IF aUserType<>administrator THEN
+    auxWhatSurveyToShow.ASK
+  ENDIF  
+    aIsAlsoManager.KEEP
+    IF LanguageCount>1 THEN
+      LanguageEnum
+    ENDIF 
+  aUserBtnRow1.ASK
+
+
+aUserBtnRow2.ASK
+endblock
+
+
+BLOCK BdMaintainUserInfo
+FIELDS
+auxUserFieldFilter  : string
+auxUIAction  : 
+		(AddMUI,
+		EditMUI,
+		DeleteMUI), Empty
+aBtnUserInfoMaintenanceRow (Result)   : 
+		(Cancel_AddUI (1) Category  EN  "Add user info" ,
+		Cancel_EditUI (2) Category  EN  "Edit user info" ,
+		Cancel_DeleteUI (3) Category  EN  "Delete user info" ,
+		Cancel (4) Category  EN  "Back" ), Empty
+DS_dsUsers  EN  ""  : string[20], Empty
+DialogTitle_EN : string[200]
+RULES
+
+DS_dsUsers.ASK
+auxUserFieldFilter.KEEP
+  auxUIAction.KEEP
+
+
+aBtnUserInfoMaintenanceRow.ASK
+endblock
+
+
+BLOCK BdMaintainManagementInfo
+FIELDS
+auxMIAction  : 
+		(AddMMI,
+		EditMMI,
+		DeleteMMI), Empty
+aBtnManageInfoMaintenanceRow (Result)   : 
+		(Cancel_AddMI (1) Category  EN  "Add manage info" ,
+		Cancel_EditMI (2) Category  EN  "Edit manage info" ,
+		Cancel_DeleteMI (3) Category  EN  "Delete manage info" ,
+		Cancel (4) Category  EN  "Back" ), Empty
+DS_dsManagementInfo  EN  ""  : string[20], Empty
+DialogTitle_EN : string[200]
+RULES
+
+DS_dsManagementInfo.ASK
+auxMIAction.KEEP
+
+
+aBtnManageInfoMaintenanceRow.ASK
+endblock
+
+
+BLOCK BdMaintainManageInfoAction
+FIELDS
+srvNames_0_  : string
+srvNames_1_  : string
+srvNames_2_  : string
+srvNames_3_  : string
+srvNames_4_  : string
+srvNames_5_  : string
+srvNames_6_  : string
+srvNames_7_  : string
+srvNames_8_  : string
+srvNames_9_  : string
+srvNames_10_  : string
+srvNames_11_  : string
+srvNames_12_  : string
+srvNames_13_  : string
+srvNames_14_  : string
+srvNames_15_  : string
+srvNames_16_  : string
+srvNames_17_  : string
+srvNames_18_  : string
+srvNames_19_  : string
+srvNames_20_  : string
+auxWhatSurveyToShow  EN  "Surveys: "  : 
+		(srvAll (0) Category  EN  "^<srvNames_0_>" ,
+		srv1 Category  EN  "^<srvNames_1_>" ,
+		srv2 Category  EN  "^<srvNames_2_>" ,
+		srv3 Category  EN  "^<srvNames_3_>" ,
+		srv4 Category  EN  "^<srvNames_4_>" ,
+		srv5 Category  EN  "^<srvNames_5_>" ,
+		srv6 Category  EN  "^<srvNames_6_>" ,
+		srv7 Category  EN  "^<srvNames_7_>" ,
+		srv8 Category  EN  "^<srvNames_8_>" ,
+		srv9 Category  EN  "^<srvNames_9_>" ,
+		srv10 Category  EN  "^<srvNames_10_>" ,
+		srv11 Category  EN  "^<srvNames_11_>" ,
+		srv12 Category  EN  "^<srvNames_12_>" ,
+		srv13 Category  EN  "^<srvNames_13_>" ,
+		srv14 Category  EN  "^<srvNames_14_>" ,
+		srv15 Category  EN  "^<srvNames_15_>" ,
+		srv16 Category  EN  "^<srvNames_16_>" ,
+		srv17 Category  EN  "^<srvNames_17_>" ,
+		srv18 Category  EN  "^<srvNames_18_>" ,
+		srv19 Category  EN  "^<srvNames_19_>" ,
+		srv20 Category  EN  "^<srvNames_20_>" )
+usrNames_0_  : string[20]
+usrNames_1_  : string[20]
+usrNames_2_  : string[20]
+usrNames_3_  : string[20]
+usrNames_4_  : string[20]
+usrNames_5_  : string[20]
+usrNames_6_  : string[20]
+usrNames_7_  : string[20]
+usrNames_8_  : string[20]
+usrNames_9_  : string[20]
+usrNames_10_  : string[20]
+usrNames_11_  : string[20]
+usrNames_12_  : string[20]
+usrNames_13_  : string[20]
+usrNames_14_  : string[20]
+usrNames_15_  : string[20]
+usrNames_16_  : string[20]
+usrNames_17_  : string[20]
+usrNames_18_  : string[20]
+usrNames_19_  : string[20]
+usrNames_20_  : string[20]
+auxWhatUserToShow  EN  "Users: "  : 
+		(usrAll (0) Category  EN  "^<usrNames_0_>" ,
+		usr1 Category  EN  "^<usrNames_1_>" ,
+		usr2 Category  EN  "^<usrNames_2_>" ,
+		usr3 Category  EN  "^<usrNames_3_>" ,
+		usr4 Category  EN  "^<usrNames_4_>" ,
+		usr5 Category  EN  "^<usrNames_5_>" ,
+		usr6 Category  EN  "^<usrNames_6_>" ,
+		usr7 Category  EN  "^<usrNames_7_>" ,
+		usr8 Category  EN  "^<usrNames_8_>" ,
+		usr9 Category  EN  "^<usrNames_9_>" ,
+		usr10 Category  EN  "^<usrNames_10_>" ,
+		usr11 Category  EN  "^<usrNames_11_>" ,
+		usr12 Category  EN  "^<usrNames_12_>" ,
+		usr13 Category  EN  "^<usrNames_13_>" ,
+		usr14 Category  EN  "^<usrNames_14_>" ,
+		usr15 Category  EN  "^<usrNames_15_>" ,
+		usr16 Category  EN  "^<usrNames_16_>" ,
+		usr17 Category  EN  "^<usrNames_17_>" ,
+		usr18 Category  EN  "^<usrNames_18_>" ,
+		usr19 Category  EN  "^<usrNames_19_>" ,
+		usr20 Category  EN  "^<usrNames_20_>" )
+auxMIAction  : 
+		(AddMMI,
+		EditMMI,
+		DeleteMMI), Empty
+auxMIUserID  EN  "User id"  : string[20]
+auxMIInstrumentID  EN  "GUID of survey"  : string[36]
+auxMISurveyName  EN  "Name of survey"  : string, Empty
+btnMaintainManageInfoActions (Result)   : 
+		(Cancel (1) Category  EN  "Back" ,
+		Cancel_OK (2) Category  EN  "OK" ), Empty
+DialogTitle_EN : string[200]
+RULES
+srvNames_0_.Keep
+srvNames_1_.Keep
+srvNames_2_.Keep
+srvNames_3_.Keep
+srvNames_4_.Keep
+srvNames_5_.Keep
+srvNames_6_.Keep
+srvNames_7_.Keep
+srvNames_8_.Keep
+srvNames_9_.Keep
+srvNames_10_.Keep
+srvNames_11_.Keep
+srvNames_12_.Keep
+srvNames_13_.Keep
+srvNames_14_.Keep
+srvNames_15_.Keep
+srvNames_16_.Keep
+srvNames_17_.Keep
+srvNames_18_.Keep
+srvNames_19_.Keep
+srvNames_20_.Keep
+usrNames_0_.Keep
+usrNames_1_.Keep
+usrNames_2_.Keep
+usrNames_3_.Keep
+usrNames_4_.Keep
+usrNames_5_.Keep
+usrNames_6_.Keep
+usrNames_7_.Keep
+usrNames_8_.Keep
+usrNames_9_.Keep
+usrNames_10_.Keep
+usrNames_11_.Keep
+usrNames_12_.Keep
+usrNames_13_.Keep
+usrNames_14_.Keep
+usrNames_15_.Keep
+usrNames_16_.Keep
+usrNames_17_.Keep
+usrNames_18_.Keep
+usrNames_19_.Keep
+usrNames_20_.Keep
+
+auxWhatSurveyToShow.ask
+   auxWhatUserToShow.ask
+   auxMIAction.keep
+   auxMIUserID.keep
+   auxMIInstrumentID.keep
+   auxMISurveyName.ask
+
+
+btnMaintainManageInfoActions.ASK
+endblock
+
+BLOCK BDisplay
+  FIELDS
+     Message : STRING
+     T : STRING
+     Result "^{Message}" : (Ok, Cancel "^{T}")
+  RULES
+     Message.KEEP
+     T.KEEP
+     Result
+ENDBLOCK
+
+BLOCK BConfirm
+  FIELDS
+     Question : STRING
+     Result "^{Question}" : (Yes, No)
+  RULES
+     Question.KEEP
+     Result
+ENDBLOCK
+
+BLOCK BProcess
+  FIELDS
+     Display  "^{Display} ": STRING, EMPTY
+ENDBLOCK
+
+fields
+dAttempts /  EN "^dAttempts.DialogTitle_EN"  : BdAttempts
+dCustomScripts /  EN "^dCustomScripts.DialogTitle_EN"  : BdCustomScripts
+dScriptActions /  EN "^dScriptActions.DialogTitle_EN"  : BdScriptActions
+dMaintainUserInfoAction /  EN "^dMaintainUserInfoAction.DialogTitle_EN"  : BdMaintainUserInfoAction
+dCreateInstruction /  EN "^dCreateInstruction.DialogTitle_EN"  : BdCreateInstruction
+dEditLauncherCases /  EN "^dEditLauncherCases.DialogTitle_EN"  : BdEditLauncherCases
+SelectTransferUser /  EN "^SelectTransferUser.DialogTitle_EN"  : BSelectTransferUser
+dShowTheLogging /  EN "^dShowTheLogging.DialogTitle_EN"  : BdShowTheLogging
+ShowGroupCases /  EN "^ShowGroupCases.DialogTitle_EN"  : BShowGroupCases
+ShowConsistencyCheckResults /  EN "^ShowConsistencyCheckResults.DialogTitle_EN"  : BShowConsistencyCheckResults
+ProgressOverview /  EN "^ProgressOverview.DialogTitle_EN"  : BProgressOverview
+ShowLauncherCases /  EN "^ShowLauncherCases.DialogTitle_EN"  : BShowLauncherCases
+ShowUsers /  EN "^ShowUsers.DialogTitle_EN"  : BShowUsers
+dMaintainUserInfo /  EN "^dMaintainUserInfo.DialogTitle_EN"  : BdMaintainUserInfo
+dMaintainManagementInfo /  EN "^dMaintainManagementInfo.DialogTitle_EN"  : BdMaintainManagementInfo
+dMaintainManageInfoAction /  EN "^dMaintainManageInfoAction.DialogTitle_EN"  : BdMaintainManageInfoAction
+Display : BDisplay
+Confirm : BConfirm
+Process : BProcess
+endmodel
+

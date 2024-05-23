@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project Name="MakeAKOAdminSettings" Guid="b99675e1-f21e-41c1-9c98-d8840b978ccb" ProjectType="ManipulaProject">
+  <MainFile RelativePath="true">MakeAKOAdminSettings.manx</MainFile>
+  <FileItems>
+    <File FileType="ManipulaFileType" RelativePath="true">MakeAKOAdminSettings.manx</File>
+  </FileItems>
+  <Properties>
+    <AppSupport />
+    <IsAppMainUserInterface />
+    <ResourceDB />
+    <SurveyRoot />
+    <ConditionalDefines />
+    <DatamodelSearchPath />
+    <ExternalSearchPath />
+    <IncludeSearchPath />
+    <LibrarySearchPath />
+  </Properties>
+</Project>

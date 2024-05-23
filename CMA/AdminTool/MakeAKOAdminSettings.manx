@@ -1,0 +1,46 @@
+﻿SETTINGS AUTOREAD=NO
+
+USES CMA_AdminSettingsMeta 
+  
+OUTPUTFILE Outp:CMA_AdminSettingsMeta('CMA_AdminSettings.xml',XML)
+SETTINGS
+  CREATEBDIX=NO
+
+MANIPULATE 
+  //show all available buttons in the demo... 
+  sShowInterviewBtn:= yes
+  sAcceptBtn:= yes
+  sReopenBtn:= yes
+  sTransferBtn:= yes
+  sRestoreUserBtn:= yes
+  sReleaseBtn:= yes
+  sRestoreBtn:= yes
+  sCloseBtn:= yes
+  sExportCSVBtn:= yes
+  sExportDataBtn:= yes
+  sCustomReportsBtn:= yes
+  sMaintainUserInfoBtn:=yes
+  sMaintainManagementInfoBtn:=yes
+  sMultiSelect:= yes
+  sAssignBtn:= yes
+  sShowSummary:= yes
+  sShowUDinSummary:= yes
+  sImportCasesBtn:= yes
+  sCheckBtn:= yes
+  sLoggingBtn:= yes
+  sProgressBtn:= yes
+  sInstructionBtn:= yes
+  sAllowAdminTasksForManager:= yes
+  sAssignSupervisorBtn:= yes
+  sEditBtn:= yes
+  sAddStartDateToFieldFilter:= yes
+  sAddEndDateToFieldFilter:= yes
+  sEditParts:= [seStartDate,seEndDate,seSupervisor,seCmdlineForEdit,sePreloadForEdit,seAttemptsRoute,seDetailsTemplate,seCustomUse] //all fields...   
+
+  
+  sExcelExePath:= 'C:\Program Files\Microsoft Office\root\Office16\EXCEL.EXE'
+  //sExcelExePath:= 'c:\program files (x86)\Microsoft Office\Office16\EXCEL.EXE'
+  
+  Outp.WRITE
+
+  
