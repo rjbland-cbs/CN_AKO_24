@@ -8,37 +8,86 @@ SETTINGS
 
 MANIPULATE 
   //show all available buttons in the demo... 
-  sShowInterviewBtn:= yes
-  sAcceptBtn:= yes
-  sReopenBtn:= yes
-  sTransferBtn:= yes
+  sLanguageCount := 2
+  sLanguages[1] := 1
+  sLanguages[2] := 2
+  sExportDataBtn:= yes
   sRestoreUserBtn:= yes
-  sReleaseBtn:= yes
+  sShowInterviewBtn:= yes
+  sAssignBtn:= yes
+  sAcceptBtn:= yes
+  sTransferBtn:= yes
   sRestoreBtn:= yes
+  sReopenBtn:= yes
+  sReleaseBtn:= yes
   sCloseBtn:= yes
   sExportCSVBtn:= yes
-  sExportDataBtn:= yes
-  sCustomReportsBtn:= yes
-  sMaintainUserInfoBtn:=yes
-  sMaintainManagementInfoBtn:=yes
-  sMultiSelect:= yes
-  sAssignBtn:= yes
-  sShowSummary:= yes
-  sShowUDinSummary:= yes
   sImportCasesBtn:= yes
   sCheckBtn:= yes
   sLoggingBtn:= yes
   sProgressBtn:= yes
-  sInstructionBtn:= yes
   sAllowAdminTasksForManager:= yes
-  sAssignSupervisorBtn:= yes
-  sEditBtn:= yes
-  sAddStartDateToFieldFilter:= yes
-  sAddEndDateToFieldFilter:= yes
-  sEditParts:= [seStartDate,seEndDate,seSupervisor,seCmdlineForEdit,sePreloadForEdit,seAttemptsRoute,seDetailsTemplate,seCustomUse] //all fields...   
+  sMultiSelect:= yes
+  sShowSummary:= yes
+  sShowUDinSummary:= yes
+  
+  sFieldFilterAll := 'tSurveyName,tIdentifier,tCustomCol1,tCustomCol2,tCustomCol3,tLocation,tInPossession,tStatus,tLastResult'
+  sFieldFilterTopic := 'tCustomCol1,tCustomCol2,tCustomCol3,tStatus,tLastResult,tAttemptsCount,tLastAttempt'
+  sFieldWidths := 'tSelect=5,tIdentifier=20,tStatus=20'
+  
+  sCustomColCount := 3
+  
+  sCustomCol[1].FieldName := 'PII.Town'
+  sCustomCol[1].Title := 'EN=Town,NL=Plaats'
+  sCustomCol[1].Width := 30
+  sCustomCol[1].Origin := oContactData
+  
+  sCustomCol[2].FieldName := 'PII.Address'
+  sCustomCol[2].Title := 'EN=Address,NL=Adres'
+  sCustomCol[2].Width := 40
+  sCustomCol[2].Origin := oContactData
+  
+  sCustomCol[3].FieldName := 'PII.Name'
+  sCustomCol[3].Title := 'EN=Name,NL=Naam'
+  sCustomCol[3].Width := 25
+  sCustomCol[3].Origin := oContactData
+  
+  sDefSortCount := 4
+  
+  sDefSort[1].Title := 'EN=Identifier,NL=Sleute'
+  sDefSort[1].FieldCount := 1
+  sDefSort[1].FieldName[1] := 'tIdentifier'
+  
+  sDefSort[2].Title := 'EN=Town&Address,NL=Woonplaats&Adres'
+  sDefSort[2].FieldCount := 2
+  sDefSort[2].FieldName[1] := 'tCustomCol1'
+  sDefSort[2].FieldName[2] := 'tCustomCol2'
+  
+  sDefSort[3].Title := 'EN=Name,NL=Naam'
+  sDefSort[3].FieldCount := 1
+  sDefSort[3].FieldName[1] := 'tCustomCol3'
+  
+  sDefSort[4].Title := 'Status'
+  sDefSort[4].FieldCount := 2
+  sDefSort[4].FieldName[1] := 'tStatus'
+  sDefSort[4].FieldName[2] := 'tIdentifier'
+  
+  sSearchCount := 1
+  sSearchName[1] := 'CMA_ContactData'
+  
+  
+  sCustomReportsBtn:= yes
+  sMaintainUserInfoBtn:=yes
+  sMaintainManagementInfoBtn:=yes
+  sInstructionBtn:= yes
+//  sAssignSupervisorBtn:= yes
+//  sEditBtn:= yes
+//  sAddStartDateToFieldFilter:= yes
+//  sAddEndDateToFieldFilter:= yes
+//  sEditParts:= [seStartDate,seEndDate,seSupervisor,seCmdlineForEdit,sePreloadForEdit,seAttemptsRoute,seDetailsTemplate,seCustomUse] //all fields...   
 
   
-  sExcelExePath:= 'C:\Program Files\Microsoft Office\root\Office16\EXCEL.EXE'
+  sExcelExePath:= 'C:\Program Files (x86)\Microsoft Office\Office16\EXCEL.EXE'
   //sExcelExePath:= 'c:\program files (x86)\Microsoft Office\Office16\EXCEL.EXE'
   
   Outp.WRITE

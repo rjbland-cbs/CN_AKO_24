@@ -4,6 +4,7 @@
   <FileItems>
     <File FileType="ManipulaFileType" RelativePath="true">CMA_AdminTool.manx</File>
     <File FileType="PackageSpecificationFileType" RelativePath="true">CMA_AdminTool.bcps</File>
+    <File FileType="TranslationsFileType" RelativePath="true">Bitt\CMA_AdminTool _EN_NL.bitt</File>
   </FileItems>
   <Properties>
     <AppSupport>On</AppSupport>

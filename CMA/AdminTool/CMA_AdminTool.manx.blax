@@ -2,7 +2,8 @@ datamodel CMA_AdminTool ""
  fieldproperties onclick:string visibility:(hidden (0),visible (1)) tag:string 
 
 languages = 
-	EN "English"
+	EN "English",
+	NL "Nederlands"
 roles =  TOOLTIP, DISABLED
 
 
@@ -249,13 +250,18 @@ auxAttemptsDetailsTable  : open
 auxAttemptsDetails  EN  "^{auxAttemptsDetailsTable}"  : string[1]
 auxCustomDetailsTable  : open
 btnAttempts (Result)   : 
-		(Quit Category  EN  "Back" ), Empty
+		(Quit Category  EN  "Back"  NL  "Terug" ), Empty
 DS_mAttempts  EN  ""  : string[36], Empty
 DialogTitle_EN : string[200]
+DialogTitle_NL : string[200]
 RULES
 DialogTitle_EN.KEEP
 IF DialogTitle_EN = EMPTY THEN 
     DialogTitle_EN := 'Attempts'
+ENDIF
+DialogTitle_NL.KEEP
+IF DialogTitle_NL = EMPTY THEN 
+    DialogTitle_NL := 'Contactpogingen'
 ENDIF
 auxAttemptsDetailsTable.Keep
 
@@ -330,17 +336,22 @@ auxWhatSurveyToShow  EN  "Surveys: "  :
 		srv19 Category  EN  "^<srvNames_19_>" ,
 		srv20 Category  EN  "^<srvNames_20_>" )
 btnCustomScripts (Result)   : 
-		(Cancel_Add (1) Category  EN  "Add" TOOLTIP  EN  "Add a script" ,
-		Cancel_Edit (2) Category  EN  "Edit" TOOLTIP  EN  "Edit the selected script" ,
-		Cancel_Delete (3) Category  EN  "Delete" TOOLTIP  EN  "Delete the selected script" ,
-		Cancel_Start (4) Category  EN  "Start" TOOLTIP  EN  "Start the selected script" ,
-		Cancel (5) Category  EN  "Back" ), Empty
+		(Cancel_Add (1) Category  EN  "Add"  NL  "Toevoegen" TOOLTIP  EN  "Add a script"  NL  "Script toevoegen" ,
+		Cancel_Edit (2) Category  EN  "Edit"  NL  "Editen" TOOLTIP  EN  "Edit the selected script"  NL  "Pas het geselecteerde script aan" ,
+		Cancel_Delete (3) Category  EN  "Delete"  NL  "Verwijderen" TOOLTIP  EN  "Delete the selected script"  NL  "Verwijder het geselecteerde script" ,
+		Cancel_Start (4) Category  EN  "Start"  NL  "Starten" TOOLTIP  EN  "Start the selected script"  NL  "Start het geselecteerde script" ,
+		Cancel (5) Category  EN  "Back"  NL  "Terug" ), Empty
 DS_mCustomScripts  EN  ""  : string[36], Empty
 DialogTitle_EN : string[200]
+DialogTitle_NL : string[200]
 RULES
 DialogTitle_EN.KEEP
 IF DialogTitle_EN = EMPTY THEN 
     DialogTitle_EN := 'Custom Scripts'
+ENDIF
+DialogTitle_NL.KEEP
+IF DialogTitle_NL = EMPTY THEN 
+    DialogTitle_NL := ''
 ENDIF
 srvNames_0_.Keep
 srvNames_1_.Keep
@@ -376,9 +387,9 @@ endblock
 BLOCK BdScriptActions
 FIELDS
 auxScriptID  : string[36], Empty
-auxScriptName  EN  "Script name"  : string, Empty
-auxScriptSetup  EN  "Script file"  : open, Empty
-auxScriptParameters  EN  "Parameters"  : open, Empty
+auxScriptName  EN  "Script name"  NL  "Script naam"  : string, Empty
+auxScriptSetup  EN  "Script setup"  NL  "Script setup"  : open, Empty
+auxScriptParameters  EN  "Parameters"  NL  "Parameters"  : open, Empty
 auxScriptActionResult  : integer, Empty
 auxScriptAction  : 
 		(StartScript,
@@ -386,13 +397,18 @@ auxScriptAction  :
 		AddScript,
 		DeleteScript), Empty
 btnCustomScriptsActions (Result)   : 
-		(Cancel (1) Category  EN  "Back" ,
-		Cancel_OK (2) Category  EN  "OK" ), Empty
+		(Cancel (1) Category  EN  "Cancel"  NL  "Terug" ,
+		Cancel_OK (2) Category  EN  "OK"  NL  "OK" ), Empty
 DialogTitle_EN : string[200]
+DialogTitle_NL : string[200]
 RULES
 DialogTitle_EN.KEEP
 IF DialogTitle_EN = EMPTY THEN 
     DialogTitle_EN := 'Script Action'
+ENDIF
+DialogTitle_NL.KEEP
+IF DialogTitle_NL = EMPTY THEN 
+    DialogTitle_NL := ''
 ENDIF
 
 auxScriptID.keep
@@ -424,6 +440,7 @@ btnMaintainUserInfoActions (Result)   :
 		(Cancel (1) Category  EN  "Back" ,
 		Cancel_OK (2) Category  EN  "OK" ), Empty
 DialogTitle_EN : string[200]
+DialogTitle_NL : string[200]
 RULES
 
 auxUIAction.keep
@@ -450,13 +467,18 @@ auxInstruction  :
 		ReleaseOrphans Category  EN  "^<auxInstructionText_3_>" ), Empty
 SelectedSurvey  : string[36], Empty
 btnCreateInstruction (Result)   : 
-		(CreateInstruction Category  EN  "Create instruction" ,
-		Cancel Category  EN  "Back" ), Empty
+		(CreateInstruction Category  EN  "Create instruction"  NL  "Maak instructie" ,
+		Cancel Category  EN  "Back"  NL  "Terug" ), Empty
 DialogTitle_EN : string[200]
+DialogTitle_NL : string[200]
 RULES
 DialogTitle_EN.KEEP
 IF DialogTitle_EN = EMPTY THEN 
     DialogTitle_EN := 'Create Instruction'
+ENDIF
+DialogTitle_NL.KEEP
+IF DialogTitle_NL = EMPTY THEN 
+    DialogTitle_NL := ''
 ENDIF
 auxInstructionText_1_.Keep
 auxInstructionText_2_.Keep
@@ -471,13 +493,13 @@ endblock
 
 BLOCK BdEditLauncherCases
 FIELDS
-auxCMA_StartDate  EN  "Start date"  : datetype, Empty
-auxCMA_EndDate  EN  "End date"  : datetype, Empty
-auxCMA_Supervisor  EN  "Supervisor"  : string[20], Empty
-auxCMA_CmdLineForEdit  EN  "Command line for edit"  : string[100], Empty
-auxCMA_PreLoadForEdit  EN  "Preload for edit"  : open, Empty
-auxCMA_AttemptsRoute  EN  "Attempts route"  : string[5], Empty
-auxCMA_DetailsTemplate  EN  "Details template"  : string[10], Empty
+auxCMA_StartDate  EN  "Start date"  NL  "Start datum"  : datetype, Empty
+auxCMA_EndDate  EN  "End date"  NL  "Eind datum"  : datetype, Empty
+auxCMA_Supervisor  EN  "Supervisor"  NL  "Supervisor "  : string[20], Empty
+auxCMA_CmdLineForEdit  EN  "Command line for edit"  NL  "Command line for edit"  : string[100], Empty
+auxCMA_PreLoadForEdit  EN  "Preload for edit"  NL  "Preload for edit"  : open, Empty
+auxCMA_AttemptsRoute  EN  "Attempts route"  NL  "Attempts route"  : string[5], Empty
+auxCMA_DetailsTemplate  EN  "Details template"  NL  "Details sjabloon"  : string[10], Empty
 auxCMA_CustomUse  EN  "Custom use"  : open, Empty
 auxCMA_StartDateState  : string[1], Empty
 auxCMA_EndDateState  : string[1], Empty
@@ -513,13 +535,18 @@ EditParts  : set of
 		seDetailsTemplate (7),
 		seCustomUse (8))
 btnEditCases (Result)   : 
-		(Cancel_EditCases (1) Category  EN  "Update cases" ,
-		Cancel (2) Category  EN  "Back" ), Empty
+		(Cancel_EditCases (1) Category  EN  "Update cases"  NL  "Wijzigen opdrachten" ,
+		Cancel (2) Category  EN  "Back"  NL  "Terug" ), Empty
 DialogTitle_EN : string[200]
+DialogTitle_NL : string[200]
 RULES
 DialogTitle_EN.KEEP
 IF DialogTitle_EN = EMPTY THEN 
     DialogTitle_EN := 'Edit launcher cases'
+ENDIF
+DialogTitle_NL.KEEP
+IF DialogTitle_NL = EMPTY THEN 
+    DialogTitle_NL := ''
 ENDIF
 
 EditParts.KEEP
@@ -573,14 +600,19 @@ endblock
 BLOCK BSelectTransferUser
 FIELDS
 aSelUserBtn (Result)   : 
-		(select Category  EN  "Select" ,
-		cancel Category  EN  "Cancel" ), Empty
+		(select Category  EN  "Select"  NL  "Selecteer" ,
+		cancel Category  EN  "Cancel"  NL  "Afbreken" ), Empty
 DS_mSelUser  EN  ""  : string[20], Empty
 DialogTitle_EN : string[200]
+DialogTitle_NL : string[200]
 RULES
 DialogTitle_EN.KEEP
 IF DialogTitle_EN = EMPTY THEN 
     DialogTitle_EN := 'Select user'
+ENDIF
+DialogTitle_NL.KEEP
+IF DialogTitle_NL = EMPTY THEN 
+    DialogTitle_NL := 'Selecteer gebruiker'
 ENDIF
 
 DS_mSelUser.ASK
@@ -594,7 +626,7 @@ FIELDS
 auxIsUserLog  : 
 		(yes,
 		no)
-auxDefaultNrOfDaysLoggingHistory  EN  "Nr of days logging history: "  : 1 .. 365
+auxDefaultNrOfDaysLoggingHistory  EN  "Nr of days logging history: "  NL  "Aantal dagen logging geschiedenis: "  : 1 .. 365
 CurrentVersion  : string
 VersionInfo  EN  "^{CurrentVersion}"  : string
 QuitLogging (Result)   : 
@@ -602,10 +634,15 @@ QuitLogging (Result)   :
 		OK (1) Category  EN  "<img src=BackButton2>" ), Empty
 DS_mLogging  EN  ""  : string[24], Empty
 DialogTitle_EN : string[200]
+DialogTitle_NL : string[200]
 RULES
 DialogTitle_EN.KEEP
 IF DialogTitle_EN = EMPTY THEN 
     DialogTitle_EN := 'CMA logging'
+ENDIF
+DialogTitle_NL.KEEP
+IF DialogTitle_NL = EMPTY THEN 
+    DialogTitle_NL := 'CMA logging'
 ENDIF
 CurrentVersion.Keep
 
@@ -630,21 +667,26 @@ auxFieldFilterWidths  : open
 auxFieldFilterTitles  : open
 ShowInterviewBtn  : 
 		(yes), Empty
-currentUserID  EN  "User ID"  : string
+currentUserID  EN  "User ID"  NL  "Gebruiker"  : string
 auxHasInterview  : 
 		(yes), Empty
 auxCustomDetailsTable  : open
 auxDetails  EN  "^{auxCustomDetailsTable}"  : string[1]
 btnGroupCases (Result)   : 
-		(Cancel_ShowSurveyData (1) Category  EN  "Show interview" ,
-		Cancel_ShowAttempts (2) Category  EN  "Show attempts" ,
-		Cancel (3) Category  EN  "Back" ), Empty
+		(Cancel_ShowSurveyData (1) Category  EN  "Show interview"  NL  "Toon interview" ,
+		Cancel_ShowAttempts (2) Category  EN  "Show attempts"  NL  "Toon pogingen" ,
+		Cancel (3) Category  EN  "Back"  NL  "Terug" ), Empty
 DS_dgrpCase  EN  ""  : string[1], Empty
 DialogTitle_EN : string[200]
+DialogTitle_NL : string[200]
 RULES
 DialogTitle_EN.KEEP
 IF DialogTitle_EN = EMPTY THEN 
     DialogTitle_EN := 'Group cases'
+ENDIF
+DialogTitle_NL.KEEP
+IF DialogTitle_NL = EMPTY THEN 
+    DialogTitle_NL := 'Groep inhoud'
 ENDIF
 auxParentChildView.Keep
 auxFieldFilter.Keep
@@ -666,14 +708,19 @@ BLOCK BShowConsistencyCheckResults
 FIELDS
 auxTotalInconsistentCases  : integer
 btnConsistencyCheck (Result)   : 
-		(Cancel_RepairData (1) Category  EN  "Repair data" ,
-		Cancel (2) Category  EN  "Back" ), Empty
+		(Cancel_RepairData (1) Category  EN  "Repair data"  NL  "Repareer data" ,
+		Cancel (2) Category  EN  "Back"  NL  "Terug" ), Empty
 DS_dsourceConsistency  EN  ""  : string[36], Empty
 DialogTitle_EN : string[200]
+DialogTitle_NL : string[200]
 RULES
 DialogTitle_EN.KEEP
 IF DialogTitle_EN = EMPTY THEN 
     DialogTitle_EN := 'Consistency check results'
+ENDIF
+DialogTitle_NL.KEEP
+IF DialogTitle_NL = EMPTY THEN 
+    DialogTitle_NL := 'Consistentie controle resultaat'
 ENDIF
 auxTotalInconsistentCases.Keep
 
@@ -687,14 +734,19 @@ BLOCK BProgressOverview
 FIELDS
 auxTotalProgressReportRecords  : integer
 btnProgressOverview (Result)   : 
-		(Cancel_ShowCases (1) Category  EN  "Show cases" ,
-		Cancel (2) Category  EN  "Back" ), Empty
+		(Cancel_ShowCases (1) Category  EN  "Show cases"  NL  "Toon opdrachten" ,
+		Cancel (2) Category  EN  "Back"  NL  "Terug" ), Empty
 DS_dProgress  EN  ""  : string[20], Empty
 DialogTitle_EN : string[200]
+DialogTitle_NL : string[200]
 RULES
 DialogTitle_EN.KEEP
 IF DialogTitle_EN = EMPTY THEN 
     DialogTitle_EN := 'Progress overview'
+ENDIF
+DialogTitle_NL.KEEP
+IF DialogTitle_NL = EMPTY THEN 
+    DialogTitle_NL := 'Voortgangsoverzicht'
 ENDIF
 auxTotalProgressReportRecords.Keep
 
@@ -747,16 +799,16 @@ auxCurrentIsClosed  :
 		(yes), Empty
 auxCurrentAttemptsCount  : string, Empty
 auxCurrentLocation  : string
-currentUserID  EN  "User ID"  : string
-aShowing  EN  "Cases to show: "  : 
-		(shCompleted (1) Category  EN  "Completed" ,
-		shFinalized (2) Category  EN  "Finalized" ,
-		shCompletedFinalized (3) Category  EN  "Completed / Finalized" ,
-		shReopened (4) Category  EN  "Reopened" ,
-		shAccepted (5) Category  EN  "Accepted" ,
-		shStarted (6) Category  EN  "Started / Interrupted" ,
-		shClosed (8) Category  EN  "Closed" ,
-		shAll (7) Category  EN  "All" ), Empty
+currentUserID  EN  "User ID"  NL  "Gebruikers ID"  : string
+aShowing  EN  "Cases to show: "  NL  "Te tonen opdrachten: "  : 
+		(shCompleted (1) Category  EN  "Completed"  NL  "Interview" ,
+		shFinalized (2) Category  EN  "Finalized"  NL  "Afgehandeld" ,
+		shCompletedFinalized (3) Category  EN  "Completed / Finalized"  NL  "Interview / Afgehandeld" ,
+		shReopened (4) Category  EN  "Reopened"  NL  "Heropend" ,
+		shAccepted (5) Category  EN  "Accepted"  NL  "Goedgekeurd" ,
+		shStarted (6) Category  EN  "Started / Interrupted"  NL  "Gestart / Afgebroken" ,
+		shClosed (8) Category  EN  "Closed"  NL  "Gesloten" ,
+		shAll (7) Category  EN  "All"  NL  "Alle" ), Empty
 CurrentLanguage  : string
 SelectedSurvey  : string[36], Empty
 auxShowSummary  : 
@@ -794,10 +846,10 @@ auxFieldFilter  : open
 auxFieldFilterWidths  : open
 auxFieldFilterTitles  : open
 btnSelect  : 
-		(Select Category  EN  "<img src=Select>" DISABLED  EN  "<img src=SelectDisabled>" TOOLTIP  EN  "Select case" ,
-		SelectAll Category  EN  "<img src=SelectAll>" DISABLED  EN  "<img src=SelectAllDisabled>" TOOLTIP  EN  "Select all cases" ,
-		UnSelect Category  EN  "<img src=UnSelect>" DISABLED  EN  "<img src=UnSelectDisabled>" TOOLTIP  EN  "Unselect case" ,
-		UnSelectAll Category  EN  "<img src=UnSelectAll>" DISABLED  EN  "<img src=UnSelectAllDisabled>" TOOLTIP  EN  "Unselect all cases" ), Empty
+		(Select Category  EN  "<img src=Select>" DISABLED  EN  "<img src=SelectDisabled>" TOOLTIP  EN  "Select case"  NL  "Selecteer opdracht" ,
+		SelectAll Category  EN  "<img src=SelectAll>" DISABLED  EN  "<img src=SelectAllDisabled>" TOOLTIP  EN  "Select all cases"  NL  "Selecteer alle opdrachten" ,
+		UnSelect Category  EN  "<img src=UnSelect>" DISABLED  EN  "<img src=UnSelectDisabled>" TOOLTIP  EN  "Unselect case"  NL  "Deselecteer opdracht" ,
+		UnSelectAll Category  EN  "<img src=UnSelectAll>" DISABLED  EN  "<img src=UnSelectAllDisabled>" TOOLTIP  EN  "Unselect all cases"  NL  "Deselecteer alle opdrachten" ), Empty
 auxSortText_1_  : string
 auxSortText_2_  : string
 auxSortText_3_  : string
@@ -808,7 +860,7 @@ auxSortText_7_  : string
 auxSortText_8_  : string
 auxSortText_9_  : string
 auxSortText_10_  : string
-auxSortOn  EN  "Select display order: "  : 
+auxSortOn  EN  "Select display order: "  NL  "Selecteer volgorde: "  : 
 		(sec1 (1) Category  EN  "^<auxSortText_1_>" ,
 		sec2 (2) Category  EN  "^<auxSortText_2_>" ,
 		sec3 (3) Category  EN  "^<auxSortText_3_>" ,
@@ -821,7 +873,7 @@ auxSortOn  EN  "Select display order: "  :
 		sec10 (10) Category  EN  "^<auxSortText_10_>" ), Empty
 auxAllowSort  : 
 		(yes), Empty
-auxFilter  EN  "Filter:"  : string, Empty
+auxFilter  EN  "Filter:"  NL  "Filter:"  : string, Empty
 aoAccept  : 
 		(yes), Empty
 aoReopen  : 
@@ -837,26 +889,27 @@ aoRelease  :
 aoEdit  : 
 		(yes), Empty
 btnLauncherActions  : 
-		(EditCase Category  EN  "Change" TOOLTIP  EN  "Change selected cases" ,
-		SetAccepted Category  EN  "Accept" TOOLTIP  EN  "Accept the result of the case" ,
-		SetReopen Category  EN  "Reopen" TOOLTIP  EN  "Reopen the case for the interviewer" ,
-		CloseCase Category  EN  "Close" TOOLTIP  EN  "Close the case on the device" ,
-		TransferCase Category  EN  "Transfer" TOOLTIP  EN  "Transfer the case to another interviewer / retrieve" ,
-		RestoreCase Category  EN  "Restore" TOOLTIP  EN  "Make case available again on interview device" ,
-		ReleaseCase Category  EN  "Release" TOOLTIP  EN  "Release case from interview device" ), Empty
+		(EditCase Category  EN  "Change"  NL  "Wijzig" TOOLTIP  EN  "Change selected fields in the case"  NL  "Wijzig geselecteerd velden in de opdracht" ,
+		SetAccepted Category  EN  "Accept"  NL  "Accepteer" TOOLTIP  EN  "Accept the result of the case"  NL  "Accepteer het resultaat van de opdracht" ,
+		SetReopen Category  EN  "Reopen"  NL  "Heropen" TOOLTIP  EN  "Reopen the case for the interviewer"  NL  "Heropen de opdracht voor de interviewer" ,
+		CloseCase Category  EN  "Close"  NL  "Sluit" TOOLTIP  EN  "Close the case on the device"  NL  "Sluit de opdracht op het device" ,
+		TransferCase Category  EN  "Transfer"  NL  "Ken toe" TOOLTIP  EN  "Transfer the case to another interviewer / retrieve"  NL  "Ken de opdracht aan andere interviewer toe / trek terug" ,
+		RestoreCase Category  EN  "Restore"  NL  "Herstel" TOOLTIP  EN  "Make case available again on interview device"  NL  "Maak opdracht weer beschikbaar op interview device" ,
+		ReleaseCase Category  EN  "Release"  NL  "Geef vrij" TOOLTIP  EN  "Release case from interview device"  NL  "Verwijder opdracht van interview device" ), Empty
 auxExportSurveyPossible  : 
 		(yes), Empty
 btnLauncherCases (Result)   : 
-		(Cancel_AssignCase (1) Category  EN  "Assign" TOOLTIP  EN  "Assign case to an interviewer" ,
-		Cancel_AssignSupervisor (2) Category  EN  "Assign supervisor" TOOLTIP  EN  "Assign case to a supervisor" ,
-		Cancel_ShowGroup (3) Category  EN  "Show group" ,
-		Cancel_ShowSurveyData (4) Category  EN  "Show interview" ,
-		Cancel_ShowAttempts (5) Category  EN  "Show attempts" ,
-		Cancel_ExportData (6) Category  EN  "Export survey data" ,
-		Cancel_Refresh (7) Category  EN  "Refresh" ,
-		Cancel (8) Category  EN  "Back" ), Empty
+		(Cancel_AssignCase (1) Category  EN  "Assign"  NL  "Toewijzen" TOOLTIP  EN  "Assign case to an interviewer"  NL  "Wijs opdracht toe aan een interviewer" ,
+		Cancel_AssignSupervisor (2) Category  EN  "Assign supervisor"  NL  "Toewijzen supervisor" TOOLTIP  EN  "Assign case to a supervisor"  NL  "Toewijzen opdracht aan een supervisor" ,
+		Cancel_ShowGroup (3) Category  EN  "Show group"  NL  "Toon groep" ,
+		Cancel_ShowSurveyData (4) Category  EN  "Show interview"  NL  "Toon interview" ,
+		Cancel_ShowAttempts (5) Category  EN  "Show attempts"  NL  "Toon pogingen" ,
+		Cancel_ExportData (6) Category  EN  "Export survey data"  NL  "Exporteer gegevens" ,
+		Cancel_Refresh (7) Category  EN  "Refresh"  NL  "Ververs" ,
+		Cancel (8) Category  EN  "Back"  NL  "Terug" ), Empty
 DS_dsourceCase  EN  ""  : string[1], Empty
 DialogTitle_EN : string[200]
+DialogTitle_NL : string[200]
 RULES
 auxSortText_1_.Keep
 auxSortText_2_.Keep
@@ -953,7 +1006,7 @@ aUserType  :
 		manager Category  EN  "Field manager" ,
 		administrator (9) Category  EN  "Administrator" )
 aUserInfoCount  : integer
-currentUserID  EN  "User ID"  : string
+currentUserID  EN  "User ID"  NL  "Gebruikers ID"  : string
 LanguageCount  : 0 .. 3
 LanguageImage_1_  : string
 LanguageImage_2_  : string
@@ -1006,7 +1059,7 @@ srvNames_17_  : string
 srvNames_18_  : string
 srvNames_19_  : string
 srvNames_20_  : string
-auxWhatSurveyToShow  EN  "Surveys: "  : 
+auxWhatSurveyToShow  EN  "Surveys: "  NL  "Onderzoeken: "  : 
 		(srvAll (0) Category  EN  "^<srvNames_0_>" ,
 		srv1 Category  EN  "^<srvNames_1_>" ,
 		srv2 Category  EN  "^<srvNames_2_>" ,
@@ -1032,31 +1085,32 @@ SelectedSurvey  : string[36], Empty
 aIsAlsoManager  : 
 		(yes), Empty
 aUserBtnRow1  : 
-		(select Category  EN  "Show cases" ,
-		ExportData Category  EN  "Export cases" ,
-		ImportCases Category  EN  "Import cases" ,
-		RetoreCases Category  EN  "Restore user" ,
-		Instruction Category  EN  "Instruction" )
+		(select Category  EN  "Show cases"  NL  "Toon opdrachten" ,
+		ExportData Category  EN  "Export cases"  NL  "Exporteer opdrachten" ,
+		ImportCases Category  EN  "Import cases"  NL  "Importeer opdrachten" ,
+		RetoreCases Category  EN  "Restore user"  NL  "Herstel gebruiker" ,
+		Instruction Category  EN  "Instruction"  NL  "Instructie" )
 aIsALoneManager  : 
 		(yes), Empty
 aIsAlsoAdmin  : 
 		(yes), Empty
 auxUserFieldFilter  : string
 aUserBtnRow2 (Result)   : 
-		(Cancel_ImportUI (1) Category  EN  "Import user info" ,
-		Cancel_ImportMI (2) Category  EN  "Import manage info" ,
-		Cancel_Manage (3) Category  EN  "Manage" ,
-		Cancel_Admin (4) Category  EN  "Admin" ,
-		Cancel_CheckConsistency (5) Category  EN  "Check" ,
-		Cancel_Progress (6) Category  EN  "Progress" ,
-		Cancel_MaintainUI (7) Category  EN  "Maintain user info" ,
-		Cancel_MaintainMI (8) Category  EN  "Maintain manage info" ,
-		Cancel_CustomScripts (9) Category  EN  "Custom Scripts" ,
-		Cancel_Logging (10) Category  EN  "Logging" ,
-		Switch (11) Category  EN  "Switch Role" ,
-		cancel (12) Category  EN  "Exit" ), Empty
+		(Cancel_ImportUI (1) Category  EN  "Import user info"  NL  "Importeer gebruikers" ,
+		Cancel_ImportMI (2) Category  EN  "Import manage info"  NL  "Importeer manage info" ,
+		Cancel_Manage (3) Category  EN  "Manage"  NL  "Manage" ,
+		Cancel_Admin (4) Category  EN  "Admin"  NL  "Admin" ,
+		Cancel_CheckConsistency (5) Category  EN  "Check"  NL  "Controleer" ,
+		Cancel_Progress (6) Category  EN  "Progress"  NL  "Voortgang" ,
+		Cancel_MaintainUI (7) Category  EN  "Maintain user info"  NL  "User info beheren" ,
+		Cancel_MaintainMI (8) Category  EN  "Maintain manage info"  NL  "Manage info beheren" ,
+		Cancel_CustomScripts (9) Category  EN  "Custom Scripts"  NL  "Scripts" ,
+		Cancel_Logging (10) Category  EN  "Logging"  NL  "Logging" ,
+		Switch (11) Category  EN  "Switch Role"  NL  "Wijzig Rol" ,
+		cancel (12) Category  EN  "Exit"  NL  "Stop" ), Empty
 DS_dsUsers  EN  ""  : string[20], Empty
 DialogTitle_EN : string[200]
+DialogTitle_NL : string[200]
 RULES
 LanguageImage_1_.Keep
 LanguageImage_2_.Keep
@@ -1126,12 +1180,13 @@ auxUIAction  :
 		EditMUI,
 		DeleteMUI), Empty
 aBtnUserInfoMaintenanceRow (Result)   : 
-		(Cancel_AddUI (1) Category  EN  "Add user info" ,
-		Cancel_EditUI (2) Category  EN  "Edit user info" ,
-		Cancel_DeleteUI (3) Category  EN  "Delete user info" ,
-		Cancel (4) Category  EN  "Back" ), Empty
+		(Cancel_AddUI (1) Category  EN  "Add user info"  NL  "User info toevoegen" ,
+		Cancel_EditUI (2) Category  EN  "Edit user info"  NL  "User info editen" ,
+		Cancel_DeleteUI (3) Category  EN  "Delete user info"  NL  "User info verwijderen" ,
+		Cancel (4) Category  EN  "Back"  NL  "Terug" ), Empty
 DS_dsUsers  EN  ""  : string[20], Empty
 DialogTitle_EN : string[200]
+DialogTitle_NL : string[200]
 RULES
 
 DS_dsUsers.ASK
@@ -1150,12 +1205,13 @@ auxMIAction  :
 		EditMMI,
 		DeleteMMI), Empty
 aBtnManageInfoMaintenanceRow (Result)   : 
-		(Cancel_AddMI (1) Category  EN  "Add manage info" ,
-		Cancel_EditMI (2) Category  EN  "Edit manage info" ,
-		Cancel_DeleteMI (3) Category  EN  "Delete manage info" ,
-		Cancel (4) Category  EN  "Back" ), Empty
+		(Cancel_AddMI (1) Category  EN  "Add manage info"  NL  "Manage info toevoegen" ,
+		Cancel_EditMI (2) Category  EN  "Edit manage info"  NL  "Manage info editen" ,
+		Cancel_DeleteMI (3) Category  EN  "Delete manage info"  NL  "Manage info verwijderen" ,
+		Cancel (4) Category  EN  "Back"  NL  "Terug" ), Empty
 DS_dsManagementInfo  EN  ""  : string[20], Empty
 DialogTitle_EN : string[200]
+DialogTitle_NL : string[200]
 RULES
 
 DS_dsManagementInfo.ASK
@@ -1265,6 +1321,7 @@ btnMaintainManageInfoActions (Result)   :
 		(Cancel (1) Category  EN  "Back" ,
 		Cancel_OK (2) Category  EN  "OK" ), Empty
 DialogTitle_EN : string[200]
+DialogTitle_NL : string[200]
 RULES
 srvNames_0_.Keep
 srvNames_1_.Keep
@@ -1346,22 +1403,22 @@ BLOCK BProcess
 ENDBLOCK
 
 fields
-dAttempts /  EN "^dAttempts.DialogTitle_EN"  : BdAttempts
-dCustomScripts /  EN "^dCustomScripts.DialogTitle_EN"  : BdCustomScripts
-dScriptActions /  EN "^dScriptActions.DialogTitle_EN"  : BdScriptActions
-dMaintainUserInfoAction /  EN "^dMaintainUserInfoAction.DialogTitle_EN"  : BdMaintainUserInfoAction
-dCreateInstruction /  EN "^dCreateInstruction.DialogTitle_EN"  : BdCreateInstruction
-dEditLauncherCases /  EN "^dEditLauncherCases.DialogTitle_EN"  : BdEditLauncherCases
-SelectTransferUser /  EN "^SelectTransferUser.DialogTitle_EN"  : BSelectTransferUser
-dShowTheLogging /  EN "^dShowTheLogging.DialogTitle_EN"  : BdShowTheLogging
-ShowGroupCases /  EN "^ShowGroupCases.DialogTitle_EN"  : BShowGroupCases
-ShowConsistencyCheckResults /  EN "^ShowConsistencyCheckResults.DialogTitle_EN"  : BShowConsistencyCheckResults
-ProgressOverview /  EN "^ProgressOverview.DialogTitle_EN"  : BProgressOverview
-ShowLauncherCases /  EN "^ShowLauncherCases.DialogTitle_EN"  : BShowLauncherCases
-ShowUsers /  EN "^ShowUsers.DialogTitle_EN"  : BShowUsers
-dMaintainUserInfo /  EN "^dMaintainUserInfo.DialogTitle_EN"  : BdMaintainUserInfo
-dMaintainManagementInfo /  EN "^dMaintainManagementInfo.DialogTitle_EN"  : BdMaintainManagementInfo
-dMaintainManageInfoAction /  EN "^dMaintainManageInfoAction.DialogTitle_EN"  : BdMaintainManageInfoAction
+dAttempts /  EN "^dAttempts.DialogTitle_EN"  NL "^dAttempts.DialogTitle_NL"  : BdAttempts
+dCustomScripts /  EN "^dCustomScripts.DialogTitle_EN"  NL "^dCustomScripts.DialogTitle_NL"  : BdCustomScripts
+dScriptActions /  EN "^dScriptActions.DialogTitle_EN"  NL "^dScriptActions.DialogTitle_NL"  : BdScriptActions
+dMaintainUserInfoAction /  EN "^dMaintainUserInfoAction.DialogTitle_EN"  NL "^dMaintainUserInfoAction.DialogTitle_NL"  : BdMaintainUserInfoAction
+dCreateInstruction /  EN "^dCreateInstruction.DialogTitle_EN"  NL "^dCreateInstruction.DialogTitle_NL"  : BdCreateInstruction
+dEditLauncherCases /  EN "^dEditLauncherCases.DialogTitle_EN"  NL "^dEditLauncherCases.DialogTitle_NL"  : BdEditLauncherCases
+SelectTransferUser /  EN "^SelectTransferUser.DialogTitle_EN"  NL "^SelectTransferUser.DialogTitle_NL"  : BSelectTransferUser
+dShowTheLogging /  EN "^dShowTheLogging.DialogTitle_EN"  NL "^dShowTheLogging.DialogTitle_NL"  : BdShowTheLogging
+ShowGroupCases /  EN "^ShowGroupCases.DialogTitle_EN"  NL "^ShowGroupCases.DialogTitle_NL"  : BShowGroupCases
+ShowConsistencyCheckResults /  EN "^ShowConsistencyCheckResults.DialogTitle_EN"  NL "^ShowConsistencyCheckResults.DialogTitle_NL"  : BShowConsistencyCheckResults
+ProgressOverview /  EN "^ProgressOverview.DialogTitle_EN"  NL "^ProgressOverview.DialogTitle_NL"  : BProgressOverview
+ShowLauncherCases /  EN "^ShowLauncherCases.DialogTitle_EN"  NL "^ShowLauncherCases.DialogTitle_NL"  : BShowLauncherCases
+ShowUsers /  EN "^ShowUsers.DialogTitle_EN"  NL "^ShowUsers.DialogTitle_NL"  : BShowUsers
+dMaintainUserInfo /  EN "^dMaintainUserInfo.DialogTitle_EN"  NL "^dMaintainUserInfo.DialogTitle_NL"  : BdMaintainUserInfo
+dMaintainManagementInfo /  EN "^dMaintainManagementInfo.DialogTitle_EN"  NL "^dMaintainManagementInfo.DialogTitle_NL"  : BdMaintainManagementInfo
+dMaintainManageInfoAction /  EN "^dMaintainManageInfoAction.DialogTitle_EN"  NL "^dMaintainManageInfoAction.DialogTitle_NL"  : BdMaintainManageInfoAction
 Display : BDisplay
 Confirm : BConfirm
 Process : BProcess
