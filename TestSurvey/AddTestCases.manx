@@ -1,0 +1,88 @@
+﻿SETTINGS
+   AUTOREAD = NO
+   CONNECT = NO
+
+{
+'C:\Blaise5\Surveys\
+}
+
+USES
+   mTopic 'TestSurvey'
+   mLauncher 'C:\Blaise5\Surveys\CMA_Launcher\Launcher'
+   mAttempts 'C:\Blaise5\Surveys\CN_Attempts\CN_Attempts'
+   mManageInfo 'C:\Blaise5\Surveys\CMA_ManageInfo\CMA_ManageInfo'
+   mUserInfo 'C:\Blaise5\Surveys\CMA_UserInfo\CMA_UserInfo'
+
+UPDATEFILE uLauncher : mLauncher('C:\Blaise5\Surveys\CMA_Launcher\Launcher', BDIX)
+UPDATEFILE uManageInfo : mManageInfo('C:\Blaise5\Surveys\CMA_ManageInfo\CMA_ManageInfo', BDIX)
+UPDATEFILE uUserInfo : mUserInfo('C:\Blaise5\Surveys\CMA_UserInfo\CMA_UserInfo', BDIX)
+
+CONST
+   cSupervisor = 'CMA_Sup'
+
+
+AUXFIELDS
+   i : INTEGER
+   Res : INTEGER 
+   aTab : STRING
+   
+PROCEDURE AddUser
+PARAMETERS
+   pUserId : STRING
+   pRole : (Interviewer, Supervisor)
+INSTRUCTIONS
+   uUserInfo.INITRECORD
+   uUserInfo.UserId := pUserId
+   IF pRole = Interviewer THEN
+      uUserInfo.UserType := Interviewer
+      uUserInfo.ManagerId := cSupervisor
+   ELSE
+      uUserInfo.UserType := Supervisor
+   ENDIF
+   uUserInfo.WRITE
+ENDPROCEDURE
+   
+MANIPULATE
+   // CMA_Launcher
+   aTab := CHAR(9)
+   FOR i := 1 TO 10 DO
+      uLauncher.INITRECORD
+      uLauncher.MainSurveyID := [[mTopic.InstrumentId]]
+      uLauncher.ID := STR(i)
+      uLauncher.CMA_Process.CreatedDT := DATETOSTR(SYSDATETIME, 'yyyyMMdd,HH:mm:sszzz')
+      uLauncher.SurveyDisplayName := [[mTopic.Name]]
+      uLauncher.CMA_StartDate := SYSDATE
+      uLauncher.CMA_EndDate := SYSDATE + 14
+      
+      uLauncher.CMA_AllowSpawning := yes
+      
+      uLauncher.CMA_ForWhom := 'CMA_Ann'
+      
+      uLauncher.CMA_AttemptsGUID := [[mAttempts.InstrumentId]]
+      
+      uLauncher.CMA_ContactData := 'pii.name' + aTab + 'Name' + STR(i) + aTab
+      uLauncher.CMA_ContactData := CMA_ContactData + 'pii.Address' + aTab + 'Address' + STR(i) + aTab
+      uLauncher.CMA_ContactData := CMA_ContactData + 'pii.PostalCode' + aTab + '12345' + aTab
+      uLauncher.CMA_ContactData := CMA_ContactData + 'pii.Town' + aTab + 'FakeTown' + aTab
+      uLauncher.CMA_ContactData := CMA_ContactData + 'pii.Phone1' + aTab + '' + aTab
+      uLauncher.CMA_ContactData := CMA_ContactData + 'pii.Phone2' + aTab + '' + aTab
+      uLauncher.CMA_ContactData := CMA_ContactData + 'casenote' + aTab + '' + aTab
+      uLauncher.CMA_ContactData := CMA_ContactData + 'mainsurveyid' + aTab + [[mTopic.InstrumentId]] + aTab
+      uLauncher.CMA_ContactData := CMA_ContactData + 'id' + aTab + STR(i) + aTab
+      
+      uLauncher.ContactInfoShort := 'Test Case ' + STR(i)
+      uLauncher.WRITE
+   ENDDO
+   
+   // CMA_ManageInfo
+   uManageInfo.INITRECORD
+   uManageInfo.UserId := 'CMA_Sup'
+   uManageInfo.InstrumentId := [[mTopic.InstrumentId]]
+   uManageInfo.SurveyName := [[mTopic.Name]]
+   uManageInfo.write
+   
+   // CMA_UserInfo
+   AddUser('CMA_Ann', Interviewer)
+   AddUser('CMA_Ben', Interviewer)
+   AddUser(cSupervisor, Supervisor)
+   

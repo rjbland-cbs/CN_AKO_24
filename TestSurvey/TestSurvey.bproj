@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project Name="TestSurvey" Guid="845a947b-bb7d-43bb-9e97-498a085175da" ProjectType="DatamodelProject">
+  <MainFile RelativePath="true">TestSurvey.blax</MainFile>
+  <FileItems>
+    <File FileType="DatamodelFileType" RelativePath="true">TestSurvey.blax</File>
+    <File FileType="ResourceDatabaseFileType" RelativePath="true">TestSurvey.blrd</File>
+    <File FileType="DataInterfaceFileType" RelativePath="true">TestSurvey.bdix</File>
+  </FileItems>
+  <Properties>
+    <SurveyRoot />
+    <ConditionalDefines />
+    <DatamodelSearchPath />
+    <ExternalSearchPath />
+    <IncludeSearchPath />
+    <LibrarySearchPath />
+    <ResourceDB RelativePath="true">TestSurvey.blrd</ResourceDB>
+    <SupportedModes />
+    <UsedResourceSets />
+    <AppSupport />
+    <IsRunnableSurvey>True</IsRunnableSurvey>
+    <CatiRole />
+    <UseCari>False</UseCari>
+    <WebDataEntryClient>MvcDebug</WebDataEntryClient>
+    <ContentSecurityPolicyFileName />
+    <AddFieldGroupOrderInformation>False</AddFieldGroupOrderInformation>
+    <IgnoreLayoutErrors>False</IgnoreLayoutErrors>
+    <IgnoreRichtextErrors>False</IgnoreRichtextErrors>
+    <StartCondition />
+    <ActionsSetup />
+    <DataConversionSetup />
+    <DownloadInterceptorSetup />
+    <WriteInterceptorSetup />
+    <RunWriteInterceptorSetupAsynchronously>False</RunWriteInterceptorSetupAsynchronously>
+  </Properties>
+</Project>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project Name="AddTestCases" Guid="a4b79430-1266-4dfe-b479-a6bbf41183c6" ProjectType="ManipulaProject">
+  <MainFile RelativePath="true">AddTestCases.manx</MainFile>
+  <FileItems>
+    <File FileType="ManipulaFileType" RelativePath="true">AddTestCases.manx</File>
+  </FileItems>
+  <Properties>
+    <AppSupport />
+    <IsAppMainUserInterface />
+    <ResourceDB />
+    <SurveyRoot />
+    <ConditionalDefines />
+    <DatamodelSearchPath />
+    <ExternalSearchPath />
+    <IncludeSearchPath />
+    <LibrarySearchPath />
+  </Properties>
+</Project>

@@ -1,0 +1,14 @@
+﻿DATAMODEL TestSurvey "CN Test Survey"
+
+PRIMARY ID
+
+FIELDS
+
+  ID : STRING
+  TestQuestion "Test" : STRING, EMPTY
+  
+RULES
+   ID.KEEP
+   TestQuestion
+
+ENDMODEL
