@@ -14,7 +14,7 @@
 %instrumentBuilder% -F:..\CMA\CMA.bsol %packageArgs%
 
 @REM Build CN Attempts
-%instrumentBuilder% -F:..\CN_Attempts\CN_Attempts.bproj %packageArgs%
+%instrumentBuilder% -F:..\CN_Attempts\CN_Attempts.bsol %packageArgs%
 
 @REM Build Admin Tool
 %instrumentBuilder% -F:..\CMA\AdminTool\CMA_AdminSettingsMeta.blax %packageArgs%
