@@ -4,7 +4,6 @@
   <FileItems>
     <File FileType="DatamodelFileType" RelativePath="true">TestSurvey.blax</File>
     <File FileType="ResourceDatabaseFileType" RelativePath="true">TestSurvey.blrd</File>
-    <File FileType="DataInterfaceFileType" RelativePath="true">TestSurvey.bdix</File>
   </FileItems>
   <Properties>
     <SurveyRoot />
