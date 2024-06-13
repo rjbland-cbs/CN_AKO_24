@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<Solution Name="Scripts">
-  <StartupProject RelativePath="true">CustomReports\CustomReports.bproj</StartupProject>
-  <ProjectItems>
-    <Project RelativePath="true" BuildSequence="2">CustomReports\CustomReports.bproj</Project>
-    <Project RelativePath="true" BuildSequence="4">LoadCases\LoadCases.bproj</Project>
-  </ProjectItems>
-</Solution>

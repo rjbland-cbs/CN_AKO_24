@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project Name="CustomReports" Guid="52f1c821-6740-490c-941a-6ea47a211675" ProjectType="ManipulaProject">
+  <MainFile RelativePath="true">CustomReports.manx</MainFile>
+  <FileItems>
+    <File FileType="ResourceDatabaseFileType" RelativePath="true">CustomReports.blrd</File>
+    <File FileType="ManipulaFileType" RelativePath="true">CustomReports.manx</File>
+    <File FileType="IncludeFileType" RelativePath="true">Functions.incx</File>
+    <File FileType="IncludeFileType" RelativePath="true">TableFunctions.incx</File>
+  </FileItems>
+  <Properties>
+    <AppSupport />
+    <IsAppMainUserInterface />
+    <ResourceDB RelativePath="true">CustomReports.blrd</ResourceDB>
+    <SurveyRoot />
+    <ConditionalDefines />
+    <DatamodelSearchPath />
+    <ExternalSearchPath />
+    <IncludeSearchPath />
+    <LibrarySearchPath />
+  </Properties>
+</Project>

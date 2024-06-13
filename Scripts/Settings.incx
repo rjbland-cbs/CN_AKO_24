@@ -1,6 +1,0 @@
-﻿{$DEFINE Debug}
-
-SETTINGS
-   AUTOREAD = NO
-   CONNECT = NO
-   MetaSearchPath= {$IFDEF Debug} '../TestData' {$ELSE} '../Data' {$ENDIF} 
