@@ -1,0 +1,123 @@
+﻿AUXFIELDS
+   HeaderLine, Line1, Line1Perc, Line2, Line2Perc, TotalLine, TotalLinePerc : OPEN
+   
+   
+PROCEDURE InitTables
+INSTRUCTIONS
+   HeaderLine := ''
+   Line1 := ''
+   Line1Perc := ''
+   Line2 := ''
+   Line2Perc := ''
+   TotalLine := ''
+   TotalLinePerc := ''
+ENDPROCEDURE
+
+PROCEDURE AddFirstColumn
+PARAMETERS p1, p2, p3 : STRING
+INSTRUCTIONS
+   AddToText(HeaderLine, '')
+   AddToText(Line1, p1)
+   AddToText(Line1Perc, p1)
+   AddToText(Line2, p2)
+   AddToText(Line2Perc, p2)
+   AddToText(TotalLine, p3)
+   AddToText(TotalLinePerc, p3)
+ENDPROCEDURE
+
+PROCEDURE InitProgressTables
+INSTRUCTIONS
+   InitTables
+   AddFirstColumn(cOpenstaand, cVoltooid, cTotaal)
+ENDPROCEDURE
+
+PROCEDURE InitSpawnTables
+INSTRUCTIONS
+   InitTables
+   AddFirstColumn(cMeervoudige, cOorspronkelijke, cTotaal)
+ENDPROCEDURE
+
+PROCEDURE AddRecord
+PARAMETERS p : FILETYPE
+AUXFIELDS v1, v2, t : INTEGER
+INSTRUCTIONS
+   AddToText(HeaderLine, [[p.GetField('Key').DataValue.ValueAsText]])
+   v1 := VAL([[p.GetField('Field1').DataValue.ValueAsText]])
+   v2 := VAL([[p.GetField('Field2').DataValue.ValueAsText]])
+   t := v1 + v2
+   AddToText(Line1, STR(v1))
+   AddToText(Line2, STR(v2))
+   AddToText(TotalLine, STR(t))
+   AddToText(Line1Perc, ToPerc(v1, t))
+   AddToText(Line2Perc, ToPerc(v2, t))
+   AddToText(TotalLinePerc, ToPerc(t, t))
+ENDPROCEDURE
+
+PROCEDURE WriteInit1 
+INSTRUCTIONS
+   oOut1.WRITE
+   oOut1.INITRECORD
+ENDPROCEDURE
+
+PROCEDURE WriteInit2
+INSTRUCTIONS
+   oOut2.WRITE
+   oOut2.INITRECORD
+ENDPROCEDURE
+
+PROCEDURE WriteTables
+PARAMETERS pDir, pFile : STRING
+INSTRUCTIONS
+   IF OpenOutputFile(pDir, pFile) = 0 THEN
+      oOut1.INITRECORD
+      oOut1.Text := HeaderLine
+      WriteInit1
+      oOut1.Text := Line1
+      WriteInit1
+      oOut1.Text := Line2
+      WriteInit1
+      oOut1.Text := TotalLine
+      oOut1.WRITE
+      oOut1.RELEASE
+      
+      oOut2.INITRECORD
+      oOut2.Text := HeaderLine
+      WriteInit2
+      oOut2.Text := Line1Perc
+      WriteInit2
+      oOut2.Text := Line2Perc
+      WriteInit2
+      oOut2.Text := TotalLinePerc
+      oOut2.WRITE
+      oOut2.RELEASE
+   ENDIF
+ENDPROCEDURE
+
+FUNCTION GetCodeCol : STRING
+INSTRUCTIONS
+   Result := TOSTRING(VAL(tCodes.Code), FILL('0', MaxLen)) + ' ' + tCodes.Text
+ENDFUNCTION
+
+PROCEDURE AddToBoth
+PARAMETERS p : STRING
+INSTRUCTIONS
+   AddToText(oOut1.Text, p)
+   AddToText(oOut2.Text, p)
+ENDPROCEDURE
+
+PROCEDURE WriteBoth
+INSTRUCTIONS
+   oOut1.WRITE
+   oOut2.WRITE
+   oOut1.INITRECORD
+   oOut2.INITRECORD
+ENDPROCEDURE
+
+PROCEDURE WriteNumPerc
+PARAMETERS 
+   p : INTEGER
+   t : INTEGER
+INSTRUCTIONS
+   AddToText(oOut1.Text, STR(p))
+   AddToText(oOut2.Text, ToPerc(p, t))
+ENDPROCEDURE

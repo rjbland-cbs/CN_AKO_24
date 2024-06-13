@@ -1,0 +1,78 @@
+﻿FUNCTION RemoveEnds : OPEN
+PARAMETERS p : OPEN
+INSTRUCTIONS
+   RESULT := SUBSTRING(p, 2, LEN(p)-2)
+ENDFUNCTION
+
+PROCEDURE PE
+PARAMETERS
+   TRANSIT p1 : INTEGER
+   IMPORT p2 : INTEGER
+INSTRUCTIONS
+   p1 := p2 + p1
+ENDPROCEDURE
+
+PROCEDURE Inc
+PARAMETERS
+   TRANSIT p1 : INTEGER
+INSTRUCTIONS
+   PE(p1, 1)
+ENDPROCEDURE
+
+FUNCTION GetEntryOnName: OPEN
+PARAMETERS
+  pText: OPEN
+  pName: STRING
+  pSep1: STRING
+  pSep2: STRING
+AUXFIELDS 
+  p, p_sep: INTEGER
+INSTRUCTIONS
+  p:= POSITION(pSep2+UPPERCASE(pName)+pSep1,pSep2+UPPERCASE(pText))
+  IF p>0 THEN
+    IF SUBSTRING(pText,p+LEN(pName)+1,1)='"' THEN
+      p_sep:= p+LEN(pName)+1 //search next not-escaped "...
+      REPEAT
+        p_sep:= POSITION('"',pText,p_sep+1)
+      UNTIL SUBSTRING(pText,p_sep-1,1)<>'\\' OR p_sep=0
+      IF p_sep=0 THEN p_sep:= LEN(pText)+1 ENDIF
+      RESULT:= SUBSTRING(pText,p+LEN(pName)+2,p_sep-(p+LEN(pName))-2)
+    ELSE
+      p_sep:= POSITION(pSep2,pText,p+LEN(pName)+1)
+      IF p_sep=0 THEN p_sep:= LEN(pText)+1 ENDIF
+      RESULT:= SUBSTRING(pText,p+LEN(pName)+1,p_sep-(p+LEN(pName))-1)
+    ENDIF  
+  ELSE
+    RESULT:= ''  
+  ENDIF  
+  RESULT:= REPLACE(RESULT,'\"','"')
+ENDFUNCTION
+
+FUNCTION AddPercent : STRING
+PARAMETERS p : STRING
+INSTRUCTIONS
+   RESULT := p + '_Procent'
+ENDFUNCTION
+
+FUNCTION Delimit : OPEN
+PARAMETERS p : OPEN
+INSTRUCTIONS
+   RESULT := '"' + p + '"'
+ENDFUNCTION
+
+PROCEDURE AddToText
+PARAMETERS 
+   TRANSIT pCur : OPEN
+   IMPORT pNew : STRING
+INSTRUCTIONS
+   IF pCur <> '' THEN pCur := pCur + ';' ENDIF
+   pCur := pCur + Delimit(REPLACE(TRIM(pNew), '"', '""'))
+ENDPROCEDURE
+
+FUNCTION ToPerc : STRING
+PARAMETERS 
+   pNum : INTEGER
+   pTotal : INTEGER
+INSTRUCTIONS
+   RESULT := TOSTRING(pNum / pTotal, 'p', cNL)
+ENDFUNCTION
