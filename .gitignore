@@ -12,3 +12,6 @@ Packages
 Scripts/Cache.xml
 DepApp
 Scripts/src/Cache.xml
+Scripts/src/CustomReports/Log.txt
+Scripts/src/LoadCases/Log.txt
+Scripts/src/CustomReports/Log.txt
