@@ -65,9 +65,9 @@ USES
    ENDMODEL
    
 
-INPUTFILE iLauncher : Launcher({$IFDEF Debug}'../../../TestData/Launcher'{$ELSE} '../Data/Launcher' {$ENDIF}, BDIX)
+INPUTFILE iLauncher : Launcher    ({$IFDEF Debug}'../../../TestData/Launcher'     {$ELSE} '../Data/Launcher'     {$ENDIF}, BDIX)
 INPUTFILE iUserInfo : CMA_UserInfo({$IFDEF Debug}'../../../TestData/CMA_UserInfo' {$ELSE} '../Data/CMA_UserInfo' {$ENDIF}, BDIX)
-INPUTFILE iAttempts : CN_Attempts({$IFDEF Debug} '../../../TestData/CN_Attempts' {$ELSE} '../Data/CN_Attempts' {$ENDIF}, BDIX)
+INPUTFILE iAttempts : CN_Attempts ({$IFDEF Debug} '../../../TestData/CN_Attempts' {$ELSE} '../Data/CN_Attempts'  {$ENDIF}, BDIX)
 
 TEMPORARYFILE tCodes : mCodes
 TEMPORARYFILE tProgressInterviewer : mBasicTable
@@ -171,7 +171,6 @@ ENDPROCEDURE
 
 FUNCTION CodeInCategory : STRING
 PARAMETERS 
-//   pMeta : METATYPE
    pFieldName : STRING
    pCode : STRING
 AUXFIELDS
@@ -190,7 +189,6 @@ ENDFUNCTION
 
 FUNCTION IsEndResult : STRING
 PARAMETERS 
-//   pMeta : METATYPE
    pCode : STRING
 AUXFIELDS
    i : INTEGER
@@ -199,9 +197,9 @@ INSTRUCTIONS
    {$IFDEF Debug}
       RESULT := cTrue
    {$ELSE} 
-      RESULT := CodeInCategory({[[iAttempts.Datamodel]],} 'Endresult', pCode)
+      RESULT := CodeInCategory('Endresult', pCode)
       IF RESULT = cFalse THEN
-         RESULT := CodeInCategory({[[iAttempts.Datamodel]],} 'ReasonRefusal', pCode)
+         RESULT := CodeInCategory('ReasonRefusal', pCode)
       ENDIF
    {$ENDIF}   
 ENDFUNCTION
@@ -216,7 +214,7 @@ AUXFIELDS
 INSTRUCTIONS
    Categories := CreateReflectionField([[iAttempts.Datamodel.GetField('Happenings').Type.Categories]])
    FOR i := 0 TO VAL([[Categories.Count]]) - 1 DO
-      IF IsEndResult({[[iAttempts.Datamodel]],} [[Categories[i].Code]]) = cTrue THEN
+      IF IsEndResult([[Categories[i].Code]]) = cTrue THEN
          tCodes.INITRECORD
          tCodes.Code := [[Categories[i].Code]]
          tCodes.Name := [[Categories[i].Name]]
