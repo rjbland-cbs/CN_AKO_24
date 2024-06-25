@@ -76,6 +76,13 @@ MANIPULATE
          IF NOT up1.RESULTOK THEN
             
             up1.INITRECORD
+            up1.MainSurveyID := inp.MainSurveyId
+            up1.SurveyDisplayName := inp.SurveyDisplayName
+            up1.ID := inp.ID
+            up1.CMA_ForWhom := inp.CMA_ForWhom
+            up1.CMA_AllowSpawning := inp.CMA_AllowSpawning
+            up1.CaseNote := inp.CaseNote
+            
             up1.CMA_Process.CreatedDT := TIMETOSTR(SYSTIME, 'yyyyMMdd,HH:mm:sszzz')
          
             up1.CMA_ContactData := ''
