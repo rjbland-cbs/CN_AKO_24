@@ -21,6 +21,7 @@ CONST
    cFalse = 'False'
    cTrue = 'True'
    cNL = 'nl-NL'
+   cAKO24 = '430aad52-2a16-4aa5-bbae-1c48246ba232'
 
 USES
    Launcher 'Launcher'
@@ -197,9 +198,11 @@ INSTRUCTIONS
    {$IFDEF Debug}
       RESULT := cTrue
    {$ELSE} 
-      RESULT := CodeInCategory('Endresult', pCode)
-      IF RESULT = cFalse THEN
-         RESULT := CodeInCategory('ReasonRefusal', pCode)
+      IF TRIM(pCode) = '1' THEN RESULT := cTrue ELSE
+         RESULT := CodeInCategory('Endresult', pCode)
+         IF RESULT = cFalse THEN
+            RESULT := CodeInCategory('ReasonRefusal', pCode)
+         ENDIF
       ENDIF
    {$ENDIF}   
 ENDFUNCTION
@@ -232,7 +235,11 @@ AUXFIELDS
    RecordFilter : OPEN
 INSTRUCTIONS
    AddToLog('Records before filter: ' + STR(iLauncher.RECORDCOUNT))
-   RecordFilter := '(MainSurveyId <> \'' + cNullGuid + '\')'
+   {$IFDEF Debug}
+      RecordFilter := '(MainSurveyId <> \'' + cNullGuid + '\')'
+   {$ELSE}
+      RecordFilter := '(MainSurveyId = \'' + cAKO24 + '\')'
+   {$ENDIF}
    AddToLog('Record Filter: ' + RecordFilter)
    iLauncher.SETRECORDFILTER(RecordFilter)
    AddToLog('Records after filter: ' + STR(iLauncher.RECORDCOUNT))
@@ -244,6 +251,20 @@ INSTRUCTIONS
    RESULT := GetEntryOnName(aPrefill, pFieldName, '=', ',')
 ENDFUNCTION
 
+FUNCTION GetIsland : INTEGER
+AUXFIELDS aGemeenteCode : INTEGER
+INSTRUCTIONS
+   aGemeenteCode := VAL(GetPrefill('Main.NAW.gemeente_code'))
+   IF aGemeenteCode = 3002 THEN // Bonaire
+      RESULT := 1
+   ELSEIF aGemeenteCode = 3004 THEN // Saba
+      RESULT := 2
+   ELSE // 3005 = St. Eustatius
+      RESULT := 3
+   ENDIF
+   RESULT := 1
+ENDFUNCTION
+
 PROCEDURE SetVariables
 INSTRUCTIONS
    aMainSurveyId := iLauncher.MainSurveyID
@@ -253,7 +274,7 @@ INSTRUCTIONS
    aHappeningsCod := iLauncher.CMA_HappeningsCod
    IF aForWhom = EMPTY THEN aForWhom := cEmpty ENDIF
    aNeighborhood := GetPrefill('Main.NAW.Plaatsnaam')
-   aIsland := 1 // ? still no idea how I'm supposed to know this
+   aIsland := GetIsland
    aIslandName := cIslands[aIsland]
    IF iLauncher.CMA_CaseClosed = yes THEN aCaseClosed := cTrue ELSE aCaseClosed := cFalse ENDIF
    IF aHappeningsCod = EMPTY THEN aHappeningsCod := cEmpty ENDIF
@@ -733,7 +754,7 @@ MANIPULATE
    OutputPath := GetSpecialFolderPath('MyDocuments') + '\\AKO_Reports\\' + ReportTime
    
    GetInterviewers
-   PrepareCodes(0)
+   PrepareCodes({$IFDEF Debug} 0 {$ELSE} 1 {$ENDIF})
    IntializeFiles
    HandleRecordFilter
    REPEAT
