@@ -68,7 +68,7 @@ ENDPROCEDURE
 PROCEDURE WriteTables
 PARAMETERS pDir, pFile : STRING
 INSTRUCTIONS
-   IF OpenOutputFile(pDir, pFile) = 0 THEN
+   IF OpenOutputFile(pDir, pFile, 2) = 0 THEN
       oOut1.INITRECORD
       oOut1.Text := HeaderLine
       WriteInit1

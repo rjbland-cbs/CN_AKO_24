@@ -21,12 +21,15 @@ CONST
    cFalse = 'False'
    cTrue = 'True'
    cNL = 'nl-NL'
-   cAKO24 = '430aad52-2a16-4aa5-bbae-1c48246ba232'
+   
+   cVragenlijstDuur = 'VragenlijstDuur'
+   cPerOP = 'Per O.P.'
 
 USES
    Launcher 'Launcher'
    CMA_UserInfo 'CMA_UserInfo'
    CN_Attempts 'CN_Attempts'
+   AKO {$IFDEF Debug} 'AKO22' {$ELSE} 'AKO24' {$ENDIF}
    
    DATAMODEL mBasicTable 
    PRIMARY Key
@@ -69,6 +72,7 @@ USES
 INPUTFILE iLauncher : Launcher    ({$IFDEF Debug}'../../../TestData/Launcher'     {$ELSE} '../Data/Launcher'     {$ENDIF}, BDIX)
 INPUTFILE iUserInfo : CMA_UserInfo({$IFDEF Debug}'../../../TestData/CMA_UserInfo' {$ELSE} '../Data/CMA_UserInfo' {$ENDIF}, BDIX)
 INPUTFILE iAttempts : CN_Attempts ({$IFDEF Debug} '../../../TestData/CN_Attempts' {$ELSE} '../Data/CN_Attempts'  {$ENDIF}, BDIX)
+INPUTFILE iAKO : AKO ({$IFDEF Debug} '../../../TestData/AKO22' {$ELSE} '../Data/AKO24'  {$ENDIF}, BDIX)
 
 TEMPORARYFILE tCodes : mCodes
 TEMPORARYFILE tProgressInterviewer : mBasicTable
@@ -235,11 +239,7 @@ AUXFIELDS
    RecordFilter : OPEN
 INSTRUCTIONS
    AddToLog('Records before filter: ' + STR(iLauncher.RECORDCOUNT))
-   {$IFDEF Debug}
-      RecordFilter := '(MainSurveyId <> \'' + cNullGuid + '\')'
-   {$ELSE}
-      RecordFilter := '(MainSurveyId = \'' + cAKO24 + '\')'
-   {$ENDIF}
+   RecordFilter := '(MainSurveyId = \'' + [[iAko.Datamodel.InstrumentId]] + '\')'
    AddToLog('Record Filter: ' + RecordFilter)
    iLauncher.SETRECORDFILTER(RecordFilter)
    AddToLog('Records after filter: ' + STR(iLauncher.RECORDCOUNT))
@@ -460,6 +460,7 @@ FUNCTION OpenOutputFile : INTEGER
 PARAMETERS
    pDir : STRING
    pFileName : STRING
+   pFileCount : 1..2
 AUXFIELDS
    Output, Output1, Output2 : OPEN
    aFileName : OPEN
@@ -480,7 +481,7 @@ INSTRUCTIONS
       Output2 := Output + '\\' + AddPercent(aFileName) + '_' + ReportTime + '.csv'
       AddToLog('Opening File: ' + Output1)
       RESULT := oOut1.OPEN(Output1)
-      IF RESULT = 0 THEN 
+      IF RESULT = 0 AND pFileCount = 2 THEN 
          AddToLog('Opening File: ' + Output2)
          RESULT := oOut2.OPEN(Output2)
       ENDIF
@@ -489,7 +490,7 @@ ENDFUNCTION
 
 PROCEDURE WriteProgress
 INSTRUCTIONS
-   IF OpenOutputFile(cVoortgang, cTotaal) = 0 THEN
+   IF OpenOutputFile(cVoortgang, cTotaal, 2) = 0 THEN
       oOut1.INITRECORD
       AddToText(oOut1.Text, cOpenstaand)
       AddToText(oOut1.Text, STR(IncompleteCount))
@@ -550,7 +551,7 @@ ENDPROCEDURE
 
 PROCEDURE WriteSpawn
 INSTRUCTIONS
-   IF OpenOutputFile(cMeervoudigeBewoning, cTotaal) = 0 THEN
+   IF OpenOutputFile(cMeervoudigeBewoning, cTotaal, 2) = 0 THEN
       oOut1.INITRECORD
       AddToText(oOut1.Text, cMeervoudige)
       AddToText(oOut1.Text, STR(SpawnCount))
@@ -617,7 +618,7 @@ INSTRUCTIONS
 
    // Endresults total
    tCodes.SETREADKEY(PRIMARY)
-   IF OpenOutputFile(cEindresultaten, cTotaal) = 0 THEN
+   IF OpenOutputFile(cEindresultaten, cTotaal, 2) = 0 THEN
       REPEAT
          tCodes.READNEXT
          oOut1.INITRECORD
@@ -633,7 +634,7 @@ INSTRUCTIONS
    ENDIF
    
    // Endresults Interviewer
-   IF OpenOutputFile(cEindresultaten, cInterviewer) = 0 THEN
+   IF OpenOutputFile(cEindresultaten, cInterviewer, 2) = 0 THEN
       tProgressInterviewer.RESET
       AddToBoth('')
       REPEAT
@@ -665,7 +666,7 @@ INSTRUCTIONS
    ENDIF
    
    // Endresults Island
-   IF OpenOutputFile(cEindresultaten, cEiland) = 0 THEN
+   IF OpenOutputFile(cEindresultaten, cEiland, 2) = 0 THEN
       AddToBoth('')
       FOR i := 1 TO cIslandCount DO
          AddToBoth(cIslands[i])
@@ -692,7 +693,7 @@ INSTRUCTIONS
    ENDIF
    
    // Endresults Neighborhood
-   IF OpenOutputFile(cEindresultaten, cBuurtomschrijving) = 0 THEN
+   IF OpenOutputFile(cEindresultaten, cBuurtomschrijving, 2) = 0 THEN
       AddToBoth('')
       tProgressNeighborhood.SETREADKEY(PRIMARY)
       REPEAT
@@ -724,20 +725,39 @@ INSTRUCTIONS
    ENDIF
 ENDPROCEDURE
 
-PROCEDURE SetOutputPath
+PROCEDURE HandleVragenlijstDuur
 AUXFIELDS
-   aPath : STRING[1000]
+   aRecordFilter : OPEN
+   aTotalComplete : INTEGER
+   aTotalTime : REAL
+   aCurrentDur : TIMETYPE
 INSTRUCTIONS
-   ReadCache
-   aPath := tCache.ReportsOutputPath
-   AddToLog('Cached Output Path: ' + aPath)
-   IF aPath = '' THEN aPath := GetSpecialFolderPath('MyDocuments') ENDIF
-   {$IFNDEF Debug}
-      aPath := SelectFolder('Select Output Folder', aPath)
-      IF aPath = '' THEN HALT ENDIF
-   {$ENDIF}
-   tCache.ReportsOutputPath := aPath
-   WriteCache
+   aRecordFilter := 'status = \'INGEZONDEN\' AND 
+                     Main.Tijdmeting.Start.Tijd IS NOT NULL AND
+                     Main.Tijdmeting.Eind.Tijd IS NOT NULL AND
+                     Main.Tijdmeting.Start.Datum IS NOT NULL AND
+                     Main.Tijdmeting.Start.Datum = Main.Tijdmeting.Eind.Datum'
+   AddToLog('AKO Record Filter: ' + aRecordFilter)
+   AddToLog('Record Count before filter: ' + STR(iAko.RECORDCOUNT))
+   iAKO.SETRECORDFILTER(aRecordFilter)
+   aTotalComplete := iAko.RECORDCOUNT
+   AddToLog('Record Count after filter: ' + STR(aTotalComplete))
+   
+   REPEAT
+      iAKO.READNEXT
+      aCurrentDur := iAko.Main.Tijdmeting.Eind.Tijd - iAko.Main.Tijdmeting.Start.Tijd
+      aTotalTime := aTotalTime + aCurrentDur.Hour * 60 + aCurrentDur.Minute + aCurrentDur.Second / 60
+   UNTIL iAKO.LASTRECORD
+   IF OpenOutputFile(cVragenlijstDuur, cVragenlijstDuur, 1) = 0 THEN
+      oOut1.INITRECORD
+      AddToText(oOut1.Text, cTotaal)
+      AddToText(oOut1.Text, TOSTRING(aTotalTime, '0.00', cNL))
+      oOut1.WRITE
+      oOut1.INITRECORD
+      AddToText(oOut1.Text, cPerOP)
+      AddToText(oOut1.Text, TOSTRING(aTotalTime / aTotalComplete, '0.00', cNL))
+      oOut1.WRITE
+   ENDIF
 ENDPROCEDURE
 
 PROCEDURE OpenOutputFolder
@@ -747,12 +767,9 @@ INSTRUCTIONS
 ENDPROCEDURE
    
 MANIPULATE
-   NewLog
-   SetOutputPath
-   
+   NewLog  
    ReportTime := DATETOSTR(SYSDATETIME, 'yyyyMMddHHmmss')
-   OutputPath := GetSpecialFolderPath('MyDocuments') + '\\AKO_Reports\\' + ReportTime
-   
+   OutputPath := '..\\..\\Reports\\' + ReportTime
    GetInterviewers
    PrepareCodes({$IFDEF Debug} 0 {$ELSE} 1 {$ENDIF})
    IntializeFiles
@@ -771,4 +788,5 @@ MANIPULATE
    WriteProgress
    WriteSpawn
    WriteCodes
+   HandleVragenlijstDuur
    OpenOutputFolder
