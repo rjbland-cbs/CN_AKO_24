@@ -1,12 +1,2 @@
-- add island logic to Scripts
 - GUID in STP needs to be changed
-- edit Prepare script to use AKO24
-- edit record filter in custom reports
-
-Questions:
-- How often are cases being loaded in?
-- How often are new interviewers being added? How was this done last time?
-	- How are users added in the server manager?
-	- How are users added in CMA?
-- Island logic?
-- When will the AKO24 survey be done? (GUID)
+- Configure scripts to use a login screen
