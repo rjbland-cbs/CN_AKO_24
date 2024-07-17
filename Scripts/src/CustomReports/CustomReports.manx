@@ -1,6 +1,6 @@
-﻿SETUP CustomReports
+﻿PROCESS CustomReports
 
-INCLUDE "../Settings.incx"
+INCLUDE "../Include/Settings.incx"
    
 CONST 
    cNullGuid = '00000000-0000-0000-0000-000000000000'
@@ -26,10 +26,31 @@ CONST
    cPerOP = 'Per O.P.'
 
 USES
-   Launcher 'Launcher'
-   CMA_UserInfo 'CMA_UserInfo'
-   CN_Attempts 'CN_Attempts'
-   AKO {$IFDEF Debug} 'AKO22' {$ELSE} 'AKO24' {$ENDIF}
+   Launcher 
+      {$IFDEF Debug}
+         'TestData/Launcher' 
+      {$ELSE}
+         'Data/Launcher'
+      {$ENDIF}
+   CMA_UserInfo //'CMA_UserInfo'
+      {$IFDEF Debug}
+         'TestData/CMA_UserInfo' 
+      {$ELSE}
+         'Data/CMA_UserInfo'
+      {$ENDIF}
+   CN_Attempts //'CN_Attempts'
+      {$IFDEF Debug}
+         'TestData/CN_Attempts' 
+      {$ELSE}
+         'Data/CN_Attempts'
+      {$ENDIF}
+   
+   AKO 
+      {$IFDEF Debug} 
+         'TestData/AKO22' 
+      {$ELSE} 
+         'Data/AKO24' 
+      {$ENDIF}
    
    DATAMODEL mBasicTable 
    PRIMARY Key
@@ -68,11 +89,17 @@ USES
       Text : STRING[10000]
    ENDMODEL
    
-
-INPUTFILE iLauncher : Launcher    ({$IFDEF Debug}'../../../TestData/Launcher'     {$ELSE} '../Data/Launcher'     {$ENDIF}, BDIX)
-INPUTFILE iUserInfo : CMA_UserInfo({$IFDEF Debug}'../../../TestData/CMA_UserInfo' {$ELSE} '../Data/CMA_UserInfo' {$ENDIF}, BDIX)
-INPUTFILE iAttempts : CN_Attempts ({$IFDEF Debug} '../../../TestData/CN_Attempts' {$ELSE} '../Data/CN_Attempts'  {$ENDIF}, BDIX)
-INPUTFILE iAKO : AKO ({$IFDEF Debug} '../../../TestData/AKO22' {$ELSE} '../Data/AKO24'  {$ENDIF}, BDIX)
+{$IFDEF Debug}
+   INPUTFILE iLauncher : Launcher    ('../../../TestData/Launcher', BDIX)
+   INPUTFILE iUserInfo : CMA_UserInfo('../../../TestData/CMA_UserInfo', BDIX)
+   INPUTFILE iAttempts : CN_Attempts ('../../../TestData/CN_Attempts', BDIX)
+   INPUTFILE iAKO : AKO ('../../../TestData/AKO22', BDIX)
+{$ELSE}
+   SURVEYDATAFILE iLauncher : Launcher
+   SURVEYDATAFILE iUserInfo : CMA_UserInfo
+   SURVEYDATAFILE iAttempts : CN_Attempts
+   SURVEYDATAFILE iAKO : AKO
+{$ENDIF}
 
 TEMPORARYFILE tCodes : mCodes
 TEMPORARYFILE tProgressInterviewer : mBasicTable
@@ -102,7 +129,7 @@ SETTINGS
    TRAILINGSPACES=NO
    CREATEBDIX=NO
 
-INCLUDE "../Shared.incx"
+INCLUDE "../Include/Shared.incx"
 
 INCLUDE "Functions.incx"
 
@@ -760,16 +787,42 @@ INSTRUCTIONS
    ENDIF
 ENDPROCEDURE
 
+PROCEDURE HandleOutputPath
+AUXFIELDS
+   askFolder : (Yes)
+INSTRUCTIONS
+   AddToLog('Determining Output Path: auxPath=' + auxPath)
+   IF auxPath <> '' THEN
+      IF CONFIRM('Use ' + auxPath + ' as output folder?') THEN
+         OutputPath := auxPath
+      ELSE
+         askFolder := yes
+      ENDIF
+   ELSE
+      askFolder := yes
+   ENDIF
+   IF askFolder = yes THEN
+      OutputPath := SelectFolder('Choose an output folder', auxPath)
+      uLoginCache.ExportFolder := OutputPath
+      uLoginCache.WRITE
+   ENDIF
+   AddToLog('OutputPath='+OutputPath)
+ENDPROCEDURE
+
 PROCEDURE OpenOutputFolder
 AUXFIELDS Res : INTEGER
 INSTRUCTIONS
    Res := RUN('Start ' + OutputPath)
 ENDPROCEDURE
-   
-MANIPULATE
+
+PROCEDURE Main
+INSTRUCTIONS
    NewLog  
    ReportTime := DATETOSTR(SYSDATETIME, 'yyyyMMddHHmmss')
-   OutputPath := '..\\..\\Reports\\' + ReportTime
+   HandleOutputPath
+   IF OutputPath = '' THEN HALT ENDIF
+   OutputPath := OutputPath + '\\' + ReportTime
+   DISPLAY('Running reports...', HOURGLASS)
    GetInterviewers
    PrepareCodes({$IFDEF Debug} 0 {$ELSE} 1 {$ENDIF})
    IntializeFiles
@@ -789,4 +842,32 @@ MANIPULATE
    WriteSpawn
    WriteCodes
    HandleVragenlijstDuur
+   CLEARDISPLAY
    OpenOutputFolder
+ENDPROCEDURE
+   
+INCLUDE "../Include/Login.incx"
+
+PROCEDURE ConnectToData
+INSTRUCTIONS
+   auxConnected := 1
+   {$IFNDEF DEBUG}
+      iLauncher.SetConnectionString(GetConnectionString([[Launcher]], 'CMA'))
+      IF iLauncher.OPEN <> 0 THEN auxConnected := 0 ENDIF
+      
+      iUserInfo.SetConnectionString(GetConnectionString([[CMA_UserInfo]], 'CMA'))
+      IF iUserInfo.OPEN <> 0 THEN auxConnected := 0 ENDIF
+   {$ENDIF}
+ENDPROCEDURE
+   
+MANIPULATE
+   Login
+   IF auxLoggedIn = 1 AND auxConnected = 1 THEN
+      Main
+   ELSEIF auxBtns = OK THEN
+      IF auxLoggedIn = 0 THEN
+         DISPLAY('Failed to log in, check your credentials', WAIT)
+      ELSE
+         DISPLAY('Failed to connect', WAIT)
+      ENDIF
+   ENDIF

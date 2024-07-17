@@ -1,0 +1,73 @@
+datamodel LoadCases ""
+
+
+
+const   cCache = '..//Cache.xml'
+
+
+PARALLEL
+dLogin
+Confirm
+Display
+Process
+
+BLOCK BdLogin
+FIELDS
+auxHost  "Host"  : string
+auxBinding  "Binding"  : 
+		(HTTP,
+		HTTPS)
+auxPort  "Port"  : integer
+auxUsername  "Username"  : string
+auxPassword  "Password"  : string
+auxBtns (Result)   : 
+		(Ok,
+		Cancel), Empty
+DialogTitle : string[200]
+RULES
+DialogTitle.KEEP
+IF DialogTitle = EMPTY THEN 
+    DialogTitle := 'Login'
+ENDIF
+auxHost
+auxBinding
+auxPort
+auxUsername
+auxPassword
+
+
+auxBtns.ASK
+endblock
+
+BLOCK BDisplay
+  FIELDS
+     Message : STRING
+     T : STRING
+     Result "^{Message}" : (Ok, Cancel "^{T}")
+  RULES
+     Message.KEEP
+     T.KEEP
+     Result
+ENDBLOCK
+
+BLOCK BConfirm
+  FIELDS
+     Question : STRING
+     Result "^{Question}" : (Yes, No)
+  RULES
+     Question.KEEP
+     Result
+ENDBLOCK
+
+BLOCK BProcess
+  FIELDS
+     Display  "^{Display} ": STRING, EMPTY
+ENDBLOCK
+
+fields
+dLogin / "^dLogin.DialogTitle"  : BdLogin
+Display : BDisplay
+Confirm : BConfirm
+Process : BProcess
+endmodel
+

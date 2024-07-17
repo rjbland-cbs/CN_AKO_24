@@ -1,0 +1,14 @@
+﻿DATAMODEL LoginCache
+
+PRIMARY Id
+
+FIELDS
+
+  Id : STRING
+  Host : STRING
+  Username : STRING
+  Port : INTEGER
+  Binding : (HTTP, HTTPS)
+  ExportFolder : OPEN
+
+ENDMODEL

@@ -1,0 +1,80 @@
+﻿USES
+   LoginCache 'LoginCache/LoginCache'
+   
+UPDATEFILE uLoginCache : LoginCache('..\LoginCache\LoginCache', BDIX)
+
+SURVEYLIST srvList
+
+AUXFIELDS
+   auxId : STRING
+   auxHost "Host" : STRING
+   auxBinding "Binding" : (HTTP, HTTPS)
+   auxPort "Port": INTEGER
+   auxUsername "Username": STRING
+   auxPassword "Password": STRING
+   auxBtns : (Ok, Cancel)
+   auxPath : OPEN
+   auxLoggedIn : 0..1
+   auxConnected : 0..1
+   
+DIALOG dLogin "Login"
+FIELDREFS
+   auxHost,
+   auxBinding,
+   auxPort,
+   auxUsername,
+   auxPassword,
+   auxBtns(Ok)
+   
+PROCEDURE GetLoginCache
+INSTRUCTIONS
+   auxId := UPPERCASE(USERNAME)
+   uLoginCache.GET(auxId)
+   IF uLoginCache.RESULTOK THEN
+      auxHost := uLoginCache.Host
+      auxBinding := uLoginCache.Binding
+      auxPort := uLoginCache.Port
+      auxUsername := uLoginCache.Username
+      auxPath := uLoginCache.ExportFolder
+   ELSE
+      uLoginCache.INITRECORD
+      uLoginCache.Id := auxId
+   ENDIF
+ENDPROCEDURE
+
+PROCEDURE SaveLoginCache
+INSTRUCTIONS
+   uLoginCache.Host := auxHost
+   uLoginCache.Binding := auxBinding
+   uLoginCache.Port := auxPort
+   uLoginCache.Username := auxUsername
+   uLoginCache.WRITE
+ENDPROCEDURE
+
+FUNCTION GetConnectionString : OPEN
+PARAMETERS 
+   pMeta : METATYPE
+   pServerPark : STRING
+INSTRUCTIONS
+   RESULT := 'InstrumentId=' + [[pMeta.InstrumentId]] + 
+             ';ServerPark=' + pServerPark
+ENDFUNCTION
+
+PROCEDURE Login
+INSTRUCTIONS
+   {$IFDEF Debug}
+      auxLoggedIn := 1
+   {$ELSE}
+      GetLoginCache
+      REPEAT
+         dLogin
+      UNTIL auxBtns <> EMPTY
+      IF auxBtns = Ok THEN
+         SaveLoginCache
+         IF srvList.CONNECT(auxHost, GetCategoryName(auxBinding), '', auxPort, auxUsername, auxPassword) = 0 THEN
+            auxLoggedIn := 1
+            ConnectToData
+         ENDIF
+      ENDIF
+   {$ENDIF}
+ENDPROCEDURE

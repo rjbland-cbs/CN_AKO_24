@@ -1,1 +1,1 @@
-"C:\Program Files (x86)\StatNeth\Blaise5\Bin\Manipula.exe" src/CustomReports/CustomReports.msux
+"C:\Program Files (x86)\StatNeth\Blaise5\Bin\Manipula.exe" src/CustomReports/CustomReports.bpkg

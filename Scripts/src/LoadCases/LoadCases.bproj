@@ -10,7 +10,7 @@
     <ResourceDB />
     <SurveyRoot />
     <ConditionalDefines />
-    <DatamodelSearchPath />
+    <DatamodelSearchPath>../</DatamodelSearchPath>
     <ExternalSearchPath />
     <IncludeSearchPath />
     <LibrarySearchPath />

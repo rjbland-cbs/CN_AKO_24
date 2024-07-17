@@ -1,4 +1,5 @@
-﻿
+﻿PROCESS LoadCases
+
 SETTINGS
    AUTOREAD=NO
    CONNECT=NO
@@ -23,8 +24,8 @@ USES
       GeoLocation : STRING[30]
    ENDMODEL
 
-   Launcher '../Data/Launcher'
-   Attempts '../Data/CN_Attempts'
+   Launcher 'Data/Launcher'
+   Attempts 'Data/CN_Attempts'
 
 INPUTFILE inp : CMA_Loader (ASCII)
 SETTINGS
@@ -34,17 +35,18 @@ SETTINGS
    CHARACTERSET=UTF8
    OPEN=NO
 
-UPDATEFILE up1 : Launcher ('../Data/Launcher', BDIX)
+//UPDATEFILE up1 : Launcher ('../Data/Launcher', BDIX)
+SURVEYDATAFILE up1 : Launcher
 
 AUXFIELDS
    Res : INTEGER
+   aAdded, aExisted : INTEGER
    
 FUNCTION OpenInputFile : INTEGER
 AUXFIELDS
    aFileName : OPEN
 INSTRUCTIONS
-   ReadCache
-   aFileName := SELECTFILE('Steekproefbestand', tCache.StpFilePath, 'CSV File (*.csv)|*.csv')
+   aFileName := SELECTFILE('Steekproefbestand', '', 'CSV File (*.csv)|*.csv')
    AddToLog('Stp: ' + aFileName)
    RESULT := inp.OPEN(aFileName)
    AddToLog('Open: ' + STR(RESULT))
@@ -56,18 +58,15 @@ INSTRUCTIONS
   RESULT:= REGEXSTRING('.*(\\\\|/)',pFileName)
 ENDFUNCTION 
 
-PROCEDURE CacheFilePath
+
+INCLUDE "../Include/Shared.incx"
+INCLUDE "../Include/Login.incx"
+
+
+PROCEDURE Main
 INSTRUCTIONS
-   tCache.StpFilePath := inp.PATHNAME
-   WriteCache
-ENDPROCEDURE
-
-INCLUDE "../Shared.incx"
-
-MANIPULATE
    NewLog
    IF OpenInputFile = 0 THEN
-      CacheFilePath
       DISPLAY('Processing cases', HOURGLASS)
       REPEAT
          inp.READNEXT
@@ -86,16 +85,16 @@ MANIPULATE
             up1.CMA_Process.CreatedDT := TIMETOSTR(SYSTIME, 'yyyyMMdd,HH:mm:sszzz')
          
             up1.CMA_ContactData := ''
-            up1.CMA_ContactData := CMA_ContactData + 'pii.name'       + CHAR(9) + name              + CHAR(9)
-            up1.CMA_ContactData := CMA_ContactData + 'pii.address'    + CHAR(9) + address           + CHAR(9)
-            up1.CMA_ContactData := CMA_ContactData + 'pii.postalcode' + CHAR(9) + postalcode        + CHAR(9)
-            up1.CMA_ContactData := CMA_ContactData + 'pii.town'       + CHAR(9) + buurtomschrijving + CHAR(9)
+            up1.CMA_ContactData := up1.CMA_ContactData + 'pii.name'       + CHAR(9) + name              + CHAR(9)
+            up1.CMA_ContactData := up1.CMA_ContactData + 'pii.address'    + CHAR(9) + address           + CHAR(9)
+            up1.CMA_ContactData := up1.CMA_ContactData + 'pii.postalcode' + CHAR(9) + postalcode        + CHAR(9)
+            up1.CMA_ContactData := up1.CMA_ContactData + 'pii.town'       + CHAR(9) + buurtomschrijving + CHAR(9)
          
-            up1.CMA_ContactData := CMA_ContactData + 'pii.phone1'     + CHAR(9) + phone1            + CHAR(9)
-            up1.CMA_ContactData := CMA_ContactData + 'pii.phone2'     + CHAR(9)                     + CHAR(9)
-            up1.CMA_ContactData := CMA_ContactData + 'casenote'       + CHAR(9) + casenote          + CHAR(9)
-            up1.CMA_ContactData := CMA_ContactData + 'mainsurveyid'   + CHAR(9) + mainsurveyid      + CHAR(9)
-            up1.CMA_ContactData := CMA_ContactData + 'id'             + CHAR(9) + id                + CHAR(9)
+            up1.CMA_ContactData := up1.CMA_ContactData + 'pii.phone1'     + CHAR(9) + phone1            + CHAR(9)
+            up1.CMA_ContactData := up1.CMA_ContactData + 'pii.phone2'     + CHAR(9)                     + CHAR(9)
+            up1.CMA_ContactData := up1.CMA_ContactData + 'casenote'       + CHAR(9) + casenote          + CHAR(9)
+            up1.CMA_ContactData := up1.CMA_ContactData + 'mainsurveyid'   + CHAR(9) + mainsurveyid      + CHAR(9)
+            up1.CMA_ContactData := up1.CMA_ContactData + 'id'             + CHAR(9) + id                + CHAR(9)
          
             IF inp.Image<>'' THEN
                Res := up1.CMA_ContactImage.LOADFROMDISK('Images\\' + Image)
@@ -108,9 +107,9 @@ MANIPULATE
             up1.ContactInfoShort := Address
          
             IF inp.BuurtOmschrijving <> EMPTY THEN
-               up1.ContactInfoShort := ContactInfoShort + ',' + BuurtOmschrijving
+               up1.ContactInfoShort := up1.ContactInfoShort + ',' + BuurtOmschrijving
             ELSEIF inp.PostalCode <> EMPTY THEN
-               up1.ContactInfoShort := ContactInfoShort + ',' + PostalCode
+               up1.ContactInfoShort := up1.ContactInfoShort + ',' + PostalCode
             ENDIF
          
             IF inp.Name <> EMPTY THEN
@@ -125,10 +124,25 @@ MANIPULATE
          
             up1.CHECKRULES
             up1.WRITE
+            aAdded := aAdded + 1
          ELSE // case exists
             AddToLog('Case ' + [[up1.Keys.GetItem('Primary').KeyValue]] + ' already exists')
-            DISPLAY('Case ' + [[up1.Keys.GetItem('Primary').KeyValue]] + ' bestaat al in de launcher database', WAIT)
+            aExisted := aExisted + 1
          ENDIF
       UNTIL inp.LASTRECORD
       CLEARDISPLAY
+   ENDIF
+ENDPROCEDURE
+
+PROCEDURE ConnectToData
+INSTRUCTIONS
+   up1.SETCONNECTIONSTRING(GetConnectionString([[Launcher]], 'CMA'))
+   IF up1.OPEN = 0 THEN auxConnected := 1 ENDIF
+   
+ENDPROCEDURE
+
+MANIPULATE
+   Login
+   IF auxLoggedIn = 1 AND auxConnected = 1 THEN
+      Main
    ENDIF

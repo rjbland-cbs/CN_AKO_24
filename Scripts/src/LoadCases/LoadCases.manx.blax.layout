@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LayoutSpecification xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Name="LoadCases" Version="12" GenerateAllSections="true" GenerateClientRules="true" UseGenericPages="false">
+  <Languages>
+    <Language Name="" />
+  </Languages>
+  <LayoutSets>
+    <LayoutSet Name="Dialogs1" ResourceSetName="Dialogs" StyleName="Dialogs" RequiredStyle="false" DesignHeight="600" DesignWidth="800" ResizeMode="Auto" RouteItemsPerPage="999" RowsPerTable="999" ReceiptPageName="" IntroPageName="" ResumePageName="" AbortPageName="Default">
+      <Parallels>
+        <Parallel Name="">
+          <IsGeneric>false</IsGeneric>
+        </Parallel>
+        <Parallel Name="dLogin">
+          <InstanceLayoutInstructions>
+            <RouteItemLayoutInstructions RouteItemName="dLogin.auxBinding">
+              <Instructions>
+                <TemplateInstruction TemplateName="AnswerList" TemplateTarget="DataValue" Parameters="{ParameterValues IsStretched='False'}" />
+              </Instructions>
+            </RouteItemLayoutInstructions>
+            <RouteItemLayoutInstructions RouteItemName="dLogin.auxPassword">
+              <Instructions>
+                <TemplateInstruction TemplateName="StringTextBox" TemplateTarget="ResponseValue" Parameters="{ParameterValues PasswordChar='*'}" />
+              </Instructions>
+            </RouteItemLayoutInstructions>
+          </InstanceLayoutInstructions>
+          <IsGeneric>false</IsGeneric>
+        </Parallel>
+        <Parallel Name="Confirm">
+          <IsGeneric>false</IsGeneric>
+        </Parallel>
+        <Parallel Name="Display">
+          <IsGeneric>false</IsGeneric>
+        </Parallel>
+        <Parallel Name="Process">
+          <IsGeneric>false</IsGeneric>
+        </Parallel>
+      </Parallels>
+    </LayoutSet>
+  </LayoutSets>
+  <LayoutSetGroups>
+    <LayoutSetGroup Name="Dialogs" DataEntrySettingsName="FreeInterviewing">
+      <LayoutSetNames>
+        <string>Dialogs1</string>
+      </LayoutSetNames>
+    </LayoutSetGroup>
+  </LayoutSetGroups>
+  <RoleReferences>
+    <RoleReference Name="Help" />
+    <RoleReference Name="Watermark" />
+    <RoleReference Name="ToolTip" />
+    <RoleReference Name="SpecialAnswer" />
+    <RoleReference Name="CategoryGroup" />
+    <RoleReference Name="EditMask" />
+    <RoleReference Name="Included" />
+    <RoleReference Name="Excluded" />
+    <RoleReference Name="Emphasized" />
+    <RoleReference Name="Optional" />
+    <RoleReference Name="Instructional" />
+  </RoleReferences>
+  <TypeReferences>
+    <TypeReference Name="THeader" />
+    <TypeReference Name="TCurrency" />
+  </TypeReferences>
+  <LayoutSpecFieldReferences xmlns="layoutspec">
+    <LayoutSpecFieldReference Name="RespondentTimeZone" />
+    <LayoutSpecFieldReference Name="RespondentTime" />
+    <LayoutSpecFieldReference Name="MainSurveyName" />
+    <LayoutSpecFieldReference Name="InstrumentID" />
+    <LayoutSpecFieldReference Name="InterviewerID" />
+    <LayoutSpecFieldReference Name="CaseID" />
+    <LayoutSpecFieldReference Name="SomeSetField" />
+  </LayoutSpecFieldReferences>
+  <FunctionDeclarations>
+    <FunctionDeclaration Name="AddToLog" Source="ManipulaSetup" />
+    <FunctionDeclaration Name="ConnectToData" Source="ManipulaSetup" />
+    <FunctionDeclaration Name="GetLoginCache" Source="ManipulaSetup" />
+    <FunctionDeclaration Name="Login" Source="ManipulaSetup" />
+    <FunctionDeclaration Name="Main" Source="ManipulaSetup" />
+    <FunctionDeclaration Name="NewLog" Source="ManipulaSetup" />
+    <FunctionDeclaration Name="SaveLoginCache" Source="ManipulaSetup" />
+  </FunctionDeclarations>
+</LayoutSpecification>

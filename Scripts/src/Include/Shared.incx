@@ -1,0 +1,53 @@
+﻿
+USES
+   DATAMODEL mLog
+   FIELDS
+      When : STRING[24]
+      What : STRING[1000]
+   ENDMODEL
+   
+   DATAMODEL mSettingsCache
+   FIELDS
+      ReportsOutputPath : STRING[1000]
+      StpFilePath : STRING[1000]
+   ENDMODEL
+
+   
+CONST cDateTimeFormat = "yyyyMMdd,HH:mm:sszzz"
+CONST cCache = '..//Cache.xml'
+
+OUTPUTFILE oLog : mLog('Log.txt', ASCII)
+SETTINGS
+  MAKENEWFILE=NO  
+  OPEN=NO
+  SEPARATOR=';'
+  TRAILINGSPACES=NO
+  CREATEBDIX=NO
+
+PROCEDURE AddToLog
+PARAMETERS pTextToLog: OPEN
+INSTRUCTIONS
+
+   oLog.OPEN
+   oLog.PUTVALUE('When',NowDT)
+   oLog.PUTVALUE('What',pTextToLog)
+   oLog.WRITE
+   oLog.RELEASE
+ENDPROCEDURE
+
+PROCEDURE NewLog
+INSTRUCTIONS
+   AddToLog(FILL('=', 50))
+   AddToLog(Username)
+ENDPROCEDURE
+
+FUNCTION NowDT: STRING
+INSTRUCTIONS
+  RESULT:= TIMETOSTR(SYSTIME,cDateTimeFormat)
+ENDFUNCTION 
+
+
+
+
+
+   
