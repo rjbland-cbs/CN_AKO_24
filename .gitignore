@@ -5,6 +5,7 @@
 *.bsol.usersettings
 *.bproj.parameters
 *Manipula.msg.txt
+*Log.txt
 
 CustomScripts/Test
 Credentials
