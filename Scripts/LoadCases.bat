@@ -1,1 +1,1 @@
-"C:\Program Files (x86)\StatNeth\Blaise5\Bin\Manipula.exe" src/LoadCases/LoadCases.msux
+"C:\Program Files (x86)\StatNeth\Blaise5\Bin\Manipula.exe" src/LoadCases/LoadCases.bpkg
