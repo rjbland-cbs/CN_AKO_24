@@ -2,8 +2,9 @@
 <Solution Name="Scripts" CreateMultiPackage="False">
   <StartupProject RelativePath="true">CustomReports\CustomReports.bproj</StartupProject>
   <ProjectItems>
-    <Project RelativePath="true" BuildSequence="6">CustomReports\CustomReports.bproj</Project>
+    <Project RelativePath="true" BuildSequence="8">CustomReports\CustomReports.bproj</Project>
     <Project RelativePath="true" BuildSequence="4">LoadCases\LoadCases.bproj</Project>
     <Project RelativePath="true" BuildSequence="2">LoginCache\LoginCache.bproj</Project>
+    <Project RelativePath="true" BuildSequence="6">CreateInterviewers\CreateInterviewers.bproj</Project>
   </ProjectItems>
 </Solution>

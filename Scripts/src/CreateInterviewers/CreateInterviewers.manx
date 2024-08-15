@@ -1,0 +1,94 @@
+﻿PROCESS CreateInterviewers
+   
+INCLUDE "../Include/Settings.incx"
+
+CONST 
+   cCmdLine = '"C:\\Program Files (x86)\\StatNeth\\Blaise5\\Bin\\ServerManager.exe" -adduser:$interviewer$ -userpassword:$userpassword$ -userrole:Interviewer -server:$server$ -binding:$binding$ -port:$port$ -user:$user$ -password:$password$'
+   cSupervisor = 'CMA_Sup'
+   cManagementPort = 8031
+      
+AUXFIELDS
+   aInput : OPEN
+   aCmdLineBase : OPEN
+
+INCLUDE "../Include/Shared.incx"
+INCLUDE "../Include/Login.incx"
+
+USES
+   DATAMODEL mInput
+   FIELDS
+      Username : STRING
+      Password : STRING
+      Description : STRING
+   ENDMODEL
+   
+   mUserInfo 'Data/CMA_UserInfo'
+
+INPUTFILE in1 : mInput(ASCII)
+SETTINGS
+   SEPARATOR=';'
+   DELIMITER='"'
+   OPEN=NO
+   HEADERLINE=Yes
+   
+SURVEYDATAFILE sdUserInfo : mUserInfo
+   
+PROCEDURE ConfigureCmdLine
+INSTRUCTIONS
+   aCmdLineBase := cCmdLine
+   aCmdLineBase := REPLACE(aCmdLineBase, '\n', ' ')
+   aCmdLineBase := REPLACE(aCmdLineBase, '$server$', auxHost)
+   aCmdLineBase := REPLACE(aCmdLineBase, '$binding$', GetCategoryName(auxBinding))
+   aCmdLineBase := REPLACE(aCmdLineBase, '$port$', STR(cManagementPort))
+   aCmdLineBase := REPLACE(aCmdLineBase, '$password$', auxPassword)
+   aCmdLineBase := REPLACE(aCmdLineBase, '$user$', auxUsername)
+ENDPROCEDURE
+
+PROCEDURE AddUser
+PARAMETERS
+   pUsername, pPassword, pDescription : STRING
+AUXFIELDS
+   aCmdLine : OPEN
+   Res : INTEGER
+INSTRUCTIONS
+   AddToLog('Adding user: ' + pUsername)
+   aCmdLine := aCmdLineBase
+   aCmdLine := REPLACE(aCmdLine, '$interviewer$', pUsername)
+   aCmdLine := REPLACE(aCmdLine, '$userpassword$', pPassword)
+   IF pDescription <> '' THEN aCmdLine := aCmdLine + ' -description:"' + pDescription + '"' ENDIF
+   Res := Run(aCmdLine, HIDE)
+   
+   sdUserInfo.INITRECORD
+   sdUserInfo.UserId := pUsername
+   sdUserInfo.UserType := Interviewer   
+   sdUserInfo.ManagerId := cSupervisor
+   sdUserInfo.WRITE
+ENDPROCEDURE
+
+AUXFIELDS
+   i : INTEGER
+   Res : INTEGER 
+   
+
+PROCEDURE ConnectToData
+INSTRUCTIONS
+   auxConnected := 1
+   sdUserInfo.SETCONNECTIONSTRING(GetConnectionString([[mUserInfo]], 'CMA_Admin'))
+   IF sdUserInfo.OPEN <> 0 THEN auxCOnnected := 0 ENDIF
+ENDPROCEDURE
+
+MANIPULATE
+   Login
+   IF auxLoggedIn = 1 AND auxConnected = 1 THEN
+      aInput := SelectFile('Kies een importbestand', auxPath, 'CSV File (*.csv)|*.csv')
+      IF aInput <> '' THEN
+         Res := in1.OPEN(aInput)
+         IF Res = 0 THEN
+            ConfigureCmdLine
+            REPEAT
+               in1.READNEXT
+               AddUser(in1.Username, in1.Password, in1.Description)
+            UNTIL in1.LASTRECORD
+         ENDIF
+      ENDIF
+   ENDIF

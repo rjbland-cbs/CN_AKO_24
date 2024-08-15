@@ -130,7 +130,7 @@ INSTRUCTIONS
             aExisted := aExisted + 1
          ENDIF
       UNTIL inp.LASTRECORD
-      CLEARDISPLAY
+      DisplayResult(aAdded, aExisted)
    ENDIF
 ENDPROCEDURE
 
@@ -138,7 +138,19 @@ PROCEDURE ConnectToData
 INSTRUCTIONS
    up1.SETCONNECTIONSTRING(GetConnectionString([[Launcher]], 'CMA'))
    IF up1.OPEN = 0 THEN auxConnected := 1 ENDIF
-   
+ENDPROCEDURE
+
+PROCEDURE DisplayResult
+PARAMETERS pAdded, pExisted : INTEGER
+AUXFIELDS
+   aMsg : OPEN
+INSTRUCTIONS
+   CLEARDISPLAY
+   aMsg := 'Cases created: ' + STR(pAdded)
+   IF pExisted > 0 THEN
+      aMsg := aMsg + '<newline>Cases already present: ' + STR(pExisted)
+   ENDIF
+   DISPLAY(aMsg, WAIT)
 ENDPROCEDURE
 
 MANIPULATE
