@@ -857,6 +857,9 @@ INSTRUCTIONS
       
       iUserInfo.SetConnectionString(GetConnectionString([[CMA_UserInfo]], 'CMA'))
       IF iUserInfo.OPEN <> 0 THEN auxConnected := 0 ENDIF
+      
+      iAko.SetConnectionString(GetConnectionString([[AKO]], 'CMA_Surveys'))
+      IF iAko.OPEN <> 0 THEN auxConnected := 0 ENDIF
    {$ENDIF}
 ENDPROCEDURE
    
