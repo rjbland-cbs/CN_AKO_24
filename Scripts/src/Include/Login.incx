@@ -66,9 +66,9 @@ INSTRUCTIONS
       auxLoggedIn := 1
    {$ELSE}
       GetLoginCache
-      REPEAT
+      //REPEAT
          dLogin
-      UNTIL auxBtns <> EMPTY
+      //UNTIL auxBtns <> EMPTY
       IF auxBtns = Ok THEN
          SaveLoginCache
          IF srvList.CONNECT(auxHost, GetCategoryName(auxBinding), '', auxPort, auxUsername, auxPassword) = 0 THEN
