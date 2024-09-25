@@ -1,1 +1,1 @@
-"C:\Program Files (x86)\StatNeth\Blaise5\Bin\Manipula.exe" src/LoadCases/LoadCases.bpkg
+"C:\Program Files (x86)\StatNeth\Blaise5\Bin\Manipula.exe" "%~dp0src/LoadCases/LoadCases.bpkg" -Agent -RunMode:ThickClient

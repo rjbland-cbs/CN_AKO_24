@@ -1,1 +1,1 @@
-"C:\Program Files (x86)\StatNeth\Blaise5\Bin\Manipula.exe" src/CreateInterviewers/CreateInterviewers.bpkg
+"C:\Program Files (x86)\StatNeth\Blaise5\Bin\Manipula.exe" "%~dp0src/CreateInterviewers/CreateInterviewers.bpkg" -Agent -RunMode:ThickClient

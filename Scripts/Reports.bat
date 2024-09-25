@@ -1,1 +1,1 @@
-"C:\Program Files (x86)\StatNeth\Blaise5\Bin\Manipula.exe" src/CustomReports/CustomReports.bpkg
+"C:\Program Files (x86)\StatNeth\Blaise5\Bin\Manipula.exe" "%~dp0src/CustomReports/CustomReports.bpkg" -Agent -RunMode:ThickClient
