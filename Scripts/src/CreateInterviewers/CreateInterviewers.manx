@@ -3,7 +3,7 @@
 INCLUDE "../Include/Settings.incx"
 
 CONST 
-   cCmdLine = '"C:\\Program Files (x86)\\StatNeth\\Blaise5\\Bin\\ServerManager.exe" -adduser:$interviewer$ -userpassword:$userpassword$ -userrole:Interviewer -server:$server$ -binding:$binding$ -port:$port$ -user:$user$ -password:$password$'
+   cCmdLine = '"C:\\Program Files (x86)\\StatNeth\\Blaise5\\Bin\\ServerManager.exe" -adduser:$interviewer$ -serverparks:CMA.CMA_app,CMA_Surveys -userpassword:$userpassword$ -userrole:Interviewer -server:$server$ -binding:$binding$ -port:$port$ -user:$user$ -password:$password$'
    cSupervisor = 'CMA_Sup'
    cManagementPort = 8031
       
